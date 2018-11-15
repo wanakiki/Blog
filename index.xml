@@ -138,13 +138,13 @@ Git 的官网是英文的，点 [Downloads for Windows] 下载。&lt;/p&gt;
 &lt;p&gt;此时的目录结构应该是这样的&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;.
-├── archetypes # 内容类型，在创建新内容时自动生成内容的配置
-├── content # 网站内容，Markdown 文件
-├── data
-├── layouts # 网站模版，选择主题后会将主题中的 &lt;code&gt;layouts&lt;/code&gt; 文件夹中的内容复制到此文件夹中
-├── static # 包含 CSS、JavaScript、Fonts、media 等，决定网站的外观。选择主题后会将主题中的 &lt;code&gt;ststic&lt;/code&gt; 文件夹中的内容复制到此文件夹中
-├── themes # 存放主题文件
+&lt;p&gt;.&lt;br /&gt;
+├── archetypes # 内容类型，在创建新内容时自动生成内容的配置&lt;br /&gt;
+├── content # 网站内容，Markdown 文件&lt;br /&gt;
+├── data&lt;br /&gt;
+├── layouts # 网站模版，选择主题后会将主题中的 &lt;code&gt;layouts&lt;/code&gt; 文件夹中的内容复制到此文件夹中&lt;br /&gt;
+├── static # 包含 CSS、JavaScript、Fonts、media 等，决定网站的外观。选择主题后会将主题中的   &lt;code&gt;ststic&lt;/code&gt; 文件夹中的内容复制到此文件夹中&lt;br /&gt;
+├── themes # 存放主题文件&lt;br /&gt;
 └── config.toml # 网站的配置文件&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -180,13 +180,13 @@ draft: true
 &lt;p&gt;两条 &lt;code&gt;---&lt;/code&gt; 间的信息是文章的配置信息，有的信息是自动生成的 (如：&lt;code&gt;title&lt;/code&gt;、&lt;code&gt;date&lt;/code&gt; 等)，简单介绍以下各项配置&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;# 以下项目是自动生成的
-&lt;code&gt;title:&lt;/code&gt; # 文章标题
-&lt;code&gt;date:&lt;/code&gt; # 写作时间
+&lt;p&gt;# 以下项目是自动生成的&lt;br /&gt;
+&lt;code&gt;title:&lt;/code&gt; # 文章标题&lt;br /&gt;
+&lt;code&gt;date:&lt;/code&gt; # 写作时间&lt;br /&gt;
 &lt;code&gt;draft:&lt;/code&gt; # 是否为草稿，如果为 &lt;code&gt;true&lt;/code&gt; 需要在命令中加入 &lt;code&gt;--buildDrafts&lt;/code&gt; 参数才会生成这个文档&lt;/p&gt;
 
-&lt;p&gt;# 以下项目需要自行添加
-&lt;code&gt;description:&lt;/code&gt; # 描述
+&lt;p&gt;# 以下项目需要自行添加&lt;br /&gt;
+&lt;code&gt;description:&lt;/code&gt; # 描述&lt;br /&gt;
 &lt;code&gt;tags:&lt;/code&gt; # 标签，用于文章分类&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -326,7 +326,7 @@ git push -u origin master
 
 &lt;p&gt;打开 WSL，执行命令 &lt;code&gt;cd /usr/local&lt;/code&gt; 切换到 &lt;code&gt;/usr/local&lt;/code&gt; 目录。然后输入以下命令&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;curl -LJO https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;curl -LJO https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;执行这条命令需要安装一个名为 &lt;code&gt;curl&lt;/code&gt; 的工具，WSL 上自带的有。&lt;/p&gt;
@@ -335,32 +335,32 @@ git push -u origin master
 
 &lt;p&gt;输入以下命令解压这个压缩文件&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;tar zxvf binaries.tar.gz
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;tar zxvf binaries.tar.gz
 rm binaries.tar.gz     # 删除 `binaries.tar.gz` 的源文件 (可选)
 mv binaries kms    # 重命名 binaries 文件夹为 kms (可选)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;然后执行 (没看到 &lt;code&gt;AMD&lt;/code&gt; 的目录，也没在 AMD 平台上测试过，不知道能不能跑起来)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;cd binaries/Linux/intel/static
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cd binaries/Linux/intel/static
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;如果重命名了 binaries 文件夹为 kms 的话执行&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;cd kms/Linux/intel/static
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cd kms/Linux/intel/static
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;此时目录下有这些文件&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;.
-├── vlmcs-x64-musl-static
-├── vlmcs-x86-musl-static
-├── vlmcsd-x64-musl-static
-├── vlmcsd-x86-musl-static
-├── vlmcsd-x86-musl-static-threads
-├── vlmcsdmulti-x64-musl-static
-├── vlmcsdmulti-x86-musl-static
+&lt;p&gt;.&lt;br /&gt;
+├── vlmcs-x64-musl-static&lt;br /&gt;
+├── vlmcs-x86-musl-static&lt;br /&gt;
+├── vlmcsd-x64-musl-static&lt;br /&gt;
+├── vlmcsd-x86-musl-static&lt;br /&gt;
+├── vlmcsd-x86-musl-static-threads&lt;br /&gt;
+├── vlmcsdmulti-x64-musl-static&lt;br /&gt;
+├── vlmcsdmulti-x86-musl-static&lt;br /&gt;
 └── vlmcsdmulti-x86-musl-static-threads&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -403,50 +403,50 @@ Sending activation request (KMS V4) 1 of 1 -&amp;gt;
 &lt;p&gt;此时的目录&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;.
-├── cygkms32.dll
-├── cygkms64.dll
-├── libkms32-gcc.dll
-├── libkms32.dll
-├── libkms64-gcc.dll
-├── libkms64.dll
-├── vlmcs-Windows-msrpc-x64.exe
-├── vlmcs-Windows-msrpc-x86.exe
-├── vlmcs-Windows-x64-gcc.exe
-├── vlmcs-Windows-x64.exe
-├── vlmcs-Windows-x86-gcc.exe
-├── vlmcs-Windows-x86.exe
-├── vlmcs-cygwin-msrpc-x64-openssl-EXPERIMENTAL.exe
-├── vlmcs-cygwin-msrpc-x64.exe
-├── vlmcs-cygwin-msrpc-x86.exe
-├── vlmcs-cygwin-x64.exe
-├── vlmcs-cygwin-x86.exe
-├── vlmcsd-Windows-msrpc-x64.exe
-├── vlmcsd-Windows-msrpc-x86.exe
-├── vlmcsd-Windows-x64-gcc.exe
-├── vlmcsd-Windows-x64.exe
-├── vlmcsd-Windows-x86-gcc.exe
-├── vlmcsd-Windows-x86.exe
-├── vlmcsd-cygwin-msrpc-x64.exe
-├── vlmcsd-cygwin-msrpc-x86.exe
-├── vlmcsd-cygwin-x64-openssl-EXPERIMENTAL.exe
-├── vlmcsd-cygwin-x64.exe
-├── vlmcsd-cygwin-x86.exe
-├── vlmcsdmulti-Windows-msrpc-x64.exe
-├── vlmcsdmulti-Windows-msrpc-x86.exe
-├── vlmcsdmulti-Windows-x64-gcc.exe
-├── vlmcsdmulti-Windows-x64.exe
-├── vlmcsdmulti-Windows-x86-gcc.exe
-├── vlmcsdmulti-Windows-x86.exe
-├── vlmcsdmulti-cygwin-msrpc-x64.exe
-├── vlmcsdmulti-cygwin-msrpc-x86.exe
-├── vlmcsdmulti-cygwin-x64.exe
+&lt;p&gt;.&lt;br /&gt;
+├── cygkms32.dll&lt;br /&gt;
+├── cygkms64.dll&lt;br /&gt;
+├── libkms32-gcc.dll&lt;br /&gt;
+├── libkms32.dll&lt;br /&gt;
+├── libkms64-gcc.dll&lt;br /&gt;
+├── libkms64.dll&lt;br /&gt;
+├── vlmcs-Windows-msrpc-x64.exe&lt;br /&gt;
+├── vlmcs-Windows-msrpc-x86.exe&lt;br /&gt;
+├── vlmcs-Windows-x64-gcc.exe&lt;br /&gt;
+├── vlmcs-Windows-x64.exe&lt;br /&gt;
+├── vlmcs-Windows-x86-gcc.exe&lt;br /&gt;
+├── vlmcs-Windows-x86.exe&lt;br /&gt;
+├── vlmcs-cygwin-msrpc-x64-openssl-EXPERIMENTAL.exe&lt;br /&gt;
+├── vlmcs-cygwin-msrpc-x64.exe&lt;br /&gt;
+├── vlmcs-cygwin-msrpc-x86.exe&lt;br /&gt;
+├── vlmcs-cygwin-x64.exe&lt;br /&gt;
+├── vlmcs-cygwin-x86.exe&lt;br /&gt;
+├── vlmcsd-Windows-msrpc-x64.exe&lt;br /&gt;
+├── vlmcsd-Windows-msrpc-x86.exe&lt;br /&gt;
+├── vlmcsd-Windows-x64-gcc.exe&lt;br /&gt;
+├── vlmcsd-Windows-x64.exe&lt;br /&gt;
+├── vlmcsd-Windows-x86-gcc.exe&lt;br /&gt;
+├── vlmcsd-Windows-x86.exe&lt;br /&gt;
+├── vlmcsd-cygwin-msrpc-x64.exe&lt;br /&gt;
+├── vlmcsd-cygwin-msrpc-x86.exe&lt;br /&gt;
+├── vlmcsd-cygwin-x64-openssl-EXPERIMENTAL.exe&lt;br /&gt;
+├── vlmcsd-cygwin-x64.exe&lt;br /&gt;
+├── vlmcsd-cygwin-x86.exe&lt;br /&gt;
+├── vlmcsdmulti-Windows-msrpc-x64.exe&lt;br /&gt;
+├── vlmcsdmulti-Windows-msrpc-x86.exe&lt;br /&gt;
+├── vlmcsdmulti-Windows-x64-gcc.exe&lt;br /&gt;
+├── vlmcsdmulti-Windows-x64.exe&lt;br /&gt;
+├── vlmcsdmulti-Windows-x86-gcc.exe&lt;br /&gt;
+├── vlmcsdmulti-Windows-x86.exe&lt;br /&gt;
+├── vlmcsdmulti-cygwin-msrpc-x64.exe&lt;br /&gt;
+├── vlmcsdmulti-cygwin-msrpc-x86.exe&lt;br /&gt;
+├── vlmcsdmulti-cygwin-x64.exe&lt;br /&gt;
 └── vlmcsdmulti-cygwin-x86.exe&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;然后选择合适的版本运行&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;./vlmcsd-x64-musl-static
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;./vlmcsd-x64-musl-static
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;vlmcsd&lt;/code&gt;、&lt;code&gt;vlmcsdmulti&lt;/code&gt; 两个版本差别不大，随意选择，只要能跑起来就对了。&lt;/p&gt;
@@ -455,7 +455,7 @@ Sending activation request (KMS V4) 1 of 1 -&amp;gt;
 
 &lt;p&gt;测试服务器是否成功运行的方法和前面的类似，都是通过运行 &lt;code&gt;vlmcs&lt;/code&gt; 来检查&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;./vlmcs-Windows-x64 127.0.0.1:1688
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;./vlmcs-Windows-x64 127.0.0.1:1688
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&#34;激活&#34;&gt;激活&lt;/h1&gt;
@@ -1597,7 +1597,7 @@ fi
 
 &lt;p&gt;进入 Termux，执行以下命令&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;curl -LJO https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;curl -LJO https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;执行这条命令需要安装一个名为 &lt;code&gt;curl&lt;/code&gt; 的工具。如果提示 &lt;code&gt;The program &#39;curl&#39; is not installed.&lt;/code&gt;说明没有安装 &lt;code&gt;curl&lt;/code&gt;。此时执行 &lt;code&gt;apt install curl&lt;/code&gt; 安装 &lt;code&gt;curl&lt;/code&gt;，然后再执行上面的命令&lt;/p&gt;
@@ -1608,28 +1608,28 @@ fi
 
 &lt;p&gt;输入以下命令解压这个压缩文件&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;tar zxvf binaries.tar.gz
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;tar zxvf binaries.tar.gz
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;然后执行&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;cd binaries/Android/arm/static
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cd binaries/Android/arm/static
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;此时目录下应该有这些文件&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;.
-├── vlmcs-android15-armv5-static
-├── vlmcs-android15-armv7-static
-├── vlmcs-android50-arm64v8-static
-├── vlmcsd-android15-armv5-static
-├── vlmcsd-android15-armv7-static
-├── vlmcsd-android50-arm64v8-static
-├── vlmcsdmulti-android15-armv5
-├── vlmcsdmulti-android15-armv5-static
-├── vlmcsdmulti-android15-armv7
-├── vlmcsdmulti-android15-armv7-static
+&lt;p&gt;.&lt;br /&gt;
+├── vlmcs-android15-armv5-static&lt;br /&gt;
+├── vlmcs-android15-armv7-static&lt;br /&gt;
+├── vlmcs-android50-arm64v8-static&lt;br /&gt;
+├── vlmcsd-android15-armv5-static&lt;br /&gt;
+├── vlmcsd-android15-armv7-static&lt;br /&gt;
+├── vlmcsd-android50-arm64v8-static&lt;br /&gt;
+├── vlmcsdmulti-android15-armv5&lt;br /&gt;
+├── vlmcsdmulti-android15-armv5-static&lt;br /&gt;
+├── vlmcsdmulti-android15-armv7&lt;br /&gt;
+├── vlmcsdmulti-android15-armv7-static&lt;br /&gt;
 └── vlmcsdmulti-android50-arm64v8-static&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -1645,12 +1645,12 @@ fi
 &lt;p&gt;在相同目录下还有一个工具 &lt;code&gt;vlmcs&lt;/code&gt;，&lt;a href=&#34;https://github.com/Wind4/vlmcsd/blob/master/man/vlmcs.1.pdf&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt;上说它是一个客户端模拟器，用来检查服务器的运行状态。
 我们执行&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;./vlmcs-android50-arm64v8-static 127.0.0.1:1688
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;./vlmcs-android50-arm64v8-static 127.0.0.1:1688
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;看到以下文字，就说明服务器已经成功跑起来了&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Connecting to 127.0.0.1:1688 … successful
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Connecting to 127.0.0.1:1688 … successful
 Sending activation request (KMS V4) 1 of 1 -&amp;gt;
 06401-00206-296-206344-03-5179-9600.0000-3432013
 &lt;/code&gt;&lt;/pre&gt;

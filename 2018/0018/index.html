@@ -179,7 +179,7 @@
 
 <p>打开 WSL，执行命令 <code>cd /usr/local</code> 切换到 <code>/usr/local</code> 目录。然后输入以下命令</p>
 
-<pre><code>curl -LJO https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz
+<pre><code class="language-shell">curl -LJO https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz
 </code></pre>
 
 <p>执行这条命令需要安装一个名为 <code>curl</code> 的工具，WSL 上自带的有。</p>
@@ -188,32 +188,32 @@
 
 <p>输入以下命令解压这个压缩文件</p>
 
-<pre><code>tar zxvf binaries.tar.gz
+<pre><code class="language-shell">tar zxvf binaries.tar.gz
 rm binaries.tar.gz     # 删除 `binaries.tar.gz` 的源文件 (可选)
 mv binaries kms    # 重命名 binaries 文件夹为 kms (可选)
 </code></pre>
 
 <p>然后执行 (没看到 <code>AMD</code> 的目录，也没在 AMD 平台上测试过，不知道能不能跑起来)</p>
 
-<pre><code>cd binaries/Linux/intel/static
+<pre><code class="language-shell">cd binaries/Linux/intel/static
 </code></pre>
 
 <p>如果重命名了 binaries 文件夹为 kms 的话执行</p>
 
-<pre><code>cd kms/Linux/intel/static
+<pre><code class="language-shell">cd kms/Linux/intel/static
 </code></pre>
 
 <p>此时目录下有这些文件</p>
 
 <blockquote>
-<p>.
-├── vlmcs-x64-musl-static
-├── vlmcs-x86-musl-static
-├── vlmcsd-x64-musl-static
-├── vlmcsd-x86-musl-static
-├── vlmcsd-x86-musl-static-threads
-├── vlmcsdmulti-x64-musl-static
-├── vlmcsdmulti-x86-musl-static
+<p>.<br />
+├── vlmcs-x64-musl-static<br />
+├── vlmcs-x86-musl-static<br />
+├── vlmcsd-x64-musl-static<br />
+├── vlmcsd-x86-musl-static<br />
+├── vlmcsd-x86-musl-static-threads<br />
+├── vlmcsdmulti-x64-musl-static<br />
+├── vlmcsdmulti-x86-musl-static<br />
 └── vlmcsdmulti-x86-musl-static-threads</p>
 </blockquote>
 
@@ -256,50 +256,50 @@ Sending activation request (KMS V4) 1 of 1 -&gt;
 <p>此时的目录</p>
 
 <blockquote>
-<p>.
-├── cygkms32.dll
-├── cygkms64.dll
-├── libkms32-gcc.dll
-├── libkms32.dll
-├── libkms64-gcc.dll
-├── libkms64.dll
-├── vlmcs-Windows-msrpc-x64.exe
-├── vlmcs-Windows-msrpc-x86.exe
-├── vlmcs-Windows-x64-gcc.exe
-├── vlmcs-Windows-x64.exe
-├── vlmcs-Windows-x86-gcc.exe
-├── vlmcs-Windows-x86.exe
-├── vlmcs-cygwin-msrpc-x64-openssl-EXPERIMENTAL.exe
-├── vlmcs-cygwin-msrpc-x64.exe
-├── vlmcs-cygwin-msrpc-x86.exe
-├── vlmcs-cygwin-x64.exe
-├── vlmcs-cygwin-x86.exe
-├── vlmcsd-Windows-msrpc-x64.exe
-├── vlmcsd-Windows-msrpc-x86.exe
-├── vlmcsd-Windows-x64-gcc.exe
-├── vlmcsd-Windows-x64.exe
-├── vlmcsd-Windows-x86-gcc.exe
-├── vlmcsd-Windows-x86.exe
-├── vlmcsd-cygwin-msrpc-x64.exe
-├── vlmcsd-cygwin-msrpc-x86.exe
-├── vlmcsd-cygwin-x64-openssl-EXPERIMENTAL.exe
-├── vlmcsd-cygwin-x64.exe
-├── vlmcsd-cygwin-x86.exe
-├── vlmcsdmulti-Windows-msrpc-x64.exe
-├── vlmcsdmulti-Windows-msrpc-x86.exe
-├── vlmcsdmulti-Windows-x64-gcc.exe
-├── vlmcsdmulti-Windows-x64.exe
-├── vlmcsdmulti-Windows-x86-gcc.exe
-├── vlmcsdmulti-Windows-x86.exe
-├── vlmcsdmulti-cygwin-msrpc-x64.exe
-├── vlmcsdmulti-cygwin-msrpc-x86.exe
-├── vlmcsdmulti-cygwin-x64.exe
+<p>.<br />
+├── cygkms32.dll<br />
+├── cygkms64.dll<br />
+├── libkms32-gcc.dll<br />
+├── libkms32.dll<br />
+├── libkms64-gcc.dll<br />
+├── libkms64.dll<br />
+├── vlmcs-Windows-msrpc-x64.exe<br />
+├── vlmcs-Windows-msrpc-x86.exe<br />
+├── vlmcs-Windows-x64-gcc.exe<br />
+├── vlmcs-Windows-x64.exe<br />
+├── vlmcs-Windows-x86-gcc.exe<br />
+├── vlmcs-Windows-x86.exe<br />
+├── vlmcs-cygwin-msrpc-x64-openssl-EXPERIMENTAL.exe<br />
+├── vlmcs-cygwin-msrpc-x64.exe<br />
+├── vlmcs-cygwin-msrpc-x86.exe<br />
+├── vlmcs-cygwin-x64.exe<br />
+├── vlmcs-cygwin-x86.exe<br />
+├── vlmcsd-Windows-msrpc-x64.exe<br />
+├── vlmcsd-Windows-msrpc-x86.exe<br />
+├── vlmcsd-Windows-x64-gcc.exe<br />
+├── vlmcsd-Windows-x64.exe<br />
+├── vlmcsd-Windows-x86-gcc.exe<br />
+├── vlmcsd-Windows-x86.exe<br />
+├── vlmcsd-cygwin-msrpc-x64.exe<br />
+├── vlmcsd-cygwin-msrpc-x86.exe<br />
+├── vlmcsd-cygwin-x64-openssl-EXPERIMENTAL.exe<br />
+├── vlmcsd-cygwin-x64.exe<br />
+├── vlmcsd-cygwin-x86.exe<br />
+├── vlmcsdmulti-Windows-msrpc-x64.exe<br />
+├── vlmcsdmulti-Windows-msrpc-x86.exe<br />
+├── vlmcsdmulti-Windows-x64-gcc.exe<br />
+├── vlmcsdmulti-Windows-x64.exe<br />
+├── vlmcsdmulti-Windows-x86-gcc.exe<br />
+├── vlmcsdmulti-Windows-x86.exe<br />
+├── vlmcsdmulti-cygwin-msrpc-x64.exe<br />
+├── vlmcsdmulti-cygwin-msrpc-x86.exe<br />
+├── vlmcsdmulti-cygwin-x64.exe<br />
 └── vlmcsdmulti-cygwin-x86.exe</p>
 </blockquote>
 
 <p>然后选择合适的版本运行</p>
 
-<pre><code>./vlmcsd-x64-musl-static
+<pre><code class="language-shell">./vlmcsd-x64-musl-static
 </code></pre>
 
 <p><code>vlmcsd</code>、<code>vlmcsdmulti</code> 两个版本差别不大，随意选择，只要能跑起来就对了。</p>
@@ -308,7 +308,7 @@ Sending activation request (KMS V4) 1 of 1 -&gt;
 
 <p>测试服务器是否成功运行的方法和前面的类似，都是通过运行 <code>vlmcs</code> 来检查</p>
 
-<pre><code>./vlmcs-Windows-x64 127.0.0.1:1688
+<pre><code class="language-shell">./vlmcs-Windows-x64 127.0.0.1:1688
 </code></pre>
 
 <h1 id="激活">激活</h1>
@@ -1238,6 +1238,29 @@ cscript ospp.vbs /act
           
                  
           
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'mogeko.github.io',
+        owner: 'Mogeko',
+        admin: ['Mogeko'],
+        id: location.pathname, 
+        distractionFreeMode: false 
+    });
+    (function () {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+            return;
+        }
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
     </div>
 </article>
           </div>

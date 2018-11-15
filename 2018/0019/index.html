@@ -277,13 +277,13 @@ Git 的官网是英文的，点 [Downloads for Windows] 下载。</p>
 <p>此时的目录结构应该是这样的</p>
 
 <blockquote>
-<p>.
-├── archetypes # 内容类型，在创建新内容时自动生成内容的配置
-├── content # 网站内容，Markdown 文件
-├── data
-├── layouts # 网站模版，选择主题后会将主题中的 <code>layouts</code> 文件夹中的内容复制到此文件夹中
-├── static # 包含 CSS、JavaScript、Fonts、media 等，决定网站的外观。选择主题后会将主题中的 <code>ststic</code> 文件夹中的内容复制到此文件夹中
-├── themes # 存放主题文件
+<p>.<br />
+├── archetypes # 内容类型，在创建新内容时自动生成内容的配置<br />
+├── content # 网站内容，Markdown 文件<br />
+├── data<br />
+├── layouts # 网站模版，选择主题后会将主题中的 <code>layouts</code> 文件夹中的内容复制到此文件夹中<br />
+├── static # 包含 CSS、JavaScript、Fonts、media 等，决定网站的外观。选择主题后会将主题中的   <code>ststic</code> 文件夹中的内容复制到此文件夹中<br />
+├── themes # 存放主题文件<br />
 └── config.toml # 网站的配置文件</p>
 </blockquote>
 
@@ -319,13 +319,13 @@ draft: true
 <p>两条 <code>---</code> 间的信息是文章的配置信息，有的信息是自动生成的 (如：<code>title</code>、<code>date</code> 等)，简单介绍以下各项配置</p>
 
 <blockquote>
-<p># 以下项目是自动生成的
-<code>title:</code> # 文章标题
-<code>date:</code> # 写作时间
+<p># 以下项目是自动生成的<br />
+<code>title:</code> # 文章标题<br />
+<code>date:</code> # 写作时间<br />
 <code>draft:</code> # 是否为草稿，如果为 <code>true</code> 需要在命令中加入 <code>--buildDrafts</code> 参数才会生成这个文档</p>
 
-<p># 以下项目需要自行添加
-<code>description:</code> # 描述
+<p># 以下项目需要自行添加<br />
+<code>description:</code> # 描述<br />
 <code>tags:</code> # 标签，用于文章分类</p>
 </blockquote>
 
@@ -472,6 +472,29 @@ git push -u origin master
           
                  
           
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'mogeko.github.io',
+        owner: 'Mogeko',
+        admin: ['Mogeko'],
+        id: location.pathname, 
+        distractionFreeMode: false 
+    });
+    (function () {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+            return;
+        }
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
     </div>
 </article>
           </div>

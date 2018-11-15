@@ -305,16 +305,16 @@ $ hexo init
 <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/0003/hexo-deployer-git.png" alt="安装 hexo-deployer-git" class="lazyload"><figcaption class="image-caption">安装 hexo-deployer-git</figcaption></figure></p>
 
 <p>此时的目录结构↓
-&gt; .
-&gt; ├── .deploy # 需要部署的文件
-&gt; ├── node_modules # Hexo插件
-&gt; ├── public # 生成的静态网页文件
-&gt; ├── scaffolds # 模板
-&gt; ├── source # 博客正文和其他源文件，404、favicon、CNAME 都应该放在这里
-&gt; | ├── _drafts # 草稿
-&gt; | └── _posts # 文章
-&gt; ├── themes # 主题
-&gt; ├── _config.yml # 全局配置文件
+&gt; .<br />
+&gt; ├── .deploy # 需要部署的文件<br />
+&gt; ├── node_modules # Hexo插件<br />
+&gt; ├── public # 生成的静态网页文件<br />
+&gt; ├── scaffolds # 模板<br />
+&gt; ├── source # 博客正文和其他源文件，404、favicon、CNAME 都应该放在这里<br />
+&gt; | ├── _drafts # 草稿<br />
+&gt; | └── _posts # 文章<br />
+&gt; ├── themes # 主题<br />
+&gt; ├── _config.yml # 全局配置文件<br />
 &gt; └── package.json</p>
 
 <h2 id="配置-deployment">配置 Deployment</h2>
@@ -446,9 +446,9 @@ $ hexo s
 <h2 id="编写文章">编写文章</h2>
 
 <p>引用一段来自官方的文档
-&gt; 你可以执行下列命令来创建一篇新文章。
-&gt; <code>$ hexo new [layout] &lt;title&gt;</code>
-&gt; 您可以在命令中指定文章的布局（layout），默认为 <code>post</code>，可以通过修改 <code>_config.yml</code> 中的 <code>default_layout</code> 参数来指定默认布局。</p>
+&gt; 你可以执行下列命令来创建一篇新文章。<br />
+&gt; <code>$ hexo new [layout] &lt;title&gt;</code><br />
+&gt; 您可以在命令中指定文章的布局（layout），默认为 <code>post</code>，可以通过修改 <code>_config.yml</code> 中的   <code>default_layout</code> 参数来指定默认布局。</p>
 
 <p>创建文章后，可以看见 <code>source\_posts\</code> 下有一篇新建的以 <code>.md</code> 为后缀文章
 打开它可以看见</p>
@@ -534,6 +534,29 @@ $ hexo d -g # 等同于 hexo deploy + hexo generate
           
                  
           
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'mogeko.github.io',
+        owner: 'Mogeko',
+        admin: ['Mogeko'],
+        id: location.pathname, 
+        distractionFreeMode: false 
+    });
+    (function () {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+            return;
+        }
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
     </div>
 </article>
           </div>

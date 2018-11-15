@@ -204,7 +204,7 @@
 
 <p>进入 Termux，执行以下命令</p>
 
-<pre><code>curl -LJO https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz
+<pre><code class="language-shell">curl -LJO https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz
 </code></pre>
 
 <p>执行这条命令需要安装一个名为 <code>curl</code> 的工具。如果提示 <code>The program 'curl' is not installed.</code>说明没有安装 <code>curl</code>。此时执行 <code>apt install curl</code> 安装 <code>curl</code>，然后再执行上面的命令</p>
@@ -215,28 +215,28 @@
 
 <p>输入以下命令解压这个压缩文件</p>
 
-<pre><code>tar zxvf binaries.tar.gz
+<pre><code class="language-shell">tar zxvf binaries.tar.gz
 </code></pre>
 
 <p>然后执行</p>
 
-<pre><code>cd binaries/Android/arm/static
+<pre><code class="language-shell">cd binaries/Android/arm/static
 </code></pre>
 
 <p>此时目录下应该有这些文件</p>
 
 <blockquote>
-<p>.
-├── vlmcs-android15-armv5-static
-├── vlmcs-android15-armv7-static
-├── vlmcs-android50-arm64v8-static
-├── vlmcsd-android15-armv5-static
-├── vlmcsd-android15-armv7-static
-├── vlmcsd-android50-arm64v8-static
-├── vlmcsdmulti-android15-armv5
-├── vlmcsdmulti-android15-armv5-static
-├── vlmcsdmulti-android15-armv7
-├── vlmcsdmulti-android15-armv7-static
+<p>.<br />
+├── vlmcs-android15-armv5-static<br />
+├── vlmcs-android15-armv7-static<br />
+├── vlmcs-android50-arm64v8-static<br />
+├── vlmcsd-android15-armv5-static<br />
+├── vlmcsd-android15-armv7-static<br />
+├── vlmcsd-android50-arm64v8-static<br />
+├── vlmcsdmulti-android15-armv5<br />
+├── vlmcsdmulti-android15-armv5-static<br />
+├── vlmcsdmulti-android15-armv7<br />
+├── vlmcsdmulti-android15-armv7-static<br />
 └── vlmcsdmulti-android50-arm64v8-static</p>
 </blockquote>
 
@@ -252,12 +252,12 @@
 <p>在相同目录下还有一个工具 <code>vlmcs</code>，<a href="https://github.com/Wind4/vlmcsd/blob/master/man/vlmcs.1.pdf" rel="nofollow noreferrer" target="_blank">官方文档</a>上说它是一个客户端模拟器，用来检查服务器的运行状态。
 我们执行</p>
 
-<pre><code>./vlmcs-android50-arm64v8-static 127.0.0.1:1688
+<pre><code class="language-shell">./vlmcs-android50-arm64v8-static 127.0.0.1:1688
 </code></pre>
 
 <p>看到以下文字，就说明服务器已经成功跑起来了</p>
 
-<pre><code>Connecting to 127.0.0.1:1688 … successful
+<pre><code class="language-shell">Connecting to 127.0.0.1:1688 … successful
 Sending activation request (KMS V4) 1 of 1 -&gt;
 06401-00206-296-206344-03-5179-9600.0000-3432013
 </code></pre>
@@ -1218,6 +1218,29 @@ cscript ospp.vbs /act
           
                  
           
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'mogeko.github.io',
+        owner: 'Mogeko',
+        admin: ['Mogeko'],
+        id: location.pathname, 
+        distractionFreeMode: false 
+    });
+    (function () {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+            return;
+        }
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
     </div>
 </article>
           </div>
