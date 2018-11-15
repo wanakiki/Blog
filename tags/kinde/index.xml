@@ -5,21 +5,19 @@
     <link>https://mogeko.github.io/tags/kinde/</link>
     <description>Recent content in Kinde on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>cn-ZH</language>
-    <managingEditor>zhengjunyi@live.com</managingEditor>
-    <webMaster>zhengjunyi@live.com</webMaster>
-    <lastBuildDate>Sat, 30 Sep 2017 18:00:00 +0800</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 30 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mogeko.github.io/tags/kinde/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Reabble | Kindle 下的 RRS 神器</title>
-      <link>https://mogeko.github.io/post/reabble-kindle-%E4%B8%8B%E7%9A%84-rrs-%E7%A5%9E%E5%99%A8/</link>
-      <pubDate>Sat, 30 Sep 2017 18:00:00 +0800</pubDate>
-      <author>zhengjunyi@live.com</author>
-      <guid>https://mogeko.github.io/post/reabble-kindle-%E4%B8%8B%E7%9A%84-rrs-%E7%A5%9E%E5%99%A8/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/post/reabble-kindle-%E4%B8%8B%E7%9A%84-rrs-%E7%A5%9E%E5%99%A8/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
+      <link>https://mogeko.github.io/2017/0009/</link>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2017/0009/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/0009/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Amazon 官方系统的 Kindle 中内置了一个 &lt;code&gt;体验版浏览器&lt;/code&gt;，用起来真的很鸡肋。一开始根本不知道 Amazon 到底在想什么，做怎么个又慢，又不稳定的浏览器，浪费老子硬盘。直到那天，手机被收了&lt;em&gt;(:°з」∠)&lt;/em&gt;
 其实真正让我爱上那个辣鸡浏览器的是 RSS 神器——Reabble。&lt;/p&gt;
