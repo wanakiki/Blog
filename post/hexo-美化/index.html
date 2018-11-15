@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104502658-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-104502658-1');
+  </script>
+  
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Hexo 美化  &middot; Mogeko`s Blog</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://mogeko.github.io/post/hexo-%E7%BE%8E%E5%8C%96/">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  <link rel="stylesheet" href="/css/custom.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/custom.js"></script>
+
+</head>
+
+<body>
+  <div class="top-scroll-bar"></div>
+  <div class="navbar">
+    <ul>
+      <li><a href="/" class="logo-title">HELLO,WORLD!</a></li>
+      <li><a href="/categories">CATEGORIES</a></li>
+      <li><a href="/tags">TAGS</a></li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="title">
+      <a href="/">
+        <img src="/images/logo.png" width="260px" height="48px" />
+      </a>
+    </div>
+
+
+<a href="https://mogeko.github.io/post/hexo-%E7%BE%8E%E5%8C%96/">
+  <div class="post-title">
+    <img src="/images/post-title-icon.png" />
+    <div class="post-meta">
+      <time>28 Aug 2017, 18:00</time>
+      <h1>Hexo 美化</h1>
+    </div>
+  </div>
+</a>
+
+
+
+<section class="post-content">
+  <p><img src="https://mogeko.github.io/post/hexo-%E7%BE%8E%E5%8C%96/logo.png" alt="Logo" /></p>
+
+<p>虽然 NexT 的主题很漂亮，但问题是太受欢迎了，都快烂大街了。
+好在它是一个开源项目，我们可以通过修改它的代码来个性话你的博客。
+这篇教程要涉及到一些前端知识，可能没有那么 Novice friendly。</p>
+
+<p><strong>因为涉及到对 NexT 代码的修改，搞不好，可能引起 Hexo 无法工作。所以强烈建议使用 Git 对 NexT 进行备份。</strong>
+具体使用方法请自行 Google。</p>
+
+<h1 id="准备工作">准备工作</h1>
+
+<ol>
+<li>一颗能折腾的心。</li>
+<li>一定的前端知识。</li>
+</ol>
+
+<h1 id="正文">正文</h1>
+
+<h2 id="最简单的方法">最简单的方法</h2>
+
+<p>美化你的 Hexo 的最简单方法 -&gt; <a href="https://github.com/Mogeko/hexo-theme-next">安装我修改过的 NexT</a>
+在 Hexo 目录中使用命令</p>
+
+<pre><code>$ git clone https://github.com/Mogeko/hexo-theme-next.git themes/next
+</code></pre>
+
+<p>*记得删掉原来安装过的 NexT。</p>
+
+<h2 id="手动美化-hexo">手动美化 Hexo</h2>
+
+<p>如果有能力，推荐跟我一起手动改代码。
+最好能明白我给你的代码都是做什么的，将来万一出了问题，也有个找到问题的方向。</p>
+
+<h3 id="圆形头像-头像旋转">圆形头像（头像旋转）</h3>
+
+<p>NexT 默认的头像是方的。也不是说不好看，就是觉得不习惯，这个要看个人喜好。
+在 <code>/source/css/_custom/custom.styl</code> 中添加一下代码就可以吧头像弄成圆的</p>
+
+<pre><code>// 圆形头像
+.site-author-image {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    transition: 1.4s all;
+}
+</code></pre>
+
+<p>然后，添加以下代码可以让头像在鼠标停留时旋转 180°</p>
+
+<pre><code>// 头像旋转
+.site-author-image:hover {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -transform: rotate(360deg);
+}
+</code></pre>
+
+<h3 id="点击头像跳转到-关于我-页面">点击头像跳转到 <code>关于我</code> 页面</h3>
+
+<p>第一次用 Next，习惯性点了一下头像，本以为会跳转到什么页面，结果什么都没有发生，才发现那根本不是超链接。加上 <code>关于我</code> 页面正好没地方放，（觉得官方把 <code>关于我</code> 页面放进 menu 里很蠢）所以决定为头像增加一个超链接，跳转到 <code>关于我</code> 页面。
+首先需要新建一个 <code>about</code> 页面，在 Hexo 文件夹中使用一下命令</p>
+
+<pre><code>$ hexo new page &quot;about&quot;
+</code></pre>
+
+<p>在 <code>[Hexo 文件夹]/source/about/index.md</code> 中编辑介绍自己的内容。</p>
+
+<p>然后在 <code>/layout/_macro/sidebar.swig</code> 中，用一个 <code>&lt;a&gt;</code> 标签把头像包起来就可以了
+像这样</p>
+
+<pre><code>&lt;!--只节选了一部分，忽略上面的内容--&gt;
+          &lt;a href=&quot;/about/&quot;&gt;
+            &lt;img class=&quot;site-author-image&quot; itemprop=&quot;image&quot;
+               src=&quot;{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}&quot;
+               alt=&quot;{{ theme.author }}&quot; /&gt;
+            &lt;p class=&quot;site-author-name&quot; itemprop=&quot;name&quot;&gt;{{ theme.author }}&lt;/p&gt;
+          &lt;/a&gt;
+&lt;!--忽略下面的内容--&gt;
+</code></pre>
+
+<p><img src="https://mogeko.github.io/post/hexo-%E7%BE%8E%E5%8C%96/line_about.png" alt="跳转到'关于我'页面" />
+<strong>注意：href= 一定要填 <code>&quot;/about/&quot;</code></strong></p>
+
+<h3 id="修改侧边滚动条的样式">修改侧边滚动条的样式</h3>
+
+<p>同样的，看个人喜好。你可以将侧边滚动条的样式修改得和我一样，（只对 webkit 内核的浏览器有效）只需要在 <code>/source/css/_custom/custom.styl</code> 中添加</p>
+
+<pre><code>// 更好的侧边滚动条
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+::-webkit-scrollbar-button:start:increment,::-webkit-scrollbar-button:end:decrement {
+  display: none;
+}
+::-webkit-scrollbar-corner {
+  display: block;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(0,0,0,.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 8px;
+  background-color: rgba(0,0,0,.5);
+}
+::-webkit-scrollbar-track,::-webkit-scrollbar-thumb {
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(0,0,0,.15);
+}
+::-webkit-scrollbar-button:start {
+  width: 10px;
+  height: 10px;
+  background: url(../images/scrollbar_arrow.png) no-repeat 0 0;
+}
+::-webkit-scrollbar-button:start:hover {
+  background: url(../images/scrollbar_arrow.png) no-repeat -15px 0;
+}
+::-webkit-scrollbar-button:start:active {
+  background: url(../images/scrollbar_arrow.png) no-repeat -30px 0;
+}
+::-webkit-scrollbar-button:end {
+  width: 10px;
+  height: 10px;
+  background: url(../images/scrollbar_arrow.png) no-repeat 0 -18px;
+}
+::-webkit-scrollbar-button:end:hover {
+  background: url(../images/scrollbar_arrow.png) no-repeat -15px -18px;
+}
+::-webkit-scrollbar-button:end:active {
+  background: url(../images/scrollbar_arrow.png) no-repeat -30px -18px;
+}
+</code></pre>
+
+<h3 id="顶部阅读进度条">顶部阅读进度条</h3>
+
+<p>这个要稍微复杂点，需要改动 4 个文件。
+完成后就可以拥有向我一样的顶部阅读进度条。</p>
+
+<p>首先，在<code>/layout/_partials/header.swig</code> 模板文件里加上进度条的 <code>div</code>：</p>
+
+<pre><code>&lt;div class=&quot;top-scroll-bar&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+<p>在这个位置
+<img src="https://mogeko.github.io/post/hexo-%E7%BE%8E%E5%8C%96/top_scroll_bar_1.png" alt="顶部阅读进度条" />
+然后在<code>/source/css/_custom/custom.styl</code> 文件中为我们的进度条添加样式</p>
+
+<pre><code>// 顶部阅读进度条
+.top-scroll-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    width: 0;
+    height: 2px;
+    background: #6d6d6d;
+}
+</code></pre>
+
+<p>再然后，新建一个 js脚本 文件 <code>/source/js/src/custom/custom.js</code>，来控制我们的进度条。</p>
+
+<pre><code>$(document).ready(function () {
+  $(window).scroll(function(){
+    $(&quot;.top-scroll-bar&quot;).attr(&quot;style&quot;, &quot;width: &quot; + ($(this).scrollTop() / ($(document).height() - $(this).height()) * 100) + &quot;%; display: block;&quot;);
+  });
+});
+</code></pre>
+
+<p>最后，将我们新建的那个 js脚本引入到模板，使其生效。
+在 <code>/layout/_scripts/commons.swig</code> 中，加入</p>
+
+<pre><code>'src/custom/custom.js'
+</code></pre>
+
+<p>在这个位置</p>
+
+<p><img src="https://mogeko.github.io/post/hexo-%E7%BE%8E%E5%8C%96/top_scroll_bar_2.png" alt="顶部阅读进度条" /></p>
+
+<p><br></p>
+
+<p><center>  ·End·  </center></p>
+</section>
+
+<div class="share">
+  <a href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fmogeko.github.io%2fpost%2fhexo-%25E7%25BE%258E%25E5%258C%2596%2f&t=Hexo%20%e7%be%8e%e5%8c%96" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmogeko.github.io%2fpost%2fhexo-%25E7%25BE%258E%25E5%258C%2596%2f&text=Hexo%20%e7%be%8e%e5%8c%96&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fmogeko.github.io%2fpost%2fhexo-%25E7%25BE%258E%25E5%258C%2596%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fmogeko.github.io%2fpost%2fhexo-%25E7%25BE%258E%25E5%258C%2596%2f&title=Hexo%20%e7%be%8e%e5%8c%96" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+</div>
+
+<div class="post-meta-code">
+  <div class="desc">
+    public string description() {
+    <div class="desc">val author = "
+    
+        <a href="mailto:zhengjunyi@live.com"></a>
+    ";
+    </div>
+    
+    }
+  </div>
+  <div class="desc">
+    public string tags() {
+      <div class="desc">
+        val tags = [
+        
+          
+          <a href="https://mogeko.github.iotags/hexo">"Hexo"</a>
+          
+        
+        ];
+      </div>
+    }
+  </div>
+</div>
+
+
+<div class="post-comment">
+    
+      
+
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+  <script type="text/javascript">
+    const gitalk = new Gitalk({
+      clientID: '936cecdd2ab935870ca5',
+      clientSecret: '39cfc7a3cb9a974b6609f3fdaa637e2917e3e40a',
+      repo: 'mogeko.github.io',
+      owner: 'Mogeko',
+      admin: 'Mogeko'.split(','),
+      pagerDirection: 'last',
+      id: md5(window.location.pathname),
+      
+      distractionFreeMode: false
+    })
+    gitalk.render('gitalk-container')
+  </script>
+</div>
+
+<div class="paging post-paging">
+  
+  <a class="left" href="https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-hexo-hey-%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/" rel="prev">
+    <i class="fa fa-caret-left" aria-hidden="true"></i> <span>使用 Hexo Hey 管理你的博客</span>
+  </a>
+  
+  
+  <a class="right" href="https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-github-hexo-%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" rel="next">
+    <span>使用 Github &#43; Hexo 建立自己的博客</span> <i class="fa fa-caret-right" aria-hidden="true"></i>
+  </a>
+  
+</div>
+
+<footer class="footer">
+  COPYRIGHT (C) <a href="https://blog.lulab.net">MOGEKO</a>. ALL RIGHTS RESERVED.
+</footer>
+
+</body>
+</html>
+

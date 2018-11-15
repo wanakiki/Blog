@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104502658-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-104502658-1');
+  </script>
+  
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>使用 Hexo Hey 管理你的博客  &middot; Mogeko`s Blog</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-hexo-hey-%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  <link rel="stylesheet" href="/css/custom.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/custom.js"></script>
+
+</head>
+
+<body>
+  <div class="top-scroll-bar"></div>
+  <div class="navbar">
+    <ul>
+      <li><a href="/" class="logo-title">HELLO,WORLD!</a></li>
+      <li><a href="/categories">CATEGORIES</a></li>
+      <li><a href="/tags">TAGS</a></li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="title">
+      <a href="/">
+        <img src="/images/logo.png" width="260px" height="48px" />
+      </a>
+    </div>
+
+
+<a href="https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-hexo-hey-%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/">
+  <div class="post-title">
+    <img src="/images/post-title-icon.png" />
+    <div class="post-meta">
+      <time>04 Sep 2017, 18:00</time>
+      <h1>使用 Hexo Hey 管理你的博客</h1>
+    </div>
+  </div>
+</a>
+
+
+
+<section class="post-content">
+  <p>在使用 Hexo Hey 之前，我一直在使用 VSCode（配合 vscode-hexo 插件）来管理博客。虽然可以很快捷 的<code>新建</code>,<code>部署</code>, <code>测试</code>,<code>发布</code> 博客 ，但还是很麻烦，离我理想中的博客平台还有一定的距离。
+我在知乎上发现了 Hexo Hey 这个插件，尝试了一下，虽然有各种问题，但确实很好用。
+因此决定写一篇文章来介绍一下如何<code>安装</code>, <code>使用</code> Hexo Hey。</p>
+
+<p>切换换到 Hexo Hey 后最不习惯的地方就是没有了 VSCode 中那些方便的快捷键了。(ノへ￣、)[擦眼泪……]</p>
+
+<p>与 Hexo Hey 比较相似的 Hexo 博客管理程序还有 <a href="https://github.com/jaredly/hexo-admin">Hexo Admin</a>。</p>
+
+<h1 id="准备工作">准备工作</h1>
+
+<ol>
+<li>Node.js &lt;- 就是安 Hexo 时用到的拿货，应该已经有了，就不贴安装地址了。</li>
+<li>Hexo Hey &lt;- 通过 npm 安装。</li>
+</ol>
+
+<h1 id="正文">正文</h1>
+
+<h2 id="安装-hexo-hey">安装 Hexo Hey</h2>
+
+<p>首先进入已配置好的那个 Hexo 目录：</p>
+
+<pre><code>$ cd [你的 Hexo 目录]
+</code></pre>
+
+<p>输入一下命令安装 Hexo Hey：</p>
+
+<pre><code>$ npm install hexo-hey --save
+</code></pre>
+
+<p><img src="https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-hexo-hey-%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/install_hexo_hey.png" alt="安装 Hexo Hey" /></p>
+
+<p>然后打开 Hexo 目录 中的 <code>_config.yml</code> 文件，在结尾加上如下代码：
+*将<code>[你的用户名]</code>, <code>[你的密码]</code> 改为你喜欢的用户名和密码</p>
+
+<pre><code># Admin
+admin:
+    name: [你的用户名]
+    password: [你的密码]
+    secret: hey hexo
+    expire: 60*1
+    # cors: http://localhost:3000
+</code></pre>
+
+<p>重新部署一遍 Hexo，开启 Hexo 的本地服务器</p>
+
+<pre><code>$ hexo g
+$ hexo s
+</code></pre>
+
+<p>现在访问 <code>http://localhost:4000/admin</code> 看看效果。(๑•̀ㅂ•́)و✧
+<img src="https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-hexo-hey-%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/hexo_hey.png" alt="Hexo Hey" /></p>
+
+<h1 id="一些问题">一些问题</h1>
+
+<ol>
+<li>不能自动保存（隔壁 Hexo Admin 就没这毛病），也不能用 <code>ctrl + S</code> 的快捷键保存文章。</li>
+<li>有篇文章没有 <code>编辑</code> 按钮。（难道是因为我在文章中用了 ‘华丽的分界线’(￣△￣；)）
+<img src="https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-hexo-hey-%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/bug_1.png" alt="Bug!" /></li>
+<li><strong>图片管理非常不友好！！！虽然可以通过托拽插入图片，但此方法插入的图片都保存在 \source\images 文件夹下，这与官方推荐的方法不同。</strong>（官方推荐的方法是将图片放入与文章同名的资源文件夹中）</li>
+<li><strong>Hexo Hey 的 Markdown 渲染引擎无法识别 Hexo 中的标签插件</strong>
+<img src="https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-hexo-hey-%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/bug_2.png" alt="Bug!" /></li>
+<li>那个 <code>发布</code> 的意思实际上是 <code>部署</code>，发布到 Github Pages 或者其他远程服务器仍然需要手动。</li>
+<li>必须启动 Hexo 的本地服务器才能使用。</li>
+<li>目前就发现了这么多…</li>
+</ol>
+
+<h1 id="高级">高级</h1>
+
+<h2 id="开机启动-hexo-server-后台">开机启动 Hexo Server（后台）</h2>
+
+<p>开机后，在后台自动启动 Hexo 本地服务器可以在一定程度上解决<a href="https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-hexo-hey-%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/#bug_6">问题6</a>。
+首先要创建两个脚本文件 <code>hexo-server.vbs</code> 和<code>hexo-server.bat</code>。
+<strong>hexo-server.vbs:</strong></p>
+
+<pre><code>set ws=WScript.CreateObject(&quot;WScript.Shell&quot;)
+ws.Run &quot;[你的 Hexo 文件夹]\\hexo-server.bat /start&quot;,0
+</code></pre>
+
+<p><strong>注意：这里的[你的 Hexo 文件夹]中的 \ 符号需要转义。</strong>
+&amp;emsp&amp;emsp<strong>例如，C:\Users\user\Hexo 需要转义为 C:\Users\user\Hexo</strong></p>
+
+<p><strong>hexo-server.bat:</strong></p>
+
+<pre><code>cd [你的 Hexo 文件夹]
+hexo s -d
+</code></pre>
+
+<p>然后将 <code>hexo-server.bat</code> 放入[你的 Hexo 文件夹]中。
+将 <code>hexo-server.vbs</code> 放入 <code>C:\Users\[你的用户名]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code> 中。
+*不确定自己用户名什么，可以到 <code>C:\Users\</code> 中确认一下。
+*实在是找不到这个文件夹请 Google <code>Windows 开机启动的文件夹</code>。</p>
+
+<p><br></p>
+
+<p><center>  ·End·  </center></p>
+</section>
+
+<div class="share">
+  <a href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fmogeko.github.io%2fpost%2f%25E4%25BD%25BF%25E7%2594%25A8-hexo-hey-%25E7%25AE%25A1%25E7%2590%2586%25E4%25BD%25A0%25E7%259A%2584%25E5%258D%259A%25E5%25AE%25A2%2f&t=%e4%bd%bf%e7%94%a8%20Hexo%20Hey%20%e7%ae%a1%e7%90%86%e4%bd%a0%e7%9a%84%e5%8d%9a%e5%ae%a2" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmogeko.github.io%2fpost%2f%25E4%25BD%25BF%25E7%2594%25A8-hexo-hey-%25E7%25AE%25A1%25E7%2590%2586%25E4%25BD%25A0%25E7%259A%2584%25E5%258D%259A%25E5%25AE%25A2%2f&text=%e4%bd%bf%e7%94%a8%20Hexo%20Hey%20%e7%ae%a1%e7%90%86%e4%bd%a0%e7%9a%84%e5%8d%9a%e5%ae%a2&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fmogeko.github.io%2fpost%2f%25E4%25BD%25BF%25E7%2594%25A8-hexo-hey-%25E7%25AE%25A1%25E7%2590%2586%25E4%25BD%25A0%25E7%259A%2584%25E5%258D%259A%25E5%25AE%25A2%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fmogeko.github.io%2fpost%2f%25E4%25BD%25BF%25E7%2594%25A8-hexo-hey-%25E7%25AE%25A1%25E7%2590%2586%25E4%25BD%25A0%25E7%259A%2584%25E5%258D%259A%25E5%25AE%25A2%2f&title=%e4%bd%bf%e7%94%a8%20Hexo%20Hey%20%e7%ae%a1%e7%90%86%e4%bd%a0%e7%9a%84%e5%8d%9a%e5%ae%a2" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+</div>
+
+<div class="post-meta-code">
+  <div class="desc">
+    public string description() {
+    <div class="desc">val author = "
+    
+        <a href="mailto:zhengjunyi@live.com"></a>
+    ";
+    </div>
+    
+    }
+  </div>
+  <div class="desc">
+    public string tags() {
+      <div class="desc">
+        val tags = [
+        
+          
+          <a href="https://mogeko.github.iotags/hexo">"Hexo"</a>
+          
+          <a href="https://mogeko.github.iotags/tools">"Tools"</a>
+          
+        
+        ];
+      </div>
+    }
+  </div>
+</div>
+
+
+<div class="post-comment">
+    
+      
+
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+  <script type="text/javascript">
+    const gitalk = new Gitalk({
+      clientID: '936cecdd2ab935870ca5',
+      clientSecret: '39cfc7a3cb9a974b6609f3fdaa637e2917e3e40a',
+      repo: 'mogeko.github.io',
+      owner: 'Mogeko',
+      admin: 'Mogeko'.split(','),
+      pagerDirection: 'last',
+      id: md5(window.location.pathname),
+      
+      distractionFreeMode: false
+    })
+    gitalk.render('gitalk-container')
+  </script>
+</div>
+
+<div class="paging post-paging">
+  
+  <a class="left" href="https://mogeko.github.io/post/%E5%9C%A8%E4%BD%A0%E7%9A%84%E6%96%87%E7%AB%A0%E4%B8%AD%E6%B7%BB%E5%8A%A0-b%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91/" rel="prev">
+    <i class="fa fa-caret-left" aria-hidden="true"></i> <span>在你的文章中添加 B站的视频</span>
+  </a>
+  
+  
+  <a class="right" href="https://mogeko.github.io/post/hexo-%E7%BE%8E%E5%8C%96/" rel="next">
+    <span>Hexo 美化</span> <i class="fa fa-caret-right" aria-hidden="true"></i>
+  </a>
+  
+</div>
+
+<footer class="footer">
+  COPYRIGHT (C) <a href="https://blog.lulab.net">MOGEKO</a>. ALL RIGHTS RESERVED.
+</footer>
+
+</body>
+</html>
+

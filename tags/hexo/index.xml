@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hexo on Mogeko`s Blog</title>
+    <link>https://mogeko.github.io/tags/hexo/</link>
+    <description>Recent content in Hexo on Mogeko`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn-ZH</language>
+    <managingEditor>zhengjunyi@live.com</managingEditor>
+    <webMaster>zhengjunyi@live.com</webMaster>
+    <lastBuildDate>Sat, 09 Sep 2017 18:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://mogeko.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在你的文章中添加 B站的视频</title>
+      <link>https://mogeko.github.io/post/%E5%9C%A8%E4%BD%A0%E7%9A%84%E6%96%87%E7%AB%A0%E4%B8%AD%E6%B7%BB%E5%8A%A0-b%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91/</link>
+      <pubDate>Sat, 09 Sep 2017 18:00:00 +0800</pubDate>
+      <author>zhengjunyi@live.com</author>
+      <guid>https://mogeko.github.io/post/%E5%9C%A8%E4%BD%A0%E7%9A%84%E6%96%87%E7%AB%A0%E4%B8%AD%E6%B7%BB%E5%8A%A0-b%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/post/%E5%9C%A8%E4%BD%A0%E7%9A%84%E6%96%87%E7%AB%A0%E4%B8%AD%E6%B7%BB%E5%8A%A0-b%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91/logo.png&#34; alt=&#34;Logo&#34; /&gt;
+参考 &lt;a href=&#34;https://github.com/Z4Tech/hexo-tag-bilibili&#34;&gt;https://github.com/Z4Tech/hexo-tag-bilibili&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Hexo Hey 管理你的博客</title>
+      <link>https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-hexo-hey-%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Mon, 04 Sep 2017 18:00:00 +0800</pubDate>
+      <author>zhengjunyi@live.com</author>
+      <guid>https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-hexo-hey-%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;p&gt;在使用 Hexo Hey 之前，我一直在使用 VSCode（配合 vscode-hexo 插件）来管理博客。虽然可以很快捷 的&lt;code&gt;新建&lt;/code&gt;,&lt;code&gt;部署&lt;/code&gt;, &lt;code&gt;测试&lt;/code&gt;,&lt;code&gt;发布&lt;/code&gt; 博客 ，但还是很麻烦，离我理想中的博客平台还有一定的距离。
+我在知乎上发现了 Hexo Hey 这个插件，尝试了一下，虽然有各种问题，但确实很好用。
+因此决定写一篇文章来介绍一下如何&lt;code&gt;安装&lt;/code&gt;, &lt;code&gt;使用&lt;/code&gt; Hexo Hey。&lt;/p&gt;
+
+&lt;p&gt;切换换到 Hexo Hey 后最不习惯的地方就是没有了 VSCode 中那些方便的快捷键了。(ノへ￣、)[擦眼泪……]&lt;/p&gt;
+
+&lt;p&gt;与 Hexo Hey 比较相似的 Hexo 博客管理程序还有 &lt;a href=&#34;https://github.com/jaredly/hexo-admin&#34;&gt;Hexo Admin&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hexo 美化</title>
+      <link>https://mogeko.github.io/post/hexo-%E7%BE%8E%E5%8C%96/</link>
+      <pubDate>Mon, 28 Aug 2017 18:00:00 +0800</pubDate>
+      <author>zhengjunyi@live.com</author>
+      <guid>https://mogeko.github.io/post/hexo-%E7%BE%8E%E5%8C%96/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/post/hexo-%E7%BE%8E%E5%8C%96/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;虽然 NexT 的主题很漂亮，但问题是太受欢迎了，都快烂大街了。
+好在它是一个开源项目，我们可以通过修改它的代码来个性话你的博客。
+这篇教程要涉及到一些前端知识，可能没有那么 Novice friendly。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;因为涉及到对 NexT 代码的修改，搞不好，可能引起 Hexo 无法工作。所以强烈建议使用 Git 对 NexT 进行备份。&lt;/strong&gt;
+具体使用方法请自行 Google。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Github &#43; Hexo 建立自己的博客</title>
+      <link>https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-github-hexo-%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sun, 20 Aug 2017 18:00:00 +0800</pubDate>
+      <author>zhengjunyi@live.com</author>
+      <guid>https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-github-hexo-%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-github-hexo-%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/logo.jpg&#34; alt=&#34;Logo&#34; /&gt;
+自从我开了这个博客后，就有很多小伙伴问我怎么弄的？（好吧，其实就一个(*/ω＼*)）&lt;br /&gt;
+为了教她，也为了给各位看官一点参考。我写了这篇文章。&lt;br /&gt;
+因为她比较小白，所以这篇文章会写得比较详细。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

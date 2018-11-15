@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104502658-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-104502658-1');
+  </script>
+  
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>使用 Hugo &#43; GitHub Page 搭建个人博客  &middot; Mogeko`s Blog</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-github-page-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  <link rel="stylesheet" href="/css/custom.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/custom.js"></script>
+
+</head>
+
+<body>
+  <div class="top-scroll-bar"></div>
+  <div class="navbar">
+    <ul>
+      <li><a href="/" class="logo-title">HELLO,WORLD!</a></li>
+      <li><a href="/categories">CATEGORIES</a></li>
+      <li><a href="/tags">TAGS</a></li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="title">
+      <a href="/">
+        <img src="/images/logo.png" width="260px" height="48px" />
+      </a>
+    </div>
+
+
+<a href="https://mogeko.github.io/post/%E4%BD%BF%E7%94%A8-hugo-&#43;-github-page-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+  <div class="post-title">
+    <img src="/images/post-title-icon.png" />
+    <div class="post-meta">
+      <time>05 Aug 2018, 22:04</time>
+      <h1>使用 Hugo &#43; GitHub Page 搭建个人博客</h1>
+    </div>
+  </div>
+</a>
+
+
+
+<section class="post-content">
+  <p>正如你所看到的，本博客换了一个主题。但你们看不到的是，本博客将静态页面生成引擎换成了 <a href="https://github.com/gohugoio/hugo">Hugo</a></p>
+
+<p>Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应用应该被称作静态网站生成器。这类应用将 Markdown 文件和主题一起编译成由 HTML、CSS、JavaScript 组成的静态网页。然后上传到 GitHub 上，通过 GitHub 提供的静态页面托管服务 (GitHub Page) 进行访问。</p>
+
+<p>这里就写一篇文章来记录一下踩过的坑。</p>
+
+<p>本站目前使用的主题是 <a href="https://themes.gohugo.io/hugo-hello-programmer-theme/">Hello Programmer</a>，要配合 Hugo 使用。今后会写一篇文章来详细介绍。</p>
+
+<h1 id="准备工作">准备工作</h1>
+
+<ul>
+<li>一个 Github 账号。 &lt;- 我们要使用它提供的 Github Pages 服务来搭建博客 <a href="https://github.com/">https://github.com/</a></li>
+<li>Hugo &lt;- 博客框架，将 Markdown 文档渲染成网页 <a href="https://github.com/gohugoio/hugo">https://github.com/gohugoio/hugo</a></li>
+
+<li><p>Git &lt;- 用来发布博客 <a href="https://git-scm.com/">https://git-scm.com/</a></p>
+
+<h1 id="正文">正文</h1>
+
+<h2 id="安装-git">安装 Git</h2>
+
+<p><strong>如果已经装好了 Git 的同学可以跳过了</strong>
+与 Hexo 一样，Hugo 也需要使用 Git 进行发布。</p></li>
+</ul>
+
+<p>首先去官网下载各自的安装包。<a href="https://git-scm.com/">官网</a>
+Git 的官网是英文的，点 [Downloads for Windows] 下载。</p>
+
+<p>下载好后，双击安装包，就像安装普通软件一样安装。</p>
+
+<p>安装好后打开按 Win 键 + R，输入 cmd，回车。</p>
+
+<p>在弹出的黑框框中输入</p>
+
+<pre><code class="language-shell">git version
+</code></pre>
+
+<p>如果显示的是 Git 的版本号，说明安装成功</p>
+
+<p><img src="check.png" alt="check" /></p>
+
+<h2 id="注册-github-账号">注册 Github 账号</h2>
+
+<p>关于 GitHub 账号的注册方法，我在[以前的文章]()中有介绍过的，这里再写一遍</p>
+
+<p><strong>如果你已经拥有 GitHub 账号，请跳过</strong>
+打开 <a href="https://github.com/">https://github.com/</a> 分别填上 <code>名字</code>，<code>邮箱</code>，<code>密码</code> 点 <code>Sign up to GitHub</code></p>
+
+<p><img src="https://mogeko.github.io/2017/08/20/%E4%BD%BF%E7%94%A8-Github-Hexo-%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/github_1.png" alt="注册 Github 账号" />
+然后前往自己刚才填写的邮箱，点开 Github 发送给你的注册确认信，确认注册</p>
+
+<h2 id="创建代码库">创建代码库</h2>
+
+<p>登陆之后，点击页面右上角的加号，选择 <code>New repository</code></p>
+
+<p><img src="https://mogeko.github.io/2017/08/20/%E4%BD%BF%E7%94%A8-Github-Hexo-%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/github_2.png" alt="创建代码库" /></p>
+
+<p>在 <code>Repository name</code> 下填写 <code>[你的名字].github.io</code>（填写注册时的名字，英文），<code>Description (optional)</code> 下填写一些简单的描述（不写也没有关系）</p>
+
+<p><img src="https://mogeko.github.io/2017/08/20/%E4%BD%BF%E7%94%A8-Github-Hexo-%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/github_3.png" alt="创建代码库" /></p>
+
+<p>然后你会看到</p>
+
+<p><img src="https://mogeko.github.io/2017/08/20/%E4%BD%BF%E7%94%A8-Github-Hexo-%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/github_4.png" alt="创建代码库" /></p>
+
+<p>选择右侧的 Settings，向下拖动，直到看见 GitHub Pages</p>
+
+<p><img src="https://mogeko.github.io/2017/08/20/%E4%BD%BF%E7%94%A8-Github-Hexo-%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/github_5.png" alt="创建代码库" />
+点击 <code>Automatic page generator</code>，Github 将会自动替你创建出一个 gh-pages 的页面。 如果你的配置没有问题，那么大约 15 分钟之后，<code>[你的名字].github.io</code> 这个网址就可以正常访问了</p>
+
+<h2 id="hugo">Hugo</h2>
+
+<p>既然 Hugo 与 Hexo 一样，是用来渲染网页的。那为何我要放弃成熟稳定的 Hexo，换成 Hugo 呢？</p>
+
+<p>主要是出于以下考虑：</p>
+
+<ol>
+<li>Hugo 基于 go 开发，理论上来说比 Hexo 更快</li>
+<li>同样是得益于 go，Hugo 可以很轻松的被编译成二进制文件安装、运行。不必像 Hexo 一样依赖 Node.js，也不必安装一堆依赖。</li>
+<li><a href="https://themes.gohugo.io/hugo-hello-programmer-theme/">Hello Programmer</a> 好看啊！！！(其实以前的主题 (NexT) 也很好看，只是用了快两年了，有点审美疲劳了。想换个新感觉🤔)</li>
+</ol>
+
+<p>但同时，使用 Hugo也是有风险的：</p>
+
+<ol>
+<li>Hugo 更年轻，sometimes naive，无论功能性还是稳定性都不如 Hexo</li>
+<li>适用于 Hugo 的主题比较少，也没有像 NexT 那样功能强大，成熟稳定的主题</li>
+<li>开工前我最担心的就是评论系统。后来证实，果然是个大坑 /<em>(:з」∠)/</em></li>
+</ol>
+
+<p>综上所述，想要用 Hugo 的话一定要做好踩坑的心理准备，还要记得千万要做好备份。</p>
+
+<h3 id="安装">安装</h3>
+
+<p>在<a href="https://github.com/gohugoio/hugo/releases">这个页面</a>选择适合的版本下载就可以了</p>
+
+<p>下载好后解压，将解压出来的可执行文件 (格式为 .exe)，放到自己喜欢的目录下。直接可以使用，不需要安装</p>
+
+<p>但要记住一定要将你选择的文件夹路径加入到环境变量 <code>PATH</code> 中。</p>
+
+<h4 id="如何设置环境变量-path">如何设置环境变量 <code>PATH</code></h4>
+
+<h4 id="使用-chocolatey-安装">使用 Chocolatey 安装</h4>
+
+<p>Hugo 也提供了 Chocolatey 安装包，用户也可以通过 Chocolatey 安装 Hugo。</p>
+
+<p>使用管理员权限打开 cmd，然后执行</p>
+
+<pre><code class="language-shell">choco install hugo -y
+</code></pre>
+
+<h3 id="初始化">初始化</h3>
+
+<p>下面，初始化我们的 Hugo
+我们首先需要选择一个路径来存放我们的博客，在你选好的路径下执行</p>
+
+<pre><code class="language-shell">hugo new site myBlog
+</code></pre>
+
+<p>这条命令会创建一个名为 <code>myBlog</code> (你也可以使用你喜欢的任意名字)  的文件夹来存放你的博客。执行 <code>cd myBlog</code> 进入文件夹。</p>
+
+<p>此时的目录结构应该是这样的</p>
+
+<blockquote>
+<p>.<br />
+├── archetypes # 内容类型，在创建新内容时自动生成内容的配置<br />
+├── content # 网站内容，Markdown 文件<br />
+├── data<br />
+├── layouts # 网站模版，选择主题后会将主题中的 <code>layouts</code> 文件夹中的内容复制到此文件夹中<br />
+├── static # 包含 CSS、JavaScript、Fonts、media 等，决定网站的外观。选择主题后会将主题中的 <code>ststic</code> 文件夹中的内容复制到此文件夹中<br />
+├── themes # 存放主题文件<br />
+└── config.toml # 网站的配置文件</p>
+</blockquote>
+
+<h3 id="安装主题">安装主题</h3>
+
+<p>本站使用的主题是 <a href="https://themes.gohugo.io/hugo-hello-programmer-theme/">Hello Programmer</a></p>
+
+<p>在博客根目录下执行命令</p>
+
+<pre><code class="language-shell">cd themes
+git clone https://github.com/lubang/hugo-hello-programmer-theme
+</code></pre>
+
+<h3 id="创建新页面">创建新页面</h3>
+
+<p>创建一个新页面</p>
+
+<pre><code class="language-shell">hugo new about.md
+</code></pre>
+
+<p>此时 <code>content</code> 文件夹下就多了一个 <code>about.md</code> 文件，打开文件就可以看到时间、文件名等信息已经自动生成了</p>
+
+<pre><code>---
+title: &quot;About&quot;
+date: 2018-08-05T20:56:47+08:00
+draft: true
+---
+
+</code></pre>
+
+<p>两条 <code>---</code> 间的信息是文章的配置信息，有的信息是自动生成的 (如：<code>title</code>、<code>date</code> 等)，简单介绍以下各项配置</p>
+
+<blockquote>
+<p># 以下项目是自动生成的<br />
+<code>title:</code> # 文章标题<br />
+<code>date:</code> # 写作时间<br />
+<code>draft:</code> # 是否为草稿，如果为 <code>true</code> 需要在命令中加入 <code>--buildDrafts</code> 参数才会生成这个文档</p>
+
+<p># 以下项目需要自行添加<br />
+<code>description:</code> # 描述<br />
+<code>tags:</code> # 标签，用于文章分类</p>
+</blockquote>
+
+<p><code>自动生成</code> 和 <code>执行添加</code> 的内容并不是绝对的，你可以根据自己的喜好配置模板文件 <code>archetypes/default.md</code></p>
+
+<h3 id="配置-config-toml">配置 <code>config.toml</code></h3>
+
+<p><code>config.toml</code> 用于存放整个网站的配置信息。</p>
+
+<p>以下是我整理的一个 <code>config.toml</code> 模板，按照需求更改</p>
+
+<pre><code class="language-toml">baseURL = &quot;https://mogeko.github.io&quot; # &lt;head&gt; 里面的 baseurl 信息，填你的博客地址
+ languageCode = &quot;cn-ZH&quot; # 博客的语言。有点主题没有做国际化优化，菜单等没有翻译成中文就不要太较真了
+title = &quot;Mogeko`s Blog&quot; # 浏览器的标题
+copyright = &quot;&quot; # 版权说明
+theme = &quot;HelloProgrammer&quot; # 主题 (需要自己下载)
+
+# Google 统计
+googleAnalytics = &quot;UA-104502658-1&quot; # Google 统计 id
+
+# 代码高亮
+# Hugo 使用内置的 Chroma 提供代码高亮，详情：http://gohugo.io/content-management/syntax-highlighting/
+#pygmentsUseClassic=true # 使用 Pygments 提供代码高亮
+pygmentsCodeFences = false # 开启代码高亮
+pygmentsStyle = &quot;monokai&quot; # 代码高亮主题，可供选择的主题有：native、vim、fruity、monokai
+pygmentsUseClasses=true # 使用自定义的代码高亮样式
+PygmentsCodefencesGuessSyntax = true
+PygmentsOptions = &quot;linenos=table&quot;
+
+[author]
+  author = &quot;Mogeko&quot; # 作者名字
+  email = &quot;zhengjunyi@live.com&quot;
+
+[params]
+  since = &quot;2017&quot; # 站点建立时间
+  copyrightyear = &quot;2018&quot; # Copyright 年份 (不好解释，反正填今年就对了)
+  description = &quot;Mogeko 的个人博客&quot; # (Meta) 描述
+
+  # 以下设置需要自己改代码，详细步骤我以后会出文章详细说明的
+  ## 一些全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能，在 archetypes/default.md 查看更多信息。
+  toc = false # 是否开启目录
+  #mathjax = false # 是否使用mathjax（数学公式）
+  #contentCopyright = '&lt;a rel=&quot;license noopener&quot; href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/&quot; target=&quot;_blank&quot;&gt;CC BY-NC-ND 4.0&lt;/a&gt;'
+
+  ## 评论系统。
+  [params.gitalk] # Github: https://github.com/gitalk/gitalk
+    clientId = &quot;936cecdd2ab935870ca5&quot; # Your client ID
+    clientSecret = &quot;39cfc7a3cb9a974b6609f3fdaa637e2917e3e40a&quot; # Your client secret
+    repo = &quot;mogeko.github.io&quot; # The repo to store comments
+    owner = &quot;Mogeko&quot; # Your GitHub ID
+    admin= &quot;Mogeko&quot; # Required. Github repository owner and collaborators. (Users who having write access to this repository)
+    id= &quot;location.pathname&quot; # The unique id of the page.
+    labels= &quot;gitalk&quot; # Github issue labels. If you used to use Gitment, you can change it
+    perPage= 15 # Pagination size, with maximum 100.
+    pagerDirection= &quot;last&quot; # Comment sorting direction, available values are 'last' and 'first'.
+    createIssueManually= false # If it is 'false', it is auto to make a Github issue when the administrators login.
+    distractionFreeMode= false # Enable hot key (cmd|ctrl + enter) submit comment.
+
+</code></pre>
+
+<h3 id="生成网站">生成网站</h3>
+
+<p>设置完 <code>config.toml</code> 后我们执行以下命令</p>
+
+<pre><code class="language-shell">hugo server --buildDrafts -w
+</code></pre>
+
+<p>此时你就可以在 <code>http://localhost:1313</code> 访问到你的博客了</p>
+
+<blockquote>
+<p>简单介绍一下两个参数：
+- <code>--buildDrafts</code>: 生成被标记为 「草稿」 的文档
+- <code>-w</code>: 监控更改，如果发生更改直接显示到博客上 (非常有用，这也是我最喜欢的一点特性了)</p>
+</blockquote>
+
+<p>但此时只能在本地访问 (相当于预览博客，如果与期望值不符，可以随时更改)，如果想发布到 <code>Github Page</code> 上需要先将文章配置信息中的 <code>draft:</code> 改为 <code>false</code>
+然后执行命令</p>
+
+<pre><code class="language-shell">hugo
+</code></pre>
+
+<p>此时你的博客目录下会多出一个 <code>public</code> 文件夹来。这便是 Hugo 生成的网站</p>
+
+<h3 id="发布">发布</h3>
+
+<p>不像 Hexo，Hugo 并没有提供自动发布到 <code>GitHub Page</code> 的功能。需要将 <code>public</code> 中的内容手动上传到 Github 上。</p>
+
+<p>首先执行命令 <code>cd public</code> 进入到 <code>public</code> 文件夹中<br />
+然后执行</p>
+
+<pre><code class="language-shell">git init
+git remote add origin https://github.com/[Github 用户名]/[Github 用户名].github.io.git
+git add -A
+git commit -m &quot;[介绍，随便写点什么，比如日期]&quot;
+git push -u origin master
+</code></pre>
+
+<p>第一次发布需要执行的命令多一点，以后发布只需要执行</p>
+
+<pre><code class="language-shell">git add -A
+git commit -m &quot;[介绍，随便写点什么，比如日期]&quot;
+git push -u origin master
+</code></pre>
+</section>
+
+<div class="share">
+  <a href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fmogeko.github.io%2fpost%2f%25E4%25BD%25BF%25E7%2594%25A8-hugo-%2b-github-page-%25E6%2590%25AD%25E5%25BB%25BA%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258D%259A%25E5%25AE%25A2%2f&t=%e4%bd%bf%e7%94%a8%20Hugo%20%2b%20GitHub%20Page%20%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fmogeko.github.io%2fpost%2f%25E4%25BD%25BF%25E7%2594%25A8-hugo-%2b-github-page-%25E6%2590%25AD%25E5%25BB%25BA%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258D%259A%25E5%25AE%25A2%2f&text=%e4%bd%bf%e7%94%a8%20Hugo%20%2b%20GitHub%20Page%20%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fmogeko.github.io%2fpost%2f%25E4%25BD%25BF%25E7%2594%25A8-hugo-%2b-github-page-%25E6%2590%25AD%25E5%25BB%25BA%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258D%259A%25E5%25AE%25A2%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fmogeko.github.io%2fpost%2f%25E4%25BD%25BF%25E7%2594%25A8-hugo-%2b-github-page-%25E6%2590%25AD%25E5%25BB%25BA%25E4%25B8%25AA%25E4%25BA%25BA%25E5%258D%259A%25E5%25AE%25A2%2f&title=%e4%bd%bf%e7%94%a8%20Hugo%20%2b%20GitHub%20Page%20%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+</div>
+
+<div class="post-meta-code">
+  <div class="desc">
+    public string description() {
+    <div class="desc">val author = "
+    
+        <a href="mailto:zhengjunyi@live.com"></a>
+    ";
+    </div>
+    
+    }
+  </div>
+  <div class="desc">
+    public string tags() {
+      <div class="desc">
+        val tags = [
+        
+        ];
+      </div>
+    }
+  </div>
+</div>
+
+
+<div class="post-comment">
+    
+      
+
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+  <script type="text/javascript">
+    const gitalk = new Gitalk({
+      clientID: '936cecdd2ab935870ca5',
+      clientSecret: '39cfc7a3cb9a974b6609f3fdaa637e2917e3e40a',
+      repo: 'mogeko.github.io',
+      owner: 'Mogeko',
+      admin: 'Mogeko'.split(','),
+      pagerDirection: 'last',
+      id: md5(window.location.pathname),
+      
+      distractionFreeMode: false
+    })
+    gitalk.render('gitalk-container')
+  </script>
+</div>
+
+<div class="paging post-paging">
+  
+  
+  <a class="right" href="https://mogeko.github.io/post/%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA-kms-%E6%BF%80%E6%B4%BB%E6%9C%8D%E5%8A%A1/" rel="next">
+    <span>本地搭建 KMS 激活服务</span> <i class="fa fa-caret-right" aria-hidden="true"></i>
+  </a>
+  
+</div>
+
+<footer class="footer">
+  COPYRIGHT (C) <a href="https://blog.lulab.net">MOGEKO</a>. ALL RIGHTS RESERVED.
+</footer>
+
+</body>
+</html>
+

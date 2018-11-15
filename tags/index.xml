@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Mogeko`s Blog</title>
+    <link>https://mogeko.github.io/tags/</link>
+    <description>Recent content in Tags on Mogeko`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn-ZH</language>
+    <managingEditor>zhengjunyi@live.com</managingEditor>
+    <webMaster>zhengjunyi@live.com</webMaster>
+    <lastBuildDate>Mon, 04 Dec 2017 18:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://mogeko.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android</title>
+      <link>https://mogeko.github.io/tags/android/</link>
+      <pubDate>Mon, 04 Dec 2017 18:00:00 +0800</pubDate>
+      <author>zhengjunyi@live.com</author>
+      <guid>https://mogeko.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hexo</title>
+      <link>https://mogeko.github.io/tags/hexo/</link>
+      <pubDate>Sat, 09 Sep 2017 18:00:00 +0800</pubDate>
+      <author>zhengjunyi@live.com</author>
+      <guid>https://mogeko.github.io/tags/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kinde</title>
+      <link>https://mogeko.github.io/tags/kinde/</link>
+      <pubDate>Sat, 30 Sep 2017 18:00:00 +0800</pubDate>
+      <author>zhengjunyi@live.com</author>
+      <guid>https://mogeko.github.io/tags/kinde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kindle</title>
+      <link>https://mogeko.github.io/tags/kindle/</link>
+      <pubDate>Sat, 30 Sep 2017 18:00:00 +0800</pubDate>
+      <author>zhengjunyi@live.com</author>
+      <guid>https://mogeko.github.io/tags/kindle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Steam</title>
+      <link>https://mogeko.github.io/tags/steam/</link>
+      <pubDate>Wed, 06 Dec 2017 18:00:00 +0800</pubDate>
+      <author>zhengjunyi@live.com</author>
+      <guid>https://mogeko.github.io/tags/steam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>https://mogeko.github.io/tags/tools/</link>
+      <pubDate>Wed, 07 Feb 2018 18:00:00 +0800</pubDate>
+      <author>zhengjunyi@live.com</author>
+      <guid>https://mogeko.github.io/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>https://mogeko.github.io/tags/ubuntu/</link>
+      <pubDate>Mon, 04 Jun 2018 18:00:00 +0800</pubDate>
+      <author>zhengjunyi@live.com</author>
+      <guid>https://mogeko.github.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://mogeko.github.io/tags/windows/</link>
+      <pubDate>Thu, 02 Aug 2018 18:00:00 +0800</pubDate>
+      <author>zhengjunyi@live.com</author>
+      <guid>https://mogeko.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
