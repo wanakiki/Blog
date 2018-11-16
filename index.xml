@@ -106,7 +106,7 @@
 &lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[params]
   enableGitalk = true
 
-[Params.Gitalk] 
+[params.gitalk] 
     clientID = &amp;quot;[Client ID]&amp;quot; # Your client ID
     clientSecret = &amp;quot;[Client Secret]&amp;quot; # Your client secret
     repo = &amp;quot;mogeko.github.io&amp;quot; # The repo to store comments
