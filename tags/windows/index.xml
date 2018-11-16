@@ -13,10 +13,10 @@
     
     <item>
       <title>本地搭建 KMS 激活服务</title>
-      <link>https://mogeko.github.io/2018/0018/</link>
+      <link>https://mogeko.github.io/2018/017/</link>
       <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/0018/</guid>
+      <guid>https://mogeko.github.io/2018/017/</guid>
       <description>&lt;p&gt;前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。
 这个方法很好，但是也存在问题。KMS 服务激活一次可以正常使用 180 天，过期后自动给你续 180 天，如此重复。如果 KMS 激活服务器一直运行着还好，但如果服务器挂掉了呢？
 要解决这个问题，最直接的方法就是让 KMS 激活服务器保持稳定不宕机，这显然是不现实的。毕竟是私人搭的服务器，别免费给你用，不稳定也是情有可原的。所以我们不妨换个思路：&lt;strong&gt;既然别人的服务器不稳定，我们为何不在本地自己搭一个呢？&lt;/strong&gt;
@@ -27,11 +27,11 @@
     
     <item>
       <title>WSL 的安装与使用</title>
-      <link>https://mogeko.github.io/2018/0017/</link>
+      <link>https://mogeko.github.io/2018/016/</link>
       <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/0017/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/0017/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
+      <guid>https://mogeko.github.io/2018/016/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/016/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;16 年 12 月份的时候，微软发布了 Windows Subsystem for Linux (WSL)，通过子系统的方式运行了一个完整的 Linux 系统。使得在 Windows 中使用 Linux 中的工具链成为可能。(Windows 果然是最好的 Linux 发行版)&lt;/p&gt;
 
@@ -44,31 +44,31 @@
     
     <item>
       <title>使用 Android 手机搭建 KMS 激活服务器</title>
-      <link>https://mogeko.github.io/2018/0016/</link>
+      <link>https://mogeko.github.io/2018/015/</link>
       <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/0016/</guid>
+      <guid>https://mogeko.github.io/2018/015/</guid>
       <description>&lt;p&gt;经测试，&lt;strong&gt;以前的方法已经失效了。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;今天就教大家一个新的方法在 Android 手机上安装 KMS 激活服务。而且新方法&lt;strong&gt;不需要 Magisk 框架&lt;/strong&gt;，相比于原来的方法更简单安全。&lt;/p&gt;
 
-&lt;p&gt;&lt;del&gt;&lt;strong&gt;需要 Magisk 框架&lt;/strong&gt; -&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2018/0011/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Magisk 介绍与简易安装教程&lt;/a&gt;&lt;del/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;&lt;strong&gt;需要 Magisk 框架&lt;/strong&gt; -&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2018/010/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Magisk 介绍与简易安装教程&lt;/a&gt;&lt;del/&gt;&lt;/p&gt;
 
 &lt;p&gt;老师让做 PPT 但电脑里没装 Office，怎么办？
 答案当然是买一个！
 但对于没钱买正版的同学怎么办呢？
 其实，可以下载批量激活版（VOL 版）的 Office，然后用 KMS 激活。
 今天就教大家如何用手机搭建 KMS 激活服务器来激活 VOL 版的 Windows 或 Office。（零售版（Retail 版）的 Office 可以用&lt;a href=&#34;https://github.com/Mogeko/mogeko.github.io/releases/download/2018%2F3%2F5/Retail2VOL.cmd&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;脚本&lt;/a&gt;转换为 VOL 版，然后作为 VOL 版 Office 激活）
-如果不知道你安装的 Office 是哪个版本，可以用以下方法查看。-&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2018/0016/#%E5%88%A4%E6%96%AD%E4%BD%A0%E5%AE%89%E8%A3%85%E7%9A%84-Office-%E6%98%AF%E5%93%AA%E4%B8%AA%E7%89%88%E6%9C%AC&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;判断你安装的 Office 是哪个版本&lt;/a&gt;&lt;/p&gt;</description>
+如果不知道你安装的 Office 是哪个版本，可以用以下方法查看。-&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2018/015/#%E5%88%A4%E6%96%AD%E4%BD%A0%E5%AE%89%E8%A3%85%E7%9A%84-Office-%E6%98%AF%E5%93%AA%E4%B8%AA%E7%89%88%E6%9C%AC&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;判断你安装的 Office 是哪个版本&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>使用 KMS 激活 Windows / Office</title>
-      <link>https://mogeko.github.io/2018/0015/</link>
+      <link>https://mogeko.github.io/2018/014/</link>
       <pubDate>Fri, 02 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/0015/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/0015/logo.jpg&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
+      <guid>https://mogeko.github.io/2018/014/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/014/logo.jpg&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;事实上，我一向不鼓励使用盗版系统 / 软件的。但对于穷人 (学生党) 来说，需要使用相关软件却买不起正版，使用盗版也是没办法的事情。
 对于想使用 Windows / Office 却没有足够资金购买正版的用户来说，很多人会选择 &lt;code&gt;KMSpico&lt;/code&gt; 等激活工具进行激活，但事实上，大多数这类工具都带有病毒，轻则劫持主页，重则加密硬盘 (勒索病毒)。
@@ -79,19 +79,19 @@
 &lt;p&gt;当然，你也可以&lt;strong&gt;自建 KMS 激活服务器&lt;/strong&gt;：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://mogeko.github.io/2018/0016/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;使用 Android 手机搭建 KMS 激活服务器&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://mogeko.github.io/2018/015/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;使用 Android 手机搭建 KMS 激活服务器&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://mogeko.github.io/2018/0018/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;本地搭建 KMS 激活服务&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://mogeko.github.io/2018/017/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;本地搭建 KMS 激活服务&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     
     <item>
       <title>UAC 白名单</title>
-      <link>https://mogeko.github.io/2017/0002/</link>
+      <link>https://mogeko.github.io/2017/001/</link>
       <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/0002/</guid>
-      <description>&lt;p&gt;好像废话有点多&lt;em&gt;(:з)∠)&lt;/em&gt; -&amp;gt;-&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2017/0002/#Start&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;直接开始的传送门&lt;/a&gt;&lt;/p&gt;
+      <guid>https://mogeko.github.io/2017/001/</guid>
+      <description>&lt;p&gt;好像废话有点多&lt;em&gt;(:з)∠)&lt;/em&gt; -&amp;gt;-&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2017/001/#Start&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;直接开始的传送门&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;一直觉得微软为 Windows 引入 UAC 是个明智的选择，它能在一定程度上减少 Windows 平台过于开放，流氓软件肆意横行的局面。
 国内的情况比较特殊，因为很多人根本不知道那是什么，无脑点 “允许” 。
@@ -114,11 +114,11 @@
     
     <item>
       <title>安装 Ubuntu 双系统</title>
-      <link>https://mogeko.github.io/2017/0001/</link>
+      <link>https://mogeko.github.io/2017/000/</link>
       <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/0001/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/0001/logo.jpg&#34; alt=&#34;Logo&#34; /&gt;
+      <guid>https://mogeko.github.io/2017/000/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/000/logo.jpg&#34; alt=&#34;Logo&#34; /&gt;
 在很久以前就想试一试Linux了，一直没有实践。一是觉得太麻烦，二是怕把电脑弄坏。后来实践了一次后发现，其实并没有想象中那么难，这是一个完全独立的系统，与隔壁的Windows半毛钱关系都没有。把引导搞定就不怕了。&lt;/p&gt;
 
 &lt;p&gt;另外，如果想长期使用；

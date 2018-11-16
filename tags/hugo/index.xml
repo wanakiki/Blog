@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Mogeko`s Blog</title>
+    <link>https://mogeko.github.io/tags/hugo/</link>
+    <description>Recent content in Hugo on Mogeko`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 16 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mogeko.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>为 Hugo 添加 Gitalk 评论系统</title>
+      <link>https://mogeko.github.io/2018/022/</link>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/022/</guid>
+      <description>Hugo 是一个强大的静态网页生成器，使用 go 开发。速度贼快，还有 “时时预览” 等特性。不过 Hugo 还比较年轻，没有像 NexT 那样功能强大，成熟稳定的主题。所以很多东西需要自己动手撸。就例如评论系统。
+关于 Gitalk  官方网址： https://github.com/gitalk/gitalk/ 在线示例： https://gitalk.github.io/  Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说, 只要 Github 不倒闭，你的评论系统就不会被关闭。
+为 Hugo 添加 Gitalk 评论系统 本博客使用的主题是: Leavelt
+不同主题可能有所区别，但原理都是类似的
+原理 众所周知，Hugo 会将 Markdown 文档 按照 主题 (包括 HTML 模板、CSS、JavaScript 等) 编译成静态网页
+那么我们只需要将 Gitalk 作为一个 &amp;lt;div&amp;gt; 插入到 HTML 模板中，然后在 config.toml 中添加相关配置，就可以实现 Gitalk 评论系统了
+创建 Github Application 首先要去 GitHub 上创建一个 Github Application</description>
+    </item>
+    
+    <item>
+      <title>使用 Hugo &#43; GitHub Page 搭建个人博客</title>
+      <link>https://mogeko.github.io/2018/018/</link>
+      <pubDate>Sun, 05 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/018/</guid>
+      <description>&lt;p&gt;正如你所看到的，本博客换了一个主题。但你们看不到的是，本博客将静态页面生成引擎换成了 &lt;a href=&#34;https://github.com/gohugoio/hugo&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应用应该被称作静态网站生成器。这类应用将 Markdown 文件和主题一起编译成由 HTML、CSS、JavaScript 组成的静态网页。然后上传到 GitHub 上，通过 GitHub 提供的静态页面托管服务 (GitHub Page) 进行访问。&lt;/p&gt;
+
+&lt;p&gt;这里就写一篇文章来记录一下踩过的坑。&lt;/p&gt;
+
+&lt;p&gt;本站目前使用的主题是 &lt;a href=&#34;https://themes.gohugo.io/hugo-hello-programmer-theme/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Hello Programmer&lt;/a&gt;，要配合 Hugo 使用。今后会写一篇文章来详细介绍。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

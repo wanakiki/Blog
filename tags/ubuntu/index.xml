@@ -13,11 +13,11 @@
     
     <item>
       <title>WSL 的安装与使用</title>
-      <link>https://mogeko.github.io/2018/0017/</link>
+      <link>https://mogeko.github.io/2018/016/</link>
       <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/0017/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/0017/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
+      <guid>https://mogeko.github.io/2018/016/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/016/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;16 年 12 月份的时候，微软发布了 Windows Subsystem for Linux (WSL)，通过子系统的方式运行了一个完整的 Linux 系统。使得在 Windows 中使用 Linux 中的工具链成为可能。(Windows 果然是最好的 Linux 发行版)&lt;/p&gt;
 
@@ -30,11 +30,11 @@
     
     <item>
       <title>如何将 Ubuntu 升级到 17.10</title>
-      <link>https://mogeko.github.io/2017/0010/</link>
+      <link>https://mogeko.github.io/2017/009/</link>
       <pubDate>Sat, 02 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/0010/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/0010/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
+      <guid>https://mogeko.github.io/2017/009/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/009/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Ubuntu 17.10 已经发布了一段时间了，作为 18.04 的预览（热）版。带来了一大波新特性。&lt;/p&gt;
 
@@ -45,11 +45,11 @@
     
     <item>
       <title>安装 Ubuntu 双系统</title>
-      <link>https://mogeko.github.io/2017/0001/</link>
+      <link>https://mogeko.github.io/2017/000/</link>
       <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/0001/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/0001/logo.jpg&#34; alt=&#34;Logo&#34; /&gt;
+      <guid>https://mogeko.github.io/2017/000/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/000/logo.jpg&#34; alt=&#34;Logo&#34; /&gt;
 在很久以前就想试一试Linux了，一直没有实践。一是觉得太麻烦，二是怕把电脑弄坏。后来实践了一次后发现，其实并没有想象中那么难，这是一个完全独立的系统，与隔壁的Windows半毛钱关系都没有。把引导搞定就不怕了。&lt;/p&gt;
 
 &lt;p&gt;另外，如果想长期使用；

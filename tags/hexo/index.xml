@@ -13,20 +13,20 @@
     
     <item>
       <title>在你的文章中添加 B站的视频</title>
-      <link>https://mogeko.github.io/2017/0006/</link>
+      <link>https://mogeko.github.io/2017/005/</link>
       <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/0006/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/0006/logo.png&#34; alt=&#34;Logo&#34; /&gt;
+      <guid>https://mogeko.github.io/2017/005/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/005/logo.png&#34; alt=&#34;Logo&#34; /&gt;
 参考 &lt;a href=&#34;https://github.com/Z4Tech/hexo-tag-bilibili&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/Z4Tech/hexo-tag-bilibili&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>使用 Hexo Hey 管理你的博客</title>
-      <link>https://mogeko.github.io/2017/0005/</link>
+      <link>https://mogeko.github.io/2017/004/</link>
       <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/0005/</guid>
+      <guid>https://mogeko.github.io/2017/004/</guid>
       <description>&lt;p&gt;在使用 Hexo Hey 之前，我一直在使用 VSCode（配合 vscode-hexo 插件）来管理博客。虽然可以很快捷 的&lt;code&gt;新建&lt;/code&gt;,&lt;code&gt;部署&lt;/code&gt;, &lt;code&gt;测试&lt;/code&gt;,&lt;code&gt;发布&lt;/code&gt; 博客 ，但还是很麻烦，离我理想中的博客平台还有一定的距离。
 我在知乎上发现了 Hexo Hey 这个插件，尝试了一下，虽然有各种问题，但确实很好用。
 因此决定写一篇文章来介绍一下如何&lt;code&gt;安装&lt;/code&gt;, &lt;code&gt;使用&lt;/code&gt; Hexo Hey。&lt;/p&gt;
@@ -38,11 +38,11 @@
     
     <item>
       <title>Hexo 美化</title>
-      <link>https://mogeko.github.io/2017/0004/</link>
+      <link>https://mogeko.github.io/2017/003/</link>
       <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/0004/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/0004/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
+      <guid>https://mogeko.github.io/2017/003/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/003/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;虽然 NexT 的主题很漂亮，但问题是太受欢迎了，都快烂大街了。
 好在它是一个开源项目，我们可以通过修改它的代码来个性话你的博客。
@@ -54,11 +54,11 @@
     
     <item>
       <title>使用 Hexo &#43; GitHub 建立自己的博客</title>
-      <link>https://mogeko.github.io/2017/0003/</link>
+      <link>https://mogeko.github.io/2017/002/</link>
       <pubDate>Sun, 20 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/0003/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/0003/logo.jpg&#34; alt=&#34;Logo&#34; /&gt;
+      <guid>https://mogeko.github.io/2017/002/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/002/logo.jpg&#34; alt=&#34;Logo&#34; /&gt;
 自从我开了这个博客后，就有很多小伙伴问我怎么弄的？（好吧，其实就一个(*/ω＼*)）
 为了教她，也为了给各位看官一点参考。我写了这篇文章。
 因为她比较小白，所以这篇文章会写得比较详细。&lt;/p&gt;</description>

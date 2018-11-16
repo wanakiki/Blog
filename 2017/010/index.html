@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Mogeko">
+  
+  
+  
+  <link rel="prev" href="https://mogeko.github.io/2017/009/" />
+  <link rel="next" href="https://mogeko.github.io/2017/011/" />
+  <link rel="canonical" href="https://mogeko.github.io/2017/010/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           神奇的 Magisk | Mogeko`s Blog
+       
+  </title>
+  <meta name="title" content="神奇的 Magisk | Mogeko`s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://mogeko.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "神奇的 Magisk",
+    "headline" : "神奇的 Magisk",
+    "description" : "<p><img src="https://mogeko.github.io/images/010/Magisk_Logo.png"  alt="Logo"  style="border:0" /></p>
+
+<p>今天为大家介绍一款神奇的 Android 第三方接口 —— Magisk</p>
+
+<h1 id="root-玩家与厂商间的博弈">Root —— 玩家与厂商间的博弈</h1>
+
+<p>Android 从诞生之日起就高举着开源的大旗，这也是它成功的原因之一。而它的开放性也成功的吸引到了一大批爱折腾的人，从而诞生出了 root（此处特制 Android 中的 root）。</p>
+
+<p>根据 <a href="https://zh.wikipedia.org/wiki/Root#.E8.A8.88.E7.AE.97.E6.A9.9F.E6.87.89.E7.94.A8" rel="nofollow noreferrer" target="_blank">Wikipedia</a> 的释义，root 指的是使用户取得 Android 操作系统的超级用户（Super User）许可权的技术。用户通过 root，可以越过手机制造商的限制，卸载手机制造商预装在手机中某些应用，以及运行一些需要超级用户权限的应用程序。同时,root 也可能会让手机变得“不安全”（并不是说 root 使手机变得不安全，而是一些用户的使用习惯会使 root 后的手机变得危险）。</p>
+
+<p>但是从棉花糖（Android 6.0）开始，Google 基本阻止了以前版本中最流行的 root 方法 —— 即，将 su守护程序 放置到 /system 分区，并在启动时取得所需的权限。道高一尺，魔高一丈，于是就出现了 systemless 的 root 方式，因为它不采取任何方式修改 /system 分区。</p>
+
+<p>出于增加安全性的考虑，Google 推出了 SafetyNet 这样的检测，以确保 Android Pay 等一些 App 的安全运行，玩家不得不在 root 权限和一些有价值的 App 之间作出选择。</p>
+
+<p>这个时候 Magisk 诞生了。</p>",
+    "inLanguage" : "zh-cn",
+    "author" : "Mogeko",
+    "creator" : "Mogeko",
+    "publisher": "Mogeko",
+    "accountablePerson" : "Mogeko",
+    "copyrightHolder" : "Mogeko",
+    "copyrightYear" : "2017",
+    "datePublished": "2017-12-02 18:00:00 &#43;0800 &#43;0800",
+    "dateModified" : "2017-12-02 18:00:00 &#43;0800 &#43;0800",
+    "url" : "https://mogeko.github.io/2017/010/",
+    "wordCount" : "292",
+    "keywords" : [ "Android","Tools", "Mogeko`s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.github.io">Mogeko`s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.github.io">Mogeko`s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">神奇的 Magisk</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://mogeko.github.io" rel="author">Mogeko</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2017-12-02 itemprop="datePublished">December 2, 2017</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="https://mogeko.github.io/images/010/Magisk_Logo.png"  alt="Logo"  style="border:0" /></p>
+
+<p>今天为大家介绍一款神奇的 Android 第三方接口 —— Magisk</p>
+
+<h1 id="root-玩家与厂商间的博弈">Root —— 玩家与厂商间的博弈</h1>
+
+<p>Android 从诞生之日起就高举着开源的大旗，这也是它成功的原因之一。而它的开放性也成功的吸引到了一大批爱折腾的人，从而诞生出了 root（此处特制 Android 中的 root）。</p>
+
+<p>根据 <a href="https://zh.wikipedia.org/wiki/Root#.E8.A8.88.E7.AE.97.E6.A9.9F.E6.87.89.E7.94.A8" rel="nofollow noreferrer" target="_blank">Wikipedia</a> 的释义，root 指的是使用户取得 Android 操作系统的超级用户（Super User）许可权的技术。用户通过 root，可以越过手机制造商的限制，卸载手机制造商预装在手机中某些应用，以及运行一些需要超级用户权限的应用程序。同时,root 也可能会让手机变得“不安全”（并不是说 root 使手机变得不安全，而是一些用户的使用习惯会使 root 后的手机变得危险）。</p>
+
+<p>但是从棉花糖（Android 6.0）开始，Google 基本阻止了以前版本中最流行的 root 方法 —— 即，将 su守护程序 放置到 /system 分区，并在启动时取得所需的权限。道高一尺，魔高一丈，于是就出现了 systemless 的 root 方式，因为它不采取任何方式修改 /system 分区。</p>
+
+<p>出于增加安全性的考虑，Google 推出了 SafetyNet 这样的检测，以确保 Android Pay 等一些 App 的安全运行，玩家不得不在 root 权限和一些有价值的 App 之间作出选择。</p>
+
+<p>这个时候 Magisk 诞生了。</p>
+
+<h1 id="magisk">Magisk</h1>
+
+<h2 id="什么是-magisk">什么是 Magisk</h2>
+
+<p>Magisk 是出自一位台湾学生 <a href="https://forum.xda-developers.com/member.php?u=4470081" rel="nofollow noreferrer" target="_blank">@topjohnwu</a> 开发的 Android 框架，是一个通用的第三方 systemless 接口，通过这样的方式实现一些较强大的功能。</p>
+
+<p>看似很简单的一个框架，甚至与大名鼎鼎的 Xposed 框架在功能性上有点重复。很多人批评 Magisk的模块太少了，想替代 Xposed 根本不可能（在那个 Xposed Framework for Android 7.0 难产的时代，很多人将 Magisk 看是做是 Xposed 的替代品）。这是不正确的，因为 Magisk 从来没有想过要代替 Xposed ，Magisk 与 Xposed 是可以互相兼容的，你甚至可以通过 Magisk 来安装 Xposed（安装 Xposed 后就不能绕过 SafetyNet 了）。</p>
+
+<p>Magisk 的厉害之处在于它实现了一种绕过 SafetyNet 使用 root 的方法。</p>
+
+<p><strong>实现原理：</strong>由于它是通过启动时在 boot 中创建钩子，把 /data/magisk.img 挂载到 /magisk，构建出一个在 system 基础上能够自定义替换，增加以及删除的文件系统，所有操作都在启动的时候完成，实际上并没有对 /system 分区进行修改（即 systemless 接口，以不触动 /system 的方式修改 /system）。</p>
+
+<h2 id="功能">功能</h2>
+
+<p>截至目前版本（v14.0），Magisk 可以实现的功能包括：</p>
+
+<ul>
+<li>集成 root（MagiskSU）</li>
+<li>root 和 Magisk 的日志功能</li>
+<li>Magisk Hide（隐藏 Magisk 的 root 权限，针对 Snapchat、Android Pay、PokémonGo、Netflix 等）</li>
+<li>为广告屏蔽应用提供 systemless hosts 支持</li>
+<li>通过 SafetyNet 检查</li>
+<li>Magisk 功能模块</li>
+</ul>
+
+<p>支持的版本：Android 5.0+</p>
+
+<h2 id="安装方法">安装方法</h2>
+
+<p>安装 Magisk 需要解锁 Bootloader 并刷入第三方 Recovery。所以每个品牌的手机都或多或少的有点不一样，这里只介绍一个标准的流程，具体操作方法请自行 Google（只需要 Google 你使用的手机解锁 Bootloader 和刷入第三方 Recovery 的方法就可以了，其他的安我说的做）。</p>
+
+<ol>
+<li>解锁手机 Bootloader（BL）
+方法：自行 Google</li>
+<li>刷入第三方 Recovery（例如 TWRP）
+方法：自行 Google</li>
+<li>下载官方 <a href="https://forum.xda-developers.com/apps/magisk" rel="nofollow noreferrer" target="_blank">Magisk</a> 包，然后通过第三方 Recovery 刷入
+方法：首先将下好的包放入手机的硬盘中（你可以使用 QQ数据线 也可以使用 XX手机助手，whatever）然后，进入第三方 Recovery（以 twrp 为例），安装刷机包 -&gt; 找到我让你放在硬盘中的那个包（后缀为 .zip）-&gt; 滑动滑块，开始刷机 -&gt; 刷好后立即重启</li>
+<li>享受完整 Magisk 的 systemless root 和神奇的 Magisk 模块
+重启后找到一个名为 Magisk Manager（图标是一个面具，绿色背景），这是 Magisk 的管理程序，你可以在这里下载、安装、升级、卸载你的 Magisk 和 Magisk 模块。</li>
+<li>卸载 Magisk
+卸载 Magisk 有两种方法：在 Magisk Manager 中卸载，或者通过第三方 Recovery 刷入卸载包卸载。通过 Magisk Manager 卸载很好理解，通过第三方 Recovery 卸载的意思是刷一个名为 <code>Magisk-uninstaller.zip</code>的刷机包，方法和刷 Magisk 一样。两种方法我都没试过。</li>
+</ol>
+
+<h2 id="一些推荐的功能模块">一些推荐的功能模块</h2>
+
+<p>App Systemizer</p>
+
+<blockquote>
+<p>这是一个能把用户 App 挂载为系统 App 的模块，如 Google Play 服务、绿色守护、蟒蛇音效等。</p>
+</blockquote>
+
+<p>Magisk SELinux Permissive Script</p>
+
+<blockquote>
+<p>使 Android 的 SELinux 默认以 Permissive 运行，关于 SELinux 模式的介绍，请点击<a href="https://cn.apkjam.com/selinux.html" rel="nofollow noreferrer" target="_blank">这里</a>。</p>
+</blockquote>
+
+<p>ViPER4Android FX</p>
+
+<blockquote>
+<p>大名鼎鼎的蝰蛇音效的 Magisk 模块，需要配合 VIPERFX 的管理器使用，请在 XDA 论坛搜索下载。关于<a href="https://baike.baidu.com/item/ViPER4Android/8815475" rel="nofollow noreferrer" target="_blank">ViPER4Android</a>。</p>
+</blockquote>
+
+<p><a href="https://forum.xda-developers.com/xposed/unofficial-systemless-xposed-t3388268" rel="nofollow noreferrer" target="_blank">Xposed</a></p>
+
+<blockquote>
+<p>强大的 Xposed 框架的 systemless 实现，关于 Xposed 的介绍点击<a href="https://cn.apkjam.com/xposed.html" rel="nofollow noreferrer" target="_blank">这里</a>。</p>
+</blockquote>
+
+<p>待续…</p>
+
+<h2 id="一些资源">一些资源</h2>
+
+<p>如果你不知道这么找 Magisk 或者 VIPERFX。我这里提供了一些资源。不能保证是最新的。</p>
+
+<ul>
+<li><a href="https://github.com/Mogeko/mogeko.github.io/releases/download/2017%2F12%2F02/Magisk-v16.0.zip" rel="nofollow noreferrer" target="_blank">Magisk_v16.0.zip</a></li>
+</ul>
+
+<p>Magisk 卡刷包，版本：16.0</p>
+
+<blockquote>
+<p>2018/2/26，诈尸更新一波卡刷包(・ω・) ノ（Magisk 的作者服兵役去了，最近应该不会有更新了）</p>
+</blockquote>
+
+<ul>
+<li><a href="https://github.com/Mogeko/mogeko.github.io/releases/download/2017%2F12%2F02/com.audlabs.viperfx_2.5.0.5_2505.apk" rel="nofollow noreferrer" target="_blank">VIPERFX</a></li>
+</ul>
+
+<p>ViPER4Android FX 的管理程器，版本：2.5.0.5</p>
+
+<ul>
+<li><a href="https://github.com/Mogeko/mogeko.github.io/releases/download/2017%2F12%2F02/ViPER4Android_full.zip" rel="nofollow noreferrer" target="_blank">ViPER4Android_full.zip</a></li>
+</ul>
+
+<p>我收集的蝰蛇音效的音效配置、脉冲反馈 和 DDC。完整版，质量良莠不齐</p>
+
+<ul>
+<li><a href="https://github.com/Mogeko/mogeko.github.io/releases/download/2017%2F12%2F02/ViPER4Android.zip" rel="nofollow noreferrer" target="_blank">ViPER4Android.zip</a></li>
+</ul>
+
+<p>还是音效配置、脉冲反馈 和 DDC。但这是我精选过的版本，也是目前再用的版本</p>
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Mogeko </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://mogeko.github.io/2017/010/>https://mogeko.github.io/2017/010/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://mogeko.github.io/tags/android/">
+                    #Android</a></span>
+            
+            <span class="tag"><a href="https://mogeko.github.io/tags/tools/">
+                    #Tools</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://mogeko.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://mogeko.github.io/2017/009/" class="prev" rel="prev" title="如何将 Ubuntu 升级到 17.10"><i class="iconfont icon-left"></i>&nbsp;如何将 Ubuntu 升级到 17.10</a>
+         
+        
+        <a href="https://mogeko.github.io/2017/011/" class="next" rel="next" title="Android 使用 Chrome 的五个理由">Android 使用 Chrome 的五个理由&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'mogeko.github.io',
+        owner: 'Mogeko',
+        admin: ['Mogeko'],
+        id: location.pathname, 
+        distractionFreeMode: false 
+    });
+    (function () {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+            return;
+        }
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2017 - 2018</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://mogeko.github.io">Mogeko</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
