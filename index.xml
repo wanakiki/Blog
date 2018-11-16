@@ -139,23 +139,6 @@
     </item>
     
     <item>
-      <title>空洞骑士: 寻神者 DLC 全成就指南</title>
-      <link>https://mogeko.github.io/2018/019/</link>
-      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/019/</guid>
-      <description>&lt;p&gt;爆肝 20 多个小时终于打完了 QAQ
-写篇指南压压惊 _(:з」∠)_&lt;/p&gt;
-
-&lt;p&gt;寻神者 DLC 是真的难，推荐大家在完成主线剧情，做好心理准备，&lt;del&gt;写好遗书后，&lt;/del&gt;再开启&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&#34;spoiler&#34; &gt;我操你大爷的开发者 QAQ&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&#34;spoiler2&#34;&gt; other test &lt;/span&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>使用 Hugo &#43; GitHub Page 搭建个人博客</title>
       <link>https://mogeko.github.io/2018/018/</link>
       <pubDate>Sun, 05 Aug 2018 00:00:00 +0000</pubDate>
@@ -5018,6 +5001,78 @@ Fira 是 Mozilla 公司（火狐浏览器她爹）主推的字体系列。Fira C
 &lt;li&gt;&lt;a href=&#34;https://github.com/tonsky/FiraCode&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;tonsky/FiraCode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;[tonsky/FiraCode 的 WiKi&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在你的文章中添加 B站的视频</title>
+      <link>https://mogeko.github.io/2017/005/</link>
+      <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2017/005/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/005/logo.png&#34; alt=&#34;Logo&#34; /&gt;
+参考 &lt;a href=&#34;https://github.com/Z4Tech/hexo-tag-bilibili&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/Z4Tech/hexo-tag-bilibili&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;准备工作&#34;&gt;准备工作&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Node.js 这是一个 Hexo插件，所以通过 npm 安装。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;正文&#34;&gt;正文&lt;/h1&gt;
+
+&lt;h2 id=&#34;安装-hexo-tag-bilibili&#34;&gt;安装 hexo-tag-bilibili&lt;/h2&gt;
+
+&lt;p&gt;这就是那个神奇的插件，名叫 hexo-tag-bilibili。
+我们通过 npm 进行安装。
+切换到 Hexo 的目录，执行一下命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ cd [你的 Hexo目录]
+$ npm install --save hexo-tag-bilibili
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/005/install_hexo-tag-bilibili.png&#34; alt=&#34;安装 hexo-tag-bilibili&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;使用&#34;&gt;使用&lt;/h2&gt;
+
+&lt;p&gt;在文章中用一下方式使用此插件
+[av_id] 填写视频的 av号。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;{% bilibili [av_id] %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果有多 p，使用一下格式。[page] 为 P号。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;{% bilibili [av_id] [page] %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;例如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;{% bilibili av2271112 %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;embed height=&#34;415&#34; width=&#34;544&#34; quality=&#34;high&#34; allowfullscreen=&#34;true&#34; type=&#34;application/x-shockwave-flash&#34; src=&#34;//static.hdslb.com/miniloader.swf&#34; flashvars=&#34;aid=2271112&amp;amp;p=1&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;高级&#34;&gt;高级&lt;/h2&gt;
+
+&lt;h3 id=&#34;配置&#34;&gt;配置&lt;/h3&gt;
+
+&lt;p&gt;你可以配置你的播放器
+在 Hexo 的文件夹中，打开 &lt;code&gt;_config.yml&lt;/code&gt;文件进行配置。
+你可以配置 是否&lt;code&gt;自动播放&lt;/code&gt;，播放器的&lt;code&gt;大小&lt;/code&gt; 等。
+例如&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;bilibili:
+  width: 452
+  height: 544
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;style&#34;&gt;Style&lt;/h3&gt;
+
+&lt;p&gt;播放器由一个带有 &lt;code&gt;bili_video&lt;/code&gt; 类的 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;标签包装。你可以通过自定义的 css文件修改它的样式。&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
