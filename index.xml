@@ -66,8 +66,8 @@
 &amp;lt;script src=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
 &amp;lt;script&amp;gt;
   const gitalk = new Gitalk({
-    clientId: &#39;{{ .Site.Params.Gitalk.clientId }}&#39;,
-    clientSecret: &#39;{{ .Site.Params.Gitalk.clientSecret }}&#39;,
+    client_id: &#39;{{ .Site.Params.Gitalk.clientId }}&#39;,
+    client_secret: &#39;{{ .Site.Params.Gitalk.clientSecret }}&#39;,
     repo: &#39;{{ .Site.Params.Gitalk.repo }}&#39;,
     owner: &#39;{{ .Site.Params.Gitalk.owner }}&#39;,
     admin: [&#39;{{ .Site.Params.Gitalk.owner }}&#39;],
