@@ -66,8 +66,8 @@
 &amp;lt;script src=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
 &amp;lt;script&amp;gt;
   const gitalk = new Gitalk({
-    clientID: &#39;{{ .Site.Params.Gitalk.client_id }}&#39;,
-    clientSecret: &#39;{{ .Site.Params.Gitalk.client_secret }}&#39;,
+    clientId: &#39;{{ .Site.Params.Gitalk.clientId }}&#39;,
+    clientSecret: &#39;{{ .Site.Params.Gitalk.clientSecret }}&#39;,
     repo: &#39;{{ .Site.Params.Gitalk.repo }}&#39;,
     owner: &#39;{{ .Site.Params.Gitalk.owner }}&#39;,
     admin: [&#39;{{ .Site.Params.Gitalk.owner }}&#39;],
@@ -143,12 +143,12 @@
     </item>
     
     <item>
-      <title>空洞骑士存档备份方法</title>
+      <title>空洞骑士：存档备份方法</title>
       <link>https://mogeko.github.io/2018/020/</link>
       <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/020/</guid>
-      <description>&lt;p&gt;一个简单的方法备份「空洞骑士」的存档文件。&lt;/p&gt;
+      <description>&lt;p&gt;一个简单的方法备份&lt;strong&gt;「空洞骑士」&lt;/strong&gt;的存档文件。&lt;/p&gt;
 
 &lt;p&gt;备份存档文件有个以下好处：&lt;/p&gt;
 
@@ -159,7 +159,7 @@
 
 &lt;p&gt;正文&lt;/p&gt;
 
-&lt;p&gt;使用 Win键 + R 呼出「运行」，然后输入&lt;/p&gt;
+&lt;p&gt;使用 Win键 + R 呼出&lt;strong&gt;「运行」&lt;/strong&gt;，然后输入&lt;/p&gt;
 
 &lt;p&gt;%HOMEDRIVE%%HOMEPATH%\AppData\LocalLow\Team Cherry\Hollow Knight&lt;/p&gt;
 
