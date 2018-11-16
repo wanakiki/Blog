@@ -66,8 +66,8 @@
 &amp;lt;script src=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
 &amp;lt;script&amp;gt;
   const gitalk = new Gitalk({
-    client_id: &#39;{{ .Site.Params.Gitalk.clientId }}&#39;,
-    client_secret: &#39;{{ .Site.Params.Gitalk.clientSecret }}&#39;,
+    clientID: &#39;{{ .Site.Params.Gitalk.clientID }}&#39;,
+    clientSecret: &#39;{{ .Site.Params.Gitalk.clientSecret }}&#39;,
     repo: &#39;{{ .Site.Params.Gitalk.repo }}&#39;,
     owner: &#39;{{ .Site.Params.Gitalk.owner }}&#39;,
     admin: [&#39;{{ .Site.Params.Gitalk.owner }}&#39;],
@@ -106,8 +106,8 @@
 &lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[params]
   enableGitalk = true
 
-[params.gitalk] 
-    clientId = &amp;quot;[Client ID]&amp;quot; # Your client ID
+[Params.Gitalk] 
+    clientID = &amp;quot;[Client ID]&amp;quot; # Your client ID
     clientSecret = &amp;quot;[Client Secret]&amp;quot; # Your client secret
     repo = &amp;quot;mogeko.github.io&amp;quot; # The repo to store comments
     owner = &amp;quot;Mogeko&amp;quot; # Your GitHub ID
