@@ -135,6 +135,365 @@
 &lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/done.png&#34; alt=&#34;Gitalk&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;添加 Gitalk 评论区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>空洞骑士存档备份方法</title>
+      <link>https://mogeko.github.io/2018/020/</link>
+      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/020/</guid>
+      <description>&lt;p&gt;一个简单的方法备份「空洞骑士」的存档文件。&lt;/p&gt;
+
+&lt;p&gt;备份存档文件有个以下好处：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;因为众所周知的原因，Steam 云有时会不稳定，定期手动备份存档可以减少因云备份失败造成的进度丢失&lt;/li&gt;
+&lt;li&gt;可以较为快速的完成某些不可能在同一存档中完成的成就&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;正文&lt;/p&gt;
+
+&lt;p&gt;使用 Win键 + R 呼出「运行」，然后输入&lt;/p&gt;
+
+&lt;p&gt;%HOMEDRIVE%%HOMEPATH%\AppData\LocalLow\Team Cherry\Hollow Knight&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129397282/0D5A1135E6760F86BC8F3A9FE32EE99983375512/&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在弹出的文件夹中可以看到以下文件&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129400498/62CFB7DA909A59E3E1C88AFF299388B680B07885/&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;user[数字].dat&lt;/p&gt;
+
+&lt;p&gt;就是存档文件，数字 (1 - 4) 表示第几个存档。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;原文地址: &lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526745112&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;「空洞骑士」存档备份方法 | Steam 社区&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;作者: 依然是 Mogeko ٩(●˙▿˙●)۶&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>空洞骑士：格林剧团 DLC 全成就指南</title>
+      <link>https://mogeko.github.io/2018/021/</link>
+      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/021/</guid>
+      <description>
+
+&lt;p&gt;补一篇格林剧团 DLC 的全成就指南&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;「格林剧团」&lt;/strong&gt;的难度相较于&lt;strong&gt;「寻神者」&lt;/strong&gt;和 &lt;strong&gt;主线剧情&lt;/strong&gt; 要简单得多，属于比较容易完成的 DLC。但&lt;strong&gt;「格林剧团」&lt;/strong&gt;采用的是双结局，而且结局是与获得成就直接相关的，因此「格林剧团」的所有成就不可能在同一个存档中完成。&lt;/p&gt;
+
+&lt;p&gt;解决方法：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;开两个存档&lt;/li&gt;
+&lt;li&gt;备份存档然后回档 -&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2018/019&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;「空洞骑士」存档备份方法&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;开启方法&#34;&gt;开启方法&lt;/h1&gt;
+
+&lt;p&gt;在&lt;strong&gt;「呼啸悬崖」&lt;/strong&gt;的隐藏洞穴里，你会发现一只大虫子的尸体，对着它来一发「梦之钉」便可开启「格林剧团」&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129642756/5712015F9CCD8E9DD2CD9541047C68214624F047/&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;全成就指南&#34;&gt;全成就指南&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;图标&lt;/th&gt;
+&lt;th&gt;成就&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129657351/982F6BD69415E06696E2FC414BC595700663AB37/&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;盛大演出&lt;br /&gt;&lt;/strong&gt;先完成「格林」布置的两次任务，然后在剧团打败「格林」&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129658013/11A174017FA3BAA8169C362C0740DEABABB5C241/&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;仪式&lt;/strong&gt;：&lt;strong&gt;结局一&lt;/strong&gt;&lt;br /&gt;打败「格林」后，完成「格林」布置的第三次任务，然后在剧团打败「梦魇之王」&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129658378/D08C26C6B6B675DC3135B43FDD124EEC41E351F6/&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;驱逐&lt;/strong&gt;：&lt;strong&gt;结局二&lt;br /&gt;&lt;/strong&gt;打败「格林」后，到「深邃巢穴」去找「布鲁姆」，&lt;br /&gt;「布鲁姆」会劝你和他一同反抗团长「格林」；&lt;br /&gt;然后到「呼啸悬崖」(开启「格林剧团」的地方) 与 「布鲁姆」一起毁掉 「梦魇之灯」&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;因为是双结局，所以「仪式」和「驱逐」不能在同一个存档中完成&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;新增护符&#34;&gt;新增护符&lt;/h1&gt;
+
+&lt;p&gt;格林剧团 DLC 新增了 5 个新的护符 (其实是 4 个，有两个护符只能 2 选 1)&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;护符37：梦之盾&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;在「安息之地」的隐藏房间里获得&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129753822/ECF24E7F5328A152EB5E879BE81601AEADFF32C9/&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;护符38：编织者之歌&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;在「深邃巢穴」里获得&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129763750/E91FD4677E0E428FC133FC57CE350A527A8181B8/&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;护符39：飞毛腿&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;找到「店主的钥匙」后，在「德特茅斯」的城镇商人处购买 (400 吉欧)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;护符40：格林之子&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;开启格林剧团后，在「格林」处获取&lt;br /&gt;如果完成&lt;strong&gt;结局二&lt;/strong&gt; (放逐结局)，此护符会丢失&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;护符41：无忧旋律&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;完成&lt;strong&gt;结局二&lt;/strong&gt;(放逐结局) 后，在「德特茅斯」的长椅附近与「布鲁姆」对话获得&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;「格林之子」与「无忧旋律」分别对应两个结局，无法同时获得&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;坚固护符&#34;&gt;坚固护符&lt;/h1&gt;
+
+&lt;p&gt;开启格林剧团后，可以 (佩戴上易碎护符) 找格林剧团的「迪万」花吉欧将「易碎贪婪」、「易碎心脏」和「易碎力量」升级成对应的坚固护符 (死亡后不损坏)&lt;/p&gt;
+
+&lt;p&gt;花费：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;易碎贪婪 -&amp;gt; 坚固贪婪 9000 吉欧&lt;/li&gt;
+&lt;li&gt;易碎心脏 -&amp;gt; 坚固心脏 12000 吉欧&lt;/li&gt;
+&lt;li&gt;易碎力量 -&amp;gt; 坚固力量 15000 吉欧&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;完成结局二 (驱逐结局) 后，「迪万」会消失&lt;/p&gt;
+
+&lt;p&gt;完成结局一 (仪式结局) 则不会&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129970560/D978E5F63B3819C2A361DA2DB2343E82EEC7BFDC/&#34; alt=&#34;迪万&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;原文地址: &lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526799965&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;格林剧团 DLC 全成就指南 | Steam 社区&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;作者: 果然是 Mogeko （づ&amp;gt; ω &amp;lt;）づ♡&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>空洞骑士：寻神者 DLC 全成就指南</title>
+      <link>https://mogeko.github.io/2018/019/</link>
+      <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/019/</guid>
+      <description>
+
+&lt;p&gt;爆肝 20 多个小时终于打完了 QAQ
+写篇指南压压惊 _(:з」∠)_&lt;/p&gt;
+
+&lt;p&gt;寻神者 DLC 是真的难，推荐大家在完成主线剧情，做好心理准备，&lt;del&gt;写好遗书后，&lt;/del&gt;再开启&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&#34;spoiler&#34; &gt;我操你大爷的开发者 QAQ&lt;/span&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;开启方法&#34;&gt;开启方法&lt;/h1&gt;
+
+&lt;h2 id=&#34;找一个简单钥匙&#34;&gt;找一个简单钥匙&lt;/h2&gt;
+
+&lt;p&gt;开启寻神者 DLC 需要一个&lt;strong&gt;「简单钥匙」&lt;/strong&gt;，如果身上有的话可以跳过&lt;/p&gt;
+
+&lt;p&gt;首先来到&lt;strong&gt;「王国边缘」&lt;/strong&gt;的愚人竞技场，从竞技场下方经过长椅，在长椅和尽头的温泉之间，上方有通道可以跳上去。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127720802/3887766AB03FDE17ED254610E5333492A842F97D/&#34; alt=&#34;Map_1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;把墙壁撸穿，可以打开一个隐藏房间&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127722487/ECB6722E2C094422AB7F31D3C51441479AB392B8/&#34; alt=&#34;Map_2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;进入隐藏房间，可以看到一个&lt;strong&gt;「苍白潜伏者」&lt;/strong&gt;，他一看到你就会跑。追上并杀死他，他身上会掉一个&lt;strong&gt;「简单钥匙」&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;开启-神居&#34;&gt;开启「神居」&lt;/h2&gt;
+
+&lt;p&gt;来到皇家下水道，在** 「吸虫之母」**的家门口向上走，来到如图位置 (大概在长椅的下方)，跳起来对着墙壁来一发，进入隐藏通道。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127731980/0B267B9D66B22E341901C01D8E6E85FE0EDE11A6/&#34; alt=&#34;Map_3&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一直往左走，直到来到一个名为「垃圾坑」的地方&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127733672/EA2C53A1B6F0F14953B8E986E4C2DE10DAB4079F/&#34; alt=&#34;Map_4&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127735000/65E00823B261FC2CF1AF313C8645DA683F908C9E/&#34; alt=&#34;Map_5&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;「垃圾坑」中有一个上锁的棺材，用「简单钥匙」打开后，会掉一个「神明调谐器」&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127736304/4119CD178396BC63269BC57B13C8628413FC2C69/&#34; alt=&#34;Map_6&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127737280/F396BFF24C1C5E02CC809B54CDECB2826E79DC42/&#34; alt=&#34;Map_7&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;此时对着棺材中那个中暑的“尸体”(莫挨老子，老子没中暑 QAQ) 来一发&lt;strong&gt;「光之钉」&lt;/strong&gt;，开启&lt;strong&gt;「神居」&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;全成就指南&#34;&gt;全成就指南&lt;/h1&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;图标&lt;/th&gt;
+&lt;th&gt;成就&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127529487/9937E1FABC4F0EA2FEEBAFD0B6F20C025B52AEEC/&#34; alt=&#34;兄弟&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;兄弟：&lt;/strong&gt;完成「大师万神殿」挑战&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127530081/17F7D048DECF5C20BAB0A7BD11F2FAC5CACA050A/&#34; alt=&#34;灵感&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;灵感：&lt;/strong&gt;完成「艺术家万神殿」挑战&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127530647/382C7998E9B0B60A850D8BDF4C7F4A515A8B3481/&#34; alt=&#34;专注&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;专注：&lt;/strong&gt;完成「贤者万神殿」挑战&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;完成三个挑战后会解锁「骑士万神殿」&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;图标&lt;/th&gt;
+&lt;th&gt;成就&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127531198/5857AE3A16211B09755B086F37F411ADEAD38131/&#34; alt=&#34;灵魂与阴影&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;灵魂与阴影：&lt;/strong&gt;完成「骑士万神殿」挑战&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;完成四个挑战后会解锁「圣巢万神殿」&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;图标&lt;/th&gt;
+&lt;th&gt;成就&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127531615/671C16432F460CDD9EFF88D5C01B4ABC7CFE2703/&#34; alt=&#34;拥抱空虚&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;拥抱虚空：&lt;/strong&gt;完成「圣巢万神殿」挑战&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;关于-束缚&#34;&gt;关于「束缚」&lt;/h1&gt;
+
+&lt;p&gt;如果你觉得还是不过瘾，还可以通过束缚&lt;strong&gt;「骨钉」&lt;/strong&gt;、&lt;strong&gt;「外壳」&lt;/strong&gt;、&lt;strong&gt;「护符」&lt;/strong&gt;、&lt;strong&gt;「灵魂」&lt;/strong&gt;来提升难度。&lt;/p&gt;
+
+&lt;p&gt;在&lt;strong&gt;「束缚」&lt;/strong&gt;难度中完成挑战后，会在相关挑战的入口处点亮相应的四盏灯，按&lt;strong&gt;「束缚」&lt;/strong&gt;得最多的一次算 (例如束缚&lt;strong&gt;「骨钉」&lt;/strong&gt;和&lt;strong&gt;「外壳」&lt;/strong&gt;就只能点亮&lt;strong&gt;「骨钉」&lt;/strong&gt;和&lt;strong&gt;「外壳」&lt;/strong&gt;两盏灯，如果束缚了所有项目，就可以点亮全部四盏灯)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;「束缚」不会影响成就&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127612824/BD136FFE9A6F394E584F627B32F2AFB747733473/&#34; alt=&#34;束缚&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;结语&#34;&gt;结语&lt;/h1&gt;
+
+&lt;p&gt;就酱，我去补告告了，祝大家受难愉快(○&amp;rsquo;◡&amp;rsquo;○)ﾉ♥&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910124697569/9E941323DE8DFE4CBE8746FF52F92855E8807A73/&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;原文地址: &lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526374935&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;寻神者 DLC 全成就指南 | Steam 社区&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;作者: 还是 Mogeko ヾ(●´∇｀●)ﾉ&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -4480,599 +4839,6 @@ Codename:	artful
 &lt;li&gt;&lt;a href=&#34;https://www.zhihu.com/question/27741189&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Kindle 有哪些鲜为人知的使用技巧？&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.zhihu.com/question/32191135&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;除了看书，Kindle 还能不能看些别的东西？&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Reabble | Kindle 下的 RRS 神器</title>
-      <link>https://mogeko.github.io/2017/008/</link>
-      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogeko.github.io/2017/008/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/008/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Amazon 官方系统的 Kindle 中内置了一个 &lt;code&gt;体验版浏览器&lt;/code&gt;，用起来真的很鸡肋。一开始根本不知道 Amazon 到底在想什么，做怎么个又慢，又不稳定的浏览器，浪费老子硬盘。直到那天，手机被收了&lt;em&gt;(:°з」∠)&lt;/em&gt;
-其实真正让我爱上那个辣鸡浏览器的是 RSS 神器——Reabble。&lt;/p&gt;
-
-&lt;p&gt;那是一个血雨腥风的晚自习，老师一边讲着刚考完的月考试卷一边骂人。
-在教室的第一排，我蜷缩在书本堆中，偷偷用 Kindle 内置的辣鸡浏览器连着教务处的 WiFi 逛知乎。。。（那时真的好 6，老师与我的直线距离不到 3 米，现在想想都觉得后怕）
-就在那天晚上，我发现了这个 Kindle 上的 RSS 神器。&lt;/p&gt;
-
-&lt;h1 id=&#34;reabble&#34;&gt;Reabble&lt;/h1&gt;
-
-&lt;p&gt;Reabble 是专为 Kindle 设计的 RSS 阅读器，亮点是 &lt;strong&gt;没有任何滑动操作，全程点击操作，&lt;/strong&gt; 响应速度也很快。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Kindle 上的 RSS 聚合阅读应用，专为电子墨水屏特性设计，让你可以心无旁骛地沉浸于资讯阅读。也能用于其它带浏览器的设备如手机、Nook、Kobo、博阅等。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Reabble 入门教程&lt;/strong&gt;&lt;a href=&#34;https://reabble.com/help&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;reabble.com/help&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://reabble.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Reabble 官方网站&lt;/a&gt;
-&lt;a href=&#34;https://reabble.com/help&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Reabble 入门教程&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;使用方法&#34;&gt;使用方法&lt;/h2&gt;
-
-&lt;p&gt;用电脑打开 &lt;a href=&#34;https://inoreader.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Inoreader&lt;/a&gt;，注册一个帐号，并在里面添加一些订阅。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/008/inoreader.png&#34; alt=&#34;Inoreader&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;打开 &lt;a href=&#34;https://reabble.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Reabble&lt;/a&gt;，点击 &lt;code&gt;用 Inoreader 帐号登录&lt;/code&gt;，用刚才注册的 Inoreader 帐号登录 Reabble。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/008/reabble_1.png&#34; alt=&#34;Reabble&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在这里，你刚刚订阅的文章都会显示出来&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/008/reabble_2.png&#34; alt=&#34;Reabble&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;确认没有问题后访问 &lt;a href=&#34;https://reabble.com/code，得到&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://reabble.com/code，得到&lt;/a&gt; 12 个字母的登录码&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/008/reabble_3.png&#34; alt=&#34;Reabble&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;打开你的 Kindle 主屏右上角的菜单，选择 &lt;code&gt;体验版网页浏览器&lt;/code&gt; 并打开网页 &lt;code&gt;reabble.com/login&lt;/code&gt;，点 &lt;code&gt;登录&lt;/code&gt; 按钮，用上刚刚得到的登录码登录。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/008/reabble_4.png&#34; alt=&#34;Reabble&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/008/reabble_5.png&#34; alt=&#34;Reabble&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;以后每次用 Kindle 的浏览器打开 Reabble 都会保持登录状态。&lt;/p&gt;
-
-&lt;p&gt;如果需要更改订阅去 &lt;a href=&#34;https://www.inoreader.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Inoreader&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Fira Code | 为写程序而生的字体</title>
-      <link>https://mogeko.github.io/2017/006/</link>
-      <pubDate>Sat, 16 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogeko.github.io/2017/006/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://camo.githubusercontent.com/3a8948f34284f378ead7af5846aa432035c687ad/687474703a2f2f732e746f6e736b792e6d652f696d67732f666972615f636f64655f6c6f676f2e737667&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;程序员福利！！！&lt;/strong&gt;
-今天为大家带来一个专为程序员写程序设计的字体 —— Fira Code
-Fira 是 Mozilla 公司（火狐浏览器她爹）主推的字体系列。Fira Code 是其中的一员，专为写程序而生。出来具有&lt;code&gt;等宽&lt;/code&gt;等基本属性外，还加入了编程连字特性（ligatures）。&lt;/p&gt;
-
-&lt;p&gt;Fira Code 就是利用这个特性对编程中的常用符号进行优化，比如把输入的「!=」直接显示成「≠」或者把「&amp;gt;=」变成「≥ 」等等，以此来提高代码的可读性。
-&lt;img src=&#34;https://raw.githubusercontent.com/tonsky/FiraCode/master/showcases/all_ligatures.png&#34; alt=&#34;Fira Code|Fire Mono&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;代码示例&#34;&gt;代码示例&lt;/h1&gt;
-
-&lt;p&gt;Ruby:
-&lt;img src=&#34;https://raw.githubusercontent.com/tonsky/FiraCode/master/showcases/ruby.png&#34; alt=&#34;Ruby&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScript:
-&lt;img src=&#34;https://raw.githubusercontent.com/tonsky/FiraCode/master/showcases/javascript.png&#34; alt=&#34;JavaScript&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Erlang:
-&lt;img src=&#34;https://raw.githubusercontent.com/tonsky/FiraCode/master/showcases/erlang.png&#34; alt=&#34;Erlang&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Elixir:
-&lt;img src=&#34;https://raw.githubusercontent.com/tonsky/FiraCode/master/showcases/elixir.png&#34; alt=&#34;Elixir&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Go:
-&lt;img src=&#34;https://raw.githubusercontent.com/tonsky/FiraCode/master/showcases/go.png&#34; alt=&#34;Go&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;LiveScript:
-&lt;img src=&#34;https://raw.githubusercontent.com/tonsky/FiraCode/master/showcases/livescript.png&#34; alt=&#34;LiveScript&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Clojure:
-&lt;img src=&#34;https://raw.githubusercontent.com/tonsky/FiraCode/master/showcases/clojure.png&#34; alt=&#34;Clojure&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Swift:
-&lt;img src=&#34;https://raw.githubusercontent.com/tonsky/FiraCode/master/showcases/swift.png&#34; alt=&#34;Swift&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;正文&#34;&gt;正文&lt;/h1&gt;
-
-&lt;h2 id=&#34;安装-fira-code&#34;&gt;安装 Fira Code&lt;/h2&gt;
-
-&lt;h3 id=&#34;使用-ttf-文件安装&#34;&gt;使用 .ttf 文件安装&lt;/h3&gt;
-
-&lt;p&gt;访问此网站 &lt;a href=&#34;https://github.com/tonsky/FiraCode&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/tonsky/FiraCode&lt;/a&gt;
-找到 &lt;code&gt;Download&lt;/code&gt; 这个链接，单击它。  &lt;img src=&#34;https://mogeko.github.io/images/006/install_fira-code_1.png&#34; alt=&#34;Install Fira Code&#34; /&gt;
-单击这个地址可以下载 v1.204 版的 Fira Code -&amp;gt; &lt;a href=&#34;https://github.com/tonsky/FiraCode/releases/download/1.204/FiraCode_1.204.zip&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Download v1.204&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;下载好后，解压它。
-打开解压后得到的文件夹。
-打开 &lt;code&gt;/ttf文件夹&lt;/code&gt;。
-会看到以下文件  &lt;img src=&#34;https://mogeko.github.io/images/006/install_fira-code_2.png&#34; alt=&#34;Install Fira Code&#34; /&gt;
-&lt;code&gt;Ctrl+A&lt;/code&gt; 全选 -&amp;gt; 右键 -&amp;gt; 安装。&lt;/p&gt;
-
-&lt;h3 id=&#34;使用-chocolate-安装&#34;&gt;使用 Chocolate 安装&lt;/h3&gt;
-
-&lt;p&gt;关于 Chocolate，请参考&lt;a href=&#34;https://mogeko.github.io/2017/002/#使用-Chocolatey-安装&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;这篇文章&lt;/a&gt;。
-使用以下命令安装&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ choco install firacode
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;如何使用&#34;&gt;如何使用&lt;/h2&gt;
-
-&lt;p&gt;只有以下编辑器、浏览器可以完美支持 Fira Code：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#支持的编辑器&#34;&gt;支持的编辑器&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#支持的浏览器&#34;&gt;支持的浏览器&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;vs-code&#34;&gt;VS Code&lt;/h3&gt;
-
-&lt;p&gt;介绍一下在 VS Code 中如何配置（因为VS Code 是我主要使用的编辑器，别的不是很熟悉）
-打开 VS Code。
-文件 -&amp;gt; 首选项 -&amp;gt; 设置&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/006/use_fira-code_1.png&#34; alt=&#34;Use Fira Code&#34; /&gt;
-然后在右边的窗口中添加&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;    &amp;quot;editor.fontFamily&amp;quot;: &amp;quot;Fira Code&amp;quot;,
-    &amp;quot;editor.fontLigatures&amp;quot;: true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/006/use_fira-code_2.png&#34; alt=&#34;Use Fira Code&#34; /&gt;
-&lt;code&gt;Ctrl+S&lt;/code&gt; 保存。如果没有生效就使用以下代码&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;    &amp;quot;editor.fontFamily&amp;quot;: &amp;quot;&#39;Fira Code&#39;&amp;quot;,
-    &amp;quot;editor.fontLigatures&amp;quot;: true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;Ctrl+S&lt;/code&gt; 保存。&lt;/p&gt;
-
-&lt;p&gt;别的编辑器可以参考 -&amp;gt; &lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki#how-to-enable-ligatures&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/tonsky/FiraCode/wiki#how-to-enable-ligatures&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;chrome&#34;&gt;Chrome&lt;/h3&gt;
-
-&lt;p&gt;可以将 Fira Code 设为 Chrome 的 &lt;code&gt;等宽字体&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;打开 Chrome。点击右上角的 &lt;code&gt;┇&lt;/code&gt; -&amp;gt; 设置  &lt;img src=&#34;https://mogeko.github.io/images/006/use_fira-code_3.png&#34; alt=&#34;Use Fira Code&#34; /&gt;
-选择 &lt;code&gt;自定义字体&lt;/code&gt;  &lt;img src=&#34;https://mogeko.github.io/images/006/use_fira-code_4.png&#34; alt=&#34;Use Fira Code&#34; /&gt;
-&lt;code&gt;宽度固定的字体&lt;/code&gt; -&amp;gt; 在下拉菜单中选择 &lt;code&gt;Fira Code&lt;/code&gt;
-&lt;img src=&#34;https://mogeko.github.io/images/006/use_fira-code_5.png&#34; alt=&#34;Use Fira Code&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;附录&#34;&gt;附录&lt;/h1&gt;
-
-&lt;h2 id=&#34;支持的终端&#34;&gt;支持的终端&lt;/h2&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Work&lt;/th&gt;
-&lt;th&gt;Doesn’t work&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Black Screen&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;Alacritty&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Butterfly&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;cmd.exe&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Hyper.app&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;Cmder&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Konsole&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;ConEmu&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;QTerminal&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;GNOME Terminal&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Terminal.app&lt;/strong&gt; (OS X default terminal)&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;iTerm 2&lt;/strong&gt; (&lt;a href=&#34;https://gitlab.com/gnachman/iterm2/issues/3568#note_13118332&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;coming in 3.1&lt;/a&gt;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Termux&lt;/strong&gt; (Android terminal emulator)&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;mate-terminal&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;ZOC&lt;/strong&gt; (macOS)&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;mintty&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;PuTTY&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;rxvt&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;ZOC&lt;/strong&gt; (Windows)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;gtkterm, guake, LXTerminal, sakura, Terminator, xfce4-terminal,&lt;/strong&gt; and other libvte-based terminals (&lt;a href=&#34;https://bugzilla.gnome.org/show_bug.cgi?id=584160&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;bug report&lt;/a&gt;)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&#34;支持的编辑器&#34;&gt;支持的编辑器&lt;/h2&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Work&lt;/th&gt;
-&lt;th&gt;Doesn’t work&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Android Studio&lt;/strong&gt; (2.3+, &lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/Intellij-products-instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;Arduino IDE&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Anjuta&lt;/strong&gt; (unless at the EOF)&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;Adobe Dreamweaver&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;AppCode&lt;/strong&gt; (2016.2+, &lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/Intellij-products-instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;])&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;Delphi IDE&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Atom&lt;/strong&gt; 1.1 or newer (&lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/Atom-instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;Eclipse&lt;/strong&gt; (Win, &lt;a href=&#34;https://bugs.eclipse.org/bugs/show_bug.cgi?id=398656&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;vote here&lt;/a&gt;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;BBEdit/TextWrangler&lt;/strong&gt; (&lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/BBEdit-instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;Standalone &lt;strong&gt;Emacs&lt;/strong&gt; (&lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/Setting-up-Emacs&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;workaround&lt;/a&gt;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Brackets&lt;/strong&gt; (with &lt;a href=&#34;https://github.com/polo2ro/firacode-in-brackets&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;this plugin&lt;/a&gt;])&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;gVim&lt;/strong&gt; (Windows &lt;a href=&#34;https://github.com/tonsky/FiraCode/issues/462&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;workaround&lt;/a&gt;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Chocolat&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;IDLE&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;CLion&lt;/strong&gt; (2016.2+, &lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/Intellij-products-instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;KDevelop 4&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Cloud9&lt;/strong&gt; (&lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/Cloud9-Instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;Monkey Studio IDE&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Coda 2&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;SublimeText&lt;/strong&gt; (&lt;a href=&#34;http://sublimetext.userecho.com/topic/1030059-does-sublimetext-support-programming-ligatures-fontlike-fira-code/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;vote here&lt;/a&gt;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;CodeLite&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Eclipse&lt;/strong&gt; (Mac 4.7+, Linux)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Geany&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;gEdit / Pluma&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;GNOME Builder&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;IntelliJ IDEA&lt;/strong&gt; (2016.2+, &lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/Intellij-products-instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Kate, KWrite&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Komodo&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Leafpad&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;LibreOffice&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;LightTable&lt;/strong&gt; (&lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/LightTable-instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;LINQPad&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;MacVim&lt;/strong&gt; 7.4 or newer (&lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/MacVim-instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Mancy&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Meld&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Mousepad&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;NetBeans&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Notepad&lt;/strong&gt; (Win)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Notepad++&lt;/strong&gt; (with a &lt;a href=&#34;https://github.com/notepad-plus-plus/notepad-plus-plus/issues/2287#issuecomment-256638098&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;workaround&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;PhpStorm&lt;/strong&gt; (2016.2+, &lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/Intellij-products-instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;PyCharm&lt;/strong&gt; (2016.2+, &lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/Intellij-products-instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;QtCreator&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Rider&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;RStudio&lt;/strong&gt; (&lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/RStudio-instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;RubyMine&lt;/strong&gt; (2016.2+, &lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/Intellij-products-instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Scratch&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Spyder IDE&lt;/strong&gt; (only with Qt5)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;TextAdept&lt;/strong&gt; (Linux, Mac)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;TextEdit&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;TextMate 2&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;VimR&lt;/strong&gt; (&lt;a href=&#34;https://github.com/qvacua/vimr/wiki#ligatures&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Visual Studio&lt;/strong&gt; 2015&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Visual Studio&lt;/strong&gt; 2017&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Visual Studio Code&lt;/strong&gt; (&lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;WebStorm&lt;/strong&gt; (2016.2+, &lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/Intellij-products-instructions&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;instructions&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Xamarin Studio/Monodevelop&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Xcode&lt;/strong&gt; (8.0+, otherwise &lt;a href=&#34;https://github.com/robertvojta/LigatureXcodePlugin&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;with plugin&lt;/a&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Probably work: &lt;strong&gt;Smultron, Vico&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Under question: &lt;strong&gt;Code::Blocks IDE&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&#34;支持的浏览器&#34;&gt;支持的浏览器&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;IE 10+, Edge: enable with &lt;code&gt;font-feature-settings: &amp;quot;calt&amp;quot; 1;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Firefox&lt;/li&gt;
-&lt;li&gt;Safari&lt;/li&gt;
-&lt;li&gt;Chromium-based browsers (Chrome, Opera)&lt;/li&gt;
-&lt;li&gt;ACE&lt;/li&gt;
-&lt;li&gt;CodeMirror (enable with &lt;code&gt;font-variant-ligatures: contextual;&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;
-
-&lt;p&gt;本文章参考了：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/tonsky/FiraCode&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;tonsky/FiraCode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;[tonsky/FiraCode 的 WiKi&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>在你的文章中添加 B站的视频</title>
-      <link>https://mogeko.github.io/2017/005/</link>
-      <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogeko.github.io/2017/005/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/005/logo.png&#34; alt=&#34;Logo&#34; /&gt;
-参考 &lt;a href=&#34;https://github.com/Z4Tech/hexo-tag-bilibili&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/Z4Tech/hexo-tag-bilibili&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;准备工作&#34;&gt;准备工作&lt;/h1&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Node.js 这是一个 Hexo插件，所以通过 npm 安装。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;正文&#34;&gt;正文&lt;/h1&gt;
-
-&lt;h2 id=&#34;安装-hexo-tag-bilibili&#34;&gt;安装 hexo-tag-bilibili&lt;/h2&gt;
-
-&lt;p&gt;这就是那个神奇的插件，名叫 hexo-tag-bilibili。
-我们通过 npm 进行安装。
-切换到 Hexo 的目录，执行一下命令&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ cd [你的 Hexo目录]
-$ npm install --save hexo-tag-bilibili
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/005/install_hexo-tag-bilibili.png&#34; alt=&#34;安装 hexo-tag-bilibili&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;使用&#34;&gt;使用&lt;/h2&gt;
-
-&lt;p&gt;在文章中用一下方式使用此插件
-[av_id] 填写视频的 av号。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;{% bilibili [av_id] %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果有多 p，使用一下格式。[page] 为 P号。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;{% bilibili [av_id] [page] %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;{% bilibili av2271112 %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;embed height=&#34;415&#34; width=&#34;544&#34; quality=&#34;high&#34; allowfullscreen=&#34;true&#34; type=&#34;application/x-shockwave-flash&#34; src=&#34;//static.hdslb.com/miniloader.swf&#34; flashvars=&#34;aid=2271112&amp;amp;p=1&#34;&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;高级&#34;&gt;高级&lt;/h2&gt;
-
-&lt;h3 id=&#34;配置&#34;&gt;配置&lt;/h3&gt;
-
-&lt;p&gt;你可以配置你的播放器
-在 Hexo 的文件夹中，打开 &lt;code&gt;_config.yml&lt;/code&gt;文件进行配置。
-你可以配置 是否&lt;code&gt;自动播放&lt;/code&gt;，播放器的&lt;code&gt;大小&lt;/code&gt; 等。
-例如&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;bilibili:
-  width: 452
-  height: 544
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;style&#34;&gt;Style&lt;/h3&gt;
-
-&lt;p&gt;播放器由一个带有 &lt;code&gt;bili_video&lt;/code&gt; 类的 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;标签包装。你可以通过自定义的 css文件修改它的样式。&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
