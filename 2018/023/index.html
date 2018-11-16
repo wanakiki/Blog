@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://mogeko.github.io/2018/021/" />
-  <link rel="next" href="https://mogeko.github.io/2018/023/" />
-  <link rel="canonical" href="https://mogeko.github.io/2018/022/" />
+  <link rel="prev" href="https://mogeko.github.io/2018/022/" />
+  
+  <link rel="canonical" href="https://mogeko.github.io/2018/023/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           为 Hugo 添加 Gitalk 评论系统 | Mogeko`s Blog
+           Leavelt 主题优化 | Mogeko`s Blog
        
   </title>
-  <meta name="title" content="为 Hugo 添加 Gitalk 评论系统 | Mogeko`s Blog">
+  <meta name="title" content="Leavelt 主题优化 | Mogeko`s Blog">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,15 +44,18 @@
          "@id": "https://mogeko.github.io"
     },
     "articleSection" : "posts",
-    "name" : "为 Hugo 添加 Gitalk 评论系统",
-    "headline" : "为 Hugo 添加 Gitalk 评论系统",
-    "description" : "Hugo 是一个强大的静态网页生成器，使用 go 开发。速度贼快，还有 “时时预览” 等特性。不过 Hugo 还比较年轻，没有像 NexT 那样功能强大，成熟稳定的主题。所以很多东西需要自己动手撸。就例如评论系统。
+    "name" : "Leavelt 主题优化",
+    "headline" : "Leavelt 主题优化",
+    "description" : "目前本博客使用的 Hugo 主题是: Leavelt
+正如你说看到的那样, 是一款简约大气的的主题. 但再使用的过程中我也发现了一些可以改进的地方
+添加 Gitalk 评论系统 Leavelt 默认没有评论系统, 我们可以做一点简单的修改添加 Gitalk 评论系统
 关于 Gitalk  官方网址： https://github.com/gitalk/gitalk/ 在线示例： https://gitalk.github.io/  Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说, 只要 Github 不倒闭，你的评论系统就不会被关闭。
-为 Hugo 添加 Gitalk 评论系统 本博客使用的主题是: Leavelt
-不同主题可能有所区别，但原理都是类似的
-原理 众所周知，Hugo 会将 Markdown 文档 按照 主题 (包括 HTML 模板、CSS、JavaScript 等) 编译成静态网页
-那么我们只需要将 Gitalk 作为一个 &lt;div&gt; 插入到 HTML 模板中，然后在 config.toml 中添加相关配置，就可以实现 Gitalk 评论系统了
-创建 Github Application 首先要去 GitHub 上创建一个 Github Application",
+创建 Github Application 首先要去 GitHub 上创建一个 Github Application
+点击创建
+记下 Client ID 和 Client Secret，以后要用
+添加 gitalk.html 模板 接下来为主题添加 gitalk.html 模板。
+在主题的 layouts/partials 文件夹中创建 gitalk.html 文件，写下如下代码
+{{ if .",
     "inLanguage" : "zh-cn",
     "author" : "Mogeko",
     "creator" : "Mogeko",
@@ -60,10 +63,10 @@
     "accountablePerson" : "Mogeko",
     "copyrightHolder" : "Mogeko",
     "copyrightYear" : "2018",
-    "datePublished": "2018-11-16 12:57:09 &#43;0800 &#43;0800",
-    "dateModified" : "2018-11-16 12:57:09 &#43;0800 &#43;0800",
-    "url" : "https://mogeko.github.io/2018/022/",
-    "wordCount" : "396",
+    "datePublished": "2018-11-16 19:57:09 &#43;0800 &#43;0800",
+    "dateModified" : "2018-11-16 19:57:09 &#43;0800 &#43;0800",
+    "url" : "https://mogeko.github.io/2018/023/",
+    "wordCount" : "630",
     "keywords" : [ "Hugo", "Mogeko`s Blog"]
 }
 </script>
@@ -126,7 +129,7 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">为 Hugo 添加 Gitalk 评论系统</h1>
+        <h1 class="post-title" itemprop="name headline">Leavelt 主题优化</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://mogeko.github.io" rel="author">Mogeko</a> with ♥ 
                 <span class="post-time">
@@ -156,9 +159,15 @@
 
           
 
-<p><a href="https://gohugo.io" rel="nofollow noreferrer" target="_blank">Hugo</a> 是一个强大的静态网页生成器，使用 go 开发。速度贼快，还有 “时时预览” 等特性。不过 Hugo 还比较年轻，没有像 <a href="https://theme-next.iissnan.com" rel="nofollow noreferrer" target="_blank">NexT</a> 那样功能强大，成熟稳定的主题。所以很多东西需要自己动手撸。就例如评论系统。</p>
+<p>目前本博客使用的 Hugo 主题是: <a href="https://github.com/liuzc/LeaveIt" rel="nofollow noreferrer" target="_blank">Leavelt</a></p>
 
-<h1 id="关于-gitalk">关于 Gitalk</h1>
+<p>正如你说看到的那样, 是一款简约大气的的主题. 但再使用的过程中我也发现了一些可以改进的地方</p>
+
+<h1 id="添加-gitalk-评论系统">添加 Gitalk 评论系统</h1>
+
+<p>Leavelt 默认没有评论系统, 我们可以做一点简单的修改添加 Gitalk 评论系统</p>
+
+<h2 id="关于-gitalk">关于 Gitalk</h2>
 
 <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/022/gitalk.png" alt="Gitalk" class="lazyload"><figcaption class="image-caption">Gitalk</figcaption></figure></p>
 
@@ -169,18 +178,6 @@
 
 <p>Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说, 只要 Github 不倒闭，你的评论系统就不会被关闭。</p>
 
-<h1 id="为-hugo-添加-gitalk-评论系统">为 Hugo 添加 Gitalk 评论系统</h1>
-
-<p>本博客使用的主题是: <a href="https://github.com/liuzc/LeaveIt" rel="nofollow noreferrer" target="_blank">Leavelt</a></p>
-
-<p>不同主题可能有所区别，但原理都是类似的</p>
-
-<h2 id="原理">原理</h2>
-
-<p>众所周知，Hugo 会将 <strong>Markdown 文档</strong> 按照 <strong>主题 (包括 HTML 模板、CSS、JavaScript 等)</strong> 编译成静态网页</p>
-
-<p>那么我们只需要将 Gitalk 作为一个 <code>&lt;div&gt;</code> 插入到 HTML 模板中，然后在 <code>config.toml</code> 中添加相关配置，就可以实现 Gitalk 评论系统了</p>
-
 <h2 id="创建-github-application">创建 Github Application</h2>
 
 <p>首先要去 GitHub 上创建一个 <a href="https://github.com/settings/applications/new" rel="nofollow noreferrer" target="_blank">Github Application</a></p>
@@ -190,6 +187,8 @@
 <p>点击创建</p>
 
 <p>记下 <code>Client ID</code> 和 <code>Client Secret</code>，以后要用</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/022/get_id&amp;secret.png" alt="Client ID &amp; Client Secret" class="lazyload"><figcaption class="image-caption">Client ID &amp; Client Secret</figcaption></figure></p>
 
 <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/022/get_id&amp;secret.png" alt="Client ID &amp; Client Secret" class="lazyload"><figcaption class="image-caption">Client ID &amp; Client Secret</figcaption></figure></p>
 
@@ -224,19 +223,9 @@
 {{ end }}
 </code></pre>
 
-<h2 id="定位放-gitalk-的位置">定位放 Gitalk 的位置</h2>
-
-<p>然后使用 Chrome 自带的 DevTools 分析一下网页结构，找到放 Gitalk 的位置</p>
-
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/022/get_class.png" alt="get id or class" class="lazyload"><figcaption class="image-caption">get id or class</figcaption></figure></p>
-
-<p>我们可以看见已经 Leavelt 为我们预留了 “评论区” 的位置，不过里面什么东西都没有。记下该 <code>div</code> 的<code>class</code> 或者 <code>id</code> (如果你使用的主题没有预留 “评论区”，可以记下你准备放 Gitalk 评论区位置附近 <code>div</code> 的<code>class</code> 或者 <code>id</code>，并以此定位)</p>
-
-<p>打开 VSCode，搜索包含刚刚找到的 <code>class</code> 或者 <code>id</code> 的 HTML 模板 (一般是 <code>single.html</code>)</p>
+<p>然后在 <code>layouts/_default/single.html</code> 中插入<code>{{ partial &quot;gitalk.html&quot; . }}</code></p>
 
 <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/022/set_div.png" alt="插入 Gitalk 模板" class="lazyload"><figcaption class="image-caption">插入 Gitalk 模板</figcaption></figure></p>
-
-<p>在模板中插入<code>{{ partial &quot;gitalk.html&quot; . }}</code></p>
 
 <h2 id="配置-config-toml">配置 config.toml</h2>
 
@@ -269,11 +258,109 @@
 
 <p>更多配置请参考: <a href="https://github.com/gitalk/gitalk" rel="nofollow noreferrer" target="_blank">https://github.com/gitalk/gitalk</a></p>
 
+<p>设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 <code>hugo server</code> 中是不会启用的)## 配置 config.toml</p>
+
+<p>在 <code>config.toml</code> 中添加以下配置</p>
+
+<pre><code class="language-toml">[params]
+  enableGitalk = true
+
+[params.gitalk] 
+    clientId = &quot;[Client ID]&quot; # Your client ID
+    clientSecret = &quot;[Client Secret]&quot; # Your client secret
+    repo = &quot;mogeko.github.io&quot; # The repo to store comments
+    owner = &quot;Mogeko&quot; # Your GitHub ID
+    admin= &quot;Mogeko&quot; # Required. Github repository owner and collaborators. (Users who having write access to this repository)
+    id= &quot;location.pathname&quot; # The unique id of the page.
+    labels= &quot;gitalk&quot; # Github issue labels. If you used to use Gitment, you can change it
+    perPage= 15 # Pagination size, with maximum 100.
+    pagerDirection= &quot;last&quot; # Comment sorting direction, available values are 'last' and 'first'.
+    createIssueManually= false # If it is 'false', it is auto to make a Github issue when the administrators login.
+    distractionFreeMode= false # Enable hot key (cmd|ctrl + enter) submit comment.
+</code></pre>
+
+<p>将 <code>[Client ID]</code> 替换为 Github Application 的 Client ID</p>
+
+<p>将 <code>[Client Secret]</code> 替换为 Github Application 的 Client Secret</p>
+
+<p>将 <code>repo</code> 设置为你的博客的地址</p>
+
+<p>将 <code>owner</code> 和 <code>admin</code> 设置为你的 GitHub ID</p>
+
+<p>更多配置请参考: <a href="https://github.com/gitalk/gitalk" rel="nofollow noreferrer" target="_blank">https://github.com/gitalk/gitalk</a></p>
+
 <p>设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 <code>hugo server</code> 中是不会启用的)</p>
 
 <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/022/done.png" alt="Gitalk" class="lazyload"><figcaption class="image-caption">Gitalk</figcaption></figure></p>
 
 <p><strong>添加 Gitalk 评论区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要</strong></p>
+
+<h1 id="添加-隐藏文字-spoiler">添加“隐藏文字”(spoiler)</h1>
+
+<p>Steam 社区和其他一些支持 BBCode 的论坛都有一种名为“隐藏文字”(spoiler) 的标签, 使用这种标签后,标签中的文字默认会隐藏起来, 当你将鼠标移动到文字上时, 文字才会显示出来.</p>
+
+<p>就像这样：<span class="spoiler" >这是一段隐藏文字</span></p>
+
+<p>非常炫酷</p>
+
+<p>虽然 Markdown 并不支持“隐藏文字”, 但我们可以通过在 Markdown 中内嵌 HTML 实现这一功能</p>
+
+<h2 id="安装-ruby-sass">安装 ruby-sass</h2>
+
+<p><strong>由于 Leavelt 使用了 scss. 所以如果想要添加自定义样式的话需要先安装 Sass (基于 Rudy)</strong></p>
+
+<p>我使用是 Ubuntu. 所以直接在终端中运行 <code>sudo apt install ruby-sass</code> 就可以了, 计算机会自动为我解决好依赖</p>
+
+<p>Mac OS 自带得有 Ruby, 因此可以通过 <code>gem</code>安装</p>
+
+<p>Windows 需要 <a href="http://rubyinstaller.org/downloads" rel="nofollow noreferrer" target="_blank">下载 Ruby</a> 的安装包安装</p>
+
+<p>具体可以参考 -&gt; <a href="https://www.sass.hk/install/" rel="nofollow noreferrer" target="_blank">安装 Sass | Sass 中文网</a></p>
+
+<h2 id="添加自定义样式">添加自定义样式</h2>
+
+<p>在 <code>assets/css/_custom.scss</code> 文件中添加</p>
+
+<pre><code class="language-scss">.spoiler { 
+  color: black; 
+  background-color:black;
+}
+.spoiler:hover{
+  color: white;
+}
+</code></pre>
+
+<p>然后在终端中执行</p>
+
+<pre><code class="language-shell">sass --style compressed [Leacelt 目录]/css/main.scss:[Leacelt 目录]/resources/_gen/assets/scss/css/main.scss_b95b077eb505d5c0aff8055eaced30ad.content
+</code></pre>
+
+<p>注意替换 <code>[Leacelt 目录]</code></p>
+
+<p>然后再在 Markdown 文件中用 class 为 <code>spoiler</code> 的 HTML 标签将想要“隐藏”的文字标记出来就可以了, 例如</p>
+
+<pre><code class="language-html">&lt;span class=&quot;spoiler&quot; &gt;隐藏文字&lt;/span&gt;
+</code></pre>
+
+<p><span class="spoiler" >隐藏文字</span></p>
+
+<h1 id="放大图片">放大图片</h1>
+
+<p>默认的图片大小有点小, 作者的目的应该是想让大家多使用一下 <strong>lightGallery 图片相册</strong>; 不过图片小了, 有时候文字看不清楚</p>
+
+<p>我们可以通过修改 <code>assets/css/_custom.scss</code> 文件把图片弄大一些 (虽然也大不了多少)</p>
+
+<p>在 <code>assets/css/_custom.scss</code> 中添加</p>
+
+<pre><code class="language-scss">.post-warp .post-content img {
+  max-width: 100%;
+}
+</code></pre>
+
+<p>然后与上面一样的编译, 运行</p>
+
+<pre><code class="language-shell">sass --style compressed [Leacelt 目录]/css/main.scss:[Leacelt 目录]/resources/_gen/assets/scss/css/main.scss_b95b077eb505d5c0aff8055eaced30ad.content
+</code></pre>
 
 <p><br></p>
 
@@ -292,7 +379,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://mogeko.github.io/2018/022/>https://mogeko.github.io/2018/022/</span>
+                    <a href=https://mogeko.github.io/2018/023/>https://mogeko.github.io/2018/023/</span>
             </p>
             
              
@@ -321,10 +408,8 @@
 
     <div class="post-nav">
         
-        <a href="https://mogeko.github.io/2018/021/" class="prev" rel="prev" title="空洞骑士：格林剧团 DLC 全成就指南"><i class="iconfont icon-left"></i>&nbsp;空洞骑士：格林剧团 DLC 全成就指南</a>
+        <a href="https://mogeko.github.io/2018/022/" class="prev" rel="prev" title="为 Hugo 添加 Gitalk 评论系统"><i class="iconfont icon-left"></i>&nbsp;为 Hugo 添加 Gitalk 评论系统</a>
          
-        
-        <a href="https://mogeko.github.io/2018/023/" class="next" rel="next" title="Leavelt 主题优化">Leavelt 主题优化&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

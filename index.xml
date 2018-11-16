@@ -6,13 +6,230 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 16 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Nov 2018 19:57:09 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Leavelt 主题优化</title>
+      <link>https://mogeko.github.io/2018/023/</link>
+      <pubDate>Fri, 16 Nov 2018 19:57:09 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/023/</guid>
+      <description>
+
+&lt;p&gt;目前本博客使用的 Hugo 主题是: &lt;a href=&#34;https://github.com/liuzc/LeaveIt&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Leavelt&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;正如你说看到的那样, 是一款简约大气的的主题. 但再使用的过程中我也发现了一些可以改进的地方&lt;/p&gt;
+
+&lt;h1 id=&#34;添加-gitalk-评论系统&#34;&gt;添加 Gitalk 评论系统&lt;/h1&gt;
+
+&lt;p&gt;Leavelt 默认没有评论系统, 我们可以做一点简单的修改添加 Gitalk 评论系统&lt;/p&gt;
+
+&lt;h2 id=&#34;关于-gitalk&#34;&gt;关于 Gitalk&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/gitalk.png&#34; alt=&#34;Gitalk&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;官方网址： &lt;a href=&#34;https://github.com/gitalk/gitalk/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;在线示例： &lt;a href=&#34;https://gitalk.github.io/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://gitalk.github.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说, 只要 Github 不倒闭，你的评论系统就不会被关闭。&lt;/p&gt;
+
+&lt;h2 id=&#34;创建-github-application&#34;&gt;创建 Github Application&lt;/h2&gt;
+
+&lt;p&gt;首先要去 GitHub 上创建一个 &lt;a href=&#34;https://github.com/settings/applications/new&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Github Application&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/get_Github_Application.png&#34; alt=&#34;Github Application&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;点击创建&lt;/p&gt;
+
+&lt;p&gt;记下 &lt;code&gt;Client ID&lt;/code&gt; 和 &lt;code&gt;Client Secret&lt;/code&gt;，以后要用&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/get_id&amp;amp;secret.png&#34; alt=&#34;Client ID &amp;amp; Client Secret&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/get_id&amp;amp;secret.png&#34; alt=&#34;Client ID &amp;amp; Client Secret&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;添加-gitalk-html-模板&#34;&gt;添加 gitalk.html 模板&lt;/h2&gt;
+
+&lt;p&gt;接下来为主题添加 &lt;code&gt;gitalk.html&lt;/code&gt; 模板。&lt;/p&gt;
+
+&lt;p&gt;在主题的 &lt;code&gt;layouts/partials&lt;/code&gt; 文件夹中创建 &lt;code&gt;gitalk.html&lt;/code&gt; 文件，写下如下代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Site.Params.enableGitalk }}
+&amp;lt;div id=&amp;quot;gitalk-container&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.css&amp;quot;&amp;gt;
+&amp;lt;script src=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script&amp;gt;
+  const gitalk = new Gitalk({
+    clientID: &#39;{{ .Site.Params.Gitalk.clientID }}&#39;,
+    clientSecret: &#39;{{ .Site.Params.Gitalk.clientSecret }}&#39;,
+    repo: &#39;{{ .Site.Params.Gitalk.repo }}&#39;,
+    owner: &#39;{{ .Site.Params.Gitalk.owner }}&#39;,
+    admin: [&#39;{{ .Site.Params.Gitalk.owner }}&#39;],
+    id: location.pathname, // Ensure uniqueness and length less than 50
+    distractionFreeMode: false // Facebook-like distraction free mode
+  });
+  (function() {
+    if ([&amp;quot;localhost&amp;quot;, &amp;quot;127.0.0.1&amp;quot;].indexOf(window.location.hostname) != -1) {
+      document.getElementById(&#39;gitalk-container&#39;).innerHTML = &#39;Gitalk comments not available by default when the website is previewed locally.&#39;;
+      return;
+    }
+    gitalk.render(&#39;gitalk-container&#39;);
+  })();
+&amp;lt;/script&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后在 &lt;code&gt;layouts/_default/single.html&lt;/code&gt; 中插入&lt;code&gt;{{ partial &amp;quot;gitalk.html&amp;quot; . }}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/set_div.png&#34; alt=&#34;插入 Gitalk 模板&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;配置-config-toml&#34;&gt;配置 config.toml&lt;/h2&gt;
+
+&lt;p&gt;在 &lt;code&gt;config.toml&lt;/code&gt; 中添加以下配置&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[params]
+  enableGitalk = true
+
+[params.gitalk] 
+    clientID = &amp;quot;[Client ID]&amp;quot; # Your client ID
+    clientSecret = &amp;quot;[Client Secret]&amp;quot; # Your client secret
+    repo = &amp;quot;mogeko.github.io&amp;quot; # The repo to store comments
+    owner = &amp;quot;Mogeko&amp;quot; # Your GitHub ID
+    admin= &amp;quot;Mogeko&amp;quot; # Required. Github repository owner and collaborators. (Users who having write access to this repository)
+    id= &amp;quot;location.pathname&amp;quot; # The unique id of the page.
+    labels= &amp;quot;gitalk&amp;quot; # Github issue labels. If you used to use Gitment, you can change it
+    perPage= 15 # Pagination size, with maximum 100.
+    pagerDirection= &amp;quot;last&amp;quot; # Comment sorting direction, available values are &#39;last&#39; and &#39;first&#39;.
+    createIssueManually= false # If it is &#39;false&#39;, it is auto to make a Github issue when the administrators login.
+    distractionFreeMode= false # Enable hot key (cmd|ctrl + enter) submit comment.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将 &lt;code&gt;[Client ID]&lt;/code&gt; 替换为 Github Application 的 Client ID&lt;/p&gt;
+
+&lt;p&gt;将 &lt;code&gt;[Client Secret]&lt;/code&gt; 替换为 Github Application 的 Client Secret&lt;/p&gt;
+
+&lt;p&gt;将 &lt;code&gt;repo&lt;/code&gt; 设置为你的博客的地址&lt;/p&gt;
+
+&lt;p&gt;将 &lt;code&gt;owner&lt;/code&gt; 和 &lt;code&gt;admin&lt;/code&gt; 设置为你的 GitHub ID&lt;/p&gt;
+
+&lt;p&gt;更多配置请参考: &lt;a href=&#34;https://github.com/gitalk/gitalk&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 &lt;code&gt;hugo server&lt;/code&gt; 中是不会启用的)## 配置 config.toml&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code&gt;config.toml&lt;/code&gt; 中添加以下配置&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[params]
+  enableGitalk = true
+
+[params.gitalk] 
+    clientId = &amp;quot;[Client ID]&amp;quot; # Your client ID
+    clientSecret = &amp;quot;[Client Secret]&amp;quot; # Your client secret
+    repo = &amp;quot;mogeko.github.io&amp;quot; # The repo to store comments
+    owner = &amp;quot;Mogeko&amp;quot; # Your GitHub ID
+    admin= &amp;quot;Mogeko&amp;quot; # Required. Github repository owner and collaborators. (Users who having write access to this repository)
+    id= &amp;quot;location.pathname&amp;quot; # The unique id of the page.
+    labels= &amp;quot;gitalk&amp;quot; # Github issue labels. If you used to use Gitment, you can change it
+    perPage= 15 # Pagination size, with maximum 100.
+    pagerDirection= &amp;quot;last&amp;quot; # Comment sorting direction, available values are &#39;last&#39; and &#39;first&#39;.
+    createIssueManually= false # If it is &#39;false&#39;, it is auto to make a Github issue when the administrators login.
+    distractionFreeMode= false # Enable hot key (cmd|ctrl + enter) submit comment.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将 &lt;code&gt;[Client ID]&lt;/code&gt; 替换为 Github Application 的 Client ID&lt;/p&gt;
+
+&lt;p&gt;将 &lt;code&gt;[Client Secret]&lt;/code&gt; 替换为 Github Application 的 Client Secret&lt;/p&gt;
+
+&lt;p&gt;将 &lt;code&gt;repo&lt;/code&gt; 设置为你的博客的地址&lt;/p&gt;
+
+&lt;p&gt;将 &lt;code&gt;owner&lt;/code&gt; 和 &lt;code&gt;admin&lt;/code&gt; 设置为你的 GitHub ID&lt;/p&gt;
+
+&lt;p&gt;更多配置请参考: &lt;a href=&#34;https://github.com/gitalk/gitalk&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 &lt;code&gt;hugo server&lt;/code&gt; 中是不会启用的)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/done.png&#34; alt=&#34;Gitalk&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;添加 Gitalk 评论区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;添加-隐藏文字-spoiler&#34;&gt;添加“隐藏文字”(spoiler)&lt;/h1&gt;
+
+&lt;p&gt;Steam 社区和其他一些支持 BBCode 的论坛都有一种名为“隐藏文字”(spoiler) 的标签, 使用这种标签后,标签中的文字默认会隐藏起来, 当你将鼠标移动到文字上时, 文字才会显示出来.&lt;/p&gt;
+
+&lt;p&gt;就像这样：&lt;span class=&#34;spoiler&#34; &gt;这是一段隐藏文字&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;非常炫酷&lt;/p&gt;
+
+&lt;p&gt;虽然 Markdown 并不支持“隐藏文字”, 但我们可以通过在 Markdown 中内嵌 HTML 实现这一功能&lt;/p&gt;
+
+&lt;h2 id=&#34;安装-ruby-sass&#34;&gt;安装 ruby-sass&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;由于 Leavelt 使用了 scss. 所以如果想要添加自定义样式的话需要先安装 Sass (基于 Rudy)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;我使用是 Ubuntu. 所以直接在终端中运行 &lt;code&gt;sudo apt install ruby-sass&lt;/code&gt; 就可以了, 计算机会自动为我解决好依赖&lt;/p&gt;
+
+&lt;p&gt;Mac OS 自带得有 Ruby, 因此可以通过 &lt;code&gt;gem&lt;/code&gt;安装&lt;/p&gt;
+
+&lt;p&gt;Windows 需要 &lt;a href=&#34;http://rubyinstaller.org/downloads&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;下载 Ruby&lt;/a&gt; 的安装包安装&lt;/p&gt;
+
+&lt;p&gt;具体可以参考 -&amp;gt; &lt;a href=&#34;https://www.sass.hk/install/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;安装 Sass | Sass 中文网&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;添加自定义样式&#34;&gt;添加自定义样式&lt;/h2&gt;
+
+&lt;p&gt;在 &lt;code&gt;assets/css/_custom.scss&lt;/code&gt; 文件中添加&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scss&#34;&gt;.spoiler { 
+  color: black; 
+  background-color:black;
+}
+.spoiler:hover{
+  color: white;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后在终端中执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sass --style compressed [Leacelt 目录]/css/main.scss:[Leacelt 目录]/resources/_gen/assets/scss/css/main.scss_b95b077eb505d5c0aff8055eaced30ad.content
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意替换 &lt;code&gt;[Leacelt 目录]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;然后再在 Markdown 文件中用 class 为 &lt;code&gt;spoiler&lt;/code&gt; 的 HTML 标签将想要“隐藏”的文字标记出来就可以了, 例如&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;span class=&amp;quot;spoiler&amp;quot; &amp;gt;隐藏文字&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;span class=&#34;spoiler&#34; &gt;隐藏文字&lt;/span&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;放大图片&#34;&gt;放大图片&lt;/h1&gt;
+
+&lt;p&gt;默认的图片大小有点小, 作者的目的应该是想让大家多使用一下 &lt;strong&gt;lightGallery 图片相册&lt;/strong&gt;; 不过图片小了, 有时候文字看不清楚&lt;/p&gt;
+
+&lt;p&gt;我们可以通过修改 &lt;code&gt;assets/css/_custom.scss&lt;/code&gt; 文件把图片弄大一些 (虽然也大不了多少)&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code&gt;assets/css/_custom.scss&lt;/code&gt; 中添加&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scss&#34;&gt;.post-warp .post-content img {
+  max-width: 100%;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后与上面一样的编译, 运行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sass --style compressed [Leacelt 目录]/css/main.scss:[Leacelt 目录]/resources/_gen/assets/scss/css/main.scss_b95b077eb505d5c0aff8055eaced30ad.content
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>为 Hugo 添加 Gitalk 评论系统</title>
       <link>https://mogeko.github.io/2018/022/</link>
-      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 16 Nov 2018 12:57:09 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/022/</guid>
       <description>
@@ -143,52 +360,9 @@
     </item>
     
     <item>
-      <title>空洞骑士：存档备份方法</title>
-      <link>https://mogeko.github.io/2018/020/</link>
-      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/020/</guid>
-      <description>&lt;p&gt;一个简单的方法备份&lt;strong&gt;「空洞骑士」&lt;/strong&gt;的存档文件。&lt;/p&gt;
-
-&lt;p&gt;备份存档文件有个以下好处：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;因为众所周知的原因，Steam 云有时会不稳定，定期手动备份存档可以减少因云备份失败造成的进度丢失&lt;/li&gt;
-&lt;li&gt;可以较为快速的完成某些不可能在同一存档中完成的成就&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;正文&lt;/p&gt;
-
-&lt;p&gt;使用 Win键 + R 呼出&lt;strong&gt;「运行」&lt;/strong&gt;，然后输入&lt;/p&gt;
-
-&lt;p&gt;%HOMEDRIVE%%HOMEPATH%\AppData\LocalLow\Team Cherry\Hollow Knight&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129397282/0D5A1135E6760F86BC8F3A9FE32EE99983375512/&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在弹出的文件夹中可以看到以下文件&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129400498/62CFB7DA909A59E3E1C88AFF299388B680B07885/&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;user[数字].dat&lt;/p&gt;
-
-&lt;p&gt;就是存档文件，数字 (1 - 4) 表示第几个存档。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;原文地址: &lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526745112&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;「空洞骑士」存档备份方法 | Steam 社区&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;作者: 依然是 Mogeko ٩(●˙▿˙●)۶&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>空洞骑士：格林剧团 DLC 全成就指南</title>
       <link>https://mogeko.github.io/2018/021/</link>
-      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 30 Sep 2018 21:06:00 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/021/</guid>
       <description>
@@ -355,141 +529,41 @@
     </item>
     
     <item>
-      <title>空洞骑士：寻神者 DLC 全成就指南</title>
-      <link>https://mogeko.github.io/2018/019/</link>
-      <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
+      <title>空洞骑士：存档备份方法</title>
+      <link>https://mogeko.github.io/2018/020/</link>
+      <pubDate>Sun, 30 Sep 2018 19:17:00 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/019/</guid>
-      <description>
+      <guid>https://mogeko.github.io/2018/020/</guid>
+      <description>&lt;p&gt;一个简单的方法备份&lt;strong&gt;「空洞骑士」&lt;/strong&gt;的存档文件。&lt;/p&gt;
 
-&lt;p&gt;爆肝 20 多个小时终于打完了 QAQ
-写篇指南压压惊 _(:з」∠)_&lt;/p&gt;
+&lt;p&gt;备份存档文件有个以下好处：&lt;/p&gt;
 
-&lt;p&gt;寻神者 DLC 是真的难，推荐大家在完成主线剧情，做好心理准备，&lt;del&gt;写好遗书后，&lt;/del&gt;再开启&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;因为众所周知的原因，Steam 云有时会不稳定，定期手动备份存档可以减少因云备份失败造成的进度丢失&lt;/li&gt;
+&lt;li&gt;可以较为快速的完成某些不可能在同一存档中完成的成就&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;&lt;span class=&#34;spoiler&#34; &gt;我操你大爷的开发者 QAQ&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;正文&lt;/p&gt;
 
-&lt;h1 id=&#34;开启方法&#34;&gt;开启方法&lt;/h1&gt;
+&lt;p&gt;使用 Win键 + R 呼出&lt;strong&gt;「运行」&lt;/strong&gt;，然后输入&lt;/p&gt;
 
-&lt;h2 id=&#34;找一个简单钥匙&#34;&gt;找一个简单钥匙&lt;/h2&gt;
+&lt;p&gt;%HOMEDRIVE%%HOMEPATH%\AppData\LocalLow\Team Cherry\Hollow Knight&lt;/p&gt;
 
-&lt;p&gt;开启寻神者 DLC 需要一个&lt;strong&gt;「简单钥匙」&lt;/strong&gt;，如果身上有的话可以跳过&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129397282/0D5A1135E6760F86BC8F3A9FE32EE99983375512/&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;首先来到&lt;strong&gt;「王国边缘」&lt;/strong&gt;的愚人竞技场，从竞技场下方经过长椅，在长椅和尽头的温泉之间，上方有通道可以跳上去。&lt;/p&gt;
+&lt;p&gt;在弹出的文件夹中可以看到以下文件&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127720802/3887766AB03FDE17ED254610E5333492A842F97D/&#34; alt=&#34;Map_1&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129400498/62CFB7DA909A59E3E1C88AFF299388B680B07885/&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;把墙壁撸穿，可以打开一个隐藏房间&lt;/p&gt;
+&lt;p&gt;user[数字].dat&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127722487/ECB6722E2C094422AB7F31D3C51441479AB392B8/&#34; alt=&#34;Map_2&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;进入隐藏房间，可以看到一个&lt;strong&gt;「苍白潜伏者」&lt;/strong&gt;，他一看到你就会跑。追上并杀死他，他身上会掉一个&lt;strong&gt;「简单钥匙」&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;开启-神居&#34;&gt;开启「神居」&lt;/h2&gt;
-
-&lt;p&gt;来到皇家下水道，在** 「吸虫之母」**的家门口向上走，来到如图位置 (大概在长椅的下方)，跳起来对着墙壁来一发，进入隐藏通道。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127731980/0B267B9D66B22E341901C01D8E6E85FE0EDE11A6/&#34; alt=&#34;Map_3&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;一直往左走，直到来到一个名为「垃圾坑」的地方&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127733672/EA2C53A1B6F0F14953B8E986E4C2DE10DAB4079F/&#34; alt=&#34;Map_4&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127735000/65E00823B261FC2CF1AF313C8645DA683F908C9E/&#34; alt=&#34;Map_5&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;「垃圾坑」中有一个上锁的棺材，用「简单钥匙」打开后，会掉一个「神明调谐器」&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127736304/4119CD178396BC63269BC57B13C8628413FC2C69/&#34; alt=&#34;Map_6&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127737280/F396BFF24C1C5E02CC809B54CDECB2826E79DC42/&#34; alt=&#34;Map_7&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;此时对着棺材中那个中暑的“尸体”(莫挨老子，老子没中暑 QAQ) 来一发&lt;strong&gt;「光之钉」&lt;/strong&gt;，开启&lt;strong&gt;「神居」&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;全成就指南&#34;&gt;全成就指南&lt;/h1&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;图标&lt;/th&gt;
-&lt;th&gt;成就&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127529487/9937E1FABC4F0EA2FEEBAFD0B6F20C025B52AEEC/&#34; alt=&#34;兄弟&#34; /&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;兄弟：&lt;/strong&gt;完成「大师万神殿」挑战&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127530081/17F7D048DECF5C20BAB0A7BD11F2FAC5CACA050A/&#34; alt=&#34;灵感&#34; /&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;灵感：&lt;/strong&gt;完成「艺术家万神殿」挑战&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127530647/382C7998E9B0B60A850D8BDF4C7F4A515A8B3481/&#34; alt=&#34;专注&#34; /&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;专注：&lt;/strong&gt;完成「贤者万神殿」挑战&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;完成三个挑战后会解锁「骑士万神殿」&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;图标&lt;/th&gt;
-&lt;th&gt;成就&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127531198/5857AE3A16211B09755B086F37F411ADEAD38131/&#34; alt=&#34;灵魂与阴影&#34; /&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;灵魂与阴影：&lt;/strong&gt;完成「骑士万神殿」挑战&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;完成四个挑战后会解锁「圣巢万神殿」&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;图标&lt;/th&gt;
-&lt;th&gt;成就&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127531615/671C16432F460CDD9EFF88D5C01B4ABC7CFE2703/&#34; alt=&#34;拥抱空虚&#34; /&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;拥抱虚空：&lt;/strong&gt;完成「圣巢万神殿」挑战&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h1 id=&#34;关于-束缚&#34;&gt;关于「束缚」&lt;/h1&gt;
-
-&lt;p&gt;如果你觉得还是不过瘾，还可以通过束缚&lt;strong&gt;「骨钉」&lt;/strong&gt;、&lt;strong&gt;「外壳」&lt;/strong&gt;、&lt;strong&gt;「护符」&lt;/strong&gt;、&lt;strong&gt;「灵魂」&lt;/strong&gt;来提升难度。&lt;/p&gt;
-
-&lt;p&gt;在&lt;strong&gt;「束缚」&lt;/strong&gt;难度中完成挑战后，会在相关挑战的入口处点亮相应的四盏灯，按&lt;strong&gt;「束缚」&lt;/strong&gt;得最多的一次算 (例如束缚&lt;strong&gt;「骨钉」&lt;/strong&gt;和&lt;strong&gt;「外壳」&lt;/strong&gt;就只能点亮&lt;strong&gt;「骨钉」&lt;/strong&gt;和&lt;strong&gt;「外壳」&lt;/strong&gt;两盏灯，如果束缚了所有项目，就可以点亮全部四盏灯)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;「束缚」不会影响成就&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127612824/BD136FFE9A6F394E584F627B32F2AFB747733473/&#34; alt=&#34;束缚&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;结语&#34;&gt;结语&lt;/h1&gt;
-
-&lt;p&gt;就酱，我去补告告了，祝大家受难愉快(○&amp;rsquo;◡&amp;rsquo;○)ﾉ♥&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910124697569/9E941323DE8DFE4CBE8746FF52F92855E8807A73/&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;就是存档文件，数字 (1 - 4) 表示第几个存档。&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;原文地址: &lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526374935&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;寻神者 DLC 全成就指南 | Steam 社区&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;原文地址: &lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526745112&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;「空洞骑士」存档备份方法 | Steam 社区&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;作者: 还是 Mogeko ヾ(●´∇｀●)ﾉ&lt;/p&gt;
+&lt;p&gt;作者: 依然是 Mogeko ٩(●˙▿˙●)۶&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -4573,7 +4647,7 @@ BaiduPCS-Go set max_parallel 150
     <item>
       <title>如何将 Ubuntu 升级到 17.10</title>
       <link>https://mogeko.github.io/2017/009/</link>
-      <pubDate>Sat, 02 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 02 Dec 2017 11:57:09 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2017/009/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/009/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;

@@ -6,35 +6,15 @@
     <description>Recent content in 轻松休闲的空洞骑士 on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 30 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Sep 2018 21:06:00 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.github.io/tags/%E8%BD%BB%E6%9D%BE%E4%BC%91%E9%97%B2%E7%9A%84%E7%A9%BA%E6%B4%9E%E9%AA%91%E5%A3%AB/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>空洞骑士：存档备份方法</title>
-      <link>https://mogeko.github.io/2018/020/</link>
-      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/020/</guid>
-      <description>一个简单的方法备份「空洞骑士」的存档文件。
-备份存档文件有个以下好处：
- 因为众所周知的原因，Steam 云有时会不稳定，定期手动备份存档可以减少因云备份失败造成的进度丢失 可以较为快速的完成某些不可能在同一存档中完成的成就  正文
-使用 Win键 + R 呼出「运行」，然后输入
-%HOMEDRIVE%%HOMEPATH%\AppData\LocalLow\Team Cherry\Hollow Knight
-在弹出的文件夹中可以看到以下文件
-user[数字].dat
-就是存档文件，数字 (1 - 4) 表示第几个存档。
-原文地址: 「空洞骑士」存档备份方法 | Steam 社区
-作者: 依然是 Mogeko ٩(●˙▿˙●)۶
-
- ·End·</description>
-    </item>
-    
-    <item>
       <title>空洞骑士：格林剧团 DLC 全成就指南</title>
       <link>https://mogeko.github.io/2018/021/</link>
-      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 30 Sep 2018 21:06:00 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/021/</guid>
       <description>补一篇格林剧团 DLC 的全成就指南
@@ -52,11 +32,31 @@ user[数字].dat
     </item>
     
     <item>
-      <title>空洞骑士：寻神者 DLC 全成就指南</title>
-      <link>https://mogeko.github.io/2018/019/</link>
-      <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
+      <title>空洞骑士：存档备份方法</title>
+      <link>https://mogeko.github.io/2018/020/</link>
+      <pubDate>Sun, 30 Sep 2018 19:17:00 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/019/</guid>
+      <guid>https://mogeko.github.io/2018/020/</guid>
+      <description>一个简单的方法备份「空洞骑士」的存档文件。
+备份存档文件有个以下好处：
+ 因为众所周知的原因，Steam 云有时会不稳定，定期手动备份存档可以减少因云备份失败造成的进度丢失 可以较为快速的完成某些不可能在同一存档中完成的成就  正文
+使用 Win键 + R 呼出「运行」，然后输入
+%HOMEDRIVE%%HOMEPATH%\AppData\LocalLow\Team Cherry\Hollow Knight
+在弹出的文件夹中可以看到以下文件
+user[数字].dat
+就是存档文件，数字 (1 - 4) 表示第几个存档。
+原文地址: 「空洞骑士」存档备份方法 | Steam 社区
+作者: 依然是 Mogeko ٩(●˙▿˙●)۶
+
+ ·End·</description>
+    </item>
+    
+    <item>
+      <title>空洞骑士：寻神者 DLC 全成就指南</title>
+      <link>https://mogeko.github.io/1/019/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/1/019/</guid>
       <description>爆肝 20 多个小时终于打完了 QAQ 写篇指南压压惊 _(:з」∠)_
 寻神者 DLC 是真的难，推荐大家在完成主线剧情，做好心理准备，写好遗书后，再开启
 我操你大爷的开发者 QAQ
