@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>系统 on Mogeko`s Blog</title>
+    <link>https://mogeko.github.io/categories/%E7%B3%BB%E7%BB%9F/</link>
+    <description>Recent content in 系统 on Mogeko`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 02 Dec 2017 18:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://mogeko.github.io/categories/%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>神奇的 Magisk</title>
+      <link>https://mogeko.github.io/2017/010/</link>
+      <pubDate>Sat, 02 Dec 2017 18:00:00 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2017/010/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/010/Magisk_Logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;今天为大家介绍一款神奇的 Android 第三方接口 —— Magisk&lt;/p&gt;
+
+&lt;h1 id=&#34;root-玩家与厂商间的博弈&#34;&gt;Root —— 玩家与厂商间的博弈&lt;/h1&gt;
+
+&lt;p&gt;Android 从诞生之日起就高举着开源的大旗，这也是它成功的原因之一。而它的开放性也成功的吸引到了一大批爱折腾的人，从而诞生出了 root（此处特制 Android 中的 root）。&lt;/p&gt;
+
+&lt;p&gt;根据 &lt;a href=&#34;https://zh.wikipedia.org/wiki/Root#.E8.A8.88.E7.AE.97.E6.A9.9F.E6.87.89.E7.94.A8&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Wikipedia&lt;/a&gt; 的释义，root 指的是使用户取得 Android 操作系统的超级用户（Super User）许可权的技术。用户通过 root，可以越过手机制造商的限制，卸载手机制造商预装在手机中某些应用，以及运行一些需要超级用户权限的应用程序。同时,root 也可能会让手机变得“不安全”（并不是说 root 使手机变得不安全，而是一些用户的使用习惯会使 root 后的手机变得危险）。&lt;/p&gt;
+
+&lt;p&gt;但是从棉花糖（Android 6.0）开始，Google 基本阻止了以前版本中最流行的 root 方法 —— 即，将 su守护程序 放置到 /system 分区，并在启动时取得所需的权限。道高一尺，魔高一丈，于是就出现了 systemless 的 root 方式，因为它不采取任何方式修改 /system 分区。&lt;/p&gt;
+
+&lt;p&gt;出于增加安全性的考虑，Google 推出了 SafetyNet 这样的检测，以确保 Android Pay 等一些 App 的安全运行，玩家不得不在 root 权限和一些有价值的 App 之间作出选择。&lt;/p&gt;
+
+&lt;p&gt;这个时候 Magisk 诞生了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>如何将 Ubuntu 升级到 17.10</title>
+      <link>https://mogeko.github.io/2017/009/</link>
+      <pubDate>Sat, 02 Dec 2017 11:57:09 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2017/009/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/009/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ubuntu 17.10 已经发布了一段时间了，作为 18.04 的预览（热）版。带来了一大波新特性。&lt;/p&gt;
+
+&lt;p&gt;其中最重要也是最令我揪心的是 Ubuntu 将放弃 Unity 回归 Gnome。对于我们这些习惯了 Unity 的用户来说，这个决定简直蠢到家了。虽然 Unity 是丑了点，但比 Gnome 好用到不知道那里去了！这也是我迟迟没有升级的主要原因。&lt;/p&gt;
+
+&lt;p&gt;目前 &lt;strong&gt;Ubuntu 17.10 不是长期支持版本（LTS）！！！&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UAC 白名单</title>
+      <link>https://mogeko.github.io/2017/001/</link>
+      <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2017/001/</guid>
+      <description>&lt;p&gt;好像废话有点多&lt;em&gt;(:з)∠)&lt;/em&gt; -&amp;gt;-&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2017/001/#Start&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;直接开始的传送门&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;一直觉得微软为 Windows 引入 UAC 是个明智的选择，它能在一定程度上减少 Windows 平台过于开放，流氓软件肆意横行的局面。
+国内的情况比较特殊，因为很多人根本不知道那是什么，无脑点 “允许” 。
+都是被那群流氓给教坏的。。。
+抛开这些不谈，即使 UAC 的使用很有必要，但每次都弹出的蓝色框框确实很烦人，特别是在那些需要曾经使用管理员权限的软件上。因此，有的人直接选择关闭 UAC ，不过这样却对系统安全性产生了风险。&lt;/p&gt;
+
+&lt;p&gt;所以，如何才能在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限？&lt;/p&gt;
+
+&lt;p&gt;我首先想到的是使用 Autohotkey 帮用户点“允许”
+桌面分为三层，分别是 Winlogon Desktop、Screensaver Desktop、Application Desktop。
+所有的应用都运行在 Application Desktop 上（ UAC 不算）。UAC 在 Winlogon Desktop 上弹出的窗口。
+也就是说，以Autohotkey 所在的位置 UAC 它捞都捞不到。。。&lt;/p&gt;
+
+&lt;p&gt;那么，到底要如何干掉 UAC 呢？&lt;/p&gt;
+
+&lt;p&gt;经过研究发现，想要在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限有两种方法。
+分别是使用 任务计划程序 或 &lt;a href=&#34;https://technet.microsoft.com/en-us/library/cc766242(v=ws.10).aspx&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Application Compatibility Toolkit (ACT)&lt;/a&gt;。
+这里只解释使用 任务计划程序。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>安装 Ubuntu 双系统</title>
+      <link>https://mogeko.github.io/2017/000/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2017/000/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/000/logo.jpg&#34; alt=&#34;Logo&#34; /&gt;
+在很久以前就想试一试Linux了，一直没有实践。一是觉得太麻烦，二是怕把电脑弄坏。后来实践了一次后发现，其实并没有想象中那么难，这是一个完全独立的系统，与隔壁的Windows半毛钱关系都没有。把引导搞定就不怕了。&lt;/p&gt;
+
+&lt;p&gt;另外，如果想长期使用；
+&lt;strong&gt;千万不要上最新的系统！！！&lt;/strong&gt;
+bug多得一逼&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

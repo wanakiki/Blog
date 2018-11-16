@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博客相关 on Mogeko`s Blog</title>
+    <link>https://mogeko.github.io/categories/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/</link>
+    <description>Recent content in 博客相关 on Mogeko`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 16 Nov 2018 19:57:09 +0800</lastBuildDate>
+    
+	<atom:link href="https://mogeko.github.io/categories/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Leavelt 主题优化</title>
+      <link>https://mogeko.github.io/2018/023/</link>
+      <pubDate>Fri, 16 Nov 2018 19:57:09 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/023/</guid>
+      <description>目前本博客使用的 Hugo 主题是: Leavelt
+正如你说看到的那样, 是一款简约大气的的主题. 但再使用的过程中我也发现了一些可以改进的地方
+添加 Gitalk 评论系统 Leavelt 默认没有评论系统, 我们可以做一点简单的修改添加 Gitalk 评论系统
+关于 Gitalk  官方网址： https://github.com/gitalk/gitalk/ 在线示例： https://gitalk.github.io/  Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说, 只要 Github 不倒闭，你的评论系统就不会被关闭。
+创建 Github Application 首先要去 GitHub 上创建一个 Github Application
+点击创建
+记下 Client ID 和 Client Secret，以后要用
+添加 gitalk.html 模板 接下来为主题添加 gitalk.html 模板。
+在主题的 layouts/partials 文件夹中创建 gitalk.html 文件，写下如下代码
+{{ if .</description>
+    </item>
+    
+    <item>
+      <title>为 Hugo 添加 Gitalk 评论系统</title>
+      <link>https://mogeko.github.io/2018/022/</link>
+      <pubDate>Fri, 16 Nov 2018 12:57:09 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/022/</guid>
+      <description>Hugo 是一个强大的静态网页生成器，使用 go 开发。速度贼快，还有 “时时预览” 等特性。不过 Hugo 还比较年轻，没有像 NexT 那样功能强大，成熟稳定的主题。所以很多东西需要自己动手撸。就例如评论系统。
+关于 Gitalk  官方网址： https://github.com/gitalk/gitalk/ 在线示例： https://gitalk.github.io/  Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说, 只要 Github 不倒闭，你的评论系统就不会被关闭。
+为 Hugo 添加 Gitalk 评论系统 本博客使用的主题是: Leavelt
+不同主题可能有所区别，但原理都是类似的
+原理 众所周知，Hugo 会将 Markdown 文档 按照 主题 (包括 HTML 模板、CSS、JavaScript 等) 编译成静态网页
+那么我们只需要将 Gitalk 作为一个 &amp;lt;div&amp;gt; 插入到 HTML 模板中，然后在 config.toml 中添加相关配置，就可以实现 Gitalk 评论系统了
+创建 Github Application 首先要去 GitHub 上创建一个 Github Application</description>
+    </item>
+    
+    <item>
+      <title>使用 Hugo &#43; GitHub Page 搭建个人博客</title>
+      <link>https://mogeko.github.io/2018/018/</link>
+      <pubDate>Sun, 05 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/018/</guid>
+      <description>&lt;p&gt;正如你所看到的，本博客换了一个主题。但你们看不到的是，本博客将静态页面生成引擎换成了 &lt;a href=&#34;https://github.com/gohugoio/hugo&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应用应该被称作静态网站生成器。这类应用将 Markdown 文件和主题一起编译成由 HTML、CSS、JavaScript 组成的静态网页。然后上传到 GitHub 上，通过 GitHub 提供的静态页面托管服务 (GitHub Page) 进行访问。&lt;/p&gt;
+
+&lt;p&gt;这里就写一篇文章来记录一下踩过的坑。&lt;/p&gt;
+
+&lt;p&gt;本站目前使用的主题是 &lt;a href=&#34;https://themes.gohugo.io/hugo-hello-programmer-theme/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Hello Programmer&lt;/a&gt;，要配合 Hugo 使用。今后会写一篇文章来详细介绍。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在你的文章中添加 B站的视频</title>
+      <link>https://mogeko.github.io/2017/005/</link>
+      <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2017/005/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/005/logo.png&#34; alt=&#34;Logo&#34; /&gt;
+参考 &lt;a href=&#34;https://github.com/Z4Tech/hexo-tag-bilibili&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/Z4Tech/hexo-tag-bilibili&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Hexo Hey 管理你的博客</title>
+      <link>https://mogeko.github.io/2017/004/</link>
+      <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2017/004/</guid>
+      <description>&lt;p&gt;在使用 Hexo Hey 之前，我一直在使用 VSCode（配合 vscode-hexo 插件）来管理博客。虽然可以很快捷 的&lt;code&gt;新建&lt;/code&gt;,&lt;code&gt;部署&lt;/code&gt;, &lt;code&gt;测试&lt;/code&gt;,&lt;code&gt;发布&lt;/code&gt; 博客 ，但还是很麻烦，离我理想中的博客平台还有一定的距离。
+我在知乎上发现了 Hexo Hey 这个插件，尝试了一下，虽然有各种问题，但确实很好用。
+因此决定写一篇文章来介绍一下如何&lt;code&gt;安装&lt;/code&gt;, &lt;code&gt;使用&lt;/code&gt; Hexo Hey。&lt;/p&gt;
+
+&lt;p&gt;切换换到 Hexo Hey 后最不习惯的地方就是没有了 VSCode 中那些方便的快捷键了。(ノへ￣、)[擦眼泪……]&lt;/p&gt;
+
+&lt;p&gt;与 Hexo Hey 比较相似的 Hexo 博客管理程序还有 &lt;a href=&#34;https://github.com/jaredly/hexo-admin&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Hexo Admin&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hexo 美化</title>
+      <link>https://mogeko.github.io/2017/003/</link>
+      <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2017/003/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/003/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;虽然 NexT 的主题很漂亮，但问题是太受欢迎了，都快烂大街了。
+好在它是一个开源项目，我们可以通过修改它的代码来个性话你的博客。
+这篇教程要涉及到一些前端知识，可能没有那么 Novice friendly。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;因为涉及到对 NexT 代码的修改，搞不好，可能引起 Hexo 无法工作。所以强烈建议使用 Git 对 NexT 进行备份。&lt;/strong&gt;
+具体使用方法请自行 Google。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 Hexo &#43; GitHub 建立自己的博客</title>
+      <link>https://mogeko.github.io/2017/002/</link>
+      <pubDate>Sun, 20 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2017/002/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/002/logo.jpg&#34; alt=&#34;Logo&#34; /&gt;
+自从我开了这个博客后，就有很多小伙伴问我怎么弄的？（好吧，其实就一个(*/ω＼*)）
+为了教她，也为了给各位看官一点参考。我写了这篇文章。
+因为她比较小白，所以这篇文章会写得比较详细。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
