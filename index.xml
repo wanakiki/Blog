@@ -48,8 +48,6 @@
 
 &lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/get_id&amp;amp;secret.png&#34; alt=&#34;Client ID &amp;amp; Client Secret&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/get_id&amp;amp;secret.png&#34; alt=&#34;Client ID &amp;amp; Client Secret&#34; /&gt;&lt;/p&gt;
-
 &lt;h2 id=&#34;添加-gitalk-html-模板&#34;&gt;添加 gitalk.html 模板&lt;/h2&gt;
 
 &lt;p&gt;接下来为主题添加 &lt;code&gt;gitalk.html&lt;/code&gt; 模板。&lt;/p&gt;
@@ -155,11 +153,11 @@
 
 &lt;h1 id=&#34;添加-隐藏文字-spoiler&#34;&gt;添加“隐藏文字”(spoiler)&lt;/h1&gt;
 
-&lt;p&gt;Steam 社区和其他一些支持 BBCode 的论坛都有一种名为“隐藏文字”(spoiler) 的标签，使用这种标签后，标签中的文字默认会隐藏起来，当你将鼠标移动到文字上时，文字才会显示出来。&lt;/p&gt;
+&lt;p&gt;Steam 和其他一些支持 BBCode 的论坛都有一种名为“隐藏文字”(spoiler) 的标签，使用这种标签后，标签中的文字默认会隐藏起来，当你将鼠标移动到文字上时，文字才会显示出来。&lt;/p&gt;
 
 &lt;p&gt;就像这样：&lt;span class=&#34;spoiler&#34; &gt;这是一段隐藏文字&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;非常炫酷&lt;/p&gt;
+&lt;p&gt;很有意思😏&lt;/p&gt;
 
 &lt;p&gt;虽然 Markdown 并不支持“隐藏文字”，但我们可以通过在 Markdown 中内嵌 HTML 实现这一功能&lt;/p&gt;
 
