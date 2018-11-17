@@ -17,7 +17,9 @@
       <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/017/</guid>
-      <description>&lt;p&gt;前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/014/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。
 这个方法很好，但是也存在问题。KMS 服务激活一次可以正常使用 180 天，过期后自动给你续 180 天，如此重复。如果 KMS 激活服务器一直运行着还好，但如果服务器挂掉了呢？
 要解决这个问题，最直接的方法就是让 KMS 激活服务器保持稳定不宕机，这显然是不现实的。毕竟是私人搭的服务器，别免费给你用，不稳定也是情有可原的。所以我们不妨换个思路：&lt;strong&gt;既然别人的服务器不稳定，我们为何不在本地自己搭一个呢？&lt;/strong&gt;
 今天，我就教大家如何在本地搭建 KMS 激活服务器。&lt;/p&gt;
@@ -31,7 +33,7 @@
       <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/016/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/016/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/016/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;16 年 12 月份的时候，微软发布了 Windows Subsystem for Linux (WSL)，通过子系统的方式运行了一个完整的 Linux 系统。使得在 Windows 中使用 Linux 中的工具链成为可能。(Windows 果然是最好的 Linux 发行版)&lt;/p&gt;
 
@@ -48,7 +50,9 @@
       <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/015/</guid>
-      <description>&lt;p&gt;经测试，&lt;strong&gt;以前的方法已经失效了。&lt;/strong&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/014/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;经测试，&lt;strong&gt;以前的方法已经失效了。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;今天就教大家一个新的方法在 Android 手机上安装 KMS 激活服务。而且新方法&lt;strong&gt;不需要 Magisk 框架&lt;/strong&gt;，相比于原来的方法更简单安全。&lt;/p&gt;
 

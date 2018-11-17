@@ -100,7 +100,7 @@ user[数字].dat
 开启「神居」 来到皇家下水道，在** 「吸虫之母」**的家门口向上走，来到如图位置 (大概在长椅的下方)，跳起来对着墙壁来一发，进入隐藏通道。
 一直往左走，直到来到一个名为「垃圾坑」的地方
 「垃圾坑」中有一个上锁的棺材，用「简单钥匙」打开后，会掉一个「神明调谐器」
-此时对着棺材中那个中暑的“尸体”莫挨老子，老子没中暑 QAQ 来一发「光之钉」，开启「神居」
+此时对着棺材中那个中暑的“尸体” 莫挨老子，老子没中暑 QAQ 来一发「光之钉」，开启「神居」
 全成就指南    图标 成就      兄弟：完成「大师万神殿」挑战    灵感：完成「艺术家万神殿」挑战    专注：完成「贤者万神殿」挑战    完成三个挑战后会解锁「骑士万神殿」
    图标 成就      灵魂与阴影：完成「骑士万神殿」挑战    完成四个挑战后会解锁「圣巢万神殿」
    图标 成就      拥抱虚空：完成「圣巢万神殿」挑战    关于「束缚」 如果你觉得还是不过瘾，还可以通过束缚「骨钉」、「外壳」、「护符」、「灵魂」来提升难度。</description>
@@ -127,7 +127,9 @@ user[数字].dat
       <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/017/</guid>
-      <description>&lt;p&gt;前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/014/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。
 这个方法很好，但是也存在问题。KMS 服务激活一次可以正常使用 180 天，过期后自动给你续 180 天，如此重复。如果 KMS 激活服务器一直运行着还好，但如果服务器挂掉了呢？
 要解决这个问题，最直接的方法就是让 KMS 激活服务器保持稳定不宕机，这显然是不现实的。毕竟是私人搭的服务器，别免费给你用，不稳定也是情有可原的。所以我们不妨换个思路：&lt;strong&gt;既然别人的服务器不稳定，我们为何不在本地自己搭一个呢？&lt;/strong&gt;
 今天，我就教大家如何在本地搭建 KMS 激活服务器。&lt;/p&gt;
@@ -141,7 +143,7 @@ user[数字].dat
       <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/016/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/016/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/016/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;16 年 12 月份的时候，微软发布了 Windows Subsystem for Linux (WSL)，通过子系统的方式运行了一个完整的 Linux 系统。使得在 Windows 中使用 Linux 中的工具链成为可能。(Windows 果然是最好的 Linux 发行版)&lt;/p&gt;
 
@@ -158,7 +160,9 @@ user[数字].dat
       <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/015/</guid>
-      <description>&lt;p&gt;经测试，&lt;strong&gt;以前的方法已经失效了。&lt;/strong&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/014/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;经测试，&lt;strong&gt;以前的方法已经失效了。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;今天就教大家一个新的方法在 Android 手机上安装 KMS 激活服务。而且新方法&lt;strong&gt;不需要 Magisk 框架&lt;/strong&gt;，相比于原来的方法更简单安全。&lt;/p&gt;
 
@@ -201,7 +205,7 @@ user[数字].dat
       <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/013/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/013/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/013/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;提到百度网盘，想必大家都很熟悉吧。&lt;/p&gt;
 
@@ -225,7 +229,7 @@ user[数字].dat
       <pubDate>Wed, 06 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/012/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/012/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/012/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Steam 大法吼啊！！！&lt;/p&gt;
 
@@ -255,7 +259,7 @@ user[数字].dat
       <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/011/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/011/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/011/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;PC 上的 Chrome 毫无疑问是最好的浏览器之一。那市场份额，&lt;del&gt;都快逼近 IE 了&lt;/del&gt;。不仅把曾经的老大哥 IE 远远的甩在后面，还把被微软委以大任的 Microsoft Edge 按在地上摩擦，弄得微软很是尴尬。然而在 Google 自家的 Android 上，发展得却不如 PC 上好，有的地方就连我这种骨粉也觉得用起来不舒服。不过，最近几次更新中，我觉得是越改越好了，特别是今天，无意中发现了几个新功能，突然打开了新世界的大门，也让我对 Chrome 的评价从 “不推荐”变成“特别推荐”！&lt;/p&gt;</description>
     </item>
@@ -289,44 +293,13 @@ user[数字].dat
       <pubDate>Sat, 02 Dec 2017 11:57:09 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2017/009/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/009/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/009/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Ubuntu 17.10 已经发布了一段时间了，作为 18.04 的预览（热）版。带来了一大波新特性。&lt;/p&gt;
 
 &lt;p&gt;其中最重要也是最令我揪心的是 Ubuntu 将放弃 Unity 回归 Gnome。对于我们这些习惯了 Unity 的用户来说，这个决定简直蠢到家了。虽然 Unity 是丑了点，但比 Gnome 好用到不知道那里去了！这也是我迟迟没有升级的主要原因。&lt;/p&gt;
 
 &lt;p&gt;目前 &lt;strong&gt;Ubuntu 17.10 不是长期支持版本（LTS）！！！&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Kindle 使用技巧</title>
-      <link>https://mogeko.github.io/2017/007/</link>
-      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogeko.github.io/2017/007/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/007/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;入手 Kindle 快一年半了，当时家里人都觉得我只是一时兴起，买回来迟早要吃灰的。但没想到我断断续续的用 Kindle 看了 100 本书了！！！感觉好有成就感。&lt;/p&gt;
-
-&lt;p&gt;今天就结合我对 Kindle 一年多的使用，谈谈我知道的一些 Kindle 的使用技巧。&lt;/p&gt;
-
-&lt;p&gt;欢迎补充~~&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Reabble | Kindle 下的 RRS 神器</title>
-      <link>https://mogeko.github.io/2017/008/</link>
-      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogeko.github.io/2017/008/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/008/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Amazon 官方系统的 Kindle 中内置了一个 &lt;code&gt;体验版浏览器&lt;/code&gt;，用起来真的很鸡肋。一开始根本不知道 Amazon 到底在想什么，做怎么个又慢，又不稳定的浏览器，浪费老子硬盘。直到那天，手机被收了&lt;em&gt;(:°з」∠)&lt;/em&gt;
-其实真正让我爱上那个辣鸡浏览器的是 RSS 神器——Reabble。&lt;/p&gt;
-
-&lt;p&gt;那是一个血雨腥风的晚自习，老师一边讲着刚考完的月考试卷一边骂人。
-在教室的第一排，我蜷缩在书本堆中，偷偷用 Kindle 内置的辣鸡浏览器连着教务处的 WiFi 逛知乎。。。（那时真的好 6，老师与我的直线距离不到 3 米，现在想想都觉得后怕）
-就在那天晚上，我发现了这个 Kindle 上的 RSS 神器。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -351,7 +324,7 @@ Fira 是 Mozilla 公司（火狐浏览器她爹）主推的字体系列。Fira C
       <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/005/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/005/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/005/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;参考 &lt;a href=&#34;https://github.com/Z4Tech/hexo-tag-bilibili&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/Z4Tech/hexo-tag-bilibili&lt;/a&gt;&lt;/p&gt;</description>
     </item>
@@ -439,6 +412,37 @@ Fira 是 Mozilla 公司（火狐浏览器她爹）主推的字体系列。Fira C
 &lt;p&gt;另外，如果想长期使用；
 &lt;strong&gt;千万不要上最新的系统！！！&lt;/strong&gt;
 bug多得一逼&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kindle 使用技巧</title>
+      <link>https://mogeko.github.io/1/007/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/1/007/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/007/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;入手 Kindle 快一年半了，当时家里人都觉得我只是一时兴起，买回来迟早要吃灰的。但没想到我断断续续的用 Kindle 看了 100 本书了！！！感觉好有成就感。&lt;/p&gt;
+
+&lt;p&gt;今天就结合我对 Kindle 一年多的使用，谈谈我知道的一些 Kindle 的使用技巧。&lt;/p&gt;
+
+&lt;p&gt;欢迎补充~~&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Reabble | Kindle 下的 RRS 神器</title>
+      <link>https://mogeko.github.io/1/008/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/1/008/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/008/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Amazon 官方系统的 Kindle 中内置了一个 &lt;code&gt;体验版浏览器&lt;/code&gt;，用起来真的很鸡肋。一开始根本不知道 Amazon 到底在想什么，做怎么个又慢，又不稳定的浏览器，浪费老子硬盘。直到那天，手机被收了&lt;em&gt;(:°з」∠)&lt;/em&gt;
+其实真正让我爱上那个辣鸡浏览器的是 RSS 神器——Reabble。&lt;/p&gt;
+
+&lt;p&gt;那是一个血雨腥风的晚自习，老师一边讲着刚考完的月考试卷一边骂人。
+在教室的第一排，我蜷缩在书本堆中，偷偷用 Kindle 内置的辣鸡浏览器连着教务处的 WiFi 逛知乎。。。（那时真的好 6，老师与我的直线距离不到 3 米，现在想想都觉得后怕）
+就在那天晚上，我发现了这个 Kindle 上的 RSS 神器。&lt;/p&gt;</description>
     </item>
     
   </channel>
