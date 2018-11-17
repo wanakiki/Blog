@@ -27,7 +27,7 @@
 
 &lt;h2 id=&#34;关于-gitalk&#34;&gt;关于 Gitalk&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/024/gitalk.png&#34;  alt=&#34;Gitalk&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/024/gitalk.png&#34;  alt=&#34;Gitalk&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;官方网址： &lt;a href=&#34;https://github.com/gitalk/gitalk/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk/&lt;/a&gt;&lt;/li&gt;
@@ -40,13 +40,13 @@
 
 &lt;p&gt;首先要去 GitHub 上创建一个 &lt;a href=&#34;https://github.com/settings/applications/new&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Github Application&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Github Application&#34; src=&#34;https://mogeko.github.io/images/024/get_Github_Application.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Github Application&#34; src=&#34;https://mogeko.github.io/images/024/get_Github_Application.png/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;点击创建&lt;/p&gt;
 
 &lt;p&gt;记下 &lt;code&gt;Client ID&lt;/code&gt; 和 &lt;code&gt;Client Secret&lt;/code&gt;，以后要用&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Client ID &amp; Client Secret&#34; src=&#34;https://mogeko.github.io/images/024/get_id&amp;secret.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Client ID &amp; Client Secret&#34; src=&#34;https://mogeko.github.io/images/024/get_id&amp;secret.png/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;添加-gitalk-html-模板&#34;&gt;添加 gitalk.html 模板&lt;/h2&gt;
 
@@ -55,9 +55,9 @@
 &lt;p&gt;在主题的 &lt;code&gt;layouts/partials&lt;/code&gt; 文件夹中创建 &lt;code&gt;gitalk.html&lt;/code&gt; 文件，写下如下代码&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Site.Params.enableGitalk }}
-&amp;lt;div id=&amp;quot;gitalk-container&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.css&amp;quot;&amp;gt;
-&amp;lt;script src=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;div id=&amp;quot;gitalk-container/&amp;quot; style=&amp;quot;border:0&amp;quot; /&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.css/&amp;quot; style=&amp;quot;border:0&amp;quot; /&amp;gt;
+&amp;lt;script src=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.min.js/&amp;quot; style=&amp;quot;border:0&amp;quot; /&amp;gt;&amp;lt;/script&amp;gt;
 &amp;lt;script&amp;gt;
   const gitalk = new Gitalk({
     clientID: &#39;{{ .Site.Params.Gitalk.clientID }}&#39;,
@@ -81,7 +81,7 @@
 
 &lt;p&gt;然后在 &lt;code&gt;layouts/_default/single.html&lt;/code&gt; 中插入&lt;code&gt;{{ partial &amp;quot;gitalk.html&amp;quot; . }}&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;插入 Gitalk 模板&#34; src=&#34;https://mogeko.github.io/images/024/set_div.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;插入 Gitalk 模板&#34; src=&#34;https://mogeko.github.io/images/024/set_div.png/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;配置-config-toml&#34;&gt;配置 config.toml&lt;/h2&gt;
 
@@ -147,7 +147,7 @@
 
 &lt;p&gt;设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 &lt;code&gt;hugo server&lt;/code&gt; 中是不会启用的)&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Gitalk&#34; src=&#34;https://mogeko.github.io/images/024/done.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Gitalk&#34; src=&#34;https://mogeko.github.io/images/024/done.png/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;添加 Gitalk 评论区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要&lt;/strong&gt;&lt;/p&gt;
 
@@ -236,7 +236,7 @@
 
 &lt;h1 id=&#34;关于-gitalk&#34;&gt;关于 Gitalk&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/024/gitalk.png&#34;  alt=&#34;Gitalk&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/024/gitalk.png&#34;  alt=&#34;Gitalk&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;官方网址： &lt;a href=&#34;https://github.com/gitalk/gitalk/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk/&lt;/a&gt;&lt;/li&gt;
@@ -684,15 +684,21 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;p&gt;首先阅读墙上的相框里的内容；大概意思是我们要收集的器官，本关是「舌头」&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447456792/C0C350E84441E57B940731D92572D2957D028ED2/&#34;&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447457229/93F7F408718DE65FA93E17C93D436ED5267092A2/&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447456792/C0C350E84441E57B940731D92572D2957D028ED2/&#34;&gt;
+&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447457229/93F7F408718DE65FA93E17C93D436ED5267092A2/&#34;&gt;
 打开棺材，死翘翘的 James 躺在里面，点一下尸体的手
 这里是一个汉诺塔式的小游戏，将戒指排列成如图所示的样子就可以了 &lt;span class=&#34;spoiler&#34; &gt;步骤太多了，就不演示了 QAQ&lt;/span&gt;
 移开手后得到一个眼球&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447457764/9CA27F81822B5885C448EE2D8E88D39F1D4F44C2/&#34;&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447458557/1E61ABBED06FDA1F64C4FFAD4ABC562B06234848/&#34;&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447458864/B1854C9ECDCBCEDB855C633BC46CF84E9B1EDDE5/&#34;&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447459283/F1B70A651B4239D5C53EFD9DFC6290FBBB9C18C0/&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447457764/9CA27F81822B5885C448EE2D8E88D39F1D4F44C2/&#34;&gt;
+&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447458557/1E61ABBED06FDA1F64C4FFAD4ABC562B06234848/&#34;&gt;
+&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447458864/B1854C9ECDCBCEDB855C633BC46CF84E9B1EDDE5/&#34;&gt;
+&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447459283/F1B70A651B4239D5C53EFD9DFC6290FBBB9C18C0/&#34;&gt;
 然后来到中间的柜子处，将柜子上的图案拼成如图所示的样子；打开柜子，得到两个硬币&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447459797/51052EC6C82DBE6B91D7E2BFF9F6868554E4B41B/&#34;&gt;&amp;lt;img src=&amp;ldquo;&lt;a href=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447460145/E2E0CA81137BA6626D9702EEE6DD2624B45500F1/)然后到右边将碎掉的雕像重新拼起来&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://steamuserimages-a.akamaihd.net/ugc/938330377447460145/E2E0CA81137BA6626D9702EEE6DD2624B45500F1/)然后到右边将碎掉的雕像重新拼起来&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447459797/51052EC6C82DBE6B91D7E2BFF9F6868554E4B41B/&#34;&gt;
+&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447460145/E2E0CA81137BA6626D9702EEE6DD2624B45500F1/&gt;
+然后到右边将碎掉的雕像重新拼起来&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447461800/637E0488C48AA2F058A75A6D1EFB9554E64114DF/&#34;&gt;
 现在回到尸体处，将两个硬币放在尸体的眼睛上，点两次嘴巴，吐出另一个眼球&lt;/p&gt;
@@ -700,10 +706,17 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 &lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447462430/1E39895B440E0A177D8D8B5B56180ADF48C2FA61/&#34;&gt;
 将两个眼球装到雕像上，得到一把刀 &lt;span class=&#34;spoiler&#34; &gt;步骤太多，演示不了！QAQ&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;[&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447463028/87FD192D47FE857A9013554CB2FBFF89BA0CD608/)](https://steamuserimages-a.akamaihd.net/ugc/938330377447463028/87FD192D47FE857A9013554CB2FBFF89BA0CD608/&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447463028/87FD192D47FE857A9013554CB2FBFF89BA0CD608/&#34;&gt;
 用刀割下尸体的舌头，放到柜子上的瓶子里，通关&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447463449/7F41E233D966AC8BD25A494AD8C8EB7E729BA3EB/&#34;&gt;&amp;lt;img src=&amp;ldquo;&lt;a href=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447463781/C5B4AF7C72E56C5C8FA21374AD558C130F3B1527/)&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://steamuserimages-a.akamaihd.net/ugc/938330377447463781/C5B4AF7C72E56C5C8FA21374AD558C130F3B1527/)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447463449/7F41E233D966AC8BD25A494AD8C8EB7E729BA3EB/&#34;&gt;
+&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/938330377447463781/C5B4AF7C72E56C5C8FA21374AD558C130F3B1527/&#34;&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;原文地址：&lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1535212223&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Rusty Lake: Roots 通关攻略 施工中&amp;hellip; | Steam 社区&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;作者：确实是 Mogeko (&lt;em&gt;/ω＼&lt;/em&gt;)&lt;/p&gt;
 </description>
     </item>
     
@@ -715,7 +728,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
       <guid>https://mogeko.github.io/2018/022/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/logo.jpg&#34;  alt=&#34;Logo&#34; &gt;&lt;/p&gt;
 
 &lt;p&gt;补一篇格林剧团 DLC 的全成就指南&lt;/p&gt;
 
@@ -732,7 +745,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;p&gt;在&lt;strong&gt;「呼啸悬崖」&lt;/strong&gt;的隐藏洞穴里，你会发现一只大虫子的尸体，对着它来一发「梦之钉」便可开启「格林剧团」&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129642756/5712015F9CCD8E9DD2CD9541047C68214624F047/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129642756/5712015F9CCD8E9DD2CD9541047C68214624F047/&#34;&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;全成就指南&#34;&gt;全成就指南&lt;/h1&gt;
 
@@ -746,17 +759,17 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129657351/982F6BD69415E06696E2FC414BC595700663AB37/&#34; style=&#34;border:0&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129657351/982F6BD69415E06696E2FC414BC595700663AB37/&#34;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;盛大演出&lt;br /&gt;&lt;/strong&gt;先完成「格林」布置的两次任务，然后在剧团打败「格林」&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129658013/11A174017FA3BAA8169C362C0740DEABABB5C241/&#34; style=&#34;border:0&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129658013/11A174017FA3BAA8169C362C0740DEABABB5C241/&#34;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;仪式&lt;/strong&gt;：&lt;strong&gt;结局一&lt;/strong&gt;&lt;br /&gt;打败「格林」后，完成「格林」布置的第三次任务，然后在剧团打败「梦魇之王」&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129658378/D08C26C6B6B675DC3135B43FDD124EEC41E351F6/&#34; style=&#34;border:0&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129658378/D08C26C6B6B675DC3135B43FDD124EEC41E351F6/&#34;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;驱逐&lt;/strong&gt;：&lt;strong&gt;结局二&lt;br /&gt;&lt;/strong&gt;打败「格林」后，到「深邃巢穴」去找「布鲁姆」，&lt;br /&gt;「布鲁姆」会劝你和他一同反抗团长「格林」；&lt;br /&gt;然后到「呼啸悬崖」(开启「格林剧团」的地方) 与 「布鲁姆」一起毁掉 「梦魇之灯」&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -781,7 +794,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129753822/ECF24E7F5328A152EB5E879BE81601AEADFF32C9/&#34; style=&#34;border:0&#34; /&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129753822/ECF24E7F5328A152EB5E879BE81601AEADFF32C9/&#34;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -799,7 +812,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129763750/E91FD4677E0E428FC133FC57CE350A527A8181B8/&#34; style=&#34;border:0&#34; /&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129763750/E91FD4677E0E428FC133FC57CE350A527A8181B8/&#34;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -864,7 +877,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;p&gt;完成结局一 (仪式结局) 则不会&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129970560/D978E5F63B3819C2A361DA2DB2343E82EEC7BFDC/&#34;  alt=&#34;迪万&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129970560/D978E5F63B3819C2A361DA2DB2343E82EEC7BFDC/&#34;  alt=&#34;迪万&#34; &gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -884,7 +897,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
       <pubDate>Sun, 30 Sep 2018 19:17:00 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/021/</guid>
-      <description>&lt;!-- &lt;img src=&#34;https://mogeko.github.io/images/021/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt; --&gt;
+      <description>&lt;!-- &lt;img src=&#34;https://mogeko.github.io/images/021/logo.jpg&#34;  alt=&#34;Logo&#34; &gt; --&gt;
 
 &lt;p&gt;一个简单的方法备份&lt;strong&gt;「空洞骑士」&lt;/strong&gt;的存档文件。&lt;/p&gt;
 
@@ -901,11 +914,11 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;p&gt;%HOMEDRIVE%%HOMEPATH%\AppData\LocalLow\Team Cherry\Hollow Knight&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129397282/0D5A1135E6760F86BC8F3A9FE32EE99983375512/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129397282/0D5A1135E6760F86BC8F3A9FE32EE99983375512/&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;在弹出的文件夹中可以看到以下文件&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129400498/62CFB7DA909A59E3E1C88AFF299388B680B07885/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129400498/62CFB7DA909A59E3E1C88AFF299388B680B07885/&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;user[数字].dat&lt;/p&gt;
 
@@ -931,7 +944,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
       <guid>https://mogeko.github.io/2018/020/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/020/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/020/logo.jpg&#34;  alt=&#34;Logo&#34; &gt;&lt;/p&gt;
 
 &lt;p&gt;爆肝 20 多个小时终于打完了 QAQ
 写篇指南压压惊 _(:з」∠)_&lt;/p&gt;
@@ -948,11 +961,11 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;p&gt;首先来到&lt;strong&gt;「王国边缘」&lt;/strong&gt;的愚人竞技场，从竞技场下方经过长椅，在长椅和尽头的温泉之间，上方有通道可以跳上去。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127720802/3887766AB03FDE17ED254610E5333492A842F97D/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127720802/3887766AB03FDE17ED254610E5333492A842F97D/&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;把墙壁撸穿，可以打开一个隐藏房间&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127722487/ECB6722E2C094422AB7F31D3C51441479AB392B8/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127722487/ECB6722E2C094422AB7F31D3C51441479AB392B8/&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;进入隐藏房间，可以看到一个&lt;strong&gt;「苍白潜伏者」&lt;/strong&gt;，他一看到你就会跑。追上并杀死他，他身上会掉一个&lt;strong&gt;「简单钥匙」&lt;/strong&gt;&lt;/p&gt;
 
@@ -960,19 +973,19 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;p&gt;来到皇家下水道，在** 「吸虫之母」**的家门口向上走，来到如图位置 (大概在长椅的下方)，跳起来对着墙壁来一发，进入隐藏通道。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127731980/0B267B9D66B22E341901C01D8E6E85FE0EDE11A6/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127731980/0B267B9D66B22E341901C01D8E6E85FE0EDE11A6/&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;一直往左走，直到来到一个名为「垃圾坑」的地方&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127733672/EA2C53A1B6F0F14953B8E986E4C2DE10DAB4079F/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127733672/EA2C53A1B6F0F14953B8E986E4C2DE10DAB4079F/&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127735000/65E00823B261FC2CF1AF313C8645DA683F908C9E/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127735000/65E00823B261FC2CF1AF313C8645DA683F908C9E/&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;「垃圾坑」中有一个上锁的棺材，用「简单钥匙」打开后，会掉一个「神明调谐器」&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127736304/4119CD178396BC63269BC57B13C8628413FC2C69/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127736304/4119CD178396BC63269BC57B13C8628413FC2C69/&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127737280/F396BFF24C1C5E02CC809B54CDECB2826E79DC42/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127737280/F396BFF24C1C5E02CC809B54CDECB2826E79DC42/&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;此时对着棺材中那个中暑的“尸体” &lt;span class=&#34;spoiler&#34; &gt;莫挨老子，老子没中暑 QAQ&lt;/span&gt; 来一发&lt;strong&gt;「光之钉」&lt;/strong&gt;，开启&lt;strong&gt;「神居」&lt;/strong&gt;&lt;/p&gt;
 
@@ -988,17 +1001,17 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127529487/9937E1FABC4F0EA2FEEBAFD0B6F20C025B52AEEC/&#34; style=&#34;border:0&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127529487/9937E1FABC4F0EA2FEEBAFD0B6F20C025B52AEEC/&#34;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;兄弟：&lt;/strong&gt;完成「大师万神殿」挑战&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127530081/17F7D048DECF5C20BAB0A7BD11F2FAC5CACA050A/&#34; style=&#34;border:0&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127530081/17F7D048DECF5C20BAB0A7BD11F2FAC5CACA050A/&#34;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;灵感：&lt;/strong&gt;完成「艺术家万神殿」挑战&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127530647/382C7998E9B0B60A850D8BDF4C7F4A515A8B3481/&#34;  style=&#34;border:0&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127530647/382C7998E9B0B60A850D8BDF4C7F4A515A8B3481/&#34; &gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;专注：&lt;/strong&gt;完成「贤者万神殿」挑战&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1016,7 +1029,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127531198/5857AE3A16211B09755B086F37F411ADEAD38131/&#34; style=&#34;border:0&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127531198/5857AE3A16211B09755B086F37F411ADEAD38131/&#34;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;灵魂与阴影：&lt;/strong&gt;完成「骑士万神殿」挑战&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1034,7 +1047,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127531615/671C16432F460CDD9EFF88D5C01B4ABC7CFE2703/&#34; style=&#34;border:0&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127531615/671C16432F460CDD9EFF88D5C01B4ABC7CFE2703/&#34;&gt;&lt;/td&gt;
 &lt;td&gt;&lt;strong&gt;拥抱虚空：&lt;/strong&gt;完成「圣巢万神殿」挑战&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1050,13 +1063,13 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;p&gt;&lt;span class=&#34;spoiler&#34; &gt;为了做这个实验我曾一度被打到自闭 QAQ&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127612824/BD136FFE9A6F394E584F627B32F2AFB747733473/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127612824/BD136FFE9A6F394E584F627B32F2AFB747733473/&#34;&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;结语&#34;&gt;结语&lt;/h1&gt;
 
 &lt;p&gt;就酱，我去补告告了，祝大家受难愉快(○&amp;rsquo;◡&amp;rsquo;○)ﾉ♥&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910124697569/9E941323DE8DFE4CBE8746FF52F92855E8807A73/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910124697569/9E941323DE8DFE4CBE8746FF52F92855E8807A73/&#34;&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1417,6 +1430,16 @@ ABS 防抱死系统是防止轮胎在刹车的时候锁死。这个辅助系统�
 &lt;li&gt;领航员指令「Bump」：前方有低洼处，减速通过&lt;/li&gt;
 &lt;li&gt;领航指令「Jump」：前方有小坡，全速冲过去，当车辆腾飞的时候松开油门 (以免轮子空转以及转速过高，落地时造成打滑，尤其是雨天的时候)&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;原文地址：&lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1524512527&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;《尘埃 4》新手入坑指北 | Steam 社区&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;作者：居然是 Mogeko ─=≡Σ(((つ•̀ω•́)つ&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
 </description>
     </item>
     

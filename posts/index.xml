@@ -26,7 +26,7 @@
 记下 Client ID 和 Client Secret，以后要用
 添加 gitalk.html 模板 接下来为主题添加 gitalk.html 模板。
 在主题的 layouts/partials 文件夹中创建 gitalk.html 文件，写下如下代码
-{{ if .Site.Params.enableGitalk }} &amp;lt;div id=&amp;quot;gitalk-container&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://unpkg.</description>
+{{ if .Site.Params.enableGitalk }} &amp;lt;div id=&amp;quot;gitalk-container/&amp;quot; style=&amp;quot;border:0&amp;quot; /&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://unpkg.</description>
     </item>
     
     <item>
