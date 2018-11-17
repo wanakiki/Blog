@@ -17,7 +17,7 @@
       <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/013/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/013/Logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/013/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;提到百度网盘，想必大家都很熟悉吧。&lt;/p&gt;
 
@@ -64,7 +64,7 @@
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/008/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/008/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/008/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Amazon 官方系统的 Kindle 中内置了一个 &lt;code&gt;体验版浏览器&lt;/code&gt;，用起来真的很鸡肋。一开始根本不知道 Amazon 到底在想什么，做怎么个又慢，又不稳定的浏览器，浪费老子硬盘。直到那天，手机被收了&lt;em&gt;(:°з」∠)&lt;/em&gt;
 其实真正让我爱上那个辣鸡浏览器的是 RSS 神器——Reabble。&lt;/p&gt;
@@ -80,14 +80,14 @@
       <pubDate>Sat, 16 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/006/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://camo.githubusercontent.com/3a8948f34284f378ead7af5846aa432035c687ad/687474703a2f2f732e746f6e736b792e6d652f696d67732f666972615f636f64655f6c6f676f2e737667&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://camo.githubusercontent.com/3a8948f34284f378ead7af5846aa432035c687ad/687474703a2f2f732e746f6e736b792e6d652f696d67732f666972615f636f64655f6c6f676f2e737667&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;程序员福利！！！&lt;/strong&gt;
 今天为大家带来一个专为程序员写程序设计的字体 —— Fira Code
 Fira 是 Mozilla 公司（火狐浏览器她爹）主推的字体系列。Fira Code 是其中的一员，专为写程序而生。出来具有&lt;code&gt;等宽&lt;/code&gt;等基本属性外，还加入了编程连字特性（ligatures）。&lt;/p&gt;
 
 &lt;p&gt;Fira Code 就是利用这个特性对编程中的常用符号进行优化，比如把输入的「!=」直接显示成「≠」或者把「&amp;gt;=」变成「≥ 」等等，以此来提高代码的可读性。
-&lt;img src=&#34;https://raw.githubusercontent.com/tonsky/FiraCode/master/showcases/all_ligatures.png&#34; alt=&#34;Fira Code|Fire Mono&#34; /&gt;&lt;/p&gt;</description>
+&lt;img src=&#34;https://raw.githubusercontent.com/tonsky/FiraCode/master/showcases/all_ligatures.png&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -100,7 +100,7 @@ Fira 是 Mozilla 公司（火狐浏览器她爹）主推的字体系列。Fira C
 我在知乎上发现了 Hexo Hey 这个插件，尝试了一下，虽然有各种问题，但确实很好用。
 因此决定写一篇文章来介绍一下如何&lt;code&gt;安装&lt;/code&gt;, &lt;code&gt;使用&lt;/code&gt; Hexo Hey。&lt;/p&gt;
 
-&lt;p&gt;切换换到 Hexo Hey 后最不习惯的地方就是没有了 VSCode 中那些方便的快捷键了。(ノへ￣、)[擦眼泪……]&lt;/p&gt;
+&lt;p&gt;切换换到 Hexo Hey 后最不习惯的地方就是没有了 VSCode 中那些方便的快捷键了。(ノへ￣、) 擦眼泪……&lt;/p&gt;
 
 &lt;p&gt;与 Hexo Hey 比较相似的 Hexo 博客管理程序还有 &lt;a href=&#34;https://github.com/jaredly/hexo-admin&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Hexo Admin&lt;/a&gt;。&lt;/p&gt;</description>
     </item>

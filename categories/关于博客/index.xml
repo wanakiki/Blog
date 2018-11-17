@@ -65,8 +65,9 @@
       <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/005/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/005/logo.png&#34; alt=&#34;Logo&#34; /&gt;
-参考 &lt;a href=&#34;https://github.com/Z4Tech/hexo-tag-bilibili&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/Z4Tech/hexo-tag-bilibili&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/005/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;参考 &lt;a href=&#34;https://github.com/Z4Tech/hexo-tag-bilibili&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/Z4Tech/hexo-tag-bilibili&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -79,7 +80,7 @@
 我在知乎上发现了 Hexo Hey 这个插件，尝试了一下，虽然有各种问题，但确实很好用。
 因此决定写一篇文章来介绍一下如何&lt;code&gt;安装&lt;/code&gt;, &lt;code&gt;使用&lt;/code&gt; Hexo Hey。&lt;/p&gt;
 
-&lt;p&gt;切换换到 Hexo Hey 后最不习惯的地方就是没有了 VSCode 中那些方便的快捷键了。(ノへ￣、)[擦眼泪……]&lt;/p&gt;
+&lt;p&gt;切换换到 Hexo Hey 后最不习惯的地方就是没有了 VSCode 中那些方便的快捷键了。(ノへ￣、) 擦眼泪……&lt;/p&gt;
 
 &lt;p&gt;与 Hexo Hey 比较相似的 Hexo 博客管理程序还有 &lt;a href=&#34;https://github.com/jaredly/hexo-admin&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Hexo Admin&lt;/a&gt;。&lt;/p&gt;</description>
     </item>
@@ -90,7 +91,7 @@
       <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/003/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/003/logo.png&#34; alt=&#34;Logo&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/003/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;虽然 NexT 的主题很漂亮，但问题是太受欢迎了，都快烂大街了。
 好在它是一个开源项目，我们可以通过修改它的代码来个性话你的博客。
@@ -106,8 +107,9 @@
       <pubDate>Sun, 20 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/002/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/002/logo.jpg&#34; alt=&#34;Logo&#34; /&gt;
-自从我开了这个博客后，就有很多小伙伴问我怎么弄的？（好吧，其实就一个(*/ω＼*)）
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/002/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;自从我开了这个博客后，就有很多小伙伴问我怎么弄的？（好吧，其实就一个(*/ω＼*)）
 为了教她，也为了给各位看官一点参考。我写了这篇文章。
 因为她比较小白，所以这篇文章会写得比较详细。&lt;/p&gt;</description>
     </item>
