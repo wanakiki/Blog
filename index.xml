@@ -10,7 +10,7 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Windows/Office 激活脚本 (使用 KMS)</title>
+      <title>Windows / Office 激活脚本 (使用 KMS)</title>
       <link>https://mogeko.github.io/2018/026/</link>
       <pubDate>Sun, 18 Nov 2018 00:54:27 +0800</pubDate>
       
@@ -18,8 +18,6 @@
       <description>&lt;p&gt;很早以前的一个仓库了，博主已经入了 Office 365，早就用不到了。&lt;/p&gt;
 
 &lt;p&gt;不过最近帮小学妹装机，所以突然诈尸更新了一波。给需要的人(○&amp;rsquo;◡&amp;rsquo;○)ﾉ♥&lt;/p&gt;
-
-&lt;p&gt;毕竟软软也是要掐饭的嘛。有能力的话最好还是入个正比较好 |・ω・｀)&lt;/p&gt;
 
 &lt;p&gt;这个脚本可以用来激活：
  - Office (零售版和 VOL 版)
@@ -30,14 +28,22 @@
 
 &lt;p&gt;使用的 KMS 服务器来自：&lt;a href=&#34;https://03k.org&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;零散坑&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;#用法
-&lt;strong&gt;双击运行 Run.cmd，然后根据提示激活即可&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;#用法&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;双击运行 Run.cmd，然后根据提示激活即可&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/026/run.png&#34;  alt=&#34;Run.cmd&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;VOL 版的 Office 和 Windows 直接通过 KMS 激活，零售版的 Office 先用脚本转换成 VOL 版，然后通过 KMS 激活。&lt;span class=&#34;spoiler&#34; &gt;零售版 Windows：我觉得我还可以抢救一下 QAQ&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;脚本默认激活的是 2016 版的 Office，其他版本可以到文件夹里找单独激活的脚本 (没测试过，理论上是可以用的)，或者自己手动改一下脚本 (将 %ospp% 这个变量替换成正确的 opss.vbs 路径)&lt;/p&gt;
+
+&lt;p&gt;怎么说呢，要尊重别人的劳动成果，所以我觉得大家应该尽量避免使用盗版软件。&lt;br /&gt;
+毕竟软软也是要掐饭的嘛，有能力的话最好还是入个正比较好 |・ω・｀)&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
 </description>
     </item>
     
