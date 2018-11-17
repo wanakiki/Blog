@@ -13,10 +13,10 @@
     
     <item>
       <title>Leavelt 主题优化</title>
-      <link>https://mogeko.github.io/2018/023/</link>
+      <link>https://mogeko.github.io/2018/025/</link>
       <pubDate>Fri, 16 Nov 2018 19:57:09 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/023/</guid>
+      <guid>https://mogeko.github.io/2018/025/</guid>
       <description>目前本博客使用的 Hugo 主题是：Leavelt
 正如你说看到的那样，是一款简约大气的的主题。但再使用的过程中我也发现了一些可以改进的地方
 添加 Gitalk 评论系统 Leavelt 默认没有评论系统，我们可以做一点简单的修改添加 Gitalk 评论系统
@@ -31,10 +31,10 @@
     
     <item>
       <title>为 Hugo 添加 Gitalk 评论系统</title>
-      <link>https://mogeko.github.io/2018/022/</link>
+      <link>https://mogeko.github.io/2018/024/</link>
       <pubDate>Fri, 16 Nov 2018 12:57:09 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/022/</guid>
+      <guid>https://mogeko.github.io/2018/024/</guid>
       <description>Hugo 是一个强大的静态网页生成器，使用 go 开发。速度贼快，还有 “时时预览” 等特性。不过 Hugo 还比较年轻，没有像 NexT 那样功能强大，成熟稳定的主题。所以很多东西需要自己动手撸。就例如评论系统。
 关于 Gitalk  官方网址： https://github.com/gitalk/gitalk/ 在线示例： https://gitalk.github.io/  Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说，只要 Github 不倒闭，你的评论系统就不会被关闭。
 为 Hugo 添加 Gitalk 评论系统 本博客使用的主题是：Leavelt
@@ -46,10 +46,10 @@
     
     <item>
       <title>空洞骑士：格林剧团 DLC 全成就指南</title>
-      <link>https://mogeko.github.io/2018/021/</link>
+      <link>https://mogeko.github.io/2018/022/</link>
       <pubDate>Sun, 30 Sep 2018 21:06:00 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/021/</guid>
+      <guid>https://mogeko.github.io/2018/022/</guid>
       <description>补一篇格林剧团 DLC 的全成就指南
 「格林剧团」的难度相较于「寻神者」和 主线剧情 要简单得多，属于比较容易完成的 DLC。但「格林剧团」采用的是双结局，而且结局是与获得成就直接相关的，因此「格林剧团」的所有成就不可能在同一个存档中完成。
 解决方法：
@@ -66,10 +66,10 @@
     
     <item>
       <title>空洞骑士：存档备份方法</title>
-      <link>https://mogeko.github.io/2018/020/</link>
+      <link>https://mogeko.github.io/2018/021/</link>
       <pubDate>Sun, 30 Sep 2018 19:17:00 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/020/</guid>
+      <guid>https://mogeko.github.io/2018/021/</guid>
       <description>-- 一个简单的方法备份「空洞骑士」的存档文件。
 备份存档文件有个以下好处：
  因为众所周知的原因，Steam 云有时会不稳定，定期手动备份存档可以减少因云备份失败造成的进度丢失 可以较为快速的完成某些不可能在同一存档中完成的成就  正文
@@ -86,10 +86,10 @@ user[数字].dat
     
     <item>
       <title>空洞骑士：寻神者 DLC 全成就指南</title>
-      <link>https://mogeko.github.io/2018/019/</link>
+      <link>https://mogeko.github.io/2018/020/</link>
       <pubDate>Sun, 30 Sep 2018 08:59:00 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/019/</guid>
+      <guid>https://mogeko.github.io/2018/020/</guid>
       <description>爆肝 20 多个小时终于打完了 QAQ 写篇指南压压惊 _(:з」∠)_
 寻神者 DLC 是真的难，推荐大家在完成主线剧情，做好心理准备，写好遗书后，再开启
 我操你大爷的开发者 QAQ

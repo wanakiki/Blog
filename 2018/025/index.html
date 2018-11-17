@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Mogeko">
+  
+  
+  
+  <link rel="prev" href="https://mogeko.github.io/2018/024/" />
+  
+  <link rel="canonical" href="https://mogeko.github.io/2018/025/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Leavelt 主题优化 | Mogeko`s Blog
+       
+  </title>
+  <meta name="title" content="Leavelt 主题优化 | Mogeko`s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://mogeko.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Leavelt 主题优化",
+    "headline" : "Leavelt 主题优化",
+    "description" : "目前本博客使用的 Hugo 主题是：Leavelt
+正如你说看到的那样，是一款简约大气的的主题。但再使用的过程中我也发现了一些可以改进的地方
+添加 Gitalk 评论系统 Leavelt 默认没有评论系统，我们可以做一点简单的修改添加 Gitalk 评论系统
+关于 Gitalk  官方网址： https://github.com/gitalk/gitalk/ 在线示例： https://gitalk.github.io/  Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说，只要 Github 不倒闭，你的评论系统就不会被关闭。
+创建 Github Application 首先要去 GitHub 上创建一个 Github Application
+点击创建
+记下 Client ID 和 Client Secret，以后要用
+添加 gitalk.html 模板 接下来为主题添加 gitalk.html 模板。
+在主题的 layouts/partials 文件夹中创建 gitalk.html 文件，写下如下代码
+{{ if .Site.Params.enableGitalk }} &lt;div id=&quot;gitalk-container&quot;&gt;&lt;/div&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.",
+    "inLanguage" : "zh-cn",
+    "author" : "Mogeko",
+    "creator" : "Mogeko",
+    "publisher": "Mogeko",
+    "accountablePerson" : "Mogeko",
+    "copyrightHolder" : "Mogeko",
+    "copyrightYear" : "2018",
+    "datePublished": "2018-11-16 19:57:09 &#43;0800 &#43;0800",
+    "dateModified" : "2018-11-16 19:57:09 &#43;0800 &#43;0800",
+    "url" : "https://mogeko.github.io/2018/025/",
+    "wordCount" : "610",
+    "keywords" : [ "Hugo", "Mogeko`s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.github.io">Mogeko`s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.github.io">Mogeko`s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Leavelt 主题优化</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://mogeko.github.io" rel="author">Mogeko</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2018-11-16 itemprop="datePublished">November 16, 2018</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2/"> 关于博客 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<p>目前本博客使用的 Hugo 主题是：<a href="https://github.com/liuzc/LeaveIt" rel="nofollow noreferrer" target="_blank">Leavelt</a></p>
+
+<p>正如你说看到的那样，是一款简约大气的的主题。但再使用的过程中我也发现了一些可以改进的地方</p>
+
+<h1 id="添加-gitalk-评论系统">添加 Gitalk 评论系统</h1>
+
+<p>Leavelt 默认没有评论系统，我们可以做一点简单的修改添加 Gitalk 评论系统</p>
+
+<h2 id="关于-gitalk">关于 Gitalk</h2>
+
+<p><img src="https://mogeko.github.io/images/024/gitalk.png"  alt="Gitalk"  style="border:0" /></p>
+
+<ul>
+<li>官方网址： <a href="https://github.com/gitalk/gitalk/" rel="nofollow noreferrer" target="_blank">https://github.com/gitalk/gitalk/</a></li>
+<li>在线示例： <a href="https://gitalk.github.io/" rel="nofollow noreferrer" target="_blank">https://gitalk.github.io/</a></li>
+</ul>
+
+<p>Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说，只要 Github 不倒闭，你的评论系统就不会被关闭。</p>
+
+<h2 id="创建-github-application">创建 Github Application</h2>
+
+<p>首先要去 GitHub 上创建一个 <a href="https://github.com/settings/applications/new" rel="nofollow noreferrer" target="_blank">Github Application</a></p>
+
+<p><img alt="Github Application" src="https://mogeko.github.io/images/024/get_Github_Application.png"></p>
+
+<p>点击创建</p>
+
+<p>记下 <code>Client ID</code> 和 <code>Client Secret</code>，以后要用</p>
+
+<p><img alt="Client ID & Client Secret" src="https://mogeko.github.io/images/024/get_id&secret.png"></p>
+
+<h2 id="添加-gitalk-html-模板">添加 gitalk.html 模板</h2>
+
+<p>接下来为主题添加 <code>gitalk.html</code> 模板。</p>
+
+<p>在主题的 <code>layouts/partials</code> 文件夹中创建 <code>gitalk.html</code> 文件，写下如下代码</p>
+
+<pre><code class="language-html">{{ if .Site.Params.enableGitalk }}
+&lt;div id=&quot;gitalk-container&quot;&gt;&lt;/div&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/gitalk/dist/gitalk.css&quot;&gt;
+&lt;script src=&quot;https://unpkg.com/gitalk/dist/gitalk.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  const gitalk = new Gitalk({
+    clientID: '{{ .Site.Params.Gitalk.clientID }}',
+    clientSecret: '{{ .Site.Params.Gitalk.clientSecret }}',
+    repo: '{{ .Site.Params.Gitalk.repo }}',
+    owner: '{{ .Site.Params.Gitalk.owner }}',
+    admin: ['{{ .Site.Params.Gitalk.owner }}'],
+    id: location.pathname, // Ensure uniqueness and length less than 50
+    distractionFreeMode: false // Facebook-like distraction free mode
+  });
+  (function() {
+    if ([&quot;localhost&quot;, &quot;127.0.0.1&quot;].indexOf(window.location.hostname) != -1) {
+      document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+      return;
+    }
+    gitalk.render('gitalk-container');
+  })();
+&lt;/script&gt;
+{{ end }}
+</code></pre>
+
+<p>然后在 <code>layouts/_default/single.html</code> 中插入<code>{{ partial &quot;gitalk.html&quot; . }}</code></p>
+
+<p><img alt="插入 Gitalk 模板" src="https://mogeko.github.io/images/024/set_div.png"></p>
+
+<h2 id="配置-config-toml">配置 config.toml</h2>
+
+<p>在 <code>config.toml</code> 中添加以下配置</p>
+
+<pre><code class="language-toml">[params]
+  enableGitalk = true
+
+[params.gitalk] 
+    clientID = &quot;[Client ID]&quot; # Your client ID
+    clientSecret = &quot;[Client Secret]&quot; # Your client secret
+    repo = &quot;mogeko.github.io&quot; # The repo to store comments
+    owner = &quot;Mogeko&quot; # Your GitHub ID
+    admin= &quot;Mogeko&quot; # Required. Github repository owner and collaborators. (Users who having write access to this repository)
+    id= &quot;location.pathname&quot; # The unique id of the page.
+    labels= &quot;gitalk&quot; # Github issue labels. If you used to use Gitment, you can change it
+    perPage= 15 # Pagination size, with maximum 100.
+    pagerDirection= &quot;last&quot; # Comment sorting direction, available values are 'last' and 'first'.
+    createIssueManually= false # If it is 'false', it is auto to make a Github issue when the administrators login.
+    distractionFreeMode= false # Enable hot key (cmd|ctrl + enter) submit comment.
+</code></pre>
+
+<p>将 <code>[Client ID]</code> 替换为 Github Application 的 Client ID</p>
+
+<p>将 <code>[Client Secret]</code> 替换为 Github Application 的 Client Secret</p>
+
+<p>将 <code>repo</code> 设置为你的博客的地址</p>
+
+<p>将 <code>owner</code> 和 <code>admin</code> 设置为你的 GitHub ID</p>
+
+<p>更多配置请参考：<a href="https://github.com/gitalk/gitalk" rel="nofollow noreferrer" target="_blank">https://github.com/gitalk/gitalk</a></p>
+
+<p>设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 <code>hugo server</code> 中是不会启用的)## 配置 config.toml</p>
+
+<p>在 <code>config.toml</code> 中添加以下配置</p>
+
+<pre><code class="language-toml">[params]
+  enableGitalk = true
+
+[params.gitalk] 
+    clientId = &quot;[Client ID]&quot; # Your client ID
+    clientSecret = &quot;[Client Secret]&quot; # Your client secret
+    repo = &quot;mogeko.github.io&quot; # The repo to store comments
+    owner = &quot;Mogeko&quot; # Your GitHub ID
+    admin= &quot;Mogeko&quot; # Required. Github repository owner and collaborators. (Users who having write access to this repository)
+    id= &quot;location.pathname&quot; # The unique id of the page.
+    labels= &quot;gitalk&quot; # Github issue labels. If you used to use Gitment, you can change it
+    perPage= 15 # Pagination size, with maximum 100.
+    pagerDirection= &quot;last&quot; # Comment sorting direction, available values are 'last' and 'first'.
+    createIssueManually= false # If it is 'false', it is auto to make a Github issue when the administrators login.
+    distractionFreeMode= false # Enable hot key (cmd|ctrl + enter) submit comment.
+</code></pre>
+
+<p>将 <code>[Client ID]</code> 替换为 Github Application 的 Client ID</p>
+
+<p>将 <code>[Client Secret]</code> 替换为 Github Application 的 Client Secret</p>
+
+<p>将 <code>repo</code> 设置为你的博客的地址</p>
+
+<p>将 <code>owner</code> 和 <code>admin</code> 设置为你的 GitHub ID</p>
+
+<p>更多配置请参考：<a href="https://github.com/gitalk/gitalk" rel="nofollow noreferrer" target="_blank">https://github.com/gitalk/gitalk</a></p>
+
+<p>设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 <code>hugo server</code> 中是不会启用的)</p>
+
+<p><img alt="Gitalk" src="https://mogeko.github.io/images/024/done.png"></p>
+
+<p><strong>添加 Gitalk 评论区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要</strong></p>
+
+<h1 id="添加-隐藏文字-spoiler">添加“隐藏文字”(spoiler)</h1>
+
+<p>Steam 和其他一些支持 BBCode 的论坛都有一种名为“隐藏文字”(spoiler) 的标签，使用这种标签后，标签中的文字默认会隐藏起来，当你将鼠标移动到文字上时，文字才会显示出来。</p>
+
+<p>就像这样：<span class="spoiler" >这是一段隐藏文字</span></p>
+
+<p>很有意思😏</p>
+
+<p>虽然 Markdown 并不支持“隐藏文字”，但我们可以通过在 Markdown 中内嵌 HTML 实现这一功能</p>
+
+<h2 id="安装-ruby-sass">安装 ruby-sass</h2>
+
+<p><strong>由于 Leavelt 使用了 scss。所以如果想要添加自定义样式的话需要先安装 Sass (基于 Rudy)</strong></p>
+
+<p>我使用是 Ubuntu。所以直接在终端中运行 <code>sudo apt install ruby-sass</code> 就可以了，计算机会自动为我解决好依赖</p>
+
+<p>Mac OS 自带得有 Ruby，因此可以通过 <code>gem</code>安装</p>
+
+<p>Windows 需要 <a href="http://rubyinstaller.org/downloads" rel="nofollow noreferrer" target="_blank">下载 Ruby</a> 的安装包安装</p>
+
+<p>具体可以参考 -&gt; <a href="https://www.sass.hk/install/" rel="nofollow noreferrer" target="_blank">安装 Sass | Sass 中文网</a></p>
+
+<h2 id="添加自定义样式">添加自定义样式</h2>
+
+<p>在 <code>assets/css/_custom.scss</code> 文件中添加</p>
+
+<pre><code class="language-scss">.spoiler { 
+  color: black; 
+  background-color:black;
+}
+.spoiler:hover{
+  color: white;
+}
+</code></pre>
+
+<p>然后在终端中执行</p>
+
+<pre><code class="language-shell">sass --style compressed [Leacelt 目录]/css/main.scss:[Leacelt 目录]/resources/_gen/assets/scss/css/main.scss_b95b077eb505d5c0aff8055eaced30ad.content
+</code></pre>
+
+<p>注意替换 <code>[Leacelt 目录]</code></p>
+
+<p>然后再在 Markdown 文件中用 class 为 <code>spoiler</code> 的 HTML 标签将想要“隐藏”的文字标记出来就可以了，例如</p>
+
+<pre><code class="language-html">&lt;span class=&quot;spoiler&quot; &gt;隐藏文字&lt;/span&gt;
+</code></pre>
+
+<p><span class="spoiler" >隐藏文字</span></p>
+
+<h1 id="放大图片">放大图片</h1>
+
+<p>默认的图片大小有点小，作者的目的应该是想让大家多使用一下 <strong>lightGallery 图片相册</strong>；不过图片小了，有时候文字看不清楚</p>
+
+<p>我们可以通过修改 <code>assets/css/_custom.scss</code> 文件把图片弄大一些 (虽然也大不了多少)</p>
+
+<p>在 <code>assets/css/_custom.scss</code> 中添加</p>
+
+<pre><code class="language-scss">.post-warp .post-content img {
+  max-width: 100%;
+}
+</code></pre>
+
+<p>然后与上面一样的编译，运行</p>
+
+<pre><code class="language-shell">sass --style compressed [Leacelt 目录]/css/main.scss:[Leacelt 目录]/resources/_gen/assets/scss/css/main.scss_b95b077eb505d5c0aff8055eaced30ad.content
+</code></pre>
+
+<p><br></p>
+
+<p><center>  ·End·  </center></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Mogeko </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://mogeko.github.io/2018/025/>https://mogeko.github.io/2018/025/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://mogeko.github.io/tags/hugo/">
+                    #Hugo</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://mogeko.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://mogeko.github.io/2018/024/" class="prev" rel="prev" title="为 Hugo 添加 Gitalk 评论系统"><i class="iconfont icon-left"></i>&nbsp;为 Hugo 添加 Gitalk 评论系统</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '936cecdd2ab935870ca5',
+        clientSecret: '39cfc7a3cb9a974b6609f3fdaa637e2917e3e40a',
+        repo: 'mogeko.github.io',
+        owner: 'Mogeko',
+        admin: ['Mogeko'],
+        id: location.pathname, 
+        distractionFreeMode: false 
+    });
+    (function () {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+            return;
+        }
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2017 - 2018</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://mogeko.github.io">Mogeko</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

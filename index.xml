@@ -11,10 +11,10 @@
     
     <item>
       <title>Leavelt 主题优化</title>
-      <link>https://mogeko.github.io/2018/023/</link>
+      <link>https://mogeko.github.io/2018/025/</link>
       <pubDate>Fri, 16 Nov 2018 19:57:09 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/023/</guid>
+      <guid>https://mogeko.github.io/2018/025/</guid>
       <description>
 
 &lt;p&gt;目前本博客使用的 Hugo 主题是：&lt;a href=&#34;https://github.com/liuzc/LeaveIt&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Leavelt&lt;/a&gt;&lt;/p&gt;
@@ -27,7 +27,7 @@
 
 &lt;h2 id=&#34;关于-gitalk&#34;&gt;关于 Gitalk&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/gitalk.png&#34;  alt=&#34;Gitalk&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/024/gitalk.png&#34;  alt=&#34;Gitalk&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;官方网址： &lt;a href=&#34;https://github.com/gitalk/gitalk/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk/&lt;/a&gt;&lt;/li&gt;
@@ -40,13 +40,13 @@
 
 &lt;p&gt;首先要去 GitHub 上创建一个 &lt;a href=&#34;https://github.com/settings/applications/new&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Github Application&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Github Application&#34; src=&#34;https://mogeko.github.io/images/022/get_Github_Application.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Github Application&#34; src=&#34;https://mogeko.github.io/images/024/get_Github_Application.png&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;点击创建&lt;/p&gt;
 
 &lt;p&gt;记下 &lt;code&gt;Client ID&lt;/code&gt; 和 &lt;code&gt;Client Secret&lt;/code&gt;，以后要用&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Client ID &amp; Client Secret&#34; src=&#34;https://mogeko.github.io/images/022/get_id&amp;secret.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Client ID &amp; Client Secret&#34; src=&#34;https://mogeko.github.io/images/024/get_id&amp;secret.png&#34;&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;添加-gitalk-html-模板&#34;&gt;添加 gitalk.html 模板&lt;/h2&gt;
 
@@ -81,7 +81,7 @@
 
 &lt;p&gt;然后在 &lt;code&gt;layouts/_default/single.html&lt;/code&gt; 中插入&lt;code&gt;{{ partial &amp;quot;gitalk.html&amp;quot; . }}&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;插入 Gitalk 模板&#34; src=&#34;https://mogeko.github.io/images/022/set_div.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;插入 Gitalk 模板&#34; src=&#34;https://mogeko.github.io/images/024/set_div.png&#34;&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;配置-config-toml&#34;&gt;配置 config.toml&lt;/h2&gt;
 
@@ -147,7 +147,7 @@
 
 &lt;p&gt;设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 &lt;code&gt;hugo server&lt;/code&gt; 中是不会启用的)&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Gitalk&#34; src=&#34;https://mogeko.github.io/images/022/done.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Gitalk&#34; src=&#34;https://mogeko.github.io/images/024/done.png&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;添加 Gitalk 评论区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要&lt;/strong&gt;&lt;/p&gt;
 
@@ -226,17 +226,17 @@
     
     <item>
       <title>为 Hugo 添加 Gitalk 评论系统</title>
-      <link>https://mogeko.github.io/2018/022/</link>
+      <link>https://mogeko.github.io/2018/024/</link>
       <pubDate>Fri, 16 Nov 2018 12:57:09 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/022/</guid>
+      <guid>https://mogeko.github.io/2018/024/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://gohugo.io&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; 是一个强大的静态网页生成器，使用 go 开发。速度贼快，还有 “时时预览” 等特性。不过 Hugo 还比较年轻，没有像 &lt;a href=&#34;https://theme-next.iissnan.com&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;NexT&lt;/a&gt; 那样功能强大，成熟稳定的主题。所以很多东西需要自己动手撸。就例如评论系统。&lt;/p&gt;
 
 &lt;h1 id=&#34;关于-gitalk&#34;&gt;关于 Gitalk&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/gitalk.png&#34;  alt=&#34;Gitalk&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/024/gitalk.png&#34;  alt=&#34;Gitalk&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;官方网址： &lt;a href=&#34;https://github.com/gitalk/gitalk/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk/&lt;/a&gt;&lt;/li&gt;
@@ -261,13 +261,13 @@
 
 &lt;p&gt;首先要去 GitHub 上创建一个 &lt;a href=&#34;https://github.com/settings/applications/new&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Github Application&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Github Application&#34; src=&#34;https://mogeko.github.io/images/022/get_Github_Application.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Github Application&#34; src=&#34;https://mogeko.github.io/images/024/get_Github_Application.png&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;点击创建&lt;/p&gt;
 
 &lt;p&gt;记下 &lt;code&gt;Client ID&lt;/code&gt; 和 &lt;code&gt;Client Secret&lt;/code&gt;，以后要用&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Client ID &amp; Client Secret&#34; src=&#34;https://mogeko.github.io/images/022/get_id&amp;secret.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Client ID &amp; Client Secret&#34; src=&#34;https://mogeko.github.io/images/024/get_id&amp;secret.png&#34;&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;添加-gitalk-html-模板&#34;&gt;添加 gitalk.html 模板&lt;/h2&gt;
 
@@ -304,13 +304,13 @@
 
 &lt;p&gt;然后使用 Chrome 自带的 DevTools 分析一下网页结构，找到放 Gitalk 的位置&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;get id or class&#34; src=&#34;https://mogeko.github.io/images/022/get_class.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;get id or class&#34; src=&#34;https://mogeko.github.io/images/024/get_class.png&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;我们可以看见已经 Leavelt 为我们预留了 “评论区” 的位置，不过里面什么东西都没有。记下该 &lt;code&gt;div&lt;/code&gt; 的&lt;code&gt;class&lt;/code&gt; 或者 &lt;code&gt;id&lt;/code&gt; (如果你使用的主题没有预留 “评论区”，可以记下你准备放 Gitalk 评论区位置附近 &lt;code&gt;div&lt;/code&gt; 的&lt;code&gt;class&lt;/code&gt; 或者 &lt;code&gt;id&lt;/code&gt;，并以此定位)&lt;/p&gt;
 
 &lt;p&gt;打开 VSCode，搜索包含刚刚找到的 &lt;code&gt;class&lt;/code&gt; 或者 &lt;code&gt;id&lt;/code&gt; 的 HTML 模板 (一般是 &lt;code&gt;single.html&lt;/code&gt;)&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;插入 Gitalk 模板&#34; src=&#34;https://mogeko.github.io/images/022/set_div.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;插入 Gitalk 模板&#34; src=&#34;https://mogeko.github.io/images/024/set_div.png&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;在模板中插入&lt;code&gt;{{ partial &amp;quot;gitalk.html&amp;quot; . }}&lt;/code&gt;&lt;/p&gt;
 
@@ -347,7 +347,7 @@
 
 &lt;p&gt;设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 &lt;code&gt;hugo server&lt;/code&gt; 中是不会启用的)&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Gitalk&#34; src=&#34;https://mogeko.github.io/images/022/done.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Gitalk&#34; src=&#34;https://mogeko.github.io/images/024/done.png&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;添加 Gitalk 评论区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要&lt;/strong&gt;&lt;/p&gt;
 
@@ -359,13 +359,13 @@
     
     <item>
       <title>空洞骑士：格林剧团 DLC 全成就指南</title>
-      <link>https://mogeko.github.io/2018/021/</link>
+      <link>https://mogeko.github.io/2018/022/</link>
       <pubDate>Sun, 30 Sep 2018 21:06:00 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/021/</guid>
+      <guid>https://mogeko.github.io/2018/022/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/021/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;补一篇格林剧团 DLC 的全成就指南&lt;/p&gt;
 
@@ -375,7 +375,7 @@
 
 &lt;ol&gt;
 &lt;li&gt;开两个存档&lt;/li&gt;
-&lt;li&gt;备份存档然后回档 -&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2018/020&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;「空洞骑士」存档备份方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;备份存档然后回档 -&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2018/021&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;「空洞骑士」存档备份方法&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&#34;开启方法&#34;&gt;开启方法&lt;/h1&gt;
@@ -530,11 +530,11 @@
     
     <item>
       <title>空洞骑士：存档备份方法</title>
-      <link>https://mogeko.github.io/2018/020/</link>
+      <link>https://mogeko.github.io/2018/021/</link>
       <pubDate>Sun, 30 Sep 2018 19:17:00 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/020/</guid>
-      <description>&lt;!-- &lt;img src=&#34;https://mogeko.github.io/images/020/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt; --&gt;
+      <guid>https://mogeko.github.io/2018/021/</guid>
+      <description>&lt;!-- &lt;img src=&#34;https://mogeko.github.io/images/021/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt; --&gt;
 
 &lt;p&gt;一个简单的方法备份&lt;strong&gt;「空洞骑士」&lt;/strong&gt;的存档文件。&lt;/p&gt;
 
@@ -575,13 +575,13 @@
     
     <item>
       <title>空洞骑士：寻神者 DLC 全成就指南</title>
-      <link>https://mogeko.github.io/2018/019/</link>
+      <link>https://mogeko.github.io/2018/020/</link>
       <pubDate>Sun, 30 Sep 2018 08:59:00 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/019/</guid>
+      <guid>https://mogeko.github.io/2018/020/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/019/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/020/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;爆肝 20 多个小时终于打完了 QAQ
 写篇指南压压惊 _(:з」∠)_&lt;/p&gt;
