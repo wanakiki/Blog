@@ -144,8 +144,6 @@
         
 
         
-            
-        
 
         
         
@@ -187,7 +185,7 @@
 <pre><code class="language-shell">$ npm install hexo-hey --save
 </code></pre>
 
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/004/install_hexo_hey.png" alt="安装 Hexo Hey" class="lazyload"><figcaption class="image-caption">安装 Hexo Hey</figcaption></figure></p>
+<p><img alt="安装 Hexo Hey" src="https://mogeko.github.io/images/004/install_hexo_hey.png"></p>
 
 <p>然后打开 Hexo 目录 中的 <code>_config.yml</code> 文件，在结尾加上如下代码：
 *将<code>[你的用户名]</code>, <code>[你的密码]</code> 改为你喜欢的用户名和密码</p>
@@ -208,17 +206,17 @@ $ hexo s
 </code></pre>
 
 <p>现在访问 <code>http://localhost:4000/admin</code> 看看效果。(๑•̀ㅂ•́)و✧
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/004/hexo_hey.png" alt="Hexo Hey" class="lazyload"><figcaption class="image-caption">Hexo Hey</figcaption></figure></p>
+<img alt="Hexo Hey" src="https://mogeko.github.io/images/004/hexo_hey.png"></p>
 
 <h1 id="一些问题">一些问题</h1>
 
 <ol>
 <li>不能自动保存（隔壁 Hexo Admin 就没这毛病），也不能用 <code>ctrl + S</code> 的快捷键保存文章。</li>
 <li>有篇文章没有 <code>编辑</code> 按钮。（难道是因为我在文章中用了 ‘华丽的分界线’(￣△￣；)）
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/004/bug_1.png" alt="Bug!" class="lazyload"><figcaption class="image-caption">Bug!</figcaption></figure></li>
+<img alt="Bug!" src="https://mogeko.github.io/images/004/bug_1.png"></li>
 <li><strong>图片管理非常不友好！！！虽然可以通过托拽插入图片，但此方法插入的图片都保存在 \source\images 文件夹下，这与官方推荐的方法不同。</strong>（官方推荐的方法是将图片放入与文章同名的资源文件夹中）</li>
 <li><strong>Hexo Hey 的 Markdown 渲染引擎无法识别 Hexo 中的标签插件</strong>
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/004/bug_2.png" alt="Bug!" class="lazyload"><figcaption class="image-caption">Bug!</figcaption></figure></li>
+<img alt="Bug!" src="https://mogeko.github.io/images/004/bug_2.png"></li>
 <li>那个 <code>发布</code> 的意思实际上是 <code>部署</code>，发布到 Github Pages 或者其他远程服务器仍然需要手动。</li>
 <li>必须启动 Hexo 的本地服务器才能使用。</li>
 <li>目前就发现了这么多…</li>
@@ -366,9 +364,8 @@ hexo s -d
 
 
     
-     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
-      
-     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
 

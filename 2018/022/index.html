@@ -189,13 +189,13 @@
 
 <p>首先要去 GitHub 上创建一个 <a href="https://github.com/settings/applications/new" rel="nofollow noreferrer" target="_blank">Github Application</a></p>
 
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/022/get_Github_Application.png" alt="Github Application" class="lazyload"><figcaption class="image-caption">Github Application</figcaption></figure></p>
+<p><img alt="Github Application" src="https://mogeko.github.io/images/022/get_Github_Application.png"></p>
 
 <p>点击创建</p>
 
 <p>记下 <code>Client ID</code> 和 <code>Client Secret</code>，以后要用</p>
 
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/022/get_id&amp;secret.png" alt="Client ID &amp; Client Secret" class="lazyload"><figcaption class="image-caption">Client ID &amp; Client Secret</figcaption></figure></p>
+<p><img alt="Client ID & Client Secret" src="https://mogeko.github.io/images/022/get_id&secret.png"></p>
 
 <h2 id="添加-gitalk-html-模板">添加 gitalk.html 模板</h2>
 
@@ -232,13 +232,13 @@
 
 <p>然后使用 Chrome 自带的 DevTools 分析一下网页结构，找到放 Gitalk 的位置</p>
 
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/022/get_class.png" alt="get id or class" class="lazyload"><figcaption class="image-caption">get id or class</figcaption></figure></p>
+<p><img alt="get id or class" src="https://mogeko.github.io/images/022/get_class.png"></p>
 
 <p>我们可以看见已经 Leavelt 为我们预留了 “评论区” 的位置，不过里面什么东西都没有。记下该 <code>div</code> 的<code>class</code> 或者 <code>id</code> (如果你使用的主题没有预留 “评论区”，可以记下你准备放 Gitalk 评论区位置附近 <code>div</code> 的<code>class</code> 或者 <code>id</code>，并以此定位)</p>
 
 <p>打开 VSCode，搜索包含刚刚找到的 <code>class</code> 或者 <code>id</code> 的 HTML 模板 (一般是 <code>single.html</code>)</p>
 
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/022/set_div.png" alt="插入 Gitalk 模板" class="lazyload"><figcaption class="image-caption">插入 Gitalk 模板</figcaption></figure></p>
+<p><img alt="插入 Gitalk 模板" src="https://mogeko.github.io/images/022/set_div.png"></p>
 
 <p>在模板中插入<code>{{ partial &quot;gitalk.html&quot; . }}</code></p>
 
@@ -275,7 +275,7 @@
 
 <p>设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 <code>hugo server</code> 中是不会启用的)</p>
 
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://mogeko.github.io/images/022/done.png" alt="Gitalk" class="lazyload"><figcaption class="image-caption">Gitalk</figcaption></figure></p>
+<p><img alt="Gitalk" src="https://mogeko.github.io/images/022/done.png"></p>
 
 <p><strong>添加 Gitalk 评论区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要</strong></p>
 
