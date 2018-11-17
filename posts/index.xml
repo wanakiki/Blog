@@ -17,7 +17,7 @@
       <pubDate>Fri, 16 Nov 2018 19:57:09 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/023/</guid>
-      <description>目前本博客使用的 Hugo 主题是: Leavelt
+      <description>目前本博客使用的 Hugo 主题是：Leavelt
 正如你说看到的那样，是一款简约大气的的主题。但再使用的过程中我也发现了一些可以改进的地方
 添加 Gitalk 评论系统 Leavelt 默认没有评论系统，我们可以做一点简单的修改添加 Gitalk 评论系统
 关于 Gitalk  官方网址： https://github.com/gitalk/gitalk/ 在线示例： https://gitalk.github.io/  Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说，只要 Github 不倒闭，你的评论系统就不会被关闭。
@@ -37,7 +37,7 @@
       <guid>https://mogeko.github.io/2018/022/</guid>
       <description>Hugo 是一个强大的静态网页生成器，使用 go 开发。速度贼快，还有 “时时预览” 等特性。不过 Hugo 还比较年轻，没有像 NexT 那样功能强大，成熟稳定的主题。所以很多东西需要自己动手撸。就例如评论系统。
 关于 Gitalk  官方网址： https://github.com/gitalk/gitalk/ 在线示例： https://gitalk.github.io/  Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说，只要 Github 不倒闭，你的评论系统就不会被关闭。
-为 Hugo 添加 Gitalk 评论系统 本博客使用的主题是: Leavelt
+为 Hugo 添加 Gitalk 评论系统 本博客使用的主题是：Leavelt
 不同主题可能有所区别，但原理都是类似的
 原理 众所周知，Hugo 会将 Markdown 文档 按照 主题 (包括 HTML 模板、CSS、JavaScript 等) 编译成静态网页
 那么我们只需要将 Gitalk 作为一个 &amp;lt;div&amp;gt; 插入到 HTML 模板中，然后在 config.toml 中添加相关配置，就可以实现 Gitalk 评论系统了
@@ -78,8 +78,8 @@
 在弹出的文件夹中可以看到以下文件
 user[数字].dat
 就是存档文件，数字 (1 - 4) 表示第几个存档。
-原文地址: 「空洞骑士」存档备份方法 | Steam 社区
-作者: 依然是 Mogeko ٩(●˙▿˙●)۶
+原文地址：「空洞骑士」存档备份方法 | Steam 社区
+作者：依然是 Mogeko ٩(●˙▿˙●)۶
 
  ·End·</description>
     </item>
@@ -274,7 +274,7 @@ user[数字].dat
 
 &lt;p&gt;Android 从诞生之日起就高举着开源的大旗，这也是它成功的原因之一。而它的开放性也成功的吸引到了一大批爱折腾的人，从而诞生出了 root（此处特制 Android 中的 root）。&lt;/p&gt;
 
-&lt;p&gt;根据 &lt;a href=&#34;https://zh.wikipedia.org/wiki/Root#.E8.A8.88.E7.AE.97.E6.A9.9F.E6.87.89.E7.94.A8&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Wikipedia&lt;/a&gt; 的释义，root 指的是使用户取得 Android 操作系统的超级用户（Super User）许可权的技术。用户通过 root，可以越过手机制造商的限制，卸载手机制造商预装在手机中某些应用，以及运行一些需要超级用户权限的应用程序。同时,root 也可能会让手机变得“不安全”（并不是说 root 使手机变得不安全，而是一些用户的使用习惯会使 root 后的手机变得危险）。&lt;/p&gt;
+&lt;p&gt;根据 &lt;a href=&#34;https://zh.wikipedia.org/wiki/Root#.E8.A8.88.E7.AE.97.E6.A9.9F.E6.87.89.E7.94.A8&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Wikipedia&lt;/a&gt; 的释义，root 指的是使用户取得 Android 操作系统的超级用户（Super User）许可权的技术。用户通过 root，可以越过手机制造商的限制，卸载手机制造商预装在手机中某些应用，以及运行一些需要超级用户权限的应用程序。同时，root 也可能会让手机变得“不安全”（并不是说 root 使手机变得不安全，而是一些用户的使用习惯会使 root 后的手机变得危险）。&lt;/p&gt;
 
 &lt;p&gt;但是从棉花糖（Android 6.0）开始，Google 基本阻止了以前版本中最流行的 root 方法 —— 即，将 su守护程序 放置到 /system 分区，并在启动时取得所需的权限。道高一尺，魔高一丈，于是就出现了 systemless 的 root 方式，因为它不采取任何方式修改 /system 分区。&lt;/p&gt;
 

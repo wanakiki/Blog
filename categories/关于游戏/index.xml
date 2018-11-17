@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>游戏相关 on Mogeko`s Blog</title>
-    <link>https://mogeko.github.io/categories/%E6%B8%B8%E6%88%8F%E7%9B%B8%E5%85%B3/</link>
-    <description>Recent content in 游戏相关 on Mogeko`s Blog</description>
+    <title>关于游戏 on Mogeko`s Blog</title>
+    <link>https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E6%B8%B8%E6%88%8F/</link>
+    <description>Recent content in 关于游戏 on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 30 Sep 2018 21:06:00 +0800</lastBuildDate>
     
-	<atom:link href="https://mogeko.github.io/categories/%E6%B8%B8%E6%88%8F%E7%9B%B8%E5%85%B3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E6%B8%B8%E6%88%8F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -45,8 +45,8 @@
 在弹出的文件夹中可以看到以下文件
 user[数字].dat
 就是存档文件，数字 (1 - 4) 表示第几个存档。
-原文地址: 「空洞骑士」存档备份方法 | Steam 社区
-作者: 依然是 Mogeko ٩(●˙▿˙●)۶
+原文地址：「空洞骑士」存档备份方法 | Steam 社区
+作者：依然是 Mogeko ٩(●˙▿˙●)۶
 
  ·End·</description>
     </item>

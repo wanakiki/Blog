@@ -17,7 +17,7 @@
       <guid>https://mogeko.github.io/2018/023/</guid>
       <description>
 
-&lt;p&gt;目前本博客使用的 Hugo 主题是: &lt;a href=&#34;https://github.com/liuzc/LeaveIt&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Leavelt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;目前本博客使用的 Hugo 主题是：&lt;a href=&#34;https://github.com/liuzc/LeaveIt&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Leavelt&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;正如你说看到的那样，是一款简约大气的的主题。但再使用的过程中我也发现了一些可以改进的地方&lt;/p&gt;
 
@@ -114,7 +114,7 @@
 
 &lt;p&gt;将 &lt;code&gt;owner&lt;/code&gt; 和 &lt;code&gt;admin&lt;/code&gt; 设置为你的 GitHub ID&lt;/p&gt;
 
-&lt;p&gt;更多配置请参考: &lt;a href=&#34;https://github.com/gitalk/gitalk&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;更多配置请参考：&lt;a href=&#34;https://github.com/gitalk/gitalk&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 &lt;code&gt;hugo server&lt;/code&gt; 中是不会启用的)## 配置 config.toml&lt;/p&gt;
 
@@ -145,7 +145,7 @@
 
 &lt;p&gt;将 &lt;code&gt;owner&lt;/code&gt; 和 &lt;code&gt;admin&lt;/code&gt; 设置为你的 GitHub ID&lt;/p&gt;
 
-&lt;p&gt;更多配置请参考: &lt;a href=&#34;https://github.com/gitalk/gitalk&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;更多配置请参考：&lt;a href=&#34;https://github.com/gitalk/gitalk&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 &lt;code&gt;hugo server&lt;/code&gt; 中是不会启用的)&lt;/p&gt;
 
@@ -155,7 +155,7 @@
 
 &lt;h1 id=&#34;添加-隐藏文字-spoiler&#34;&gt;添加“隐藏文字”(spoiler)&lt;/h1&gt;
 
-&lt;p&gt;Steam 社区和其他一些支持 BBCode 的论坛都有一种名为“隐藏文字”(spoiler) 的标签，使用这种标签后,标签中的文字默认会隐藏起来，当你将鼠标移动到文字上时，文字才会显示出来。&lt;/p&gt;
+&lt;p&gt;Steam 社区和其他一些支持 BBCode 的论坛都有一种名为“隐藏文字”(spoiler) 的标签，使用这种标签后，标签中的文字默认会隐藏起来，当你将鼠标移动到文字上时，文字才会显示出来。&lt;/p&gt;
 
 &lt;p&gt;就像这样：&lt;span class=&#34;spoiler&#34; &gt;这是一段隐藏文字&lt;/span&gt;&lt;/p&gt;
 
@@ -249,7 +249,7 @@
 
 &lt;h1 id=&#34;为-hugo-添加-gitalk-评论系统&#34;&gt;为 Hugo 添加 Gitalk 评论系统&lt;/h1&gt;
 
-&lt;p&gt;本博客使用的主题是: &lt;a href=&#34;https://github.com/liuzc/LeaveIt&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Leavelt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本博客使用的主题是：&lt;a href=&#34;https://github.com/liuzc/LeaveIt&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Leavelt&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;不同主题可能有所区别，但原理都是类似的&lt;/p&gt;
 
@@ -345,7 +345,7 @@
 
 &lt;p&gt;将 &lt;code&gt;owner&lt;/code&gt; 和 &lt;code&gt;admin&lt;/code&gt; 设置为你的 GitHub ID&lt;/p&gt;
 
-&lt;p&gt;更多配置请参考: &lt;a href=&#34;https://github.com/gitalk/gitalk&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;更多配置请参考：&lt;a href=&#34;https://github.com/gitalk/gitalk&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 &lt;code&gt;hugo server&lt;/code&gt; 中是不会启用的)&lt;/p&gt;
 
@@ -518,9 +518,9 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;原文地址: &lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526799965&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;格林剧团 DLC 全成就指南 | Steam 社区&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;原文地址：&lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526799965&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;格林剧团 DLC 全成就指南 | Steam 社区&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;作者: 果然是 Mogeko （づ&amp;gt; ω &amp;lt;）づ♡&lt;/p&gt;
+&lt;p&gt;作者：果然是 Mogeko （づ&amp;gt; ω &amp;lt;）づ♡&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -561,9 +561,9 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;原文地址: &lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526745112&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;「空洞骑士」存档备份方法 | Steam 社区&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;原文地址：&lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526745112&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;「空洞骑士」存档备份方法 | Steam 社区&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;作者: 依然是 Mogeko ٩(●˙▿˙●)۶&lt;/p&gt;
+&lt;p&gt;作者：依然是 Mogeko ٩(●˙▿˙●)۶&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -704,9 +704,9 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;原文地址: &lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526374935&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;寻神者 DLC 全成就指南 | Steam 社区&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;原文地址：&lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526374935&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;寻神者 DLC 全成就指南 | Steam 社区&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;作者: 还是 Mogeko ヾ(●´∇｀●)ﾉ&lt;/p&gt;
+&lt;p&gt;作者：还是 Mogeko ヾ(●´∇｀●)ﾉ&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -2206,7 +2206,7 @@ exec zsh
 fi
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;更新.bashrc&lt;/p&gt;
+&lt;p&gt;更新 .bashrc&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;source ~/.bashrc
 &lt;/code&gt;&lt;/pre&gt;
@@ -4218,7 +4218,7 @@ cscript ospp.vbs /act
 
 &lt;p&gt;iOS 就比较特殊了，因为 iOS 系统的特殊性，需要越狱后才能提供相应的运行环境。&lt;/p&gt;
 
-&lt;p&gt;越狱后,，在 Cydia 搜索下载并安装 MobileTerminal，以提供终端环境。&lt;/p&gt;
+&lt;p&gt;越狱后，在 Cydia 搜索下载并安装 MobileTerminal，以提供终端环境。&lt;/p&gt;
 
 &lt;h1 id=&#34;命令列表&#34;&gt;命令列表&lt;/h1&gt;
 
@@ -4229,7 +4229,7 @@ cscript ospp.vbs /act
 
 &lt;p&gt;简单的说就是以 &lt;code&gt;BaiduPCS-Go&lt;/code&gt; 开头，后面跟具体的命令（参数）。&lt;/p&gt;
 
-&lt;p&gt;未带任何其他参数运行程序,，则程序进入 console 模式。（光标前有 &lt;code&gt;BaiduPCS-Go &amp;gt;&lt;/code&gt; 的前缀）console 模式下直接输入命令，不需要加 &lt;code&gt;BaiduPCS-Go&lt;/code&gt; 的前缀。&lt;/p&gt;
+&lt;p&gt;未带任何其他参数运行程序，则程序进入 console 模式。（光标前有 &lt;code&gt;BaiduPCS-Go &amp;gt;&lt;/code&gt; 的前缀）console 模式下直接输入命令，不需要加 &lt;code&gt;BaiduPCS-Go&lt;/code&gt; 的前缀。&lt;/p&gt;
 
 &lt;h2 id=&#34;登录&#34;&gt;登录&lt;/h2&gt;
 
@@ -4350,9 +4350,9 @@ BaiduPCS-Go cp [文件/目录1] [文件/目录2] [文件/目录3] ... [目标目
 
 &lt;h3 id=&#34;移动-重命名-文件-目录&#34;&gt;移动/重命名 文件/目录&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# 移动:
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# 移动：
 BaiduPCS-Go mv &amp;lt;文件/目录1&amp;gt; &amp;lt;文件/目录2&amp;gt; &amp;lt;文件/目录3&amp;gt; ... &amp;lt;目标目录&amp;gt;
-# 重命名:
+# 重命名：
 BaiduPCS-Go mv &amp;lt;文件/目录&amp;gt; &amp;lt;重命名的文件/目录&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -4459,7 +4459,7 @@ BaiduPCS-Go set max_parallel 150
 &lt;h1 id=&#34;已知问题&#34;&gt;已知问题&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;下载进度到最后的时候,，下载速度会降低。&lt;/li&gt;
+&lt;li&gt;下载进度到最后的时候，下载速度会降低。&lt;/li&gt;
 &lt;li&gt;程序的 console 模式在 windows 下部分中文无法正常输入。&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -4674,7 +4674,7 @@ BaiduPCS-Go set max_parallel 150
 
 &lt;p&gt;Android 从诞生之日起就高举着开源的大旗，这也是它成功的原因之一。而它的开放性也成功的吸引到了一大批爱折腾的人，从而诞生出了 root（此处特制 Android 中的 root）。&lt;/p&gt;
 
-&lt;p&gt;根据 &lt;a href=&#34;https://zh.wikipedia.org/wiki/Root#.E8.A8.88.E7.AE.97.E6.A9.9F.E6.87.89.E7.94.A8&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Wikipedia&lt;/a&gt; 的释义，root 指的是使用户取得 Android 操作系统的超级用户（Super User）许可权的技术。用户通过 root，可以越过手机制造商的限制，卸载手机制造商预装在手机中某些应用，以及运行一些需要超级用户权限的应用程序。同时,root 也可能会让手机变得“不安全”（并不是说 root 使手机变得不安全，而是一些用户的使用习惯会使 root 后的手机变得危险）。&lt;/p&gt;
+&lt;p&gt;根据 &lt;a href=&#34;https://zh.wikipedia.org/wiki/Root#.E8.A8.88.E7.AE.97.E6.A9.9F.E6.87.89.E7.94.A8&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Wikipedia&lt;/a&gt; 的释义，root 指的是使用户取得 Android 操作系统的超级用户（Super User）许可权的技术。用户通过 root，可以越过手机制造商的限制，卸载手机制造商预装在手机中某些应用，以及运行一些需要超级用户权限的应用程序。同时，root 也可能会让手机变得“不安全”（并不是说 root 使手机变得不安全，而是一些用户的使用习惯会使 root 后的手机变得危险）。&lt;/p&gt;
 
 &lt;p&gt;但是从棉花糖（Android 6.0）开始，Google 基本阻止了以前版本中最流行的 root 方法 —— 即，将 su守护程序 放置到 /system 分区，并在启动时取得所需的权限。道高一尺，魔高一丈，于是就出现了 systemless 的 root 方式，因为它不采取任何方式修改 /system 分区。&lt;/p&gt;
 
@@ -4880,7 +4880,7 @@ BaiduPCS-Go set max_parallel 150
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;lsb_release -a
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;输出:&lt;/p&gt;
+&lt;p&gt;输出：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;No LSB modules are available.
 Distributor ID:	Ubuntu
