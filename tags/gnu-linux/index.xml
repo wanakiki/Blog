@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GNU/Linux on Mogeko`s Blog</title>
+    <link>https://mogeko.github.io/tags/gnu-linux/</link>
+    <description>Recent content in GNU/Linux on Mogeko`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 04 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mogeko.github.io/tags/gnu-linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WSL 的安装与使用</title>
+      <link>https://mogeko.github.io/2018/016/</link>
+      <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/016/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/016/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;16 年 12 月份的时候，微软发布了 Windows Subsystem for Linux (WSL)，通过子系统的方式运行了一个完整的 Linux 系统。使得在 Windows 中使用 Linux 中的工具链成为可能。(Windows 果然是最好的 Linux 发行版)&lt;/p&gt;
+
+&lt;p&gt;从微软宣布 WSL 的第一天起，我就一直在关注这项技术。因为我虽然通过双系统的方式安装了 Ubuntu，但切换系统需要从启的机制确实不方便，让我离开 Windows 又实在是不太现实。 (学习的原因，离不开 Visual Studio 和 Adobe 全家桶) WSL 似乎是平衡性能和易用性的最好解决方案了。怎奈何 WSL 只支持 64 位的系统，让我这台老电脑很是尴尬。&lt;/p&gt;
+
+&lt;p&gt;如今换电脑了！终于可以享受 WSL 的便利了！！ (*^▽^*)&lt;/p&gt;
+
+&lt;p&gt;第一次使用时，&lt;strong&gt;如果发现没有 WSL 中没有网络连接，可以试着重启一下 WSL，还是没网重启一下 Windows&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>如何将 Ubuntu 升级到 17.10</title>
+      <link>https://mogeko.github.io/2017/009/</link>
+      <pubDate>Sat, 02 Dec 2017 11:57:09 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2017/009/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/009/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ubuntu 17.10 已经发布了一段时间了，作为 18.04 的预览（热）版。带来了一大波新特性。&lt;/p&gt;
+
+&lt;p&gt;其中最重要也是最令我揪心的是 Ubuntu 将放弃 Unity 回归 Gnome。对于我们这些习惯了 Unity 的用户来说，这个决定简直蠢到家了。虽然 Unity 是丑了点，但比 Gnome 好用到不知道那里去了！这也是我迟迟没有升级的主要原因。&lt;/p&gt;
+
+&lt;p&gt;目前 &lt;strong&gt;Ubuntu 17.10 不是长期支持版本（LTS）！！！&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>安装 Ubuntu 双系统</title>
+      <link>https://mogeko.github.io/2017/000/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mogeko.github.io/2017/000/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/000/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;
+在很久以前就想试一试Linux了，一直没有实践。一是觉得太麻烦，二是怕把电脑弄坏。后来实践了一次后发现，其实并没有想象中那么难，这是一个完全独立的系统，与隔壁的Windows半毛钱关系都没有。把引导搞定就不怕了。&lt;/p&gt;
+
+&lt;p&gt;另外，如果想长期使用；
+&lt;strong&gt;千万不要上最新的系统！！！&lt;/strong&gt;
+bug多得一逼&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
