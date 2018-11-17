@@ -6,8 +6,40 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 16 Nov 2018 19:57:09 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Nov 2018 00:54:27 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Windows/Office 激活脚本 (使用 KMS)</title>
+      <link>https://mogeko.github.io/2018/026/</link>
+      <pubDate>Sun, 18 Nov 2018 00:54:27 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/026/</guid>
+      <description>&lt;p&gt;很早以前的一个仓库了，博主已经入了 Office 365，早就用不到了。&lt;/p&gt;
+
+&lt;p&gt;不过最近帮小学妹装机，所以突然诈尸更新了一波。给需要的人(○&amp;rsquo;◡&amp;rsquo;○)ﾉ♥&lt;/p&gt;
+
+&lt;p&gt;毕竟软软也是要掐饭的嘛。有能力的话最好还是入个正比较好 |・ω・｀)&lt;/p&gt;
+
+&lt;p&gt;这个脚本可以用来激活：
+ - Office (零售版和 VOL 版)
+ - Windows (仅限 VOL 版)&lt;/p&gt;
+
+&lt;p&gt;链接：&lt;a href=&#34;https://github.com/Mogeko/KMS&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Mogeko/KMS | GitHub&lt;/a&gt;&lt;br /&gt;
+直接下载：&lt;a href=&#34;https://github.com/Mogeko/KMS/releases/download/V3.0.0/Run.cmd&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Run.cmd&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;使用的 KMS 服务器来自：&lt;a href=&#34;https://03k.org&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;零散坑&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;#用法
+&lt;strong&gt;双击运行 Run.cmd，然后根据提示激活即可&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/026/run.png&#34;  alt=&#34;Run.cmd&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;VOL 版的 Office 和 Windows 直接通过 KMS 激活，零售版的 Office 先用脚本转换成 VOL 版，然后通过 KMS 激活。&lt;span class=&#34;spoiler&#34; &gt;零售版 Windows：我觉得我还可以抢救一下 QAQ&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;脚本默认激活的是 2016 版的 Office，其他版本可以到文件夹里找单独激活的脚本 (没测试过，理论上是可以用的)，或者自己手动改一下脚本 (将 %ospp% 这个变量替换成正确的 opss.vbs 路径)&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Leavelt 主题优化</title>
@@ -21,7 +53,7 @@
 
 &lt;p&gt;正如你说看到的那样，是一款简约大气的的主题。但再使用的过程中我也发现了一些可以改进的地方&lt;/p&gt;
 
-&lt;h1 id=&#34;添加-gitalk-评论系统&#34;&gt;添加 Gitalk 评论系统&lt;/h1&gt;
+&lt;h1 id=&#34;添加谈笑风生区&#34;&gt;添加谈笑风生区&lt;/h1&gt;
 
 &lt;p&gt;Leavelt 默认没有评论系统，我们可以做一点简单的修改添加 Gitalk 评论系统&lt;/p&gt;
 
@@ -149,7 +181,7 @@
 
 &lt;p&gt;&lt;img alt=&#34;Gitalk&#34; src=&#34;https://mogeko.github.io/images/024/done.png/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;添加 Gitalk 评论区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;添加谈笑风生区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;添加-隐藏文字-spoiler&#34;&gt;添加“隐藏文字”(spoiler)&lt;/h1&gt;
 
@@ -225,7 +257,7 @@
     </item>
     
     <item>
-      <title>为 Hugo 添加 Gitalk 评论系统</title>
+      <title>为 Hugo 添加谈笑风生区 (Gitalk)</title>
       <link>https://mogeko.github.io/2018/024/</link>
       <pubDate>Fri, 16 Nov 2018 12:57:09 +0800</pubDate>
       
@@ -245,7 +277,7 @@
 
 &lt;p&gt;Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说，只要 Github 不倒闭，你的评论系统就不会被关闭。&lt;/p&gt;
 
-&lt;h1 id=&#34;为-hugo-添加-gitalk-评论系统&#34;&gt;为 Hugo 添加 Gitalk 评论系统&lt;/h1&gt;
+&lt;h1 id=&#34;添加谈笑风生区&#34;&gt;添加谈笑风生区&lt;/h1&gt;
 
 &lt;p&gt;本博客使用的主题是：&lt;a href=&#34;https://github.com/liuzc/LeaveIt&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Leavelt&lt;/a&gt;&lt;/p&gt;
 
@@ -255,7 +287,7 @@
 
 &lt;p&gt;众所周知，Hugo 会将 &lt;strong&gt;Markdown 文档&lt;/strong&gt; 按照 &lt;strong&gt;主题 (包括 HTML 模板、CSS、JavaScript 等)&lt;/strong&gt; 编译成静态网页&lt;/p&gt;
 
-&lt;p&gt;那么我们只需要将 Gitalk 作为一个 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 插入到 HTML 模板中，然后在 &lt;code&gt;config.toml&lt;/code&gt; 中添加相关配置，就可以实现 Gitalk 评论系统了&lt;/p&gt;
+&lt;p&gt;那么我们只需要将 Gitalk 作为一个 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 插入到 HTML 模板中，然后在 &lt;code&gt;config.toml&lt;/code&gt; 中添加相关配置，就可以实现“谈笑风生区”了&lt;/p&gt;
 
 &lt;h2 id=&#34;创建-github-application&#34;&gt;创建 Github Application&lt;/h2&gt;
 
@@ -306,7 +338,7 @@
 
 &lt;p&gt;&lt;img alt=&#34;get id or class&#34; src=&#34;https://mogeko.github.io/images/024/get_class.png&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;我们可以看见已经 Leavelt 为我们预留了 “评论区” 的位置，不过里面什么东西都没有。记下该 &lt;code&gt;div&lt;/code&gt; 的&lt;code&gt;class&lt;/code&gt; 或者 &lt;code&gt;id&lt;/code&gt; (如果你使用的主题没有预留 “评论区”，可以记下你准备放 Gitalk 评论区位置附近 &lt;code&gt;div&lt;/code&gt; 的&lt;code&gt;class&lt;/code&gt; 或者 &lt;code&gt;id&lt;/code&gt;，并以此定位)&lt;/p&gt;
+&lt;p&gt;我们可以看见已经 Leavelt 为我们预留了 “谈笑风生区” 的位置，不过里面什么东西都没有。记下该 &lt;code&gt;div&lt;/code&gt; 的&lt;code&gt;class&lt;/code&gt; 或者 &lt;code&gt;id&lt;/code&gt; (如果你使用的主题没有预留 “谈笑风生区”，可以记下你准备放 Gitalk 的位置附近 &lt;code&gt;div&lt;/code&gt; 的&lt;code&gt;class&lt;/code&gt; 或者 &lt;code&gt;id&lt;/code&gt;，并以此定位)&lt;/p&gt;
 
 &lt;p&gt;打开 VSCode，搜索包含刚刚找到的 &lt;code&gt;class&lt;/code&gt; 或者 &lt;code&gt;id&lt;/code&gt; 的 HTML 模板 (一般是 &lt;code&gt;single.html&lt;/code&gt;)&lt;/p&gt;
 
@@ -349,7 +381,7 @@
 
 &lt;p&gt;&lt;img alt=&#34;Gitalk&#34; src=&#34;https://mogeko.github.io/images/024/done.png&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;添加 Gitalk 评论区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;添加谈笑风生区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -5286,109 +5318,6 @@ BaiduPCS-Go set max_parallel 150
 &lt;img alt=&#34;Steam_Air&#34; src=&#34;https://mogeko.github.io/images/012/steam_air.png&#34;&gt;
 [&lt;a href=&#34;https://github.com/Mogeko/mogeko.github.io/releases/download/2017%2F12%2F06/Air_Skin.zip&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;点我下载 Air_Skin.zip]&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Android 使用 Chrome 的五个理由</title>
-      <link>https://mogeko.github.io/2017/011/</link>
-      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogeko.github.io/2017/011/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/011/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;PC 上的 Chrome 毫无疑问是最好的浏览器之一。那市场份额，&lt;del&gt;都快逼近 IE 了&lt;/del&gt;。不仅把曾经的老大哥 IE 远远的甩在后面，还把被微软委以大任的 Microsoft Edge 按在地上摩擦，弄得微软很是尴尬。然而在 Google 自家的 Android 上，发展得却不如 PC 上好，有的地方就连我这种骨粉也觉得用起来不舒服。不过，最近几次更新中，我觉得是越改越好了，特别是今天，无意中发现了几个新功能，突然打开了新世界的大门，也让我对 Chrome 的评价从 “不推荐”变成“特别推荐”！&lt;/p&gt;
-
-&lt;h1 id=&#34;理由一-信仰&#34;&gt;理由一：信仰！！！&lt;/h1&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Google 大法好！！！&#34; src=&#34;https://mogeko.github.io/images/011/google.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;Google 大法好！&lt;/p&gt;
-
-&lt;p&gt;不需要解释，谁用谁知道！&lt;/p&gt;
-
-&lt;p&gt;垃圾百度，吃枣药丸！！！&lt;/p&gt;
-
-&lt;h1 id=&#34;理由二-人性化的操作逻辑&#34;&gt;理由二：人性化的操作逻辑&lt;/h1&gt;
-
-&lt;p&gt;发现新大陆前你要是问我，最好的手机浏览器是什么？我会毫不犹豫的回答：IE（喵喵喵？？？）&lt;/p&gt;
-
-&lt;p&gt;没错，就是那个 PC 上难得跟屎一样的 IE，不过我说的是手机浏览器（Android 和 iOS 就别想了，Windows Phone 独占）&lt;/p&gt;
-
-&lt;p&gt;&amp;lt;img alt=&amp;ldquo;Internet Explorer&amp;rdquo; src=&amp;ldquo;&lt;a href=&#34;https://mogeko.github.io/images/011/wp_IE11)&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://mogeko.github.io/images/011/wp_IE11)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;↑我的 Lumia 900 找不到了，图片是随便找的（好怀念当年那个在WP上用浏览器上贴吧的时代啊，结果直到我换手机，贴吧都没出 WP 版的客户端）&lt;/p&gt;
-
-&lt;p&gt;PC 上的 IE 和 WP 上的 IE 完全是两回事，PC 上不仅界面丑，还慢得跟坨屎一样。而 WP 上，速度快，动画华丽，最主要的，是它吧地址栏（搜索栏）放在了下面！不得不说，非常棒的设计，只可惜 WP 死得太早。好在我们有 Chrome。&lt;/p&gt;
-
-&lt;p&gt;你 TM 逗我呢，难道 Chrome 的地址栏不在上面？&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Chrome_Old&#34; src=&#34;https://mogeko.github.io/images/011/chrome_old.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;事实上，Google 已经重新设计了地址栏（搜索栏）的位置，只不过现在还在实验性特征中，你需要自己开启。(V59+ 的版本才支持)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Chrome_New&#34; src=&#34;https://mogeko.github.io/images/011/chrome_new.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;开启方法：&lt;/strong&gt; 进入 &lt;code&gt;chrome://flags&lt;/code&gt; 页面(在地址栏中输入 &lt;code&gt;chrome://flags&lt;/code&gt;，回车）。找到并开启 &lt;code&gt;#enable-chrome-home&lt;/code&gt; 和 &lt;code&gt;#ntp-google-g-in-omnibox&lt;/code&gt; 两个选项。（另外，Chrome的页内搜索做的很不错。在右侧有匹配项在页内位置的显示，以及当前位置。）&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;开启方法&#34; src=&#34;https://mogeko.github.io/images/011/way2open.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;然后重启一下 Chrome 就可以了。&lt;/p&gt;
-
-&lt;p&gt;将地址栏移到了屏幕底部后，当我们在正常浏览网页时，底部地址栏会随着屏幕滚动而隐藏。&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;随着屏幕滚动而隐藏&#34; src=&#34;https://mogeko.github.io/images/011/chrome_hide.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;将地址栏向上拖拽，便能展开一个功能完备的新标签页。&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;新标签页&#34; src=&#34;https://mogeko.github.io/images/011/chrome_new_tab_1.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;主页 下载内容 书签 历史记录&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;新标签页&#34; src=&#34;https://mogeko.github.io/images/011/chrome_new_tab_2.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;比原来的好看到不知道哪里去了！！！而且，手小的用户终于可以够着地址栏（搜索栏）了 #(逃&lt;/p&gt;
-
-&lt;h1 id=&#34;理由三-强大的同步功能&#34;&gt;理由三：强大的同步功能&lt;/h1&gt;
-
-&lt;p&gt;翻墙，并安装谷歌全家桶后，Chrome 独有的优势才得以体现出来。
-首先就是强大的跨平台同步。&lt;/p&gt;
-
-&lt;p&gt;同步功能可以有多强大呢？强大到你已经感觉不到它的存在了。&lt;/p&gt;
-
-&lt;p&gt;举个例子。经常，我们会遇到突然有事必须出门的情况，而网页上到文章只看了一半；放在以前，我多半会将文章保存进 Instapaper 或者 Pocket 这类“稍后阅读”的应用中，再用手机看；而现在，我只需要合上电脑，直接出门就好了。因为 Chrome 已经将我的浏览记录同步到了手机上，我只需要打开手机上的 Chrome 就可以接着看没看完的文章了。&lt;/p&gt;
-
-&lt;p&gt;不仅仅是历史记录，书签、表单、密码 等等都可以同步。
-↓可以被 Chrome 同步的内容&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;同步&#34; src=&#34;https://mogeko.github.io/images/011/chrome_sync.png&#34;&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;理由四-与-google-翻译的完美融合&#34;&gt;理由四：与 Google 翻译的完美融合&lt;/h1&gt;
-
-&lt;p&gt;在发现新大陆前，尽管手机上的 Chrome 那么难用，但我一直没有删它。究其原因，一方面是因为信仰的加成，而另一方面就是它与 Google 翻译完美的融合。（不仅仅是手机端，PC 上的 Chrome 也可以和 Google 翻译很好的配合）
-当你打开一个非中文网页时，Chrome 默认会为你将整个网页翻译成中文。当然，你也可以设置 “不翻译这种语言”、“不翻译此网站”、翻译成其他语言 等等。&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;翻译&#34; src=&#34;https://mogeko.github.io/images/011/translation_1.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;对经常看外网的同学是个不小的福音呢。
-而且这种方便不仅仅是在chrome内，对于那些调用 Chrome 的内核来打开网页的应用同样适用（比如 XDA）&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;翻译&#34; src=&#34;https://mogeko.github.io/images/011/translation_2.png&#34;&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;理由五-隐身浏览&#34;&gt;理由五：隐身浏览&lt;/h1&gt;
-
-&lt;p&gt;Android 上很多浏览器都支持隐身浏览，但能像 Chrome 一样把隐身浏览做得这么好的还真不多。
-在 Chrome 中，你可以快速的打开一个“无痕式标签页”，这时你就已经进入了无痕模式了。在这个模式中，你浏览的网页，不会出现在历史记录中 Cookie 和搜索记录也不会被留下任何痕迹（当退出无痕模式后，一切记录和 Cookie 会被删除）。只有下载的文件和建立的书签会被保留下来。&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;隐身浏览&#34; src=&#34;https://mogeko.github.io/images/011/invisible_browsing_1.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;其实就相当于新开了一个临时的，独立的 Chrome。你在这个新的 Chrome 中干的任何事都不会对真正的 Chrome 产生影响。
-另外，Chrome 还可以一键退出“隐身浏览”&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;一键退出隐身浏览&#34; src=&#34;https://mogeko.github.io/images/011/invisible_browsing_2.jpg&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 

@@ -6,10 +6,28 @@
     <description>Recent content in Posts on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 16 Nov 2018 19:57:09 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Nov 2018 00:54:27 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Windows/Office 激活脚本 (使用 KMS)</title>
+      <link>https://mogeko.github.io/2018/026/</link>
+      <pubDate>Sun, 18 Nov 2018 00:54:27 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/026/</guid>
+      <description>很早以前的一个仓库了，博主已经入了 Office 365，早就用不到了。
+不过最近帮小学妹装机，所以突然诈尸更新了一波。给需要的人(○&amp;rsquo;◡&amp;rsquo;○)ﾉ♥
+毕竟软软也是要掐饭的嘛。有能力的话最好还是入个正比较好 |・ω・｀)
+这个脚本可以用来激活： - Office (零售版和 VOL 版) - Windows (仅限 VOL 版)
+链接：Mogeko/KMS | GitHub
+直接下载：Run.cmd
+使用的 KMS 服务器来自：零散坑
+#用法 双击运行 Run.cmd，然后根据提示激活即可
+VOL 版的 Office 和 Windows 直接通过 KMS 激活，零售版的 Office 先用脚本转换成 VOL 版，然后通过 KMS 激活。零售版 Windows：我觉得我还可以抢救一下 QAQ
+脚本默认激活的是 2016 版的 Office，其他版本可以到文件夹里找单独激活的脚本 (没测试过，理论上是可以用的)，或者自己手动改一下脚本 (将 %ospp% 这个变量替换成正确的 opss.vbs 路径)</description>
+    </item>
     
     <item>
       <title>Leavelt 主题优化</title>
@@ -19,7 +37,7 @@
       <guid>https://mogeko.github.io/2018/025/</guid>
       <description>目前本博客使用的 Hugo 主题是：Leavelt
 正如你说看到的那样，是一款简约大气的的主题。但再使用的过程中我也发现了一些可以改进的地方
-添加 Gitalk 评论系统 Leavelt 默认没有评论系统，我们可以做一点简单的修改添加 Gitalk 评论系统
+添加谈笑风生区 Leavelt 默认没有评论系统，我们可以做一点简单的修改添加 Gitalk 评论系统
 关于 Gitalk  官方网址： https://github.com/gitalk/gitalk/ 在线示例： https://gitalk.github.io/  Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说，只要 Github 不倒闭，你的评论系统就不会被关闭。
 创建 Github Application 首先要去 GitHub 上创建一个 Github Application
 点击创建
@@ -30,18 +48,20 @@
     </item>
     
     <item>
-      <title>为 Hugo 添加 Gitalk 评论系统</title>
+      <title>为 Hugo 添加谈笑风生区 (Gitalk)</title>
       <link>https://mogeko.github.io/2018/024/</link>
       <pubDate>Fri, 16 Nov 2018 12:57:09 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/024/</guid>
       <description>Hugo 是一个强大的静态网页生成器，使用 go 开发。速度贼快，还有 “时时预览” 等特性。不过 Hugo 还比较年轻，没有像 NexT 那样功能强大，成熟稳定的主题。所以很多东西需要自己动手撸。就例如评论系统。
 关于 Gitalk  官方网址： https://github.com/gitalk/gitalk/ 在线示例： https://gitalk.github.io/  Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说，只要 Github 不倒闭，你的评论系统就不会被关闭。
-为 Hugo 添加 Gitalk 评论系统 本博客使用的主题是：Leavelt
+添加谈笑风生区 本博客使用的主题是：Leavelt
 不同主题可能有所区别，但原理都是类似的
 原理 众所周知，Hugo 会将 Markdown 文档 按照 主题 (包括 HTML 模板、CSS、JavaScript 等) 编译成静态网页
-那么我们只需要将 Gitalk 作为一个 &amp;lt;div&amp;gt; 插入到 HTML 模板中，然后在 config.toml 中添加相关配置，就可以实现 Gitalk 评论系统了
-创建 Github Application 首先要去 GitHub 上创建一个 Github Application</description>
+那么我们只需要将 Gitalk 作为一个 &amp;lt;div&amp;gt; 插入到 HTML 模板中，然后在 config.toml 中添加相关配置，就可以实现“谈笑风生区”了
+创建 Github Application 首先要去 GitHub 上创建一个 Github Application
+点击创建
+记下 Client ID 和 Client Secret，以后要用</description>
     </item>
     
     <item>
