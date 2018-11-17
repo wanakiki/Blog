@@ -721,6 +721,356 @@
     </item>
     
     <item>
+      <title>「尘埃 4」新手入坑指北</title>
+      <link>https://mogeko.github.io/2018/019/</link>
+      <pubDate>Fri, 28 Sep 2018 10:09:14 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/019/</guid>
+      <description>
+
+&lt;p&gt;「尘埃 4」是经典越野赛车系列「尘埃」的正统续作，是一款非常优秀的赛车游戏，不过因为不支持中文、复杂的操作等原因劝退了不少萌新。 &lt;span class=&#34;spoiler&#34; &gt;其实我也是萌新_(:з」∠)_&lt;/span&gt; 这篇指南就简单介绍一下玩「尘埃 4」所需要的一些基本知识，希望对各位有所帮助(○&amp;rsquo;◡&amp;rsquo;○)ﾉ♥&lt;/p&gt;
+
+&lt;h1 id=&#34;键位操作&#34;&gt;键位操作&lt;/h1&gt;
+
+&lt;p&gt;《尘埃 4》整体偏硬核，键位和参数较多，很多地方需要玩家自己调教才能找到自己的舒服点，这里只介绍默认的操作键位。&lt;/p&gt;
+
+&lt;p&gt;《尘埃 4》中的操作分为两种模式：&lt;strong&gt;玩家模式 (简单模式)&lt;/strong&gt; 和 &lt;strong&gt;运动模式 (硬核模式)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;简单模式中简化了很多细节的操作比如 &lt;strong&gt;换挡&lt;/strong&gt;、&lt;strong&gt;离合&lt;/strong&gt;、&lt;strong&gt;雨刮器&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;等。&lt;/p&gt;
+
+&lt;p&gt;手柄因为键位有限，即使是在硬核模式中，也简化了部分操作，需要玩家自己设置。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;动作&lt;/th&gt;
+&lt;th&gt;键盘键位&lt;/th&gt;
+&lt;th&gt;手柄键位&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;油门&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;td&gt;RT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;刹车 (倒车)&lt;/td&gt;
+&lt;td&gt;Z&lt;/td&gt;
+&lt;td&gt;LT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;左转/右转&lt;/td&gt;
+&lt;td&gt;，/。&lt;/td&gt;
+&lt;td&gt;左摇杆&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;镜头 (视角)&lt;/td&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;离合器&lt;/td&gt;
+&lt;td&gt;L&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;手刹&lt;/td&gt;
+&lt;td&gt;空格键&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;车头灯&lt;/td&gt;
+&lt;td&gt;H&lt;/td&gt;
+&lt;td&gt;RB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;雨刮器&lt;/td&gt;
+&lt;td&gt;W&lt;/td&gt;
+&lt;td&gt;LB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;重置车辆&lt;/td&gt;
+&lt;td&gt;F2&lt;/td&gt;
+&lt;td&gt;十字键↑&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;路边维修&lt;/td&gt;
+&lt;td&gt;F3&lt;/td&gt;
+&lt;td&gt;十字键↓&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;升档&lt;/td&gt;
+&lt;td&gt;S&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;降档&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;移动视角 (后/左/右/上/下)&lt;/td&gt;
+&lt;td&gt;M / Delet / PageDown / Home / End&lt;/td&gt;
+&lt;td&gt;右摇杆&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;调整座位&lt;/td&gt;
+&lt;td&gt;1 / 2 / 4 / 5/ 6 / 7&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;左驾驶位&lt;/td&gt;
+&lt;td&gt;Comma&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;右驾驶位&lt;/td&gt;
+&lt;td&gt;FullStop&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;课程提示&lt;/td&gt;
+&lt;td&gt;Shift&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;通话&lt;/td&gt;
+&lt;td&gt;Alt&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;切换语音通话&lt;/td&gt;
+&lt;td&gt;方向键→&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;游戏界面&#34;&gt;游戏界面&lt;/h1&gt;
+
+&lt;p&gt;这部分是为了英语不好的同学写的，不需要的同学请跳过&lt;/p&gt;
+
+&lt;h2 id=&#34;主菜单界面&#34;&gt;主菜单界面&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910121227718/0B7139AF90C56EA186F43AADAB1F5F20079AA1FA/&#34;&gt;
+&lt;strong&gt;赛事&lt;/strong&gt;：进行你当前的赛事比赛&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;我的车队&lt;/strong&gt;：购买你第一辆车之后解锁&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;车辆&lt;/strong&gt;：查看你车库中的车辆以及购买新的车辆。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;邮箱&lt;/strong&gt;：接收《尘埃4》世界内的资讯&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;设置与额外内容&lt;/strong&gt;：一些基础设置&lt;/p&gt;
+
+&lt;h2 id=&#34;赛事界面&#34;&gt;赛事界面&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910121228533/33965D62DF09556B9CE873B44BCAC3AB02B9354C/&#34;&gt;
+&lt;strong&gt;职业生涯&lt;/strong&gt;：在这个模式中，你将一步步成长，挑战不同的赛事&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;竞赛&lt;/strong&gt;：完成日常、周常、月常的拉力赛挑战（需要联网）&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;多人游戏&lt;/strong&gt;：在线进行多人竞速赛&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;自由比赛&lt;/strong&gt;：创建一个自定义的冠军赛，此自建赛事还可以与你的好友一同游玩&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;拉力学院&lt;/strong&gt;：前往拉力学院学习、练习以及强化你的拉力技巧&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;娱乐模式&lt;/strong&gt;：进行限时撞击板子的挑战游戏&lt;/p&gt;
+
+&lt;h2 id=&#34;赛事准备界面&#34;&gt;赛事准备界面&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910121238383/F433A269F415A080CFAC366F4491B02BCB34344B/&#34;&gt;
+&lt;strong&gt;事件&lt;/strong&gt;：当前赛事拥有有多少场比赛、每场比赛的阶段数。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;赛道&lt;/strong&gt;：赛道上会表明起点（黑色底白旗）、节点（橙色三角形）以及终点（橙色圆形）。赛道上所标记的节点，一般都是该赛道的难点。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;赛道状况与天气&lt;/strong&gt;：显示赛道长度、海拔高度、地形材质（泥地、沥青、卵石等）、天气（晴天、雨天、多云等）、比赛时间。&lt;/p&gt;
+
+&lt;h2 id=&#34;车辆界面&#34;&gt;车辆界面&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910121239015/FFA053E7EF2F14307266088203EF389230A3A5B8/&#34;&gt;
+&lt;strong&gt;基本信息&lt;/strong&gt;：（左侧）显示车辆的车厂、生产年份与生产地、赛车级别、赛车所属的赛制，&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;车辆信息&lt;/strong&gt;：（右侧）显示车辆的引擎、马力、重量、变速器、传动系统、涡轮。&lt;/p&gt;
+
+&lt;h2 id=&#34;改装界面&#34;&gt;改装界面&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910121240298/4D074F5CA027B3DFFC11EADA6673441E0EC59E8A/&#34;&gt;
+&lt;strong&gt;动力元件&lt;/strong&gt;：可以改装引擎、涡轮。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;传动系统&lt;/strong&gt;：可以改装变速箱、差速器、离合器。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;底盘元件&lt;/strong&gt;：可以改装刹车系统、避震器、阻尼。&lt;/p&gt;
+
+&lt;h1 id=&#34;驾驶指南&#34;&gt;驾驶指南&lt;/h1&gt;
+
+&lt;h2 id=&#34;赛事-模式-简介&#34;&gt;赛事（模式）简介&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;RALLY&lt;/strong&gt;：拉力赛分为多个赛段，每个赛段每位车手单独完成，总用时最短的车手夺得总冠军。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;LAND RUSH&lt;/strong&gt;：点对点的多人比赛，最先冲线的车手夺取单个赛段的冠军，积分最高的车手在最后一轮夺取总冠军。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;RALLY CROSS&lt;/strong&gt;：绕圈的多人比赛，最先冲线的车手夺取单个赛段的冠军，积分最高的车手在最后一轮夺取总冠军。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HISSTORIC RALLY&lt;/strong&gt;：跟拉力赛一样，但你只能使用古董车&lt;/p&gt;
+
+&lt;h2 id=&#34;职业资格规则&#34;&gt;职业资格规则&lt;/h2&gt;
+
+&lt;p&gt;想要解锁&lt;strong&gt;「经典拉力模式」&lt;/strong&gt;、&lt;strong&gt;「穿越拉力赛」&lt;/strong&gt;或者&lt;strong&gt;「争先拉力赛」&lt;/strong&gt;的比赛资格，你需要达到指定的职业资格证。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;RALLY&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;拉力 C&lt;/strong&gt;：基本资格证&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拉力 B&lt;/strong&gt;：完成 1 个冠军赛事后解锁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拉力 A&lt;/strong&gt;：完成 2 个冠军赛事后解锁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拉力 R-3&lt;/strong&gt;：完成 4 个冠军赛事后解锁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拉力 R-2&lt;/strong&gt;：完成 12 个冠军赛事后解锁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拉力 R-1&lt;/strong&gt;：完成 21 个冠军赛事后解锁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拉力 R-S&lt;/strong&gt;：完成 24 个冠军赛事后解锁&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;LAND RUSH&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;争先 P3&lt;/strong&gt;：完成 4 个冠军赛事后解锁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;争先 P2&lt;/strong&gt;：完成 7 个冠军赛事后解锁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;争先 P1&lt;/strong&gt;：完成 11 个冠军赛事后解锁&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;RALLY CROSS&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;国际越野 R-A&lt;/strong&gt;：完成 10 个冠军赛事后解锁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;国际越野 C-3&lt;/strong&gt;：完成 13 个冠军赛事后解锁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;国际越野 C-2&lt;/strong&gt;：完成 20 个冠军赛事后解锁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;国际越野 C-1&lt;/strong&gt;：完成 24 个冠军赛事后解锁&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;HISSTORIC RALLY&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;拉力 H-C&lt;/strong&gt;：完成 15 个冠军赛事后解锁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拉力 H-B&lt;/strong&gt;：完成 25 个冠军赛事后解锁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拉力 H-A&lt;/strong&gt;：完成 41 个冠军赛事后解锁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拉力 H-S&lt;/strong&gt;：完成 47 个冠军赛事后解锁&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;辅助系统&#34;&gt;辅助系统&lt;/h2&gt;
+
+&lt;p&gt;辅助系统可以在「难度选择界面」中按F1键进行开启或关闭。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;变速箱&lt;/strong&gt;&lt;br /&gt;
+变速箱辅助系统操控能让档位自己动变更或半自动变更，玩家可以选择手动或带有离合的手动换挡。自动挡的优势就是由车速确定升、降挡。手动挡的优势就是将升降档的准则交予玩家决定，把握好涡轮转速，然后进行升降档，能够在过弯、起步时都能够缩短时间。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;离合&lt;/strong&gt;&lt;br /&gt;
+离合器的作用是令到换挡操控更加顺畅。因为离合能够减少换挡时的摩擦所损耗的速度。使用离合换挡最好的位置是在发夹弯和窄角弯。另外给引擎添加压力是防止引擎延迟。操作离合的时候一定要记住是按离合键之后紧接着按升降挡键，这样效果是最好的（不要同时按，容易出错，尤其是键盘）。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;车内视角&lt;/strong&gt;
+车外视角也就是第三人称视角，这种视角能够将大范围的景物都尽收眼底，对于不太熟悉赛道路况的车手最好用不过。车内视角更加注重弯角、路段的细致点，但是车内视角盲点非常多，所以使用车内视角的车手必须熟悉赛道或者是清楚了解领航员的指令。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;自动起步&lt;/strong&gt;
+自动起步操控能够自动处理在起跑线时手刹的操控，当系统提示「GO」就会立即自动松开手刹。这个辅助系统最好还是开启，因为电脑操控更加细腻、准确，如果玩家自动松开可能会稍慢。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ABS&lt;/strong&gt;
+ABS 防抱死系统是防止轮胎在刹车的时候锁死。这个辅助系统分为 5 个级别 (1 ~ 5)。车手可以根据车辆手刹摆动的篇幅来选择ABS的级别，一般来说 2、3 级弯，轻按手刹就能够把车头甩过去，然后就踩油门，如果发现车头继续往内角不断偏移，就证明抱死厉害，应该降低一下 ABS 级别。因应不同的赛道、不同的车辆，玩家们需要反复多次测试，才能选出针对单一赛道、单一车辆最适合的 ABS 等级。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;寻路系统&lt;/strong&gt;
+路面上出现寻路路线，它会提示车手何处需要减速、刹车或加速。这个辅助系统分为 5 个等级 (1 ~ 5)。绿线代表可以踩油门、黄线表示需要收油或松油门、红线表示需要刹车。值得一提就是收油的操作，收油只能在使用手柄进行游戏时才能实现，那就是按油门键的力度稍减而非完全松开的松油门。辅助路线对于新手是相当好用的，推荐不熟悉的车手开启寻路系统。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;稳定操控&lt;/strong&gt;
+稳定操控主要是令到车身在过弯的时候更稳定，这个系统分为5个等级 ( 1~ 5)。这个稳定系统与ABS有些共同点，它针对的是过弯车身的稳定，这涉及到阻尼等问题 (下文车辆调校中会有讲述)，如果车辆在过弯的时候不够稳定可能会导致车辆打白鸽转。
+如果稳定度足够，车辆就能以高速通过弯道。&lt;/p&gt;
+
+&lt;h1 id=&#34;领航员口令一览表&#34;&gt;领航员口令一览表&lt;/h1&gt;
+
+&lt;p&gt;领航员会用简单的口令给驾驶员报告路面情况。&lt;/p&gt;
+
+&lt;p&gt;能听懂他的口令，就相当于是带着一份详细的播报赛道地图在驾驶一样。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Left / Right + 数字&lt;/strong&gt;：左弯或右弯。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;数字表示弯道缓急 (数字越小弯道越急，越大弯道越缓)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数字表示这个弯所允许的档位&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Care&lt;/strong&gt;：谨慎驾驶。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Caution (大交叉)&lt;/strong&gt;：前方有危险，很容易造成车辆损坏。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hairpin&lt;/strong&gt;：非常急的回头弯。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Open&lt;/strong&gt;：道路宽阔。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Narrow&lt;/strong&gt;：道路狭窄。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tightens&lt;/strong&gt;：弯道越来越急，也可理解为弯道半径越来越小。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Through Gate&lt;/strong&gt;：即将通过大门或门洞等狭窄处。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Crest&lt;/strong&gt;：路面斜坡的顶端。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bump&lt;/strong&gt;：路面颠簸。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Jump&lt;/strong&gt;：路面在前方上升，如果速度过快车辆将离地。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bad Camber&lt;/strong&gt;：路面中间高、两边低。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Cross Road&lt;/strong&gt;：十字交叉路口。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Junction&lt;/strong&gt;：前方有岔路。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Over Water&lt;/strong&gt;：经过河流或积水路段。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Over Jump&lt;/strong&gt;：赛车将飞跳并离开路面。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bridge&lt;/strong&gt;：赛车将驶上桥梁。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Slippery&lt;/strong&gt;：湿滑路面。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tarmac&lt;/strong&gt;：柏油路面。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Gravel&lt;/strong&gt;：砂石路面。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Snow&lt;/strong&gt;：积雪路面。&lt;/p&gt;
+
+&lt;p&gt;以下是针对领航员指令的一点小心得：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;领航员指令「5、6」：全速踩油门&lt;/li&gt;
+&lt;li&gt;领航员指令「3、4」：松开油门以及半踩油门&lt;/li&gt;
+&lt;li&gt;领航员指令「1、2」：全刹车以及半刹车&lt;/li&gt;
+&lt;li&gt;领航员指令「Bump」：前方有低洼处，减速通过&lt;/li&gt;
+&lt;li&gt;领航指令「Jump」：前方有小坡，全速冲过去，当车辆腾飞的时候松开油门 (以免轮子空转以及转速过高，落地时造成打滑，尤其是雨天的时候)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>使用 Hugo &#43; GitHub Page 搭建个人博客</title>
       <link>https://mogeko.github.io/2018/018/</link>
       <pubDate>Sun, 05 Aug 2018 00:00:00 +0000</pubDate>
@@ -4774,113 +5124,6 @@ ViPER4Android FX 的管理程器，版本：2.5.0.5&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Mogeko/mogeko.github.io/releases/download/2017%2F12%2F02/ViPER4Android.zip&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;ViPER4Android.zip&lt;/a&gt;&lt;br /&gt;
 还是音效配置、脉冲反馈 和 DDC。但这是我精选过的版本，也是目前再用的版本&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>如何将 Ubuntu 升级到 17.10</title>
-      <link>https://mogeko.github.io/2017/009/</link>
-      <pubDate>Sat, 02 Dec 2017 11:57:09 +0800</pubDate>
-      
-      <guid>https://mogeko.github.io/2017/009/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/009/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Ubuntu 17.10 已经发布了一段时间了，作为 18.04 的预览（热）版。带来了一大波新特性。&lt;/p&gt;
-
-&lt;p&gt;其中最重要也是最令我揪心的是 Ubuntu 将放弃 Unity 回归 Gnome。对于我们这些习惯了 Unity 的用户来说，这个决定简直蠢到家了。虽然 Unity 是丑了点，但比 Gnome 好用到不知道那里去了！这也是我迟迟没有升级的主要原因。&lt;/p&gt;
-
-&lt;p&gt;目前 &lt;strong&gt;Ubuntu 17.10 不是长期支持版本（LTS）！！！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;正文&#34;&gt;正文&lt;/h1&gt;
-
-&lt;p&gt;Ubuntu 官方推荐的升级策略是“依次升级”。&lt;strong&gt;较低&lt;/strong&gt;的版本想要升级到&lt;strong&gt;最高&lt;/strong&gt;的版本，需要想升级到&lt;strong&gt;较高&lt;/strong&gt;的版本，再从&lt;strong&gt;较高&lt;/strong&gt;的版本升级到&lt;strong&gt;最高&lt;/strong&gt;的版本。也就是说 16.10 想要升级到 17.10 需要先升级到 17.04。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;16.04 -&amp;gt; 16.10 -&amp;gt; 17.04 -&amp;gt; 17.10&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;每个版本中的升级方法都是相似的。这里介绍两种比较安全的升级方法&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;强烈建议升级前先备份！！！&lt;/strong&gt; -&amp;gt; &lt;a href=&#34;http://www.jianshu.com/p/b73e8011b828&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;如何备份 Ubuntu&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;小白最爱的升级方法-无脑下一步&#34;&gt;小白最爱的升级方法（无脑下一步）&lt;/h2&gt;
-
-&lt;p&gt;在 Dash 中搜索并启动 Update Manager&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Update Manager&#34; src=&#34;https://mogeko.github.io/images/009/Upgrade_1.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;选择更新选项卡 (Updates)，然后在窗口底部，将通知设置从 “长期支持版本”(For long-term support version) 更改为任何新版本 (For any new version)。&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Update Manager&#34; src=&#34;https://mogeko.github.io/images/009/Upgrade_2.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;等了一会儿，系统会通知你有新的发行版可用&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;New Distribution&#34; src=&#34;https://mogeko.github.io/images/009/Upgrade_3.png&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;如果不想等，可以在命令行中输入命令：&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;  sudo do-release-upgrade -d
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这个命令可以强制搜索新的版本&lt;/p&gt;
-
-&lt;p&gt;然后输入您的密码。 出现发行说明窗口。 点击升级（Upgrade）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;New Distribution&#34; src=&#34;https://mogeko.github.io/images/009/Upgrade_4.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;现在只需要等升级就可以了，升级完成后会自动重启。&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Upgrade&#34; src=&#34;https://mogeko.github.io/images/009/Upgrade_5.png&#34;&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;使用命令行升级-ubuntu&#34;&gt;使用命令行升级 Ubuntu&lt;/h2&gt;
-
-&lt;p&gt;首先，打开终端窗口并运行以下命令升级现有软件。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo apt update &amp;amp;&amp;amp; sudo apt dist-upgrade
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后确保您安装了 update-manager-core 软件包。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo apt install update-manager-core
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;接下来，使用 nano 或您首选的命令行文本编辑器编辑配置文件。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo nano /etc/update-manager/release-upgrades
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在此文件的底部，将提示值从&lt;code&gt;lts&lt;/code&gt; 更改为 &lt;code&gt;normal&lt;/code&gt;。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Prompt=normal
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;保存并关闭文件。 之后，运行以下命令开始升级过程。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;do-release-upgrade
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;同样的，升级完成后会自动重启。&lt;/p&gt;
-
-&lt;h2 id=&#34;查看-ubuntu-版本-验证是否升级成功&#34;&gt;查看 Ubuntu 版本（验证是否升级成功）&lt;/h2&gt;
-
-&lt;p&gt;验证是否升级成功，只需要在命令行中运行：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;lsb_release -a
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;输出：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;No LSB modules are available.
-Distributor ID:	Ubuntu
-Description:	Ubuntu 17.10
-Release:	17.10
-Codename:	artful
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
