@@ -17,21 +17,13 @@
       <pubDate>Sat, 02 Dec 2017 18:00:00 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2017/010/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/010/Magisk_Logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;今天为大家介绍一款神奇的 Android 第三方接口 —— Magisk&lt;/p&gt;
-
-&lt;h1 id=&#34;root-玩家与厂商间的博弈&#34;&gt;Root —— 玩家与厂商间的博弈&lt;/h1&gt;
-
-&lt;p&gt;Android 从诞生之日起就高举着开源的大旗，这也是它成功的原因之一。而它的开放性也成功的吸引到了一大批爱折腾的人，从而诞生出了 root（此处特制 Android 中的 root）。&lt;/p&gt;
-
-&lt;p&gt;根据 &lt;a href=&#34;https://zh.wikipedia.org/wiki/Root#.E8.A8.88.E7.AE.97.E6.A9.9F.E6.87.89.E7.94.A8&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Wikipedia&lt;/a&gt; 的释义，root 指的是使用户取得 Android 操作系统的超级用户（Super User）许可权的技术。用户通过 root，可以越过手机制造商的限制，卸载手机制造商预装在手机中某些应用，以及运行一些需要超级用户权限的应用程序。同时，root 也可能会让手机变得“不安全”（并不是说 root 使手机变得不安全，而是一些用户的使用习惯会使 root 后的手机变得危险）。&lt;/p&gt;
-
-&lt;p&gt;但是从棉花糖（Android 6.0）开始，Google 基本阻止了以前版本中最流行的 root 方法 —— 即，将 su守护程序 放置到 /system 分区，并在启动时取得所需的权限。道高一尺，魔高一丈，于是就出现了 systemless 的 root 方式，因为它不采取任何方式修改 /system 分区。&lt;/p&gt;
-
-&lt;p&gt;出于增加安全性的考虑，Google 推出了 SafetyNet 这样的检测，以确保 Android Pay 等一些 App 的安全运行，玩家不得不在 root 权限和一些有价值的 App 之间作出选择。&lt;/p&gt;
-
-&lt;p&gt;这个时候 Magisk 诞生了。&lt;/p&gt;</description>
+      <description>今天为大家介绍一款神奇的 Android 第三方接口 —— Magisk
+Root —— 玩家与厂商间的博弈 Android 从诞生之日起就高举着开源的大旗，这也是它成功的原因之一。而它的开放性也成功的吸引到了一大批爱折腾的人，从而诞生出了 root（此处特制 Android 中的 root）。
+根据 Wikipedia 的释义，root 指的是使用户取得 Android 操作系统的超级用户（Super User）许可权的技术。用户通过 root，可以越过手机制造商的限制，卸载手机制造商预装在手机中某些应用，以及运行一些需要超级用户权限的应用程序。同时，root 也可能会让手机变得“不安全”（并不是说 root 使手机变得不安全，而是一些用户的使用习惯会使 root 后的手机变得危险）。
+但是从棉花糖（Android 6.0）开始，Google 基本阻止了以前版本中最流行的 root 方法 —— 即，将 su守护程序 放置到 /system 分区，并在启动时取得所需的权限。道高一尺，魔高一丈，于是就出现了 systemless 的 root 方式，因为它不采取任何方式修改 /system 分区。
+出于增加安全性的考虑，Google 推出了 SafetyNet 这样的检测，以确保 Android Pay 等一些 App 的安全运行，玩家不得不在 root 权限和一些有价值的 App 之间作出选择。
+这个时候 Magisk 诞生了。
+Magisk 什么是 Magisk Magisk 是出自一位台湾学生 @topjohnwu 开发的 Android 框架，是一个通用的第三方 systemless 接口，通过这样的方式实现一些较强大的功能。</description>
     </item>
     
     <item>
@@ -40,13 +32,16 @@
       <pubDate>Sat, 02 Dec 2017 11:57:09 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2017/009/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/009/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Ubuntu 17.10 已经发布了一段时间了，作为 18.04 的预览（热）版。带来了一大波新特性。&lt;/p&gt;
-
-&lt;p&gt;其中最重要也是最令我揪心的是 Ubuntu 将放弃 Unity 回归 Gnome。对于我们这些习惯了 Unity 的用户来说，这个决定简直蠢到家了。虽然 Unity 是丑了点，但比 Gnome 好用到不知道那里去了！这也是我迟迟没有升级的主要原因。&lt;/p&gt;
-
-&lt;p&gt;目前 &lt;strong&gt;Ubuntu 17.10 不是长期支持版本（LTS）！！！&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>Ubuntu 17.10 已经发布了一段时间了，作为 18.04 的预览（热）版。带来了一大波新特性。
+其中最重要也是最令我揪心的是 Ubuntu 将放弃 Unity 回归 Gnome。对于我们这些习惯了 Unity 的用户来说，这个决定简直蠢到家了。虽然 Unity 是丑了点，但比 Gnome 好用到不知道那里去了！这也是我迟迟没有升级的主要原因。
+目前 Ubuntu 17.10 不是长期支持版本（LTS）！！！
+正文 Ubuntu 官方推荐的升级策略是“依次升级”。较低的版本想要升级到最高的版本，需要想升级到较高的版本，再从较高的版本升级到最高的版本。也就是说 16.10 想要升级到 17.10 需要先升级到 17.04。
+ 16.04 -&amp;gt; 16.10 -&amp;gt; 17.04 -&amp;gt; 17.10  每个版本中的升级方法都是相似的。这里介绍两种比较安全的升级方法
+强烈建议升级前先备份！！！ -&amp;gt; 如何备份 Ubuntu
+小白最爱的升级方法（无脑下一步） 在 Dash 中搜索并启动 Update Manager
+选择更新选项卡 (Updates)，然后在窗口底部，将通知设置从 “长期支持版本”(For long-term support version) 更改为任何新版本 (For any new version)。
+等了一会儿，系统会通知你有新的发行版可用
+ 如果不想等，可以在命令行中输入命令：  sudo do-release-upgrade -d  这个命令可以强制搜索新的版本</description>
     </item>
     
     <item>
@@ -55,25 +50,14 @@
       <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/001/</guid>
-      <description>&lt;p&gt;好像废话有点多_(:з)∠)_ -&amp;gt;-&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2017/001/#Start&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;直接开始的传送门&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;一直觉得微软为 Windows 引入 UAC 是个明智的选择，它能在一定程度上减少 Windows 平台过于开放，流氓软件肆意横行的局面。
-国内的情况比较特殊，因为很多人根本不知道那是什么，无脑点 “允许” 。
-都是被那群流氓给教坏的。。。
-抛开这些不谈，即使 UAC 的使用很有必要，但每次都弹出的蓝色框框确实很烦人，特别是在那些需要曾经使用管理员权限的软件上。因此，有的人直接选择关闭 UAC ，不过这样却对系统安全性产生了风险。&lt;/p&gt;
-
-&lt;p&gt;所以，如何才能在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限？&lt;/p&gt;
-
-&lt;p&gt;我首先想到的是使用 Autohotkey 帮用户点“允许”
-桌面分为三层，分别是 Winlogon Desktop、Screensaver Desktop、Application Desktop。
-所有的应用都运行在 Application Desktop 上（ UAC 不算）。UAC 在 Winlogon Desktop 上弹出的窗口。
-也就是说，以Autohotkey 所在的位置 UAC 它捞都捞不到。。。&lt;/p&gt;
-
-&lt;p&gt;那么，到底要如何干掉 UAC 呢？&lt;/p&gt;
-
-&lt;p&gt;经过研究发现，想要在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限有两种方法。
-分别是使用 任务计划程序 或 &lt;a href=&#34;https://technet.microsoft.com/en-us/library/cc766242(v=ws.10).aspx&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Application Compatibility Toolkit (ACT)&lt;/a&gt;。
-这里只解释使用 任务计划程序。&lt;/p&gt;</description>
+      <description>好像废话有点多_(:з)∠)_ -&amp;gt;-&amp;gt; 直接开始的传送门
+一直觉得微软为 Windows 引入 UAC 是个明智的选择，它能在一定程度上减少 Windows 平台过于开放，流氓软件肆意横行的局面。 国内的情况比较特殊，因为很多人根本不知道那是什么，无脑点 “允许” 。 都是被那群流氓给教坏的。。。 抛开这些不谈，即使 UAC 的使用很有必要，但每次都弹出的蓝色框框确实很烦人，特别是在那些需要曾经使用管理员权限的软件上。因此，有的人直接选择关闭 UAC ，不过这样却对系统安全性产生了风险。
+所以，如何才能在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限？
+我首先想到的是使用 Autohotkey 帮用户点“允许” 桌面分为三层，分别是 Winlogon Desktop、Screensaver Desktop、Application Desktop。 所有的应用都运行在 Application Desktop 上（ UAC 不算）。UAC 在 Winlogon Desktop 上弹出的窗口。 也就是说，以Autohotkey 所在的位置 UAC 它捞都捞不到。。。
+那么，到底要如何干掉 UAC 呢？
+经过研究发现，想要在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限有两种方法。 分别是使用 任务计划程序 或 Application Compatibility Toolkit (ACT)。 这里只解释使用 任务计划程序。
+正文 下面正式开始。
+我们以 CMD 为例。 在开始菜单找到 CMD，右键 -&amp;gt; 以管理员身份运行 果不其然弹出了 UAC。 *上面已经解释过了，UAC 截不出来 _(:з)∠)_</description>
     </item>
     
     <item>
@@ -82,12 +66,12 @@
       <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/000/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/000/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;
-在很久以前就想试一试Linux了，一直没有实践。一是觉得太麻烦，二是怕把电脑弄坏。后来实践了一次后发现，其实并没有想象中那么难，这是一个完全独立的系统，与隔壁的Windows半毛钱关系都没有。把引导搞定就不怕了。&lt;/p&gt;
-
-&lt;p&gt;另外，如果想长期使用；
-&lt;strong&gt;千万不要上最新的系统！！！&lt;/strong&gt;
-bug多得一逼&lt;/p&gt;</description>
+      <description>在很久以前就想试一试Linux了，一直没有实践。一是觉得太麻烦，二是怕把电脑弄坏。后来实践了一次后发现，其实并没有想象中那么难，这是一个完全独立的系统，与隔壁的Windows半毛钱关系都没有。把引导搞定就不怕了。
+另外，如果想长期使用； 千万不要上最新的系统！！！ bug多得一逼
+准备工作：  一个 &amp;gt;= 4g 的U盘 Ubuntu 的镜像（建议使用16.04）http://www.ubuntu.org.cn/download/desktop UltraISO &amp;lt;- 用来制作引导盘 http://cn.ezbsystems.com/ultraiso/ EasyBCD &amp;lt;- 用来制作、写入引导程序（如果想用 Ubuntu 来引导 Windows 的话也可以不用）http://neosmart.net/EasyBCD/  正文 制作引导盘 &amp;amp; 设置硬盘分区 首先要用 UltraISO 来制作一个引导盘
+先打开 UltraISO -&amp;gt; 文件 -&amp;gt; 打开 -&amp;gt; 选择刚刚下好的那个镜像 然后 启动 -&amp;gt; 写入硬件映象 不出意外的话你应该可以看到这个 确保你的U盘能够被识别（红色框出来的地方）
+先 格式化 在 写入 等它跑完，引导盘就制作完成了
+然后设置分区，为 Ubuntu 空出块地方来 如果是 Windows 10 按 Win键 + X -&amp;gt; 磁盘管理（Windows 7 我记不到了，自己 Google 一下） 图我忘截了 ,,ԾㅂԾ,, 这里给一个官方的教程 如何在 Windows 中对硬盘进行分区 如果压缩出来是绿色的“可用空间”可能会出问题 -&amp;gt;-&amp;gt; 解决方法</description>
     </item>
     
   </channel>

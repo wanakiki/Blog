@@ -46,15 +46,13 @@
     "articleSection" : "posts",
     "name" : "WSL 的安装与使用",
     "headline" : "WSL 的安装与使用",
-    "description" : "<p><img src="https://mogeko.github.io/images/016/logo.png"  alt="Logo"  style="border:0" /></p>
-
-<p>16 年 12 月份的时候，微软发布了 Windows Subsystem for Linux (WSL)，通过子系统的方式运行了一个完整的 Linux 系统。使得在 Windows 中使用 Linux 中的工具链成为可能。(Windows 果然是最好的 Linux 发行版)</p>
-
-<p>从微软宣布 WSL 的第一天起，我就一直在关注这项技术。因为我虽然通过双系统的方式安装了 Ubuntu，但切换系统需要从启的机制确实不方便，让我离开 Windows 又实在是不太现实。 (学习的原因，离不开 Visual Studio 和 Adobe 全家桶) WSL 似乎是平衡性能和易用性的最好解决方案了。怎奈何 WSL 只支持 64 位的系统，让我这台老电脑很是尴尬。</p>
-
-<p>如今换电脑了！终于可以享受 WSL 的便利了！！ (*^▽^*)</p>
-
-<p>第一次使用时，<strong>如果发现没有 WSL 中没有网络连接，可以试着重启一下 WSL，还是没网重启一下 Windows</strong></p>",
+    "description" : "16 年 12 月份的时候，微软发布了 Windows Subsystem for Linux (WSL)，通过子系统的方式运行了一个完整的 Linux 系统。使得在 Windows 中使用 Linux 中的工具链成为可能。(Windows 果然是最好的 Linux 发行版)
+从微软宣布 WSL 的第一天起，我就一直在关注这项技术。因为我虽然通过双系统的方式安装了 Ubuntu，但切换系统需要从启的机制确实不方便，让我离开 Windows 又实在是不太现实。 (学习的原因，离不开 Visual Studio 和 Adobe 全家桶) WSL 似乎是平衡性能和易用性的最好解决方案了。怎奈何 WSL 只支持 64 位的系统，让我这台老电脑很是尴尬。
+如今换电脑了！终于可以享受 WSL 的便利了！！ (*^▽^*)
+第一次使用时，如果发现没有 WSL 中没有网络连接，可以试着重启一下 WSL，还是没网重启一下 Windows
+安装 用管理员权限打开 PowerShell 并运行下面的命令
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux  或者：控制面板 -&gt; 程序和功能-&gt; 启用或关闭 Windows 功能 -&gt; 勾选 适用于 Linux 的 Windows 子系统 重启电脑
+打开应用商城，搜索：WSL，可根据需求选择安装一个或多个 Linux 系统 安装完成后再开始菜单中启动。 第一次启动会需要初始化，需要配置一段时间。 配置结束后会让你输入用户名和 root 密码 (输入 root 密码时没有显示是正常的；root 密码请务必牢记) 然后就可以使用了！",
     "inLanguage" : "zh-cn",
     "author" : "Mogeko",
     "creator" : "Mogeko",
@@ -160,7 +158,9 @@
           
           
 
-          <p><img src="https://mogeko.github.io/images/016/logo.png"  alt="Logo"  style="border:0" /></p>
+          
+
+<p><img src="https://mogeko.github.io/images/016/logo.png"  alt="Logo"  style="border:0" /></p>
 
 <p>16 年 12 月份的时候，微软发布了 Windows Subsystem for Linux (WSL)，通过子系统的方式运行了一个完整的 Linux 系统。使得在 Windows 中使用 Linux 中的工具链成为可能。(Windows 果然是最好的 Linux 发行版)</p>
 
@@ -169,6 +169,8 @@
 <p>如今换电脑了！终于可以享受 WSL 的便利了！！ (*^▽^*)</p>
 
 <p>第一次使用时，<strong>如果发现没有 WSL 中没有网络连接，可以试着重启一下 WSL，还是没网重启一下 Windows</strong></p>
+
+<!-- more -->
 
 <h1 id="安装">安装</h1>
 
@@ -364,6 +366,7 @@ fi
 </code></pre>
 
 <p>执行完后输入 <code>vim</code> 打开 vim，然后输入命令 <code>:PlugInstall</code> 安装插件。</p>
+
     </div>
 
     <div class="post-copyright">

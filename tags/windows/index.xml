@@ -17,17 +17,19 @@
       <pubDate>Sun, 18 Nov 2018 00:54:27 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/026/</guid>
-      <description>&lt;p&gt;很早以前的一个仓库了，博主已经入了 Office 365，早就用不到了。&lt;/p&gt;
+      <description>很早以前的一个仓库了，博主已经入了 Office 365，早就用不到了。
+不过最近帮小学妹装机，所以突然诈尸更新了一波。给需要的人 (○&amp;rsquo;◡&amp;rsquo;○)ﾉ♥ 这个脚本可以用来激活：
+ Office (零售版和 VOL 版) Windows (仅限 VOL 版)  链接：Mogeko/KMS | GitHub
+直接下载：Run.cmd
+使用的 KMS 服务器来自：零散坑
+用法 双击运行 Run.cmd，然后根据提示激活即可
+VOL 版的 Office 和 Windows 直接通过 KMS 激活，零售版的 Office 需要先用脚本转换成 VOL 版，然后通过 KMS 激活。零售版 Windows：我觉得我还可以抢救一下 QAQ
+脚本默认激活的是 2016 版的 Office，其他版本可以到文件夹里找单独激活的脚本 (没测试过，理论上是可以用的)，或者自己手动改一下脚本 (将 %ospp% 这个变量替换成正确的 opss.vbs 路径)
 
-&lt;p&gt;不过最近帮小学妹装机，所以突然诈尸更新了一波。给需要的人 (○&amp;rsquo;◡&amp;rsquo;○)ﾉ♥
-&lt;br&gt;&lt;/p&gt;
+怎么说呢，要尊重别人的劳动成果，所以我觉得大家应该尽量避免使用盗版软件。
+毕竟软软也是要掐饭的嘛，有能力的话最好还是入个正比较好 |・ω・｀)
 
-&lt;p&gt;&lt;strong&gt;这个脚本可以用来激活：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Office (零售版和 VOL 版)&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Windows (仅限 VOL 版)&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+ ·End·</description>
     </item>
     
     <item>
@@ -36,14 +38,9 @@
       <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/017/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/014/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。
-这个方法很好，但是也存在问题。KMS 服务激活一次可以正常使用 180 天，过期后自动给你续 180 天，如此重复。如果 KMS 激活服务器一直运行着还好，但如果服务器挂掉了呢？
-要解决这个问题，最直接的方法就是让 KMS 激活服务器保持稳定不宕机，这显然是不现实的。毕竟是私人搭的服务器，别免费给你用，不稳定也是情有可原的。所以我们不妨换个思路：&lt;strong&gt;既然别人的服务器不稳定，我们为何不在本地自己搭一个呢？&lt;/strong&gt;
-今天，我就教大家如何在本地搭建 KMS 激活服务器。&lt;/p&gt;
-
-&lt;p&gt;免费开源的 KMS 激活服务器有很多，我们今天使用的 &lt;code&gt;vlmcsd&lt;/code&gt; 是比较流行的一种。&lt;/p&gt;</description>
+      <description>前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。 这个方法很好，但是也存在问题。KMS 服务激活一次可以正常使用 180 天，过期后自动给你续 180 天，如此重复。如果 KMS 激活服务器一直运行着还好，但如果服务器挂掉了呢？ 要解决这个问题，最直接的方法就是让 KMS 激活服务器保持稳定不宕机，这显然是不现实的。毕竟是私人搭的服务器，别免费给你用，不稳定也是情有可原的。所以我们不妨换个思路：既然别人的服务器不稳定，我们为何不在本地自己搭一个呢？ 今天，我就教大家如何在本地搭建 KMS 激活服务器。
+免费开源的 KMS 激活服务器有很多，我们今天使用的 vlmcsd 是比较流行的一种。
+准备工作  vlmcsd -&amp;gt; GitHub 仓库 ‎VOL 版的 Windows 或 Office (零售版的 Office 可以通过简单的脚本转换为 VOL 版的 Office)  正文 vlmcsd 本身是跨平台的，vlmcsd 可以在 Linux，FreeBSD，Windows XP，Windows 7，Windows 8， Windows 8.1 ，Windosw 10 &amp;hellip; 上运行。不过不知道什么原因我的电脑上跑起来。按照网上的说法，该软件对 Windows 10 的兼容不怎么好，不过我们可以曲线救国：使用 Windows Subsystem for Linux (WSL) 来跑这个服务器，从而实现本地激活。(32 位 Windows 10 用户哭晕在厕所_(:з」∠)_)</description>
     </item>
     
     <item>
@@ -52,15 +49,13 @@
       <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/016/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/016/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;16 年 12 月份的时候，微软发布了 Windows Subsystem for Linux (WSL)，通过子系统的方式运行了一个完整的 Linux 系统。使得在 Windows 中使用 Linux 中的工具链成为可能。(Windows 果然是最好的 Linux 发行版)&lt;/p&gt;
-
-&lt;p&gt;从微软宣布 WSL 的第一天起，我就一直在关注这项技术。因为我虽然通过双系统的方式安装了 Ubuntu，但切换系统需要从启的机制确实不方便，让我离开 Windows 又实在是不太现实。 (学习的原因，离不开 Visual Studio 和 Adobe 全家桶) WSL 似乎是平衡性能和易用性的最好解决方案了。怎奈何 WSL 只支持 64 位的系统，让我这台老电脑很是尴尬。&lt;/p&gt;
-
-&lt;p&gt;如今换电脑了！终于可以享受 WSL 的便利了！！ (*^▽^*)&lt;/p&gt;
-
-&lt;p&gt;第一次使用时，&lt;strong&gt;如果发现没有 WSL 中没有网络连接，可以试着重启一下 WSL，还是没网重启一下 Windows&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>16 年 12 月份的时候，微软发布了 Windows Subsystem for Linux (WSL)，通过子系统的方式运行了一个完整的 Linux 系统。使得在 Windows 中使用 Linux 中的工具链成为可能。(Windows 果然是最好的 Linux 发行版)
+从微软宣布 WSL 的第一天起，我就一直在关注这项技术。因为我虽然通过双系统的方式安装了 Ubuntu，但切换系统需要从启的机制确实不方便，让我离开 Windows 又实在是不太现实。 (学习的原因，离不开 Visual Studio 和 Adobe 全家桶) WSL 似乎是平衡性能和易用性的最好解决方案了。怎奈何 WSL 只支持 64 位的系统，让我这台老电脑很是尴尬。
+如今换电脑了！终于可以享受 WSL 的便利了！！ (*^▽^*)
+第一次使用时，如果发现没有 WSL 中没有网络连接，可以试着重启一下 WSL，还是没网重启一下 Windows
+安装 用管理员权限打开 PowerShell 并运行下面的命令
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux  或者：控制面板 -&amp;gt; 程序和功能-&amp;gt; 启用或关闭 Windows 功能 -&amp;gt; 勾选 适用于 Linux 的 Windows 子系统 重启电脑
+打开应用商城，搜索：WSL，可根据需求选择安装一个或多个 Linux 系统 安装完成后再开始菜单中启动。 第一次启动会需要初始化，需要配置一段时间。 配置结束后会让你输入用户名和 root 密码 (输入 root 密码时没有显示是正常的；root 密码请务必牢记) 然后就可以使用了！</description>
     </item>
     
     <item>
@@ -69,20 +64,11 @@
       <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/015/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/014/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;经测试，&lt;strong&gt;以前的方法已经失效了。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;今天就教大家一个新的方法在 Android 手机上安装 KMS 激活服务。而且新方法&lt;strong&gt;不需要 Magisk 框架&lt;/strong&gt;，相比于原来的方法更简单安全。&lt;/p&gt;
-
-&lt;p&gt;&lt;del&gt;&lt;strong&gt;需要 Magisk 框架&lt;/strong&gt; -&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2018/010/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Magisk 介绍与简易安装教程&lt;/a&gt;&lt;del/&gt;&lt;/p&gt;
-
-&lt;p&gt;老师让做 PPT 但电脑里没装 Office，怎么办？
-答案当然是买一个！
-但对于没钱买正版的同学怎么办呢？
-其实，可以下载批量激活版（VOL 版）的 Office，然后用 KMS 激活。
-今天就教大家如何用手机搭建 KMS 激活服务器来激活 VOL 版的 Windows 或 Office。（零售版（Retail 版）的 Office 可以用&lt;a href=&#34;https://github.com/Mogeko/mogeko.github.io/releases/download/2018%2F3%2F5/Retail2VOL.cmd&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;脚本&lt;/a&gt;转换为 VOL 版，然后作为 VOL 版 Office 激活）
-如果不知道你安装的 Office 是哪个版本，可以用以下方法查看。-&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2018/015/#%E5%88%A4%E6%96%AD%E4%BD%A0%E5%AE%89%E8%A3%85%E7%9A%84-Office-%E6%98%AF%E5%93%AA%E4%B8%AA%E7%89%88%E6%9C%AC&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;判断你安装的 Office 是哪个版本&lt;/a&gt;&lt;/p&gt;</description>
+      <description>经测试，以前的方法已经失效了。
+今天就教大家一个新的方法在 Android 手机上安装 KMS 激活服务。而且新方法不需要 Magisk 框架，相比于原来的方法更简单安全。
+需要 Magisk 框架 -&amp;gt; Magisk 介绍与简易安装教程
+老师让做 PPT 但电脑里没装 Office，怎么办？ 答案当然是买一个！ 但对于没钱买正版的同学怎么办呢？ 其实，可以下载批量激活版（VOL 版）的 Office，然后用 KMS 激活。 今天就教大家如何用手机搭建 KMS 激活服务器来激活 VOL 版的 Windows 或 Office。（零售版（Retail 版）的 Office 可以用脚本转换为 VOL 版，然后作为 VOL 版 Office 激活） 如果不知道你安装的 Office 是哪个版本，可以用以下方法查看。-&amp;gt; 判断你安装的 Office 是哪个版本
+准备工作  Magisk 框架 -&amp;gt; Magisk 介绍与简易安装教程 ‎kms-server（Magisk 模块） -&amp;gt; 适用 ARMv7 手机模块 适用 ARM64v8 手机的模块 ‎VOL 版的 Windows 或 Office Termux -&amp;gt; 官网 下载地址 vlmcsd -&amp;gt; GitHub 仓库  正文 Termux + vlmcsd 搭建 KMS 激活服务器 (新方法) 安装 Termux 这个方法虽然不依赖 Magisk，但我们需要安装一个名为 Termux 的应用。</description>
     </item>
     
     <item>
@@ -91,21 +77,14 @@
       <pubDate>Fri, 02 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/014/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/014/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;事实上，我一向不鼓励使用盗版系统 / 软件的。但对于穷人 (学生党) 来说，需要使用相关软件却买不起正版，使用盗版也是没办法的事情。
-对于想使用 Windows / Office 却没有足够资金购买正版的用户来说，很多人会选择 &lt;code&gt;KMSpico&lt;/code&gt; 等激活工具进行激活，但事实上，大多数这类工具都带有病毒，轻则劫持主页，重则加密硬盘 (勒索病毒)。
-自从上次我妹因此中毒后，我就开始了如何安全的激活 Windows / Office 的研究。KMS 激活服务便是我的答案。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;这里使用的 KMS 激活服务器地址为：&lt;code&gt;kms.03k.org&lt;/code&gt;，属于网友自建的 KMS 激活服务器。如果服务器地址失效的话，你也可以使用百度 / Google 等搜索引擎搜索 &lt;code&gt;KMS 激活服务器地址&lt;/code&gt; 来替换。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;当然，你也可以&lt;strong&gt;自建 KMS 激活服务器&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://mogeko.github.io/2018/015/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;使用 Android 手机搭建 KMS 激活服务器&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://mogeko.github.io/2018/017/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;本地搭建 KMS 激活服务&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>事实上，我一向不鼓励使用盗版系统 / 软件的。但对于穷人 (学生党) 来说，需要使用相关软件却买不起正版，使用盗版也是没办法的事情。 对于想使用 Windows / Office 却没有足够资金购买正版的用户来说，很多人会选择 KMSpico 等激活工具进行激活，但事实上，大多数这类工具都带有病毒，轻则劫持主页，重则加密硬盘 (勒索病毒)。 自从上次我妹因此中毒后，我就开始了如何安全的激活 Windows / Office 的研究。KMS 激活服务便是我的答案。
+这里使用的 KMS 激活服务器地址为：kms.03k.org，属于网友自建的 KMS 激活服务器。如果服务器地址失效的话，你也可以使用百度 / Google 等搜索引擎搜索 KMS 激活服务器地址 来替换。
+当然，你也可以自建 KMS 激活服务器：
+ 使用 Android 手机搭建 KMS 激活服务器
+ 本地搭建 KMS 激活服务
+  正文 激活 Windows KMS 激活服务只能激活批量授权版 Windows (VOL 版)，无法激活零售版 Windows (Retail 版)。
+以 Windows 10 Pro 为例 想要激活 VOL 版 Windows 10 pro，只需要用管理员权限打开一个 cmd，然后依次执行以下命令便可。
+slmgr.vbs -upk slmgr.</description>
     </item>
     
     <item>
@@ -114,25 +93,14 @@
       <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/001/</guid>
-      <description>&lt;p&gt;好像废话有点多_(:з)∠)_ -&amp;gt;-&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2017/001/#Start&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;直接开始的传送门&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;一直觉得微软为 Windows 引入 UAC 是个明智的选择，它能在一定程度上减少 Windows 平台过于开放，流氓软件肆意横行的局面。
-国内的情况比较特殊，因为很多人根本不知道那是什么，无脑点 “允许” 。
-都是被那群流氓给教坏的。。。
-抛开这些不谈，即使 UAC 的使用很有必要，但每次都弹出的蓝色框框确实很烦人，特别是在那些需要曾经使用管理员权限的软件上。因此，有的人直接选择关闭 UAC ，不过这样却对系统安全性产生了风险。&lt;/p&gt;
-
-&lt;p&gt;所以，如何才能在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限？&lt;/p&gt;
-
-&lt;p&gt;我首先想到的是使用 Autohotkey 帮用户点“允许”
-桌面分为三层，分别是 Winlogon Desktop、Screensaver Desktop、Application Desktop。
-所有的应用都运行在 Application Desktop 上（ UAC 不算）。UAC 在 Winlogon Desktop 上弹出的窗口。
-也就是说，以Autohotkey 所在的位置 UAC 它捞都捞不到。。。&lt;/p&gt;
-
-&lt;p&gt;那么，到底要如何干掉 UAC 呢？&lt;/p&gt;
-
-&lt;p&gt;经过研究发现，想要在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限有两种方法。
-分别是使用 任务计划程序 或 &lt;a href=&#34;https://technet.microsoft.com/en-us/library/cc766242(v=ws.10).aspx&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Application Compatibility Toolkit (ACT)&lt;/a&gt;。
-这里只解释使用 任务计划程序。&lt;/p&gt;</description>
+      <description>好像废话有点多_(:з)∠)_ -&amp;gt;-&amp;gt; 直接开始的传送门
+一直觉得微软为 Windows 引入 UAC 是个明智的选择，它能在一定程度上减少 Windows 平台过于开放，流氓软件肆意横行的局面。 国内的情况比较特殊，因为很多人根本不知道那是什么，无脑点 “允许” 。 都是被那群流氓给教坏的。。。 抛开这些不谈，即使 UAC 的使用很有必要，但每次都弹出的蓝色框框确实很烦人，特别是在那些需要曾经使用管理员权限的软件上。因此，有的人直接选择关闭 UAC ，不过这样却对系统安全性产生了风险。
+所以，如何才能在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限？
+我首先想到的是使用 Autohotkey 帮用户点“允许” 桌面分为三层，分别是 Winlogon Desktop、Screensaver Desktop、Application Desktop。 所有的应用都运行在 Application Desktop 上（ UAC 不算）。UAC 在 Winlogon Desktop 上弹出的窗口。 也就是说，以Autohotkey 所在的位置 UAC 它捞都捞不到。。。
+那么，到底要如何干掉 UAC 呢？
+经过研究发现，想要在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限有两种方法。 分别是使用 任务计划程序 或 Application Compatibility Toolkit (ACT)。 这里只解释使用 任务计划程序。
+正文 下面正式开始。
+我们以 CMD 为例。 在开始菜单找到 CMD，右键 -&amp;gt; 以管理员身份运行 果不其然弹出了 UAC。 *上面已经解释过了，UAC 截不出来 _(:з)∠)_</description>
     </item>
     
     <item>
@@ -141,12 +109,12 @@
       <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/000/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/000/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;
-在很久以前就想试一试Linux了，一直没有实践。一是觉得太麻烦，二是怕把电脑弄坏。后来实践了一次后发现，其实并没有想象中那么难，这是一个完全独立的系统，与隔壁的Windows半毛钱关系都没有。把引导搞定就不怕了。&lt;/p&gt;
-
-&lt;p&gt;另外，如果想长期使用；
-&lt;strong&gt;千万不要上最新的系统！！！&lt;/strong&gt;
-bug多得一逼&lt;/p&gt;</description>
+      <description>在很久以前就想试一试Linux了，一直没有实践。一是觉得太麻烦，二是怕把电脑弄坏。后来实践了一次后发现，其实并没有想象中那么难，这是一个完全独立的系统，与隔壁的Windows半毛钱关系都没有。把引导搞定就不怕了。
+另外，如果想长期使用； 千万不要上最新的系统！！！ bug多得一逼
+准备工作：  一个 &amp;gt;= 4g 的U盘 Ubuntu 的镜像（建议使用16.04）http://www.ubuntu.org.cn/download/desktop UltraISO &amp;lt;- 用来制作引导盘 http://cn.ezbsystems.com/ultraiso/ EasyBCD &amp;lt;- 用来制作、写入引导程序（如果想用 Ubuntu 来引导 Windows 的话也可以不用）http://neosmart.net/EasyBCD/  正文 制作引导盘 &amp;amp; 设置硬盘分区 首先要用 UltraISO 来制作一个引导盘
+先打开 UltraISO -&amp;gt; 文件 -&amp;gt; 打开 -&amp;gt; 选择刚刚下好的那个镜像 然后 启动 -&amp;gt; 写入硬件映象 不出意外的话你应该可以看到这个 确保你的U盘能够被识别（红色框出来的地方）
+先 格式化 在 写入 等它跑完，引导盘就制作完成了
+然后设置分区，为 Ubuntu 空出块地方来 如果是 Windows 10 按 Win键 + X -&amp;gt; 磁盘管理（Windows 7 我记不到了，自己 Google 一下） 图我忘截了 ,,ԾㅂԾ,, 这里给一个官方的教程 如何在 Windows 中对硬盘进行分区 如果压缩出来是绿色的“可用空间”可能会出问题 -&amp;gt;-&amp;gt; 解决方法</description>
     </item>
     
   </channel>

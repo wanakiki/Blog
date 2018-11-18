@@ -17,9 +17,18 @@
       <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/011/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/011/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;PC 上的 Chrome 毫无疑问是最好的浏览器之一。那市场份额，&lt;del&gt;都快逼近 IE 了&lt;/del&gt;。不仅把曾经的老大哥 IE 远远的甩在后面，还把被微软委以大任的 Microsoft Edge 按在地上摩擦，弄得微软很是尴尬。然而在 Google 自家的 Android 上，发展得却不如 PC 上好，有的地方就连我这种骨粉也觉得用起来不舒服。不过，最近几次更新中，我觉得是越改越好了，特别是今天，无意中发现了几个新功能，突然打开了新世界的大门，也让我对 Chrome 的评价从 “不推荐”变成“特别推荐”！&lt;/p&gt;</description>
+      <description>PC 上的 Chrome 毫无疑问是最好的浏览器之一。那市场份额，都快逼近 IE 了。不仅把曾经的老大哥 IE 远远的甩在后面，还把被微软委以大任的 Microsoft Edge 按在地上摩擦，弄得微软很是尴尬。然而在 Google 自家的 Android 上，发展得却不如 PC 上好，有的地方就连我这种骨粉也觉得用起来不舒服。不过，最近几次更新中，我觉得是越改越好了，特别是今天，无意中发现了几个新功能，突然打开了新世界的大门，也让我对 Chrome 的评价从 “不推荐”变成“特别推荐”！
+理由一：信仰！！！ Google 大法好！
+不需要解释，谁用谁知道！
+垃圾百度，吃枣药丸！！！
+理由二：人性化的操作逻辑 发现新大陆前你要是问我，最好的手机浏览器是什么？我会毫不犹豫的回答：IE（喵喵喵？？？）
+没错，就是那个 PC 上难得跟屎一样的 IE，不过我说的是手机浏览器（Android 和 iOS 就别想了，Windows Phone 独占）
+&amp;lt;img alt=&amp;ldquo;Internet Explorer&amp;rdquo; src=&amp;ldquo;https://mogeko.github.io/images/011/wp_IE11)
+↑我的 Lumia 900 找不到了，图片是随便找的（好怀念当年那个在WP上用浏览器上贴吧的时代啊，结果直到我换手机，贴吧都没出 WP 版的客户端）
+PC 上的 IE 和 WP 上的 IE 完全是两回事，PC 上不仅界面丑，还慢得跟坨屎一样。而 WP 上，速度快，动画华丽，最主要的，是它吧地址栏（搜索栏）放在了下面！不得不说，非常棒的设计，只可惜 WP 死得太早。好在我们有 Chrome。
+你 TM 逗我呢，难道 Chrome 的地址栏不在上面？
+事实上，Google 已经重新设计了地址栏（搜索栏）的位置，只不过现在还在实验性特征中，你需要自己开启。(V59+ 的版本才支持)
+开启方法： 进入 chrome://flags 页面(在地址栏中输入 chrome://flags，回车）。找到并开启 #enable-chrome-home 和 #ntp-google-g-in-omnibox 两个选项。（另外，Chrome的页内搜索做的很不错。在右侧有匹配项在页内位置的显示，以及当前位置。）</description>
     </item>
     
     <item>
@@ -28,21 +37,13 @@
       <pubDate>Sat, 02 Dec 2017 18:00:00 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2017/010/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/010/Magisk_Logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;今天为大家介绍一款神奇的 Android 第三方接口 —— Magisk&lt;/p&gt;
-
-&lt;h1 id=&#34;root-玩家与厂商间的博弈&#34;&gt;Root —— 玩家与厂商间的博弈&lt;/h1&gt;
-
-&lt;p&gt;Android 从诞生之日起就高举着开源的大旗，这也是它成功的原因之一。而它的开放性也成功的吸引到了一大批爱折腾的人，从而诞生出了 root（此处特制 Android 中的 root）。&lt;/p&gt;
-
-&lt;p&gt;根据 &lt;a href=&#34;https://zh.wikipedia.org/wiki/Root#.E8.A8.88.E7.AE.97.E6.A9.9F.E6.87.89.E7.94.A8&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Wikipedia&lt;/a&gt; 的释义，root 指的是使用户取得 Android 操作系统的超级用户（Super User）许可权的技术。用户通过 root，可以越过手机制造商的限制，卸载手机制造商预装在手机中某些应用，以及运行一些需要超级用户权限的应用程序。同时，root 也可能会让手机变得“不安全”（并不是说 root 使手机变得不安全，而是一些用户的使用习惯会使 root 后的手机变得危险）。&lt;/p&gt;
-
-&lt;p&gt;但是从棉花糖（Android 6.0）开始，Google 基本阻止了以前版本中最流行的 root 方法 —— 即，将 su守护程序 放置到 /system 分区，并在启动时取得所需的权限。道高一尺，魔高一丈，于是就出现了 systemless 的 root 方式，因为它不采取任何方式修改 /system 分区。&lt;/p&gt;
-
-&lt;p&gt;出于增加安全性的考虑，Google 推出了 SafetyNet 这样的检测，以确保 Android Pay 等一些 App 的安全运行，玩家不得不在 root 权限和一些有价值的 App 之间作出选择。&lt;/p&gt;
-
-&lt;p&gt;这个时候 Magisk 诞生了。&lt;/p&gt;</description>
+      <description>今天为大家介绍一款神奇的 Android 第三方接口 —— Magisk
+Root —— 玩家与厂商间的博弈 Android 从诞生之日起就高举着开源的大旗，这也是它成功的原因之一。而它的开放性也成功的吸引到了一大批爱折腾的人，从而诞生出了 root（此处特制 Android 中的 root）。
+根据 Wikipedia 的释义，root 指的是使用户取得 Android 操作系统的超级用户（Super User）许可权的技术。用户通过 root，可以越过手机制造商的限制，卸载手机制造商预装在手机中某些应用，以及运行一些需要超级用户权限的应用程序。同时，root 也可能会让手机变得“不安全”（并不是说 root 使手机变得不安全，而是一些用户的使用习惯会使 root 后的手机变得危险）。
+但是从棉花糖（Android 6.0）开始，Google 基本阻止了以前版本中最流行的 root 方法 —— 即，将 su守护程序 放置到 /system 分区，并在启动时取得所需的权限。道高一尺，魔高一丈，于是就出现了 systemless 的 root 方式，因为它不采取任何方式修改 /system 分区。
+出于增加安全性的考虑，Google 推出了 SafetyNet 这样的检测，以确保 Android Pay 等一些 App 的安全运行，玩家不得不在 root 权限和一些有价值的 App 之间作出选择。
+这个时候 Magisk 诞生了。
+Magisk 什么是 Magisk Magisk 是出自一位台湾学生 @topjohnwu 开发的 Android 框架，是一个通用的第三方 systemless 接口，通过这样的方式实现一些较强大的功能。</description>
     </item>
     
   </channel>

@@ -46,14 +46,9 @@
     "articleSection" : "posts",
     "name" : "本地搭建 KMS 激活服务",
     "headline" : "本地搭建 KMS 激活服务",
-    "description" : "<p><img src="https://mogeko.github.io/images/014/logo.jpg"  alt="Logo"  style="border:0" /></p>
-
-<p>前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。
-这个方法很好，但是也存在问题。KMS 服务激活一次可以正常使用 180 天，过期后自动给你续 180 天，如此重复。如果 KMS 激活服务器一直运行着还好，但如果服务器挂掉了呢？
-要解决这个问题，最直接的方法就是让 KMS 激活服务器保持稳定不宕机，这显然是不现实的。毕竟是私人搭的服务器，别免费给你用，不稳定也是情有可原的。所以我们不妨换个思路：<strong>既然别人的服务器不稳定，我们为何不在本地自己搭一个呢？</strong>
-今天，我就教大家如何在本地搭建 KMS 激活服务器。</p>
-
-<p>免费开源的 KMS 激活服务器有很多，我们今天使用的 <code>vlmcsd</code> 是比较流行的一种。</p>",
+    "description" : "前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。 这个方法很好，但是也存在问题。KMS 服务激活一次可以正常使用 180 天，过期后自动给你续 180 天，如此重复。如果 KMS 激活服务器一直运行着还好，但如果服务器挂掉了呢？ 要解决这个问题，最直接的方法就是让 KMS 激活服务器保持稳定不宕机，这显然是不现实的。毕竟是私人搭的服务器，别免费给你用，不稳定也是情有可原的。所以我们不妨换个思路：既然别人的服务器不稳定，我们为何不在本地自己搭一个呢？ 今天，我就教大家如何在本地搭建 KMS 激活服务器。
+免费开源的 KMS 激活服务器有很多，我们今天使用的 vlmcsd 是比较流行的一种。
+准备工作  vlmcsd -&gt; GitHub 仓库 ‎VOL 版的 Windows 或 Office (零售版的 Office 可以通过简单的脚本转换为 VOL 版的 Office)  正文 vlmcsd 本身是跨平台的，vlmcsd 可以在 Linux，FreeBSD，Windows XP，Windows 7，Windows 8， Windows 8.1 ，Windosw 10 &hellip; 上运行。不过不知道什么原因我的电脑上跑起来。按照网上的说法，该软件对 Windows 10 的兼容不怎么好，不过我们可以曲线救国：使用 Windows Subsystem for Linux (WSL) 来跑这个服务器，从而实现本地激活。(32 位 Windows 10 用户哭晕在厕所_(:з」∠)_)",
     "inLanguage" : "zh-cn",
     "author" : "Mogeko",
     "creator" : "Mogeko",
@@ -159,7 +154,9 @@
           
           
 
-          <p><img src="https://mogeko.github.io/images/014/logo.jpg"  alt="Logo"  style="border:0" /></p>
+          
+
+<p><img src="https://mogeko.github.io/images/014/logo.jpg"  alt="Logo"  style="border:0" /></p>
 
 <p>前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。
 这个方法很好，但是也存在问题。KMS 服务激活一次可以正常使用 180 天，过期后自动给你续 180 天，如此重复。如果 KMS 激活服务器一直运行着还好，但如果服务器挂掉了呢？
@@ -167,6 +164,8 @@
 今天，我就教大家如何在本地搭建 KMS 激活服务器。</p>
 
 <p>免费开源的 KMS 激活服务器有很多，我们今天使用的 <code>vlmcsd</code> 是比较流行的一种。</p>
+
+<!-- more -->
 
 <h1 id="准备工作">准备工作</h1>
 
@@ -1195,6 +1194,7 @@ cscript ospp.vbs /act
 <p><br></p>
 
 <p><center>  ·End·  </center></p>
+
     </div>
 
     <div class="post-copyright">

@@ -46,14 +46,13 @@
     "articleSection" : "posts",
     "name" : "Hexo 美化",
     "headline" : "Hexo 美化",
-    "description" : "<p><img src="https://mogeko.github.io/images/003/logo.png"  alt="Logo"  style="border:0" /></p>
-
-<p>虽然 NexT 的主题很漂亮，但问题是太受欢迎了，都快烂大街了。
-好在它是一个开源项目，我们可以通过修改它的代码来个性话你的博客。
-这篇教程要涉及到一些前端知识，可能没有那么 Novice friendly。</p>
-
-<p><strong>因为涉及到对 NexT 代码的修改，搞不好，可能引起 Hexo 无法工作。所以强烈建议使用 Git 对 NexT 进行备份。</strong>
-具体使用方法请自行 Google。</p>",
+    "description" : "虽然 NexT 的主题很漂亮，但问题是太受欢迎了，都快烂大街了。 好在它是一个开源项目，我们可以通过修改它的代码来个性话你的博客。 这篇教程要涉及到一些前端知识，可能没有那么 Novice friendly。
+因为涉及到对 NexT 代码的修改，搞不好，可能引起 Hexo 无法工作。所以强烈建议使用 Git 对 NexT 进行备份。 具体使用方法请自行 Google。
+准备工作  一颗能折腾的心。 一定的前端知识。  正文 最简单的方法 美化你的 Hexo 的最简单方法 -&gt; 安装我修改过的 NexT 在 Hexo 目录中使用命令
+$ git clone https://github.com/Mogeko/hexo-theme-next.git themes/next  *记得删掉原来安装过的 NexT。
+手动美化 Hexo 如果有能力，推荐跟我一起手动改代码。 最好能明白我给你的代码都是做什么的，将来万一出了问题，也有个找到问题的方向。
+圆形头像（头像旋转） NexT 默认的头像是方的。也不是说不好看，就是觉得不习惯，这个要看个人喜好。 在 /source/css/_custom/custom.styl 中添加一下代码就可以吧头像弄成圆的
+// 圆形头像 .site-author-image { border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; transition: 1.4s all; }  然后，添加以下代码可以让头像在鼠标停留时旋转 180°",
     "inLanguage" : "zh-cn",
     "author" : "Mogeko",
     "creator" : "Mogeko",
@@ -159,7 +158,9 @@
           
           
 
-          <p><img src="https://mogeko.github.io/images/003/logo.png"  alt="Logo"  style="border:0" /></p>
+          
+
+<p><img src="https://mogeko.github.io/images/003/logo.png"  alt="Logo"  style="border:0" /></p>
 
 <p>虽然 NexT 的主题很漂亮，但问题是太受欢迎了，都快烂大街了。
 好在它是一个开源项目，我们可以通过修改它的代码来个性话你的博客。
@@ -167,6 +168,8 @@
 
 <p><strong>因为涉及到对 NexT 代码的修改，搞不好，可能引起 Hexo 无法工作。所以强烈建议使用 Git 对 NexT 进行备份。</strong>
 具体使用方法请自行 Google。</p>
+
+<!-- more -->
 
 <h1 id="准备工作">准备工作</h1>
 
@@ -350,6 +353,7 @@
 <p><br></p>
 
 <p><center>  ·End·  </center></p>
+
     </div>
 
     <div class="post-copyright">

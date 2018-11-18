@@ -46,25 +46,14 @@
     "articleSection" : "posts",
     "name" : "UAC 白名单",
     "headline" : "UAC 白名单",
-    "description" : "<p>好像废话有点多_(:з)∠)_ -&gt;-&gt; <a href="https://mogeko.github.io/2017/001/#Start" rel="nofollow noreferrer" target="_blank">直接开始的传送门</a></p>
-
-<p>一直觉得微软为 Windows 引入 UAC 是个明智的选择，它能在一定程度上减少 Windows 平台过于开放，流氓软件肆意横行的局面。
-国内的情况比较特殊，因为很多人根本不知道那是什么，无脑点 “允许” 。
-都是被那群流氓给教坏的。。。
-抛开这些不谈，即使 UAC 的使用很有必要，但每次都弹出的蓝色框框确实很烦人，特别是在那些需要曾经使用管理员权限的软件上。因此，有的人直接选择关闭 UAC ，不过这样却对系统安全性产生了风险。</p>
-
-<p>所以，如何才能在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限？</p>
-
-<p>我首先想到的是使用 Autohotkey 帮用户点“允许”
-桌面分为三层，分别是 Winlogon Desktop、Screensaver Desktop、Application Desktop。
-所有的应用都运行在 Application Desktop 上（ UAC 不算）。UAC 在 Winlogon Desktop 上弹出的窗口。
-也就是说，以Autohotkey 所在的位置 UAC 它捞都捞不到。。。</p>
-
-<p>那么，到底要如何干掉 UAC 呢？</p>
-
-<p>经过研究发现，想要在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限有两种方法。
-分别是使用 任务计划程序 或 <a href="https://technet.microsoft.com/en-us/library/cc766242(v=ws.10).aspx" rel="nofollow noreferrer" target="_blank">Application Compatibility Toolkit (ACT)</a>。
-这里只解释使用 任务计划程序。</p>",
+    "description" : "好像废话有点多_(:з)∠)_ -&gt;-&gt; 直接开始的传送门
+一直觉得微软为 Windows 引入 UAC 是个明智的选择，它能在一定程度上减少 Windows 平台过于开放，流氓软件肆意横行的局面。 国内的情况比较特殊，因为很多人根本不知道那是什么，无脑点 “允许” 。 都是被那群流氓给教坏的。。。 抛开这些不谈，即使 UAC 的使用很有必要，但每次都弹出的蓝色框框确实很烦人，特别是在那些需要曾经使用管理员权限的软件上。因此，有的人直接选择关闭 UAC ，不过这样却对系统安全性产生了风险。
+所以，如何才能在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限？
+我首先想到的是使用 Autohotkey 帮用户点“允许” 桌面分为三层，分别是 Winlogon Desktop、Screensaver Desktop、Application Desktop。 所有的应用都运行在 Application Desktop 上（ UAC 不算）。UAC 在 Winlogon Desktop 上弹出的窗口。 也就是说，以Autohotkey 所在的位置 UAC 它捞都捞不到。。。
+那么，到底要如何干掉 UAC 呢？
+经过研究发现，想要在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限有两种方法。 分别是使用 任务计划程序 或 Application Compatibility Toolkit (ACT)。 这里只解释使用 任务计划程序。
+正文 下面正式开始。
+我们以 CMD 为例。 在开始菜单找到 CMD，右键 -&gt; 以管理员身份运行 果不其然弹出了 UAC。 *上面已经解释过了，UAC 截不出来 _(:з)∠)_",
     "inLanguage" : "zh-cn",
     "author" : "Mogeko",
     "creator" : "Mogeko",
@@ -168,7 +157,9 @@
           
           
 
-          <p>好像废话有点多_(:з)∠)_ -&gt;-&gt; <a href="https://mogeko.github.io/2017/001/#Start" rel="nofollow noreferrer" target="_blank">直接开始的传送门</a></p>
+          
+
+<p>好像废话有点多_(:з)∠)_ -&gt;-&gt; <a href="https://mogeko.github.io/2017/001/#Start" rel="nofollow noreferrer" target="_blank">直接开始的传送门</a></p>
 
 <p>一直觉得微软为 Windows 引入 UAC 是个明智的选择，它能在一定程度上减少 Windows 平台过于开放，流氓软件肆意横行的局面。
 国内的情况比较特殊，因为很多人根本不知道那是什么，无脑点 “允许” 。
@@ -187,6 +178,8 @@
 <p>经过研究发现，想要在不关闭 UAC 的情况下，让某些应用不经过 UAC 使用管理员权限有两种方法。
 分别是使用 任务计划程序 或 <a href="https://technet.microsoft.com/en-us/library/cc766242(v=ws.10).aspx" rel="nofollow noreferrer" target="_blank">Application Compatibility Toolkit (ACT)</a>。
 这里只解释使用 任务计划程序。</p>
+
+<!-- more -->
 
 <h1 id="正文">正文</h1>
 
@@ -284,6 +277,7 @@
 <p><br></p>
 
 <p><center>  ·End·  </center></p>
+
     </div>
 
     <div class="post-copyright">
