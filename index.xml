@@ -264,6 +264,10 @@
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sass --style compressed [Leacelt 目录]/css/main.scss:[Leacelt 目录]/resources/_gen/assets/scss/css/main.scss_b95b077eb505d5c0aff8055eaced30ad.content
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;还有一个办法就是使用 &lt;strong&gt;HTML 标签&lt;/strong&gt;代替 &lt;strong&gt;Markdown 语法&lt;/strong&gt;，即用 &lt;code&gt;&amp;lt;img src=&amp;quot;&amp;quot;&amp;gt;&lt;/code&gt; 标签代替 &lt;code&gt;![]()&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;不过这样就没法使用 &lt;strong&gt;lightGallery 图片相册&lt;/strong&gt; 了&lt;/p&gt;
+
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
