@@ -35,7 +35,7 @@
 
 &lt;p&gt;Third, we write a &lt;code&gt;main&lt;/code&gt; function to test the &lt;code&gt;Loanclass&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;**Source code: **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Source code:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;class Loan {
     private final int MONTHS_IN_YEAR = 12;
@@ -108,7 +108,7 @@ public double getTotalPay(){
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;**operation result: **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;operation result:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Expected value: 100.3 Actual value： 100.3
 Expected value: 22.0 Actual value： 22.0
@@ -127,7 +127,7 @@ Expected value: 365.092 Actual value： 365.092
 
 &lt;p&gt;Sexond, we write a &lt;strong&gt;fake main function&lt;/strong&gt; to test the input and output.&lt;/p&gt;
 
-&lt;p&gt;**Source code: **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Source code:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;import java.util.Scanner;
 
@@ -173,7 +173,7 @@ class LoanCalculator {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;**operation result: **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;operation result:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Your loan amount: $100.1
 Your loan interest rate (%): 33.2
@@ -188,7 +188,7 @@ Your total payment is $200.2
 
 &lt;p&gt;Rewrite the &lt;strong&gt;main function&lt;/strong&gt;, call the &lt;code&gt;getMonPay()&lt;/code&gt; method of the &lt;code&gt;Loan&lt;/code&gt; class to calculating the monthly payments, and call the &lt;code&gt;getTotalPay()&lt;/code&gt; method of the &lt;code&gt;Loan&lt;/code&gt; class to calculating the total payments.&lt;/p&gt;
 
-&lt;p&gt;**Source code: **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Source code:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static void main(String[] args) {
     LoanCalculator loanCalculator = new LoanCalculator();
@@ -204,7 +204,7 @@ Your total payment is $200.2
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;**operation result: **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;operation result:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Your loan amount: $100
 Your loan interest rate (%): 22
