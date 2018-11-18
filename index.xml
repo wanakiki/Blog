@@ -80,7 +80,7 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;**operation result: **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;operation result:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Expected value: 100.3 Actual value： 100.3
 Expected value: 22.0 Actual value： 22.0
@@ -95,7 +95,7 @@ Expected value: 112312.1212 Actual value： 112312.1212
 
 &lt;p&gt;Use the &lt;strong&gt;real value&lt;/strong&gt; in the &lt;strong&gt;main function&lt;/strong&gt; to test whether the logic of the &lt;strong&gt;member method&lt;/strong&gt; (&lt;code&gt;double getMonPay()&lt;/code&gt; and &lt;code&gt;double getTotalPay()&lt;/code&gt;) is correct.&lt;/p&gt;
 
-&lt;p&gt;**Source code: **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Source code:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;// Calculating monthly payments
 public double getMonPay(){
