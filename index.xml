@@ -15,9 +15,7 @@
       <pubDate>Sun, 18 Nov 2018 00:54:27 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/026/</guid>
-      <description>
-
-&lt;p&gt;很早以前的一个仓库了，博主已经入了 Office 365，早就用不到了。&lt;/p&gt;
+      <description>&lt;p&gt;很早以前的一个仓库了，博主已经入了 Office 365，早就用不到了。&lt;/p&gt;
 
 &lt;p&gt;不过最近帮小学妹装机，所以突然诈尸更新了一波。给需要的人 (○&amp;rsquo;◡&amp;rsquo;○)ﾉ♥
 &lt;br&gt;&lt;/p&gt;
@@ -51,8 +49,7 @@
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -264,6 +261,9 @@
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sass --style compressed [Leacelt 目录]/css/main.scss:[Leacelt 目录]/resources/_gen/assets/scss/css/main.scss_b95b077eb505d5c0aff8055eaced30ad.content
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+
 &lt;p&gt;还有一个办法就是使用 &lt;strong&gt;HTML 标签&lt;/strong&gt;代替 &lt;strong&gt;Markdown 语法&lt;/strong&gt;，即用 &lt;code&gt;&amp;lt;img src=&amp;quot;&amp;quot;&amp;gt;&lt;/code&gt; 标签代替 &lt;code&gt;![]()&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;不过这样就没法使用 &lt;strong&gt;lightGallery 图片相册&lt;/strong&gt; 了&lt;/p&gt;
@@ -280,9 +280,9 @@
       <pubDate>Fri, 16 Nov 2018 12:57:09 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/024/</guid>
-      <description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://gohugo.io&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; 是一个强大的静态网页生成器，使用 go 开发。速度贼快，还有 “时时预览” 等特性。不过 Hugo 还比较年轻，没有像 &lt;a href=&#34;https://theme-next.iissnan.com&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;NexT&lt;/a&gt; 那样功能强大，成熟稳定的主题。所以很多东西需要自己动手撸。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://gohugo.io&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; 是一个强大的静态网页生成器，使用 go 开发。速度贼快，还有 “时时预览” 等特性。不过 Hugo 还比较年轻，没有像 &lt;a href=&#34;https://theme-next.iissnan.com&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;NexT&lt;/a&gt; 那样功能强大，成熟稳定的主题。所以很多东西需要自己动手撸。就例如评论系统。&lt;/p&gt;
+&lt;p&gt;就例如评论系统。&lt;/p&gt;
 
 &lt;h1 id=&#34;关于-gitalk&#34;&gt;关于 Gitalk&lt;/h1&gt;
 
@@ -403,8 +403,7 @@
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -413,16 +412,14 @@
       <pubDate>Wed, 10 Oct 2018 19:52:24 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/023/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;本指南涉及严重剧透！！！&lt;/strong&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;本指南涉及严重剧透！！！&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Rusty Lake: Roots 是一款画风超棒的解密游戏。因为是解密游戏，所以不建议一开始就看这篇指南。
 我写这篇指南的目的主要是为了记录一下游戏的过程，以及对卡关卡得难受的人做一点微小的工作。&lt;/p&gt;
 
 &lt;p&gt;这篇指南会根据我的游戏进度慢慢更新，&lt;span class=&#34;spoiler&#34; &gt;&lt;del&gt;像「锈湖」这种小众游戏的指南应该没多少人看吧 &lt;/del&gt;|・ω・｀)&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;#第 1 关&lt;/p&gt;
+&lt;h1 id=&#34;第-1-关&#34;&gt;第 1 关&lt;/h1&gt;
 
 &lt;p&gt;首先阅读 James 衣服兜里的信，记住右下角的数字：&lt;strong&gt;572&lt;/strong&gt; (行李箱密码)&lt;/p&gt;
 
@@ -766,8 +763,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;p&gt;原文地址：&lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1535212223&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Rusty Lake: Roots 通关攻略 施工中&amp;hellip; | Steam 社区&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;作者：确实是 Mogeko (&lt;em&gt;/ω＼&lt;/em&gt;)&lt;/p&gt;
-</description>
+&lt;p&gt;作者：确实是 Mogeko (&lt;em&gt;/ω＼&lt;/em&gt;)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -776,9 +772,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
       <pubDate>Sun, 30 Sep 2018 21:06:00 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/022/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/logo.jpg&#34;  alt=&#34;Logo&#34; &gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/logo.jpg&#34;  alt=&#34;Logo&#34; &gt;&lt;/p&gt;
 
 &lt;p&gt;补一篇格林剧团 DLC 的全成就指南&lt;/p&gt;
 
@@ -937,8 +931,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -958,7 +951,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 &lt;li&gt;可以较为快速的完成某些不可能在同一存档中完成的成就&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;正文&lt;/p&gt;
+&lt;h1 id=&#34;正文&#34;&gt;正文&lt;/h1&gt;
 
 &lt;p&gt;使用 Win键 + R 呼出&lt;strong&gt;「运行」&lt;/strong&gt;，然后输入&lt;/p&gt;
 
@@ -982,8 +975,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -992,9 +984,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
       <pubDate>Sun, 30 Sep 2018 08:59:00 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/020/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/020/logo.jpg&#34;  alt=&#34;Logo&#34; &gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/020/logo.jpg&#34;  alt=&#34;Logo&#34; &gt;&lt;/p&gt;
 
 &lt;p&gt;爆肝 20 多个小时终于打完了 QAQ
 写篇指南压压惊 _(:з」∠)_&lt;/p&gt;
@@ -1129,8 +1119,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1139,9 +1128,7 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
       <pubDate>Fri, 28 Sep 2018 10:09:14 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/019/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/019/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/019/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;「尘埃 4」是经典越野赛车系列「尘埃」的正统续作，是一款非常优秀的赛车游戏，不过因为不支持中文、复杂的操作等原因劝退了不少萌新。 &lt;span class=&#34;spoiler&#34; &gt;其实我也是萌新_(:з」∠)_&lt;/span&gt; 这篇指南就简单介绍一下玩「尘埃 4」所需要的一些基本知识，希望对各位有所帮助(○&amp;rsquo;◡&amp;rsquo;○)ﾉ♥&lt;/p&gt;
 
@@ -1491,8 +1478,7 @@ ABS 防抱死系统是防止轮胎在刹车的时候锁死。这个辅助系统�
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -3064,8 +3050,6 @@ fi
 &lt;li&gt;Termux -&amp;gt; &lt;a href=&#34;https://termux.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;官网&lt;/a&gt;  &lt;a href=&#34;https://f-droid.org/repo/com.termux_64.apk&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;下载地址&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;vlmcsd -&amp;gt; &lt;a href=&#34;https://github.com/Wind4/vlmcsd&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub 仓库&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;!--more--&gt;
 
 &lt;h1 id=&#34;正文&#34;&gt;正文&lt;/h1&gt;
 
