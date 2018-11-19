@@ -467,13 +467,13 @@ Your total payment is $320.0
 
 &lt;p&gt;首先要去 GitHub 上创建一个 &lt;a href=&#34;https://github.com/settings/applications/new&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Github Application&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Github Application&#34; src=&#34;https://mogeko.github.io/images/024/get_Github_Application.png/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Github Application&#34; src=&#34;https://mogeko.github.io/images/024/get_Github_Application.png&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;点击创建&lt;/p&gt;
 
 &lt;p&gt;记下 &lt;code&gt;Client ID&lt;/code&gt; 和 &lt;code&gt;Client Secret&lt;/code&gt;，以后要用&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Client ID &amp; Client Secret&#34; src=&#34;https://mogeko.github.io/images/024/get_id&amp;secret.png/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Client ID &amp; Client Secret&#34; src=&#34;https://mogeko.github.io/images/024/get_id&amp;secret.png/&#34;&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;添加-gitalk-html-模板&#34;&gt;添加 gitalk.html 模板&lt;/h2&gt;
 
@@ -482,9 +482,9 @@ Your total payment is $320.0
 &lt;p&gt;在主题的 &lt;code&gt;layouts/partials&lt;/code&gt; 文件夹中创建 &lt;code&gt;gitalk.html&lt;/code&gt; 文件，写下如下代码&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Site.Params.enableGitalk }}
-&amp;lt;div id=&amp;quot;gitalk-container/&amp;quot; style=&amp;quot;border:0&amp;quot; /&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.css/&amp;quot; style=&amp;quot;border:0&amp;quot; /&amp;gt;
-&amp;lt;script src=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.min.js/&amp;quot; style=&amp;quot;border:0&amp;quot; /&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;div id=&amp;quot;gitalk-container/&amp;quot; style=&amp;quot;border:0&amp;quot; &amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.css/&amp;quot; style=&amp;quot;border:0&amp;quot; &amp;gt;
+&amp;lt;script src=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.min.js/&amp;quot; style=&amp;quot;border:0&amp;quot; &amp;gt;&amp;lt;/script&amp;gt;
 &amp;lt;script&amp;gt;
   const gitalk = new Gitalk({
     clientID: &#39;{{ .Site.Params.Gitalk.clientID }}&#39;,
@@ -508,7 +508,7 @@ Your total payment is $320.0
 
 &lt;p&gt;然后在 &lt;code&gt;layouts/_default/single.html&lt;/code&gt; 中插入&lt;code&gt;{{ partial &amp;quot;gitalk.html&amp;quot; . }}&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;插入 Gitalk 模板&#34; src=&#34;https://mogeko.github.io/images/024/set_div.png/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;插入 Gitalk 模板&#34; src=&#34;https://mogeko.github.io/images/024/set_div.png/&#34; style=&#34;border:0&#34; &gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;配置-config-toml&#34;&gt;配置 config.toml&lt;/h2&gt;
 
@@ -574,7 +574,7 @@ Your total payment is $320.0
 
 &lt;p&gt;设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 &lt;code&gt;hugo server&lt;/code&gt; 中是不会启用的)&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Gitalk&#34; src=&#34;https://mogeko.github.io/images/024/done.png/&#34; style=&#34;border:0&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Gitalk&#34; src=&#34;https://mogeko.github.io/images/024/done.png/&#34; style=&#34;border:0&#34; &gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;添加谈笑风生区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要&lt;/strong&gt;&lt;/p&gt;
 
