@@ -6,25 +6,10 @@
     <description>Recent content in Tools on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 19 Nov 2018 11:28:18 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Nov 2018 00:54:27 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>使用 Travis CI 自动部署 Hugo 博客</title>
-      <link>https://mogeko.github.io/2018/028/</link>
-      <pubDate>Mon, 19 Nov 2018 11:28:18 +0800</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/028/</guid>
-      <description>通过 Travis CI 来部署 Hugo 或者 Hexo 博客可能在配置的时候会麻烦一点，但配置好后确实是方便了不少。特别是对于 Hugo 这种没有部署插件的静态网站生成器，只能手动部署到 GitHub。
-网上有很多关于用 Travis 自动部署 Hexo 的文章，却没看到几篇关于 Hugo，虽然原理都差不多，但细节上还是有很多容易让小白头疼的地方，所以今天我就来教教如何用 Travis 来自动部署 Hugo。
-正文 废话不多说，我们开始吧！
-设置代码仓库 首先确保你的 GitHub 上有这两个仓库：用来部署博客的 [用户名].github.io 和 用来存放“源码”的 Blog
-这里与别的「使用 Travis 自动部署博客」教程稍微有点不同，别人家大多上将博客的「源码」放在 [用户名].github.io 的分支上，而不是向我一样开两个仓库
-开两个仓库的好处有：
- 结构更清晰。与博客相关的内容都在 Blog仓库里， [用户名].github.io 只用来提供一个 GitHub Pages 的服务 「源码」 存放在 master 分支下，clone 更快 我不知道上我的原因还是 GitHub 或是 Git 的原因，我从 GitHub clone 除 master 分支以外的分支时，下载速度贼慢，只有几百 kb 每秒，clone 一个 「源码」 都至少要半个多小时  申请 Token 然后要去 GitHub 上申请一个新的 personal access token。</description>
-    </item>
     
     <item>
       <title>Windows / Office 激活脚本 (使用 KMS)</title>
@@ -63,69 +48,6 @@ VOL 版的 Office 和 Windows 直接通过 KMS 激活，零售版的 Office 需�
 可以直接双击运行（进入 console 模式）
 也可以在命令行中运行
 在Android 与 iOS 上安装 在 Android 上安装与在桌面上安装的思路差不多，都是 下载 -&amp;gt; 解压 -&amp;gt; (在命令行中)运行</description>
-    </item>
-    
-    <item>
-      <title>神奇的 Magisk</title>
-      <link>https://mogeko.github.io/2017/010/</link>
-      <pubDate>Sat, 02 Dec 2017 18:00:00 +0800</pubDate>
-      
-      <guid>https://mogeko.github.io/2017/010/</guid>
-      <description>今天为大家介绍一款神奇的 Android 第三方接口 —— Magisk
-Root —— 玩家与厂商间的博弈 Android 从诞生之日起就高举着开源的大旗，这也是它成功的原因之一。而它的开放性也成功的吸引到了一大批爱折腾的人，从而诞生出了 root（此处特制 Android 中的 root）。
-根据 Wikipedia 的释义，root 指的是使用户取得 Android 操作系统的超级用户（Super User）许可权的技术。用户通过 root，可以越过手机制造商的限制，卸载手机制造商预装在手机中某些应用，以及运行一些需要超级用户权限的应用程序。同时，root 也可能会让手机变得“不安全”（并不是说 root 使手机变得不安全，而是一些用户的使用习惯会使 root 后的手机变得危险）。
-但是从棉花糖（Android 6.0）开始，Google 基本阻止了以前版本中最流行的 root 方法 —— 即，将 su守护程序 放置到 /system 分区，并在启动时取得所需的权限。道高一尺，魔高一丈，于是就出现了 systemless 的 root 方式，因为它不采取任何方式修改 /system 分区。
-出于增加安全性的考虑，Google 推出了 SafetyNet 这样的检测，以确保 Android Pay 等一些 App 的安全运行，玩家不得不在 root 权限和一些有价值的 App 之间作出选择。
-这个时候 Magisk 诞生了。
-Magisk 什么是 Magisk Magisk 是出自一位台湾学生 @topjohnwu 开发的 Android 框架，是一个通用的第三方 systemless 接口，通过这样的方式实现一些较强大的功能。</description>
-    </item>
-    
-    <item>
-      <title>Reabble | Kindle 下的 RRS 神器</title>
-      <link>https://mogeko.github.io/2017/008/</link>
-      <pubDate>Sat, 30 Sep 2017 17:40:09 +0800</pubDate>
-      
-      <guid>https://mogeko.github.io/2017/008/</guid>
-      <description>Amazon 官方系统的 Kindle 中内置了一个 体验版浏览器，用起来真的很鸡肋。一开始根本不知道 Amazon 到底在想什么，做怎么个又慢，又不稳定的浏览器，浪费老子硬盘。直到那天，手机被收了(:°з」∠) 其实真正让我爱上那个辣鸡浏览器的是 RSS 神器——Reabble。
-那是一个血雨腥风的晚自习，老师一边讲着刚考完的月考试卷一边骂人。 在教室的第一排，我蜷缩在书本堆中，偷偷用 Kindle 内置的辣鸡浏览器连着教务处的 WiFi 逛知乎。。。（那时真的好 6，老师与我的直线距离不到 3 米，现在想想都觉得后怕） 就在那天晚上，我发现了这个 Kindle 上的 RSS 神器。
-Reabble Reabble 是专为 Kindle 设计的 RSS 阅读器，亮点是 没有任何滑动操作，全程点击操作， 响应速度也很快。
- Kindle 上的 RSS 聚合阅读应用，专为电子墨水屏特性设计，让你可以心无旁骛地沉浸于资讯阅读。也能用于其它带浏览器的设备如手机、Nook、Kobo、博阅等。
-Reabble 入门教程reabble.com/help
- Reabble 官方网站 Reabble 入门教程
-使用方法 用电脑打开 Inoreader，注册一个帐号，并在里面添加一些订阅。
-打开 Reabble，点击 用 Inoreader 帐号登录，用刚才注册的 Inoreader 帐号登录 Reabble。
-在这里，你刚刚订阅的文章都会显示出来
-确认没有问题后访问 https://reabble.com/code，得到 12 个字母的登录码。
-打开你的 Kindle 主屏右上角的菜单，选择 体验版网页浏览器 并打开网页 reabble.com/login，点 登录 按钮，用上刚刚得到的登录码登录。</description>
-    </item>
-    
-    <item>
-      <title>Fira Code | 为写程序而生的字体</title>
-      <link>https://mogeko.github.io/2017/006/</link>
-      <pubDate>Sat, 16 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogeko.github.io/2017/006/</guid>
-      <description>程序员福利！！！ 今天为大家带来一个专为程序员写程序设计的字体 —— Fira Code Fira 是 Mozilla 公司（火狐浏览器她爹）主推的字体系列。Fira Code 是其中的一员，专为写程序而生。出来具有等宽等基本属性外，还加入了编程连字特性（ligatures）。
-Fira Code 就是利用这个特性对编程中的常用符号进行优化，比如把输入的「!=」直接显示成「≠」或者把「&amp;gt;=」变成「≥ 」等等，以此来提高代码的可读性。 代码示例 Ruby: JavaScript: Erlang: Elixir: Go: LiveScript: Clojure: Swift: 正文 安装 Fira Code 使用 .ttf 文件安装 访问此网站 https://github.com/tonsky/FiraCode 找到 Download 这个链接，单击它。
-单击这个地址可以下载 v1.204 版的 Fira Code -&amp;gt; Download v1.204
-下载好后，解压它。 打开解压后得到的文件夹。 打开 /ttf文件夹。 会看到以下文件
-Ctrl+A 全选 -&amp;gt; 右键 -&amp;gt; 安装。
-使用 Chocolate 安装 关于 Chocolate，请参考这篇文章。 使用以下命令安装
-$ choco install firacode  如何使用 只有以下编辑器、浏览器可以完美支持 Fira Code：</description>
-    </item>
-    
-    <item>
-      <title>使用 Hexo Hey 管理你的博客</title>
-      <link>https://mogeko.github.io/2017/004/</link>
-      <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogeko.github.io/2017/004/</guid>
-      <description>在使用 Hexo Hey 之前，我一直在使用 VSCode（配合 vscode-hexo 插件）来管理博客。虽然可以很快捷 的新建,部署, 测试,发布 博客 ，但还是很麻烦，离我理想中的博客平台还有一定的距离。 我在知乎上发现了 Hexo Hey 这个插件，尝试了一下，虽然有各种问题，但确实很好用。 因此决定写一篇文章来介绍一下如何安装, 使用 Hexo Hey。
-切换换到 Hexo Hey 后最不习惯的地方就是没有了 VSCode 中那些方便的快捷键了。(ノへ￣、) 擦眼泪……
-与 Hexo Hey 比较相似的 Hexo 博客管理程序还有 Hexo Admin。
-准备工作  Node.js &amp;lt;- 就是安 Hexo 时用到的拿货，应该已经有了，就不贴安装地址了。 Hexo Hey &amp;lt;- 通过 npm 安装。  正文 安装 Hexo Hey 首先进入已配置好的那个 Hexo 目录：
-$ cd [你的 Hexo 目录]  输入一下命令安装 Hexo Hey：
-$ npm install hexo-hey --save  然后打开 Hexo 目录 中的 _config.</description>
     </item>
     
   </channel>
