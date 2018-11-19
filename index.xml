@@ -35,7 +35,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;结构更清晰。与博客相关的内容都在 &lt;strong&gt;&lt;code&gt;Blog&lt;/code&gt;&lt;/strong&gt;仓库里， &lt;strong&gt;&lt;code&gt;[用户名].github.io&lt;/code&gt;&lt;/strong&gt; 只用来提供一个 GitHub Pages 的服务&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;「源码」&lt;/strong&gt; 存放在 &lt;strong&gt;&lt;code&gt;master&lt;/code&gt;&lt;/strong&gt; 分支下，&lt;code&gt;clone&lt;/code&gt; 更快 &lt;span class=&#34;spoiler&#34; &gt;我不知道上我的原因还是 GitHub 或是 Git 的原因，我从 GitHub &lt;code&gt;clone&lt;/code&gt; 除 &lt;strong&gt;&lt;code&gt;master&lt;/code&gt;&lt;/strong&gt; 分支以外的分支时，下载速度贼慢，只有几百 kb 每秒，&lt;code&gt;clone&lt;/code&gt; 一个 &lt;strong&gt;「源码」&lt;/strong&gt; 都至少要半个多小时&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;「源码」&lt;/strong&gt; 存放在 &lt;strong&gt;&lt;code&gt;master&lt;/code&gt;&lt;/strong&gt; 分支下，&lt;code&gt;clone&lt;/code&gt; 更快 &lt;span class=&#34;spoiler&#34; &gt;我不知道上我的原因还是 GitHub 或是 Git 的原因，我从 GitHub &lt;strong&gt;clone&lt;/strong&gt; 除 &lt;strong&gt;master&lt;/strong&gt; 分支以外的分支时，下载速度贼慢，只有几百 kb 每秒，&lt;strong&gt;clone&lt;/strong&gt; 一个 &lt;strong&gt;「源码」&lt;/strong&gt; 都至少要半个多小时&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;申请-token&#34;&gt;申请 Token&lt;/h2&gt;
@@ -127,7 +127,7 @@ deploy:
 
 &lt;p&gt;然后将代码提交到 &lt;strong&gt;Blog 仓库&lt;/strong&gt; 里。等个一两分钟，就可以在 &lt;a href=&#34;https://travis-ci.org/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Travis CI&lt;/a&gt; 上查看部署情况了&lt;/p&gt;
 
-&lt;p&gt;&lt;span style=&#34;#00FF00&#34;&gt;绿色&lt;/span&gt; 代表部署成功&amp;emsp;&amp;emsp;&lt;span style=&#34;#FFFF00&#34;&gt;黄色&lt;/span&gt; 代表正在部署&amp;emsp;&amp;emsp;&lt;span style=&#34;#FF0000&#34;&gt;红色&lt;/span&gt; 代表部署失败&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;绿色&lt;/span&gt; 代表部署成功&amp;emsp;&amp;emsp;&lt;span style=&#34;color:#FFFF00&#34;&gt;黄色&lt;/span&gt; 代表正在部署&amp;emsp;&amp;emsp;&lt;span style=&#34;color:#FF0000&#34;&gt;红色&lt;/span&gt; 代表部署失败&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/028/run_travis.png&#34; alt=&#34;Travis CI 部署&#34;&gt;&lt;/p&gt;
 
