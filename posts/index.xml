@@ -268,7 +268,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 今天就教大家一个新的方法在 Android 手机上安装 KMS 激活服务。而且新方法不需要 Magisk 框架，相比于原来的方法更简单安全。
 需要 Magisk 框架 -&amp;gt; Magisk 介绍与简易安装教程
 老师让做 PPT 但电脑里没装 Office，怎么办？ 答案当然是买一个！ 但对于没钱买正版的同学怎么办呢？ 其实，可以下载批量激活版（VOL 版）的 Office，然后用 KMS 激活。 今天就教大家如何用手机搭建 KMS 激活服务器来激活 VOL 版的 Windows 或 Office。（零售版（Retail 版）的 Office 可以用脚本转换为 VOL 版，然后作为 VOL 版 Office 激活） 如果不知道你安装的 Office 是哪个版本，可以用以下方法查看。-&amp;gt; 判断你安装的 Office 是哪个版本
-准备工作  Magisk 框架 -&amp;gt; Magisk 介绍与简易安装教程 ‎kms-server（Magisk 模块） -&amp;gt; 适用 ARMv7 手机模块 适用 ARM64v8 手机的模块 ‎VOL 版的 Windows 或 Office Termux -&amp;gt; 官网 下载地址 vlmcsd -&amp;gt; GitHub 仓库  正文 Termux + vlmcsd 搭建 KMS 激活服务器 (新方法) 安装 Termux 这个方法虽然不依赖 Magisk，但我们需要安装一个名为 Termux 的应用。</description>
+准备工作  Magisk 框架 -&amp;gt; Magisk 介绍与简易安装教程 ‎kms-server（Magisk 模块） -&amp;gt; [适用 ARMv7 手机模块]() [适用 ARM64v8 手机的模块]() ‎VOL 版的 Windows 或 Office Termux -&amp;gt; 官网 下载地址 vlmcsd -&amp;gt; GitHub 仓库  正文 Termux + vlmcsd 搭建 KMS 激活服务器 (新方法) 安装 Termux 这个方法虽然不依赖 Magisk，但我们需要安装一个名为 Termux 的应用。</description>
     </item>
     
     <item>
