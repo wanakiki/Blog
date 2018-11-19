@@ -473,7 +473,7 @@ Your total payment is $320.0
 
 &lt;p&gt;记下 &lt;code&gt;Client ID&lt;/code&gt; 和 &lt;code&gt;Client Secret&lt;/code&gt;，以后要用&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Client ID &amp; Client Secret&#34; src=&#34;https://mogeko.github.io/images/024/get_id&amp;secret.png/&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Client ID &amp; Client Secret&#34; src=&#34;https://mogeko.github.io/images/024/get_id&amp;secret.png&#34;&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;添加-gitalk-html-模板&#34;&gt;添加 gitalk.html 模板&lt;/h2&gt;
 
@@ -508,7 +508,7 @@ Your total payment is $320.0
 
 &lt;p&gt;然后在 &lt;code&gt;layouts/_default/single.html&lt;/code&gt; 中插入&lt;code&gt;{{ partial &amp;quot;gitalk.html&amp;quot; . }}&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;插入 Gitalk 模板&#34; src=&#34;https://mogeko.github.io/images/024/set_div.png/&#34; style=&#34;border:0&#34; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;插入 Gitalk 模板&#34; src=&#34;https://mogeko.github.io/images/024/set_div.png&#34; style=&#34;border:0&#34; &gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;配置-config-toml&#34;&gt;配置 config.toml&lt;/h2&gt;
 
@@ -574,7 +574,7 @@ Your total payment is $320.0
 
 &lt;p&gt;设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 &lt;code&gt;hugo server&lt;/code&gt; 中是不会启用的)&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Gitalk&#34; src=&#34;https://mogeko.github.io/images/024/done.png/&#34; style=&#34;border:0&#34; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Gitalk&#34; src=&#34;https://mogeko.github.io/images/024/done.png&#34; style=&#34;border:0&#34; &gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;添加谈笑风生区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要&lt;/strong&gt;&lt;/p&gt;
 
@@ -2069,16 +2069,22 @@ draft: true
 
 &lt;p&gt;两条 &lt;code&gt;---&lt;/code&gt; 间的信息是文章的配置信息，有的信息是自动生成的 (如：&lt;code&gt;title&lt;/code&gt;、&lt;code&gt;date&lt;/code&gt; 等)，简单介绍以下各项配置&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;# 以下项目是自动生成的&lt;br /&gt;
-&lt;code&gt;title:&lt;/code&gt; # 文章标题&lt;br /&gt;
-&lt;code&gt;date:&lt;/code&gt; # 写作时间&lt;br /&gt;
-&lt;code&gt;draft:&lt;/code&gt; # 是否为草稿，如果为 &lt;code&gt;true&lt;/code&gt; 需要在命令中加入 &lt;code&gt;--buildDrafts&lt;/code&gt; 参数才会生成这个文档&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;以下项目是自动生成的:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;# 以下项目需要自行添加&lt;br /&gt;
-&lt;code&gt;description:&lt;/code&gt; # 描述&lt;br /&gt;
-&lt;code&gt;tags:&lt;/code&gt; # 标签，用于文章分类&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;title:&lt;/code&gt; # 文章标题&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;date:&lt;/code&gt; # 写作时间&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;draft:&lt;/code&gt; # 是否为草稿，如果为 &lt;code&gt;true&lt;/code&gt; 需要在命令中加入 &lt;code&gt;--buildDrafts&lt;/code&gt; 参数才会生成这个文档&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;以下项目需要自行添加:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;description:&lt;/code&gt; # 描述&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tags:&lt;/code&gt; # 标签，用于文章分类&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;code&gt;自动生成&lt;/code&gt; 和 &lt;code&gt;执行添加&lt;/code&gt; 的内容并不是绝对的，你可以根据自己的喜好配置模板文件 &lt;code&gt;archetypes/default.md&lt;/code&gt;&lt;/p&gt;
 
@@ -2146,11 +2152,12 @@ PygmentsOptions = &amp;quot;linenos=table&amp;quot;
 
 &lt;p&gt;此时你就可以在 &lt;code&gt;http://localhost:1313&lt;/code&gt; 访问到你的博客了&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;简单介绍一下两个参数：
-- &lt;code&gt;--buildDrafts&lt;/code&gt;: 生成被标记为 「草稿」 的文档
-- &lt;code&gt;-w&lt;/code&gt;: 监控更改，如果发生更改直接显示到博客上 (非常有用，这也是我最喜欢的一点特性了)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;简单介绍一下两个参数：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--buildDrafts&lt;/code&gt;: 生成被标记为 「草稿」 的文档&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-w&lt;/code&gt;: 监控更改，如果发生更改直接显示到博客上 (非常有用，这也是我最喜欢的一点特性了)&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;但此时只能在本地访问 (相当于预览博客，如果与期望值不符，可以随时更改)，如果想发布到 &lt;code&gt;Github Pages&lt;/code&gt; 上需要先将文章配置信息中的 &lt;code&gt;draft:&lt;/code&gt; 改为 &lt;code&gt;false&lt;/code&gt;
 然后执行命令&lt;/p&gt;
