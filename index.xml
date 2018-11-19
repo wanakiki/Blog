@@ -150,7 +150,7 @@ themes/*
 resources/*
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;##Travis CI 的分支白名单&lt;/p&gt;
+&lt;h2 id=&#34;travis-ci-的分支白名单&#34;&gt;Travis CI 的分支白名单&lt;/h2&gt;
 
 &lt;p&gt;我给你的 &lt;code&gt;.travis.yml&lt;/code&gt; 文件中有怎么一段&lt;/p&gt;
 
@@ -166,6 +166,10 @@ branches:
 &lt;p&gt;不过这里不存在这个场景，并且如果配置错了会出很大的问题，很容易坑到小白， &lt;span class=&#34;spoiler&#34; &gt;比如说我 _(:з)∠)_ &lt;/span&gt;所以默认就给注释掉了。&lt;/p&gt;
 
 &lt;p&gt;如果你晓得这是干啥的，并且觉得有必要的话，可以考虑开启&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
 </description>
     </item>
     
