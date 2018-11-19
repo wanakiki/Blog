@@ -22,10 +22,10 @@
   <title>
        
        
-           使用 Hugo &#43; GitHub Page 搭建个人博客 | Mogeko`s Blog
+           使用 Hugo &#43; GitHub Pages 搭建个人博客 | Mogeko`s Blog
        
   </title>
-  <meta name="title" content="使用 Hugo &#43; GitHub Page 搭建个人博客 | Mogeko`s Blog">
+  <meta name="title" content="使用 Hugo &#43; GitHub Pages 搭建个人博客 | Mogeko`s Blog">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,10 +44,10 @@
          "@id": "https://mogeko.github.io"
     },
     "articleSection" : "posts",
-    "name" : "使用 Hugo &#43; GitHub Page 搭建个人博客",
-    "headline" : "使用 Hugo &#43; GitHub Page 搭建个人博客",
+    "name" : "使用 Hugo &#43; GitHub Pages 搭建个人博客",
+    "headline" : "使用 Hugo &#43; GitHub Pages 搭建个人博客",
     "description" : "正如你所看到的，本博客换了一个主题。但你们看不到的是，本博客将静态页面生成引擎换成了 Hugo
-Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应用应该被称作静态网站生成器。这类应用将 Markdown 文件和主题一起编译成由 HTML、CSS、JavaScript 组成的静态网页。然后上传到 GitHub 上，通过 GitHub 提供的静态页面托管服务 (GitHub Page) 进行访问。
+Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应用应该被称作静态网站生成器。这类应用将 Markdown 文件和主题一起编译成由 HTML、CSS、JavaScript 组成的静态网页。然后上传到 GitHub 上，通过 GitHub 提供的静态页面托管服务 (GitHub Pages) 进行访问。
 这里就写一篇文章来记录一下踩过的坑。
 本站目前使用的主题是 Hello Programmer，要配合 Hugo 使用。今后会写一篇文章来详细介绍。
 准备工作  一个 Github 账号。 &lt;- 我们要使用它提供的 Github Pages 服务来搭建博客 https://github.com/ Hugo &lt;- 博客框架，将 Markdown 文档渲染成网页 https://github.com/gohugoio/hugo Git &lt;- 用来发布博客 https://git-scm.com/
@@ -128,7 +128,7 @@ Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">使用 Hugo &#43; GitHub Page 搭建个人博客</h1>
+        <h1 class="post-title" itemprop="name headline">使用 Hugo &#43; GitHub Pages 搭建个人博客</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://mogeko.github.io" rel="author">Mogeko</a> with ♥ 
                 <span class="post-time">
@@ -162,7 +162,7 @@ Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应
 
 <p>正如你所看到的，本博客换了一个主题。但你们看不到的是，本博客将静态页面生成引擎换成了 <a href="https://github.com/gohugoio/hugo" rel="nofollow noreferrer" target="_blank">Hugo</a></p>
 
-<p>Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应用应该被称作静态网站生成器。这类应用将 Markdown 文件和主题一起编译成由 HTML、CSS、JavaScript 组成的静态网页。然后上传到 GitHub 上，通过 GitHub 提供的静态页面托管服务 (GitHub Page) 进行访问。</p>
+<p>Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应用应该被称作静态网站生成器。这类应用将 Markdown 文件和主题一起编译成由 HTML、CSS、JavaScript 组成的静态网页。然后上传到 GitHub 上，通过 GitHub 提供的静态页面托管服务 (GitHub Pages) 进行访问。</p>
 
 <p>这里就写一篇文章来记录一下踩过的坑。</p>
 
@@ -409,7 +409,7 @@ PygmentsOptions = &quot;linenos=table&quot;
 - <code>-w</code>: 监控更改，如果发生更改直接显示到博客上 (非常有用，这也是我最喜欢的一点特性了)</p>
 </blockquote>
 
-<p>但此时只能在本地访问 (相当于预览博客，如果与期望值不符，可以随时更改)，如果想发布到 <code>Github Page</code> 上需要先将文章配置信息中的 <code>draft:</code> 改为 <code>false</code>
+<p>但此时只能在本地访问 (相当于预览博客，如果与期望值不符，可以随时更改)，如果想发布到 <code>Github Pages</code> 上需要先将文章配置信息中的 <code>draft:</code> 改为 <code>false</code>
 然后执行命令</p>
 
 <pre><code class="language-shell">hugo
@@ -419,7 +419,7 @@ PygmentsOptions = &quot;linenos=table&quot;
 
 <h3 id="发布">发布</h3>
 
-<p>不像 Hexo，Hugo 并没有提供自动发布到 <code>GitHub Page</code> 的功能。需要将 <code>public</code> 中的内容手动上传到 Github 上。</p>
+<p>不像 Hexo，Hugo 并没有提供自动发布到 <code>GitHub Pages</code> 的功能。需要将 <code>public</code> 中的内容手动上传到 Github 上。</p>
 
 <p>首先执行命令 <code>cd public</code> 进入到 <code>public</code> 文件夹中
 然后执行</p>

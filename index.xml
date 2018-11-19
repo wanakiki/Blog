@@ -6,8 +6,168 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 18 Nov 2018 18:30:52 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 19 Nov 2018 11:28:18 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>使用 Travis 自动部署 Hugo</title>
+      <link>https://mogeko.github.io/2018/028/</link>
+      <pubDate>Mon, 19 Nov 2018 11:28:18 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/028/</guid>
+      <description>
+
+&lt;p&gt;通过 Travis CI 来部署 Hugo 或者 Hexo 博客可能在配置的时候会麻烦一点，但配置好后确实是方便了不少。特别是对于 Hugo 这种没有部署插件的静态网站生成器，只能手动部署到 GitHub。&lt;/p&gt;
+
+&lt;p&gt;网上有很多关于用 Travis 自动部署 Hexo 的文章，却没看到几篇关于 Hugo，虽然原理都差不多，但细节上还是有很多容易让小白头疼的地方，所以今天我就来教教如何用 Travis 来自动部署 Hugo。&lt;/p&gt;
+
+&lt;h1 id=&#34;正文&#34;&gt;正文&lt;/h1&gt;
+
+&lt;p&gt;废话不多说，我们开始吧！&lt;/p&gt;
+
+&lt;h2 id=&#34;设置代码仓库&#34;&gt;设置代码仓库&lt;/h2&gt;
+
+&lt;p&gt;首先确保你的 GitHub 上有这两个仓库：&lt;strong&gt;用来部署博客的 &lt;code&gt;[用户名].github.io&lt;/code&gt;&lt;/strong&gt; 和 &lt;strong&gt;用来存放“源码”的 &lt;code&gt;Blog&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这里与别的&lt;strong&gt;「使用 Travis 自动部署博客」&lt;/strong&gt;教程稍微有点不同，别人家大多上将博客的&lt;strong&gt;「源码」&lt;/strong&gt;放在 &lt;strong&gt;&lt;code&gt;[用户名].github.io&lt;/code&gt;&lt;/strong&gt; 的分支上，而不是向我一样开两个仓库&lt;/p&gt;
+
+&lt;p&gt;开两个仓库的好处有：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;结构更清晰。与博客相关的内容都在 &lt;strong&gt;&lt;code&gt;Blog&lt;/code&gt;&lt;/strong&gt;仓库里， &lt;strong&gt;&lt;code&gt;[用户名].github.io&lt;/code&gt;&lt;/strong&gt; 只用来提供一个 GitHub Pages 的服务&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;「源码」&lt;/strong&gt; 存放在 &lt;strong&gt;&lt;code&gt;master&lt;/code&gt;&lt;/strong&gt; 分支下，&lt;code&gt;clone&lt;/code&gt; 更快 &lt;span class=&#34;spoiler&#34; &gt;我不知道上我的原因还是 GitHub 或是 Git 的原因，我从 GitHub &lt;code&gt;clone&lt;/code&gt; 除 &lt;strong&gt;&lt;code&gt;master&lt;/code&gt;&lt;/strong&gt; 分支以外的分支时，下载速度贼慢，只有几百 kb 每秒，&lt;code&gt;clone&lt;/code&gt; 一个 &lt;strong&gt;「源码」&lt;/strong&gt; 都至少要半个多小时&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;申请-token&#34;&gt;申请 Token&lt;/h2&gt;
+
+&lt;p&gt;然后要去 GitHub 上申请一个新的 &lt;a href=&#34;https://github.com/settings/tokens/new&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;personal access token&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Token description&lt;/strong&gt; 也就是 Token 的名字，可以随便填。然后&lt;strong&gt;一定要勾选上 &lt;code&gt;repo&lt;/code&gt; 上的所以项目，然后别的项目一个都不要选&lt;/strong&gt;。点 &lt;code&gt;Generate token&lt;/code&gt; 生成 Token。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/028/get_token.png&#34; alt=&#34;Get Token&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;然后记下 Token 的值，也就是我打码的那一部分 (一定要记下来，因为离开这个页面之后就没有机会再次查看了)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/028/get_token_api.png&#34; alt=&#34;Get Token&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;设置-travis-ci&#34;&gt;设置 Travis CI&lt;/h2&gt;
+
+&lt;p&gt;接着来到 &lt;a href=&#34;https://travis-ci.org/account/repositories&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Travis CI&lt;/a&gt;，使用 GitHub 帐号登录；然后为 &lt;strong&gt;&lt;code&gt;Blog&lt;/code&gt;&lt;/strong&gt; 仓库打上 ☑，然后点 &lt;code&gt;setting&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/028/set_travis_1.png&#34; alt=&#34;设置 Travis CI&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;然后填写 &lt;strong&gt;Environment Variables&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Name&lt;/code&gt;&lt;/strong&gt; 填写： &lt;code&gt;GITHUB_TOKEN&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Value&lt;/code&gt;&lt;/strong&gt; 填写：刚刚在 GitHub 申请到的 Token 的值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/028/set_travis_2.png&#34; alt=&#34;设置 Travis CI&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;点击 &lt;code&gt;Add&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;编写-travis-yml&#34;&gt;编写 .travis.yml&lt;/h2&gt;
+
+&lt;p&gt;在 &lt;strong&gt;Blog&lt;/strong&gt; 的目录下创建并编辑一个 &lt;code&gt;.travis.yml&lt;/code&gt; 文件。这个文件的作用是告诉 &lt;strong&gt;Travis CI&lt;/strong&gt; 如何部署你的博客的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;language: go
+
+go:
+  - &amp;quot;1.8&amp;quot;  # 指定Golang 1.8
+
+# Specify which branches to build using a safelist
+# 分支白名单限制：只有 master 分支的提交才会触发构建
+# branches:
+#   only:
+#     - master
+
+install:
+  # 安装最新的hugo
+  - wget https://github.com/gohugoio/hugo/releases/download/v0.51/hugo_0.51_Linux-64bit.deb
+  - sudo dpkg -i hugo*.deb
+  # 安装主题
+  - git clone [你使用的主题的 Git 地址]
+
+script:
+  # 运行hugo命令
+  - hugo
+
+after_script:
+  # 部署
+  - cd ./public
+  - git init
+  - git config user.name &amp;quot;[你的名字]&amp;quot;
+  - git config user.email &amp;quot;[你的邮箱]&amp;quot;
+  - git add .
+  - git commit -m &amp;quot;Update Blog By TravisCI With Build $TRAVIS_BUILD_NUMBER&amp;quot;
+  # Github Pages
+  - git push --force --quiet &amp;quot;https://$GITHUB_TOKEN@${GH_REF}&amp;quot; master:master
+  # Github Pages
+  - git push --quiet &amp;quot;https://$GITHUB_TOKEN@${GH_REF}&amp;quot; master:master --tags
+
+env:
+ global:
+   # Github Pages
+   - GH_REF: [用来部署博客的 Git 地址]
+
+deploy:
+  provider: pages # 重要，指定这是一份github pages的部署配置
+  skip-cleanup: true # 重要，不能省略
+  local-dir: public # 静态站点文件所在目录
+  # target-branch: master # 要将静态站点文件发布到哪个分支
+  github-token: $GITHUB_TOKEN # 重要，$GITHUB_TOKEN是变量，需要在GitHub上申请、再到配置到Travis
+  # fqdn:  # 如果是自定义域名，此处要填
+  keep-history: true # 是否保持target-branch分支的提交记录
+  on:
+    branch: master # 博客源码的分支
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将上面的配置文件按照你的实际情况更改。&lt;/p&gt;
+
+&lt;p&gt;然后将代码提交到 &lt;strong&gt;Blog 仓库&lt;/strong&gt; 里。等个一两分钟，就可以在 &lt;a href=&#34;https://travis-ci.org/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Travis CI&lt;/a&gt; 上查看部署情况了&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&#34;#00FF00&#34;&gt;绿色&lt;/span&gt; 代表部署成功&amp;emsp;&amp;emsp;&lt;span style=&#34;#FFFF00&#34;&gt;黄色&lt;/span&gt; 代表正在部署&amp;emsp;&amp;emsp;&lt;span style=&#34;#FF0000&#34;&gt;红色&lt;/span&gt; 代表部署失败&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/028/run_travis.png&#34; alt=&#34;Travis CI 部署&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;然后再去你的博客，如果没有出什么偏差的话就说明部署成功了 | ・ω・’）&lt;/p&gt;
+
+&lt;p&gt;以后的话就只需要把写好的文章推送到 &lt;strong&gt;Blog 仓库&lt;/strong&gt; 下就可以了，就不需要再自己编译然后手动推送了 &lt;span class=&#34;spoiler&#34; &gt;甚至连 Hugo 都可以不要装  | ・ω・’）&lt;/span&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;附录-以及一些坑-з&#34;&gt;附录 以及一些坑 _(:з)∠)_&lt;/h1&gt;
+
+&lt;h2 id=&#34;添加-gitignore-文件&#34;&gt;添加 .gitignore 文件&lt;/h2&gt;
+
+&lt;p&gt;在 Hugo 本地编译时会产生 &lt;code&gt;public&lt;/code&gt; 文件夹，但是这个文件夹中的内容对于 &lt;strong&gt;Blog 仓库&lt;/strong&gt; 来说是不需要的 (包括用来存放主题的 &lt;code&gt;themes&lt;/code&gt; 文件夹和主题产生的 &lt;code&gt;resources&lt;/code&gt; 文件夹也是不需要的)&lt;/p&gt;
+
+&lt;p&gt;我们可以用一个&lt;code&gt;.gitignore&lt;/code&gt; 文件来排除这些内容&lt;/p&gt;
+
+&lt;p&gt;在 Blog 目录下创建并修改 &lt;code&gt;.gitignore&lt;/code&gt;，然后提交到 GitHub&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;public/*
+themes/*
+resources/*
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;##Travis CI 的分支白名单&lt;/p&gt;
+
+&lt;p&gt;我给你的 &lt;code&gt;.travis.yml&lt;/code&gt; 文件中有怎么一段&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Specify which branches to build using a safelist
+# 分支白名单限制：只有 master 分支的提交才会触发构建
+branches:
+  only:
+    - master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这一段的作用是限制触发构建的分支。这在正常开发中是很重要的配置，特别是在团队 (多人) 开发的场景中。&lt;/p&gt;
+
+&lt;p&gt;不过这里不存在这个场景，并且如果配置错了会出很大的问题，很容易坑到小白， &lt;span class=&#34;spoiler&#34; &gt;比如说我 _(:з)∠)_ &lt;/span&gt;所以默认就给注释掉了。&lt;/p&gt;
+
+&lt;p&gt;如果你晓得这是干啥的，并且觉得有必要的话，可以考虑开启&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Bottom-up  to development a Loan Calculator</title>
@@ -1732,7 +1892,7 @@ ABS 防抱死系统是防止轮胎在刹车的时候锁死。这个辅助系统�
     </item>
     
     <item>
-      <title>使用 Hugo &#43; GitHub Page 搭建个人博客</title>
+      <title>使用 Hugo &#43; GitHub Pages 搭建个人博客</title>
       <link>https://mogeko.github.io/2018/018/</link>
       <pubDate>Sun, 05 Aug 2018 00:00:00 +0000</pubDate>
       
@@ -1741,7 +1901,7 @@ ABS 防抱死系统是防止轮胎在刹车的时候锁死。这个辅助系统�
 
 &lt;p&gt;正如你所看到的，本博客换了一个主题。但你们看不到的是，本博客将静态页面生成引擎换成了 &lt;a href=&#34;https://github.com/gohugoio/hugo&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应用应该被称作静态网站生成器。这类应用将 Markdown 文件和主题一起编译成由 HTML、CSS、JavaScript 组成的静态网页。然后上传到 GitHub 上，通过 GitHub 提供的静态页面托管服务 (GitHub Page) 进行访问。&lt;/p&gt;
+&lt;p&gt;Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应用应该被称作静态网站生成器。这类应用将 Markdown 文件和主题一起编译成由 HTML、CSS、JavaScript 组成的静态网页。然后上传到 GitHub 上，通过 GitHub 提供的静态页面托管服务 (GitHub Pages) 进行访问。&lt;/p&gt;
 
 &lt;p&gt;这里就写一篇文章来记录一下踩过的坑。&lt;/p&gt;
 
@@ -1988,7 +2148,7 @@ PygmentsOptions = &amp;quot;linenos=table&amp;quot;
 - &lt;code&gt;-w&lt;/code&gt;: 监控更改，如果发生更改直接显示到博客上 (非常有用，这也是我最喜欢的一点特性了)&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;但此时只能在本地访问 (相当于预览博客，如果与期望值不符，可以随时更改)，如果想发布到 &lt;code&gt;Github Page&lt;/code&gt; 上需要先将文章配置信息中的 &lt;code&gt;draft:&lt;/code&gt; 改为 &lt;code&gt;false&lt;/code&gt;
+&lt;p&gt;但此时只能在本地访问 (相当于预览博客，如果与期望值不符，可以随时更改)，如果想发布到 &lt;code&gt;Github Pages&lt;/code&gt; 上需要先将文章配置信息中的 &lt;code&gt;draft:&lt;/code&gt; 改为 &lt;code&gt;false&lt;/code&gt;
 然后执行命令&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo
@@ -1998,7 +2158,7 @@ PygmentsOptions = &amp;quot;linenos=table&amp;quot;
 
 &lt;h3 id=&#34;发布&#34;&gt;发布&lt;/h3&gt;
 
-&lt;p&gt;不像 Hexo，Hugo 并没有提供自动发布到 &lt;code&gt;GitHub Page&lt;/code&gt; 的功能。需要将 &lt;code&gt;public&lt;/code&gt; 中的内容手动上传到 Github 上。&lt;/p&gt;
+&lt;p&gt;不像 Hexo，Hugo 并没有提供自动发布到 &lt;code&gt;GitHub Pages&lt;/code&gt; 的功能。需要将 &lt;code&gt;public&lt;/code&gt; 中的内容手动上传到 Github 上。&lt;/p&gt;
 
 &lt;p&gt;首先执行命令 &lt;code&gt;cd public&lt;/code&gt; 进入到 &lt;code&gt;public&lt;/code&gt; 文件夹中
 然后执行&lt;/p&gt;
@@ -5200,326 +5360,6 @@ cscript ospp.vbs /act
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>BaiduPCS-Go | 百度网盘命令行工具 (基于 Go)</title>
-      <link>https://mogeko.github.io/2018/013/</link>
-      <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/013/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/013/logo.png&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;提到百度网盘，想必大家都很熟悉吧。&lt;/p&gt;
-
-&lt;p&gt;百度网盘自 2012 年上线运行以来，迅速积累了大量用户。但是狗改不了吃屎，作为百度的产品，百度网盘现在是越来越恶心了，不给充钱就限速，官方居然还不承认（&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98#%E8%B4%9F%E9%9D%A2%E6%B6%88%E6%81%AF&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;百度网盘 - 维基百科&lt;/a&gt; ）其实给免费账号限速也是可以理解的（毕竟别人也是要吃饭的，没有利润的产品肯定是走不远的）但百度居然给我限速到 &lt;code&gt;20 KB/s&lt;/code&gt;！这还能用？！！&lt;/p&gt;
-
-&lt;p&gt;但人们的力量是强大的，被百度恶心到的用户们很快就找到了破解百度网盘限速的方法——&lt;strong&gt;多线程下载&lt;/strong&gt;。你不是只给我 &lt;code&gt;20 KB/s&lt;/code&gt; 吗？我开TM 500 个线程，一样把 &lt;code&gt;10 M/s&lt;/code&gt; 的带宽占满。于是乎一大批第三方网盘拔地而起，例如：&lt;del&gt;&lt;a href=&#34;https://pandownload.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;PanDownload&lt;/a&gt;&lt;/del&gt;（已停止运营）、&lt;a href=&#34;https://www.coolapk.com/apk/com.downloading.main.baiduyundownload&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Village&lt;/a&gt;（Android）、&lt;a href=&#34;https://greasyfork.org/zh-CN/scripts?utf8=%E2%9C%93&amp;amp;q=%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;油猴脚本&lt;/a&gt; 等。&lt;/p&gt;
-
-&lt;p&gt;今天介绍的 BaiduPCS-Go 也是其中一个，相比于其他第三方网盘，具有以下特点：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;不需要 Aria2、IDM 等第三方软件&lt;/li&gt;
-&lt;li&gt;自定义线程数（建议将&lt;code&gt;最大线程数&lt;/code&gt;设置为 &lt;code&gt;50 ~ 500&lt;/code&gt;，线程开太多会造成搞负载）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;支持通配符匹配路径&lt;/strong&gt;  &lt;a href=&#34;https://zh.wikipedia.org/wiki/%E9%80%9A%E9%85%8D%E7%AC%A6&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;通配符-维基百科&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;命(bi)令(ge)行(gao)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/iikira/BaiduPCS-Go&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;BaiduPCS-Go 的 Github&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
-
-&lt;p&gt;得益于 Go 的跨平台编译的特性，BaiduPCS-Go 几乎可以支持所有操作系统，只需要在 &lt;a href=&#34;https://github.com/iikira/BaiduPCS-Go/releases&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Releases&lt;/a&gt; 中选取合适的版本下载、运行就可以了&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Releases&#34; src=&#34;https://mogeko.github.io/images/013/Releases.png&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;下载 &lt;a href=&#34;https://github.com/iikira/BaiduPCS-Go/releases&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;BaiduPCS-Go&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;以 Windows 为例，根据我的电脑 CPU 下载并解压 &lt;code&gt;BaiduPCS-Go-v3.2.1-windows-x86.zip&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;BaiduPCS-Go.exe&#34; src=&#34;https://mogeko.github.io/images/013/BaiduPCS-Go.exe.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;可以直接双击运行（进入 console 模式）&lt;/p&gt;
-
-&lt;p&gt;也可以在命令行中运行&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Run BaiduPCS-Go.exe&#34; src=&#34;https://mogeko.github.io/images/013/Run_BaiduPCS-Go.exe.png&#34;&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;在android-与-ios-上安装&#34;&gt;在Android 与 iOS 上安装&lt;/h2&gt;
-
-&lt;p&gt;在 Android 上安装与在桌面上安装的思路差不多，都是 下载 -&amp;gt; 解压 -&amp;gt; (在命令行中)运行&lt;/p&gt;
-
-&lt;p&gt;不同的是 Android 上没有原生的命令行，需要借助 &lt;a href=&#34;https://termux.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Termux&lt;/a&gt; 或 &lt;a href=&#34;https://github.com/NeoTerm/NeoTerm/releases&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;NeoTerm&lt;/a&gt; 或 终端模拟器等 APP，以提供终端环境。&lt;/p&gt;
-
-&lt;p&gt;详情请参考：&lt;a href=&#34;https://github.com/iikira/BaiduPCS-Go/wiki/Android-%E8%BF%90%E8%A1%8C%E6%9C%AC-BaiduPCS-Go-%E7%A8%8B%E5%BA%8F%E5%8F%82%E8%80%83%E7%A4%BA%E4%BE%8B&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Android 运行本 BaiduPCS-Go 程序参考示例&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;iOS 就比较特殊了，因为 iOS 系统的特殊性，需要越狱后才能提供相应的运行环境。&lt;/p&gt;
-
-&lt;p&gt;越狱后，在 Cydia 搜索下载并安装 MobileTerminal，以提供终端环境。&lt;/p&gt;
-
-&lt;h1 id=&#34;命令列表&#34;&gt;命令列表&lt;/h1&gt;
-
-&lt;p&gt;在命令行中，在 &lt;code&gt;BaiduPCS-Go.exe&lt;/code&gt; 所在的目录下，使用以下格式输入命令&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go [global options] command [command options] [arguments...]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;简单的说就是以 &lt;code&gt;BaiduPCS-Go&lt;/code&gt; 开头，后面跟具体的命令（参数）。&lt;/p&gt;
-
-&lt;p&gt;未带任何其他参数运行程序，则程序进入 console 模式。（光标前有 &lt;code&gt;BaiduPCS-Go &amp;gt;&lt;/code&gt; 的前缀）console 模式下直接输入命令，不需要加 &lt;code&gt;BaiduPCS-Go&lt;/code&gt; 的前缀。&lt;/p&gt;
-
-&lt;h2 id=&#34;登录&#34;&gt;登录&lt;/h2&gt;
-
-&lt;p&gt;既然是第三方百度网盘，肯定要登录百度账号才能使用。&lt;/p&gt;
-
-&lt;p&gt;有两种方法可以登录，&lt;strong&gt;常规登录&lt;/strong&gt; 和 &lt;strong&gt;BDUSS 登录&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;常规登陆&#34;&gt;常规登陆&lt;/h3&gt;
-
-&lt;p&gt;直接键入以下命令&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go login
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后依次输入 &lt;code&gt;用户名&lt;/code&gt; 和 &lt;code&gt;密码&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;BaiduPCS-Go Login&#34; src=&#34;https://mogeko.github.io/images/013/Login_normal.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;登录成功！&lt;/p&gt;
-
-&lt;h3 id=&#34;bduss-登录&#34;&gt;BDUSS 登录&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/iikira/BaiduPCS-Go/wiki/%E5%85%B3%E4%BA%8E-%E8%8E%B7%E5%8F%96%E7%99%BE%E5%BA%A6-BDUSS&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;获取百度 BDUSS&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;获得 BDUSS 后，用以下命令登录（[BDUSS] = 你取得的 BDUSS）&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go login -bduss=[BDUSS]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img alt=&#34;BaiduPCS-Go Login -bduss&#34; src=&#34;https://mogeko.github.io/images/013/Login_BDUSS.png&#34;&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;获取-当前账号-已有的账号&#34;&gt;获取 当前账号 &amp;amp; 已有的账号&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go loglist
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img alt=&#34;loglist&#34; src=&#34;https://mogeko.github.io/images/013/loglist.png&#34;&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;切换已登录的百度帐号&#34;&gt;切换已登录的百度帐号&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go su -uid=[uid]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go su
-请输入要切换帐号的 index 值 &amp;gt;[index 值]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img alt=&#34;BaiduPCS-Go su&#34; src=&#34;https://mogeko.github.io/images/013/su.png&#34;&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;退出已登录的百度帐号&#34;&gt;退出已登录的百度帐号&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go logout -uid=[uid]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go logout
-请输入要退出帐号的 index 值 &amp;gt; [index 值]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img alt=&#34;BaiduPCS-Go logout&#34; src=&#34;https://mogeko.github.io/images/013/logout.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;因为我只有一个百度账号，就不演示第二种退出方式了&lt;/p&gt;
-
-&lt;h2 id=&#34;获取配额-获取网盘总空间-和-已使用空间&#34;&gt;获取配额（获取网盘总空间 和 已使用空间）&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go quota
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img alt=&#34;BaiduPCS-Go quota&#34; src=&#34;https://mogeko.github.io/images/013/quota.png&#34;&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;文件-目录操作&#34;&gt;文件/目录操作&lt;/h2&gt;
-
-&lt;p&gt;对 目录、文件的操作与 Linux 命令行相似。&lt;/p&gt;
-
-&lt;p&gt;目录、文件名可以使用通配符（*）&lt;/p&gt;
-
-&lt;h3 id=&#34;切换工作目录&#34;&gt;切换工作目录&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go cd [目录]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;输出当前所在目录&#34;&gt;输出当前所在目录&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go pwd
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;列出当前工作目录的文件和目录或指定目录&#34;&gt;列出当前工作目录的文件和目录或指定目录&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go ls
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go ls [目录]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;获取单个文件-目录的元信息-详细信息&#34;&gt;获取单个文件 / 目录的元信息 (详细信息)&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go meta [文件/目录]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果没有指定的目录则默认为 &lt;code&gt;获取根目录的元信息&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;创建目录&#34;&gt;创建目录&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go mkdir [目录]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;删除-文件-目录&#34;&gt;删除 文件/目录&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go rm [文件或目录1] [文件或目录2] [文件或目录3] ...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;复制-文件-目录&#34;&gt;复制 文件/目录&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go cp [文件/目录] [目标 文件/目录]
-BaiduPCS-Go cp [文件/目录1] [文件/目录2] [文件/目录3] ... [目标目录]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;复制文件/目录时，需确保每个文件/目录的有效性&lt;/p&gt;
-
-&lt;h3 id=&#34;移动-重命名-文件-目录&#34;&gt;移动/重命名 文件/目录&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# 移动：
-BaiduPCS-Go mv &amp;lt;文件/目录1&amp;gt; &amp;lt;文件/目录2&amp;gt; &amp;lt;文件/目录3&amp;gt; ... &amp;lt;目标目录&amp;gt;
-# 重命名：
-BaiduPCS-Go mv &amp;lt;文件/目录&amp;gt; &amp;lt;重命名的文件/目录&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;移动/重命名文件/目录时，需确保每个文件/目录的有效性&lt;/p&gt;
-
-&lt;h2 id=&#34;下载文件&#34;&gt;下载文件&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go download [文件或目录1] [文件或目录2] [文件或目录3]...
-BaiduPCS-Go d [文件或目录1] [文件或目录2] [文件或目录3]...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;支持同时下载多个文件/目录&lt;/p&gt;
-
-&lt;p&gt;下载的文件默认保存到 &lt;strong&gt;程序所在目录&lt;/strong&gt; 的 &lt;code&gt;download&lt;/code&gt; 目录下，你可以&lt;a href=&#34;#自定义储存目录&#34;&gt;自定义储存目录&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;上传文件&#34;&gt;上传文件&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go upload [本地文件或目录1] [文件或目录2] ... [网盘的目标目录]
-BaiduPCS-Go u [本地文件或目录1] [文件或目录2] ... [网盘的目标目录]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;注意：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;本地的目录要使用 &lt;code&gt;\&lt;/code&gt; 转义（两个反斜杠 &lt;code&gt;\&lt;/code&gt;）&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;**区别反斜杠 &lt;code&gt;\&lt;/code&gt; 和 斜杠 &lt;code&gt;/&lt;/code&gt; **&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# 将本地的 C:\Users\Administrator\Desktop\1.mp4 上传到网盘 /视频 目录
-# 本地的目录要使用 &amp;quot;\&amp;quot; 转义（两个反斜杠 &amp;quot;\&amp;quot;）
-# 注意区别反斜杠 &amp;quot;\&amp;quot; 和 斜杠 &amp;quot;/&amp;quot;
-BaiduPCS-Go upload C:\\Users\\Administrator\\Desktop\\1.mp4 /视频
-
-# 将本地的 C:\Users\Administrator\Desktop\1.mp4 和 C:\Users\Administrator\Desktop\2.mp4 上传到网盘 /视频 目录
-BaiduPCS-Go upload C:\\Users\\Administrator\\Desktop\\1.mp4 C:\\Users\\Administrator\\Desktop\\2.mp4 /视频
-
-# 将本地的 C:\Users\Administrator\Desktop 整个目录上传到网盘 /视频 目录
-BaiduPCS-Go upload C:\\Users\\Administrator\\Desktop /视频
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;设置&#34;&gt;设置&lt;/h2&gt;
-
-&lt;p&gt;在 BaiduPCS-Go 中，使用以下格式的命令进行设置&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go set OptionName Value
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;翻译一下就是&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go set [被设置的项目] [你设置的值]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;让我们先来看一下有哪些项目可以被设置&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go set -h
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img alt=&#34;BaiduPCS-Go set&#34; src=&#34;https://mogeko.github.io/images/013/set.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;简单介绍一下&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;appid&lt;/code&gt;                    BaiduPCS-Go 的应用ID，一般没必要改
-&lt;code&gt;user_agent&lt;/code&gt;     浏览器标识，用来伪装成正版“百度云管家”的（如果能下载且速度不慢就没必要改）
-&lt;code&gt;cache_size&lt;/code&gt;            下载缓存大小，一般没必要改&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;max_parallel&lt;/code&gt;     最大线程数 -&amp;gt; &lt;a href=&#34;#设置最大线程数&#34;&gt;设置最大线程数&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;savedir&lt;/code&gt;                 下载文件的储存目录 -&amp;gt; &lt;a href=&#34;#自定义储存目录&#34;&gt;设置自定义储存目录&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;自定义储存目录&#34;&gt;自定义储存目录&lt;/h3&gt;
-
-&lt;p&gt;下载文件默认保存在 &lt;strong&gt;程序所在目录&lt;/strong&gt; 的 &lt;code&gt;download&lt;/code&gt; 目录下，使用以下命令自定义储存目录&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go set savedir [储存目录的路径]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# 设置保存目录，保存到 D:\Downloads (注意两个反斜杠 &amp;quot;\&amp;quot; )
-BaiduPCS-Go set savedir D:\\Downloads
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;设置最大线程数&#34;&gt;设置最大线程数&lt;/h3&gt;
-
-&lt;p&gt;理论上（在没有占满带宽的情况下），线程开得越多下得越快，同时占用资源越多；&lt;strong&gt;建议开到 &lt;code&gt;50 ~ 500&lt;/code&gt;&lt;/strong&gt;（下载速度不仅仅取决于线程数，也取决于带宽大小；如果增加带宽却没有提速，说明瓶颈在带宽上）；如果觉得下载文件时电脑运行卡顿，就开小一点。&lt;/p&gt;
-
-&lt;p&gt;设置方法&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;BaiduPCS-Go set max_parallel [最大并发数]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# 设置下载最大并发数为 150
-BaiduPCS-Go set max_parallel 150
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;退出程序&#34;&gt;退出程序&lt;/h2&gt;
-
-&lt;p&gt;运行命令 &lt;code&gt;quit&lt;/code&gt; 或 &lt;code&gt;exit&lt;/code&gt; 或 组合键 &lt;code&gt;Ctrl+C&lt;/code&gt; 或 组合键 &lt;code&gt;Ctrl+D&lt;/code&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;已知问题&#34;&gt;已知问题&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;下载进度到最后的时候，下载速度会降低。&lt;/li&gt;
-&lt;li&gt;程序的 console 模式在 windows 下部分中文无法正常输入。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;
-
-&lt;p&gt;本文章参考了：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/iikira/BaiduPCS-Go&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub - iikira/BaiduPCS-Go: 百度网盘工具箱 - Go 语言编写&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;使用第三方百度网盘是有风险的，如果你因为使用第三方百度网盘导致账号被封，本博客概不负责&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
