@@ -167,7 +167,7 @@ MBTN_LEFT cycle pause
 
 &lt;p&gt;&lt;strong&gt;find_subtitles.lua&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;自动使用 &lt;strong&gt;subliminal&lt;/strong&gt; 从字幕站匹配并下载字幕。&lt;/p&gt;
+&lt;p&gt;自动使用 &lt;a href=&#34;https://github.com/Diaoul/subliminal&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;subliminal&lt;/strong&gt;&lt;/a&gt; 从字幕站匹配并下载字幕。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;find_subtitles.lua 默认下载的是英文字幕，下载中午字幕需要在脚本中将 38 行的 &lt;code&gt;en&lt;/code&gt; 替换换成 &lt;code&gt;zh&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
