@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Mogeko">
+  
+  
+  
+  <link rel="prev" href="https://mogeko.github.io/2018/028/" />
+  
+  <link rel="canonical" href="https://mogeko.github.io/2018/029/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           GNOME MPV | GNU/Linux 下一个不错的流媒体播放器 | Mogeko`s Blog
+       
+  </title>
+  <meta name="title" content="GNOME MPV | GNU/Linux 下一个不错的流媒体播放器 | Mogeko`s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://mogeko.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "GNOME MPV | GNU/Linux 下一个不错的流媒体播放器",
+    "headline" : "GNOME MPV | GNU/Linux 下一个不错的流媒体播放器",
+    "description" : "-- 在 GNU/Linux 下看视频向来是一件麻烦事。VLC 太过臃肿，MPV 又太过简 (chǒu) 陋了。
+那么，有没有一款播放器能兼顾美观与内在，随便还拥有较好的易用性和较强的定制能力呢？
+当然是有了！GNOME MPV 就是这么一款播放器，它基于 MPV，继承了 MPV 强大的编解码器，以及其恐怖的定制能力 脚本才是 MPV 的灵魂 | ・ω・’）。同时又拥有较为美观方便的 GUI，简直是居家旅行必备的万能播放器啊！！😂😂😂
+官网：https://gnome-mpv.github.io
+GitHub 地址：https://github.com/gnome-mpv/gnome-mpv
+依赖  autotools (只在构建时依赖) autoconf-archive (只在构建时依赖) pkg-config (只在构建时依赖) gcc (只在构建时依赖) intltool (只在构建时依赖) python2 (只在构建时依赖) glib2 gtk3 libmpv youtube-dl (可选)  安装 GNU/Linux packages  Arch Linux https://www.archlinux.org/packages/gnome-mpv
+ Arch Linux (Git): https://aur.archlinux.org/packages/gnome-mpv-git
+ Debian testing: https://packages.debian.org/testing/gnome-mpv
+ Debian unstable: https://packages.debian.org/sid/gnome-mpv
+ Fedora (rpmfusion): https://admin.rpmfusion.org/pkgdb/package/free/gnome-mpv",
+    "inLanguage" : "zh-cn",
+    "author" : "Mogeko",
+    "creator" : "Mogeko",
+    "publisher": "Mogeko",
+    "accountablePerson" : "Mogeko",
+    "copyrightHolder" : "Mogeko",
+    "copyrightYear" : "2018",
+    "datePublished": "2018-11-20 16:52:42 &#43;0800 &#43;0800",
+    "dateModified" : "2018-11-20 16:52:42 &#43;0800 &#43;0800",
+    "url" : "https://mogeko.github.io/2018/029/",
+    "wordCount" : "245",
+    "keywords" : [ "GNU/Linux","Ubuntu", "Mogeko`s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.github.io">Mogeko`s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.github.io">Mogeko`s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">GNOME MPV | GNU/Linux 下一个不错的流媒体播放器</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://mogeko.github.io" rel="author">Mogeko</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2018-11-20 itemprop="datePublished">November 20, 2018</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E8%BD%AF%E4%BB%B6/"> 关于软件 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<!-- 
+<img src="" alt="" >
+<span class="spoiler" ></span>
+ -->
+
+<p>在 GNU/Linux 下看视频向来是一件麻烦事。<a href="https://www.videolan.org/index.zh.html" rel="nofollow noreferrer" target="_blank"><strong>VLC</strong></a> 太过臃肿，<a href="https://mpv.io/" rel="nofollow noreferrer" target="_blank"><strong>MPV</strong></a> 又太过简 (chǒu) 陋了。</p>
+
+<p>那么，有没有一款播放器能兼顾美观与内在，随便还拥有较好的易用性和较强的定制能力呢？</p>
+
+<p>当然是有了！<strong>GNOME MPV</strong> 就是这么一款播放器，它基于 <strong>MPV</strong>，继承了 <strong>MPV</strong> 强大的编解码器，以及其恐怖的定制能力 <span class="spoiler" >脚本才是 <strong>MPV</strong> 的灵魂 | ・ω・’）</span>。同时又拥有较为美观方便的 GUI，简直是居家旅行必备的万能播放器啊！！😂😂😂</p>
+
+<p>官网：<a href="https://gnome-mpv.github.io" rel="nofollow noreferrer" target="_blank">https://gnome-mpv.github.io</a></p>
+
+<p>GitHub 地址：<a href="https://github.com/gnome-mpv/gnome-mpv" rel="nofollow noreferrer" target="_blank">https://github.com/gnome-mpv/gnome-mpv</a></p>
+
+<p><img src="https://camo.githubusercontent.com/2dce36038353632477c5b0489f0023aa7e51609b/68747470733a2f2f676e6f6d652d6d70762e6769746875622e696f2f696d616765732f73637265656e73686f742d302e706e67" alt="GNOME MPV" ></p>
+
+<h1 id="依赖">依赖</h1>
+
+<ul>
+<li>autotools (只在构建时依赖)</li>
+<li>autoconf-archive (只在构建时依赖)</li>
+<li>pkg-config (只在构建时依赖)</li>
+<li>gcc (只在构建时依赖)</li>
+<li>intltool (只在构建时依赖)</li>
+<li>python2 (只在构建时依赖)</li>
+<li><strong>glib2</strong></li>
+<li><strong>gtk3</strong></li>
+<li><strong>libmpv</strong></li>
+<li>youtube-dl (可选)</li>
+</ul>
+
+<h1 id="安装">安装</h1>
+
+<h2 id="gnu-linux-packages">GNU/Linux packages</h2>
+
+<ul>
+<li><p>Arch Linux <a href="https://www.archlinux.org/packages/gnome-mpv" rel="nofollow noreferrer" target="_blank">https://www.archlinux.org/packages/gnome-mpv</a></p></li>
+
+<li><p>Arch Linux (Git): <a href="https://aur.archlinux.org/packages/gnome-mpv-git" rel="nofollow noreferrer" target="_blank">https://aur.archlinux.org/packages/gnome-mpv-git</a></p></li>
+
+<li><p>Debian testing: <a href="https://packages.debian.org/testing/gnome-mpv" rel="nofollow noreferrer" target="_blank">https://packages.debian.org/testing/gnome-mpv</a></p></li>
+
+<li><p>Debian unstable: <a href="https://packages.debian.org/sid/gnome-mpv" rel="nofollow noreferrer" target="_blank">https://packages.debian.org/sid/gnome-mpv</a></p></li>
+
+<li><p>Fedora (rpmfusion): <a href="https://admin.rpmfusion.org/pkgdb/package/free/gnome-mpv" rel="nofollow noreferrer" target="_blank">https://admin.rpmfusion.org/pkgdb/package/free/gnome-mpv</a></p></li>
+
+<li><p>Frugalware: <a href="http://www4.frugalware.org/pub/linux/distributions/frugalware/frugalware-current/source/xapps-extra/gnome-mpv/" rel="nofollow noreferrer" target="_blank">http://www4.frugalware.org/pub/linux/distributions/frugalware/frugalware-current/source/xapps-extra/gnome-mpv/</a></p></li>
+
+<li><p>OpenSUSE: <a href="https://software.opensuse.org/package/gnome-mpv" rel="nofollow noreferrer" target="_blank">https://software.opensuse.org/package/gnome-mpv</a></p></li>
+
+<li><p>Gentoo: <a href="https://packages.gentoo.org/packages/media-video/gnome-mpv" rel="nofollow noreferrer" target="_blank">https://packages.gentoo.org/packages/media-video/gnome-mpv</a></p></li>
+
+<li><p>Guix: <a href="https://www.gnu.org/software/guix/packages/g.html#gnome-mpv" rel="nofollow noreferrer" target="_blank">https://www.gnu.org/software/guix/packages/g.html#gnome-mpv</a></p></li>
+
+<li><p>Solus: <a href="https://packages.solus-project.com/shannon/g/gnome-mpv" rel="nofollow noreferrer" target="_blank">https://packages.solus-project.com/shannon/g/gnome-mpv</a></p></li>
+
+<li><p>Ubuntu: <a href="https://launchpad.net/~xuzhen666/+archive/ubuntu/gnome-mpv" rel="nofollow noreferrer" target="_blank">https://launchpad.net/~xuzhen666/+archive/ubuntu/gnome-mpv</a></p></li>
+</ul>
+
+<h2 id="source-code">Source code</h2>
+
+<p>在终端中运行以下命令以构建并安装</p>
+
+<pre><code class="language-shell">./autogen.sh &amp;&amp; make &amp;&amp; sudo make install
+</code></pre>
+
+<h1 id="使用">使用</h1>
+
+<h2 id="配置">配置</h2>
+
+<p>推荐使用 <strong>MPV</strong> 的配置文件来对 <strong>GNOME MPV</strong> (及 <code>mpv.conf</code> 和 <code>input.conf</code> ) 进行配置，这样一方面可以使配置兼容 <strong>MPV</strong>，另一方面可定制性更高。</p>
+
+<p><strong>首选项</strong>  -&gt; 勾选 <strong>加载 MPV 配置文件</strong> 和 <strong>加载 MPV 输入配置文件</strong> -&gt; 定位到  <code>mpv.conf</code> 和 <code>input.conf</code> 的位置 (Linux 下一般是 <code>~/.config/mpv/</code>)</p>
+
+<p>以下是我目前使用的配置文件；因为只是轻度使用，所以比较简单</p>
+
+<p>更多配置请参考：<a href="https://github.com/mpv-player/mpv/blob/master/etc/mpv.conf" rel="nofollow noreferrer" target="_blank">MPV 配置文件示例</a>&emsp;&emsp;<a href="https://github.com/mpv-player/mpv/blob/master/etc/input.conf" rel="nofollow noreferrer" target="_blank">MPV 输入配置文件</a></p>
+
+<p><strong>mpv.conf:</strong></p>
+
+<pre><code class="language-conf"># 没有边框
+#no-border
+
+# 记住断点
+seve-position-on-quit
+
+# 音/字幕轨选择
+## 指定优先使用音轨（DVD使用ISO 639-1两位语言代码，MKV、MPEG-TS使用ISO 639-2 三位语言代码）
+alang=zh,chi
+## 指定优先使用字幕轨（DVD使用ISO 639-1两位语言代码，MKV、MPEG-TS使用ISO 639-2 三位语言代码）
+slang=zh,chi
+
+# 音/字幕轨加载方式
+## 加载视频文件的外部音频文件方式。（fuzzy 加载含有视频文件名的全部音频文件）
+audio-file-auto=fuzzy
+## 加载视频文件的外部字幕文件方式。（fuzzy 加载含有视频文件名的全部字幕文件）
+sub-auto=fuzzy
+## 字幕编码
+sub-codepage=utf-8:gb18030
+</code></pre>
+
+<p><strong>input.conf:</strong></p>
+
+<pre><code class="language-conf"># 退出方式
+q quit-watch-later
+Q quit-watch-later
+ESC quit-watch-later
+CLOSE_WIN quit-watch-later
+
+# 音量调整
+WHEEL_UP volume 5
+WHEEL_DOWN volume -5
+UP volume 5
+DOWN volume -5
+
+# 播放/暂停
+MBTN_LEFT cycle pause
+</code></pre>
+
+<h2 id="插件">插件</h2>
+
+<p><strong>MPV</strong> 之所以广受好评，一个很重要的原因就是它强大的插件系统。<strong>GNOME MPV</strong> 基于 <strong>MPV</strong>，自然是继承了大把的插件，这也让 <strong>GNOME MPV</strong> 的可玩性提升了一个档次。</p>
+
+<h3 id="插件安装方法">插件安装方法</h3>
+
+<p><strong>MPV</strong>: 将插件脚本粘贴到 <code>~/.config/mpv/scripts</code> 文件夹中</p>
+
+<p><strong>GNOME MPV</strong>: <strong>首选项</strong> -&gt; <strong>插件</strong> -&gt; 选择插件脚本的路径</p>
+
+<h3 id="推荐几个插件">推荐几个插件</h3>
+
+<p>这里推荐几个我比较常用的插件。</p>
+
+<p>更多插件请参考：<a href="https://github.com/mpv-player/mpv/wiki/User-Scripts" rel="nofollow noreferrer" target="_blank"><strong>MPV</strong> 插件脚本列表</a></p>
+
+<p><strong>autoload.lua</strong></p>
+
+<p>自动加载当前播放文件目录里的视频文件到播放列表，也就是自动连播。</p>
+
+<p><a href="https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua" rel="nofollow noreferrer" target="_blank">GitHub 地址</a>&emsp;&emsp;<a href="https://github.com/Mogeko/Blog/releases/download/029/autoload.lua" rel="nofollow noreferrer" target="_blank">下载地址 (不保证最新)</a></p>
+
+<p><strong>save-sub-delay.lua</strong></p>
+
+<p>有时候外挂字幕时间轴不正确，调好之后，这个脚本会保存delay信息。</p>
+
+<p><a href="https://github.com/zc62/mpv-scripts/blob/master/save-sub-delay.lua" rel="nofollow noreferrer" target="_blank">GitHub 地址</a>&emsp;&emsp;<a href="https://github.com/Mogeko/Blog/releases/download/029/save-sub-delay.lua" rel="nofollow noreferrer" target="_blank">下载地址 (不保证最新)</a></p>
+
+<p><strong>find_subtitles.lua</strong></p>
+
+<p>自动使用 <strong>subliminal</strong> 从字幕站匹配并下载字幕。</p>
+
+<p><strong>find_subtitles.lua 默认下载的是英文字幕，下载中午字幕需要在脚本中将 38 行的 <code>en</code> 替换换成 <code>zh</code></strong></p>
+
+<p>依赖：</p>
+
+<ul>
+<li><p>python2 <span class="spoiler" >实际上是 <strong>subliminal</strong> 依赖 python2</span></p></li>
+
+<li><p>subliminal -&gt; <a href="https://github.com/Diaoul/subliminal" rel="nofollow noreferrer" target="_blank">GitHub 地址 (安装方法)</a></p></li>
+</ul>
+
+<p><a href="https://github.com/directorscut82/find_subtitles/blob/master/find_subtitles.lua" rel="nofollow noreferrer" target="_blank">GitHub 地址</a>&emsp;&emsp;<a href="https://github.com/Mogeko/Blog/releases/download/029/find_subtitles.lua" rel="nofollow noreferrer" target="_blank">下载地址 (我调整过的版本)</a></p>
+
+<p><br></p>
+
+<p><center>  ·End·  </center></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Mogeko </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://mogeko.github.io/2018/029/>https://mogeko.github.io/2018/029/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://mogeko.github.io/tags/gnu/linux/">
+                    #GNU/Linux</a></span>
+            
+            <span class="tag"><a href="https://mogeko.github.io/tags/ubuntu/">
+                    #Ubuntu</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://mogeko.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://mogeko.github.io/2018/028/" class="prev" rel="prev" title="使用 Travis CI 自动部署 Hugo 博客"><i class="iconfont icon-left"></i>&nbsp;使用 Travis CI 自动部署 Hugo 博客</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '936cecdd2ab935870ca5',
+        clientSecret: '39cfc7a3cb9a974b6609f3fdaa637e2917e3e40a',
+        repo: 'Blog',
+        owner: 'Mogeko',
+        admin: ['Mogeko'],
+        id: location.pathname, 
+        distractionFreeMode: false 
+    });
+    (function () {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+            return;
+        }
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2017 - 2018</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://mogeko.github.io">Mogeko</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
