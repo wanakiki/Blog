@@ -6,8 +6,186 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 21 Nov 2018 12:38:05 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 21 Nov 2018 19:30:25 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GNU/Linux 技巧：如何快速的找到一个文件</title>
+      <link>https://mogeko.github.io/2018/032/</link>
+      <pubDate>Wed, 21 Nov 2018 19:30:25 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/032/</guid>
+      <description>
+
+&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/032/&#34; &gt;
+&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;p&gt;在使用计算机的过程中，我们都有着这么一个需求：&lt;strong&gt;找文件！！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;“卧槽，我的 XXX 文件放哪儿去了？”Σ(っ °Д °;)っ&lt;/p&gt;
+
+&lt;p&gt;“XXX 文件不应该就在 XXX 文件夹里吗？！咋个找球不到啊？”‧º·(˚ ˃̣̣̥᷄⌓˂̣̣̥᷅ )‧º·˚&lt;/p&gt;
+
+&lt;p&gt;“MMP！1000 多个文件！我找你麻痹！！”（╯‵□′）╯︵┴─┴&lt;/p&gt;
+
+&lt;p&gt;在一些没有 GUI 的 GNU/Linux 中，遇到这种情况更是雪上加霜。好在 GNU/Linux 的终端中有着不少优秀的命令行工具，可以帮助我们解决上述问题。&lt;/p&gt;
+
+&lt;p&gt;下面就介绍三个最常用的在 GNU/Linux 中快速找文件的命令行工具：&lt;strong&gt;ls&lt;/strong&gt;、&lt;strong&gt;tree&lt;/strong&gt; 和 &lt;strong&gt;find&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;ls&#34;&gt;ls&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;ls&lt;/code&gt; 可能是所有 Linuxer 学习到的第一个命令了 &lt;span class=&#34;spoiler&#34; &gt;cd: 喵喵喵？&lt;/span&gt; 它既简单又实用，如果给 GNU/Linux 中所有的命令使用频率排个名的话，&lt;code&gt;ls&lt;/code&gt; 绝对在前 5。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ls&lt;/code&gt; 的作用就是列出指定目录下 (默认当前目录) 的所有可见的文件与文件夹，就像这样：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;ls&#34; src=&#34;https://mogeko.github.io/images/032/ls.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;添加 &lt;code&gt;-l&lt;/code&gt; 选项则可以查看文件的更多信息。同时再加上 &lt;code&gt;-h&lt;/code&gt; 则可查看到文件文件的大小：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;ls -lh&#34; src=&#34;https://mogeko.github.io/images/032/ls-lh.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ls&lt;/code&gt; 也可以查看指定目录下的文件：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;ls /etc/apt&#34; src=&#34;https://mogeko.github.io/images/032/ls_etc-apt.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;或者使用&lt;strong&gt;通配符&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;ls *.yaml&#34; src=&#34;https://mogeko.github.io/images/032/ls_-.yaml.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;想要查看隐藏文件？加个 &lt;code&gt;-a&lt;/code&gt; 就可以了：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;ls -a&#34; src=&#34;https://mogeko.github.io/images/032/ls-a.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ls&lt;/code&gt; 还可以用来在无聊时打发时间😂😂&lt;/p&gt;
+
+&lt;p&gt;在终端中执行以下命令，然后看着屏幕滚就可以了；在一下比较大型的系统中，可以滚一两个小时呢！！&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;ls -R /
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;看腻了可以用 &lt;code&gt;Ctrl + C&lt;/code&gt; 强制中断执行 | ・ω・’）&lt;/p&gt;
+
+&lt;p&gt;更多与 &lt;code&gt;ls&lt;/code&gt; 相关的选项，可以查看 &lt;code&gt;ls&lt;/code&gt; 的文档，通过以下命令查看&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;man ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;tree&#34;&gt;tree&lt;/h1&gt;
+
+&lt;p&gt;如果你想以更加直观的方式查看目录结构，&lt;code&gt;tree&lt;/code&gt; 是个不错的选择。&lt;/p&gt;
+
+&lt;p&gt;一般的 GNU/Linux 发行版上默认是没有安装 &lt;code&gt;tree&lt;/code&gt; 的，我们先使用&lt;strong&gt;包管理器&lt;/strong&gt;安装 &lt;code&gt;tree&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;archlinux&#34;&gt;Archlinux&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;pacman -S tree
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ubuntu-debian&#34;&gt;Ubuntu / Debian&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo apt-get install tree
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;fedora-centos&#34;&gt;Fedora / CentOS&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo yum install tree
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果不带任何参数的运行 &lt;code&gt;tree&lt;/code&gt;，将会从当前目录开始，遍历当前目录下的所有子目录，形成一个树状图。想这样：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;tree&#34; src=&#34;https://mogeko.github.io/images/032/tree.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;这个命令非常有用，特别是对于我们这些 Bloger 来说；比如以下场景：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;简单讲解一下各个文件的作用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;&amp;gt; .
+&amp;gt; ├── Atom # 供单独使用的脚本
+&amp;gt; │   ├── Office_2016
+&amp;gt; │   │   ├── Office_Project_Pro.cmd # 将零售版的 Office Project Plus 转换为批量授权版, 然后激活
+&amp;gt; │   │   ├── Office_Project_Std.cmd # 将零售版的 Office Project 转换为批量授权版, 然后激活
+&amp;gt; │   │   ├── Office_Retail2VOL+Activate.cmd # 将零售版的 Office 转换为批量授权版, 然后激活
+&amp;gt; │   │   ├── Office_Retail2VOL_Only.cmd # 仅仅将零售版的 Office 转换为批量授权版, 不激活
+&amp;gt; │   │   ├── Office_Visio_Pro.cmd # 将零售版的 Office Visio Plus 转换为批量授权版, 然后激活
+&amp;gt; │   │   ├── Office_Visio_Std.cmd # 将零售版的 Office Visio 转换为批量授权版, 然后激活
+&amp;gt; │   │   ├── Office_VOL_Activate.cmd # 激活批量授权版的 Office
+&amp;gt; │   │   └── 查看 Office 状态.cmd
+&amp;gt; │   ├── Office_2013
+&amp;gt; │   │   ├── 与 Office_2016 同理, 就不单独介绍了
+&amp;gt; │   ├── Office_2010
+&amp;gt; │   │   ├── 与 Office_2016 同理
+&amp;gt; │   └── Windows_Activate.cmd # 激活批量授权版的 Windows
+&amp;gt; ├── KMS 服务可用性测试.url # 检测 KMS 服务器是否挂了
+&amp;gt; ├── README.md
+&amp;gt; └── Run.cmd# 激活脚本
+&amp;gt; ```
+
+对于那些需要介绍每个文件的功能的场景，`tree` 简直是神器好不好！！
+
+扯远了 | ・ω・’）
+
+&amp;lt;br&amp;gt;
+
+如果不想列地太多，可以使用 `-L [数字]` 选项来指定查找的层数，例如：
+
+&amp;lt;img alt=&amp;quot;tree -L1&amp;quot; src=&amp;quot;https://mogeko.github.io/images/032/tree -L1.png&amp;quot; &amp;gt;
+
+你也可以显示指定目录的树状图：
+
+&amp;lt;img alt=&amp;quot;tree ~/.config/mpv&amp;quot; src=&amp;quot;https://mogeko.github.io/images/032/tree_-.config-mpv.png&amp;quot; &amp;gt;
+
+如果需要列出的是一个很大的树状图，可以配合 `less` 使用：
+
+```shell
+tree | less
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;同样的，要查看更多关于 &lt;code&gt;tree&lt;/code&gt; 的信息：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;man tree
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;find&#34;&gt;find&lt;/h1&gt;
+
+&lt;p&gt;如果不知道文件在哪里怎么办呢？总不能从 &lt;code&gt;/&lt;/code&gt; 目录开始遍历吧！这时你需要 &lt;code&gt;find&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;如果不加任何参数的运行 &lt;code&gt;find&lt;/code&gt;，它将会递归列出改目录下的所有文件和目录：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;find&#34; src=&#34;https://mogeko.github.io/images/032/find.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;但是 &lt;code&gt;find&lt;/code&gt; 真正强大的地方在于你可以使用文件名进行搜索：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;find -name autoload.lua&#34; src=&#34;https://mogeko.github.io/images/032/find-name.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;或是使用&lt;strong&gt;通配符&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;find -name *.lua&#34; src=&#34;https://mogeko.github.io/images/032/find-name_-.lua.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;你也可以根据文件大小进行搜索 (对于硬盘空间不足的时候特别有用)&lt;/p&gt;
+
+&lt;p&gt;列出所有大于 1 G 的文件：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;find -size +1G&#34; src=&#34;https://mogeko.github.io/images/032/find-size+1G.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;也可以搜索具体的文件目录，例如我们想在 &lt;code&gt;.config/mpv&lt;/code&gt; 目录中查找所有后缀为 &lt;code&gt;.lua&lt;/code&gt; 的文件：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;find .config/mpv -name *.lua&#34; src=&#34;https://mogeko.github.io/images/032/find_.config-mpv_-name_-.lua.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;更多的信息可以查看 &lt;strong&gt;man 手册&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;man find
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>GNU/Linux 输入法折腾笔记 (RIME)</title>
@@ -217,7 +395,7 @@ rime_version: 1.2.9
 sync_dir: &amp;quot;/home/mogeko/Dropbox/sync/Rime&amp;quot; # 存放同步文件的地址
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;因为配置了 &lt;strong&gt;模糊音&lt;/strong&gt; 和 &lt;strong&gt;扩充词库&lt;/strong&gt;，&lt;code&gt;luna_pinyin.custom.yaml&lt;/code&gt; 里面的配置过于复杂，我就不贴出来了，后面会给大家讲解 &lt;a href=&#34;#模糊拼音&#34;&gt;&lt;strong&gt;如何配置模糊音&lt;/strong&gt;&lt;/a&gt; 以及&lt;a href=&#34;#扩充词库&#34;&gt; &lt;strong&gt;如何配置扩充词库&lt;/strong&gt;&lt;/a&gt; 的。&lt;/p&gt;
+&lt;p&gt;因为配置了 &lt;strong&gt;模糊音&lt;/strong&gt; 和 &lt;strong&gt;扩充词库&lt;/strong&gt;，&lt;code&gt;luna_pinyin.custom.yaml&lt;/code&gt; 里面的配置过于复杂，我就不贴出来了，后面会给大家讲解 &lt;a href=&#34;#模糊拼音&#34;&gt;&lt;strong&gt;如何配置模糊音&lt;/strong&gt;&lt;/a&gt; 以及&lt;a href=&#34;#扩展词库&#34;&gt; &lt;strong&gt;如何配置扩充词库&lt;/strong&gt;&lt;/a&gt; 的。&lt;/p&gt;
 
 &lt;h2 id=&#34;模糊拼音&#34;&gt;模糊拼音&lt;/h2&gt;
 
@@ -2854,1055 +3032,6 @@ git push -u origin master
 git commit -m &amp;quot;[介绍，随便写点什么，比如日期]&amp;quot;
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>本地搭建 KMS 激活服务</title>
-      <link>https://mogeko.github.io/2018/017/</link>
-      <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/017/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/014/logo.jpg&#34;  alt=&#34;Logo&#34;  style=&#34;border:0&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。
-这个方法很好，但是也存在问题。KMS 服务激活一次可以正常使用 180 天，过期后自动给你续 180 天，如此重复。如果 KMS 激活服务器一直运行着还好，但如果服务器挂掉了呢？
-要解决这个问题，最直接的方法就是让 KMS 激活服务器保持稳定不宕机，这显然是不现实的。毕竟是私人搭的服务器，别免费给你用，不稳定也是情有可原的。所以我们不妨换个思路：&lt;strong&gt;既然别人的服务器不稳定，我们为何不在本地自己搭一个呢？&lt;/strong&gt;
-今天，我就教大家如何在本地搭建 KMS 激活服务器。&lt;/p&gt;
-
-&lt;p&gt;免费开源的 KMS 激活服务器有很多，我们今天使用的 &lt;code&gt;vlmcsd&lt;/code&gt; 是比较流行的一种。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;h1 id=&#34;准备工作&#34;&gt;准备工作&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;vlmcsd -&amp;gt; &lt;a href=&#34;https://github.com/Wind4/vlmcsd&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub 仓库&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;‎VOL 版的 Windows 或 Office (零售版的 Office 可以通过&lt;a href=&#34;https://github.com/Mogeko/Blog/releases/download/015/Office_Retail2VOL.cmd&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;简单的脚本&lt;/a&gt;转换为 VOL 版的 Office)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;正文&#34;&gt;正文&lt;/h1&gt;
-
-&lt;p&gt;&lt;code&gt;vlmcsd&lt;/code&gt; 本身是跨平台的，&lt;code&gt;vlmcsd&lt;/code&gt; 可以在 Linux，FreeBSD，Windows XP，Windows 7，Windows 8， Windows 8.1 ，Windosw 10 &amp;hellip; 上运行。不过不知道什么原因我的电脑上跑起来。按照网上的说法，该软件对 Windows 10 的兼容不怎么好，不过我们可以曲线救国：使用 Windows Subsystem for Linux (WSL) 来跑这个服务器，从而实现本地激活。(32 位 Windows 10 用户哭晕在厕所_(:з」∠)_)&lt;/p&gt;
-
-&lt;h2 id=&#34;在-windows-10-64-bit-上搭建服务&#34;&gt;在 Windows 10 (64 bit) 上搭建服务&lt;/h2&gt;
-
-&lt;h3 id=&#34;安装-wsl&#34;&gt;安装 WSL&lt;/h3&gt;
-
-&lt;p&gt;可以参考[这篇文章]()&lt;/p&gt;
-
-&lt;h3 id=&#34;下载-运行-vlmcsd&#34;&gt;下载 &amp;amp; 运行 vlmcsd&lt;/h3&gt;
-
-&lt;p&gt;打开 WSL，执行命令 &lt;code&gt;cd /usr/local&lt;/code&gt; 切换到 &lt;code&gt;/usr/local&lt;/code&gt; 目录。然后输入以下命令&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;curl -LJO https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;执行这条命令需要安装一个名为 &lt;code&gt;curl&lt;/code&gt; 的工具，WSL 上自带的有。&lt;/p&gt;
-
-&lt;p&gt;此时输入 &lt;code&gt;ls&lt;/code&gt; 就可以会看到目录下多出了一个文件名为 &lt;code&gt;binaries.tar.gz&lt;/code&gt; 的压缩文件。&lt;/p&gt;
-
-&lt;p&gt;输入以下命令解压这个压缩文件&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;tar zxvf binaries.tar.gz
-rm binaries.tar.gz     # 删除 `binaries.tar.gz` 的源文件 (可选)
-mv binaries kms    # 重命名 binaries 文件夹为 kms (可选)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后执行 (没看到 &lt;code&gt;AMD&lt;/code&gt; 的目录，也没在 AMD 平台上测试过，不知道能不能跑起来)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cd binaries/Linux/intel/static
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果重命名了 binaries 文件夹为 kms 的话执行&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cd kms/Linux/intel/static
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;此时目录下有这些文件&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;.&lt;br /&gt;
-├── vlmcs-x64-musl-static&lt;br /&gt;
-├── vlmcs-x86-musl-static&lt;br /&gt;
-├── vlmcsd-x64-musl-static&lt;br /&gt;
-├── vlmcsd-x86-musl-static&lt;br /&gt;
-├── vlmcsd-x86-musl-static-threads&lt;br /&gt;
-├── vlmcsdmulti-x64-musl-static&lt;br /&gt;
-├── vlmcsdmulti-x86-musl-static&lt;br /&gt;
-└── vlmcsdmulti-x86-musl-static-threads&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;然后选择合适的版本运行 (能跑 WSL，我就默认大家都是 x64 架构的了)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;./vlmcsd-x64-musl-static
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;vlmcsd&lt;/code&gt; &lt;code&gt;vlmcsdmulti&lt;/code&gt; 两个版本差别不大，随意选择，只要能跑起来就对了。&lt;/p&gt;
-
-&lt;h3 id=&#34;测试服务器是否成功运行&#34;&gt;测试服务器是否成功运行&lt;/h3&gt;
-
-&lt;p&gt;在相同目录下 (&lt;code&gt;/usr/local/binaries/Linux/intel/static&lt;/code&gt; 或 &lt;code&gt;/usr/local/kms/Linux/intel/static&lt;/code&gt;) 还有一个工具 &lt;code&gt;vlmcs&lt;/code&gt;，&lt;a href=&#34;https://github.com/Wind4/vlmcsd/blob/master/man/vlmcs.1.pdf&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt;上说它是一个客户端模拟器，用来检查服务器的运行状态。
-我们执行&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;./vlmcs-x64-musl-static 127.0.0.1:1688
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;看到以下文字，就说明服务器已经成功跑起来了&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Connecting to 127.0.0.1:1688 … successful
-Sending activation request (KMS V4) 1 of 1 -&amp;gt;
-06401-00206-296-206344-03-5179-9600.0000-3432013
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;在非-windows-10-的-windows-系统上搭建服务的不负责教程&#34;&gt;在非 Windows 10 的 Windows 系统上搭建服务的不负责教程&lt;/h2&gt;
-
-&lt;p&gt;因为没有测试过，所以我也不知道是否跑得起来，有哪些需要注意的地方。后果自负。_(:з」∠)_
-首先下载 vlmcsd -&amp;gt; &lt;a href=&#34;https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;下载链接&lt;/a&gt;，然后解压到任意你喜欢的目录下。
-用&lt;strong&gt;管理员权限&lt;/strong&gt;打开一个 cmd，进入刚刚你解压的目录下&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cd [刚刚你解压的目录地址]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后执行&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cd binaries/Windows/intel/static
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;此时的目录&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;.&lt;br /&gt;
-├── cygkms32.dll&lt;br /&gt;
-├── cygkms64.dll&lt;br /&gt;
-├── libkms32-gcc.dll&lt;br /&gt;
-├── libkms32.dll&lt;br /&gt;
-├── libkms64-gcc.dll&lt;br /&gt;
-├── libkms64.dll&lt;br /&gt;
-├── vlmcs-Windows-msrpc-x64.exe&lt;br /&gt;
-├── vlmcs-Windows-msrpc-x86.exe&lt;br /&gt;
-├── vlmcs-Windows-x64-gcc.exe&lt;br /&gt;
-├── vlmcs-Windows-x64.exe&lt;br /&gt;
-├── vlmcs-Windows-x86-gcc.exe&lt;br /&gt;
-├── vlmcs-Windows-x86.exe&lt;br /&gt;
-├── vlmcs-cygwin-msrpc-x64-openssl-EXPERIMENTAL.exe&lt;br /&gt;
-├── vlmcs-cygwin-msrpc-x64.exe&lt;br /&gt;
-├── vlmcs-cygwin-msrpc-x86.exe&lt;br /&gt;
-├── vlmcs-cygwin-x64.exe&lt;br /&gt;
-├── vlmcs-cygwin-x86.exe&lt;br /&gt;
-├── vlmcsd-Windows-msrpc-x64.exe&lt;br /&gt;
-├── vlmcsd-Windows-msrpc-x86.exe&lt;br /&gt;
-├── vlmcsd-Windows-x64-gcc.exe&lt;br /&gt;
-├── vlmcsd-Windows-x64.exe&lt;br /&gt;
-├── vlmcsd-Windows-x86-gcc.exe&lt;br /&gt;
-├── vlmcsd-Windows-x86.exe&lt;br /&gt;
-├── vlmcsd-cygwin-msrpc-x64.exe&lt;br /&gt;
-├── vlmcsd-cygwin-msrpc-x86.exe&lt;br /&gt;
-├── vlmcsd-cygwin-x64-openssl-EXPERIMENTAL.exe&lt;br /&gt;
-├── vlmcsd-cygwin-x64.exe&lt;br /&gt;
-├── vlmcsd-cygwin-x86.exe&lt;br /&gt;
-├── vlmcsdmulti-Windows-msrpc-x64.exe&lt;br /&gt;
-├── vlmcsdmulti-Windows-msrpc-x86.exe&lt;br /&gt;
-├── vlmcsdmulti-Windows-x64-gcc.exe&lt;br /&gt;
-├── vlmcsdmulti-Windows-x64.exe&lt;br /&gt;
-├── vlmcsdmulti-Windows-x86-gcc.exe&lt;br /&gt;
-├── vlmcsdmulti-Windows-x86.exe&lt;br /&gt;
-├── vlmcsdmulti-cygwin-msrpc-x64.exe&lt;br /&gt;
-├── vlmcsdmulti-cygwin-msrpc-x86.exe&lt;br /&gt;
-├── vlmcsdmulti-cygwin-x64.exe&lt;br /&gt;
-└── vlmcsdmulti-cygwin-x86.exe&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;然后选择合适的版本运行&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;./vlmcsd-x64-musl-static
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;vlmcsd&lt;/code&gt;、&lt;code&gt;vlmcsdmulti&lt;/code&gt; 两个版本差别不大，随意选择，只要能跑起来就对了。&lt;/p&gt;
-
-&lt;h3 id=&#34;测试服务器是否成功运行-1&#34;&gt;测试服务器是否成功运行&lt;/h3&gt;
-
-&lt;p&gt;测试服务器是否成功运行的方法和前面的类似，都是通过运行 &lt;code&gt;vlmcs&lt;/code&gt; 来检查&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;./vlmcs-Windows-x64 127.0.0.1:1688
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;激活&#34;&gt;激活&lt;/h1&gt;
-
-&lt;h2 id=&#34;激活-windows&#34;&gt;激活 Windows&lt;/h2&gt;
-
-&lt;p&gt;KMS 激活服务只能激活批量授权版 Windows (VOL 版)，无法激活零售版 Windows (Retail 版)。&lt;/p&gt;
-
-&lt;p&gt;以 Windows 10 Pro 为例
-想要激活 VOL 版 Windows 10 pro，只需要用&lt;strong&gt;管理员权限&lt;/strong&gt;打开一个 cmd，然后依次执行以下命令便可。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;slmgr.vbs -upk
-slmgr.vbs -ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
-slmgr.vbs -skms slmgr /skms 127.0.0.1:1688
-slmgr.vbs -ato
-slmgr.vbs -dlv
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;方法同样适用于激活 Windows 8、Windows 7，只是要把上面的 KEY (就是形如 &lt;code&gt;W269N-WFGWX-YVC9B-4J6C9-T83GX&lt;/code&gt; 这样的东西) 替换一下。
-&lt;a href=&#34;https://mogeko.github.io/2018/017/#KEY&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;可供使用的 KEY&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;激活-office&#34;&gt;激活 Office&lt;/h2&gt;
-
-&lt;p&gt;同样的，KMS 激活服务只能激活 VOL 版的 Office，不过零售版的 Office 可以通过脚本转换为 VOL 版。
-如果不知道自己安装的是什么版本的 Office，可以使用这个方法查看 -&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2018/017/#%E5%88%A4%E6%96%AD%E4%BD%A0%E5%AE%89%E8%A3%85%E7%9A%84-Office-%E6%98%AF%E5%93%AA%E4%B8%AA%E7%89%88%E6%9C%AC&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;判断你安装的 Office 是哪个版本&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;激活 Office 的关键在于找到 &lt;code&gt;ospp.vbs&lt;/code&gt; 这个文件。&lt;code&gt;ospp.vbs&lt;/code&gt; 一般在 Office 的安装目录里。
-以 Office 2016 为例，Office 2016 的安装目录是：&lt;code&gt;&amp;quot;C:\Program Files\Microsoft Office\Office16&lt;/code&gt;。
-以&lt;strong&gt;管理员权限&lt;/strong&gt;打开一个 cmd，然后执行以下命令&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cd &amp;quot;C:\Program Files\Microsoft Office\Office16&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果你系统是 64 位的但 Office 安装的是 32 位的，执行以下命令&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cd &amp;quot;C:\Program Files (x86)\Microsoft Office\Office16&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果你安装的是 Office 2015，就将 &lt;code&gt;Office16&lt;/code&gt; 替换为 &lt;code&gt;Office13&lt;/code&gt;；如果是 Office 2014 就替换为  &lt;code&gt;Office10&lt;/code&gt;；以此类推。&lt;/p&gt;
-
-&lt;p&gt;如果实在是找不到 &lt;code&gt;ospp.vbs&lt;/code&gt;，可以用最笨的办法——在资源管理器中搜索：&lt;code&gt;ospp.vbs&lt;/code&gt; (贼慢)。&lt;/p&gt;
-
-&lt;p&gt;进入 Office 的安装目录后，依次执行以下命令&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cscript ospp.vbs /sethst:127.0.0.1:1688
-cscript ospp.vbs /act
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;附录&#34;&gt;附录&lt;/h2&gt;
-
-&lt;h3 id=&#34;判断你安装的-office-是哪个版本&#34;&gt;判断你安装的 Office 是哪个版本&lt;/h3&gt;
-
-&lt;p&gt;以&lt;strong&gt;管理员权限&lt;/strong&gt;打开一个 cmd，来到Office的安装目录，输入命令：&lt;code&gt;cscript ospp.vbs /dstatus&lt;/code&gt;
-如果输出的信息中包含下面这句话说明你安装的是零售版&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;LICENSE DESCRIPTION: Office 15, RETAIL(Grace) channel
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果输出的信息中包含下面这句话说明你安装的是批量授权版&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;LICENSE DESCRIPTION: Office 15, VOLUME_KMSCLIENT channel
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;key&#34;&gt;KEY&lt;/h2&gt;
-
-&lt;p&gt;以下是部分可供使用的 KEY&lt;/p&gt;
-
-&lt;h3 id=&#34;windows&#34;&gt;Windows&lt;/h3&gt;
-
-&lt;h4 id=&#34;windows-10-版本-1803&#34;&gt;Windows 10 版本 1803&lt;/h4&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;操作系统版本&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Windows 10 教育版&lt;/td&gt;
-&lt;td&gt;NW6C2-QMPVW-D7KKK-3GKT6-VCFB2&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 教育版 N&lt;/td&gt;
-&lt;td&gt;2WH4N-8QGBV-H22JP-CT43Q-MDWWJ&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 企业版&lt;/td&gt;
-&lt;td&gt;NPPR9-FWDCX-D2C8J-H872K-2YT43&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 企业版 G&lt;/td&gt;
-&lt;td&gt;YYVX9-NTFWV-6MDM3-9PT4T-4M68B&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 企业版 G N&lt;/td&gt;
-&lt;td&gt;44RPN-FTY23-9VTTB-MP9BX-T84FV&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 企业版 N&lt;/td&gt;
-&lt;td&gt;DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 专业版&lt;/td&gt;
-&lt;td&gt;W269N-WFGWX-YVC9B-4J6C9-T83GX&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 专业教育版&lt;/td&gt;
-&lt;td&gt;6TP4R-GNPTD-KYYHQ-7B7DP-J447Y&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 专业教育版 N&lt;/td&gt;
-&lt;td&gt;YVWGF-BXNMC-HTQYQ-CPQ99-66QFC&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 专业版 N&lt;/td&gt;
-&lt;td&gt;MH37W-N47XK-V7XM9-C7227-GCQG9&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 Professional Workstation&lt;/td&gt;
-&lt;td&gt;NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 Professional Workstation N&lt;/td&gt;
-&lt;td&gt;9FNHH-K3HBT-3W4TD-6383H-6XYWF&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&#34;windows-10-版本-1709&#34;&gt;Windows 10 版本 1709&lt;/h4&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;操作系统版本&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Windows 10 Professional Workstation&lt;/td&gt;
-&lt;td&gt;NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 Professional Workstation N&lt;/td&gt;
-&lt;td&gt;9FNHH-K3HBT-3W4TD-6383H-6XYWF&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&#34;windows-10&#34;&gt;Windows 10&lt;/h4&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;操作系统版本&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Windows 10 专业版&lt;/td&gt;
-&lt;td&gt;W269N-WFGWX-YVC9B-4J6C9-T83GX&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 专业版 N&lt;/td&gt;
-&lt;td&gt;MH37W-N47XK-V7XM9-C7227-GCQG9&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 企业版&lt;/td&gt;
-&lt;td&gt;NPPR9-FWDCX-D2C8J-H872K-2YT43&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 企业版 N&lt;/td&gt;
-&lt;td&gt;DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 教育版&lt;/td&gt;
-&lt;td&gt;NW6C2-QMPVW-D7KKK-3GKT6-VCFB2&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 教育版 N&lt;/td&gt;
-&lt;td&gt;2WH4N-8QGBV-H22JP-CT43Q-MDWWJ&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 企业版 2015 长期服务&lt;/td&gt;
-&lt;td&gt;WNMTR-4C88C-JK8YV-HQ7T2-76DF9&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 企业版 2015 长期服务 N&lt;/td&gt;
-&lt;td&gt;2F77B-TNFGY-69QQF-B8YKP-D69TJ&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 企业版 2016 长期服务&lt;/td&gt;
-&lt;td&gt;DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 10 企业版 2016 长期服务 N&lt;/td&gt;
-&lt;td&gt;QFFDN-GRT3P-VKWWX-X7T3R-8B639&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&#34;windows-server-版本-1803&#34;&gt;Windows Server 版本 1803&lt;/h4&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;操作系统版本&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Windows Server Datacenter&lt;/td&gt;
-&lt;td&gt;TXN8-JFHJM-4WC78-MPCBR-9W4KR&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server Standard&lt;/td&gt;
-&lt;td&gt;2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&#34;windows-server-版本-1709&#34;&gt;Windows Server 版本 1709&lt;/h4&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;操作系统版本&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Windows Server Datacenter&lt;/td&gt;
-&lt;td&gt;6Y6KB-N82V8-D8CQV-23MJW-BWTG6&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server Standard&lt;/td&gt;
-&lt;td&gt;DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&#34;windows-server-2016&#34;&gt;Windows Server 2016&lt;/h4&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;操作系统版本&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2016 Datacenter&lt;/td&gt;
-&lt;td&gt;CB7KF-BWN84-R7R2Y-793K2-8XDDG&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2016 Standard&lt;/td&gt;
-&lt;td&gt;WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2016 Essentials&lt;/td&gt;
-&lt;td&gt;JCKRF-N37P4-C2D82-9YXRT-4M63B&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&#34;windows-server-2012-r2-和-windows-8-1&#34;&gt;Windows Server 2012 R2 和 Windows 8.1&lt;/h4&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;操作系统版本&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Windows8.1 专业版&lt;/td&gt;
-&lt;td&gt;GCRJD-8NW9H-F2CDX-CCM8D-9D6T9&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 8.1 专业版 N&lt;/td&gt;
-&lt;td&gt;HMCNV-VVBFX-7HMBH-CTY9B-B4FXY&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 8.1 企业版&lt;/td&gt;
-&lt;td&gt;MHF9N-XY6XB-WVXMC-BTDCT-MKKG7&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 8.1 企业版 N&lt;/td&gt;
-&lt;td&gt;TT4HM-HN7YT-62K67-RGRQJ-JFFXW&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2012 R2 Server Standard&lt;/td&gt;
-&lt;td&gt;D2N9P-3P6X9-2R39C-7RTCD-MDVJX&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;WindowsServer 2012 R2 Datacenter&lt;/td&gt;
-&lt;td&gt;W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;WindowsServer 2012 R2 Essentials&lt;/td&gt;
-&lt;td&gt;KNC87-3J2TX-XB4WP-VCPJV-M4FWM&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&#34;windows-server-2012-和-windows-8&#34;&gt;Windows Server 2012 和 Windows 8&lt;/h4&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;操作系统版本&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Windows 8 专业版&lt;/td&gt;
-&lt;td&gt;NG4HW-VH26C-733KW-K6F98-J8CK4&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 8 专业版 N&lt;/td&gt;
-&lt;td&gt;XCVCF-2NXM9-723PB-MHCB7-2RYQQ&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 8 企业版&lt;/td&gt;
-&lt;td&gt;32JNW-9KQ84-P47T8-D8GGY-CWCK7&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 8 企业版 N&lt;/td&gt;
-&lt;td&gt;JMNMF-RHW7P-DMY6X-RF3DR-X2BQT&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2012&lt;/td&gt;
-&lt;td&gt;BN3D2-R7TKB-3YPBD-8DRP2-27GG4&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2012 N&lt;/td&gt;
-&lt;td&gt;8N2M2-HWPGY-7PGT9-HGDD8-GVGGY&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2012 单语言版&lt;/td&gt;
-&lt;td&gt;2WN2H-YGCQR-KFX6K-CD6TF-84YXQ&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2012 特定国家/地区版&lt;/td&gt;
-&lt;td&gt;4K36P-JN4VD-GDC6V-KDT89-DYFKP&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2012 Server Standard&lt;/td&gt;
-&lt;td&gt;XC9B7-NBPP2-83J2H-RHMBY-92BT4&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2012 MultiPoint Standard&lt;/td&gt;
-&lt;td&gt;HM7DN-YVMH3-46JC3-XYTG7-CYQJJ&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2012 MultiPoint Premium&lt;/td&gt;
-&lt;td&gt;XNH6W-2V9GX-RGJ4K-Y8X6F-QGJ2G&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2012 Datacenter&lt;/td&gt;
-&lt;td&gt;48HP8-DN98B-MYWDG-T2DCC-8W83P&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&#34;windows-7-和-windows-server-2008-r2&#34;&gt;Windows 7 和 Windows Server 2008 R2&lt;/h4&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;操作系统版本&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Windows 7 专业版&lt;/td&gt;
-&lt;td&gt;FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 7 专业版 N&lt;/td&gt;
-&lt;td&gt;MRPKT-YTG23-K7D7T-X2JMM-QY7MG&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 7 专业版 E&lt;/td&gt;
-&lt;td&gt;W82YF-2Q76Y-63HXB-FGJG9-GF7QX&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows7 企业版&lt;/td&gt;
-&lt;td&gt;33PXH-7Y6KF-2VJC9-XBBR8-HVTHH&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 7 企业版 N&lt;/td&gt;
-&lt;td&gt;YDRBP-3D83W-TY26F-D46B2-XCKRJ&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows 7 企业版 E&lt;/td&gt;
-&lt;td&gt;C29WB-22CC8-VJ326-GHFJW-H9DH4&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2008 R2 Web 版&lt;/td&gt;
-&lt;td&gt;6TPJF-RBVHG-WBW2R-86QPH-6RTM4&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2008 R2 HPC 版&lt;/td&gt;
-&lt;td&gt;TT8MH-CG224-D3D7Q-498W2-9QCTX&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;WindowsServer 2008 R2 Standard&lt;/td&gt;
-&lt;td&gt;YC6KT-GKW9T-YTKYR-T4X34-R7VHC&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;WindowsServer 2008 R2 企业版&lt;/td&gt;
-&lt;td&gt;489J6-VHDMP-X63PK-3K798-CPX3Y&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;WindowsServer 2008 R2 Datacenter&lt;/td&gt;
-&lt;td&gt;74YFP-3QFB3-KQT8W-PMXWJ-7M648&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;面向基于 Itanium 系统的 Windows Server 2008 R2&lt;/td&gt;
-&lt;td&gt;GT63C-RJFQ3-4GMB6-BRFB9-CB83V&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&#34;windows-vista-和-windows-server-2008&#34;&gt;Windows Vista 和 Windows Server 2008&lt;/h4&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;操作系统版本&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Windows Vista 商用版&lt;/td&gt;
-&lt;td&gt;YFKBB-PQJJV-G996G-VWGXY-2V3X8&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Vista 商用版 N&lt;/td&gt;
-&lt;td&gt;HMBQG-8H2RH-C77VX-27R82-VMQBT&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Vista 企业版&lt;/td&gt;
-&lt;td&gt;VKK3X-68KWM-X2YGT-QR4M6-4BWMV&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Vista 企业版 N&lt;/td&gt;
-&lt;td&gt;VTC42-BM838-43QHV-84HX6-XJXKV&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Web Server 2008&lt;/td&gt;
-&lt;td&gt;WYR28-R7TFJ-3X2YQ-YCY4H-M249D&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2008 Standard&lt;/td&gt;
-&lt;td&gt;TM24T-X9RMF-VWXK6-X8JC9-BFGM2&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;不带 Hyper-V 的 Windows Server 2008 Standard&lt;/td&gt;
-&lt;td&gt;W7VD6-7JFBR-RX26B-YKQ3Y-6FFFJ&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2008 企业版&lt;/td&gt;
-&lt;td&gt;YQGMW-MPWTJ-34KDK-48M3W-X4Q6V&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;不带 Hyper-V 的 Windows Server 2008 企业版&lt;/td&gt;
-&lt;td&gt;39BXF-X8Q23-P2WWT-38T2F-G3FPG&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2008 HPC&lt;/td&gt;
-&lt;td&gt;RCTX3-KWVHP-BR6TB-RB6DM-6X7HP&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Windows Server 2008 Datacenter&lt;/td&gt;
-&lt;td&gt;7M67G-PC374-GR742-YH8V4-TCBY3&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;不带 Hyper-V 的 Windows Server 2008 Datacenter&lt;/td&gt;
-&lt;td&gt;22XQ2-VRXRG-P8D42-K34TD-G3QQC&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;面向基于 Itanium 系统的 Windows Server 2008&lt;/td&gt;
-&lt;td&gt;4DWFP-JF3DJ-B7DTH-78FJB-PDRHK&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&#34;office&#34;&gt;Office&lt;/h3&gt;
-
-&lt;h4 id=&#34;office-2016&#34;&gt;Office 2016&lt;/h4&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;产品&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Office Professional Plus 2016&lt;/td&gt;
-&lt;td&gt;XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Office Standard 2016&lt;/td&gt;
-&lt;td&gt;JNRGM-WHDWX-FJJG3-K47QV-DRTFM&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Project Professional 2016&lt;/td&gt;
-&lt;td&gt;YG9NW-3K39V-2T3HJ-93F3Q-G83KT&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Project Standard 2016&lt;/td&gt;
-&lt;td&gt;GNFHQ-F6YQM-KQDGJ-327XX-KQBVC&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Visio Professional 2016&lt;/td&gt;
-&lt;td&gt;PD3PC-RHNGV-FXJ29-8JK7D-RJRJK&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Visio Standard 2016&lt;/td&gt;
-&lt;td&gt;7WHWN-4T7MP-G96JF-G33KR-W8GF4&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Access 2016&lt;/td&gt;
-&lt;td&gt;GNH9Y-D2J4T-FJHGG-QRVH7-QPFDW&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Excel 2016&lt;/td&gt;
-&lt;td&gt;9C2PK-NWTVB-JMPW8-BFT28-7FTBF&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;OneNote 2016&lt;/td&gt;
-&lt;td&gt;DR92N-9HTF2-97XKM-XW2WJ-XW3J6&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Outlook 2016&lt;/td&gt;
-&lt;td&gt;R69KK-NTPKF-7M3Q4-QYBHW-6MT9B&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;PowerPoint 2016&lt;/td&gt;
-&lt;td&gt;J7MQP-HNJ4Y-WJ7YM-PFYGF-BY6C6&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Publisher 2016&lt;/td&gt;
-&lt;td&gt;F47MM-N3XJP-TQXJ9-BP99D-8 837 K&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Skype for Business 2016&lt;/td&gt;
-&lt;td&gt;869NQ-FJ69K-466HW-QYCP2-DDBV6&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Word 2016&lt;/td&gt;
-&lt;td&gt;WXY84-JN2Q9-RBCCQ-3Q3J3-3PFJ6&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&#34;office-2013&#34;&gt;Office 2013&lt;/h4&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;产品&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Office 2013 Professional Plus&lt;/td&gt;
-&lt;td&gt;YC7DK-G2NP3-2QQC3-J6H88-GVGXT&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Office 2013 Standard&lt;/td&gt;
-&lt;td&gt;KBKQT-2NMXY-JJWGP-M62JB-92CD4&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Project 2013 Professional&lt;/td&gt;
-&lt;td&gt;FN8TT-7WMH6-2D4X9-M337T-2342K&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Project 2013 Standard&lt;/td&gt;
-&lt;td&gt;6NTH3-CW976-3G3Y2-JK3TX-8QHTT&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Visio 2013 Professional&lt;/td&gt;
-&lt;td&gt;C2FG9-N6J68-H8BTJ-BW3QX-RM3B3&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Visio 2013 Standard&lt;/td&gt;
-&lt;td&gt;J484Y-4NKBF-W2HMG-DBMJC-PGWR7&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Access 2013&lt;/td&gt;
-&lt;td&gt;NG2JY-H4JBT-HQXYP-78QH9-4JM2D&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Excel 2013&lt;/td&gt;
-&lt;td&gt;VGPNG-Y7HQW-9RHP7-TKPV3-BG7GB&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;InfoPath 2013&lt;/td&gt;
-&lt;td&gt;DKT8B-N7VXH-D963P-Q4PHY-F8894&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Lync 2013&lt;/td&gt;
-&lt;td&gt;2MG3G-3BNTT-3MFW9-KDQW3-TCK7R&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;OneNote 2013&lt;/td&gt;
-&lt;td&gt;TGN6P-8MMBC-37P2F-XHXXK-P34VW&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Outlook 2013&lt;/td&gt;
-&lt;td&gt;QPN8Q-BJBTJ-334K3-93TGY-2PMBT&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;PowerPoint 2013&lt;/td&gt;
-&lt;td&gt;4NT99-8RJFH-Q2VDH-KYG2C-4RD4F&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Publisher 2013&lt;/td&gt;
-&lt;td&gt;PN2WF-29XG2-T9HJ7-JQPJR-FCXK4&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Word 2013&lt;/td&gt;
-&lt;td&gt;6Q7VD-NX8JD-WJ2VH-88V73-4GBJ7&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&#34;office-2010&#34;&gt;Office 2010&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;Office 套件：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;产品&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Office Professional Plus 2010&lt;/td&gt;
-&lt;td&gt;VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Office Standard 2010&lt;/td&gt;
-&lt;td&gt;V7QKV-4XVVR-XYV4D-F7DFM-8R6BM&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Office Home and Business 2010&lt;/td&gt;
-&lt;td&gt;D6QFG-VBYP2-XQHM7-J97RH-VVRCK&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;独立产品：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;产品&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Access 2010&lt;/td&gt;
-&lt;td&gt;V7Y44-9T38C-R2VJK-666HK-T7DDX&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Excel 2010&lt;/td&gt;
-&lt;td&gt;H62QG-HXVKF-PP4HP-66KMR-CW9BM&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;SharePoint Workspace 2010&lt;/td&gt;
-&lt;td&gt;QYYW6-QP4CB-MBV6G-HYMCJ-4T3J4&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;InfoPath 2010&lt;/td&gt;
-&lt;td&gt;K96W8-67RPQ-62T9Y-J8FQJ-BT37T&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;OneNote 2010&lt;/td&gt;
-&lt;td&gt;Q4Y4M-RHWJM-PY37F-MTKWH-D3XHX&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Outlook 2010&lt;/td&gt;
-&lt;td&gt;7YDC2-CWM8M-RRTJC-8MDVC-X3DWQ&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;PowerPoint 2010&lt;/td&gt;
-&lt;td&gt;RC8FX-88JRY-3PF7C-X8P67-P4VTT&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Project Professional 2010&lt;/td&gt;
-&lt;td&gt;YGX6F-PGV49-PGW3J-9BTGG-VHKC6&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Project Standard 2010&lt;/td&gt;
-&lt;td&gt;4HP3K-88W3F-W2K3D-6677X-F9PGB&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Publisher 2010&lt;/td&gt;
-&lt;td&gt;BFK7F-9MYHM-V68C7-DRQ66-83YTP&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Word 2010&lt;/td&gt;
-&lt;td&gt;HVHB3-C6FV7-KQX9W-YQG79-CRY7T&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;Visio：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;产品&lt;/th&gt;
-&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Visio Premium 2010&lt;/td&gt;
-&lt;td&gt;D9DWC-HPYVV-JGF4P-BTWQB-WX8BJ&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Visio Professional 2010&lt;/td&gt;
-&lt;td&gt;7MCW8-VRQVK-G677T-PDJCM-Q8TCP&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Visio Standard 2010&lt;/td&gt;
-&lt;td&gt;767HD-QGMWX-8QTDB-9G3R2-KHFGJ&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
 </description>
     </item>
     

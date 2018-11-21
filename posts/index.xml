@@ -6,10 +6,33 @@
     <description>Recent content in Posts on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 21 Nov 2018 12:38:05 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 21 Nov 2018 19:30:25 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GNU/Linux 技巧：如何快速的找到一个文件</title>
+      <link>https://mogeko.github.io/2018/032/</link>
+      <pubDate>Wed, 21 Nov 2018 19:30:25 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/032/</guid>
+      <description>&amp;emsp;&amp;emsp; -- 在使用计算机的过程中，我们都有着这么一个需求：找文件！！
+“卧槽，我的 XXX 文件放哪儿去了？”Σ(っ °Д °;)っ
+“XXX 文件不应该就在 XXX 文件夹里吗？！咋个找球不到啊？”‧º·(˚ ˃̣̣̥᷄⌓˂̣̣̥᷅ )‧º·˚
+“MMP！1000 多个文件！我找你麻痹！！”（╯‵□′）╯︵┴─┴
+在一些没有 GUI 的 GNU/Linux 中，遇到这种情况更是雪上加霜。好在 GNU/Linux 的终端中有着不少优秀的命令行工具，可以帮助我们解决上述问题。
+下面就介绍三个最常用的在 GNU/Linux 中快速找文件的命令行工具：ls、tree 和 find
+ls ls 可能是所有 Linuxer 学习到的第一个命令了 cd: 喵喵喵？ 它既简单又实用，如果给 GNU/Linux 中所有的命令使用频率排个名的话，ls 绝对在前 5。
+ls 的作用就是列出指定目录下 (默认当前目录) 的所有可见的文件与文件夹，就像这样：
+添加 -l 选项则可以查看文件的更多信息。同时再加上 -h 则可查看到文件文件的大小：
+ls 也可以查看指定目录下的文件：
+或者使用通配符：
+想要查看隐藏文件？加个 -a 就可以了：
+ls 还可以用来在无聊时打发时间😂😂
+在终端中执行以下命令，然后看着屏幕滚就可以了；在一下比较大型的系统中，可以滚一两个小时呢！！
+ls -R /  看腻了可以用 Ctrl + C 强制中断执行 | ・ω・’）</description>
+    </item>
     
     <item>
       <title>GNU/Linux 输入法折腾笔记 (RIME)</title>
