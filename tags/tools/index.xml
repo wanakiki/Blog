@@ -6,10 +6,31 @@
     <description>Recent content in Tools on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 20 Nov 2018 16:52:42 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 21 Nov 2018 09:39:26 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>subliminal | 电影字幕下载神器</title>
+      <link>https://mogeko.github.io/2018/030/</link>
+      <pubDate>Wed, 21 Nov 2018 09:39:26 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/030/</guid>
+      <description>-- subliminal 是一个基于 Python 的强大的命令行字幕搜索和下载工具。
+最先知道 subliminal 是因为 MPV 播放器。配合插件 find_subtitles.lua 使用，在载入视频的同时搜索并下载中文字幕，简直天衣无缝。不过有的视频的文件名不是那么标准的话，就不一定能匹配得到合适的字幕。解决方法除了改文件名以外，还可以用 subliminal 手动搜索。
+subliminal 使用多个字幕网站做为数据源，包括世界上最大的开放式字幕库 opensubtitles
+不幸的是，有几个字幕站被墙了，比如 podnapisi, legendastv, shooter…
+
+GitHub 地址：https://github.com/Diaoul/subliminal
+
+依赖  python2  安装 首先安装 python2 和 pip
+然后在终端中输入：
+pip install subliminal  使用 在终端中输入：
+subliminal download -l zh [电影名称]  例如，如果要下载「低俗小说」的字幕：
+subliminal download -l zh Pulp.Fiction.1994.720p.BluRay.DTS.x264-ESiR  部分字幕文件：
+2 00:00:14,480 --&amp;gt; 00:00:18,850 柔軟潮濕的物體 3 00:00:18,980 --&amp;gt; 00:00:24,610 低級趣味、印刷簡陋的書刊 4 00:00:27,620 --&amp;gt; 00:00:31,590 算了 太冒險了 我不幹 5 00:00:31,590 --&amp;gt; 00:00:34,080 你每次都這樣說 6 00:00:34,460 --&amp;gt; 00:00:36,890 太危險了…我不幹了… 7 00:00:37,060 --&amp;gt; 00:00:39,530 我哪一次說錯?</description>
+    </item>
     
     <item>
       <title>GNOME MPV | GNU/Linux 下一个不错的流媒体播放器</title>
@@ -20,13 +41,15 @@
       <description>-- 在 GNU/Linux 下看视频向来是一件麻烦事。VLC 太过臃肿，MPV 又太过简 (chǒu) 陋了。
 那么，有没有一款播放器能兼顾美观与内在，随便还拥有较好的易用性和较强的定制能力呢？
 当然是有了！GNOME MPV 就是这么一款播放器，它基于 MPV，继承了 MPV 强大的编解码器，以及其恐怖的定制能力 脚本才是 MPV 的灵魂 | ・ω・’）。同时又拥有较为美观方便的 GUI，简直是居家旅行必备的万能播放器啊！！😂😂😂
+
 官网：https://gnome-mpv.github.io
 GitHub 地址：https://github.com/gnome-mpv/gnome-mpv
+
 依赖  autotools (只在构建时依赖) autoconf-archive (只在构建时依赖) pkg-config (只在构建时依赖) gcc (只在构建时依赖) intltool (只在构建时依赖) python2 (只在构建时依赖) glib2 gtk3 libmpv youtube-dl (可选)  安装 GNU/Linux packages  Arch Linux https://www.archlinux.org/packages/gnome-mpv
  Arch Linux (Git): https://aur.archlinux.org/packages/gnome-mpv-git
  Debian testing: https://packages.debian.org/testing/gnome-mpv
  Debian unstable: https://packages.debian.org/sid/gnome-mpv
- Fedora (rpmfusion): https://admin.rpmfusion.org/pkgdb/package/free/gnome-mpv</description>
+ Fedora (rpmfusion): https://admin.</description>
     </item>
     
     <item>

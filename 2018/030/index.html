@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Mogeko">
+  
+  
+  
+  <link rel="prev" href="https://mogeko.github.io/2018/029/" />
+  
+  <link rel="canonical" href="https://mogeko.github.io/2018/030/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           subliminal | 电影字幕下载神器 | Mogeko`s Blog
+       
+  </title>
+  <meta name="title" content="subliminal | 电影字幕下载神器 | Mogeko`s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://mogeko.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "subliminal | 电影字幕下载神器",
+    "headline" : "subliminal | 电影字幕下载神器",
+    "description" : "-- subliminal 是一个基于 Python 的强大的命令行字幕搜索和下载工具。
+最先知道 subliminal 是因为 MPV 播放器。配合插件 find_subtitles.lua 使用，在载入视频的同时搜索并下载中文字幕，简直天衣无缝。不过有的视频的文件名不是那么标准的话，就不一定能匹配得到合适的字幕。解决方法除了改文件名以外，还可以用 subliminal 手动搜索。
+subliminal 使用多个字幕网站做为数据源，包括世界上最大的开放式字幕库 opensubtitles
+不幸的是，有几个字幕站被墙了，比如 podnapisi, legendastv, shooter…
+
+GitHub 地址：https://github.com/Diaoul/subliminal
+
+依赖  python2  安装 首先安装 python2 和 pip
+然后在终端中输入：
+pip install subliminal  使用 在终端中输入：
+subliminal download -l zh [电影名称]  例如，如果要下载「低俗小说」的字幕：
+subliminal download -l zh Pulp.Fiction.1994.720p.BluRay.DTS.x264-ESiR  部分字幕文件：
+2 00:00:14,480 --&gt; 00:00:18,850 柔軟潮濕的物體 3 00:00:18,980 --&gt; 00:00:24,610 低級趣味、印刷簡陋的書刊 4 00:00:27,620 --&gt; 00:00:31,590 算了 太冒險了 我不幹 5 00:00:31,590 --&gt; 00:00:34,080 你每次都這樣說 6 00:00:34,460 --&gt; 00:00:36,890 太危險了…我不幹了… 7 00:00:37,060 --&gt; 00:00:39,530 我哪一次說錯?",
+    "inLanguage" : "zh-cn",
+    "author" : "Mogeko",
+    "creator" : "Mogeko",
+    "publisher": "Mogeko",
+    "accountablePerson" : "Mogeko",
+    "copyrightHolder" : "Mogeko",
+    "copyrightYear" : "2018",
+    "datePublished": "2018-11-21 09:39:26 &#43;0800 &#43;0800",
+    "dateModified" : "2018-11-21 09:39:26 &#43;0800 &#43;0800",
+    "url" : "https://mogeko.github.io/2018/030/",
+    "wordCount" : "176",
+    "keywords" : [ "Tools", "Mogeko`s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.github.io">Mogeko`s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.github.io">Mogeko`s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">subliminal | 电影字幕下载神器</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://mogeko.github.io" rel="author">Mogeko</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2018-11-21 itemprop="datePublished">November 21, 2018</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E8%BD%AF%E4%BB%B6/"> 关于软件 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<!-- 
+<img alt="" src="" >
+<span class="spoiler" ></span>
+ -->
+
+<p><a href="https://github.com/Diaoul/subliminal" rel="nofollow noreferrer" target="_blank"><strong>subliminal</strong></a> 是一个基于 Python 的强大的命令行字幕搜索和下载工具。</p>
+
+<p>最先知道 <strong>subliminal</strong> 是因为 <strong>MPV</strong> 播放器。配合插件 <a href="https://github.com/directorscut82/find_subtitles/blob/master/find_subtitles.lua" rel="nofollow noreferrer" target="_blank"><strong>find_subtitles.lua</strong></a> 使用，在载入视频的同时搜索并下载中文字幕，简直天衣无缝。不过有的视频的文件名不是那么标准的话，就不一定能匹配得到合适的字幕。解决方法除了改文件名以外，还可以用  <strong>subliminal</strong> 手动搜索。</p>
+
+<p><strong>subliminal</strong> 使用多个字幕网站做为数据源，包括世界上最大的开放式字幕库 <a href="http://opus.nlpl.eu/OpenSubtitles.php" rel="nofollow noreferrer" target="_blank">opensubtitles</a></p>
+
+<p><span class="spoiler" >不幸的是，有几个字幕站被墙了，比如 <strong>podnapisi</strong>, <strong>legendastv</strong>, <strong>shooter</strong>…</span></p>
+
+<p><br/></p>
+
+<p>GitHub 地址：<a href="https://github.com/Diaoul/subliminal" rel="nofollow noreferrer" target="_blank">https://github.com/Diaoul/subliminal</a></p>
+
+<p><br/></p>
+
+<p><img alt="subliminal" src="https://mogeko.github.io/images/030/subliminal.png" ></p>
+
+<h1 id="依赖">依赖</h1>
+
+<ul>
+<li>python2</li>
+</ul>
+
+<h1 id="安装">安装</h1>
+
+<p>首先安装 <code>python2</code> 和 <code>pip</code></p>
+
+<p>然后在终端中输入：</p>
+
+<pre><code class="language-shell">pip install subliminal
+</code></pre>
+
+<h1 id="使用">使用</h1>
+
+<p>在终端中输入：</p>
+
+<pre><code class="language-sh">subliminal download -l zh [电影名称]
+</code></pre>
+
+<p>例如，如果要下载「低俗小说」的字幕：</p>
+
+<pre><code class="language-shell">subliminal download -l zh Pulp.Fiction.1994.720p.BluRay.DTS.x264-ESiR
+</code></pre>
+
+<p><img alt="return" src="https://mogeko.github.io/images/030/return.png" ></p>
+
+<p>部分字幕文件：</p>
+
+<pre><code class="language-txt">2
+00:00:14,480 --&gt; 00:00:18,850
+柔軟潮濕的物體
+
+3
+00:00:18,980 --&gt; 00:00:24,610
+低級趣味、印刷簡陋的書刊
+
+4
+00:00:27,620 --&gt; 00:00:31,590
+算了  太冒險了  我不幹
+
+5
+00:00:31,590 --&gt; 00:00:34,080
+你每次都這樣說
+
+6
+00:00:34,460 --&gt; 00:00:36,890
+太危險了…我不幹了…
+
+7
+00:00:37,060 --&gt; 00:00:39,530
+我哪一次說錯?
+</code></pre>
+
+<p>居然是繁体，不过我一般遇到的都是简体中文的，而且繁体也不是不能看🤔</p>
+
+<p><br/></p>
+
+<p>命令中的 <code>-l</code> 指定下载的字幕语言，例如要下载英语字幕：</p>
+
+<pre><code class="language-shell">subliminal download -l cn Pulp.Fiction.1994.720p.BluRay.DTS.x264-ESiR
+</code></pre>
+
+<h1 id="脚本">脚本</h1>
+
+<p>除了手动输入命令行外，还可以使用脚本 Python 脚本。例如下面这个脚本就可以自动下载目录中视频文件对应的字幕：</p>
+
+<pre><code class="language-python">from datetime import timedelta
+ 
+from babelfish import Language
+from subliminal import download_best_subtitles, region, save_subtitles, scan_videos
+ 
+# configure the cache
+region.configure('dogpile.cache.dbm', arguments={'filename': 'cachefile.dbm'})
+ 
+# scan for videos newer than 2 weeks and their existing subtitles in a folder
+videos = scan_videos('/video/folder', age=timedelta(weeks=2))
+ 
+# download best subtitles
+subtitles = download_best_subtitles(videos, {Language('eng'), Language('fra')})
+ 
+# save them to disk, next to the video
+for v in videos:
+    save_subtitles(v, subtitles[v])
+</code></pre>
+
+<p>还有配合 <strong>MPV</strong> / <strong>GNOME MPV</strong> 播放器使用的脚本：<a href="https://github.com/directorscut82/find_subtitles/blob/master/find_subtitles.lua" rel="nofollow noreferrer" target="_blank"><strong>find_subtitles.lua</strong></a>&emsp;&emsp;<a href="https://mogeko.github.io/images/029" rel="nofollow noreferrer" target="_blank">关于 GNOME MPV 播放器</a></p>
+
+<p>需要注意的是 <strong>find_subtitles.lua 默认下载的是英文字幕，下载中午字幕需要在脚本中将 38 行的 <code>en</code> 替换换成 <code>zh</code></strong>。如果你觉得麻烦的话，可以使用我<a href="https://github.com/Mogeko/Blog/releases/download/029/find_subtitles.lua" rel="nofollow noreferrer" target="_blank">修改过的版本</a>。</p>
+
+<p><br></p>
+
+<p><center>  ·End·  </center></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Mogeko </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://mogeko.github.io/2018/030/>https://mogeko.github.io/2018/030/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://mogeko.github.io/tags/tools/">
+                    #Tools</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://mogeko.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://mogeko.github.io/2018/029/" class="prev" rel="prev" title="GNOME MPV | GNU/Linux 下一个不错的流媒体播放器"><i class="iconfont icon-left"></i>&nbsp;GNOME MPV | GNU/Linux 下一个不错的流媒体播放器</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '936cecdd2ab935870ca5',
+        clientSecret: '39cfc7a3cb9a974b6609f3fdaa637e2917e3e40a',
+        repo: 'Blog',
+        owner: 'Mogeko',
+        admin: ['Mogeko'],
+        id: location.pathname, 
+        distractionFreeMode: false 
+    });
+    (function () {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+            return;
+        }
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2017 - 2018</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://mogeko.github.io">Mogeko</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
