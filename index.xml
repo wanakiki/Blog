@@ -20,6 +20,7 @@
 &lt;!-- 
 &lt;img alt=&#34;&#34; src=&#34;&#34; &gt;
 &lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
+&lt;br&gt;
  --&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/Diaoul/subliminal&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;subliminal&lt;/strong&gt;&lt;/a&gt; 是一个基于 Python 的强大的命令行字幕搜索和下载工具。&lt;/p&gt;
@@ -30,11 +31,11 @@
 
 &lt;p&gt;&lt;span class=&#34;spoiler&#34; &gt;不幸的是，有几个字幕站被墙了，比如 &lt;strong&gt;podnapisi&lt;/strong&gt;, &lt;strong&gt;legendastv&lt;/strong&gt;, &lt;strong&gt;shooter&lt;/strong&gt;…&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;GitHub 地址：&lt;a href=&#34;https://github.com/Diaoul/subliminal&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/Diaoul/subliminal&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img alt=&#34;subliminal&#34; src=&#34;https://mogeko.github.io/images/030/subliminal.png&#34; &gt;&lt;/p&gt;
 
@@ -96,7 +97,7 @@
 
 &lt;p&gt;居然是繁体，不过我一般遇到的都是简体中文的，而且繁体也不是不能看🤔&lt;/p&gt;
 
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;命令中的 &lt;code&gt;-l&lt;/code&gt; 指定下载的字幕语言，例如要下载英语字幕：&lt;/p&gt;
 
@@ -155,13 +156,13 @@ for v in videos:
 
 &lt;p&gt;当然是有了！&lt;strong&gt;GNOME MPV&lt;/strong&gt; 就是这么一款播放器，它基于 &lt;strong&gt;MPV&lt;/strong&gt;，继承了 &lt;strong&gt;MPV&lt;/strong&gt; 强大的编解码器，以及其恐怖的定制能力 &lt;span class=&#34;spoiler&#34; &gt;脚本才是 &lt;strong&gt;MPV&lt;/strong&gt; 的灵魂 | ・ω・’）&lt;/span&gt;。同时又拥有较为美观方便的 GUI，简直是居家旅行必备的万能播放器啊！！😂😂😂&lt;/p&gt;
 
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;官网：&lt;a href=&#34;https://gnome-mpv.github.io&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://gnome-mpv.github.io&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;GitHub 地址：&lt;a href=&#34;https://github.com/gnome-mpv/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gnome-mpv/gnome-mpv&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/029/gnome_mpv.png&#34; alt=&#34;GNOME MPV&#34; &gt;&lt;/p&gt;
 
