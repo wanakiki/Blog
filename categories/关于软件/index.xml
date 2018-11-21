@@ -6,10 +6,29 @@
     <description>Recent content in 关于软件 on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 21 Nov 2018 09:39:26 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 21 Nov 2018 12:38:05 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GNU/Linux 输入法折腾笔记 (RIME)</title>
+      <link>https://mogeko.github.io/2018/031/</link>
+      <pubDate>Wed, 21 Nov 2018 12:38:05 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/031/</guid>
+      <description>-- 终于，我在也忍受不了 Ubuntu 18.04 自带的 ibus-libpinyin 了。决定好好配置以下输入法，本来以为最多半个小时就能搞定的事情，结果整整花了半天 _(:з」∠)_
+网上一搜发现 搜狗拼音 有 GNU/Linux 版的，于是去官网下载了 搜狗拼音 的 deb 包，安装，全局终…
+才怪 | ・ω・’）
+当我看到 搜狗拼音 只能支持 fcitx 框架 时瞬间就放弃了。不是说 fcitx 框架 不好，只是觉得要换输入法框架太折腾了 (Ubuntu 18.4 预装了 ibus 框架)；后来事实证明，ibus 框架 不仅折腾，bug 还多…
+早晓得就换 fcitx 框架 了 _(:з」∠)_
+
+放弃 搜狗拼音 后，我又将目光投向了一款开源的跨平台输入法：RIME 
+ 中州韵输入法引擎（英语：Rime Input Method Engine，又称Rime 输入法）是由佛振编写的开源中文输入法，目前项目网站、源代码均托管在GitHub[注 1]。基于同一个核心架构，该输入法分为三个官方发行版：Linux 发行版中州韵（ibus-rime）、Windows发行版小狼毫（Weasel）、macOS 发行版鼠须管（Squirrel）。另有数个第三方发行版：Linux 发行版fcitx-rime、Windows发行版PRIME、macOS 发行版XIME、Android发行版同文输入法（Trime）、iOS发行版iRime。
+ 哇！开源输入法呢！！✪ω✪
+去 TM 的资本主义 搜狗拼音，开源输入法才配在睾贵的 GNU/Linux 上打字
+于是便上了 RIME 的贼船 _(:з」∠)_</description>
+    </item>
     
     <item>
       <title>subliminal | 电影字幕下载神器</title>
