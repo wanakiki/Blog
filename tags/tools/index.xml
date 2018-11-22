@@ -17,17 +17,7 @@
       <pubDate>Wed, 21 Nov 2018 12:38:05 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/031/</guid>
-      <description>-- 终于，我在也忍受不了 Ubuntu 18.04 自带的 ibus-libpinyin 了。决定好好配置以下输入法，本来以为最多半个小时就能搞定的事情，结果整整花了半天 _(:з」∠)_
-网上一搜发现 搜狗拼音 有 GNU/Linux 版的，于是去官网下载了 搜狗拼音 的 deb 包，安装，全局终…
-才怪 | ・ω・’）
-当我看到 搜狗拼音 只能支持 fcitx 框架 时瞬间就放弃了。不是说 fcitx 框架 不好，只是觉得要换输入法框架太折腾了 (Ubuntu 18.4 预装了 ibus 框架)；后来事实证明，ibus 框架 不仅折腾，bug 还多…
-早晓得就换 fcitx 框架 了 _(:з」∠)_
-
-放弃 搜狗拼音 后，我又将目光投向了一款开源的跨平台输入法：RIME 
- 中州韵输入法引擎（英语：Rime Input Method Engine，又称Rime 输入法）是由佛振编写的开源中文输入法，目前项目网站、源代码均托管在GitHub[注 1]。基于同一个核心架构，该输入法分为三个官方发行版：Linux 发行版中州韵（ibus-rime）、Windows发行版小狼毫（Weasel）、macOS 发行版鼠须管（Squirrel）。另有数个第三方发行版：Linux 发行版fcitx-rime、Windows发行版PRIME、macOS 发行版XIME、Android发行版同文输入法（Trime）、iOS发行版iRime。
- 哇！开源输入法呢！！✪ω✪
-去 TM 的资本主义 搜狗拼音，开源输入法才配在睾贵的 GNU/Linux 上打字
-于是便上了 RIME 的贼船 _(:з」∠)_</description>
+      <description>-- 终于，我在也忍受不了 Ubuntu 18.04 自带的 ibus-libpinyin 了。决定好好配置以下输入法，本来以为最多半个小时就能搞定的事情，结果整整花了半天 _(:з」∠)_ 网上一搜发</description>
     </item>
     
     <item>
@@ -36,19 +26,7 @@
       <pubDate>Wed, 21 Nov 2018 09:39:26 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/030/</guid>
-      <description>-- subliminal 是一个基于 Python 的强大的命令行字幕搜索和下载工具。
-最先知道 subliminal 是因为 MPV 播放器。配合插件 find_subtitles.lua 使用，在载入视频的同时搜索并下载中文字幕，简直天衣无缝。不过有的视频的文件名不是那么标准的话，就不一定能匹配得到合适的字幕。解决方法除了改文件名以外，还可以用 subliminal 手动搜索。
-subliminal 使用多个字幕网站做为数据源，包括世界上最大的开放式字幕库 opensubtitles
-不幸的是，有几个字幕站被墙了，比如 podnapisi, legendastv, shooter…
-
-GitHub 地址：https://github.com/Diaoul/subliminal
-
-依赖  python2  安装 首先安装 python2 和 pip
-然后在终端中输入：
-pip install subliminal  使用 在终端中输入：
-subliminal download -l zh [电影名称]  例如，如果要下载「低俗小说」的字幕：
-subliminal download -l zh Pulp.Fiction.1994.720p.BluRay.DTS.x264-ESiR  部分字幕文件：
-2 00:00:14,480 --&amp;gt; 00:00:18,850 柔軟潮濕的物體 3 00:00:18,980 --&amp;gt; 00:00:24,610 低級趣味、印刷簡陋的書刊 4 00:00:27,620 --&amp;gt; 00:00:31,590 算了 太冒險了 我不幹 5 00:00:31,590 --&amp;gt; 00:00:34,080 你每次都這樣說 6 00:00:34,460 --&amp;gt; 00:00:36,890 太危險了…我不幹了… 7 00:00:37,060 --&amp;gt; 00:00:39,530 我哪一次說錯?</description>
+      <description>-- subliminal 是一个基于 Python 的强大的命令行字幕搜索和下载工具。 最先知道 subliminal 是因为 MPV 播放器。配合插件 find_subtitles.lua 使用，在载入视频的同时搜索并下载中文字幕，简直天衣无缝</description>
     </item>
     
     <item>
@@ -57,18 +35,7 @@ subliminal download -l zh Pulp.Fiction.1994.720p.BluRay.DTS.x264-ESiR  部分字
       <pubDate>Tue, 20 Nov 2018 16:52:42 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/029/</guid>
-      <description>-- 在 GNU/Linux 下看视频向来是一件麻烦事。VLC 太过臃肿，MPV 又太过简 (chǒu) 陋了。
-那么，有没有一款播放器能兼顾美观与内在，随便还拥有较好的易用性和较强的定制能力呢？
-当然是有了！GNOME MPV 就是这么一款播放器，它基于 MPV，继承了 MPV 强大的编解码器，以及其恐怖的定制能力 脚本才是 MPV 的灵魂 | ・ω・’）。同时又拥有较为美观方便的 GUI，简直是居家旅行必备的万能播放器啊！！😂😂😂
-
-官网：https://gnome-mpv.github.io
-GitHub 地址：https://github.com/gnome-mpv/gnome-mpv
-
-依赖  autotools (只在构建时依赖) autoconf-archive (只在构建时依赖) pkg-config (只在构建时依赖) gcc (只在构建时依赖) intltool (只在构建时依赖) python2 (只在构建时依赖) glib2 gtk3 libmpv youtube-dl (可选)  安装 GNU/Linux packages  Arch Linux https://www.archlinux.org/packages/gnome-mpv
- Arch Linux (Git): https://aur.archlinux.org/packages/gnome-mpv-git
- Debian testing: https://packages.debian.org/testing/gnome-mpv
- Debian unstable: https://packages.debian.org/sid/gnome-mpv
- Fedora (rpmfusion): https://admin.</description>
+      <description>-- 在 GNU/Linux 下看视频向来是一件麻烦事。VLC 太过臃肿，MPV 又太过简 (chǒu) 陋了。 那么，有没有一款播放器能兼顾美观与内在，随便还拥有较好的易用</description>
     </item>
     
     <item>
@@ -77,19 +44,7 @@ GitHub 地址：https://github.com/gnome-mpv/gnome-mpv
       <pubDate>Sun, 18 Nov 2018 00:54:27 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/026/</guid>
-      <description>很早以前的一个仓库了，博主已经入了 Office 365，早就用不到了。
-不过最近帮小学妹装机，所以突然诈尸更新了一波。给需要的人 (○&amp;rsquo;◡&amp;rsquo;○)ﾉ♥ 这个脚本可以用来激活：
- Office (零售版和 VOL 版) Windows (仅限 VOL 版)  链接：Mogeko/KMS | GitHub
-直接下载：Run.cmd
-使用的 KMS 服务器来自：零散坑
-用法 双击运行 Run.cmd，然后根据提示激活即可
-VOL 版的 Office 和 Windows 直接通过 KMS 激活，零售版的 Office 需要先用脚本转换成 VOL 版，然后通过 KMS 激活。零售版 Windows：我觉得我还可以抢救一下 QAQ
-脚本默认激活的是 2016 版的 Office，其他版本可以到文件夹里找单独激活的脚本 (没测试过，理论上是可以用的)，或者自己手动改一下脚本 (将 %ospp% 这个变量替换成正确的 opss.vbs 路径)
-
-怎么说呢，要尊重别人的劳动成果，所以我觉得大家应该尽量避免使用盗版软件。
-毕竟软软也是要掐饭的嘛，有能力的话最好还是入个正比较好 |・ω・｀)
-
- ·End·</description>
+      <description>很早以前的一个仓库了，博主已经入了 Office 365，早就用不到了。 不过最近帮小学妹装机，所以突然诈尸更新了一波。给需要的人 (○&amp;rsquo;◡&amp;rs</description>
     </item>
     
     <item>
@@ -98,16 +53,7 @@ VOL 版的 Office 和 Windows 直接通过 KMS 激活，零售版的 Office 需�
       <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/013/</guid>
-      <description>提到百度网盘，想必大家都很熟悉吧。
-百度网盘自 2012 年上线运行以来，迅速积累了大量用户。但是狗改不了吃屎，作为百度的产品，百度网盘现在是越来越恶心了，不给充钱就限速，官方居然还不承认（百度网盘 - 维基百科 ）其实给免费账号限速也是可以理解的（毕竟别人也是要吃饭的，没有利润的产品肯定是走不远的）但百度居然给我限速到 20 KB/s！这还能用？！！
-但人们的力量是强大的，被百度恶心到的用户们很快就找到了破解百度网盘限速的方法——多线程下载。你不是只给我 20 KB/s 吗？我开TM 500 个线程，一样把 10 M/s 的带宽占满。于是乎一大批第三方网盘拔地而起，例如：PanDownload（已停止运营）、Village（Android）、油猴脚本 等。
-今天介绍的 BaiduPCS-Go 也是其中一个，相比于其他第三方网盘，具有以下特点：
- 不需要 Aria2、IDM 等第三方软件 自定义线程数（建议将最大线程数设置为 50 ~ 500，线程开太多会造成搞负载） 支持通配符匹配路径 通配符-维基百科 命(bi)令(ge)行(gao)  BaiduPCS-Go 的 Github
-安装 得益于 Go 的跨平台编译的特性，BaiduPCS-Go 几乎可以支持所有操作系统，只需要在 Releases 中选取合适的版本下载、运行就可以了
- 下载 BaiduPCS-Go  以 Windows 为例，根据我的电脑 CPU 下载并解压 BaiduPCS-Go-v3.2.1-windows-x86.zip
-可以直接双击运行（进入 console 模式）
-也可以在命令行中运行
-在Android 与 iOS 上安装 在 Android 上安装与在桌面上安装的思路差不多，都是 下载 -&amp;gt; 解压 -&amp;gt; (在命令行中)运行</description>
+      <description>提到百度网盘，想必大家都很熟悉吧。 百度网盘自 2012 年上线运行以来，迅速积累了大量用户。但是狗改不了吃屎，作为百度的产品，百度网盘现在是越来越恶心</description>
     </item>
     
   </channel>

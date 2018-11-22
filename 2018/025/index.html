@@ -46,16 +46,7 @@
     "articleSection" : "posts",
     "name" : "Leavelt 主题优化",
     "headline" : "Leavelt 主题优化",
-    "description" : "目前本博客使用的 Hugo 主题是：Leavelt
-正如你说看到的那样，是一款简约大气的的主题。但再使用的过程中我也发现了一些可以改进的地方
-添加谈笑风生区 Leavelt 默认没有评论系统，我们可以做一点简单的修改添加 Gitalk 评论系统
-关于 Gitalk  官方网址： https://github.com/gitalk/gitalk/ 在线示例： https://gitalk.github.io/  Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说，只要 Github 不倒闭，你的评论系统就不会被关闭。
-创建 Github Application 首先要去 GitHub 上创建一个 Github Application
-点击创建
-记下 Client ID 和 Client Secret，以后要用
-添加 gitalk.html 模板 接下来为主题添加 gitalk.html 模板。
-在主题的 layouts/partials 文件夹中创建 gitalk.html 文件，写下如下代码
-{{ if .Site.Params.enableGitalk }} &lt;div id=&quot;gitalk-container/&quot; style=&quot;border:0&quot; &gt;&lt;/div&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.",
+    "description" : "目前本博客使用的 Hugo 主题是：Leavelt 正如你说看到的那样，是一款简约大气的的主题。但再使用的过程中我也发现了一些可以改进的地方 添加谈笑风生",
     "inLanguage" : "zh-cn",
     "author" : "Mogeko",
     "creator" : "Mogeko",
@@ -66,7 +57,7 @@
     "datePublished": "2018-11-16 19:57:09 &#43;0800 &#43;0800",
     "dateModified" : "2018-11-16 19:57:09 &#43;0800 &#43;0800",
     "url" : "https://mogeko.github.io/2018/025/",
-    "wordCount" : "625",
+    "wordCount" : "1853",
     "keywords" : [ "Hugo", "Mogeko`s Blog"]
 }
 </script>
@@ -372,6 +363,21 @@
 <p>还有一个办法就是使用 <strong>HTML 标签</strong>代替 <strong>Markdown 语法</strong>，即用 <code>&lt;img src=&quot;&quot;&gt;</code> 标签代替 <code>![]()</code></p>
 
 <p>不过这样就没法使用 <strong>lightGallery 图片相册</strong> 了</p>
+
+<h1 id="添加字数统计">添加字数统计</h1>
+
+<p>打开文件 <code>layouts/_default/single.html</code>，在 <code>22</code> 行后插入一行，添加以下 <strong>DOM</strong>：</p>
+
+<pre><code class="language-html">&lt;span class=&quot;post-word-count&quot;&gt;, {{ .WordCount }} words&lt;/span&gt;
+</code></pre>
+
+<p><img alt="Gitalk" src="https://mogeko.github.io/images/025/add_word-count.png" style="border:0" ></p>
+
+<p>效果：</p>
+
+<p><img alt="字数统计" src="https://mogeko.github.io/images/033/fix_bug.png" ></p>
+
+<p>关于添加「字数统计」的详情：<a href="https://mogeko.github.io/2018/033/" rel="nofollow noreferrer" target="_blank">为 Hugo 博客添加字数统计</a></p>
 
 <p><br></p>
 

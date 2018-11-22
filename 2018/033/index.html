@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://mogeko.github.io/2018/020/" />
-  <link rel="next" href="https://mogeko.github.io/2018/022/" />
-  <link rel="canonical" href="https://mogeko.github.io/2018/021/" />
+  <link rel="prev" href="https://mogeko.github.io/2018/032/" />
+  
+  <link rel="canonical" href="https://mogeko.github.io/2018/033/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           空洞骑士：存档备份方法 | Mogeko`s Blog
+           为 Hugo 博客添加字数统计 | Mogeko`s Blog
        
   </title>
-  <meta name="title" content="空洞骑士：存档备份方法 | Mogeko`s Blog">
+  <meta name="title" content="为 Hugo 博客添加字数统计 | Mogeko`s Blog">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https://mogeko.github.io"
     },
     "articleSection" : "posts",
-    "name" : "空洞骑士：存档备份方法",
-    "headline" : "空洞骑士：存档备份方法",
-    "description" : "-- 一个简单的方法备份「空洞骑士」的存档文件。 备份存档文件有个以下好处： 因为众所周知的原因，Steam 云有时会不稳定，定期手动备份存档可以减少",
+    "name" : "为 Hugo 博客添加字数统计",
+    "headline" : "为 Hugo 博客添加字数统计",
+    "description" : "&emsp;&emsp; -- 作为一个孤芳自赏的 Bloger，每一篇文章都像是自己的孩子一样，孩子的“体重”如何是每一个父母都关注的问题。 今天就简单的教教大家如何给自",
     "inLanguage" : "zh-cn",
     "author" : "Mogeko",
     "creator" : "Mogeko",
@@ -54,11 +54,11 @@
     "accountablePerson" : "Mogeko",
     "copyrightHolder" : "Mogeko",
     "copyrightYear" : "2018",
-    "datePublished": "2018-09-30 19:17:00 &#43;0800 &#43;0800",
-    "dateModified" : "2018-09-30 19:17:00 &#43;0800 &#43;0800",
-    "url" : "https://mogeko.github.io/2018/021/",
-    "wordCount" : "222",
-    "keywords" : [ "Steam","Steam 指南备份","轻松休闲的空洞骑士", "Mogeko`s Blog"]
+    "datePublished": "2018-11-22 16:51:03 &#43;0800 &#43;0800",
+    "dateModified" : "2018-11-22 16:51:03 &#43;0800 &#43;0800",
+    "url" : "https://mogeko.github.io/2018/033/",
+    "wordCount" : "555",
+    "keywords" : [ "Hugo", "Mogeko`s Blog"]
 }
 </script>
 
@@ -120,16 +120,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">空洞骑士：存档备份方法</h1>
+        <h1 class="post-title" itemprop="name headline">为 Hugo 博客添加字数统计</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://mogeko.github.io" rel="author">Mogeko</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2018-09-30 itemprop="datePublished">September 30, 2018</time>
+                on <time datetime=2018-11-22 itemprop="datePublished">November 22, 2018</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E7%AC%AC%E4%B9%9D%E8%89%BA%E6%9C%AF/"> 关于第九艺术 </a>
+                        <a href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2/"> 关于博客 </a>
                         
                 </span>
         </div>
@@ -137,8 +137,6 @@
     <div class="post-content">
         
 
-        
-            
         
 
         
@@ -154,40 +152,67 @@
 
           
 
-<!-- <img src="https://mogeko.github.io/images/021/logo.jpg"  alt="Logo" > -->
+<!-- 
+<img alt="" src="https://mogeko.github.io/images/033/" >
+<span class="spoiler" ></span>
+&emsp;&emsp;
+ -->
 
-<p>一个简单的方法备份<strong>「空洞骑士」</strong>的存档文件。</p>
+<p>作为一个孤芳自赏的 Bloger，每一篇文章都像是自己的孩子一样，孩子的“体重”如何是每一个父母都关注的问题。</p>
 
-<p>备份存档文件有个以下好处：</p>
+<p>今天就简单的教教大家如何给自己的孩子称“体重”。</p>
 
-<ol>
-<li>因为众所周知的原因，Steam 云有时会不稳定，定期手动备份存档可以减少因云备份失败造成的进度丢失</li>
-<li>可以较为快速的完成某些不可能在同一存档中完成的成就</li>
-</ol>
+<h1 id="相关模板变量">相关模板变量</h1>
 
-<!-- more -->
+<p>作为一个静态网页生成器，Hugo 为使用者提供了很多与网页相关的<strong>模板变量</strong>，而与文章字数相关的<strong>模板变量</strong>有两个：</p>
 
-<h1 id="正文">正文</h1>
+<ul>
+<li><strong><code>.FuzzyWordCount</code></strong>: 文章内容的大致单词数 (字数)</li>
+<li><strong><code>.WordCount</code></strong>: 文章内容的单词数 (字数)</li>
+</ul>
 
-<p>使用 Win键 + R 呼出<strong>「运行」</strong>，然后输入</p>
+<p>我们可以看到 <strong><code>.FuzzyWordCount</code></strong> 提供的是一个大概的值 (整 100)，比如 1 个字算 100 字，2 个字还算 100 字，201 个字算 200 字。这样统计出来的字数可能会比实际情况更多一点，虽然更有牌面但全都是整数未免也太假了。所以我还是决定使用 <strong><code>.WordCount</code></strong>。</p>
 
-<p>%HOMEDRIVE%%HOMEPATH%\AppData\LocalLow\Team Cherry\Hollow Knight</p>
+<p>更多与<strong>模板变量</strong>相关信息请参考：<a href="https://gohugo.io/variables/" rel="nofollow noreferrer" target="_blank">Variables and Params</a></p>
 
-<p><img src="https://steamuserimages-a.akamaihd.net/ugc/941706910129397282/0D5A1135E6760F86BC8F3A9FE32EE99983375512/"></p>
+<h1 id="为主题添加-字数统计-模板">为主题添加「字数统计」模板</h1>
 
-<p>在弹出的文件夹中可以看到以下文件</p>
+<p>首先启动一个本地的 Hugo 服务器。</p>
 
-<p><img src="https://steamuserimages-a.akamaihd.net/ugc/941706910129400498/62CFB7DA909A59E3E1C88AFF299388B680B07885/"></p>
+<pre><code class="language-shell">hugo server
+</code></pre>
 
-<p>user[数字].dat</p>
+<p>然后打开 <strong>Chrome</strong>，利用 <strong>DevTools</strong> 定位放<strong>字数统计</strong>的位置</p>
 
-<p>就是存档文件，数字 (1 - 4) 表示第几个存档。</p>
+<p><img alt="Chrome DevTools" src="https://mogeko.github.io/images/033/devtools.png" ></p>
 
-<hr />
+<p>然后记录下与预订位置邻近的 <strong>DOM</strong> 的 <code>class</code> 的值。</p>
 
-<p>原文地址：<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1526745112" rel="nofollow noreferrer" target="_blank">「空洞骑士」存档备份方法 | Steam 社区</a></p>
+<p>打开 <strong>VSCode</strong>，利用「搜索」定位刚刚查找到到 <code>class</code> 值的位置。</p>
 
-<p>作者：依然是 Mogeko ٩(●˙▿˙●)۶</p>
+<p><img alt="VSCode" src="https://mogeko.github.io/images/033/vscode.png" ></p>
+
+<p>再在合适的位置中插入以下代码：</p>
+
+<pre><code class="language-html">&lt;span class=&quot;post-word-count&quot;&gt;, {{ .WordCount }} words&lt;/span&gt;
+</code></pre>
+
+<p>然后再在 <strong>Chrome</strong> 中查看效果。</p>
+
+<h1 id="统计字数不正确">统计字数不正确</h1>
+
+<p>一打开 <strong>Chrome</strong> 懵逼了。我辛辛苦苦码了这么久才 69 个字？？？<span class="spoiler" >你豁鬼哦！！（╯‵□′）╯︵┴─┴</span></p>
+
+<p><img alt="bug" src="https://mogeko.github.io/images/033/bug.png" ></p>
+
+<p>Google 了一下才知道，原来 Hugo 默认不会统计中文 (<a href="https://github.com/nodejh/hugo-theme-cactus-plus/issues/18" rel="nofollow noreferrer" target="_blank">详情</a>)，需要在<code>config.toml</code> 中添加这么一句配置才可以开启对中文的统计</p>
+
+<pre><code class="language-toml">hasCJKLanguage = true
+</code></pre>
+
+<p>正常了</p>
+
+<p><img alt="fix_bug" src="https://mogeko.github.io/images/033/fix_bug.png" ></p>
 
 <p><br></p>
 
@@ -206,7 +231,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://mogeko.github.io/2018/021/>https://mogeko.github.io/2018/021/</span>
+                    <a href=https://mogeko.github.io/2018/033/>https://mogeko.github.io/2018/033/</span>
             </p>
             
              
@@ -222,14 +247,8 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://mogeko.github.io/tags/steam/">
-                    #Steam</a></span>
-            
-            <span class="tag"><a href="https://mogeko.github.io/tags/steam-%E6%8C%87%E5%8D%97%E5%A4%87%E4%BB%BD/">
-                    #Steam 指南备份</a></span>
-            
-            <span class="tag"><a href="https://mogeko.github.io/tags/%E8%BD%BB%E6%9D%BE%E4%BC%91%E9%97%B2%E7%9A%84%E7%A9%BA%E6%B4%9E%E9%AA%91%E5%A3%AB/">
-                    #轻松休闲的空洞骑士</a></span>
+            <span class="tag"><a href="https://mogeko.github.io/tags/hugo/">
+                    #Hugo</a></span>
             
             </section>
         
@@ -241,10 +260,8 @@
 
     <div class="post-nav">
         
-        <a href="https://mogeko.github.io/2018/020/" class="prev" rel="prev" title="空洞骑士：寻神者 DLC 全成就指南"><i class="iconfont icon-left"></i>&nbsp;空洞骑士：寻神者 DLC 全成就指南</a>
+        <a href="https://mogeko.github.io/2018/032/" class="prev" rel="prev" title="GNU/Linux 技巧：如何快速的找到一个文件"><i class="iconfont icon-left"></i>&nbsp;GNU/Linux 技巧：如何快速的找到一个文件</a>
          
-        
-        <a href="https://mogeko.github.io/2018/022/" class="next" rel="next" title="空洞骑士：格林剧团 DLC 全成就指南">空洞骑士：格林剧团 DLC 全成就指南&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -309,9 +326,8 @@
 
 
     
-     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
-      
-     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
 

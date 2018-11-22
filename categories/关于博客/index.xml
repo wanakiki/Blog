@@ -6,10 +6,19 @@
     <description>Recent content in 关于博客 on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 19 Nov 2018 11:28:18 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 22 Nov 2018 16:51:03 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>为 Hugo 博客添加字数统计</title>
+      <link>https://mogeko.github.io/2018/033/</link>
+      <pubDate>Thu, 22 Nov 2018 16:51:03 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/033/</guid>
+      <description>&amp;emsp;&amp;emsp; -- 作为一个孤芳自赏的 Bloger，每一篇文章都像是自己的孩子一样，孩子的“体重”如何是每一个父母都关注的问题。 今天就简单的教教大家如何给自</description>
+    </item>
     
     <item>
       <title>使用 Travis CI 自动部署 Hugo 博客</title>
@@ -17,13 +26,7 @@
       <pubDate>Mon, 19 Nov 2018 11:28:18 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/028/</guid>
-      <description>通过 Travis CI 来部署 Hugo 或者 Hexo 博客可能在配置的时候会麻烦一点，但配置好后确实是方便了不少。特别是对于 Hugo 这种没有部署插件的静态网站生成器，只能手动部署到 GitHub。
-网上有很多关于用 Travis 自动部署 Hexo 的文章，却没看到几篇关于 Hugo，虽然原理都差不多，但细节上还是有很多容易让小白头疼的地方，所以今天我就来教教如何用 Travis 来自动部署 Hugo。
-正文 废话不多说，我们开始吧！
-设置代码仓库 首先确保你的 GitHub 上有这两个仓库：用来部署博客的 [用户名].github.io 和 用来存放“源码”的 Blog
-这里与别的「使用 Travis 自动部署博客」教程稍微有点不同，别人家大多上将博客的「源码」放在 [用户名].github.io 的分支上，而不是向我一样开两个仓库
-开两个仓库的好处有：
- 结构更清晰。与博客相关的内容都在 Blog仓库里， [用户名].github.io 只用来提供一个 GitHub Pages 的服务 「源码」 存放在 master 分支下，clone 更快 我不知道上我的原因还是 GitHub 或是 Git 的原因，我从 GitHub clone 除 master 分支以外的分支时，下载速度贼慢，只有几百 kb 每秒，clone 一个 「源码」 都至少要半个多小时  申请 Token 然后要去 GitHub 上申请一个新的 personal access token。</description>
+      <description>通过 Travis CI 来部署 Hugo 或者 Hexo 博客可能在配置的时候会麻烦一点，但配置好后确实是方便了不少。特别是对于 Hugo 这种没有部署插件的静态网站生成器，只能手动部署</description>
     </item>
     
     <item>
@@ -32,16 +35,7 @@
       <pubDate>Fri, 16 Nov 2018 19:57:09 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/025/</guid>
-      <description>目前本博客使用的 Hugo 主题是：Leavelt
-正如你说看到的那样，是一款简约大气的的主题。但再使用的过程中我也发现了一些可以改进的地方
-添加谈笑风生区 Leavelt 默认没有评论系统，我们可以做一点简单的修改添加 Gitalk 评论系统
-关于 Gitalk  官方网址： https://github.com/gitalk/gitalk/ 在线示例： https://gitalk.github.io/  Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说，只要 Github 不倒闭，你的评论系统就不会被关闭。
-创建 Github Application 首先要去 GitHub 上创建一个 Github Application
-点击创建
-记下 Client ID 和 Client Secret，以后要用
-添加 gitalk.html 模板 接下来为主题添加 gitalk.html 模板。
-在主题的 layouts/partials 文件夹中创建 gitalk.html 文件，写下如下代码
-{{ if .Site.Params.enableGitalk }} &amp;lt;div id=&amp;quot;gitalk-container/&amp;quot; style=&amp;quot;border:0&amp;quot; &amp;gt;&amp;lt;/div&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://unpkg.</description>
+      <description>目前本博客使用的 Hugo 主题是：Leavelt 正如你说看到的那样，是一款简约大气的的主题。但再使用的过程中我也发现了一些可以改进的地方 添加谈笑风生</description>
     </item>
     
     <item>
@@ -50,15 +44,7 @@
       <pubDate>Fri, 16 Nov 2018 12:57:09 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/024/</guid>
-      <description>Hugo 是一个强大的静态网页生成器，使用 go 开发。速度贼快，还有 “时时预览” 等特性。不过 Hugo 还比较年轻，没有像 NexT 那样功能强大，成熟稳定的主题。所以很多东西需要自己动手撸。
-就例如评论系统。
-关于 Gitalk  官方网址： https://github.com/gitalk/gitalk/ 在线示例： https://gitalk.github.io/  Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说，只要 Github 不倒闭，你的评论系统就不会被关闭。
-添加谈笑风生区 本博客使用的主题是：Leavelt
-不同主题可能有所区别，但原理都是类似的
-原理 众所周知，Hugo 会将 Markdown 文档 按照 主题 (包括 HTML 模板、CSS、JavaScript 等) 编译成静态网页
-那么我们只需要将 Gitalk 作为一个 &amp;lt;div&amp;gt; 插入到 HTML 模板中，然后在 config.toml 中添加相关配置，就可以实现“谈笑风生区”了
-创建 Github Application 首先要去 GitHub 上创建一个 Github Application
-点击创建</description>
+      <description>Hugo 是一个强大的静态网页生成器，使用 go 开发。速度贼快，还有 “时时预览” 等特性。不过 Hugo 还比较年轻，没有像 NexT 那样功能强大，成熟稳定的主题。所以很多</description>
     </item>
     
     <item>
@@ -67,15 +53,7 @@
       <pubDate>Sun, 05 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/018/</guid>
-      <description>正如你所看到的，本博客换了一个主题。但你们看不到的是，本博客将静态页面生成引擎换成了 Hugo
-Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应用应该被称作静态网站生成器。这类应用将 Markdown 文件和主题一起编译成由 HTML、CSS、JavaScript 组成的静态网页。然后上传到 GitHub 上，通过 GitHub 提供的静态页面托管服务 (GitHub Pages) 进行访问。
-这里就写一篇文章来记录一下踩过的坑。
-本站目前使用的主题是 Hello Programmer，要配合 Hugo 使用。今后会写一篇文章来详细介绍。
-准备工作  一个 Github 账号。 &amp;lt;- 我们要使用它提供的 Github Pages 服务来搭建博客 https://github.com/ Hugo &amp;lt;- 博客框架，将 Markdown 文档渲染成网页 https://github.com/gohugoio/hugo Git &amp;lt;- 用来发布博客 https://git-scm.com/
-正文 安装 Git 如果已经装好了 Git 的同学可以跳过了 与 Hexo 一样，Hugo 也需要使用 Git 进行发布。
-  首先去官网下载各自的安装包。官网 Git 的官网是英文的，点 [Downloads for Windows] 下载。
-下载好后，双击安装包，就像安装普通软件一样安装。
-安装好后打开按 Win 键 + R，输入 cmd，回车。</description>
+      <description>正如你所看到的，本博客换了一个主题。但你们看不到的是，本博客将静态页面生成引擎换成了 Hugo Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应用应</description>
     </item>
     
     <item>
@@ -84,13 +62,7 @@ Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应
       <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/005/</guid>
-      <description>参考 https://github.com/Z4Tech/hexo-tag-bilibili
-准备工作  Node.js 这是一个 Hexo插件，所以通过 npm 安装。  正文 安装 hexo-tag-bilibili 这就是那个神奇的插件，名叫 hexo-tag-bilibili。 我们通过 npm 进行安装。 切换到 Hexo 的目录，执行一下命令
-$ cd [你的 Hexo目录] $ npm install --save hexo-tag-bilibili  使用 在文章中用一下方式使用此插件 [av_id] 填写视频的 av号。
-{% bilibili [av_id] %}  如果有多 p，使用一下格式。[page] 为 P号。
-{% bilibili [av_id] [page] %}  例如：
-{% bilibili av2271112 %}  高级 配置 你可以配置你的播放器 在 Hexo 的文件夹中，打开 _config.yml文件进行配置。 你可以配置 是否自动播放，播放器的大小 等。 例如
-bilibili: width: 452 height: 544  Style 播放器由一个带有 bili_video 类的 &amp;lt;div&amp;gt;标签包装。你可以通过自定义的 css文件修改它的样式。</description>
+      <description>参考 https://github.com/Z4Tech/hexo-tag-bilibili 准备工作 Node.js 这是一个 Hexo插件，所以通过 npm 安装。 正文 安装 hexo-tag-bilibili 这就是那个神奇的插件，名叫 hexo-tag-bilibili。 我们通过 npm 进行</description>
     </item>
     
     <item>
@@ -99,12 +71,7 @@ bilibili: width: 452 height: 544  Style 播放器由一个带有 bili_video 类�
       <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/004/</guid>
-      <description>在使用 Hexo Hey 之前，我一直在使用 VSCode（配合 vscode-hexo 插件）来管理博客。虽然可以很快捷 的新建,部署, 测试,发布 博客 ，但还是很麻烦，离我理想中的博客平台还有一定的距离。 我在知乎上发现了 Hexo Hey 这个插件，尝试了一下，虽然有各种问题，但确实很好用。 因此决定写一篇文章来介绍一下如何安装, 使用 Hexo Hey。
-切换换到 Hexo Hey 后最不习惯的地方就是没有了 VSCode 中那些方便的快捷键了。(ノへ￣、) 擦眼泪……
-与 Hexo Hey 比较相似的 Hexo 博客管理程序还有 Hexo Admin。
-准备工作  Node.js &amp;lt;- 就是安 Hexo 时用到的拿货，应该已经有了，就不贴安装地址了。 Hexo Hey &amp;lt;- 通过 npm 安装。  正文 安装 Hexo Hey 首先进入已配置好的那个 Hexo 目录：
-$ cd [你的 Hexo 目录]  输入一下命令安装 Hexo Hey：
-$ npm install hexo-hey --save  然后打开 Hexo 目录 中的 _config.</description>
+      <description>在使用 Hexo Hey 之前，我一直在使用 VSCode（配合 vscode-hexo 插件）来管理博客。虽然可以很快捷 的新建,部署, 测试,发布 博客 ，但还是很麻烦，离我理想中的博客</description>
     </item>
     
     <item>
@@ -113,13 +80,7 @@ $ npm install hexo-hey --save  然后打开 Hexo 目录 中的 _config.</descrip
       <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/003/</guid>
-      <description>虽然 NexT 的主题很漂亮，但问题是太受欢迎了，都快烂大街了。 好在它是一个开源项目，我们可以通过修改它的代码来个性话你的博客。 这篇教程要涉及到一些前端知识，可能没有那么 Novice friendly。
-因为涉及到对 NexT 代码的修改，搞不好，可能引起 Hexo 无法工作。所以强烈建议使用 Git 对 NexT 进行备份。 具体使用方法请自行 Google。
-准备工作  一颗能折腾的心。 一定的前端知识。  正文 最简单的方法 美化你的 Hexo 的最简单方法 -&amp;gt; 安装我修改过的 NexT 在 Hexo 目录中使用命令
-$ git clone https://github.com/Mogeko/hexo-theme-next.git themes/next  *记得删掉原来安装过的 NexT。
-手动美化 Hexo 如果有能力，推荐跟我一起手动改代码。 最好能明白我给你的代码都是做什么的，将来万一出了问题，也有个找到问题的方向。
-圆形头像（头像旋转） NexT 默认的头像是方的。也不是说不好看，就是觉得不习惯，这个要看个人喜好。 在 /source/css/_custom/custom.styl 中添加一下代码就可以吧头像弄成圆的
-// 圆形头像 .site-author-image { border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; transition: 1.4s all; }  然后，添加以下代码可以让头像在鼠标停留时旋转 180°</description>
+      <description>虽然 NexT 的主题很漂亮，但问题是太受欢迎了，都快烂大街了。 好在它是一个开源项目，我们可以通过修改它的代码来个性话你的博客。 这篇教程要涉及到一些前</description>
     </item>
     
     <item>
@@ -128,11 +89,7 @@ $ git clone https://github.com/Mogeko/hexo-theme-next.git themes/next  *记得�
       <pubDate>Sun, 20 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/002/</guid>
-      <description>自从我开了这个博客后，就有很多小伙伴问我怎么弄的？（好吧，其实就一个(*/ω＼*)） 为了教她，也为了给各位看官一点参考。我写了这篇文章。 因为她比较小白，所以这篇文章会写得比较详细。
-准备工作  一个 Github 账号。 &amp;lt;-我们要使用它提供的 Github Pages 服务来搭建博客 https://github.com/ Node.js &amp;lt;- Hexo 依赖于此 https://nodejs.org/zh-cn/ Git &amp;lt;- 用来发布博客 https://git-scm.com/ Hexo &amp;lt;- 博客框架 https://hexo.io/zh-cn/index.html [非必需]Chocolatey &amp;lt;- 用来安装 Node.js 和 Git https://chocolatey.org/  正文 安装 Node.js &amp;amp; Git 使用 安装包 安装（小白看这里） 首先去官网下载各自的安装包。（地址在上面） 其中 Node.js 一般会有两个版本；都可以用。 Git 的官网是英文的，点 [Downloads for Windows] 下载。
-下载好后，双击安装包，就像安装普通软件一样安装。
-安装好后打开按 Win键 + R，输入 cmd，回车。 在弹出的黑框框中分别输入
-$ node -v  $ npm -v  $ git version  如果显示的是各种的版本号，说明安装成功 使用 Chocolatey 安装 我比较喜欢用 Chocolatey 来安装；比较方便。 虽然赶 apt 还有一段距离，但确实是 Windows 下最好的包管理程序。 有空我会写一篇比较详尽的 Chocolatey 使用教程。</description>
+      <description>自从我开了这个博客后，就有很多小伙伴问我怎么弄的？（好吧，其实就一个(*/ω＼*)） 为了教她，也为了给各位看官一点参考。我写了这篇文章。 因为</description>
     </item>
     
   </channel>

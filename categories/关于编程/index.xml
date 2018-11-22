@@ -17,7 +17,7 @@
       <pubDate>Sun, 18 Nov 2018 18:30:52 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/027/</guid>
-      <description>About the bottom-up development Bottom-up development is a style of developing programs. With the bottom-up development, we develop in the reverse inside-out fashion; that is, we develop the service classes first. To test the service classes, we write a temporary dummy main class. After the service classes are done, we complete the top-level class that uses these service classes. The bottom-up development for this program implements the Loanclass first fully and then the LoanCalculatorclass.</description>
+      <description>About the bottom-up development Bottom-up development is a style of developing programs. With the bottom-up development, we develop in the reverse inside-out fashion; that is, we develop the service classes first. To test the service classes, we write a temporary dummy main class. After the service classes are done, we complete the top-level class that uses these service classes. The bottom-up development for this program implements the Loanclass first fully</description>
     </item>
     
   </channel>

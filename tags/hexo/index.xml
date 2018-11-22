@@ -17,13 +17,7 @@
       <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/005/</guid>
-      <description>参考 https://github.com/Z4Tech/hexo-tag-bilibili
-准备工作  Node.js 这是一个 Hexo插件，所以通过 npm 安装。  正文 安装 hexo-tag-bilibili 这就是那个神奇的插件，名叫 hexo-tag-bilibili。 我们通过 npm 进行安装。 切换到 Hexo 的目录，执行一下命令
-$ cd [你的 Hexo目录] $ npm install --save hexo-tag-bilibili  使用 在文章中用一下方式使用此插件 [av_id] 填写视频的 av号。
-{% bilibili [av_id] %}  如果有多 p，使用一下格式。[page] 为 P号。
-{% bilibili [av_id] [page] %}  例如：
-{% bilibili av2271112 %}  高级 配置 你可以配置你的播放器 在 Hexo 的文件夹中，打开 _config.yml文件进行配置。 你可以配置 是否自动播放，播放器的大小 等。 例如
-bilibili: width: 452 height: 544  Style 播放器由一个带有 bili_video 类的 &amp;lt;div&amp;gt;标签包装。你可以通过自定义的 css文件修改它的样式。</description>
+      <description>参考 https://github.com/Z4Tech/hexo-tag-bilibili 准备工作 Node.js 这是一个 Hexo插件，所以通过 npm 安装。 正文 安装 hexo-tag-bilibili 这就是那个神奇的插件，名叫 hexo-tag-bilibili。 我们通过 npm 进行</description>
     </item>
     
     <item>
@@ -32,12 +26,7 @@ bilibili: width: 452 height: 544  Style 播放器由一个带有 bili_video 类�
       <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/004/</guid>
-      <description>在使用 Hexo Hey 之前，我一直在使用 VSCode（配合 vscode-hexo 插件）来管理博客。虽然可以很快捷 的新建,部署, 测试,发布 博客 ，但还是很麻烦，离我理想中的博客平台还有一定的距离。 我在知乎上发现了 Hexo Hey 这个插件，尝试了一下，虽然有各种问题，但确实很好用。 因此决定写一篇文章来介绍一下如何安装, 使用 Hexo Hey。
-切换换到 Hexo Hey 后最不习惯的地方就是没有了 VSCode 中那些方便的快捷键了。(ノへ￣、) 擦眼泪……
-与 Hexo Hey 比较相似的 Hexo 博客管理程序还有 Hexo Admin。
-准备工作  Node.js &amp;lt;- 就是安 Hexo 时用到的拿货，应该已经有了，就不贴安装地址了。 Hexo Hey &amp;lt;- 通过 npm 安装。  正文 安装 Hexo Hey 首先进入已配置好的那个 Hexo 目录：
-$ cd [你的 Hexo 目录]  输入一下命令安装 Hexo Hey：
-$ npm install hexo-hey --save  然后打开 Hexo 目录 中的 _config.</description>
+      <description>在使用 Hexo Hey 之前，我一直在使用 VSCode（配合 vscode-hexo 插件）来管理博客。虽然可以很快捷 的新建,部署, 测试,发布 博客 ，但还是很麻烦，离我理想中的博客</description>
     </item>
     
     <item>
@@ -46,13 +35,7 @@ $ npm install hexo-hey --save  然后打开 Hexo 目录 中的 _config.</descrip
       <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/003/</guid>
-      <description>虽然 NexT 的主题很漂亮，但问题是太受欢迎了，都快烂大街了。 好在它是一个开源项目，我们可以通过修改它的代码来个性话你的博客。 这篇教程要涉及到一些前端知识，可能没有那么 Novice friendly。
-因为涉及到对 NexT 代码的修改，搞不好，可能引起 Hexo 无法工作。所以强烈建议使用 Git 对 NexT 进行备份。 具体使用方法请自行 Google。
-准备工作  一颗能折腾的心。 一定的前端知识。  正文 最简单的方法 美化你的 Hexo 的最简单方法 -&amp;gt; 安装我修改过的 NexT 在 Hexo 目录中使用命令
-$ git clone https://github.com/Mogeko/hexo-theme-next.git themes/next  *记得删掉原来安装过的 NexT。
-手动美化 Hexo 如果有能力，推荐跟我一起手动改代码。 最好能明白我给你的代码都是做什么的，将来万一出了问题，也有个找到问题的方向。
-圆形头像（头像旋转） NexT 默认的头像是方的。也不是说不好看，就是觉得不习惯，这个要看个人喜好。 在 /source/css/_custom/custom.styl 中添加一下代码就可以吧头像弄成圆的
-// 圆形头像 .site-author-image { border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; transition: 1.4s all; }  然后，添加以下代码可以让头像在鼠标停留时旋转 180°</description>
+      <description>虽然 NexT 的主题很漂亮，但问题是太受欢迎了，都快烂大街了。 好在它是一个开源项目，我们可以通过修改它的代码来个性话你的博客。 这篇教程要涉及到一些前</description>
     </item>
     
     <item>
@@ -61,11 +44,7 @@ $ git clone https://github.com/Mogeko/hexo-theme-next.git themes/next  *记得�
       <pubDate>Sun, 20 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/002/</guid>
-      <description>自从我开了这个博客后，就有很多小伙伴问我怎么弄的？（好吧，其实就一个(*/ω＼*)） 为了教她，也为了给各位看官一点参考。我写了这篇文章。 因为她比较小白，所以这篇文章会写得比较详细。
-准备工作  一个 Github 账号。 &amp;lt;-我们要使用它提供的 Github Pages 服务来搭建博客 https://github.com/ Node.js &amp;lt;- Hexo 依赖于此 https://nodejs.org/zh-cn/ Git &amp;lt;- 用来发布博客 https://git-scm.com/ Hexo &amp;lt;- 博客框架 https://hexo.io/zh-cn/index.html [非必需]Chocolatey &amp;lt;- 用来安装 Node.js 和 Git https://chocolatey.org/  正文 安装 Node.js &amp;amp; Git 使用 安装包 安装（小白看这里） 首先去官网下载各自的安装包。（地址在上面） 其中 Node.js 一般会有两个版本；都可以用。 Git 的官网是英文的，点 [Downloads for Windows] 下载。
-下载好后，双击安装包，就像安装普通软件一样安装。
-安装好后打开按 Win键 + R，输入 cmd，回车。 在弹出的黑框框中分别输入
-$ node -v  $ npm -v  $ git version  如果显示的是各种的版本号，说明安装成功 使用 Chocolatey 安装 我比较喜欢用 Chocolatey 来安装；比较方便。 虽然赶 apt 还有一段距离，但确实是 Windows 下最好的包管理程序。 有空我会写一篇比较详尽的 Chocolatey 使用教程。</description>
+      <description>自从我开了这个博客后，就有很多小伙伴问我怎么弄的？（好吧，其实就一个(*/ω＼*)） 为了教她，也为了给各位看官一点参考。我写了这篇文章。 因为</description>
     </item>
     
   </channel>

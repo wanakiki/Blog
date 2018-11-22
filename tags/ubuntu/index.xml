@@ -17,17 +17,7 @@
       <pubDate>Wed, 21 Nov 2018 12:38:05 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2018/031/</guid>
-      <description>-- 终于，我在也忍受不了 Ubuntu 18.04 自带的 ibus-libpinyin 了。决定好好配置以下输入法，本来以为最多半个小时就能搞定的事情，结果整整花了半天 _(:з」∠)_
-网上一搜发现 搜狗拼音 有 GNU/Linux 版的，于是去官网下载了 搜狗拼音 的 deb 包，安装，全局终…
-才怪 | ・ω・’）
-当我看到 搜狗拼音 只能支持 fcitx 框架 时瞬间就放弃了。不是说 fcitx 框架 不好，只是觉得要换输入法框架太折腾了 (Ubuntu 18.4 预装了 ibus 框架)；后来事实证明，ibus 框架 不仅折腾，bug 还多…
-早晓得就换 fcitx 框架 了 _(:з」∠)_
-
-放弃 搜狗拼音 后，我又将目光投向了一款开源的跨平台输入法：RIME 
- 中州韵输入法引擎（英语：Rime Input Method Engine，又称Rime 输入法）是由佛振编写的开源中文输入法，目前项目网站、源代码均托管在GitHub[注 1]。基于同一个核心架构，该输入法分为三个官方发行版：Linux 发行版中州韵（ibus-rime）、Windows发行版小狼毫（Weasel）、macOS 发行版鼠须管（Squirrel）。另有数个第三方发行版：Linux 发行版fcitx-rime、Windows发行版PRIME、macOS 发行版XIME、Android发行版同文输入法（Trime）、iOS发行版iRime。
- 哇！开源输入法呢！！✪ω✪
-去 TM 的资本主义 搜狗拼音，开源输入法才配在睾贵的 GNU/Linux 上打字
-于是便上了 RIME 的贼船 _(:з」∠)_</description>
+      <description>-- 终于，我在也忍受不了 Ubuntu 18.04 自带的 ibus-libpinyin 了。决定好好配置以下输入法，本来以为最多半个小时就能搞定的事情，结果整整花了半天 _(:з」∠)_ 网上一搜发</description>
     </item>
     
     <item>
@@ -36,13 +26,7 @@
       <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2018/016/</guid>
-      <description>16 年 12 月份的时候，微软发布了 Windows Subsystem for Linux (WSL)，通过子系统的方式运行了一个完整的 Linux 系统。使得在 Windows 中使用 Linux 中的工具链成为可能。(Windows 果然是最好的 Linux 发行版)
-从微软宣布 WSL 的第一天起，我就一直在关注这项技术。因为我虽然通过双系统的方式安装了 Ubuntu，但切换系统需要从启的机制确实不方便，让我离开 Windows 又实在是不太现实。 (学习的原因，离不开 Visual Studio 和 Adobe 全家桶) WSL 似乎是平衡性能和易用性的最好解决方案了。怎奈何 WSL 只支持 64 位的系统，让我这台老电脑很是尴尬。
-如今换电脑了！终于可以享受 WSL 的便利了！！ (*^▽^*)
-第一次使用时，如果发现没有 WSL 中没有网络连接，可以试着重启一下 WSL，还是没网重启一下 Windows
-安装 用管理员权限打开 PowerShell 并运行下面的命令
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux  或者：控制面板 -&amp;gt; 程序和功能-&amp;gt; 启用或关闭 Windows 功能 -&amp;gt; 勾选 适用于 Linux 的 Windows 子系统 重启电脑
-打开应用商城，搜索：WSL，可根据需求选择安装一个或多个 Linux 系统 安装完成后再开始菜单中启动。 第一次启动会需要初始化，需要配置一段时间。 配置结束后会让你输入用户名和 root 密码 (输入 root 密码时没有显示是正常的；root 密码请务必牢记) 然后就可以使用了！</description>
+      <description>16 年 12 月份的时候，微软发布了 Windows Subsystem for Linux (WSL)，通过子系统的方式运行了一个完整的 Linux 系统。使得在 Windows 中使用 Linux 中的工具链成为可能。(Windows</description>
     </item>
     
     <item>
@@ -51,16 +35,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
       <pubDate>Sat, 02 Dec 2017 11:57:09 +0800</pubDate>
       
       <guid>https://mogeko.github.io/2017/009/</guid>
-      <description>Ubuntu 17.10 已经发布了一段时间了，作为 18.04 的预览（热）版。带来了一大波新特性。
-其中最重要也是最令我揪心的是 Ubuntu 将放弃 Unity 回归 Gnome。对于我们这些习惯了 Unity 的用户来说，这个决定简直蠢到家了。虽然 Unity 是丑了点，但比 Gnome 好用到不知道那里去了！这也是我迟迟没有升级的主要原因。
-目前 Ubuntu 17.10 不是长期支持版本（LTS）！！！
-正文 Ubuntu 官方推荐的升级策略是“依次升级”。较低的版本想要升级到最高的版本，需要想升级到较高的版本，再从较高的版本升级到最高的版本。也就是说 16.10 想要升级到 17.10 需要先升级到 17.04。
- 16.04 -&amp;gt; 16.10 -&amp;gt; 17.04 -&amp;gt; 17.10  每个版本中的升级方法都是相似的。这里介绍两种比较安全的升级方法
-强烈建议升级前先备份！！！ -&amp;gt; 如何备份 Ubuntu
-小白最爱的升级方法（无脑下一步） 在 Dash 中搜索并启动 Update Manager
-选择更新选项卡 (Updates)，然后在窗口底部，将通知设置从 “长期支持版本”(For long-term support version) 更改为任何新版本 (For any new version)。
-等了一会儿，系统会通知你有新的发行版可用
- 如果不想等，可以在命令行中输入命令：  sudo do-release-upgrade -d  这个命令可以强制搜索新的版本</description>
+      <description>Ubuntu 17.10 已经发布了一段时间了，作为 18.04 的预览（热）版。带来了一大波新特性。 其中最重要也是最令我揪心的是 Ubuntu 将放弃 Unity 回归 Gnome。对于我们这些习惯了</description>
     </item>
     
     <item>
@@ -69,12 +44,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
       <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.github.io/2017/000/</guid>
-      <description>在很久以前就想试一试Linux了，一直没有实践。一是觉得太麻烦，二是怕把电脑弄坏。后来实践了一次后发现，其实并没有想象中那么难，这是一个完全独立的系统，与隔壁的Windows半毛钱关系都没有。把引导搞定就不怕了。
-另外，如果想长期使用； 千万不要上最新的系统！！！ bug多得一逼
-准备工作：  一个 &amp;gt;= 4g 的U盘 Ubuntu 的镜像（建议使用16.04）http://www.ubuntu.org.cn/download/desktop UltraISO &amp;lt;- 用来制作引导盘 http://cn.ezbsystems.com/ultraiso/ EasyBCD &amp;lt;- 用来制作、写入引导程序（如果想用 Ubuntu 来引导 Windows 的话也可以不用）http://neosmart.net/EasyBCD/  正文 制作引导盘 &amp;amp; 设置硬盘分区 首先要用 UltraISO 来制作一个引导盘
-先打开 UltraISO -&amp;gt; 文件 -&amp;gt; 打开 -&amp;gt; 选择刚刚下好的那个镜像 然后 启动 -&amp;gt; 写入硬件映象 不出意外的话你应该可以看到这个 确保你的U盘能够被识别（红色框出来的地方）
-先 格式化 在 写入 等它跑完，引导盘就制作完成了
-然后设置分区，为 Ubuntu 空出块地方来 如果是 Windows 10 按 Win键 + X -&amp;gt; 磁盘管理（Windows 7 我记不到了，自己 Google 一下） 图我忘截了 ,,ԾㅂԾ,, 这里给一个官方的教程 如何在 Windows 中对硬盘进行分区 如果压缩出来是绿色的“可用空间”可能会出问题 -&amp;gt;-&amp;gt; 解决方法</description>
+      <description>在很久以前就想试一试Linux了，一直没有实践。一是觉得太麻烦，二是怕把电脑弄坏。后来实践了一次后发现，其实并没有想象中那么难，这是一个完全</description>
     </item>
     
   </channel>
