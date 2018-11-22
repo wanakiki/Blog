@@ -70,7 +70,7 @@
 
 &lt;p&gt;更多与 &lt;code&gt;ls&lt;/code&gt; 相关的选项，可以查看 &lt;code&gt;ls&lt;/code&gt; 的文档，通过以下命令查看&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;man ls
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;man ls
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&#34;tree&#34;&gt;tree&lt;/h1&gt;
