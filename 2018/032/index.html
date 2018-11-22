@@ -54,8 +54,8 @@
 下面就介绍三个最常用的在 GNU/Linux 中快速找文件的命令行工具：ls、tree 和 find
 ls ls 可能是所有 Linuxer 学习到的第一个命令了 cd: 喵喵喵？ 它既简单又实用，如果给 GNU/Linux 中所有的命令使用频率排个名的话，ls 绝对在前 5。
 ls 的作用就是列出指定目录下 (默认当前目录) 的所有可见的文件与文件夹，就像这样：
-$ ls Dropbox Steam 公共的 模板 视频 图片 文档 下载 音乐 桌面  添加 -l 选项则可以查看文件的更多信息。同时再加上 -h 则可查看到文件文件的大小：
-$ ls -lh drwxrwx--- 5 mogeko mogeko 4.",
+$ ls Desktop Documents Downloads Dropbox Music Pictures Public Steam Templates Videos  添加 -l 选项则可以查看文件的更多信息。同时再加上 -h 则可查看到文件文件的大小：
+$ ls -lh drwxr-xr-x 2 mogeko mogeko 4.",
     "inLanguage" : "zh-cn",
     "author" : "Mogeko",
     "creator" : "Mogeko",
@@ -186,22 +186,22 @@ $ ls -lh drwxrwx--- 5 mogeko mogeko 4.",
 <p><code>ls</code> 的作用就是列出指定目录下 (默认当前目录) 的所有可见的文件与文件夹，就像这样：</p>
 
 <pre><code class="language-shell">$ ls
-Dropbox  Steam  公共的  模板  视频  图片  文档  下载  音乐  桌面
+Desktop  Documents  Downloads  Dropbox  Music  Pictures  Public  Steam  Templates  Videos
 </code></pre>
 
 <p>添加 <code>-l</code> 选项则可以查看文件的更多信息。同时再加上 <code>-h</code> 则可查看到文件文件的大小：</p>
 
 <pre><code class="language-shell">$ ls -lh
+drwxr-xr-x 2 mogeko mogeko 4.0K 11月 21 21:24 Desktop
+drwxr-xr-x 3 mogeko mogeko 4.0K 11月 21 12:39 Documents
+drwxr-xr-x 4 mogeko mogeko 4.0K 11月 21 20:37 Downloads
 drwxrwx--- 5 mogeko mogeko 4.0K 11月 21 15:46 Dropbox
+drwxr-xr-x 2 mogeko mogeko  20K 10月 27 19:06 Music
+drwxr-xr-x 3 mogeko mogeko 4.0K 11月  9 11:58 Pictures
+drwxr-xr-x 2 mogeko mogeko 4.0K 10月 27 10:30 Public
 drwxrwxr-x 3 mogeko mogeko 4.0K 10月 26 19:45 Steam
-drwxr-xr-x 2 mogeko mogeko 4.0K 10月 27 10:30 公共的
-drwxr-xr-x 2 mogeko mogeko 4.0K 10月 27 10:30 模板
-drwxr-xr-x 2 mogeko mogeko 4.0K 11月 20 21:29 视频
-drwxr-xr-x 3 mogeko mogeko 4.0K 11月  9 11:58 图片
-drwxr-xr-x 3 mogeko mogeko 4.0K 11月 21 12:39 文档
-drwxr-xr-x 4 mogeko mogeko 4.0K 11月 21 20:37 下载
-drwxr-xr-x 2 mogeko mogeko  20K 10月 27 19:06 音乐
-drwxr-xr-x 2 mogeko mogeko 4.0K 11月 21 21:24 桌面
+drwxr-xr-x 2 mogeko mogeko 4.0K 10月 27 10:30 Templates
+drwxr-xr-x 2 mogeko mogeko 4.0K 11月 20 21:29 Videos
 </code></pre>
 
 <p><code>ls</code> 也可以查看指定目录下的文件：</p>
@@ -411,8 +411,8 @@ luna_pinyin.english.dict.yaml
 <p>列出所有大于 1 G 的文件：</p>
 
 <pre><code class="language-shell">$ find -size +1G
-./下载/Asura.2012.BluRay.1080p.x264-MySiLU [PublicHD]/Asura.2012.BluRay.1080p.x264.AC3-MySilu.mkv
-./下载/Starship.Troopers.Traitor.of.Mars.2017.720p.WEB-DL.DD5.1.H264-FGT/Starship.Troopers.Traitor.of.Mars.2017.720p.WEB-DL.DD5.1.H264-FGT.mkv
+./Downloads/Asura.2012.BluRay.1080p.x264-MySiLU [PublicHD]/Asura.2012.BluRay.1080p.x264.AC3-MySilu.mkv
+./Downloads/Starship.Troopers.Traitor.of.Mars.2017.720p.WEB-DL.DD5.1.H264-FGT/Starship.Troopers.Traitor.of.Mars.2017.720p.WEB-DL.DD5.1.H264-FGT.mkv
 </code></pre>
 
 <p>也可以搜索具体的文件目录，例如我们想在 <code>.config/mpv</code> 目录中查找所有后缀为 <code>.lua</code> 的文件：</p>

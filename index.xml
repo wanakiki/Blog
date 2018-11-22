@@ -42,22 +42,22 @@
 &lt;p&gt;&lt;code&gt;ls&lt;/code&gt; 的作用就是列出指定目录下 (默认当前目录) 的所有可见的文件与文件夹，就像这样：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ ls
-Dropbox  Steam  公共的  模板  视频  图片  文档  下载  音乐  桌面
+Desktop  Documents  Downloads  Dropbox  Music  Pictures  Public  Steam  Templates  Videos
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;添加 &lt;code&gt;-l&lt;/code&gt; 选项则可以查看文件的更多信息。同时再加上 &lt;code&gt;-h&lt;/code&gt; 则可查看到文件文件的大小：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ ls -lh
+drwxr-xr-x 2 mogeko mogeko 4.0K 11月 21 21:24 Desktop
+drwxr-xr-x 3 mogeko mogeko 4.0K 11月 21 12:39 Documents
+drwxr-xr-x 4 mogeko mogeko 4.0K 11月 21 20:37 Downloads
 drwxrwx--- 5 mogeko mogeko 4.0K 11月 21 15:46 Dropbox
+drwxr-xr-x 2 mogeko mogeko  20K 10月 27 19:06 Music
+drwxr-xr-x 3 mogeko mogeko 4.0K 11月  9 11:58 Pictures
+drwxr-xr-x 2 mogeko mogeko 4.0K 10月 27 10:30 Public
 drwxrwxr-x 3 mogeko mogeko 4.0K 10月 26 19:45 Steam
-drwxr-xr-x 2 mogeko mogeko 4.0K 10月 27 10:30 公共的
-drwxr-xr-x 2 mogeko mogeko 4.0K 10月 27 10:30 模板
-drwxr-xr-x 2 mogeko mogeko 4.0K 11月 20 21:29 视频
-drwxr-xr-x 3 mogeko mogeko 4.0K 11月  9 11:58 图片
-drwxr-xr-x 3 mogeko mogeko 4.0K 11月 21 12:39 文档
-drwxr-xr-x 4 mogeko mogeko 4.0K 11月 21 20:37 下载
-drwxr-xr-x 2 mogeko mogeko  20K 10月 27 19:06 音乐
-drwxr-xr-x 2 mogeko mogeko 4.0K 11月 21 21:24 桌面
+drwxr-xr-x 2 mogeko mogeko 4.0K 10月 27 10:30 Templates
+drwxr-xr-x 2 mogeko mogeko 4.0K 11月 20 21:29 Videos
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;ls&lt;/code&gt; 也可以查看指定目录下的文件：&lt;/p&gt;
@@ -267,8 +267,8 @@ luna_pinyin.english.dict.yaml
 &lt;p&gt;列出所有大于 1 G 的文件：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ find -size +1G
-./下载/Asura.2012.BluRay.1080p.x264-MySiLU [PublicHD]/Asura.2012.BluRay.1080p.x264.AC3-MySilu.mkv
-./下载/Starship.Troopers.Traitor.of.Mars.2017.720p.WEB-DL.DD5.1.H264-FGT/Starship.Troopers.Traitor.of.Mars.2017.720p.WEB-DL.DD5.1.H264-FGT.mkv
+./Downloads/Asura.2012.BluRay.1080p.x264-MySiLU [PublicHD]/Asura.2012.BluRay.1080p.x264.AC3-MySilu.mkv
+./Downloads/Starship.Troopers.Traitor.of.Mars.2017.720p.WEB-DL.DD5.1.H264-FGT/Starship.Troopers.Traitor.of.Mars.2017.720p.WEB-DL.DD5.1.H264-FGT.mkv
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;也可以搜索具体的文件目录，例如我们想在 &lt;code&gt;.config/mpv&lt;/code&gt; 目录中查找所有后缀为 &lt;code&gt;.lua&lt;/code&gt; 的文件：&lt;/p&gt;

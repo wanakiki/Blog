@@ -25,8 +25,8 @@
 下面就介绍三个最常用的在 GNU/Linux 中快速找文件的命令行工具：ls、tree 和 find
 ls ls 可能是所有 Linuxer 学习到的第一个命令了 cd: 喵喵喵？ 它既简单又实用，如果给 GNU/Linux 中所有的命令使用频率排个名的话，ls 绝对在前 5。
 ls 的作用就是列出指定目录下 (默认当前目录) 的所有可见的文件与文件夹，就像这样：
-$ ls Dropbox Steam 公共的 模板 视频 图片 文档 下载 音乐 桌面  添加 -l 选项则可以查看文件的更多信息。同时再加上 -h 则可查看到文件文件的大小：
-$ ls -lh drwxrwx--- 5 mogeko mogeko 4.</description>
+$ ls Desktop Documents Downloads Dropbox Music Pictures Public Steam Templates Videos  添加 -l 选项则可以查看文件的更多信息。同时再加上 -h 则可查看到文件文件的大小：
+$ ls -lh drwxr-xr-x 2 mogeko mogeko 4.</description>
     </item>
     
     <item>
