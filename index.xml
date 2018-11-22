@@ -133,7 +133,7 @@
 
 &lt;p&gt;如果不想列地太多，可以使用 &lt;code&gt;-L [数字]&lt;/code&gt; 选项来指定查找的层数，例如：&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;tree -L1&#34; src=&#34;https://mogeko.github.io/images/032/tree -L1.png&#34; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;tree -L1&#34; src=&#34;https://mogeko.github.io/images/032/tree-L1.png&#34; &gt;&lt;/p&gt;
 
 &lt;p&gt;你也可以显示指定目录的树状图：&lt;/p&gt;
 
