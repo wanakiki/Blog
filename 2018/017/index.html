@@ -57,7 +57,7 @@
     "datePublished": "2018-08-02 00:00:00 &#43;0000 UTC",
     "dateModified" : "2018-08-02 00:00:00 &#43;0000 UTC",
     "url" : "https://mogeko.github.io/2018/017/",
-    "wordCount" : "2886",
+    "wordCount" : "2884",
     "keywords" : [ "Windows", "Mogeko`s Blog"]
 }
 </script>
@@ -132,7 +132,7 @@
                         <a href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E8%BD%AF%E4%BB%B6/"> 关于软件 </a>
                         
                 </span>
-                <span class="post-word-count">, 2886 words</span>
+                <span class="post-word-count">, 2884 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -328,11 +328,11 @@ Sending activation request (KMS V4) 1 of 1 -&gt;
 <p>以 Windows 10 Pro 为例
 想要激活 VOL 版 Windows 10 pro，只需要用<strong>管理员权限</strong>打开一个 cmd，然后依次执行以下命令便可。</p>
 
-<pre><code class="language-shell">slmgr.vbs -upk
-slmgr.vbs -ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
-slmgr.vbs -skms slmgr /skms 127.0.0.1:1688
-slmgr.vbs -ato
-slmgr.vbs -dlv
+<pre><code class="language-shell">slmgr -upk
+slmgr -ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
+slmgr -skms 127.0.0.1:1688
+slmgr -ato
+slmgr -dlv
 </code></pre>
 
 <p>方法同样适用于激活 Windows 8、Windows 7，只是要把上面的 KEY (就是形如 <code>W269N-WFGWX-YVC9B-4J6C9-T83GX</code> 这样的东西) 替换一下。
