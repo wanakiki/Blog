@@ -6,8 +6,68 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 22 Nov 2018 19:46:55 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 Nov 2018 13:35:11 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>使用反向代理给 PPA 加速</title>
+      <link>https://mogeko.github.io/2018/035/</link>
+      <pubDate>Mon, 26 Nov 2018 13:35:11 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/035/</guid>
+      <description>
+
+&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/035/&#34; &gt;
+&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;p&gt;&lt;strong&gt;PPA&lt;/strong&gt; 的英文全称叫 &lt;strong&gt;Personal Package Archives&lt;/strong&gt;，既&lt;strong&gt;「个人软件包仓库」&lt;/strong&gt;。是 Ubuntu 为了方便用户发表、下载那些 Ubuntu 官方软件仓库中没有收录的或者版本较新的软件而建立的 (有点类似于 &lt;strong&gt;ArchLinux&lt;/strong&gt; 的 &lt;strong&gt;AUR&lt;/strong&gt;)。&lt;/p&gt;
+
+&lt;p&gt;大多数的 &lt;strong&gt;PPA&lt;/strong&gt; 仓库都放在 &lt;a href=&#34;https://launchpad.net&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;launchpad&lt;/a&gt; 上。由于种种原因，国内从 &lt;strong&gt;PPA&lt;/strong&gt; 中下软件都特别慢，而且 &lt;strong&gt;PPA&lt;/strong&gt; 中的软件比较庞杂且分散，不适合建立镜像仓库。好在我们可以通过中科大提供的反向代理来加速我们的下载。&lt;/p&gt;
+
+&lt;h1 id=&#34;使用&#34;&gt;使用&lt;/h1&gt;
+
+&lt;p&gt;中科大提供的反向代理地址是：&lt;a href=&#34;http://launchpad.proxy.ustclug.org&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://launchpad.proxy.ustclug.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;我们只需要修改 &lt;code&gt;/etc/apt/sources.list.d&lt;/code&gt; 下面需要代理的仓库地址，将 &lt;code&gt;ppa.launchpad.net&lt;/code&gt; 换成 &lt;code&gt;launchpad.proxy.ustclug.org&lt;/code&gt; ，然后在执行 &lt;code&gt;sudo apt update&lt;/code&gt; 更新一下软件源列表就可以了。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;/etc/apt/sources.list.d&lt;/code&gt; 中的地址太多，一个一个换也太麻烦了吧？！可以使用下面这个命令替换全部：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo find /etc/apt/sources.list.d/ -type f -name &amp;quot;*.list&amp;quot; -exec  sed  -i.bak -r  &#39;s#deb(-src)?\s*http(s)?://ppa.launchpad.net#deb\1 http\2://launchpad.proxy.ustclug.org#ig&#39; {} \;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;尽快大多数软件都可以使用中科大提供的这个反向代理地址进行加速，不过仍然有些 &lt;strong&gt;PPA&lt;/strong&gt; 仓库没有放在 &lt;a href=&#34;https://launchpad.net&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;launchpad&lt;/a&gt; 上 (例如 Google Chrome 浏览器)，就不能使用这种方法进行加速了。&lt;/p&gt;
+
+&lt;h1 id=&#34;搭建反向代理服务&#34;&gt;搭建反向代理服务&lt;/h1&gt;
+
+&lt;p&gt;你也可以使用自己的 &lt;strong&gt;VPS&lt;/strong&gt;，或者任何&lt;strong&gt;可以翻墙的服务器&lt;/strong&gt;来搭建自己的反向代理服务。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NGINX 配置：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;#/etc/nginx/sites-available/ppa.launchpad.net 
+server {
+	listen 80;
+	server_name [服务器地址];
+
+	location / {
+		proxy_pass http://ppa.launchpad.net; 
+		proxy_redirect     off;
+		proxy_set_header   Host             $host;
+		proxy_set_header   X-Real-IP        $remote_addr;
+		proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>学会将代码写简单</title>
@@ -2512,155 +2572,6 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 &lt;p&gt;原文地址：&lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526745112&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;「空洞骑士」存档备份方法 | Steam 社区&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;作者：依然是 Mogeko ٩(●˙▿˙●)۶&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>空洞骑士：寻神者 DLC 全成就指南</title>
-      <link>https://mogeko.github.io/2018/020/</link>
-      <pubDate>Sun, 30 Sep 2018 08:59:00 +0800</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/020/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/020/logo.jpg&#34;  alt=&#34;Logo&#34; &gt;&lt;/p&gt;
-
-&lt;p&gt;爆肝 20 多个小时终于打完了 QAQ
-写篇指南压压惊 _(:з」∠)_&lt;/p&gt;
-
-&lt;p&gt;寻神者 DLC 是真的难，推荐大家在完成主线剧情，做好心理准备，&lt;del&gt;写好遗书后，&lt;/del&gt;再开启&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&#34;spoiler&#34; &gt;我操你大爷的开发者 QAQ&lt;/span&gt;&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;h1 id=&#34;开启方法&#34;&gt;开启方法&lt;/h1&gt;
-
-&lt;h2 id=&#34;找一个简单钥匙&#34;&gt;找一个简单钥匙&lt;/h2&gt;
-
-&lt;p&gt;开启寻神者 DLC 需要一个&lt;strong&gt;「简单钥匙」&lt;/strong&gt;，如果身上有的话可以跳过&lt;/p&gt;
-
-&lt;p&gt;首先来到&lt;strong&gt;「王国边缘」&lt;/strong&gt;的愚人竞技场，从竞技场下方经过长椅，在长椅和尽头的温泉之间，上方有通道可以跳上去。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127720802/3887766AB03FDE17ED254610E5333492A842F97D/&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;把墙壁撸穿，可以打开一个隐藏房间&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127722487/ECB6722E2C094422AB7F31D3C51441479AB392B8/&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;进入隐藏房间，可以看到一个&lt;strong&gt;「苍白潜伏者」&lt;/strong&gt;，他一看到你就会跑。追上并杀死他，他身上会掉一个&lt;strong&gt;「简单钥匙」&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;开启-神居&#34;&gt;开启「神居」&lt;/h2&gt;
-
-&lt;p&gt;来到皇家下水道，在** 「吸虫之母」**的家门口向上走，来到如图位置 (大概在长椅的下方)，跳起来对着墙壁来一发，进入隐藏通道。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127731980/0B267B9D66B22E341901C01D8E6E85FE0EDE11A6/&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;一直往左走，直到来到一个名为「垃圾坑」的地方&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127733672/EA2C53A1B6F0F14953B8E986E4C2DE10DAB4079F/&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127735000/65E00823B261FC2CF1AF313C8645DA683F908C9E/&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;「垃圾坑」中有一个上锁的棺材，用「简单钥匙」打开后，会掉一个「神明调谐器」&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127736304/4119CD178396BC63269BC57B13C8628413FC2C69/&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127737280/F396BFF24C1C5E02CC809B54CDECB2826E79DC42/&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;此时对着棺材中那个中暑的“尸体” &lt;span class=&#34;spoiler&#34; &gt;莫挨老子，老子没中暑 QAQ&lt;/span&gt; 来一发&lt;strong&gt;「光之钉」&lt;/strong&gt;，开启&lt;strong&gt;「神居」&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;全成就指南&#34;&gt;全成就指南&lt;/h1&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;图标&lt;/th&gt;
-&lt;th&gt;成就&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127529487/9937E1FABC4F0EA2FEEBAFD0B6F20C025B52AEEC/&#34;&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;兄弟：&lt;/strong&gt;完成「大师万神殿」挑战&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127530081/17F7D048DECF5C20BAB0A7BD11F2FAC5CACA050A/&#34;&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;灵感：&lt;/strong&gt;完成「艺术家万神殿」挑战&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127530647/382C7998E9B0B60A850D8BDF4C7F4A515A8B3481/&#34; &gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;专注：&lt;/strong&gt;完成「贤者万神殿」挑战&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;完成三个挑战后会解锁「骑士万神殿」&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;图标&lt;/th&gt;
-&lt;th&gt;成就&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127531198/5857AE3A16211B09755B086F37F411ADEAD38131/&#34;&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;灵魂与阴影：&lt;/strong&gt;完成「骑士万神殿」挑战&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;完成四个挑战后会解锁「圣巢万神殿」&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;图标&lt;/th&gt;
-&lt;th&gt;成就&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127531615/671C16432F460CDD9EFF88D5C01B4ABC7CFE2703/&#34;&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;拥抱虚空：&lt;/strong&gt;完成「圣巢万神殿」挑战&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h1 id=&#34;关于-束缚&#34;&gt;关于「束缚」&lt;/h1&gt;
-
-&lt;p&gt;如果你觉得还是不过瘾，还可以通过束缚&lt;strong&gt;「骨钉」&lt;/strong&gt;、&lt;strong&gt;「外壳」&lt;/strong&gt;、&lt;strong&gt;「护符」&lt;/strong&gt;、&lt;strong&gt;「灵魂」&lt;/strong&gt;来提升难度。&lt;/p&gt;
-
-&lt;p&gt;在&lt;strong&gt;「束缚」&lt;/strong&gt;难度中完成挑战后，会在相关挑战的入口处点亮相应的四盏灯，按&lt;strong&gt;「束缚」&lt;/strong&gt;得最多的一次算 (例如束缚&lt;strong&gt;「骨钉」&lt;/strong&gt;和&lt;strong&gt;「外壳」&lt;/strong&gt;就只能点亮&lt;strong&gt;「骨钉」&lt;/strong&gt;和&lt;strong&gt;「外壳」&lt;/strong&gt;两盏灯，如果束缚了所有项目，就可以点亮全部四盏灯)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;「束缚」不会影响成就&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&#34;spoiler&#34; &gt;为了做这个实验我曾一度被打到自闭 QAQ&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910127612824/BD136FFE9A6F394E584F627B32F2AFB747733473/&#34;&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;结语&#34;&gt;结语&lt;/h1&gt;
-
-&lt;p&gt;就酱，我去补告告了，祝大家受难愉快(○&amp;rsquo;◡&amp;rsquo;○)ﾉ♥&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910124697569/9E941323DE8DFE4CBE8746FF52F92855E8807A73/&#34;&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;原文地址：&lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526374935&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;寻神者 DLC 全成就指南 | Steam 社区&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;作者：还是 Mogeko ヾ(●´∇｀●)ﾉ&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
