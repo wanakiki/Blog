@@ -305,7 +305,7 @@ ENTRYPOINT [ &amp;quot;dotnet&amp;quot;,&amp;quot;/home/asf/ArchiSteamFarm.dll&a
 
 &lt;p&gt;所谓 &lt;strong&gt;ASF 命令&lt;/strong&gt;实际上就是用「主号」给「小号」发送 &lt;strong&gt;Steam&lt;/strong&gt; 消息，来控制指挥 &lt;strong&gt;ASF&lt;/strong&gt; 控制「小号」和  &lt;strong&gt;ASF&lt;/strong&gt; 。&lt;/p&gt;
 
-&lt;p&gt;因为比较常用，所以特地做了一个图片格式的速查表 -&amp;gt; [点击下载]()&lt;/p&gt;
+&lt;!-- 因为比较常用，所以特地做了一个图片格式的速查表 -&gt; [点击下载]() --&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
