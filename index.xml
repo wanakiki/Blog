@@ -42,13 +42,15 @@
 
 &lt;p&gt;尽快大多数软件都可以使用中科大提供的这个反向代理地址进行加速，不过仍然有些 &lt;strong&gt;PPA&lt;/strong&gt; 仓库没有放在 &lt;a href=&#34;https://launchpad.net&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;launchpad&lt;/a&gt; 上 (例如 Google Chrome 浏览器)，就不能使用这种方法进行加速了。&lt;/p&gt;
 
-&lt;h1 id=&#34;搭建反向代理服务&#34;&gt;搭建反向代理服务&lt;/h1&gt;
+&lt;!-- 
+# 搭建反向代理服务
 
-&lt;p&gt;你也可以使用自己的 &lt;strong&gt;VPS&lt;/strong&gt;，或者任何&lt;strong&gt;可以翻墙的服务器&lt;/strong&gt;来搭建自己的反向代理服务。&lt;/p&gt;
+你也可以使用自己的 **VPS**，或者任何**可以翻墙的服务器**来搭建自己的反向代理服务。
 
-&lt;p&gt;&lt;strong&gt;NGINX 配置：&lt;/strong&gt;&lt;/p&gt;
+**NGINX 配置：**
 
-&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;#/etc/nginx/sites-available/ppa.launchpad.net 
+```conf
+#/etc/nginx/sites-available/ppa.launchpad.net 
 server {
 	listen 80;
 	server_name [服务器地址];
@@ -61,7 +63,8 @@ server {
 		proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
 	}
 }
-&lt;/code&gt;&lt;/pre&gt;
+```
+ --&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
