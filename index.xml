@@ -325,7 +325,7 @@ ENTRYPOINT [ &amp;quot;dotnet&amp;quot;,&amp;quot;/home/asf/ArchiSteamFarm.dll&a
 
 &lt;h2 id=&#34;如何获取-steamid&#34;&gt;如何获取 SteamID&lt;/h2&gt;
 
-&lt;p&gt;首先打开你的 Steam 个人主页 ([用户名 -&amp;gt; 个人资料])，复制网页地址&lt;/p&gt;
+&lt;p&gt;首先打开你的 Steam 个人主页 ([用户名] -&amp;gt; 个人资料)，复制网页地址&lt;/p&gt;
 
 &lt;p&gt;&lt;img alt=&#34;Steam 群组 ID&#34; src=&#34;https://mogeko.github.io/images/036/SteamID_1.png&#34; &gt;&lt;/p&gt;
 
