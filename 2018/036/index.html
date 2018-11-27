@@ -57,7 +57,7 @@
     "datePublished": "2018-11-26 14:48:29 &#43;0800 &#43;0800",
     "dateModified" : "2018-11-26 14:48:29 &#43;0800 &#43;0800",
     "url" : "https://mogeko.github.io/2018/036/",
-    "wordCount" : "8636",
+    "wordCount" : "9070",
     "keywords" : [ "ASF 挂卡","Steam", "Mogeko`s Blog"]
 }
 </script>
@@ -132,7 +132,7 @@
                         <a href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E8%BD%AF%E4%BB%B6/"> 关于软件 </a>
                         
                 </span>
-                <span class="post-word-count">, 8636 words</span>
+                <span class="post-word-count">, 9070 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -441,240 +441,11 @@ ENTRYPOINT [ &quot;dotnet&quot;,&quot;/home/asf/ArchiSteamFarm.dll&quot; ]
 
 <p>所谓 <strong>ASF 命令</strong>实际上就是用「主号」给「小号」发送 <strong>Steam</strong> 消息，来控制指挥 <strong>ASF</strong> 控制「小号」和  <strong>ASF</strong> 。</p>
 
-<!-- 因为比较常用，所以特地做了一个图片格式的速查表 -> [点击下载]() -->
+<p>因为比较常用，所以特地做了一个图片格式的速查表 (右键，保存即可下载) -&gt; <a href="https://mogeko.github.io/images/036/ASF 命令速查表.png" rel="nofollow noreferrer" target="_blank">查看原图</a></p>
 
 <p><br></p>
 
-<table>
-<thead>
-<tr>
-<th>描述</th>
-<th>命令</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>指定 Bot 激活给予的全部密钥，同 <code>!r</code></td>
-<td>!redeem [Bots] [key1, key2,&hellip;]</td>
-</tr>
-
-<tr>
-<td>指定 Bot 激活给予的全部密钥，不转发，同 <code>!r^</code></td>
-<td>!redeem^ [Bots] [key1, key2,&hellip;]</td>
-</tr>
-
-<tr>
-<td>使指定Bot以指定模式激活key<br />Modes：<code>FD</code> = 分发，<code>FF</code> = 转发，<code>FKMG</code> = 补缺，<code>SD</code> = 不分发，<code>SF</code> = 不转发，<code>SI</code> = 舍己，<code>SKMG</code> = 不补缺，<code>V</code> = 验正跳废</td>
-<td>!redeem^ [Bots] [Modes] [Keys]</td>
-</tr>
-
-<tr>
-<td>使指定 Bot 激活指定 ID 的游戏（仅限于免费游戏）</td>
-<td>!addlicense [Bots] [appID1, appID2 &hellip;]</td>
-</tr>
-
-<tr>
-<td>检查当前 Bot 是否已经拥有游戏，同 <code>!oa</code>（指定ID,游戏名,部分游戏名）</td>
-<td>!owns [Bots] [appID,gameName&hellip;]</td>
-</tr>
-
-<tr>
-<td>检查所有 Bot 是否已经拥有指定 ID 的游戏</td>
-<td>!ownsall [appID,gameName&hellip;]</td>
-</tr>
-
-<tr>
-<td>退出 ASF</td>
-<td>!exit</td>
-</tr>
-
-<tr>
-<td>重启 ASF</td>
-<td>!restart</td>
-</tr>
-
-<tr>
-<td>启动指定的 Bot</td>
-<td>!start [Bots]</td>
-</tr>
-
-<tr>
-<td>启动所有 Bot</td>
-<td>!startall</td>
-</tr>
-
-<tr>
-<td>恢复指定 Bot 的 <code>!pause</code> 暂停和 <code>!play</code> 手动挂卡</td>
-<td>!resume [Bots]</td>
-</tr>
-
-<tr>
-<td>永久暂停指定 Bot，直至重启或手动恢复，使用 <code>!resume</code> 恢复</td>
-<td>!pause [Bots]</td>
-</tr>
-
-<tr>
-<td>暂时暂停指定 Bot，自动恢复</td>
-<td>!pause~ [Bots]</td>
-</tr>
-
-<tr>
-<td>重启当前 Bot 的挂卡模块</td>
-<td>!farm</td>
-</tr>
-
-<tr>
-<td>重启指定 Bot 的挂卡模块</td>
-<td>!farm [Bots]</td>
-</tr>
-
-<tr>
-<td>切换至手动挂卡，让指定 Bot 启动指定 ID 的游戏。使用 <code>!resume</code> 恢复自动挂卡模式</td>
-<td>!play [Bots] [appID1, appID2,&hellip;]</td>
-</tr>
-
-<tr>
-<td>停止指定 Bot，注销登录</td>
-<td>!stop [Bots]</td>
-</tr>
-
-<tr>
-<td>让 Bot 离开当前的群组聊天。该指令只在群组聊天中生效。</td>
-<td>!leave</td>
-</tr>
-
-<tr>
-<td>强制指定 Bot 重新加入群聊</td>
-<td>!rejoinchat [Bots]</td>
-</tr>
-
-<tr>
-<td>输出指定 Bot 的状态，同 <code>!sa</code></td>
-<td>!status [Bots]</td>
-</tr>
-
-<tr>
-<td>输出所有 Bot 以及 ASF 本身的状态</td>
-<td>!statusall</td>
-</tr>
-
-<tr>
-<td>将指定 Bot 所有 Steam 物品交易给 <strong>SteamMasterID</strong></td>
-<td>!loot [Bots]</td>
-</tr>
-
-<tr>
-<td>将已启动 Bot 所有 Steam 物品交易给 <strong>SteamMasterID</strong></td>
-<td>!lootall</td>
-</tr>
-
-<tr>
-<td>使指定 Bot 发送某类交易至指定 Bot<br />Modes：<code>A</code> = 全部，<code>BG</code> = 背景，<code>BO</code> = 卡包，<code>C</code> = 卡，<code>E</code> = 表情，<code>F</code> = 闪卡，<code>G</code> = 宝珠，<code>U</code> = 其他</td>
-<td>!transfer [Bots] [Modes] [Bots]</td>
-</tr>
-
-<tr>
-<td>将所有补充包存储在指定Bot的库存</td>
-<td>!unpack [Bots]</td>
-</tr>
-
-<tr>
-<td>列出指定 Bot 交易模块中的黑名单用户</td>
-<td>!bl [Bots]</td>
-</tr>
-
-<tr>
-<td>为指定 Bot 的黑名单增加用户</td>
-<td>!bladd [Bots] [SteamIDs64]</td>
-</tr>
-
-<tr>
-<td>为指定 Bot 的黑名单删除用户</td>
-<td>!blrm [Bots] [SteamIDs64]</td>
-</tr>
-
-<tr>
-<td>列出指定Bot黑名单中的 apps</td>
-<td>!ib [Bots]</td>
-</tr>
-
-<tr>
-<td>为指定Bot的黑名单中增加 apps</td>
-<td>!ibadd [Bots] [AppIDs]</td>
-</tr>
-
-<tr>
-<td>为指定Bot的黑名单删除apps</td>
-<td>!ibrm [Bots] [AppIDs]</td>
-</tr>
-
-<tr>
-<td>为指定 Bot 生成 2FA 临时凭证</td>
-<td>!2fa [Bots]</td>
-</tr>
-
-<tr>
-<td>否决指定 Bot 所有的验证请求</td>
-<td>!2fano [Bots]</td>
-</tr>
-
-<tr>
-<td>关闭指定 Bot 的 2FA 功能</td>
-<td>!2faoff [Bots]</td>
-</tr>
-
-<tr>
-<td>接受指定 Bot 所有的验证请求</td>
-<td>!2faok [Bots]</td>
-</tr>
-
-<tr>
-<td>显示指定Bot加密后的密码（在使用PasswordFormat时）</td>
-<td>!password [Bots]</td>
-</tr>
-
-<tr>
-<td>列出指定 Bot 的优先队列</td>
-<td>!iq [Bots]</td>
-</tr>
-
-<tr>
-<td>为指定 Bot 的优先队列增加 apps</td>
-<td>!iqadd [Bots] [AppIDs]</td>
-</tr>
-
-<tr>
-<td>为指定 Bot 的优先队列删除 apps</td>
-<td>!iqrm [Bots] [AppIDs]</td>
-</tr>
-
-<tr>
-<td>改变指定Bot的昵称</td>
-<td>!nickname [Bots] [Nickname]</td>
-</tr>
-
-<tr>
-<td>给予指定Bot输入类型，Headless模式下工作<br />Type：DeviceID, Login, Password, SteamGuard, SteamParentalPIN, TwoFactorAuthentication</td>
-<td>!input [Bots] [Type] [Value]</td>
-</tr>
-
-<tr>
-<td>弹出帮助信息（链接到 Wiki 指令页面）</td>
-<td>!help</td>
-</tr>
-
-<tr>
-<td>检查在GitHub的更新（默认每24小时进行一次）</td>
-<td>!update</td>
-</tr>
-
-<tr>
-<td>显示当前版本信息</td>
-<td>!version</td>
-</tr>
-</tbody>
-</table>
+<figure style="margin: 0px"><table><thead><tr><th  style="width: 250px">命令</th><th>描述</th></tr></thead><tbody><tr><td style="text-align: left;">!redeem [Bots] [key1, key2,...]</td><td style="text-align: left;">指定 <strong>Bot</strong> 激活给予的全部密钥，同 <code>!r</code></td></tr><tr><td style="text-align: left;">!redeem^ [Bots] [key1, key2,...]</td><td style="text-align: left;">指定 <strong>Bot</strong> 激活给予的全部密钥，不转发，同 <code>!r^</code></td></tr><tr><td style="text-align: left;">!redeem^ [Bots] [Modes] [Keys]</td><td style="text-align: left;">使指定 <strong>Bot</strong> 以指定模式激活 key<br />Modes：<code>FD</code> = 分发，<code>FF</code> = 转发，<code>FKMG</code> = 补缺，<code>SD</code> = 不分发，<code>SF</code> = 不转发，<code>SI</code> = 舍己，<code>SKMG</code> = 不补缺，<code>V</code> = 验正跳废</td></tr><tr><td style="text-align: left;">!addlicense [Bots] [appID1, appID2 ...]</td><td style="text-align: left;">使指定 <strong>Bot</strong> 激活指定 ID 的游戏（<strong>仅限于免费游戏</strong>）</td></tr><tr><td style="text-align: left;">!owns [Bots] [appID,gameName...]</td><td style="text-align: left;">检查当前 <strong>Bot</strong> 是否已经拥有游戏，同 <code>!oa</code> (指定 ID, 游戏名, 部分游戏名)</td></tr><tr><td style="text-align: left;">!ownsall [appID,gameName...]</td><td style="text-align: left;">检查所有 <strong>Bot</strong> 是否已经拥有指定 ID 的游戏</td></tr><tr><td style="text-align: left;">!exit</td><td style="text-align: left;">退出 <strong>ASF</strong></td></tr><tr><td style="text-align: left;">!restart</td><td style="text-align: left;">重启 <strong>ASF</strong></td></tr><tr><td style="text-align: left;">!start [Bots]</td><td style="text-align: left;">启动指定的 <strong>Bot</strong></td></tr><tr><td style="text-align: left;">!startall</td><td style="text-align: left;">启动所有 <strong>Bot</strong></td></tr><tr><td style="text-align: left;">!resume [Bots]</td><td style="text-align: left;">恢复指定 <strong>Bot</strong> 的 <code>!pause</code> 暂停和 <code>!play</code> 手动挂卡</td></tr><tr><td style="text-align: left;">!pause [Bots]</td><td style="text-align: left;">永久暂停指定 <strong>Bot</strong>，直至重启或手动恢复，使用 <code>!resume</code> 恢复</td></tr><tr><td style="text-align: left;">!pause~ [Bots]</td><td style="text-align: left;">暂时暂停指定 <strong>Bot</strong>，自动恢复</td></tr><tr><td style="text-align: left;">!farm</td><td style="text-align: left;">重启当前 <strong>Bot</strong> 的挂卡模块</td></tr><tr><td style="text-align: left;">!farm [Bots]</td><td style="text-align: left;">重启指定 <strong>Bot</strong> 的挂卡模块</td></tr><tr><td style="text-align: left;">!play [Bots] [appID1, appID2,...]</td><td style="text-align: left;">切换至手动挂卡，让指定 <strong>Bot</strong> 启动指定 ID 的游戏。使用 <code>!resume</code> 恢复自动挂卡模式</td></tr><tr><td style="text-align: left;">!stop [Bots]</td><td style="text-align: left;">停止指定 <strong>Bot</strong>，注销登录</td></tr><tr><td style="text-align: left;">!leave</td><td style="text-align: left;">让 <strong>Bot</strong> 离开当前的群组聊天。该指令只在群组聊天中生效。</td></tr><tr><td style="text-align: left;">!rejoinchat [Bots]</td><td style="text-align: left;">强制指定 <strong>Bot</strong> 重新加入群聊</td></tr><tr><td style="text-align: left;">!status [Bots]</td><td style="text-align: left;">输出指定 <strong>Bot</strong> 的状态，同 <code>!sa</code></td></tr><tr><td style="text-align: left;">!statusall</td><td style="text-align: left;">输出所有 <strong>Bot</strong> 以及 <strong>ASF</strong> 本身的状态</td></tr><tr><td style="text-align: left;">!loot [Bots]</td><td style="text-align: left;">将指定 <strong>Bot</strong> 所有 <strong>Steam</strong> 物品交易给 <strong>SteamMasterID</strong></td></tr><tr><td style="text-align: left;">!lootall</td><td style="text-align: left;">将已启动 <strong>Bot</strong> 所有 <strong>Steam</strong> 物品交易给 <strong>SteamMasterID</strong></td></tr><tr><td style="text-align: left;">!transfer [Bots] [Modes] [Bots]</td><td style="text-align: left;">使指定 <strong>Bot</strong> 发送某类交易至指定 <strong>Bot</strong> <br />Modes：<code>A</code> = 全部，<code>BG</code> = 背景，<code>BO</code> = 卡包，<code>C</code> = 卡，<code>E</code> = 表情，<code>F</code> = 闪卡，<code>G</code> = 宝珠，<code>U</code> = 其他</td></tr><tr><td style="text-align: left;">!unpack [Bots]</td><td style="text-align: left;">将所有补充包存储在指定Bot的库存</td></tr><tr><td style="text-align: left;">!bl [Bots]</td><td style="text-align: left;">列出指定 <strong>Bot</strong> 交易模块中的黑名单用户</td></tr><tr><td style="text-align: left;">!bladd [Bots] [SteamIDs64]</td><td style="text-align: left;">为指定 <strong>Bot</strong> 的黑名单增加用户</td></tr><tr><td style="text-align: left;">!blrm [Bots] [SteamIDs64]</td><td style="text-align: left;">为指定 <strong>Bot</strong> 的黑名单删除用户</td></tr><tr><td style="text-align: left;">!ib [Bots]</td><td style="text-align: left;">列出指定 <strong>Bot</strong> 黑名单中的 apps</td></tr><tr><td style="text-align: left;">!ibadd [Bots] [AppIDs]</td><td style="text-align: left;">为指定 <strong>Bot</strong> 的黑名单中增加 apps</td></tr><tr><td style="text-align: left;">!ibrm [Bots] [AppIDs]</td><td style="text-align: left;">为指定 <strong>Bot</strong> 的黑名单删除 apps</td></tr><tr><td style="text-align: left;">!2fa [Bots]</td><td style="text-align: left;">为指定 <strong>Bot</strong> 生成 <strong>2FA 验证</strong></td></tr><tr><td style="text-align: left;">!2fano [Bots]</td><td style="text-align: left;">否决指定 <strong>Bot</strong> 所有的验证请求</td></tr><tr><td style="text-align: left;">!2faoff [Bots]</td><td style="text-align: left;">关闭指定 <strong>Bot</strong> 的 <strong>2FA 验证</strong>功能</td></tr><tr><td style="text-align: left;">!2faok [Bots]</td><td style="text-align: left;">接受指定 <strong>Bot</strong> 所有的验证请求</td></tr><tr><td style="text-align: left;">!password [Bots]</td><td style="text-align: left;">显示指定 <strong>Bot</strong> 加密后的密码 (在使用 PasswordFormat 时)</td></tr><tr><td style="text-align: left;">!iq [Bots]</td><td style="text-align: left;">列出指定 <strong>Bot</strong> 的优先队列</td></tr><tr><td style="text-align: left;">!iqadd [Bots] [AppIDs]</td><td style="text-align: left;">为指定 <strong>Bot</strong> 的优先队列增加 apps</td></tr><tr><td style="text-align: left;">!iqrm [Bots] [AppIDs]</td><td style="text-align: left;">为指定 <strong>Bot</strong> 的优先队列删除 apps</td></tr><tr><td style="text-align: left;">!nickname  [Bots] [Nickname]</td><td style="text-align: left;">改变指定 <strong>Bot</strong> 的昵称</td></tr><tr><td style="text-align: left;">!input [Bots] [Type] [Value]</td><td style="text-align: left;">给予指定 <strong>Bot</strong> 输入类型，Headless 模式下工作<br />Type：DeviceID, Login, Password, SteamGuard, SteamParentalPIN, TwoFactorAuthentication</td></tr><tr><td style="text-align: left;">!help</td><td style="text-align: left;">弹出帮助信息 (链接到 Wiki 指令页面)</td></tr><tr><td style="text-align: left;">!update</td><td style="text-align: left;">检查在 GitHub 的更新 (默认每 24 小时进行一次)</td></tr><tr><td style="text-align: left;">!version</td><td style="text-align: left;">显示当前版本信息</td></tr></tbody></table></figure>
 
 <h1 id="附录">附录</h1>
 
