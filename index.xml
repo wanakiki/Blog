@@ -128,6 +128,35 @@ ENTRYPOINT [ &amp;quot;dotnet&amp;quot;,&amp;quot;/home/asf/ArchiSteamFarm.dll&a
 
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
 	&amp;quot;AutoRestart&amp;quot;: true,
+	&amp;quot;CommandPrefix&amp;quot;: &amp;quot;!&amp;quot;,
+	&amp;quot;ConfirmationsLimiterDelay&amp;quot;: 10,
+	&amp;quot;ConnectionTimeout&amp;quot;: 60,
+	&amp;quot;CurrentCulture&amp;quot;: &amp;quot;zh-CN&amp;quot;,
+	&amp;quot;Debug&amp;quot;: false,
+	&amp;quot;FarmingDelay&amp;quot;: 15,
+	&amp;quot;GiftsLimiterDelay&amp;quot;: 1,
+	&amp;quot;Headless&amp;quot;: false,
+	&amp;quot;IdleFarmingPeriod&amp;quot;: 8,
+	&amp;quot;InventoryLimiterDelay&amp;quot;: 3,
+	&amp;quot;IPC&amp;quot;: false,
+	&amp;quot;IPCPassword&amp;quot;: null,
+	&amp;quot;IPCPrefixes&amp;quot;: [
+		&amp;quot;http://127.0.0.1:1242/&amp;quot;
+	],
+	&amp;quot;LoginLimiterDelay&amp;quot;: 10,
+	&amp;quot;MaxFarmingTime&amp;quot;: 10,
+	&amp;quot;MaxTradeHoldDuration&amp;quot;: 15,
+	&amp;quot;OptimizationMode&amp;quot;: 0,
+	&amp;quot;Statistics&amp;quot;: true,
+	&amp;quot;SteamMessagePrefix&amp;quot;: &amp;quot;/me &amp;quot;,
+	&amp;quot;SteamOwnerID&amp;quot;: 0,
+	&amp;quot;SteamProtocols&amp;quot;: 7,
+	&amp;quot;UpdateChannel&amp;quot;: 1,
+	&amp;quot;UpdatePeriod&amp;quot;: 24,
+	&amp;quot;WebLimiterDelay&amp;quot;: 200,
+	&amp;quot;WebProxy&amp;quot;: null,
+	&amp;quot;WebProxyPassword&amp;quot;: null,
+	&amp;quot;WebProxyUsername&amp;quot;: null,
 	&amp;quot;Blacklist&amp;quot;: [
 		730,
 		440,
@@ -199,36 +228,7 @@ ENTRYPOINT [ &amp;quot;dotnet&amp;quot;,&amp;quot;/home/asf/ArchiSteamFarm.dll&a
 		201070,
 		244630,
 		91310
-	],
-	&amp;quot;CommandPrefix&amp;quot;: &amp;quot;!&amp;quot;,
-	&amp;quot;ConfirmationsLimiterDelay&amp;quot;: 10,
-	&amp;quot;ConnectionTimeout&amp;quot;: 60,
-	&amp;quot;CurrentCulture&amp;quot;: &amp;quot;zh-CN&amp;quot;,
-	&amp;quot;Debug&amp;quot;: false,
-	&amp;quot;FarmingDelay&amp;quot;: 15,
-	&amp;quot;GiftsLimiterDelay&amp;quot;: 1,
-	&amp;quot;Headless&amp;quot;: false,
-	&amp;quot;IdleFarmingPeriod&amp;quot;: 8,
-	&amp;quot;InventoryLimiterDelay&amp;quot;: 3,
-	&amp;quot;IPC&amp;quot;: false,
-	&amp;quot;IPCPassword&amp;quot;: null,
-	&amp;quot;IPCPrefixes&amp;quot;: [
-		&amp;quot;http://127.0.0.1:1242/&amp;quot;
-	],
-	&amp;quot;LoginLimiterDelay&amp;quot;: 10,
-	&amp;quot;MaxFarmingTime&amp;quot;: 10,
-	&amp;quot;MaxTradeHoldDuration&amp;quot;: 15,
-	&amp;quot;OptimizationMode&amp;quot;: 0,
-	&amp;quot;Statistics&amp;quot;: true,
-	&amp;quot;SteamMessagePrefix&amp;quot;: &amp;quot;/me &amp;quot;,
-	&amp;quot;SteamOwnerID&amp;quot;: 0,
-	&amp;quot;SteamProtocols&amp;quot;: 7,
-	&amp;quot;UpdateChannel&amp;quot;: 1,
-	&amp;quot;UpdatePeriod&amp;quot;: 24,
-	&amp;quot;WebLimiterDelay&amp;quot;: 200,
-	&amp;quot;WebProxy&amp;quot;: null,
-	&amp;quot;WebProxyPassword&amp;quot;: null,
-	&amp;quot;WebProxyUsername&amp;quot;: null
+	]
 }
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -288,12 +288,12 @@ ENTRYPOINT [ &amp;quot;dotnet&amp;quot;,&amp;quot;/home/asf/ArchiSteamFarm.dll&a
 &lt;p&gt;简单介绍几个重要的配置：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&amp;ldquo;Enabled&amp;rdquo;&lt;/strong&gt;：是否启用本 Bot&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;Enabled&amp;rdquo;&lt;/strong&gt;：是否启用本 &lt;strong&gt;Bot&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&amp;ldquo;SteamLogin&amp;rdquo;&lt;/strong&gt;：用来登陆 &lt;strong&gt;Steam&lt;/strong&gt; 的用户名；为空着表示在启动时输入&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&amp;ldquo;SteamPassword&amp;rdquo;&lt;/strong&gt;：用来登陆 &lt;strong&gt;Steam&lt;/strong&gt; 的登录密码；为空着表示在启动时输入&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt;：管理员的 &lt;code&gt;SteamID&lt;/code&gt;；管理员可以使用与 &lt;strong&gt;Bot&lt;/strong&gt; 相关的控制命令。
 如果不添加&lt;strong&gt;「小号」&lt;/strong&gt;的话保持默认 (为 0) 即可。
-获取 &lt;code&gt;SteamID&lt;/code&gt; 的方法：&lt;a href=&#34;https://zhuanlan.zhihu.com/p/28256575&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;怎么获取 SteamID？&lt;/a&gt;&lt;/li&gt;
+获取 &lt;code&gt;SteamID&lt;/code&gt; 的方法：&lt;a href=&#34;#如何获取-steamid&#34;&gt;如何获取 SteamID&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&amp;ldquo;SteamMasterClanID&amp;rdquo;&lt;/strong&gt;：&lt;strong&gt;Steam&lt;/strong&gt; 群组的 &lt;strong&gt;ID&lt;/strong&gt;；如果有很多 &lt;strong&gt;Bot&lt;/strong&gt; 需要控制，可以创建一个 &lt;strong&gt;Steam&lt;/strong&gt; 群组，然后&lt;strong&gt;群主&lt;/strong&gt;和&lt;strong&gt;管理员&lt;/strong&gt;可在群组聊天中使用与 &lt;strong&gt;Bot&lt;/strong&gt; 相关的控制命令进行控制
 如果不添加&lt;strong&gt;「小号」&lt;/strong&gt;的话保持默认 (为 0) 即可。
 获取 &lt;strong&gt;Steam&lt;/strong&gt; 群组 &lt;strong&gt;ID&lt;/strong&gt; 的方法：&lt;a href=&#34;#如何获取-steam-群组-id&#34;&gt;如何获取 &lt;strong&gt;Steam&lt;/strong&gt; 群组 &lt;strong&gt;ID&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -323,7 +323,35 @@ ENTRYPOINT [ &amp;quot;dotnet&amp;quot;,&amp;quot;/home/asf/ArchiSteamFarm.dll&a
 
 &lt;p&gt;&lt;img alt=&#34;Steam 群组 ID&#34; src=&#34;https://mogeko.github.io/images/036/SteamGroupID.png&#34; &gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;asf-详细配置说明&#34;&gt;&lt;strong&gt;ASF&lt;/strong&gt; 详细配置说明&lt;/h2&gt;
+&lt;h2 id=&#34;如何获取-steamid&#34;&gt;如何获取 SteamID&lt;/h2&gt;
+
+&lt;p&gt;首先打开你的 Steam 个人主页 ([用户名 -&amp;gt; 个人资料])，复制网页地址&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Steam 群组 ID&#34; src=&#34;https://mogeko.github.io/images/036/SteamID_1.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;打开网页：&lt;a href=&#34;http://steamrep.com&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://steamrep.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在搜索框中粘贴上刚刚复制的网页地址，搜索&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Steam 群组 ID&#34; src=&#34;https://mogeko.github.io/images/036/SteamID_2.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;然后搜索框中的一串数字就是 &lt;code&gt;SteamID&lt;/code&gt; 了&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Steam 群组 ID&#34; src=&#34;https://mogeko.github.io/images/036/SteamID_3.png&#34; &gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;如何注册-steam-网页-api-密匙&#34;&gt;如何注册 Steam 网页 API 密匙&lt;/h2&gt;
+
+&lt;p&gt;点击这个链接 (需要科学上网)：&lt;a href=&#34;https://steamcommunity.com/dev/apikey&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://steamcommunity.com/dev/apikey&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;登录，就可以获取生成的网页 API 了&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/036/get_steam_api_1.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/036/get_steam_api_2.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;域名名称&lt;/strong&gt;随便什么是都可以，不影响使用的。&lt;/p&gt;
+
+&lt;h2 id=&#34;asf-详细配置说明&#34;&gt;ASF 详细配置说明&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;ASF&lt;/strong&gt; 使用 &lt;code&gt;C#&lt;/code&gt; 开发，所以配置文件中的配置语句也是带有类型的。&lt;/p&gt;
 
@@ -365,7 +393,7 @@ ENTRYPOINT [ &amp;quot;dotnet&amp;quot;,&amp;quot;/home/asf/ArchiSteamFarm.dll&a
 
 &lt;p&gt;&lt;strong&gt;[byte] &amp;ldquo;InventoryLimiterDelay&amp;rdquo;&lt;/strong&gt; (默认：3)：物品请求延长。与上述配置类似，获取 &lt;strong&gt;Steam&lt;/strong&gt; 物品栏信息同样拥有频数限制，需要在物品请求中加入一定间隙。ASF 将确保每次物品请求至少留有 &lt;strong&gt;&amp;ldquo;InvetoryLimiterDelay&amp;rdquo;&lt;/strong&gt; 设置的秒数间隙。默认值 &lt;code&gt;3&lt;/code&gt; 是基于同时连接 100 个 &lt;strong&gt;Bot&lt;/strong&gt; 的情况考量，也应该满足大多数用户的需求。用户可能会因为拥有少量Bot的情况下降低数值，甚至将其更改为 &lt;code&gt;0&lt;/code&gt;。这是 &lt;strong&gt;ASF&lt;/strong&gt; 将无视延迟并更快地获取steam物品信息。需要警示的是，将该数值设置过低会导致Steam暂时封禁你的IP，结果就是所有物品请求失败。除非你有充足的理由修改该配置，请将其保持默认。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;ForceHttp&amp;rdquo;&lt;/strong&gt; (默认：false)：默认情况下 &lt;strong&gt;ASF&lt;/strong&gt; 会优先使用 https 协议。然而，极少数情况下，你可能想要从 https 切换回 http 这种兼容性更好的方式。这时候可以将 &lt;strong&gt;&amp;ldquo;ForceHttp&amp;rdquo;&lt;/strong&gt; 数值设为 &lt;code&gt;true&lt;/code&gt;。使用该设置并不确保 &lt;strong&gt;ASF&lt;/strong&gt; 所有请求都以 htt p发送，一些服务（比如GitHub api）仅支持 https。这种情况下，没有办法通过 http 使用这些服务，ASF 会直接拒绝发送 https 请求，其结果就是部分请求失败。如果你并不在调试网络，强烈推荐继续使用安全且加密的 https。除非你有充足的理由修改该配置，请将其保持默认。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;ForceHttp&amp;rdquo;&lt;/strong&gt; (默认：false)：默认情况下 &lt;strong&gt;ASF&lt;/strong&gt; 会优先使用 https 协议。然而，极少数情况下，你可能想要从 https 切换回 http 这种兼容性更好的方式。这时候可以将 &lt;strong&gt;&amp;ldquo;ForceHttp&amp;rdquo;&lt;/strong&gt; 数值设为 &lt;code&gt;true&lt;/code&gt;。使用该设置并不确保 &lt;strong&gt;ASF&lt;/strong&gt; 所有请求都以 htt p发送，一些服务（比如 GitHub api）仅支持 https。这种情况下，没有办法通过 http 使用这些服务，ASF 会直接拒绝发送 https 请求，其结果就是部分请求失败。如果你并不在调试网络，强烈推荐继续使用安全且加密的 https。除非你有充足的理由修改该配置，请将其保持默认。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;[byte] &amp;ldquo;HttpTimeout&amp;rdquo;&lt;/strong&gt; (默认：60)：该配置定义 &lt;strong&gt;ASF&lt;/strong&gt; 发送 HTTP(S) 请求的间隙，单位为秒。默认数值 &lt;code&gt;60&lt;/code&gt; 应该适合大多数用户，然而，如果你的网络传输过慢，可能会想提升该数值（比如 &lt;code&gt;90&lt;/code&gt;）。要记住更大的数值并非修复与 &lt;strong&gt;Steam&lt;/strong&gt; 服务器连接缓慢或是中止的神药，有时候也不得不接受 &lt;strong&gt;Steam&lt;/strong&gt; 服务器无响应并之后尝试连接的事实。将该数值设置过高会无故等待，并降低全局性能。除非你有充足的理由修改该配置，请将其保持默认。&lt;/p&gt;
 
@@ -373,7 +401,7 @@ ENTRYPOINT [ &amp;quot;dotnet&amp;quot;,&amp;quot;/home/asf/ArchiSteamFarm.dll&a
 
 &lt;p&gt;&lt;strong&gt;[ushort] &amp;ldquo;WCFPort&amp;rdquo;&lt;/strong&gt; (默认：1242)：WCF 运行的端口。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;LogToFile&amp;rdquo;&lt;/strong&gt; (默认：true)：该配置定义 &lt;strong&gt;ASF&lt;/strong&gt; 是否应该保留最近运行的 log.txt 文件。之前已经说明，日志文件用于分析 &lt;strong&gt;ASF&lt;/strong&gt; 行为时十分有用，也是汇报 bug 时的关键。不过另一方面，如果用户有许多 Bot，日志文件体积可能会快速增长，为了不让 &lt;strong&gt;ASF&lt;/strong&gt; 将所有内容记录在日志中，你可能想要重定向标准输出（stdout）至别处。比如说，输出至 grep 过滤器。这种情况下，你并不对日志文件感兴趣，而且有自己的方式记录日志，便可以将日志记录禁用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;LogToFile&amp;rdquo;&lt;/strong&gt; (默认：true)：该配置定义 &lt;strong&gt;ASF&lt;/strong&gt; 是否应该保留最近运行的 log.txt 文件。之前已经说明，日志文件用于分析 &lt;strong&gt;ASF&lt;/strong&gt; 行为时十分有用，也是汇报 bug 时的关键。不过另一方面，如果用户有许多 &lt;strong&gt;Bot&lt;/strong&gt;，日志文件体积可能会快速增长，为了不让 &lt;strong&gt;ASF&lt;/strong&gt; 将所有内容记录在日志中，你可能想要重定向标准输出（stdout）至别处。比如说，使用 &lt;code&gt;grep&lt;/code&gt; 进行过滤。这种情况下，你并不对日志文件感兴趣，而且有自己的方式记录日志，便可以将日志记录禁用。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;Statistics&amp;rdquo;&lt;/strong&gt; (默认：true)：该配置定义 &lt;strong&gt;ASF&lt;/strong&gt; 是否启用统计。统计帮助 &lt;strong&gt;ASF&lt;/strong&gt; 开发者提供开发周期的重要信息。如果你想要看到新版本出炉，bug 被修复，以及实现的新特性，请将其保持在默认数值 &lt;code&gt;true&lt;/code&gt;。&lt;/p&gt;
 
@@ -391,9 +419,9 @@ ENTRYPOINT [ &amp;quot;dotnet&amp;quot;,&amp;quot;/home/asf/ArchiSteamFarm.dll&a
 
 &lt;p&gt;&lt;strong&gt;[string] &amp;ldquo;SteamParentalPIN&amp;rdquo;&lt;/strong&gt; (默认：&amp;rdquo;0&amp;rdquo;)：家长控制 PIN&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;[string]  &amp;ldquo;SteamApiKey&amp;rdquo;&lt;/strong&gt; (默认：null)：你的 &lt;strong&gt;Steam API 密钥&lt;/strong&gt;；点击&lt;a href=&#34;https://steamcommunity.com/dev/apikey&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;这里&lt;/a&gt;生成。可用于与 &lt;strong&gt;&amp;ldquo;SteamTradeMatcher&amp;rdquo;&lt;/strong&gt; 配合自动接收交易请求。API 密钥仅对生成该密钥的账户有用，不能将同一密钥用于多个 Bot，每个 &lt;strong&gt;Bot&lt;/strong&gt; 都拥有自己独有的 API 密钥。另外该配置并不强制要求填写，ASF 会在默认值 null 的情况下正常运作，但这样会削减部分需要密钥的功能，比如自动接收交易请求。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[string]  &amp;ldquo;SteamApiKey&amp;rdquo;&lt;/strong&gt; (默认：null)：你的 &lt;strong&gt;Steam 网页 API 密钥&lt;/strong&gt;；&lt;a href=&#34;https://steamcommunity.com/dev/apikey&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;点击这里&lt;/a&gt;生成。可用于与 &lt;strong&gt;&amp;ldquo;SteamTradeMatcher&amp;rdquo;&lt;/strong&gt; &lt;a href=&#34;https://steamcommunity.com/dev/apikey配合自动接收交易请求。API&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://steamcommunity.com/dev/apikey配合自动接收交易请求。API&lt;/a&gt; 密钥仅对生成该密钥的账户有用，不能将同一密钥用于多个 &lt;strong&gt;Bot&lt;/strong&gt;，每个 &lt;strong&gt;Bot&lt;/strong&gt; 都拥有自己独有的 API 密钥。另外该配置并不强制要求填写，ASF 会在默认值 null 的情况下正常运作，但这样会削减部分需要密钥的功能，比如自动接收交易请求。&lt;a href=&#34;#如何注册-steam-网页-api-密匙&#34;&gt;如何注册 Steam 网页 API 密匙&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;[ulong]  &amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt; (默认：0)：管理员的 &lt;code&gt;SteamID&lt;/code&gt;；管理员可以使用与 &lt;strong&gt;Bot&lt;/strong&gt; 相关的控制命令。如果不添加&lt;strong&gt;「小号」&lt;/strong&gt;的话保持默认即可。&lt;a href=&#34;https://zhuanlan.zhihu.com/p/28256575&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;怎么获取 SteamID？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[ulong]  &amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt; (默认：0)：管理员的 &lt;code&gt;SteamID&lt;/code&gt;；管理员可以使用与 &lt;strong&gt;Bot&lt;/strong&gt; 相关的控制命令。如果不添加&lt;strong&gt;「小号」&lt;/strong&gt;的话保持默认即可。&lt;a href=&#34;#如何获取-steamid&#34;&gt;如何获取 SteamID&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;[ulong]  &amp;ldquo;SteamMasterClanID&amp;rdquo;&lt;/strong&gt; (默认：0)：&lt;strong&gt;Steam&lt;/strong&gt; 群组的 &lt;strong&gt;ID&lt;/strong&gt;；如果有很多 &lt;strong&gt;Bot&lt;/strong&gt; 需要控制，可以创建一个 &lt;strong&gt;Steam&lt;/strong&gt; 群组，然后&lt;strong&gt;群主&lt;/strong&gt;和&lt;strong&gt;管理员&lt;/strong&gt;可在群组聊天中使用与 &lt;strong&gt;Bot&lt;/strong&gt; 相关的控制命令进行控制。如果不添加&lt;strong&gt;「小号」&lt;/strong&gt;的话保持默认即可。&lt;a href=&#34;#如何获取-steam-群组-id&#34;&gt;如何获取 &lt;strong&gt;Steam&lt;/strong&gt; 群组 &lt;strong&gt;ID&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -413,7 +441,7 @@ ENTRYPOINT [ &amp;quot;dotnet&amp;quot;,&amp;quot;/home/asf/ArchiSteamFarm.dll&a
 
 &lt;p&gt;&lt;strong&gt;[bool]  &amp;ldquo;ForwardKeysToOtherBots&amp;rdquo;&lt;/strong&gt; (默认：false)：是否转发密匙 (激活码)。转发密匙在拥有 2 个以上帐号的情况下有用。如果为 &lt;code&gt;true&lt;/code&gt;，Bot 将会在激活失败 (已拥有) 的情况下将密匙发送给其他 &lt;strong&gt;Bot&lt;/strong&gt; 激活。这样很容易触发：「 (短期内) 激活失败次数过多」，慎用&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;[bool]  &amp;ldquo;DistributeKeys&amp;rdquo;&lt;/strong&gt; (默认：false)：分发密匙 (激活码)。如果为 &lt;code&gt;true&lt;/code&gt;，Bot 接收密匙并尝试激活接收到的第一个密匙，无论成功失败，将剩下的密匙转发给其他 &lt;strong&gt;Bot&lt;/strong&gt; 激活，以此类推。可以在一定程度上减少触发：「 (短期内) 激活失败次数过多」的可能。但是 &lt;strong&gt;&amp;ldquo;ForwardKeysToOtherBots&amp;rdquo;&lt;/strong&gt; 会影响这个操作，多数情况你可能只想启用两种配置之一，如果这两个配置被同时启用，那么已经激活该游戏的 &lt;strong&gt;Bot&lt;/strong&gt; 在收到密钥后还会将其转发给另一个 Bot，那么就要注意发送的密钥必须小于 &lt;strong&gt;Bot&lt;/strong&gt; 数量才行。如果你不确定是否该启用这项特性，请将其保持默认值 &lt;code&gt;false&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[bool]  &amp;ldquo;DistributeKeys&amp;rdquo;&lt;/strong&gt; (默认：false)：分发密匙 (激活码)。如果为 &lt;code&gt;true&lt;/code&gt;，Bot 接收密匙并尝试激活接收到的第一个密匙，无论成功失败，将剩下的密匙转发给其他 &lt;strong&gt;Bot&lt;/strong&gt; 激活，以此类推。可以在一定程度上减少触发：「 (短期内) 激活失败次数过多」的可能。但是 &lt;strong&gt;&amp;ldquo;ForwardKeysToOtherBots&amp;rdquo;&lt;/strong&gt; 会影响这个操作，多数情况你可能只想启用两种配置之一，如果这两个配置被同时启用，那么已经激活该游戏的 &lt;strong&gt;Bot&lt;/strong&gt; 在收到密钥后还会将其转发给另一个 &lt;strong&gt;Bot&lt;/strong&gt;，那么就要注意发送的密钥必须小于 &lt;strong&gt;Bot&lt;/strong&gt; 数量才行。如果你不确定是否该启用这项特性，请将其保持默认值 &lt;code&gt;false&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;UseAsfAsMobileAuthenticator&amp;rdquo;&lt;/strong&gt; (默认：false)：是否将ASF用作手机认证器，既是否为账号启用「ASF 2FA」机制。该特性相当复杂，你可以&lt;a href=&#34;https://github.com/JustArchi/ArchiSteamFarm/wiki/Escrow&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;点击这里&lt;/a&gt;获知更多信息。该特性可能会锁死你的账号，因此不要在未充分理解「ASF 2FA」的情况下使用。&lt;/p&gt;
 
@@ -421,7 +449,7 @@ ENTRYPOINT [ &amp;quot;dotnet&amp;quot;,&amp;quot;/home/asf/ArchiSteamFarm.dll&a
 
 &lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;SendOnFarmingFinished&amp;rdquo;&lt;/strong&gt; (默认：false)：挂卡结束后发送交易。当某个账号挂卡完毕后，其会自动向 &lt;strong&gt;&amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt; 发起全部挂卡所得的交易请求，这项功能十分便利。该选项的作用与 &lt;code&gt;!loot&lt;/code&gt; 指令一样，因此需要设置 &lt;strong&gt;&amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt;，同时还需要设置下方介绍的 &lt;strong&gt;&amp;ldquo;SteamTradeToken&amp;rdquo;&lt;/strong&gt;。此外账号需要满足交易条件，除非你使用「ASF 2FA」进行自动化操作，不然需要手动通过电子邮件来确认交易。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;[string] &amp;ldquo;SteamTradeToken&amp;rdquo;&lt;/strong&gt; (默认：null)：如果 &lt;strong&gt;&amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt; 在其他 &lt;strong&gt;Bot&lt;/strong&gt; 的好友列表里，Bot 可立即发起交易请求，不用操心交易凭证。因此可将该配置维持默认值 &lt;code&gt;null&lt;/code&gt;。然而如果你的好友列表不打算列入其他Bot账号，就需要生成并输入 &lt;strong&gt;&amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt; 的交易凭证。于官网登陆 &lt;strong&gt;Steam&lt;/strong&gt; 账号，点击&lt;a href=&#34;http://steamcommunity.com/id/me/tradeoffers/privacy&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;此处&lt;/a&gt;便能查看交易URL。凭证就是URL当中&lt;code&gt;&amp;amp;token=&lt;/code&gt;之后的8位字母。你需要将其复制粘贴到 &lt;strong&gt;&amp;ldquo;SteamTradeToken&amp;rdquo;&lt;/strong&gt; 之中。请记住不要复制整个URL，只需要凭证代码。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[string] &amp;ldquo;SteamTradeToken&amp;rdquo;&lt;/strong&gt; (默认：null)：如果 &lt;strong&gt;&amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt; 在其他 &lt;strong&gt;Bot&lt;/strong&gt; 的好友列表里，Bot 可立即发起交易请求，不用操心交易凭证。因此可将该配置维持默认值 &lt;code&gt;null&lt;/code&gt;。然而如果你的好友列表不打算列入其他Bot账号，就需要生成并输入 &lt;strong&gt;&amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt; 的交易凭证。于官网登陆 &lt;strong&gt;Steam&lt;/strong&gt; 账号，&lt;a href=&#34;http://steamcommunity.com/id/me/tradeoffers/privacy&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;点击这里&lt;/a&gt;便能查看交易URL。凭证就是URL当中&lt;code&gt;&amp;amp;token=&lt;/code&gt;之后的8位字母。你需要将其复制粘贴到 &lt;strong&gt;&amp;ldquo;SteamTradeToken&amp;rdquo;&lt;/strong&gt; 之中。请记住不要复制整个URL，只需要凭证代码。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;[byte] &amp;ldquo;SendTradePeriod&amp;rdquo;&lt;/strong&gt; (默认：0)：该配置与上述的 &lt;strong&gt;&amp;ldquo;SendOnFarmingFinished&amp;rdquo;&lt;/strong&gt;作用类似，但有一点不同，该配置并非在挂卡结束后才发起交易，而是以 &lt;strong&gt;&amp;ldquo;SendTradePeriod&amp;rdquo;&lt;/strong&gt; 当中设置的小时数为周期发起。这对想要时常 &lt;code&gt;!loot&lt;/code&gt; 其他 &lt;strong&gt;Bot&lt;/strong&gt; 的用户来说很有帮助。默认值 &lt;code&gt;0&lt;/code&gt; 禁用了该项特性，如果你想要每隔一天进行收获，就设置该配置数值为 &lt;code&gt;24&lt;/code&gt;。如果你不确定是否该启用这项特性，请将其保持默认值 &lt;code&gt;0&lt;/code&gt;。&lt;/p&gt;
 
