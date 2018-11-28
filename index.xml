@@ -6,8 +6,410 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 26 Nov 2018 14:48:29 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Nov 2018 15:25:58 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Bash 命令提示符定制指南</title>
+      <link>https://mogeko.github.io/2018/037/</link>
+      <pubDate>Wed, 28 Nov 2018 15:25:58 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/037/</guid>
+      <description>
+
+&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/037/&#34; &gt;
+&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;p&gt;众所周知，Bash 是大多数 GNU/Linux 的默认 shell。作为每个 Linuxer 每天都要接触到的东西，一个漂亮的 Bash 自然是会让人更加的心情舒畅。今天就来教教大家如果自定义 Bash 的&lt;strong&gt;命令提示符&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;bash 默认的&lt;strong&gt;命令提示符&lt;/strong&gt;长这个模样：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mogeko@ubuntu:~$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中的 &lt;code&gt;mogeko&lt;/code&gt;：是我的用户名，&lt;code&gt;ubuntu&lt;/code&gt;：是我的主机名，&lt;code&gt;~&lt;/code&gt;：是当前目录。&lt;/p&gt;
+
+&lt;p&gt;非常的不美观，并且浪费空间 (用户名和主机名并不是我所关注的东西却占了很大的空间)。好在我们可以通过设置 &lt;code&gt;SP1&lt;/code&gt;：来定制我们的&lt;strong&gt;命令提示符&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h1 id=&#34;关于-sp1-和-sp2&#34;&gt;关于 SP1 和 SP2&lt;/h1&gt;
+
+&lt;p&gt;简单来说：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;SP1：bash 中命令输入的主提示符，如 &lt;code&gt;mogeko@ubuntu:~$&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;SP2：当命令特别长的时候，换行输入时的提示符，默认是 &lt;code&gt;&amp;gt;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;可以在终端中使用 echo 命令查看系统默认参数：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mogeko@ubuntu:~$ echo $PS1
+\u@\h:\W$
+mogeko@ubuntu:~$ echo $PS2
+&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;定制命令提示符&#34;&gt;定制命令提示符&lt;/h1&gt;
+
+&lt;h2 id=&#34;举个栗子&#34;&gt;举个栗子&lt;/h2&gt;
+
+&lt;p&gt;所谓定制命令提示符，实际上就是在 &lt;code&gt;~/.bashrc&lt;/code&gt;：文件中改变变量 &lt;code&gt;PS1&lt;/code&gt;：的值。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;在开始之前，我强烈建议你预先备份 &lt;code&gt;~/.bashrc&lt;/code&gt;：文件。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;例如，我们不想关心&lt;strong&gt;主机名&lt;/strong&gt;，只要一个&lt;strong&gt;用户名&lt;/strong&gt;就够了；只需要在 &lt;code&gt;~/.bashrc&lt;/code&gt;：文件的末尾加上以下命令：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;export PS1=&amp;quot;\u:\W$&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用命令 &lt;code&gt;:wq&lt;/code&gt;：退出并保存&lt;/p&gt;
+
+&lt;p&gt;然后执行以下命令使刚才的修改生效：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;source ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img alt=&#34;\u:\W$&#34; src=&#34;https://mogeko.github.io/images/037/\u:\W$.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;通过上述例子我们可以看见，&lt;strong&gt;用户名&lt;/strong&gt; 实际上就是参数 &lt;code&gt;\u&lt;/code&gt;：的转义；同样的，&lt;strong&gt;主机名&lt;/strong&gt; 对应的参数是 &lt;code&gt;\h&lt;/code&gt;，&lt;strong&gt;当前目录路径&lt;/strong&gt; 对应的参数是 &lt;code&gt;\W&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;我们想定制&lt;strong&gt;命令提示符&lt;/strong&gt;，只需要将各参数按顺序排列组合就可以了。&lt;/p&gt;
+
+&lt;h2 id=&#34;sp1-参数&#34;&gt;SP1 参数&lt;/h2&gt;
+
+&lt;p&gt;如果想知道设置 &lt;code&gt;SP1&lt;/code&gt; 可以使用哪些参数只需要执行一下 &lt;code&gt;man bash&lt;/code&gt;，然后找到 &lt;strong&gt;PROMPTING&lt;/strong&gt; 部分的说明就可以了：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;PROMPTING
+       When executing interactively, bash displays the primary prompt PS1 when it is ready to read a command, and the secondary prompt PS2 when it needs more input to complete a command. Bash allows these prompt strings to be customized by inserting a number of backslash-escaped special characters that are decoded as follows:
+              \a an ASCII bell character (07)
+              \d the date in &amp;quot;Weekday Month Date&amp;quot; format (e.g., &amp;quot;Tue May 26&amp;quot;)
+              \D{format}
+                     the format is passed to strftime(3) and the result is inserted into the prompt string; an empty format results in a locale-specific time representation.
+                     The braces are required
+              \e an ASCII escape character (033)
+              \h the hostname up to the first ‘.’
+              \H the hostname
+              \j the number of jobs currently managed by the shell
+              \l the basename of the shell’s terminal device name
+              \n newline
+              \r carriage return
+              \s the name of the shell, the basename of $0 (the portion following the final slash)
+              \t the current time in 24-hour HH:MM:SS format
+              \T the current time in 12-hour HH:MM:SS format
+              \@ the current time in 12-hour am/pm format
+              \A the current time in 24-hour HH:MM format
+              \u the username of the current user
+              \v the version of bash (e.g., 2.00)
+              \V the release of bash, version + patch level (e.g., 2.00.0)
+              \w the current working directory, with $HOME abbreviated with a tilde (uses the value of the PROMPT_DIRTRIM variable)
+              \W the basename of the current working directory, with $HOME abbreviated with a tilde
+              \! the history number of this command
+              \# the command number of this command
+              \$ if the effective UID is 0, a #, otherwise a $
+              \nnn the character corresponding to the octal number nnn
+              \\ a backslash
+              \[ begin a sequence of non-printing characters, which could be used to embed a terminal control sequence into the prompt
+              \] end a sequence of non-printing characters
+       The command number and the history number are usually different: the history number of a command is its position in the history list, which may include commands restored from the history file(see HISTORY below), while the command number is the position in the sequence of commands executed during the current shell session. After the string is decoded, it is expanded via parameter expansion, command substitution, arithmetic expansion, and quote removal, subject to the value of the promptvars shell option(see the description of the shopt command under SHELL BUILTIN COMMANDS below).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;简单整理并翻译了一下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\a&lt;/code&gt;：一个 ASCII 响铃字符 (07)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\d&lt;/code&gt;：&amp;rdquo;Weekday Month Date&amp;rdquo; 格式的日期 (比如：&amp;rdquo;Tue May 26&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\D{format}&lt;/code&gt;：通过向 strftime 传值后回显自定义日期格式&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\e&lt;/code&gt;：ASCII 转义字符 (033)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\h&lt;/code&gt;：主机名的第一部分，截取到第一个 &amp;lsquo;.&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\H&lt;/code&gt;：主机的全称&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\j&lt;/code&gt;：在当前 shell 中管理的进程数&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\l&lt;/code&gt;：shell 的终端设备名称的基名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\n&lt;/code&gt;：换行符&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\r&lt;/code&gt;：回车符&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\s&lt;/code&gt;：shell 的名称，当前脚本的名称，不包括路径&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\t&lt;/code&gt;：HH:MM:SS 格式的 24 小时制时间&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\T&lt;/code&gt;：HH:MM:SS 格式的 12 小时制时间&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\@&lt;/code&gt;：am/pm 格式的 12 小时制时间&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\A&lt;/code&gt;：HH:MM 格式的 12 小时制时间&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\u&lt;/code&gt;：当前用户的用户名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\v&lt;/code&gt;：bash 的的版本 (如：-00)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\V&lt;/code&gt;：bash 版本，包括补丁级别 (如：-00.0)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\w&lt;/code&gt;：当前工作目录，包括路径&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\W&lt;/code&gt;：当前工作目录的基名，不包括路径&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\!&lt;/code&gt;：当前命令的历史记录编号&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\#&lt;/code&gt;：命令编号 (只要您键入内容，它就会在每次显示时累加)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\$&lt;/code&gt;：如果您不是超级用户 (root)，则显示 &amp;ldquo;$&amp;ldquo;；如果您是超级用户，则显示 &amp;ldquo;#&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\nnn&lt;/code&gt;：对应于八进制数 nnn 的字符&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\\&lt;/code&gt;：反斜杠&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\[&lt;/code&gt;：开始一系列非打印字符，可以将终端控制序列嵌入到提示符中&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\]&lt;/code&gt;：结束一系列非打印字符&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;为命令提示符着色&#34;&gt;为命令提示符着色&lt;/h1&gt;
+
+&lt;p&gt;上面的参数可以改变命令提示符的内容。其实，命令提示符的颜色也是可以被修改的。&lt;/p&gt;
+
+&lt;p&gt;修改字符颜色需要用到以下两个标记：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;\e[F;Bm&lt;/code&gt;：开始标记&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;\e[0m&lt;/code&gt;：结束标记&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;为字符设置颜色，只需要用两个标记将字符框起来就可以了：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;\e[F;Bm需要设置颜色的部分\e[0m
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中 &lt;code&gt;F&lt;/code&gt; 为字体颜色，编号 30~37；&lt;code&gt;B&lt;/code&gt; 为背景色，编号 40~47。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;th&gt;颜色&lt;/th&gt;
+&lt;th&gt;F&lt;/th&gt;
+&lt;th&gt;B&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&#34;color:#000000; background-color:#000000&#34;&gt;&amp;emsp;&amp;emsp;&amp;emsp;&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;黑色&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&#34;color:#FF0000; background-color:#FF0000&#34;&gt;&amp;emsp;&amp;emsp;&amp;emsp;&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;红色&lt;/td&gt;
+&lt;td&gt;31&lt;/td&gt;
+&lt;td&gt;41&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&#34;color:#00FF00; background-color:#00FF00&#34;&gt;&amp;emsp;&amp;emsp;&amp;emsp;&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;绿色&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;42&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&#34;color:#FFFF00; background-color:#FFFF00&#34;&gt;&amp;emsp;&amp;emsp;&amp;emsp;&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;黄色&lt;/td&gt;
+&lt;td&gt;33&lt;/td&gt;
+&lt;td&gt;43&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&#34;color:#0000FF; background-color:#0000FF&#34;&gt;&amp;emsp;&amp;emsp;&amp;emsp;&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;蓝色&lt;/td&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;44&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&#34;color:#FF00FF; background-color:#FF00FF&#34;&gt;&amp;emsp;&amp;emsp;&amp;emsp;&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;粉紫色&lt;/td&gt;
+&lt;td&gt;35&lt;/td&gt;
+&lt;td&gt;45&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&#34;color:#00FFFF; background-color:#00FFFF&#34;&gt;&amp;emsp;&amp;emsp;&amp;emsp;&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;天蓝色&lt;/td&gt;
+&lt;td&gt;36&lt;/td&gt;
+&lt;td&gt;46&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&#34;color:#FFFFFF; background-color:#FFFFFF&#34;&gt;&amp;emsp;&amp;emsp;&amp;emsp;&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;白色&lt;/td&gt;
+&lt;td&gt;37&lt;/td&gt;
+&lt;td&gt;47&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;例如 ：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-she&#34;&gt;export PS1=&amp;quot;\[\e[32m\]\u\[\e[m\]\[\e[33m\]\\$\[\e[m\] &amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;\[\e[32m\]\u\[\e[m\]\[\e[33m\]\\$\[\e[m\]&#34; src=&#34;https://mogeko.github.io/images/037/\[\e[32m\]\u\[\e[m\]\[\e[33m\]\\$\[\e[m\].png&#34; &gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;返回错误值&#34;&gt;返回错误值&lt;/h1&gt;
+
+&lt;p&gt;你也可以使用命令提示符来查看上一条命令执行的结果。&lt;/p&gt;
+
+&lt;p&gt;只需要在 &lt;code&gt;~/.bashrc&lt;/code&gt; 中创建一个函数：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;function nonzero_return() {
+	RETVAL=$?
+	[ $RETVAL -ne 0 ] &amp;amp;&amp;amp; echo &amp;quot;$RETVAL&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后在调用 &lt;code&gt;SP1&lt;/code&gt; 的时候中执行这个函数：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;export PS1=&amp;quot;\`nonzero_return\` &amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;git-分支信息&#34;&gt;Git 分支信息&lt;/h1&gt;
+
+&lt;p&gt;你甚至可以在命令提示符中查看 Git 的分支信息 (如果当前目录下有 Git 仓库的话)。&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code&gt;~/.bashrc&lt;/code&gt; 中创建函数：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# get current branch in git repo
+function parse_git_branch() {
+	BRANCH=`git branch 2&amp;gt; /dev/null | sed -e &#39;/^[^*]/d&#39; -e &#39;s/* \(.*\)/\1/&#39;`
+	if [ ! &amp;quot;${BRANCH}&amp;quot; == &amp;quot;&amp;quot; ]
+	then
+		STAT=`parse_git_dirty`
+		echo &amp;quot;[${BRANCH}${STAT}]&amp;quot;
+	else
+		echo &amp;quot;&amp;quot;
+	fi
+}
+
+# get current status of git repo
+function parse_git_dirty {
+	status=`git status 2&amp;gt;&amp;amp;1 | tee`
+	dirty=`echo -n &amp;quot;${status}&amp;quot; 2&amp;gt; /dev/null | grep &amp;quot;modified:&amp;quot; &amp;amp;&amp;gt; /dev/null; echo &amp;quot;$?&amp;quot;`
+	untracked=`echo -n &amp;quot;${status}&amp;quot; 2&amp;gt; /dev/null | grep &amp;quot;Untracked files&amp;quot; &amp;amp;&amp;gt; /dev/null; echo &amp;quot;$?&amp;quot;`
+	ahead=`echo -n &amp;quot;${status}&amp;quot; 2&amp;gt; /dev/null | grep &amp;quot;Your branch is ahead of&amp;quot; &amp;amp;&amp;gt; /dev/null; echo &amp;quot;$?&amp;quot;`
+	newfile=`echo -n &amp;quot;${status}&amp;quot; 2&amp;gt; /dev/null | grep &amp;quot;new file:&amp;quot; &amp;amp;&amp;gt; /dev/null; echo &amp;quot;$?&amp;quot;`
+	renamed=`echo -n &amp;quot;${status}&amp;quot; 2&amp;gt; /dev/null | grep &amp;quot;renamed:&amp;quot; &amp;amp;&amp;gt; /dev/null; echo &amp;quot;$?&amp;quot;`
+	deleted=`echo -n &amp;quot;${status}&amp;quot; 2&amp;gt; /dev/null | grep &amp;quot;deleted:&amp;quot; &amp;amp;&amp;gt; /dev/null; echo &amp;quot;$?&amp;quot;`
+	bits=&#39;&#39;
+	if [ &amp;quot;${renamed}&amp;quot; == &amp;quot;0&amp;quot; ]; then
+		bits=&amp;quot;&amp;gt;${bits}&amp;quot;
+	fi
+	if [ &amp;quot;${ahead}&amp;quot; == &amp;quot;0&amp;quot; ]; then
+		bits=&amp;quot;*${bits}&amp;quot;
+	fi
+	if [ &amp;quot;${newfile}&amp;quot; == &amp;quot;0&amp;quot; ]; then
+		bits=&amp;quot;+${bits}&amp;quot;
+	fi
+	if [ &amp;quot;${untracked}&amp;quot; == &amp;quot;0&amp;quot; ]; then
+		bits=&amp;quot;?${bits}&amp;quot;
+	fi
+	if [ &amp;quot;${deleted}&amp;quot; == &amp;quot;0&amp;quot; ]; then
+		bits=&amp;quot;x${bits}&amp;quot;
+	fi
+	if [ &amp;quot;${dirty}&amp;quot; == &amp;quot;0&amp;quot; ]; then
+		bits=&amp;quot;!${bits}&amp;quot;
+	fi
+	if [ ! &amp;quot;${bits}&amp;quot; == &amp;quot;&amp;quot; ]; then
+		echo &amp;quot; ${bits}&amp;quot;
+	else
+		echo &amp;quot;&amp;quot;
+	fi
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在调用 &lt;code&gt;SP1&lt;/code&gt; 的时候中执行这个函数：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;export PS1=&amp;quot;\`parse_git_branch\` &amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;我的命令提示符配置&#34;&gt;我的命令提示符配置&lt;/h1&gt;
+
+&lt;p&gt;分享一下我个人使用的命令提示符配置 (复制粘贴到 &lt;code&gt;~/.bashrc&lt;/code&gt; 的末尾)：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# get current branch in git repo
+function parse_git_branch() {
+	BRANCH=`git branch 2&amp;gt; /dev/null | sed -e &#39;/^[^*]/d&#39; -e &#39;s/* \(.*\)/\1/&#39;`
+	if [ ! &amp;quot;${BRANCH}&amp;quot; == &amp;quot;&amp;quot; ]
+	then
+		STAT=`parse_git_dirty`
+		echo &amp;quot;[${BRANCH}${STAT}]&amp;quot;
+	else
+		echo &amp;quot;&amp;quot;
+	fi
+}
+
+# get current status of git repo
+function parse_git_dirty {
+	status=`git status 2&amp;gt;&amp;amp;1 | tee`
+	dirty=`echo -n &amp;quot;${status}&amp;quot; 2&amp;gt; /dev/null | grep &amp;quot;modified:&amp;quot; &amp;amp;&amp;gt; /dev/null; echo &amp;quot;$?&amp;quot;`
+	untracked=`echo -n &amp;quot;${status}&amp;quot; 2&amp;gt; /dev/null | grep &amp;quot;Untracked files&amp;quot; &amp;amp;&amp;gt; /dev/null; echo &amp;quot;$?&amp;quot;`
+	ahead=`echo -n &amp;quot;${status}&amp;quot; 2&amp;gt; /dev/null | grep &amp;quot;Your branch is ahead of&amp;quot; &amp;amp;&amp;gt; /dev/null; echo &amp;quot;$?&amp;quot;`
+	newfile=`echo -n &amp;quot;${status}&amp;quot; 2&amp;gt; /dev/null | grep &amp;quot;new file:&amp;quot; &amp;amp;&amp;gt; /dev/null; echo &amp;quot;$?&amp;quot;`
+	renamed=`echo -n &amp;quot;${status}&amp;quot; 2&amp;gt; /dev/null | grep &amp;quot;renamed:&amp;quot; &amp;amp;&amp;gt; /dev/null; echo &amp;quot;$?&amp;quot;`
+	deleted=`echo -n &amp;quot;${status}&amp;quot; 2&amp;gt; /dev/null | grep &amp;quot;deleted:&amp;quot; &amp;amp;&amp;gt; /dev/null; echo &amp;quot;$?&amp;quot;`
+	bits=&#39;&#39;
+	if [ &amp;quot;${renamed}&amp;quot; == &amp;quot;0&amp;quot; ]; then
+		bits=&amp;quot;&amp;gt;${bits}&amp;quot;
+	fi
+	if [ &amp;quot;${ahead}&amp;quot; == &amp;quot;0&amp;quot; ]; then
+		bits=&amp;quot;*${bits}&amp;quot;
+	fi
+	if [ &amp;quot;${newfile}&amp;quot; == &amp;quot;0&amp;quot; ]; then
+		bits=&amp;quot;+${bits}&amp;quot;
+	fi
+	if [ &amp;quot;${untracked}&amp;quot; == &amp;quot;0&amp;quot; ]; then
+		bits=&amp;quot;?${bits}&amp;quot;
+	fi
+	if [ &amp;quot;${deleted}&amp;quot; == &amp;quot;0&amp;quot; ]; then
+		bits=&amp;quot;x${bits}&amp;quot;
+	fi
+	if [ &amp;quot;${dirty}&amp;quot; == &amp;quot;0&amp;quot; ]; then
+		bits=&amp;quot;!${bits}&amp;quot;
+	fi
+	if [ ! &amp;quot;${bits}&amp;quot; == &amp;quot;&amp;quot; ]; then
+		echo &amp;quot; ${bits}&amp;quot;
+	else
+		echo &amp;quot;&amp;quot;
+	fi
+}
+
+function nonzero_return() {
+    RETVAL=$?
+    [ $RETVAL -eq 0 ] &amp;amp;&amp;amp; echo -e &amp;quot;\033[32m▶ \033[0m&amp;quot;
+    [ $RETVAL -ne 0 ] &amp;amp;&amp;amp; echo -e &amp;quot;\033[31m✗ \033[0m&amp;quot;
+}
+
+export PS1=&amp;quot;\`nonzero_return\`\[\e[36m\]\W\[\e[m\]\[\e[35m\]\`parse_git_branch\`
+export PS2=&amp;quot;\[\e[32m\]&amp;gt;\[\e[m\] &amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;具有以下特点：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;第一位的是上一条命令的返回值
+正常情况下为：&lt;span style=&#34;color:#00FF00&#34;&gt;▶&lt;/span&gt;
+运行出错为：&lt;span style=&#34;color:#FF0000&#34;&gt;✗&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;第二位的是当前的目录&lt;/li&gt;
+&lt;li&gt;第三位的是当前目录的 Git 分支信息 (当前目录下没有 Git 仓库时自动隐藏)&lt;/li&gt;
+&lt;li&gt;换行输入时的提示符：&lt;span style=&#34;color:#00FF00&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;My SP1&amp;SP2&#34; src=&#34;https://mogeko.github.io/images/037/mySP1&amp;SP2.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>如何使用 ASF 挂卡</title>
@@ -2824,179 +3226,6 @@ James 吃完药后昏倒在地，点击倒在地上的杯子即可通关&lt;/p&g
 &lt;p&gt;原文地址：&lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1535212223&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Rusty Lake: Roots 通关攻略 施工中&amp;hellip; | Steam 社区&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;作者：确实是 Mogeko (&lt;em&gt;/ω＼&lt;/em&gt;)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>空洞骑士：格林剧团 DLC 全成就指南</title>
-      <link>https://mogeko.github.io/2018/022/</link>
-      <pubDate>Sun, 30 Sep 2018 21:06:00 +0800</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/022/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/022/logo.jpg&#34;  alt=&#34;Logo&#34; &gt;&lt;/p&gt;
-
-&lt;p&gt;补一篇格林剧团 DLC 的全成就指南&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;「格林剧团」&lt;/strong&gt;的难度相较于&lt;strong&gt;「寻神者」&lt;/strong&gt;和 &lt;strong&gt;主线剧情&lt;/strong&gt; 要简单得多，属于比较容易完成的 DLC。但&lt;strong&gt;「格林剧团」&lt;/strong&gt;采用的是双结局，而且结局是与获得成就直接相关的，因此「格林剧团」的所有成就不可能在同一个存档中完成。&lt;/p&gt;
-
-&lt;p&gt;解决方法：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;开两个存档&lt;/li&gt;
-&lt;li&gt;备份存档然后回档 -&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2018/021&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;「空洞骑士」存档备份方法&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;!-- more --&gt;
-
-&lt;h1 id=&#34;开启方法&#34;&gt;开启方法&lt;/h1&gt;
-
-&lt;p&gt;在&lt;strong&gt;「呼啸悬崖」&lt;/strong&gt;的隐藏洞穴里，你会发现一只大虫子的尸体，对着它来一发「梦之钉」便可开启「格林剧团」&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129642756/5712015F9CCD8E9DD2CD9541047C68214624F047/&#34;&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;全成就指南&#34;&gt;全成就指南&lt;/h1&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;图标&lt;/th&gt;
-&lt;th&gt;成就&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129657351/982F6BD69415E06696E2FC414BC595700663AB37/&#34;&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;盛大演出&lt;br /&gt;&lt;/strong&gt;先完成「格林」布置的两次任务，然后在剧团打败「格林」&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129658013/11A174017FA3BAA8169C362C0740DEABABB5C241/&#34;&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;仪式&lt;/strong&gt;：&lt;strong&gt;结局一&lt;/strong&gt;&lt;br /&gt;打败「格林」后，完成「格林」布置的第三次任务，然后在剧团打败「梦魇之王」&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129658378/D08C26C6B6B675DC3135B43FDD124EEC41E351F6/&#34;&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;驱逐&lt;/strong&gt;：&lt;strong&gt;结局二&lt;br /&gt;&lt;/strong&gt;打败「格林」后，到「深邃巢穴」去找「布鲁姆」，&lt;br /&gt;「布鲁姆」会劝你和他一同反抗团长「格林」；&lt;br /&gt;然后到「呼啸悬崖」(开启「格林剧团」的地方) 与 「布鲁姆」一起毁掉 「梦魇之灯」&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;因为是双结局，所以「仪式」和「驱逐」不能在同一个存档中完成&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;新增护符&#34;&gt;新增护符&lt;/h1&gt;
-
-&lt;p&gt;格林剧团 DLC 新增了 5 个新的护符 (其实是 4 个，有两个护符只能 2 选 1)&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;护符37：梦之盾&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;在「安息之地」的隐藏房间里获得&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129753822/ECF24E7F5328A152EB5E879BE81601AEADFF32C9/&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;护符38：编织者之歌&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;在「深邃巢穴」里获得&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129763750/E91FD4677E0E428FC133FC57CE350A527A8181B8/&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;护符39：飞毛腿&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;找到「店主的钥匙」后，在「德特茅斯」的城镇商人处购买 (400 吉欧)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;护符40：格林之子&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;开启格林剧团后，在「格林」处获取&lt;br /&gt;如果完成&lt;strong&gt;结局二&lt;/strong&gt; (放逐结局)，此护符会丢失&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;护符41：无忧旋律&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;完成&lt;strong&gt;结局二&lt;/strong&gt;(放逐结局) 后，在「德特茅斯」的长椅附近与「布鲁姆」对话获得&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;「格林之子」与「无忧旋律」分别对应两个结局，无法同时获得&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;坚固护符&#34;&gt;坚固护符&lt;/h1&gt;
-
-&lt;p&gt;开启格林剧团后，可以 (佩戴上易碎护符) 找格林剧团的「迪万」花吉欧将「易碎贪婪」、「易碎心脏」和「易碎力量」升级成对应的坚固护符 (死亡后不损坏)&lt;/p&gt;
-
-&lt;p&gt;花费：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;易碎贪婪 -&amp;gt; 坚固贪婪 9000 吉欧&lt;/li&gt;
-&lt;li&gt;易碎心脏 -&amp;gt; 坚固心脏 12000 吉欧&lt;/li&gt;
-&lt;li&gt;易碎力量 -&amp;gt; 坚固力量 15000 吉欧&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;完成结局二 (驱逐结局) 后，「迪万」会消失&lt;/p&gt;
-
-&lt;p&gt;完成结局一 (仪式结局) 则不会&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://steamuserimages-a.akamaihd.net/ugc/941706910129970560/D978E5F63B3819C2A361DA2DB2343E82EEC7BFDC/&#34;  alt=&#34;迪万&#34; &gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;原文地址：&lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1526799965&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;格林剧团 DLC 全成就指南 | Steam 社区&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;作者：果然是 Mogeko （づ&amp;gt; ω &amp;lt;）づ♡&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
 </description>
     </item>
     

@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 26 Nov 2018 14:48:29 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Nov 2018 15:25:58 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bash 命令提示符定制指南</title>
+      <link>https://mogeko.github.io/2018/037/</link>
+      <pubDate>Wed, 28 Nov 2018 15:25:58 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/037/</guid>
+      <description>&amp;emsp;&amp;emsp; -- 众所周知，Bash 是大多数 GNU/Linux 的默认 shell。作为每个 Linuxer 每天都要接触到的东西，一个漂亮的 Bash 自然是会让人更加的心情舒畅。今天就来教教大家如</description>
+    </item>
     
     <item>
       <title>如何使用 ASF 挂卡</title>
@@ -342,15 +351,6 @@
       
       <guid>https://mogeko.github.io/2017/000/</guid>
       <description>在很久以前就想试一试Linux了，一直没有实践。一是觉得太麻烦，二是怕把电脑弄坏。后来实践了一次后发现，其实并没有想象中那么难，这是一个完全</description>
-    </item>
-    
-    <item>
-      <title>Bash 命令提示符定制指南</title>
-      <link>https://mogeko.github.io/1/037/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mogeko.github.io/1/037/</guid>
-      <description>&amp;emsp;&amp;emsp; -- 众所周知，Bash 是大多数 GNU/Linux 的默认 shell。作为每个 Linuxer 每天都要接触到的东西，一个漂亮的 Bash 自然是会让人更加的心情舒畅。今天就来教教大家如</description>
     </item>
     
   </channel>
