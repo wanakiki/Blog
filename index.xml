@@ -244,12 +244,12 @@ mogeko@ubuntu:~$ echo $PS2
 
 &lt;p&gt;例如 ：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-she&#34;&gt;export PS1=&amp;quot;\[\e[32m\]\u\[\e[m\]\[\e[33m\]\\$\[\e[m\] &amp;quot;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;export PS1=&amp;quot;\[\e[32m\]\u\[\e[m\]\[\e[33m\]\\$\[\e[m\] &amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;效果：&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;\[\e[32m\]\u\[\e[m\]\[\e[33m\]\\$\[\e[m\]&#34; src=&#34;https://mogeko.github.io/images/037/ex2.png&#34; &gt;&lt;/p&gt;
+&lt;pre class=&#34;prettyprint linenums prettyprinted&#34;&gt;&lt;ol class=&#34;linenums&#34;&gt;&lt;li class=&#34;L0&#34;&gt;&lt;code class=&#34;language-shell&#34;&gt;&lt;span class=&#34;str&#34; style=&#34;color:#00FF00&#34;&gt;mogeko&lt;/span&gt;&lt;span class=&#34;str&#34; style=&#34;color:#FFFF00&#34;&gt;$ &lt;/span&gt;&lt;/code&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;
 
 &lt;h1 id=&#34;返回错误值&#34;&gt;返回错误值&lt;/h1&gt;
 
