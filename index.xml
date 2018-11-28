@@ -78,7 +78,7 @@ mogeko@ubuntu:~$ echo $PS2
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;source ~/.bashrc
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img alt=&#34;\u:\W$&#34; src=&#34;https://mogeko.github.io/images/037/\u:\W$.png&#34; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;\u:\W$&#34; src=&#34;https://mogeko.github.io/images/037/ex1.png&#34; &gt;&lt;/p&gt;
 
 &lt;p&gt;通过上述例子我们可以看见，&lt;strong&gt;用户名&lt;/strong&gt; 实际上就是参数 &lt;code&gt;\u&lt;/code&gt;：的转义；同样的，&lt;strong&gt;主机名&lt;/strong&gt; 对应的参数是 &lt;code&gt;\h&lt;/code&gt;，&lt;strong&gt;当前目录路径&lt;/strong&gt; 对应的参数是 &lt;code&gt;\W&lt;/code&gt;&lt;/p&gt;
 
@@ -249,7 +249,7 @@ mogeko@ubuntu:~$ echo $PS2
 
 &lt;p&gt;效果：&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;\[\e[32m\]\u\[\e[m\]\[\e[33m\]\\$\[\e[m\]&#34; src=&#34;https://mogeko.github.io/images/037/\[\e[32m\]\u\[\e[m\]\[\e[33m\]\\$\[\e[m\].png&#34; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;\[\e[32m\]\u\[\e[m\]\[\e[33m\]\\$\[\e[m\]&#34; src=&#34;https://mogeko.github.io/images/037/ex2.png&#34; &gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;返回错误值&#34;&gt;返回错误值&lt;/h1&gt;
 
@@ -403,7 +403,7 @@ export PS2=&amp;quot;\[\e[32m\]&amp;gt;\[\e[m\] &amp;quot;
 
 &lt;p&gt;效果：&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;My SP1&amp;SP2&#34; src=&#34;https://mogeko.github.io/images/037/mySP1&amp;SP2.png&#34; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;My SP1&amp;SP2&#34; src=&#34;https://mogeko.github.io/images/037/ex3.png&#34; &gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
