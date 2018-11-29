@@ -57,7 +57,7 @@
     "datePublished": "2018-11-28 15:25:58 &#43;0800 &#43;0800",
     "dateModified" : "2018-11-28 15:25:58 &#43;0800 &#43;0800",
     "url" : "https://mogeko.github.io/2018/037/",
-    "wordCount" : "2479",
+    "wordCount" : "2666",
     "keywords" : [ "GNU/Linux", "Mogeko`s Blog"]
 }
 </script>
@@ -142,7 +142,7 @@
                         <a href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E7%B3%BB%E7%BB%9F/"> 关于系统 </a>
                         
                 </span>
-                <span class="post-word-count">, 2479 words</span>
+                <span class="post-word-count">, 2666 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -477,7 +477,8 @@ function parse_git_dirty {
 
 <p>分享一下我个人使用的命令提示符配置 (复制粘贴到 <code>~/.bashrc</code> 的末尾)：</p>
 
-<pre><code class="language-shell"># get current branch in git repo
+<pre><code class="language-shell"># PS1&amp;PS2
+# get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2&gt; /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 	if [ ! &quot;${BRANCH}&quot; == &quot;&quot; ]
@@ -524,22 +525,28 @@ function parse_git_dirty {
 	fi
 }
 
-function nonzero_return() {
+# return
+function get_return() {
     RETVAL=$?
+    # Normal
     [ $RETVAL -eq 0 ] &amp;&amp; echo -e &quot;\033[32m▶ \033[0m&quot;
-    [ $RETVAL -ne 0 ] &amp;&amp; echo -e &quot;\033[31m✗ \033[0m&quot;
+    # Ctrl + C
+    [ $RETVAL -eq 130 ] &amp;&amp; echo -e &quot;\033[32m▶ \033[0m&quot;
+    # Ctrl + Z
+    [ $RETVAL -eq 148 ] &amp;&amp; echo -e &quot;\033[32m▶ \033[0m&quot;
+
+    # Error
+    [ $RETVAL -ne 0 ] &amp;&amp; [ $RETVAL -ne 130 ] &amp;&amp; [ $RETVAL -ne 148 ] &amp;&amp; echo -e &quot;\033[31m✗ \033[0m&quot;
 }
 
-export PS1=&quot;\`nonzero_return\`\[\e[36m\]\W\[\e[m\]\[\e[35m\]\`parse_git_branch\`
+export PS1=&quot;\`get_return\`\[\e[36m\][\W]\[\e[m\]\[\e[35m\]\`parse_git_branch\`\[\e[m\]\[\e[33m\]\\$\[\e[m\] &quot;
 export PS2=&quot;\[\e[32m\]&gt;\[\e[m\] &quot;
 </code></pre>
 
 <p>具有以下特点：</p>
 
 <ul>
-<li>第一位的是上一条命令的返回值
-正常情况下为：<span style="color:#00FF00">▶</span>
-运行出错为：<span style="color:#FF0000">✗</span></li>
+<li>第一位的是上一条命令的返回值 (正常情况下为：<span style="color:#00FF00">▶</span>&emsp;运行出错为：<span style="color:#FF0000">✗</span>)</li>
 <li>第二位的是当前的目录</li>
 <li>第三位的是当前目录的 Git 分支信息 (当前目录下没有 Git 仓库时自动隐藏)</li>
 <li>换行输入时的提示符：<span style="color:#00FF00">&gt;</span></li>
@@ -549,7 +556,7 @@ export PS2=&quot;\[\e[32m\]&gt;\[\e[m\] &quot;
 
 <p>效果：</p>
 
-<p><img alt="My SP1&SP2" src="https://mogeko.github.io/images/037/ex3.png" ></p>
+<pre class="prettyprint linenums prettyprinted" style="overflow: auto;"><ol class="linenums"><li class="L0"><code class="language-shell"><span class="pun"  style="color:#00FF00">▶</span><span class="pln"> </span><span class="pun"  style="color:#00FFFF">[~]</span><span class="pln"  style="color:#00FFFF"><span class="pun"  style="color:#FFFF00">$</span><span class="pln"> cd </span><span class="pun">~/Project/blog</span></code></li><li class="L1"><code class="language-shell"><span class="pun"  style="color:#00FF00">▶</span><span class="pln"> </span><span class="pun"  style="color:#00FFFF">[blog]</span><span class="pun"  style="color: #FF00FF">[master]</span><span class="pln"  style="color:#00FFFF"><span class="pun"  style="color:#FFFF00">$</span><span class="pln"> gi</span></code></li><li class="L2"><code class="language-shell"><span class="pln">gi</span><span class="pun">：未找到命令</span></code></li><li class="L3"><code class="language-shell"><span class="pun" style="color:#FF0000">✗</span><span class="pln"> </span><span class="pun"  style="color:#00FFFF">[blog]</span><span class="pun"  style="color: #FF00FF">[master]</span><span class="pln"  style="color:#00FFFF"><span class="pun"  style="color:#FFFF00">$</span><span class="pln"> \</span></code></li><li class="L4"><code class="language-shell"><span class="pun" style="color:#00FF00">&gt;</span><span class="pln"> \</span></code></li><li class="L5"><code class="language-shell"><span class="pun" style="color:#00FF00">&gt;</span><span class="pln"> touch temp</span><span class="pun">.</span><span class="pln">txt</span></code></li><li class="L6"><code class="language-shell"><span class="pun"  style="color:#00FF00">▶</span><span class="pln"> </span><span class="pun"  style="color:#00FFFF">[blog]</span><span class="pun"  style="color: #FF00FF">[master]</span><span class="pln"  style="color:#00FFFF"><span class="pun"  style="color:#FFFF00">$</span><span class="pln"> </span></code></li></ol></pre>
 
 <p><br></p>
 
