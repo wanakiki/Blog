@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 28 Nov 2018 15:25:58 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 04 Dec 2018 18:58:01 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>对，这他妈就是生活！</title>
+      <link>https://mogeko.github.io/2018/038/</link>
+      <pubDate>Tue, 04 Dec 2018 18:58:01 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/038/</guid>
+      <description>&amp;emsp;&amp;emsp; -- 写一篇《大象席地而坐》的影评。 说是影评，其实就是对剧中主要人物的一些评价。 太主观了？主观就他娘的对了！这他妈是老子的博客，老子想他娘的咋</description>
+    </item>
     
     <item>
       <title>Bash 命令提示符定制指南</title>
