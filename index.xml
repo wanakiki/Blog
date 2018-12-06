@@ -123,7 +123,7 @@
 
 &lt;p&gt;说不出来，自己感受吧&lt;/p&gt;
 
-&lt;video src=&#34;https://mogeko.github.io/images/038/part_1.mp4&#34; controls=&#34;controls&#34; width=&#34;780px&#34;&gt;Your browser does not support the video tag.&lt;/video&gt;
+&lt;video src=&#34;https://mogeko.github.io/images/038/part_1.mp4&#34; controls=&#34;controls&#34; style=&#34;width:100%&#34;&gt;Your browser does not support the video tag.&lt;/video&gt;
 
 &lt;h1 id=&#34;满洲里动物园-有一只大象&#34;&gt;满洲里动物园，有一只大象&lt;/h1&gt;
 
