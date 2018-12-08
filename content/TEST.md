@@ -37,10 +37,10 @@
 webp 图片兼容性测试
 
 移动端：<br>
-<img alt="shields" src="https://img.shields.io/badge/Chrome-pass-green.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Firefox-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Safari-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><br>
+<img alt="shields" src="https://img.shields.io/badge/Chrome-pass-green.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Firefox-error-red.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Safari-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><br>
 
 PC 端：<br>
-<img alt="shields" src="https://img.shields.io/badge/Chrome-pass-green.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Firefox-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Edge-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Safari-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/IE-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><br>
+<img alt="shields" src="https://img.shields.io/badge/Chrome-pass-green.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Firefox-error-red.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Edge-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Safari-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/IE-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><br>
 
 ## 对比组
 
