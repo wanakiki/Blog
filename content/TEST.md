@@ -2,7 +2,7 @@
  title: "TEST"
 ---
 <!-- 
-<img alt="shields" src="" style="float: left; margin-right: 1em" >
+<img alt="shields" src="" style="float: left; margin: 5px 1em 0px 0px" >
 <img alt="" src="https://mogeko.github.io/images/test/" >
 <span class="spoiler" ></span>
 &emsp;&emsp;
@@ -14,7 +14,7 @@
 
 # Test 1
 
-<img alt="shields" src="https://img.shields.io/badge/%E9%9A%90%E8%97%8F%E6%96%87%E5%AD%97%20-pass-green.svg" style="float: left; margin-right: 1em" ><br>
+<img alt="shields" src="https://img.shields.io/badge/%E9%9A%90%E8%97%8F%E6%96%87%E5%AD%97%20-pass-green.svg" style="float: left; margin: 5px 1em 0px 0px" ><br>
 
 ```html
 <span class="spoiler" ></span>
@@ -26,7 +26,7 @@
 
 # Test 2
 
-<img alt="shields" src="https://img.shields.io/badge/%E6%96%B0%C2%B7%E5%BC%95%E7%94%A8%E6%A0%87%E7%AD%BE-pass-green.svg" style="float: left; margin-right: 1em" ><img alt="shields" src="https://img.shields.io/badge/%E5%A4%9C%E6%99%9A%E6%A8%A1%E5%BC%8F%20-pass-green.svg" style="float: left; margin-right: 1em" ><br>
+<img alt="shields" src="https://img.shields.io/badge/%E6%96%B0%C2%B7%E5%BC%95%E7%94%A8%E6%A0%87%E7%AD%BE-pass-green.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/%E5%A4%9C%E6%99%9A%E6%A8%A1%E5%BC%8F%20-pass-green.svg" style="float: left; margin: 5px 1em 0px 0px" ><br>
 
 ## 测试组
 
@@ -37,10 +37,10 @@
 webp 图片兼容性测试
 
 移动端：<br>
-<img alt="shields" src="https://img.shields.io/badge/Chrome-pass-green.svg" style="float: left; margin-right: 1em" ><img alt="shields" src="https://img.shields.io/badge/Firefox-unknown-lightgrey.svg" style="float: left; margin-right: 1em" ><img alt="shields" src="https://img.shields.io/badge/Safari-unknown-lightgrey.svg" style="float: left; margin-right: 1em" ><br>
+<img alt="shields" src="https://img.shields.io/badge/Chrome-pass-green.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Firefox-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Safari-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><br>
 
 PC 端：<br>
-<img alt="shields" src="https://img.shields.io/badge/Chrome-pass-green.svg" style="float: left; margin-right: 1em" ><img alt="shields" src="https://img.shields.io/badge/Firefox-unknown-lightgrey.svg" style="float: left; margin-right: 1em" ><img alt="shields" src="https://img.shields.io/badge/Edge-unknown-lightgrey.svg" style="float: left; margin-right: 1em" ><img alt="shields" src="https://img.shields.io/badge/Safari-unknown-lightgrey.svg" style="float: left; margin-right: 1em" ><img alt="shields" src="https://img.shields.io/badge/IE-unknown-lightgrey.svg" style="float: left; margin-right: 1em" ><br>
+<img alt="shields" src="https://img.shields.io/badge/Chrome-pass-green.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Firefox-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Edge-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Safari-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/IE-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><br>
 
 ## 对比组
 
