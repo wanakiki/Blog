@@ -160,7 +160,9 @@ webp 图片兼容性测试
   </tr>
 </tbody></table>
 <div style="position: absolute;right: 0px;">
-    <span style="color:#39b54a">▋</span>支持&emsp;<span style="color:#c44230">▋</span>不支持&emsp;<span style="color:#A8BD04">▋</span>部分支持 (不支持无损格式)
+    <span style="color:#39b54a">▋</span>支持&emsp;
+    <span style="color:#c44230">▋</span>不支持&emsp;
+    <span style="color:#A8BD04">▋</span>部分支持 (不支持无损格式)
 </div>
 </div>
 
