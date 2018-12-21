@@ -36,11 +36,135 @@
 
 webp 图片兼容性测试
 
-移动端：<br>
-<img alt="shields" src="https://img.shields.io/badge/Chrome-pass-green.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Firefox-error-red.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Safari-error-red.svg" style="float: left; margin: 5px 1em 0px 0px" ><br>
+<div  style="overflow:auto">
+<table>
+  <tbody><tr  style="text-align:center;line-height:1.5em">
+      <th>IE</th>
+      <th>Edge</th>
+      <th>Firefox</th>
+      <th>Chrome</th>
+      <th>Safari</th>
+      <th>Opera</th>
+      <th nowrap="nowrap">iOS Safari</th>
+      <th nowrap="nowrap">Opera Mini</th>
+      <th>Android Browser</th>
+      <th>Blackberry Browser</th>
+      <th nowrap="nowrap">Opera Mobile</th>
+      <th nowrap="nowrap">Chrome for<br>Android</th>
+      <th nowrap="nowrap">Firefox for<br>Android</th>
+      <th nowrap="nowrap">IE Mobile</th>
+      <th nowrap="nowrap">UC Browser<br>for Android</th>
+      <th>Samsung Internet</th>
+      <th nowrap="nowrap">QQ Browser</th>
+      <th>Baidu Browser</th>
+  </tr>
+  <tr style="color:#ffffff;text-align:center">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td style="background-color:#c44230;">4-8</td>
+      <td></td>
+      <td style="background-color:#c44230;">10.1</td>
+      <td></td>
+      <td></td>
+      <td style="background-color:#c44230;">2.1-3</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+  </tr>
+  <tr style="color:#ffffff;text-align:center">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td style="background-color:#A8BD04;">9-22</td>
+      <td></td>
+      <td style="background-color:#A8BD04;">11.5</td>
+      <td></td>
+      <td></td>
+      <td style="background-color:#A8BD04;">4-4.1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+  </tr>
+  <tr style="color:#ffffff;text-align:center">
+      <td style="background-color:#c44230;" nowrap="nowrap">6-10</td>
+      <td style="background-color:#c44230;">12-17</td>
+      <td style="background-color:#c44230;">2-63</td>
+      <td style="background-color:#39b54a;">23-70</td>
+      <td style="background-color:#c44230;">3.1-11.1</td>
+      <td style="background-color:#39b54a;">12.1-56</td>
+      <td style="background-color:#c44230;" nowrap="nowrap">3.2-11.4</td>
+      <td></td>
+      <td style="background-color:#39b54a;">4.2-4.4.4</td>
+      <td style="background-color:#c44230;">7</td>
+      <td style="background-color:#39b54a;">12-12.1</td>
+      <td></td>
+      <td></td>
+      <td style="background-color:#c44230;">10</td>
+      <td></td>
+      <td style="background-color:#39b54a;">4-6.2</td>
+      <td></td>
+      <td></td>
+  </tr>
+  <tr style="color:#ffffff;text-align:center;font-weight:bold">
+      <td style="background-color:#c44230;border:2px solid #000000">11</td>
+      <td style="background-color:#39b54a;border:2px solid #000000">18</td>
+      <td style="background-color:#c44230;border:2px solid #000000">64</td>
+      <td style="background-color:#39b54a;border:2px solid #000000">71</td>
+      <td style="background-color:#c44230;border:2px solid #000000">12</td>
+      <td style="background-color:#39b54a;border:2px solid #000000">57</td>
+      <td style="background-color:#c44230;border:2px solid #000000">12.1</td>
+      <td style="background-color:#39b54a;border:2px solid #000000">all</td>
+      <td style="background-color:#39b54a;border:2px solid #000000">67</td>
+      <td style="background-color:#c44230;border:2px solid #000000">10</td>
+      <td style="background-color:#39b54a;border:2px solid #000000">46</td>
+      <td style="background-color:#39b54a;border:2px solid #000000">70</td>
+      <td style="background-color:#c44230;border:2px solid #000000">63</td>
+      <td style="background-color:#c44230;border:2px solid #000000">11</td>
+      <td style="background-color:#39b54a;border:2px solid #000000">11.8</td>
+      <td style="background-color:#39b54a;border:2px solid #000000">7.2</td>
+      <td style="background-color:#39b54a;border:2px solid #000000">1.2</td>
+      <td style="background-color:#39b54a;border:2px solid #000000">7.12</td>
+  </tr>
+  <tr style="color:#ffffff;text-align:center;opacity:0.7">
+      <td></td>
+      <td></td>
+      <td style="background-color:#39b54a;">65-66</td>
+      <td style="background-color:#39b54a;">72-74</td>
+      <td style="background-color:#c44230;">TP</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+  </tr>
+</tbody></table></div>
 
-PC 端：<br>
-<img alt="shields" src="https://img.shields.io/badge/Chrome-pass-green.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Firefox-error-red.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Edge-error-red.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/Safari-unknown-lightgrey.svg" style="float: left; margin: 5px 1em 0px 0px" ><img alt="shields" src="https://img.shields.io/badge/IE-error-red.svg" style="float: left; margin: 5px 1em 0px 0px" ><br>
+<div style="position: absolute;right: 0px;">
+    <span style="color:#39b54a">▋</span>支持&emsp;<span style="color:#c44230">▋</span>不支持&emsp;<span style="color:#A8BD04">▋</span>部分支持 (不支持无损格式)
+</div>
+
+<br>
 
 ## 对比组
 
