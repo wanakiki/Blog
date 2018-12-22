@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Mogeko">
+  <meta name="description" content="Mogeko 的个人博客">
+  <meta name="keywords" content="blog, KMS, Hugo, GNU/Linux, Linux, Ubuntu, Rusty Lake: Roots, Hollow Knight, 空洞骑士">
+  
+  <link rel="prev" href="https://mogeko.github.io/2018/038/" />
+  
+  <link rel="canonical" href="https://mogeko.github.io/2018/039/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Student dormitory management | Mogeko`s Blog
+       
+  </title>
+  <meta name="title" content="Student dormitory management | Mogeko`s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://mogeko.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Student dormitory management",
+    "headline" : "Student dormitory management",
+    "description" : "&emsp;&emsp; -- Demand analysis The system is designed to facilitate the management of student residences. Provide registration for students and teachers, check the student dormitory number, adjust the dormitory and other functions. At the same time, considering the need for maintenance and refurbishment of the dormitory, the system provides the function of submitting and accepting maintenance applications. After the student submits the repair application, the dormitory management will dispatch maintenance",
+    "inLanguage" : "zh-cn",
+    "author" : "Mogeko",
+    "creator" : "Mogeko",
+    "publisher": "Mogeko",
+    "accountablePerson" : "Mogeko",
+    "copyrightHolder" : "Mogeko",
+    "copyrightYear" : "2018",
+    "datePublished": "2018-12-22 23:30:01 &#43;0800 &#43;0800",
+    "dateModified" : "2018-12-22 23:30:01 &#43;0800 &#43;0800",
+    "url" : "https://mogeko.github.io/2018/039/",
+    "wordCount" : "560",
+    "keywords" : [ "Datebase", "Mogeko`s Blog"]
+}
+</script>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104502658-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-104502658-2');
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.github.io">Mogeko`s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.github.io">Mogeko`s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Student dormitory management</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://mogeko.github.io" rel="author">Mogeko</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2018-12-22 itemprop="datePublished">December 22, 2018</time>
+                </span>
+                in
+                
+                <span class="post-word-count">, 560 words</span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<!-- 
+<img alt="" src="https://mogeko.github.io/images/038/" >
+<span class="spoiler" ></span>
+&emsp;&emsp;
+ -->
+
+<h1 id="demand-analysis">Demand analysis</h1>
+
+<p>The system is designed to facilitate the management of student residences.</p>
+
+<p>Provide registration for students and teachers, check the student dormitory number, adjust the dormitory and other functions.</p>
+
+<p>At the same time, considering the need for maintenance and refurbishment of the dormitory, the system provides the function of submitting and accepting maintenance applications. After the student submits the repair application, the dormitory management will dispatch maintenance personnel to the maintenance.</p>
+
+<h2 id="user-classification">User classification</h2>
+
+<ul>
+<li><strong>Student (Male/Female)</strong>: Managed by a boarding teacher</li>
+<li><strong>Dormitory manager</strong>: Manage all rooms and students</li>
+<li><strong>Maintenance personnel</strong>: Including cleaning, maintenance personnel, etc&hellip;</li>
+</ul>
+
+<h2 id="functions">Functions</h2>
+
+<p><strong>Dormitory manager:</strong></p>
+
+<ul>
+<li>Check student accommodation</li>
+<li>Reasonable allocation of rooms</li>
+<li>Adjust student dormitory allocation</li>
+<li>Delete students who are no longer staying</li>
+</ul>
+
+<p><strong>Maintenance personnel:</strong></p>
+
+<ul>
+<li>Inquiry repair application form</li>
+<li>Query working hours</li>
+<li>Check the repair area (room id)</li>
+</ul>
+
+<h1 id="database-design">Database Design</h1>
+
+<p>This database includes a total of 5 tables: <strong>student_db, administrator_db, dormitry_db, maintenance_personnel_db, maintenance_application_db</strong></p>
+
+<ul>
+<li><strong>student_db</strong>: <code>{ID, name, sex, room number (room id)}</code></li>
+</ul>
+
+<p>This table is used to record and manage different kinds of students.</p>
+
+<ul>
+<li><strong>administrator_db</strong>: <code>{ID, sex, managed room id}</code></li>
+</ul>
+
+<p>This table is used to record the student’s boarding teacher and the objects they need to manage.</p>
+
+<ul>
+<li><strong>dormitry_db</strong>: <code>{ID, types(male or female), sister teacher's id}</code></li>
+</ul>
+
+<p>This table is used to record information about the dorms that need to be managed.</p>
+
+<ul>
+<li><strong>maintenance_personnel_db</strong>: <code>{ID, name, sex, position (project responsible for maintenance), working time, off work time}</code></li>
+</ul>
+
+<p>This table is used to record information about maintenance personnel, including working hours, etc.</p>
+
+<ul>
+<li><strong>maintenance_application_db</strong>: <code>{room id, application for repair}</code></li>
+</ul>
+
+<p>This tavle is used to record the repair application submitted by the student and is also the work content of the maintenance staff.</p>
+
+<h3 id="contact">Contact</h3>
+
+<ul>
+<li>Student accommodation: <code>{student_db, dormitry_db}</code></li>
+<li>Dormitory management: <code>{administrator_db, dormitry_db}</code></li>
+<li>Repair application: <code>{student_db, maintenance_application_db}</code></li>
+<li>Dormitory maintenance: <code>{maintenance_personnel_db, maintenance_application_db}</code></li>
+</ul>
+
+<h2 id="e-r">E - R</h2>
+
+<p><img alt="E-R" src="https://mogeko.github.io/images/039/E-R.png" ></p>
+
+<h2 id="table-design">Table design</h2>
+
+<p><strong>student_db:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">列名</th>
+<th align="center">数据类型</th>
+<th align="center">允许 Null 值</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><u>student_id</u></td>
+<td align="center">nchar(10)</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
+<td align="center">student_name</td>
+<td align="center">nchar(10)</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
+<td align="center">student_sex</td>
+<td align="center">nchar(10)</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
+<td align="center">room_id</td>
+<td align="center">int</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>administrator_db:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">列名</th>
+<th align="center">数据类型</th>
+<th align="center">允许 Null 值</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><u>administrator_id</u></td>
+<td align="center">nchar(10)</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
+<td align="center">administrator_name</td>
+<td align="center">nchar(10)</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
+<td align="center">administrator_sex</td>
+<td align="center">nchar(10)</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>dormitry_db:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">列名</th>
+<th align="center">数据类型</th>
+<th align="center">允许 Null 值</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><u>room_id</u></td>
+<td align="center">nchar(10)</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
+<td align="center">types</td>
+<td align="center">nchar(10)</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
+<td align="center">administrator_id</td>
+<td align="center">nchar(10)</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>maintenance_personnel_db:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">列名</th>
+<th align="center">数据类型</th>
+<th align="center">允许 Null 值</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><u>maintenance_personne_id</u></td>
+<td align="center">nchar(10)</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
+<td align="center">maintenance_personnel_name</td>
+<td align="center">nchar(10)</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
+<td align="center">maintenance_personnel_sex</td>
+<td align="center">nchar(10)</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
+<td align="center">position</td>
+<td align="center">vchat(50)</td>
+<td align="center">True</td>
+</tr>
+
+<tr>
+<td align="center">working_time</td>
+<td align="center">datetime</td>
+<td align="center">True</td>
+</tr>
+
+<tr>
+<td align="center">off_work_time</td>
+<td align="center">datetime</td>
+<td align="center">True</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>maintenance_application_db:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">列名</th>
+<th align="center">数据类型</th>
+<th align="center">允许 Null 值</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">maintenance_application</td>
+<td align="center">vchat(50)</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
+<td align="center">room_id</td>
+<td align="center">nchar(10)</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="database-implementation">Database implementation</h1>
+
+<h2 id="case-data">Case data</h2>
+
+<p><strong>student_db:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">student_id</th>
+<th align="center">student_name</th>
+<th align="center">student_sex</th>
+<th align="center">room_id</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">0001</td>
+<td align="center">Mogeko</td>
+<td align="center">Male</td>
+<td align="center">M101</td>
+</tr>
+
+<tr>
+<td align="center">0002</td>
+<td align="center">Ezie</td>
+<td align="center">Female</td>
+<td align="center">F101</td>
+</tr>
+
+<tr>
+<td align="center">0003</td>
+<td align="center">Washington</td>
+<td align="center">Male</td>
+<td align="center">M101</td>
+</tr>
+
+<tr>
+<td align="center">0004</td>
+<td align="center">Licoln</td>
+<td align="center">Male</td>
+<td align="center">M102</td>
+</tr>
+
+<tr>
+<td align="center">0005</td>
+<td align="center">Daisy</td>
+<td align="center">Female</td>
+<td align="center">F101</td>
+</tr>
+
+<tr>
+<td align="center">0006</td>
+<td align="center">Trump</td>
+<td align="center">Male</td>
+<td align="center">M101</td>
+</tr>
+
+<tr>
+<td align="center">0007</td>
+<td align="center">Noah</td>
+<td align="center">Male</td>
+<td align="center">M102</td>
+</tr>
+
+<tr>
+<td align="center">0008</td>
+<td align="center">Lucy</td>
+<td align="center">Female</td>
+<td align="center">F101</td>
+</tr>
+
+<tr>
+<td align="center">0009</td>
+<td align="center">Obama</td>
+<td align="center">Male</td>
+<td align="center">M101</td>
+</tr>
+
+<tr>
+<td align="center">0010</td>
+<td align="center">Lucy</td>
+<td align="center">Female</td>
+<td align="center">F101</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>administrator_db:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">administrator_id</th>
+<th align="center">administrator_name</th>
+<th align="center">administrator_sex</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">001</td>
+<td align="center">Herrington</td>
+<td align="center">Male</td>
+</tr>
+
+<tr>
+<td align="center">002</td>
+<td align="center">Van</td>
+<td align="center">Male</td>
+</tr>
+
+<tr>
+<td align="center">003</td>
+<td align="center">Rossett</td>
+<td align="center">Male</td>
+</tr>
+
+<tr>
+<td align="center">004</td>
+<td align="center">Jade</td>
+<td align="center">Female</td>
+</tr>
+
+<tr>
+<td align="center">005</td>
+<td align="center">Eva</td>
+<td align="center">Female</td>
+</tr>
+
+<tr>
+<td align="center">006</td>
+<td align="center">May</td>
+<td align="center">Female</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>dormitry_db:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">room_id</th>
+<th align="center">types</th>
+<th align="center">administrator_id</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">M101</td>
+<td align="center">Male</td>
+<td align="center">001</td>
+</tr>
+
+<tr>
+<td align="center">M102</td>
+<td align="center">Male</td>
+<td align="center">001</td>
+</tr>
+
+<tr>
+<td align="center">M103</td>
+<td align="center">Male</td>
+<td align="center">001</td>
+</tr>
+
+<tr>
+<td align="center">M104</td>
+<td align="center">Male</td>
+<td align="center">002</td>
+</tr>
+
+<tr>
+<td align="center">M105</td>
+<td align="center">Male</td>
+<td align="center">002</td>
+</tr>
+
+<tr>
+<td align="center">F101</td>
+<td align="center">Female</td>
+<td align="center">004</td>
+</tr>
+
+<tr>
+<td align="center">F102</td>
+<td align="center">Female</td>
+<td align="center">004</td>
+</tr>
+
+<tr>
+<td align="center">F103</td>
+<td align="center">Female</td>
+<td align="center">004</td>
+</tr>
+
+<tr>
+<td align="center">F104</td>
+<td align="center">Female</td>
+<td align="center">004</td>
+</tr>
+
+<tr>
+<td align="center">F105</td>
+<td align="center">Female</td>
+<td align="center">004</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>maintenance_personnel_db:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">maintenance_ personnel_id</th>
+<th align="center">maintenance_ personnel_name</th>
+<th align="center">maintenance_ personnel_sex</th>
+<th align="center">position</th>
+<th align="center">working_ time</th>
+<th align="center">off<em>work</em> time</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">001</td>
+<td align="center">Roosevelt</td>
+<td align="center">Male</td>
+<td align="center">Door damage</td>
+<td align="center">2018-12-22 09:00</td>
+<td align="center">2018-12-22 22:00</td>
+</tr>
+
+<tr>
+<td align="center">002</td>
+<td align="center">Kennedy</td>
+<td align="center">Male</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">003</td>
+<td align="center">Nannie</td>
+<td align="center">Female</td>
+<td align="center">Faucet damage</td>
+<td align="center">2018-12-22 09:00</td>
+<td align="center">2018-12-22 22:00</td>
+</tr>
+
+<tr>
+<td align="center">004</td>
+<td align="center">Dawn</td>
+<td align="center">Female</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>maintenance_application_db:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">maintenance_application</th>
+<th align="center">room_id</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">Door damage</td>
+<td align="center">M102</td>
+</tr>
+
+<tr>
+<td align="center">Faucet damage</td>
+<td align="center">F101</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Mogeko </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://mogeko.github.io/2018/039/>https://mogeko.github.io/2018/039/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://mogeko.github.io/tags/datebase/">
+                    #Datebase</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://mogeko.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://mogeko.github.io/2018/038/" class="prev" rel="prev" title="对，这他妈就是生活！"><i class="iconfont icon-left"></i>&nbsp;对，这他妈就是生活！</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '936cecdd2ab935870ca5',
+        clientSecret: '39cfc7a3cb9a974b6609f3fdaa637e2917e3e40a',
+        repo: 'Blog',
+        owner: 'Mogeko',
+        admin: ['Mogeko'],
+        id: location.pathname, 
+        distractionFreeMode: false 
+    });
+    (function () {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+            return;
+        }
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2017 - 2018</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://mogeko.github.io">Mogeko</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

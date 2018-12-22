@@ -6,8 +6,575 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 04 Dec 2018 18:58:01 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 22 Dec 2018 23:30:01 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Student dormitory management</title>
+      <link>https://mogeko.github.io/2018/039/</link>
+      <pubDate>Sat, 22 Dec 2018 23:30:01 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2018/039/</guid>
+      <description>
+
+&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/038/&#34; &gt;
+&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;h1 id=&#34;demand-analysis&#34;&gt;Demand analysis&lt;/h1&gt;
+
+&lt;p&gt;The system is designed to facilitate the management of student residences.&lt;/p&gt;
+
+&lt;p&gt;Provide registration for students and teachers, check the student dormitory number, adjust the dormitory and other functions.&lt;/p&gt;
+
+&lt;p&gt;At the same time, considering the need for maintenance and refurbishment of the dormitory, the system provides the function of submitting and accepting maintenance applications. After the student submits the repair application, the dormitory management will dispatch maintenance personnel to the maintenance.&lt;/p&gt;
+
+&lt;h2 id=&#34;user-classification&#34;&gt;User classification&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Student (Male/Female)&lt;/strong&gt;: Managed by a boarding teacher&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dormitory manager&lt;/strong&gt;: Manage all rooms and students&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Maintenance personnel&lt;/strong&gt;: Including cleaning, maintenance personnel, etc&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;functions&#34;&gt;Functions&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Dormitory manager:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Check student accommodation&lt;/li&gt;
+&lt;li&gt;Reasonable allocation of rooms&lt;/li&gt;
+&lt;li&gt;Adjust student dormitory allocation&lt;/li&gt;
+&lt;li&gt;Delete students who are no longer staying&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Maintenance personnel:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Inquiry repair application form&lt;/li&gt;
+&lt;li&gt;Query working hours&lt;/li&gt;
+&lt;li&gt;Check the repair area (room id)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;database-design&#34;&gt;Database Design&lt;/h1&gt;
+
+&lt;p&gt;This database includes a total of 5 tables: &lt;strong&gt;student_db, administrator_db, dormitry_db, maintenance_personnel_db, maintenance_application_db&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;student_db&lt;/strong&gt;: &lt;code&gt;{ID, name, sex, room number (room id)}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This table is used to record and manage different kinds of students.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;administrator_db&lt;/strong&gt;: &lt;code&gt;{ID, sex, managed room id}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This table is used to record the student’s boarding teacher and the objects they need to manage.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;dormitry_db&lt;/strong&gt;: &lt;code&gt;{ID, types(male or female), sister teacher&#39;s id}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This table is used to record information about the dorms that need to be managed.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;maintenance_personnel_db&lt;/strong&gt;: &lt;code&gt;{ID, name, sex, position (project responsible for maintenance), working time, off work time}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This table is used to record information about maintenance personnel, including working hours, etc.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;maintenance_application_db&lt;/strong&gt;: &lt;code&gt;{room id, application for repair}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This tavle is used to record the repair application submitted by the student and is also the work content of the maintenance staff.&lt;/p&gt;
+
+&lt;h3 id=&#34;contact&#34;&gt;Contact&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Student accommodation: &lt;code&gt;{student_db, dormitry_db}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Dormitory management: &lt;code&gt;{administrator_db, dormitry_db}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Repair application: &lt;code&gt;{student_db, maintenance_application_db}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Dormitory maintenance: &lt;code&gt;{maintenance_personnel_db, maintenance_application_db}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;e-r&#34;&gt;E - R&lt;/h2&gt;
+
+&lt;p&gt;&lt;img alt=&#34;E-R&#34; src=&#34;https://mogeko.github.io/images/039/E-R.png&#34; &gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;table-design&#34;&gt;Table design&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;student_db:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;数据类型&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;u&gt;student_id&lt;/u&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;student_name&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;student_sex&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;room_id&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;int&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;administrator_db:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;数据类型&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;u&gt;administrator_id&lt;/u&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;administrator_name&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;administrator_sex&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;dormitry_db:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;数据类型&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;u&gt;room_id&lt;/u&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;types&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;administrator_id&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;maintenance_personnel_db:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;数据类型&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;u&gt;maintenance_personne_id&lt;/u&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;maintenance_personnel_name&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;maintenance_personnel_sex&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;position&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;vchat(50)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;working_time&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;datetime&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;off_work_time&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;datetime&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;maintenance_application_db:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;数据类型&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;maintenance_application&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;vchat(50)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;room_id&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&#34;database-implementation&#34;&gt;Database implementation&lt;/h1&gt;
+
+&lt;h2 id=&#34;case-data&#34;&gt;Case data&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;student_db:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;student_id&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;student_name&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;student_sex&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;room_id&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;0001&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Mogeko&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;0002&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Ezie&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;0003&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Washington&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;0004&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Licoln&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M102&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;0005&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Daisy&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;0006&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Trump&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;0007&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Noah&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M102&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;0008&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Lucy&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;0009&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Obama&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;0010&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Lucy&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;administrator_db:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;administrator_id&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;administrator_name&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;administrator_sex&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Herrington&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;002&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Van&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;003&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Rossett&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Jade&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;005&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Eva&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;006&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;May&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;dormitry_db:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;room_id&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;types&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;administrator_id&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;M102&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;M103&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;M104&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;002&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;M105&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;002&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;F102&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;F103&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;F104&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;F105&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;maintenance_personnel_db:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;maintenance_ personnel_id&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;maintenance_ personnel_name&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;maintenance_ personnel_sex&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;position&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;working_ time&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;off&lt;em&gt;work&lt;/em&gt; time&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Roosevelt&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Door damage&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2018-12-22 09:00&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2018-12-22 22:00&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;002&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Kennedy&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;003&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Nannie&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Faucet damage&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2018-12-22 09:00&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2018-12-22 22:00&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Dawn&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;maintenance_application_db:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;maintenance_application&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;room_id&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Door damage&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M102&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Faucet damage&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
     
     <item>
       <title>对，这他妈就是生活！</title>
@@ -2891,143 +3458,6 @@ Your total payment is $320.0
 &lt;p&gt;&lt;img alt=&#34;字数统计&#34; src=&#34;https://mogeko.github.io/images/033/fix_bug.png&#34; &gt;&lt;/p&gt;
 
 &lt;p&gt;关于添加「字数统计」的详情：&lt;a href=&#34;https://mogeko.github.io/2018/033/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;为 Hugo 博客添加字数统计&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>为 Hugo 添加谈笑风生区 (Gitalk)</title>
-      <link>https://mogeko.github.io/2018/024/</link>
-      <pubDate>Fri, 16 Nov 2018 12:57:09 +0800</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/024/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://gohugo.io&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; 是一个强大的静态网页生成器，使用 go 开发。速度贼快，还有 “时时预览” 等特性。不过 Hugo 还比较年轻，没有像 &lt;a href=&#34;https://theme-next.iissnan.com&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;NexT&lt;/a&gt; 那样功能强大，成熟稳定的主题。所以很多东西需要自己动手撸。&lt;/p&gt;
-
-&lt;p&gt;就例如评论系统。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;h1 id=&#34;关于-gitalk&#34;&gt;关于 Gitalk&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/024/gitalk.png&#34;  alt=&#34;Gitalk&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;官方网址： &lt;a href=&#34;https://github.com/gitalk/gitalk/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;在线示例： &lt;a href=&#34;https://gitalk.github.io/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://gitalk.github.io/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说，只要 Github 不倒闭，你的评论系统就不会被关闭。&lt;/p&gt;
-
-&lt;h1 id=&#34;添加谈笑风生区&#34;&gt;添加谈笑风生区&lt;/h1&gt;
-
-&lt;p&gt;本博客使用的主题是：&lt;a href=&#34;https://github.com/liuzc/LeaveIt&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Leavelt&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;不同主题可能有所区别，但原理都是类似的&lt;/p&gt;
-
-&lt;h2 id=&#34;原理&#34;&gt;原理&lt;/h2&gt;
-
-&lt;p&gt;众所周知，Hugo 会将 &lt;strong&gt;Markdown 文档&lt;/strong&gt; 按照 &lt;strong&gt;主题 (包括 HTML 模板、CSS、JavaScript 等)&lt;/strong&gt; 编译成静态网页&lt;/p&gt;
-
-&lt;p&gt;那么我们只需要将 Gitalk 作为一个 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 插入到 HTML 模板中，然后在 &lt;code&gt;config.toml&lt;/code&gt; 中添加相关配置，就可以实现“谈笑风生区”了&lt;/p&gt;
-
-&lt;h2 id=&#34;创建-github-application&#34;&gt;创建 Github Application&lt;/h2&gt;
-
-&lt;p&gt;首先要去 GitHub 上创建一个 &lt;a href=&#34;https://github.com/settings/applications/new&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Github Application&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Github Application&#34; src=&#34;https://mogeko.github.io/images/024/get_Github_Application.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;点击创建&lt;/p&gt;
-
-&lt;p&gt;记下 &lt;code&gt;Client ID&lt;/code&gt; 和 &lt;code&gt;Client Secret&lt;/code&gt;，以后要用&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Client ID &amp; Client Secret&#34; src=&#34;https://mogeko.github.io/images/024/get_id&amp;secret.png&#34;&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;添加-gitalk-html-模板&#34;&gt;添加 gitalk.html 模板&lt;/h2&gt;
-
-&lt;p&gt;接下来为主题添加 &lt;code&gt;gitalk.html&lt;/code&gt; 模板。&lt;/p&gt;
-
-&lt;p&gt;在主题的 &lt;code&gt;layouts/partials&lt;/code&gt; 文件夹中创建 &lt;code&gt;gitalk.html&lt;/code&gt; 文件，写下如下代码&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Site.Params.enableGitalk }}
-&amp;lt;div id=&amp;quot;gitalk-container&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.css&amp;quot;&amp;gt;
-&amp;lt;script src=&amp;quot;https://unpkg.com/gitalk/dist/gitalk.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script&amp;gt;
-  const gitalk = new Gitalk({
-    clientID: &#39;{{ .Site.Params.Gitalk.clientID }}&#39;,
-    clientSecret: &#39;{{ .Site.Params.Gitalk.clientSecret }}&#39;,
-    repo: &#39;{{ .Site.Params.Gitalk.repo }}&#39;,
-    owner: &#39;{{ .Site.Params.Gitalk.owner }}&#39;,
-    admin: [&#39;{{ .Site.Params.Gitalk.owner }}&#39;],
-    id: location.pathname, // Ensure uniqueness and length less than 50
-    distractionFreeMode: false // Facebook-like distraction free mode
-  });
-  (function() {
-    if ([&amp;quot;localhost&amp;quot;, &amp;quot;127.0.0.1&amp;quot;].indexOf(window.location.hostname) != -1) {
-      document.getElementById(&#39;gitalk-container&#39;).innerHTML = &#39;Gitalk comments not available by default when the website is previewed locally.&#39;;
-      return;
-    }
-    gitalk.render(&#39;gitalk-container&#39;);
-  })();
-&amp;lt;/script&amp;gt;
-{{ end }}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;定位放-gitalk-的位置&#34;&gt;定位放 Gitalk 的位置&lt;/h2&gt;
-
-&lt;p&gt;然后使用 Chrome 自带的 DevTools 分析一下网页结构，找到放 Gitalk 的位置&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;get id or class&#34; src=&#34;https://mogeko.github.io/images/024/get_class.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;我们可以看见已经 Leavelt 为我们预留了 “谈笑风生区” 的位置，不过里面什么东西都没有。记下该 &lt;code&gt;div&lt;/code&gt; 的&lt;code&gt;class&lt;/code&gt; 或者 &lt;code&gt;id&lt;/code&gt; (如果你使用的主题没有预留 “谈笑风生区”，可以记下你准备放 Gitalk 的位置附近 &lt;code&gt;div&lt;/code&gt; 的&lt;code&gt;class&lt;/code&gt; 或者 &lt;code&gt;id&lt;/code&gt;，并以此定位)&lt;/p&gt;
-
-&lt;p&gt;打开 VSCode，搜索包含刚刚找到的 &lt;code&gt;class&lt;/code&gt; 或者 &lt;code&gt;id&lt;/code&gt; 的 HTML 模板 (一般是 &lt;code&gt;single.html&lt;/code&gt;)&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;插入 Gitalk 模板&#34; src=&#34;https://mogeko.github.io/images/024/set_div.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;在模板中插入&lt;code&gt;{{ partial &amp;quot;gitalk.html&amp;quot; . }}&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;配置-config-toml&#34;&gt;配置 config.toml&lt;/h2&gt;
-
-&lt;p&gt;在 &lt;code&gt;config.toml&lt;/code&gt; 中添加以下配置&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[params]
-  enableGitalk = true
-
-[params.gitalk] 
-    clientID = &amp;quot;[Client ID]&amp;quot; # Your client ID
-    clientSecret = &amp;quot;[Client Secret]&amp;quot; # Your client secret
-    repo = &amp;quot;mogeko.github.io&amp;quot; # The repo to store comments
-    owner = &amp;quot;Mogeko&amp;quot; # Your GitHub ID
-    admin= &amp;quot;Mogeko&amp;quot; # Required. Github repository owner and collaborators. (Users who having write access to this repository)
-    id= &amp;quot;location.pathname&amp;quot; # The unique id of the page.
-    labels= &amp;quot;gitalk&amp;quot; # Github issue labels. If you used to use Gitment, you can change it
-    perPage= 15 # Pagination size, with maximum 100.
-    pagerDirection= &amp;quot;last&amp;quot; # Comment sorting direction, available values are &#39;last&#39; and &#39;first&#39;.
-    createIssueManually= false # If it is &#39;false&#39;, it is auto to make a Github issue when the administrators login.
-    distractionFreeMode= false # Enable hot key (cmd|ctrl + enter) submit comment.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;将 &lt;code&gt;[Client ID]&lt;/code&gt; 替换为 Github Application 的 Client ID&lt;/p&gt;
-
-&lt;p&gt;将 &lt;code&gt;[Client Secret]&lt;/code&gt; 替换为 Github Application 的 Client Secret&lt;/p&gt;
-
-&lt;p&gt;将 &lt;code&gt;repo&lt;/code&gt; 设置为你的博客的地址&lt;/p&gt;
-
-&lt;p&gt;将 &lt;code&gt;owner&lt;/code&gt; 和 &lt;code&gt;admin&lt;/code&gt; 设置为你的 GitHub ID&lt;/p&gt;
-
-&lt;p&gt;更多配置请参考：&lt;a href=&#34;https://github.com/gitalk/gitalk&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gitalk/gitalk&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;设置好后，将编译好的网站推送到 GitHub 上，不出意外的话应该就可以看见评论框了 (Gitalk 在 &lt;code&gt;hugo server&lt;/code&gt; 中是不会启用的)&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Gitalk&#34; src=&#34;https://mogeko.github.io/images/024/done.png&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;添加谈笑风生区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
