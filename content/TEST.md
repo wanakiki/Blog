@@ -100,7 +100,7 @@ webp 图片兼容性测试
   </tr>
   <tr style="color:#ffffff;text-align:center">
       <td style="background-color:#c44230;" nowrap="nowrap">6-10</td>
-      <td style="background-color:#c44230;">12-17</td>
+      <td style="background-color:#c44230;" nowrap="nowrap">12-17</td>
       <td style="background-color:#c44230;">2-63</td>
       <td style="background-color:#39b54a;">23-70</td>
       <td style="background-color:#c44230;">3.1-11.1</td>
@@ -159,13 +159,12 @@ webp 图片兼容性测试
       <td></td>
   </tr>
 </tbody></table>
+</div>
 <div style="position: absolute;right: 0px;">
     <span style="color:#39b54a">▋</span>支持&emsp;
     <span style="color:#c44230">▋</span>不支持&emsp;
     <span style="color:#A8BD04">▋</span>部分支持 (不支持无损格式)
 </div>
-</div>
-
 <br>
 
 ## 对比组
