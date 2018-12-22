@@ -47,7 +47,7 @@ webp 图片兼容性测试
       <th>Opera</th>
       <th nowrap="nowrap">iOS Safari</th>
       <th nowrap="nowrap">Opera Mini</th>
-      <th>Android Browser</th>
+      <th nowrap="nowrap">Android Browser</th>
       <th>Blackberry Browser</th>
       <th nowrap="nowrap">Opera Mobile</th>
       <th nowrap="nowrap">Chrome for<br>Android</th>
@@ -101,20 +101,20 @@ webp 图片兼容性测试
   <tr style="color:#ffffff;text-align:center">
       <td style="background-color:#c44230;" nowrap="nowrap">6-10</td>
       <td style="background-color:#c44230;" nowrap="nowrap">12-17</td>
-      <td style="background-color:#c44230;">2-63</td>
-      <td style="background-color:#39b54a;">23-70</td>
-      <td style="background-color:#c44230;">3.1-11.1</td>
-      <td style="background-color:#39b54a;">12.1-56</td>
+      <td style="background-color:#c44230;" nowrap="nowrap">2-63</td>
+      <td style="background-color:#39b54a;" nowrap="nowrap">23-70</td>
+      <td style="background-color:#c44230;" nowrap="nowrap">3.1-11.1</td>
+      <td style="background-color:#39b54a;" nowrap="nowrap">12.1-56</td>
       <td style="background-color:#c44230;" nowrap="nowrap">3.2-11.4</td>
       <td></td>
-      <td style="background-color:#39b54a;">4.2-4.4.4</td>
-      <td style="background-color:#c44230;">7</td>
-      <td style="background-color:#39b54a;">12-12.1</td>
+      <td style="background-color:#39b54a;" nowrap="nowrap">4.2-4.4.4</td>
+      <td style="background-color:#c44230;" nowrap="nowrap">7</td>
+      <td style="background-color:#39b54a;" nowrap="nowrap">12-12.1</td>
       <td></td>
       <td></td>
-      <td style="background-color:#c44230;">10</td>
+      <td style="background-color:#c44230;" nowrap="nowrap">10</td>
       <td></td>
-      <td style="background-color:#39b54a;">4-6.2</td>
+      <td style="background-color:#39b54a;" nowrap="nowrap">4-6.2</td>
       <td></td>
       <td></td>
   </tr>
@@ -165,6 +165,7 @@ webp 图片兼容性测试
     <span style="color:#c44230">▋</span>不支持&emsp;
     <span style="color:#A8BD04">▋</span>部分支持 (不支持无损格式)
 </div>
+
 <br>
 
 ## 对比组
