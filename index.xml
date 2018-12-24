@@ -146,7 +146,7 @@
 &lt;p&gt;&lt;strong&gt;administrator_db:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table&gt;
+&lt;table style=&#34;width:100%&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
@@ -177,7 +177,7 @@
 &lt;p&gt;&lt;strong&gt;dormitry_db:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table&gt;
+&lt;table style=&#34;width:100%&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
@@ -208,7 +208,7 @@
 &lt;p&gt;&lt;strong&gt;maintenance_personnel_db:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table&gt;
+&lt;table style=&#34;width:100%&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
@@ -249,7 +249,7 @@
 &lt;p&gt;&lt;strong&gt;maintenance_application_db:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table&gt;
+&lt;table style=&#34;width:100%&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
@@ -294,7 +294,7 @@
 &lt;p&gt;&lt;strong&gt;student_db:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table&gt;
+&lt;table style=&#34;width:100%&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align=&#34;center&#34;&gt;student_id&lt;/th&gt;
@@ -367,10 +367,11 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-**administrator_db:**
 
-&lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table&gt;
+&lt;p&gt;&lt;strong&gt;administrator_db:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div style=&#34;overflow:auto&#34;&gt;
+&lt;table style=&#34;width:100%&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align=&#34;center&#34;&gt;administrator_id&lt;/th&gt;
@@ -416,7 +417,7 @@
 &lt;p&gt;&lt;strong&gt;dormitry_db:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table&gt;
+&lt;table style=&#34;width:100%&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align=&#34;center&#34;&gt;room_id&lt;/th&gt;
@@ -482,7 +483,7 @@
 &lt;p&gt;&lt;strong&gt;maintenance_personnel_db:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table&gt;
+&lt;table style=&#34;width:100%&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align=&#34;center&#34;&gt;maintenance_personnel_id&lt;/th&gt;
@@ -528,7 +529,7 @@
 &lt;p&gt;&lt;strong&gt;maintenance_application_db:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table&gt;
+&lt;table style=&#34;width:100%&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align=&#34;center&#34;&gt;maintenance_application_id&lt;/th&gt;
