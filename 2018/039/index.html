@@ -251,7 +251,8 @@
 
 <p><strong>student_db:</strong></p>
 
-<table>
+<div  style="overflow:auto">
+<table style="width:100%">
 <thead>
 <tr>
 <th align="center">列名</th>
@@ -259,26 +260,22 @@
 <th align="center">允许 Null 值</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center"><u>student_id</u></td>
 <td align="center">nchar(10)</td>
 <td align="center">False</td>
 </tr>
-
 <tr>
 <td align="center">student_name</td>
 <td align="center">nchar(10)</td>
 <td align="center">False</td>
 </tr>
-
 <tr>
 <td align="center">student_sex</td>
 <td align="center">nchar(10)</td>
 <td align="center">False</td>
 </tr>
-
 <tr>
 <td align="center">room_id</td>
 <td align="center">nchar(10)</td>
@@ -286,9 +283,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 
 <p><strong>administrator_db:</strong></p>
 
+<div  style="overflow:auto">
 <table>
 <thead>
 <tr>
@@ -297,20 +296,17 @@
 <th align="center">允许 Null 值</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center"><u>administrator_id</u></td>
 <td align="center">nchar(10)</td>
 <td align="center">False</td>
 </tr>
-
 <tr>
 <td align="center">administrator_name</td>
 <td align="center">nchar(10)</td>
 <td align="center">False</td>
 </tr>
-
 <tr>
 <td align="center">administrator_sex</td>
 <td align="center">nchar(10)</td>
@@ -318,9 +314,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 
 <p><strong>dormitry_db:</strong></p>
 
+<div  style="overflow:auto">
 <table>
 <thead>
 <tr>
@@ -329,20 +327,17 @@
 <th align="center">允许 Null 值</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center"><u>room_id</u></td>
 <td align="center">nchar(10)</td>
 <td align="center">False</td>
 </tr>
-
 <tr>
 <td align="center">dormitry_types</td>
 <td align="center">nchar(10)</td>
 <td align="center">False</td>
 </tr>
-
 <tr>
 <td align="center">administrator_id</td>
 <td align="center">nchar(10)</td>
@@ -350,9 +345,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 
 <p><strong>maintenance_personnel_db:</strong></p>
 
+<div  style="overflow:auto">
 <table>
 <thead>
 <tr>
@@ -361,32 +358,27 @@
 <th align="center">允许 Null 值</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center"><u>maintenance_personne_id</u></td>
 <td align="center">nchar(10)</td>
 <td align="center">False</td>
 </tr>
-
 <tr>
 <td align="center">maintenance_personnel_name</td>
 <td align="center">nchar(10)</td>
 <td align="center">False</td>
 </tr>
-
 <tr>
 <td align="center">maintenance_personnel_sex</td>
 <td align="center">nchar(10)</td>
 <td align="center">False</td>
 </tr>
-
 <tr>
 <td align="center">working_time</td>
 <td align="center">datetime</td>
 <td align="center">True</td>
 </tr>
-
 <tr>
 <td align="center">off_work_time</td>
 <td align="center">datetime</td>
@@ -394,9 +386,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 
 <p><strong>maintenance_application_db:</strong></p>
 
+<div  style="overflow:auto">
 <table>
 <thead>
 <tr>
@@ -405,32 +399,27 @@
 <th align="center">允许 Null 值</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center"><u>maintenance_application_id</u></td>
 <td align="center">int IDENTITY(1, 1)</td>
 <td align="center">False</td>
 </tr>
-
 <tr>
 <td align="center">maintenance_application</td>
 <td align="center">varchar(50)</td>
 <td align="center">False</td>
 </tr>
-
 <tr>
 <td align="center">room_id</td>
 <td align="center">nchar(10)</td>
 <td align="center">False</td>
 </tr>
-
 <tr>
 <td align="center">maintenance_personnel_id</td>
 <td align="center">nchar(10)</td>
 <td align="center">True</td>
 </tr>
-
 <tr>
 <td align="center">work_status</td>
 <td align="center">bit DEFAULT(0)</td>
@@ -438,6 +427,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 
 <h2 id="database-implementation">Database implementation</h2>
 
@@ -445,6 +435,7 @@
 
 <p><strong>student_db:</strong></p>
 
+<div  style="overflow:auto">
 <table>
 <thead>
 <tr>
@@ -454,7 +445,6 @@
 <th align="center">room_id</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center">0001</td>
@@ -462,63 +452,54 @@
 <td align="center">Male</td>
 <td align="center">M101</td>
 </tr>
-
 <tr>
 <td align="center">0002</td>
 <td align="center">Ezie</td>
 <td align="center">Female</td>
 <td align="center">F101</td>
 </tr>
-
 <tr>
 <td align="center">0003</td>
 <td align="center">Washington</td>
 <td align="center">Male</td>
 <td align="center">M101</td>
 </tr>
-
 <tr>
 <td align="center">0004</td>
 <td align="center">Licoln</td>
 <td align="center">Male</td>
 <td align="center">M102</td>
 </tr>
-
 <tr>
 <td align="center">0005</td>
 <td align="center">Daisy</td>
 <td align="center">Female</td>
 <td align="center">F101</td>
 </tr>
-
 <tr>
 <td align="center">0006</td>
 <td align="center">Trump</td>
 <td align="center">Male</td>
 <td align="center">M101</td>
 </tr>
-
 <tr>
 <td align="center">0007</td>
 <td align="center">Noah</td>
 <td align="center">Male</td>
 <td align="center">M102</td>
 </tr>
-
 <tr>
 <td align="center">0008</td>
 <td align="center">Lucy</td>
 <td align="center">Female</td>
 <td align="center">F101</td>
 </tr>
-
 <tr>
 <td align="center">0009</td>
 <td align="center">Obama</td>
 <td align="center">Male</td>
 <td align="center">M101</td>
 </tr>
-
 <tr>
 <td align="center">0010</td>
 <td align="center">Lucy</td>
@@ -527,9 +508,10 @@
 </tr>
 </tbody>
 </table>
+</div>
+**administrator_db:**
 
-<p><strong>administrator_db:</strong></p>
-
+<div  style="overflow:auto">
 <table>
 <thead>
 <tr>
@@ -538,38 +520,32 @@
 <th align="center">administrator_sex</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center">001</td>
 <td align="center">Herrington</td>
 <td align="center">Male</td>
 </tr>
-
 <tr>
 <td align="center">002</td>
 <td align="center">Van</td>
 <td align="center">Male</td>
 </tr>
-
 <tr>
 <td align="center">003</td>
 <td align="center">Rossett</td>
 <td align="center">Male</td>
 </tr>
-
 <tr>
 <td align="center">004</td>
 <td align="center">Jade</td>
 <td align="center">Female</td>
 </tr>
-
 <tr>
 <td align="center">005</td>
 <td align="center">Eva</td>
 <td align="center">Female</td>
 </tr>
-
 <tr>
 <td align="center">006</td>
 <td align="center">May</td>
@@ -577,9 +553,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 
 <p><strong>dormitry_db:</strong></p>
 
+<div  style="overflow:auto">
 <table>
 <thead>
 <tr>
@@ -588,62 +566,52 @@
 <th align="center">administrator_id</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center">M101</td>
 <td align="center">Male</td>
 <td align="center">001</td>
 </tr>
-
 <tr>
 <td align="center">M102</td>
 <td align="center">Male</td>
 <td align="center">001</td>
 </tr>
-
 <tr>
 <td align="center">M103</td>
 <td align="center">Male</td>
 <td align="center">001</td>
 </tr>
-
 <tr>
 <td align="center">M104</td>
 <td align="center">Male</td>
 <td align="center">002</td>
 </tr>
-
 <tr>
 <td align="center">M105</td>
 <td align="center">Male</td>
 <td align="center">002</td>
 </tr>
-
 <tr>
 <td align="center">F101</td>
 <td align="center">Female</td>
 <td align="center">004</td>
 </tr>
-
 <tr>
 <td align="center">F102</td>
 <td align="center">Female</td>
 <td align="center">004</td>
 </tr>
-
 <tr>
 <td align="center">F103</td>
 <td align="center">Female</td>
 <td align="center">004</td>
 </tr>
-
 <tr>
 <td align="center">F104</td>
 <td align="center">Female</td>
 <td align="center">004</td>
 </tr>
-
 <tr>
 <td align="center">F105</td>
 <td align="center">Female</td>
@@ -651,9 +619,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 
 <p><strong>maintenance_personnel_db:</strong></p>
 
+<div  style="overflow:auto">
 <table>
 <thead>
 <tr>
@@ -664,7 +634,6 @@
 <th align="center">off_work_time</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center">001</td>
@@ -673,7 +642,6 @@
 <td align="center">2018-12-22T09:00:00</td>
 <td align="center">2018-12T22 22:00:00</td>
 </tr>
-
 <tr>
 <td align="center">002</td>
 <td align="center">Kennedy</td>
@@ -681,7 +649,6 @@
 <td align="center"></td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center">003</td>
 <td align="center">Nannie</td>
@@ -689,7 +656,6 @@
 <td align="center">2018-12-22T09:00:00</td>
 <td align="center">2018-12-22T22:00:00</td>
 </tr>
-
 <tr>
 <td align="center">004</td>
 <td align="center">Dawn</td>
@@ -699,9 +665,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 
 <p><strong>maintenance_application_db:</strong></p>
 
+<div  style="overflow:auto">
 <table>
 <thead>
 <tr>
@@ -712,7 +680,6 @@
 <th align="center">work_status</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center">1</td>
@@ -721,7 +688,6 @@
 <td align="center">001</td>
 <td align="center">0</td>
 </tr>
-
 <tr>
 <td align="center">2</td>
 <td align="center">Faucet damage</td>
@@ -731,6 +697,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 
 <h2 id="import-case-data">Import case data</h2>
 

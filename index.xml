@@ -109,7 +109,8 @@
 
 &lt;p&gt;&lt;strong&gt;student_db:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;table&gt;
+&lt;div  style=&#34;overflow:auto&#34;&gt;
+&lt;table style=&#34;width:100%&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
@@ -117,26 +118,22 @@
 &lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;u&gt;student_id&lt;/u&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;student_name&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;student_sex&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;room_id&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
@@ -144,9 +141,11 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;administrator_db:&lt;/strong&gt;&lt;/p&gt;
 
+&lt;div  style=&#34;overflow:auto&#34;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -155,20 +154,17 @@
 &lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;u&gt;administrator_id&lt;/u&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;administrator_name&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;administrator_sex&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
@@ -176,9 +172,11 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;dormitry_db:&lt;/strong&gt;&lt;/p&gt;
 
+&lt;div  style=&#34;overflow:auto&#34;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -187,20 +185,17 @@
 &lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;u&gt;room_id&lt;/u&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;dormitry_types&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;administrator_id&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
@@ -208,9 +203,11 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;maintenance_personnel_db:&lt;/strong&gt;&lt;/p&gt;
 
+&lt;div  style=&#34;overflow:auto&#34;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -219,32 +216,27 @@
 &lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;u&gt;maintenance_personne_id&lt;/u&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;maintenance_personnel_name&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;maintenance_personnel_sex&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;working_time&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;datetime&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;True&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;off_work_time&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;datetime&lt;/td&gt;
@@ -252,9 +244,11 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;maintenance_application_db:&lt;/strong&gt;&lt;/p&gt;
 
+&lt;div  style=&#34;overflow:auto&#34;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -263,32 +257,27 @@
 &lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;u&gt;maintenance_application_id&lt;/u&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;int IDENTITY(1, 1)&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;maintenance_application&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;varchar(50)&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;room_id&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;maintenance_personnel_id&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;True&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;work_status&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;bit DEFAULT(0)&lt;/td&gt;
@@ -296,6 +285,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&#34;database-implementation&#34;&gt;Database implementation&lt;/h2&gt;
 
@@ -303,6 +293,7 @@
 
 &lt;p&gt;&lt;strong&gt;student_db:&lt;/strong&gt;&lt;/p&gt;
 
+&lt;div  style=&#34;overflow:auto&#34;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -312,7 +303,6 @@
 &lt;th align=&#34;center&#34;&gt;room_id&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;0001&lt;/td&gt;
@@ -320,63 +310,54 @@
 &lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;0002&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Ezie&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;0003&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Washington&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;0004&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Licoln&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;M102&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;0005&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Daisy&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;0006&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Trump&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;0007&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Noah&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;M102&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;0008&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Lucy&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;0009&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Obama&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;0010&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Lucy&lt;/td&gt;
@@ -385,9 +366,10 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/div&gt;
+**administrator_db:**
 
-&lt;p&gt;&lt;strong&gt;administrator_db:&lt;/strong&gt;&lt;/p&gt;
-
+&lt;div  style=&#34;overflow:auto&#34;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -396,38 +378,32 @@
 &lt;th align=&#34;center&#34;&gt;administrator_sex&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Herrington&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;002&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Van&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;003&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Rossett&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Jade&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;005&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Eva&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;006&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;May&lt;/td&gt;
@@ -435,9 +411,11 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;dormitry_db:&lt;/strong&gt;&lt;/p&gt;
 
+&lt;div  style=&#34;overflow:auto&#34;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -446,62 +424,52 @@
 &lt;th align=&#34;center&#34;&gt;administrator_id&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;M102&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;M103&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;M104&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;002&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;M105&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;002&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;F102&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;F103&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;F104&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;F105&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
@@ -509,9 +477,11 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;maintenance_personnel_db:&lt;/strong&gt;&lt;/p&gt;
 
+&lt;div  style=&#34;overflow:auto&#34;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -522,7 +492,6 @@
 &lt;th align=&#34;center&#34;&gt;off_work_time&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
@@ -531,7 +500,6 @@
 &lt;td align=&#34;center&#34;&gt;2018-12-22T09:00:00&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;2018-12T22 22:00:00&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;002&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Kennedy&lt;/td&gt;
@@ -539,7 +507,6 @@
 &lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;003&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Nannie&lt;/td&gt;
@@ -547,7 +514,6 @@
 &lt;td align=&#34;center&#34;&gt;2018-12-22T09:00:00&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;2018-12-22T22:00:00&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Dawn&lt;/td&gt;
@@ -557,9 +523,11 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;maintenance_application_db:&lt;/strong&gt;&lt;/p&gt;
 
+&lt;div  style=&#34;overflow:auto&#34;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -570,7 +538,6 @@
 &lt;th align=&#34;center&#34;&gt;work_status&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
@@ -579,7 +546,6 @@
 &lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td align=&#34;center&#34;&gt;2&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Faucet damage&lt;/td&gt;
@@ -589,6 +555,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&#34;import-case-data&#34;&gt;Import case data&lt;/h2&gt;
 
