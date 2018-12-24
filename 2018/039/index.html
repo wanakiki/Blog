@@ -57,7 +57,7 @@
     "datePublished": "2018-12-22 23:30:01 &#43;0800 &#43;0800",
     "dateModified" : "2018-12-22 23:30:01 &#43;0800 &#43;0800",
     "url" : "https://mogeko.github.io/2018/039/",
-    "wordCount" : "1104",
+    "wordCount" : "1513",
     "keywords" : [ "Datebase", "Mogeko`s Blog"]
 }
 </script>
@@ -138,7 +138,7 @@
                 </span>
                 in
                 
-                <span class="post-word-count">, 1104 words</span>
+                <span class="post-word-count">, 1513 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -382,12 +382,6 @@
 </tr>
 
 <tr>
-<td align="center">position</td>
-<td align="center">varchar(50)</td>
-<td align="center">True</td>
-</tr>
-
-<tr>
 <td align="center">working_time</td>
 <td align="center">datetime</td>
 <td align="center">True</td>
@@ -414,6 +408,12 @@
 
 <tbody>
 <tr>
+<td align="center"><u>maintenance_application_id</u></td>
+<td align="center">int IDENTITY(1, 1)</td>
+<td align="center">False</td>
+</tr>
+
+<tr>
 <td align="center">maintenance_application</td>
 <td align="center">varchar(50)</td>
 <td align="center">False</td>
@@ -424,12 +424,24 @@
 <td align="center">nchar(10)</td>
 <td align="center">False</td>
 </tr>
+
+<tr>
+<td align="center">maintenance_personnel_id</td>
+<td align="center">nchar(10)</td>
+<td align="center">True</td>
+</tr>
+
+<tr>
+<td align="center">work_status</td>
+<td align="center">bit DEFAULT(0)</td>
+<td align="center">False</td>
+</tr>
 </tbody>
 </table>
 
-<h1 id="database-implementation">Database implementation</h1>
+<h2 id="database-implementation">Database implementation</h2>
 
-<h2 id="case-data">Case data</h2>
+<h3 id="case-data">Case data</h3>
 
 <p><strong>student_db:</strong></p>
 
@@ -645,12 +657,11 @@
 <table>
 <thead>
 <tr>
-<th align="center">maintenance_ personnel_id</th>
-<th align="center">maintenance_ personnel_name</th>
-<th align="center">maintenance_ personnel_sex</th>
-<th align="center">position</th>
-<th align="center">working_ time</th>
-<th align="center">off<em>work</em> time</th>
+<th align="center">maintenance_personnel_id</th>
+<th align="center">maintenance_personnel_name</th>
+<th align="center">maintenance_personnel_sex</th>
+<th align="center">working_time</th>
+<th align="center">off_work_time</th>
 </tr>
 </thead>
 
@@ -659,7 +670,6 @@
 <td align="center">001</td>
 <td align="center">Roosevelt</td>
 <td align="center">Male</td>
-<td align="center">Door damage</td>
 <td align="center">2018-12-22T09:00:00</td>
 <td align="center">2018-12T22 22:00:00</td>
 </tr>
@@ -670,14 +680,12 @@
 <td align="center">Male</td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center"></td>
 </tr>
 
 <tr>
 <td align="center">003</td>
 <td align="center">Nannie</td>
 <td align="center">Female</td>
-<td align="center">Faucet damage</td>
 <td align="center">2018-12-22T09:00:00</td>
 <td align="center">2018-12-22T22:00:00</td>
 </tr>
@@ -686,7 +694,6 @@
 <td align="center">004</td>
 <td align="center">Dawn</td>
 <td align="center">Female</td>
-<td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
 </tr>
@@ -698,20 +705,29 @@
 <table>
 <thead>
 <tr>
+<th align="center">maintenance_application_id</th>
 <th align="center">maintenance_application</th>
 <th align="center">room_id</th>
+<th align="center">maintenance_personnel_id</th>
+<th align="center">work_status</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
+<td align="center">1</td>
 <td align="center">Door damage</td>
 <td align="center">M102</td>
+<td align="center">001</td>
+<td align="center">0</td>
 </tr>
 
 <tr>
+<td align="center">2</td>
 <td align="center">Faucet damage</td>
 <td align="center">F101</td>
+<td align="center"></td>
+<td align="center">0</td>
 </tr>
 </tbody>
 </table>
@@ -752,14 +768,16 @@ CREATE TABLE maintenance_personnel_db
 maintenance_personnel_id nchar(10) NOT NULL PRIMARY KEY,
 maintenance_personnel_name nchar(10) NOT NULL,
 maintenance_personnel_sex nchar(10) NOT NULL,
-position varchar(50),
 working_time datetime,
 off_work_time datetime
 )
 CREATE TABLE maintenance_application_db
 (
+maintenance_application_id int IDENTITY(1, 1) PRIMARY KEY,
 maintenance_application varchar(50) NOT NULL,
-room_id nchar(10) NOT NULL
+room_id nchar(10) NOT NULL,
+maintenance_personnel_id nchar(10),
+work_status bit DEFAULT(0) NOT NULL,
 )
 </code></pre>
 
@@ -778,6 +796,10 @@ REFERENCES administrator_db(administrator_id)
 ALTER TABLE STUDENT_DB.dbo.maintenance_application_db
 ADD FOREIGN KEY (room_id)
 REFERENCES dormitry_db(room_id)
+
+ALTER TABLE STUDENT_DB.dbo.maintenance_application_db
+ADD FOREIGN KEY (maintenance_personnel_id)
+REFERENCES maintenance_personnel_db(maintenance_personnel_id)
 </code></pre>
 
 <p>Insert data into the form <code>STUDENT_DB.dbo.administrator_db</code></p>
@@ -888,17 +910,160 @@ VALUES ('Faucet damage', 'F102')
 
 <pre><code class="language-sql">/* Insert data into the form STUDENT_DB.dbo.maintenance_personnel_db */
 INSERT INTO STUDENT_DB.dbo.maintenance_personnel_db
-(maintenance_personnel_id, maintenance_personnel_name, maintenance_personnel_sex, position, working_time, off_work_time)
-VALUES('001', 'Roosevelt', 'Male', 'Door damage', '2018-12-22T09:00:00', '2018-12-22T22:00:00')
+(maintenance_personnel_id, maintenance_personnel_name, maintenance_personnel_sex, working_time, off_work_time)
+VALUES('001', 'Roosevelt', 'Male', '2018-12-22T09:00:00', '2018-12-22T22:00:00')
 INSERT INTO STUDENT_DB.dbo.maintenance_personnel_db
 (maintenance_personnel_id, maintenance_personnel_name, maintenance_personnel_sex)
 VALUES('002', 'Kennedy', 'Male')
 INSERT INTO STUDENT_DB.dbo.maintenance_personnel_db
-(maintenance_personnel_id, maintenance_personnel_name, maintenance_personnel_sex, position, working_time, off_work_time)
-VALUES('003', 'Nannie', 'Female', 'Faucet damage', '2018-12-22T09:00:00', '2018-12-22T22:00:00')
+(maintenance_personnel_id, maintenance_personnel_name, maintenance_personnel_sex, working_time, off_work_time)
+VALUES('003', 'Nannie', 'Female', '2018-12-22T09:00:00', '2018-12-22T22:00:00')
 INSERT INTO STUDENT_DB.dbo.maintenance_personnel_db
 (maintenance_personnel_id, maintenance_personnel_name, maintenance_personnel_sex)
 VALUES('004', 'Dawn', 'Female')
+</code></pre>
+
+<h2 id="example-features">(Example) Features</h2>
+
+<p>Check student accommodation information.</p>
+
+<pre><code class="language-sql">/*
+Check student accommodation information
+INPUT @stu_name -- The name of the student being queried
+*/
+
+DECLARE @stu_name nchar(10)
+-- Check accommodation information in Mogeko
+SET @stu_name = 'Mogeko'
+
+SELECT student_id, student_name, student_sex, room_id
+FROM STUDENT_DB.dbo.student_db
+WHERE student_name=@stu_name
+</code></pre>
+
+<p>Newborn stay.</p>
+
+<pre><code class="language-sql">/*
+Newborn stay
+INPUT @Stu_id -- The ID of nweborn
+INPUT @Stu_name -- The name of newborn
+INPUT @Stu_sex -- The gender of newborn
+INPUT @room_id -- The room number of newborn
+*/
+
+DECLARE @Stu_id nchar(10)
+DECLARE @Stu_name nchar(10)
+DECLARE @Stu_sex nchar(10)
+DECLARE @room_id nchar(10)
+
+-- New student information
+SET @Stu_id = '0011'
+SET @Stu_name = 'Bob'
+SET @Stu_sex = 'Male'
+SET @room_id = 'M103'
+
+INSERT INTO STUDENT_DB.dbo.student_db
+(student_id, student_name, student_sex, room_id)
+VALUES (@Stu_id, @Stu_name, @Stu_sex, @room_id)
+</code></pre>
+
+<p>Students move out of the bedroom.</p>
+
+<pre><code class="language-sql">/*
+Students move out of the bedroom
+INPUT Stu_id -- The ID of the student
+*/
+
+DECLARE @Stu_id nchar(10)
+-- Input the ID of the student
+SET @Stu_id = '0011'
+
+DELETE FROM STUDENT_DB.dbo.student_db
+WHERE student_id = @Stu_id
+</code></pre>
+
+<p>Submit a repair request.</p>
+
+<pre><code class="language-sql">/*
+Submit a repair request
+INPUT @request -- Repair application
+INPUT @room_id -- Repair location
+*/
+
+DECLARE @requst varchar(50)
+DECLARE @room_id nchar(10)
+
+-- Repair application information
+SET @requst = 'The cabinet was damaged'
+SET @room_id = 'M101'
+
+INSERT INTO STUDENT_DB.dbo.maintenance_application_db
+(maintenance_application, room_id)
+VALUES (@requst, @room_id)
+</code></pre>
+
+<p>Check the repair application list.</p>
+
+<pre><code class="language-sql">/*
+Check the repair application list
+INPUT @staff_name -- Name of the maintenance person
+*/
+
+DECLARE @staff_name nchar(10)
+DECLARE @staff_sex nchar(10)
+
+-- Input the name of the maintenance person
+SET @staff_name = 'Roosevelt'
+
+SELECT maintenance_application_id, maintenance_application, room_id
+FROM STUDENT_DB.dbo.maintenance_application_db
+WHERE (maintenance_personnel_id is NULL) and room_id in (
+	SELECT room_id
+	FROM STUDENT_DB.dbo.dormitry_db
+	WHERE dormitry_types = (
+		SELECT maintenance_personnel_sex
+		FROM STUDENT_DB.dbo.maintenance_personnel_db
+		WHERE maintenance_personnel_name = @staff_name
+	)
+)
+</code></pre>
+
+<p>Accept repair request.</p>
+
+<pre><code class="language-sql">/*
+Accept repair request
+INPUT @staff_id -- ID of the maintenance person
+INPUT @application_id -- ID of the maintenance application
+*/
+
+DECLARE @staff_id nchar(10)
+DECLARE @application_id int
+
+-- Input the ID of the maintenance person
+SET @staff_id = '001'
+-- Input the ID of the maintenance application
+SET @application_id = 3
+
+UPDATE STUDENT_DB.dbo.maintenance_application_db
+SET maintenance_personnel_id = @staff_id
+WHERE maintenance_application_id = @application_id
+</code></pre>
+
+<p>Complete repair.</p>
+
+<pre><code class="language-sql">/*
+Complete repair
+INPUT @application_id -- ID of the maintenance application
+*/
+
+DECLARE @application_id int
+
+-- Input the ID of the maintenance application
+SET @application_id = 3
+
+UPDATE STUDENT_DB.dbo.maintenance_application_db
+SET work_status = 1
+WHERE maintenance_application_id = @application_id
 </code></pre>
 
     </div>
