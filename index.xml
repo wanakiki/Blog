@@ -836,7 +836,6 @@ INPUT @staff_name -- Name of the maintenance person
 */
 
 DECLARE @staff_name nchar(10)
-DECLARE @staff_sex nchar(10)
 
 -- Input the name of the maintenance person
 SET @staff_name = &#39;Roosevelt&#39;
