@@ -25,7 +25,7 @@
 
 &lt;p&gt;上课时候摸鱼画的 |・ω・｀)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/040/INDIA.png&#34; alt=&#34;INDIA&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/040/INDIA.png&#34; alt=&#34;摸鱼&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;虽然画得很丑但还是恬不知耻的想把原图贴出来 (*/ω＼*)：&lt;a href=&#34;https://mogeko.github.io/images/040/INDIA.ai&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;AI&lt;/a&gt;&amp;emsp;&lt;a href=&#34;https://mogeko.github.io/images/040/INDIA.svg&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;SVG&lt;/a&gt;&lt;/p&gt;
 
@@ -35,21 +35,21 @@
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34; colspan=&#34;9&#34;&gt;边线：&lt;span style=&#34;color:#5F4A57&#34;&gt;▉ #5F4A57&lt;/span&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;地面&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;建筑①&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;建筑②&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;建筑③&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;建筑④&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;建筑⑤&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;建筑⑥&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;建筑⑦&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;背景&lt;/th&gt;
+&lt;th colspan=&#34;9&#34;&gt;Color list&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34; nowrap=&#34;nowrap&#34;&gt;&lt;b&gt;地面&lt;/b&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34; nowrap=&#34;nowrap&#34;&gt;&lt;b&gt;建筑①&lt;/b&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34; nowrap=&#34;nowrap&#34;&gt;&lt;b&gt;建筑②&lt;/b&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34; nowrap=&#34;nowrap&#34;&gt;&lt;b&gt;建筑③&lt;/b&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34; nowrap=&#34;nowrap&#34;&gt;&lt;b&gt;建筑④&lt;/b&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34; nowrap=&#34;nowrap&#34;&gt;&lt;b&gt;建筑⑤&lt;/b&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34; nowrap=&#34;nowrap&#34;&gt;&lt;b&gt;建筑⑥&lt;/b&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34; nowrap=&#34;nowrap&#34;&gt;&lt;b&gt;建筑⑦&lt;/b&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34; nowrap=&#34;nowrap&#34;&gt;&lt;b&gt;背景&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;center&#34; nowrap=&#34;nowrap&#34;&gt;&lt;span style=&#34;color:#CDB7AA&#34;&gt;▉ #CDB7AA&lt;/span&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34; nowrap=&#34;nowrap&#34;&gt;&lt;span style=&#34;color:#FF6873&#34;&gt;▉ #FF6873&lt;/span&gt;&lt;/td&gt;
@@ -130,6 +130,10 @@
 &lt;td align=&#34;center&#34; nowrap=&#34;nowrap&#34;&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34; nowrap=&#34;nowrap&#34;&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34; nowrap=&#34;nowrap&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;b&gt;边线&lt;/b&gt;&lt;/td&gt;
+&lt;td colspan=&#34;8&#34;&gt;&lt;span style=&#34;color:#5F4A57&#34;&gt;▉ #5F4A57&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
