@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://mogeko.github.io/2019/042/</loc>
+      
+      <lastmod>2019-01-16T18:57:36+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
       <loc>https://mogeko.github.io/2018/041/</loc>
       
       <lastmod>2018-12-28T02:58:34+08:00</lastmod>
@@ -591,7 +601,7 @@
     <url>
       <loc>https://mogeko.github.io/</loc>
       
-      <lastmod>2018-12-28T02:58:34+08:00</lastmod>
+      <lastmod>2019-01-16T18:57:36+08:00</lastmod>
       
       
       
@@ -603,7 +613,19 @@
     <url>
       <loc>https://mogeko.github.io/posts/</loc>
       
-      <lastmod>2018-12-28T02:58:34+08:00</lastmod>
+      <lastmod>2019-01-16T18:57:36+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://mogeko.github.io/tags/rust/</loc>
+      
+      <lastmod>2019-01-16T18:57:36+08:00</lastmod>
       
       
       
@@ -743,7 +765,7 @@
     <url>
       <loc>https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/</loc>
       
-      <lastmod>2018-12-22T23:30:01+08:00</lastmod>
+      <lastmod>2019-01-16T18:57:36+08:00</lastmod>
       
       
       

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rust on Mogeko`s Blog</title>
+    <link>https://mogeko.github.io/tags/rust/</link>
+    <description>Recent content in Rust on Mogeko`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 16 Jan 2019 18:57:36 +0800</lastBuildDate>
+    
+	<atom:link href="https://mogeko.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rust 中的所有权</title>
+      <link>https://mogeko.github.io/2019/042/</link>
+      <pubDate>Wed, 16 Jan 2019 18:57:36 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2019/042/</guid>
+      <description>&amp;emsp;&amp;emsp; -- 所有权是 Rust 中很重要的一个概念，也是 Rust 与 C++、Java 等“别的语言”最大的区别之一。 规定所有权规则是为了解决一个困扰了学界多年的难题：如</description>
+    </item>
+    
+  </channel>
+</rss>

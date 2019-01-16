@@ -6,8 +6,211 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 28 Dec 2018 02:58:34 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jan 2019 18:57:36 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rust 中的所有权</title>
+      <link>https://mogeko.github.io/2019/042/</link>
+      <pubDate>Wed, 16 Jan 2019 18:57:36 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2019/042/</guid>
+      <description>
+
+&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/042/&#34; &gt;
+&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;p&gt;&lt;strong&gt;所有权&lt;/strong&gt;是 Rust 中很重要的一个概念，也是 Rust 与 C++、Java 等“别的语言”最大的区别之一。&lt;/p&gt;
+
+&lt;p&gt;规定所有权规则是为了解决一个困扰了学界多年的难题：&lt;strong&gt;如何高效的管理内存？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;每一个运行的程序都必须管理它使用的内存。有的语言让程序猿自己管理程序使用的内存 (比如：C 语言)。有的语言通过垃圾回收 (&lt;em&gt;Garbage Collection, GC&lt;/em&gt;) 来自动的管理内存 (比如：Java)。它们各自有各自的有点，同时又有各自的缺点——GC 可以自动回收程序不需要的内存，可以降低程序员的心智负担，但运行 GC 会暂停程序的运行，虽然时间很短，但对于某些对时间特别敏感的程序 (比如交易股票、期货的程序) 来说是不可接受的。那么手动管理内存呢？确实，手动管理内存不会暂停程序的执行，但是如果忘记回收了会浪费内存；如果过早回收了，将会出现无效变量；如果重复回收，这也是个 bug；这无疑会对程序的运行带来不确定性。所有权规则就是为了让程序不暂停同时让内存被正确释放的而制定的。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;先说结论：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rust 中的每一个值都有一个被称为其 &lt;strong&gt;所有者 (owner)&lt;/strong&gt; 的变量。&lt;/li&gt;
+&lt;li&gt;值有且只有一个所有者。&lt;/li&gt;
+&lt;li&gt;当所有者（变量）离开作用域，这个值将被丢弃。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;那么究竟谁才是程序的所有者呢？&lt;/p&gt;
+
+&lt;p&gt;让我们举个栗子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;fn main () {
+    let s1 = &amp;quot;hello&amp;quot;; // 从这里开始 s1 是有效的，但 s2 是无效的
+	{
+    	let s2 = String::from(&amp;quot;world&amp;quot;); // 从这里开始 s1 和 s2 都是有效的
+	} // s2 离开了它的作用域，被丢弃；但 s1 仍然是有效的
+} // s1 离开了它的作用域，被丢弃；程序结束
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;对 &lt;code&gt;s1&lt;/code&gt; 来说，整个 &lt;code&gt;main&lt;/code&gt; 函数都是它的作用域，它的所有者就是 &lt;code&gt;main&lt;/code&gt;。而 &lt;code&gt;s2&lt;/code&gt; 的作用域在 &lt;code&gt;{}&lt;/code&gt; 之间，所以它的所有者是 &lt;code&gt;{}&lt;/code&gt;。也就是说如果在 &lt;code&gt;{}&lt;/code&gt; 后使用 &lt;code&gt;s1&lt;/code&gt; 是合法的，但使用 &lt;code&gt;s2&lt;/code&gt; 就会报错，因为 &lt;code&gt;s2&lt;/code&gt; 离开了它的作用域，已经被丢弃了。&lt;/p&gt;
+
+&lt;p&gt;好像挺好理解的，那么它又是如何影响程序对内存的管理的呢？&lt;/p&gt;
+
+&lt;h1 id=&#34;内存与分配&#34;&gt;内存与分配&lt;/h1&gt;
+
+&lt;p&gt;首先我们要了解以下程序是如何使用内存的。&lt;/p&gt;
+
+&lt;p&gt;Rust 对内存有两种使用方式：&lt;strong&gt;栈 (Stack)&lt;/strong&gt;和&lt;strong&gt;堆 (Heap)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;栈的特点是&lt;strong&gt;先进后出&lt;/strong&gt;，也就是说先&lt;strong&gt;入栈&lt;/strong&gt;的数据会最后&lt;strong&gt;出栈&lt;/strong&gt;。并且栈中数据的大小的确定的。这些特点使得栈的操作速度非常的快。所以栈被用来存放整型、浮点型等长度固定的数据类型。&lt;/p&gt;
+
+&lt;p&gt;访问堆上的数据就要比访问栈上的数据要慢上不少。因为堆上的数据大小是不固定的，并且必须通过指针来访问。现代处理器在内存 (缓存) 中跳转越少就越快。因此堆一般用来存放那些大小未知或者大小可能发生变化的数据类型。&lt;/p&gt;
+
+&lt;h1 id=&#34;所有权的交互方式&#34;&gt;所有权的交互方式&lt;/h1&gt;
+
+&lt;h2 id=&#34;移动&#34;&gt;移动&lt;/h2&gt;
+
+&lt;p&gt;让我们来看看这么一个栗子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;let s1 = String::from(&amp;quot;hello&amp;quot;);
+let s2 = s1;
+
+println!(&amp;quot;{}, world!&amp;quot;, s1);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;按照正常是思路程序应该会打印出 &lt;code&gt;hello, world!&lt;/code&gt;。因为我们让 &lt;code&gt;s2&lt;/code&gt; 拷贝了 &lt;code&gt;s1&lt;/code&gt; 的指针，就像这样：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-02.svg&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;但事实上程序会报错！因为 &lt;code&gt;s1&lt;/code&gt; 中的指针&lt;strong&gt;移动&lt;/strong&gt;到了 &lt;code&gt;s2&lt;/code&gt; 中而并非拷贝，就像这样：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-04.svg&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;在解释为什么之前先让我们来假设一下 &lt;code&gt;s1&lt;/code&gt; 中的指针被拷贝到了 &lt;code&gt;s2&lt;/code&gt; 中。那么就有两个指针同时指向了 &lt;code&gt;String&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-02.svg&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;然后在离开作用域时，&lt;code&gt;s1&lt;/code&gt; 和 &lt;code&gt;s2&lt;/code&gt; 指向的对象 (也就是 &lt;code&gt;String&lt;/code&gt;) 被依次释放掉。注意到了吗？&lt;code&gt;String&lt;/code&gt; 被释放了两次！这是一个叫做 &lt;strong&gt;二次释放&lt;/strong&gt; (&lt;em&gt;double free&lt;/em&gt;) 的错误，也是之前提到过的内存安全性 bug 之一。两次释放 (相同) 内存会导致内存污染，它可能会导致潜在的安全漏洞。&lt;/p&gt;
+
+&lt;p&gt;为了避免这一错误，Rust 好在将 &lt;code&gt;s1&lt;/code&gt; 中的指针赋值给 &lt;code&gt;s2&lt;/code&gt; 的同时抛弃掉 &lt;code&gt;s1&lt;/code&gt; 。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-04.svg&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;这也印证了&lt;strong&gt;“值有且只有一个所有者”&lt;/strong&gt;这一规则。&lt;/p&gt;
+
+&lt;h2 id=&#34;克隆&#34;&gt;克隆&lt;/h2&gt;
+
+&lt;p&gt;如果想在将 &lt;code&gt;s1&lt;/code&gt; 中的指针赋值给 &lt;code&gt;s2&lt;/code&gt; 后仍然使用 &lt;code&gt;s1&lt;/code&gt;，可以使用 &lt;code&gt;clone&lt;/code&gt; 方法。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;let s1 = String::from(&amp;quot;hello&amp;quot;);
+let s2 = s1.clone();
+
+println!(&amp;quot;s1 = {}, s2 = {}&amp;quot;, s1, s2);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以正常运行，堆上的数据确实被&lt;strong&gt;复制&lt;/strong&gt;了，但所有权并没有发生&lt;strong&gt;移动&lt;/strong&gt;。此时的内存大概是这个样子：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-03.svg&#34; &gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;拷贝&#34;&gt;拷贝&lt;/h2&gt;
+
+&lt;p&gt;让我们来执行一下以下代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;let x = 5;
+let y = x;
+
+println!(&amp;quot;x = {}, y = {}&amp;quot;, x, y);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这段代码能够运行，并且没有使用 &lt;code&gt;clone&lt;/code&gt; 方法。这似乎和我们刚学到的有点矛盾。&lt;/p&gt;
+
+&lt;p&gt;原因是像整型这样的在编译时已知大小的类型被整个存储在栈上，所以拷贝其实际的值是快速的。所以 &lt;code&gt;x&lt;/code&gt; 的值直接被复制给了 &lt;code&gt;y&lt;/code&gt;，相当于默认使用了 &lt;code&gt;clone&lt;/code&gt; 方法。&lt;/p&gt;
+
+&lt;p&gt;相似的数据类型还有：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;所有整数类型，比如 u32。&lt;/li&gt;
+&lt;li&gt;布尔类型，bool，它的值是 true 和 false。&lt;/li&gt;
+&lt;li&gt;所有浮点数类型，比如 f64。&lt;/li&gt;
+&lt;li&gt;字符类型，char。&lt;/li&gt;
+&lt;li&gt;元组，当且仅当其包含的类型也都是 Copy 的时候。比如，(i32, i32) 是 Copy 的，但 (i32, String) 就不是。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;所有权与函数&#34;&gt;所有权与函数&lt;/h2&gt;
+
+&lt;p&gt;与赋值类似，函数的参数与返回值也&lt;strong&gt;可能&lt;/strong&gt;发生所有权的转移。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;fn main() {
+    let s1 = gives_ownership();         // gives_ownership 将返回值移给 s1
+
+    let s2 = String::from(&amp;quot;hello&amp;quot;);     // s2 进入作用域
+
+    let s3 = takes_and_gives_back(s2);  // s2 被移动到 takes_and_gives_back 中, 
+                                        // 它也将返回值移给 s3
+} // 这里, s3 移出作用域并被丢弃。s2 也移出作用域，但已被移走，
+  // 所以什么也不会发生。s1 移出作用域并被丢弃
+
+fn gives_ownership() -&amp;gt; String {             // gives_ownership 将返回值移动给
+                                             // 调用它的函数
+
+    let some_string = String::from(&amp;quot;hello&amp;quot;); // some_string 进入作用域.
+
+    some_string                              // 返回 some_string 并移出给调用的函数
+}
+
+// takes_and_gives_back 将传入字符串并返回该值
+fn takes_and_gives_back(a_string: String) -&amp;gt; String { // a_string 进入作用域
+
+    a_string  // 返回 a_string 并移出给调用的函数
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;使用值但不获得所有权&#34;&gt;使用值但不获得所有权&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;引用&lt;/strong&gt;允许你使用值但不获取其所有权&lt;/p&gt;
+
+&lt;p&gt;我们将获取引用作为函数参数称为&lt;strong&gt;借用&lt;/strong&gt; (borrowing)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;fn main() {
+    let s1 = String::from(&amp;quot;hello&amp;quot;);
+
+    let len = calculate_length(&amp;amp;s1);
+
+    println!(&amp;quot;The length of &#39;{}&#39; is {}.&amp;quot;, s1, len);
+}
+
+fn calculate_length(s: &amp;amp;String) -&amp;gt; usize { // s 是对 String 的引用
+    s.len()
+} // 这里，s 离开了作用域。但因为它并不拥有引用值的所有权，
+  // 所以什么也不会发生
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;详情：&lt;a href=&#34;https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Rust Programming Language::References and Borrowing&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;说明&#34;&gt;说明&lt;/h1&gt;
+
+&lt;p&gt;这篇文章是在学习完 &lt;a href=&#34;https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Rust Programming Language::What Is Ownership?&lt;/a&gt; 后写的，目的是巩固知识&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;看懂了不一定是真懂了，讲出来让别人听懂才是真懂了&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;内容可能与原教材原文有雷同的地方。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;顺便安利一下这本书：&lt;a href=&#34;https://doc.rust-lang.org/book/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Rust Programming Language&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这是 Rust 的官方教材，写得十分详细。现在已经很难买到这样的书 (更何况这还是免费的)&lt;/p&gt;
+
+&lt;p&gt;如果觉得英语啃得恼火也可以看 &lt;a href=&#34;https://github.com/KaiserY&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;KaiserY&lt;/a&gt; 大佬翻译的版本：&lt;a href=&#34;https://kaisery.github.io/trpl-zh-cn&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Rust 程序设计语言 简体中文版&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>描边灯塔插画</title>
@@ -3636,221 +3839,6 @@ branches:
 &lt;p&gt;不过这里不存在这个场景，并且如果配置错了会出很大的问题，很容易坑到小白， &lt;span class=&#34;spoiler&#34; &gt;比如说我 _(:з)∠)_ &lt;/span&gt;所以默认就给注释掉了。&lt;/p&gt;
 
 &lt;p&gt;如果你晓得这是干啥的，并且觉得有必要的话，可以考虑开启&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Bottom-up  to development a Loan Calculator</title>
-      <link>https://mogeko.github.io/2018/027/</link>
-      <pubDate>Sun, 18 Nov 2018 18:30:52 +0800</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/027/</guid>
-      <description>
-
-&lt;h1 id=&#34;about-the-bottom-up-development&#34;&gt;About the bottom-up development&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;Bottom-up development&lt;/strong&gt; is a style of developing programs. With  the  bottom-up  development, we  develop  in  the  reverse  inside-out  fashion; that is, we develop the service classes first. To test the service classes, we write a temporary dummy main class. After the service classes are done, we complete the top-level class that  uses  these  service  classes.  The  bottom-up  development  for  this  program  implements the &lt;code&gt;Loanclass&lt;/code&gt; first fully and then the &lt;code&gt;LoanCalculatorclass&lt;/code&gt;.&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;h1 id=&#34;development-steps&#34;&gt;Development steps&lt;/h1&gt;
-
-&lt;p&gt;In this example, we write the &lt;strong&gt;service class&lt;/strong&gt; (&lt;code&gt;Loanclass&lt;/code&gt;) and write the &lt;strong&gt;main&lt;/strong&gt; function in the &lt;code&gt;Loanclass&lt;/code&gt;  to test the &lt;code&gt;Loanclass&lt;/code&gt;. Next, we create a &lt;code&gt;LoanCalculatorclass&lt;/code&gt; to &lt;strong&gt;handle the user&amp;rsquo;s input and output&lt;/strong&gt;, and compute the monthly and total payments by calling the member method (&lt;code&gt;getLoan()&lt;/code&gt;) of &lt;code&gt;Loanclass&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;loan-class&#34;&gt;Loan class&lt;/h1&gt;
-
-&lt;h2 id=&#34;step-1&#34;&gt;Step 1&lt;/h2&gt;
-
-&lt;p&gt;First, we write a &lt;strong&gt;constructor&lt;/strong&gt; (&lt;code&gt;Loan()&lt;/code&gt;) to receive three &lt;strong&gt;form parameters&lt;/strong&gt; (&lt;code&gt;double amount&lt;/code&gt;, &lt;code&gt;double rate&lt;/code&gt; and &lt;code&gt;int period&lt;/code&gt;), and assign them to &lt;strong&gt;member variables&lt;/strong&gt; (&lt;code&gt;double amount&lt;/code&gt;, &lt;code&gt;double rate&lt;/code&gt; and &lt;code&gt;int period&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;Second, we write two &lt;strong&gt;dummy function&lt;/strong&gt; (&lt;code&gt;double getMonPay()&lt;/code&gt; and &lt;code&gt;double getTotalPay()&lt;/code&gt;) .&lt;/p&gt;
-
-&lt;p&gt;Third, we write a &lt;code&gt;main&lt;/code&gt; function to test the &lt;code&gt;Loanclass&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Source code:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;class Loan {
-    private final int MONTHS_IN_YEAR = 12;
-    private double amount; // Loan amount
-    private double rate; // Lnterest rate
-    private int period; // Loan period
-
-    // Constructor
-    public Loan(double amount, double rate, int period){
-        this.amount = amount;
-        this.rate = rate;
-        this.period = period;
-    }
-
-    // Calculating monthly payments
-    public double getMonPay(){
-        return 100.1;
-    }
-
-    // Calculating the total payments
-    public double getTotalPay(){
-        return 112312.1212;
-    }
-
-
-    // TEST
-    public static void main(String[] args) {
-        double amount = 100.3;
-        double rate = 22;
-        int period = 12;
-
-        Loan loan = new Loan(amount, rate, period);
-
-        System.out.println(&amp;quot;Expected value: &amp;quot; + amount + &amp;quot; Actual value： &amp;quot; + loan.amount);
-        System.out.println(&amp;quot;Expected value: &amp;quot; + rate + &amp;quot; Actual value： &amp;quot; + loan.rate);
-        System.out.println(&amp;quot;Expected value: &amp;quot; + period + &amp;quot; Actual value： &amp;quot; + loan.period);
-
-        System.out.println(&amp;quot;Expected value: &amp;quot; + 100.1 + &amp;quot; Actual value： &amp;quot; + loan.getMonPay());
-
-        System.out.println(&amp;quot;Expected value: &amp;quot; + 112312.1212 + &amp;quot; Actual value： &amp;quot; + loan.getTotalPay());
-    }   
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;operation result:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Expected value: 100.3 Actual value： 100.3
-Expected value: 22.0 Actual value： 22.0
-Expected value: 12 Actual value： 12
-Expected value: 100.1 Actual value： 100.1
-Expected value: 112312.1212 Actual value： 112312.1212
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;step-2&#34;&gt;Step 2&lt;/h2&gt;
-
-&lt;p&gt;Complete the logic in the &lt;strong&gt;dummy function&lt;/strong&gt; to make it a true &lt;strong&gt;member method&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Use the &lt;strong&gt;real value&lt;/strong&gt; in the &lt;strong&gt;main function&lt;/strong&gt; to test whether the logic of the &lt;strong&gt;member method&lt;/strong&gt; (&lt;code&gt;double getMonPay()&lt;/code&gt; and &lt;code&gt;double getTotalPay()&lt;/code&gt;) is correct.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Source code:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;// Calculating monthly payments
-public double getMonPay(){
-    return (amount * (rate / 100.0)) / MONTHS_IN_YEAR;
-}
-
-// Calculating the total payments
-public double getTotalPay(){
-    return amount + ((amount * (rate / 100.0)) * period);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;operation result:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Expected value: 100.3 Actual value： 100.3
-Expected value: 22.0 Actual value： 22.0
-Expected value: 12 Actual value： 12
-Expected value: 1.838833 Actual value： 1.8388333333333333
-Expected value: 365.092 Actual value： 365.092
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So far, the &lt;code&gt;Loanclass&lt;/code&gt; has been completed.&lt;/p&gt;
-
-&lt;h1 id=&#34;loan-calculator-class&#34;&gt;Loan Calculator class&lt;/h1&gt;
-
-&lt;h2 id=&#34;step-1-1&#34;&gt;Step 1&lt;/h2&gt;
-
-&lt;p&gt;First, we write a &lt;strong&gt;member method&lt;/strong&gt; (&lt;code&gt;void getInput()&lt;/code&gt;) to handle &lt;strong&gt;input&lt;/strong&gt; and another &lt;strong&gt;member method&lt;/strong&gt; (&lt;code&gt;void getOutput()&lt;/code&gt;) to handle &lt;strong&gt;output&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Sexond, we write a &lt;strong&gt;fake main function&lt;/strong&gt; to test the input and output.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Source code:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;import java.util.Scanner;
-
-class LoanCalculator {
-    private double amount; // Loan amount
-    private double rate; // Lnterest rate
-    private int period; // Loan period
-    private double monPayment; // Monthly payment
-    private double totalPayment; // Total payment
-
-    public static void main(String[] args) {
-        LoanCalculator loanCalculator = new LoanCalculator();
-
-        loanCalculator.getInput();
-        System.out.println(&amp;quot;Input: &amp;quot; + loanCalculator.amount + &amp;quot; &amp;quot; + loanCalculator.rate + &amp;quot; &amp;quot; + loanCalculator.period);
-
-        System.out.println();
-
-        loanCalculator.monPayment = 100.1;
-        loanCalculator.totalPayment = 200.2;
-        loanCalculator.getOutput();
-    }
-
-    // Processing input
-    private void getInput(){
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print(&amp;quot;Your loan amount: $&amp;quot;);
-        amount = sc.nextDouble();
-        System.out.print(&amp;quot;Your loan interest rate (%): &amp;quot;);
-        rate = sc.nextDouble();
-        System.out.print(&amp;quot;Your loan period (year): &amp;quot;);
-        period = sc.nextInt();
-
-        sc.close();
-    }
-
-    // Processing output
-    private void getOutput(){
-        System.out.println(&amp;quot;Your monthly payment is $&amp;quot; + monPayment);
-        System.out.println(&amp;quot;Your total payment is $&amp;quot; + totalPayment);
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;operation result:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Your loan amount: $100.1
-Your loan interest rate (%): 33.2
-Your loan period (year): 12
-Input: 100.1 33.2 12
-
-Your monthly payment is $100.1
-Your total payment is $200.2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;step-2-1&#34;&gt;Step 2&lt;/h2&gt;
-
-&lt;p&gt;Rewrite the &lt;strong&gt;main function&lt;/strong&gt;, call the &lt;code&gt;getMonPay()&lt;/code&gt; method of the &lt;code&gt;Loan&lt;/code&gt; class to calculating the monthly payments, and call the &lt;code&gt;getTotalPay()&lt;/code&gt; method of the &lt;code&gt;Loan&lt;/code&gt; class to calculating the total payments.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Source code:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static void main(String[] args) {
-    LoanCalculator loanCalculator = new LoanCalculator();
-
-    loanCalculator.getInput();
-
-    Loan loan = new Loan(loanCalculator.amount, loanCalculator.rate, loanCalculator.period);
-    System.out.println();
-
-    loanCalculator.monPayment = loan.getMonPay();
-    loanCalculator.totalPayment = loan.getTotalPay();
-    loanCalculator.getOutput();
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;operation result:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Your loan amount: $100
-Your loan interest rate (%): 22
-Your loan period (year): 10
-
-Your monthly payment is $1.8333333333333333
-Your total payment is $320.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Completed!!! ヾ(&lt;em&gt;´▽&amp;rsquo;&lt;/em&gt;)ﾉ.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
