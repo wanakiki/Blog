@@ -77,21 +77,21 @@ println!(&amp;quot;{}, world!&amp;quot;, s1);
 
 &lt;p&gt;按照正常是思路程序应该会打印出 &lt;code&gt;hello, world!&lt;/code&gt;。因为我们让 &lt;code&gt;s2&lt;/code&gt; 拷贝了 &lt;code&gt;s1&lt;/code&gt; 的指针，就像这样：&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-02.svg&#34; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-02.svg&#34; style=&#34;width:400px&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;但事实上程序会报错！因为 &lt;code&gt;s1&lt;/code&gt; 中的指针&lt;strong&gt;移动&lt;/strong&gt;到了 &lt;code&gt;s2&lt;/code&gt; 中而并非拷贝，就像这样：&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-04.svg&#34; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-04.svg&#34; style=&#34;width:400px&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;在解释为什么之前先让我们来假设一下 &lt;code&gt;s1&lt;/code&gt; 中的指针被拷贝到了 &lt;code&gt;s2&lt;/code&gt; 中。那么就有两个指针同时指向了 &lt;code&gt;String&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-02.svg&#34; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-02.svg&#34; style=&#34;width:400px&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;然后在离开作用域时，&lt;code&gt;s1&lt;/code&gt; 和 &lt;code&gt;s2&lt;/code&gt; 指向的对象 (也就是 &lt;code&gt;String&lt;/code&gt;) 被依次释放掉。注意到了吗？&lt;code&gt;String&lt;/code&gt; 被释放了两次！这是一个叫做 &lt;strong&gt;二次释放&lt;/strong&gt; (&lt;em&gt;double free&lt;/em&gt;) 的错误，也是之前提到过的内存安全性 bug 之一。两次释放 (相同) 内存会导致内存污染，它可能会导致潜在的安全漏洞。&lt;/p&gt;
 
 &lt;p&gt;为了避免这一错误，Rust 好在将 &lt;code&gt;s1&lt;/code&gt; 中的指针赋值给 &lt;code&gt;s2&lt;/code&gt; 的同时抛弃掉 &lt;code&gt;s1&lt;/code&gt; 。&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-04.svg&#34; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-04.svg&#34; style=&#34;width:400px&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;这也印证了&lt;strong&gt;“值有且只有一个所有者”&lt;/strong&gt;这一规则。&lt;/p&gt;
 
@@ -107,7 +107,7 @@ println!(&amp;quot;s1 = {}, s2 = {}&amp;quot;, s1, s2);
 
 &lt;p&gt;可以正常运行，堆上的数据确实被&lt;strong&gt;复制&lt;/strong&gt;了，但所有权并没有发生&lt;strong&gt;移动&lt;/strong&gt;。此时的内存大概是这个样子：&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-03.svg&#34; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;RAM&#34; src=&#34;https://doc.rust-lang.org/book/img/trpl04-03.svg&#34; style=&#34;width:400px&#34;&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;拷贝&#34;&gt;拷贝&lt;/h2&gt;
 
