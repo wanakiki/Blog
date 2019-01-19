@@ -47,13 +47,13 @@
 
 &lt;p&gt;&lt;img alt=&#34;Printf&#34; src=&#34;https://mogeko.github.io/images/044/printf-nocover.png&#34; &gt;&lt;/p&gt;
 
-&lt;p&gt;“我还不是很了解电脑，但你看起来是这方面的专家。我想写一个 Blog 程序，让人们可以访问它。请你帮我设计一个系统！”&lt;/p&gt;
+&lt;p&gt;“我还不是很了解电脑，但你看起来像是这方面的专家。我想写一个 Blog 程序，让人们可以使用和访问它。请你帮我设计一个系统！”&lt;/p&gt;
 
 &lt;p&gt;这是个令人惊讶的请求，而且我已经二十多个小时没有合眼了，我不太确定有没有完全 get 到他的意思。我告诉他设计系统很难。我不知道他的需求是什么：需要供多少人使用？在哪里部署？我无法根据他提供的如此少的信息设计一个合适的系统。&lt;/p&gt;
 
 &lt;p&gt;“没关系，给我设计一个系统吧。”&lt;/p&gt;
 
-&lt;p&gt;所以我画你一张架构图：&lt;/p&gt;
+&lt;p&gt;所以我画了一张架构图：&lt;/p&gt;
 
 &lt;p&gt;&lt;img alt=&#34;Architecture&#34; src=&#34;https://mogeko.github.io/images/044/arch1.png&#34; &gt;&lt;/p&gt;
 
