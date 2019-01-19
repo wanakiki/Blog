@@ -6,8 +6,88 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 19 Jan 2019 18:28:13 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 19 Jan 2019 23:57:31 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Little Printf (Chapter 2)</title>
+      <link>https://mogeko.github.io/2019/044/</link>
+      <pubDate>Sat, 19 Jan 2019 23:57:31 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2019/044/</guid>
+      <description>
+
+&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/044/&#34; &gt;
+&lt;span class=&#34;spoil这一er&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;p&gt;原文地址 (英文): &lt;a href=&#34;https://ferd.ca/the-little-printf.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Little Printf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本文是原作者 &lt;a href=&#34;http://twitter.com/mononcqc/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Fred Hebert&lt;/a&gt; 模仿《小王子》的笔法写的一篇演讲稿，同时也是一篇不错的小故事。主要探讨了一个既简单又复杂的问题：&lt;strong&gt;什么才是真正的程序员？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;慢慢看下去，定会受益良多！&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Cover&#34; src=&#34;https://mogeko.github.io/images/043/printf.png&#34; &gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;第二章&#34;&gt;第二章&lt;/h1&gt;
+
+&lt;p&gt;我忙于到世界各地去演讲，告诉人们如何做那些“我从没做过的事情”。而每个人似乎都相信我是一个真正的程序员，因为我讲的事情大多与程序无关。&lt;/p&gt;
+
+&lt;p&gt;一天，从会议回家的路上，我因为飞机晚点被困在了候机室。我愤怒的敲击着键盘，一个温柔的声音问我：&lt;/p&gt;
+
+&lt;p&gt;“如果你愿意，可以请你给我设计一个系统吗？”&lt;/p&gt;
+
+&lt;p&gt;“什么？”&lt;/p&gt;
+
+&lt;p&gt;“给我设计一个系统！”&lt;/p&gt;
+
+&lt;p&gt;我对这一请求感到惊讶。我抬起头，看到一个渴望成为程序猿的孩子。他自称 “printf”。我觉得这个名字很傻。他大概长这样：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Printf&#34; src=&#34;https://mogeko.github.io/images/044/printf-nocover.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;“我还不是很了解电脑，但你看起来是这方面的专家。我想写一个 Blog 程序，让人们可以访问它。请你帮我设计一个系统！”&lt;/p&gt;
+
+&lt;p&gt;这是个令人惊讶的请求，而且我已经二十多个小时没有合眼了，我不太确定有没有完全 get 到他的意思。我告诉他设计系统很难。我不知道他的需求是什么：需要供多少人使用？在哪里部署？我无法根据他提供的如此少的信息设计一个合适的系统。&lt;/p&gt;
+
+&lt;p&gt;“没关系，给我设计一个系统吧。”&lt;/p&gt;
+
+&lt;p&gt;所以我画你一张架构图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Architecture&#34; src=&#34;https://mogeko.github.io/images/044/arch1.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;他看了后说：“不，它还不够好。请再给我设计一个别的。”&lt;/p&gt;
+
+&lt;p&gt;于是我画了这个：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Architecture&#34; src=&#34;https://mogeko.github.io/images/044/arch2.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;然后我给他讲了这个系统的工作原理。&lt;/p&gt;
+
+&lt;p&gt;我的新朋友礼貌的笑了笑。“这不是我想要的系统，它太复杂了，有很多我不需要的东西。”&lt;/p&gt;
+
+&lt;p&gt;我感到有点不爽，我的设计中考虑到了冗余、监控、备份、缓存、负载、故障转移、部署简单等等。我的工作都可以收取一笔可观的咨询费了！我已经失去耐心了，所以我画了这个：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Blackbox&#34; src=&#34;https://mogeko.github.io/images/044/blackbox.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;我告诉他：“这是你要的系统，在这个黑盒子里面。”我希望这个敷衍的答案能够让他离开。但我很惊讶的听到：&lt;/p&gt;
+
+&lt;p&gt;“这就是我想要的！”&lt;/p&gt;
+
+&lt;p&gt;这就是我与小 Printf 的第一次相遇。&lt;/p&gt;
+
+&lt;h1 id=&#34;相关文章&#34;&gt;相关文章&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/043&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The The Little Printf 第一章&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>The Little Printf (Chapter 1)</title>
@@ -59,11 +139,17 @@
 
 &lt;p&gt;但 Python 中的一些比较高级的特性：&lt;code&gt;lambdas&lt;/code&gt; 和 面向对象编程 等我都看得云里雾里。后来别人建议我去读一下《计算机程序的构造和解释》(SICP)，因为它是编程的基础入门圣经&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;SICP&#34; src=&#34;https://mogeko.github.io/images/043/SICP.png&#34; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;SICP&#34; src=&#34;https://mogeko.github.io/images/043/sicp.png&#34; &gt;&lt;/p&gt;
 
 &lt;p&gt;就这样，我知道了 Scheme。后来我通过 K&amp;amp;R 的书学习了 C 语言，因为真正的程序猿都会写 C 语言，我在当地的大学注册了兼职课程，因为真正的程序猿都知道数学和数据结构，虽然我只学到了一点皮毛。我开始阅读技术类文章和论文，因为真正的程序设计方面的知识更新得很快。&lt;/p&gt;
 
 &lt;p&gt;经过一段时间，我学会了 Erlang，并以此开始了我的职业生涯。分奇怪的是：我这个没有用 Erlang 做过任何生产级别的开发的人，却得到了一份教 Erlang 的工作。&lt;/p&gt;
+
+&lt;h1 id=&#34;相关文章&#34;&gt;相关文章&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/044&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The The Little Printf 第二章&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -3551,190 +3637,6 @@ for v in videos:
 &lt;p&gt;还有配合 &lt;strong&gt;MPV&lt;/strong&gt; / &lt;strong&gt;GNOME MPV&lt;/strong&gt; 播放器使用的脚本：&lt;a href=&#34;https://github.com/directorscut82/find_subtitles/blob/master/find_subtitles.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;find_subtitles.lua&lt;/strong&gt;&lt;/a&gt;&amp;emsp;&amp;emsp;&lt;a href=&#34;https://mogeko.github.io/images/029&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;关于 GNOME MPV 播放器&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;需要注意的是 &lt;strong&gt;find_subtitles.lua 默认下载的是英文字幕，下载中午字幕需要在脚本中将 38 行的 &lt;code&gt;en&lt;/code&gt; 替换换成 &lt;code&gt;zh&lt;/code&gt;&lt;/strong&gt;。如果你觉得麻烦的话，可以使用我&lt;a href=&#34;https://github.com/Mogeko/Blog/releases/download/029/find_subtitles.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;修改过的版本&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>GNOME MPV | GNU/Linux 下一个不错的流媒体播放器</title>
-      <link>https://mogeko.github.io/2018/029/</link>
-      <pubDate>Tue, 20 Nov 2018 16:52:42 +0800</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/029/</guid>
-      <description>
-
-&lt;!-- 
-&lt;img src=&#34;&#34; alt=&#34;&#34; &gt;
-&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
- --&gt;
-
-&lt;p&gt;在 GNU/Linux 下看视频向来是一件麻烦事。&lt;a href=&#34;https://www.videolan.org/index.zh.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;VLC&lt;/strong&gt;&lt;/a&gt; 太过臃肿，&lt;a href=&#34;https://mpv.io/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;MPV&lt;/strong&gt;&lt;/a&gt; 又太过简 (chǒu) 陋了。&lt;/p&gt;
-
-&lt;p&gt;那么，有没有一款播放器能兼顾美观与内在，随便还拥有较好的易用性和较强的定制能力呢？&lt;/p&gt;
-
-&lt;p&gt;当然是有了！&lt;strong&gt;GNOME MPV&lt;/strong&gt; 就是这么一款播放器，它基于 &lt;strong&gt;MPV&lt;/strong&gt;，继承了 &lt;strong&gt;MPV&lt;/strong&gt; 强大的编解码器，以及其恐怖的定制能力 &lt;span class=&#34;spoiler&#34; &gt;脚本才是 &lt;strong&gt;MPV&lt;/strong&gt; 的灵魂 | ・ω・’）&lt;/span&gt;。同时又拥有较为美观方便的 GUI，简直是居家旅行必备的万能播放器啊！！😂😂😂&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;官网：&lt;a href=&#34;https://gnome-mpv.github.io&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://gnome-mpv.github.io&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHub 地址：&lt;a href=&#34;https://github.com/gnome-mpv/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gnome-mpv/gnome-mpv&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/029/gnome_mpv.png&#34; alt=&#34;GNOME MPV&#34; &gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;依赖&#34;&gt;依赖&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;autotools (只在构建时依赖)&lt;/li&gt;
-&lt;li&gt;autoconf-archive (只在构建时依赖)&lt;/li&gt;
-&lt;li&gt;pkg-config (只在构建时依赖)&lt;/li&gt;
-&lt;li&gt;gcc (只在构建时依赖)&lt;/li&gt;
-&lt;li&gt;intltool (只在构建时依赖)&lt;/li&gt;
-&lt;li&gt;python2 (只在构建时依赖)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;glib2&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;gtk3&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;libmpv&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;youtube-dl (可选)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
-
-&lt;h2 id=&#34;gnu-linux-packages&#34;&gt;GNU/Linux packages&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Arch Linux &lt;a href=&#34;https://www.archlinux.org/packages/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://www.archlinux.org/packages/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Arch Linux (Git): &lt;a href=&#34;https://aur.archlinux.org/packages/gnome-mpv-git&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://aur.archlinux.org/packages/gnome-mpv-git&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Debian testing: &lt;a href=&#34;https://packages.debian.org/testing/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://packages.debian.org/testing/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Debian unstable: &lt;a href=&#34;https://packages.debian.org/sid/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://packages.debian.org/sid/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Fedora (rpmfusion): &lt;a href=&#34;https://admin.rpmfusion.org/pkgdb/package/free/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://admin.rpmfusion.org/pkgdb/package/free/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Frugalware: &lt;a href=&#34;http://www4.frugalware.org/pub/linux/distributions/frugalware/frugalware-current/source/xapps-extra/gnome-mpv/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www4.frugalware.org/pub/linux/distributions/frugalware/frugalware-current/source/xapps-extra/gnome-mpv/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;OpenSUSE: &lt;a href=&#34;https://software.opensuse.org/package/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://software.opensuse.org/package/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Gentoo: &lt;a href=&#34;https://packages.gentoo.org/packages/media-video/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://packages.gentoo.org/packages/media-video/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Guix: &lt;a href=&#34;https://www.gnu.org/software/guix/packages/g.html#gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://www.gnu.org/software/guix/packages/g.html#gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Solus: &lt;a href=&#34;https://packages.solus-project.com/shannon/g/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://packages.solus-project.com/shannon/g/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Ubuntu: &lt;a href=&#34;https://launchpad.net/~xuzhen666/+archive/ubuntu/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://launchpad.net/~xuzhen666/+archive/ubuntu/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;source-code&#34;&gt;Source code&lt;/h2&gt;
-
-&lt;p&gt;在终端中运行以下命令以构建并安装&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;./autogen.sh &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;使用&#34;&gt;使用&lt;/h1&gt;
-
-&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
-
-&lt;p&gt;推荐使用 &lt;strong&gt;MPV&lt;/strong&gt; 的配置文件来对 &lt;strong&gt;GNOME MPV&lt;/strong&gt; (及 &lt;code&gt;mpv.conf&lt;/code&gt; 和 &lt;code&gt;input.conf&lt;/code&gt; ) 进行配置，这样一方面可以使配置兼容 &lt;strong&gt;MPV&lt;/strong&gt;，另一方面可定制性更高。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;首选项&lt;/strong&gt;  -&amp;gt; 勾选 &lt;strong&gt;加载 MPV 配置文件&lt;/strong&gt; 和 &lt;strong&gt;加载 MPV 输入配置文件&lt;/strong&gt; -&amp;gt; 定位到  &lt;code&gt;mpv.conf&lt;/code&gt; 和 &lt;code&gt;input.conf&lt;/code&gt; 的位置 (Linux 下一般是 &lt;code&gt;~/.config/mpv/&lt;/code&gt;)&lt;/p&gt;
-
-&lt;p&gt;以下是我目前使用的配置文件；因为只是轻度使用，所以比较简单&lt;/p&gt;
-
-&lt;p&gt;更多配置请参考：&lt;a href=&#34;https://github.com/mpv-player/mpv/blob/master/etc/mpv.conf&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;MPV 配置文件示例&lt;/a&gt;&amp;emsp;&amp;emsp;&lt;a href=&#34;https://github.com/mpv-player/mpv/blob/master/etc/input.conf&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;MPV 输入配置文件&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;mpv.conf:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;# 没有边框
-#no-border
-
-# 记住断点
-seve-position-on-quit
-
-# 音/字幕轨选择
-## 指定优先使用音轨（DVD使用ISO 639-1两位语言代码，MKV、MPEG-TS使用ISO 639-2 三位语言代码）
-alang=zh,chi
-## 指定优先使用字幕轨（DVD使用ISO 639-1两位语言代码，MKV、MPEG-TS使用ISO 639-2 三位语言代码）
-slang=zh,chi
-
-# 音/字幕轨加载方式
-## 加载视频文件的外部音频文件方式。（fuzzy 加载含有视频文件名的全部音频文件）
-audio-file-auto=fuzzy
-## 加载视频文件的外部字幕文件方式。（fuzzy 加载含有视频文件名的全部字幕文件）
-sub-auto=fuzzy
-## 字幕编码
-sub-codepage=utf-8:gb18030
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;input.conf:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;# 退出方式
-q quit-watch-later
-Q quit-watch-later
-ESC quit-watch-later
-CLOSE_WIN quit-watch-later
-
-# 音量调整
-WHEEL_UP volume 5
-WHEEL_DOWN volume -5
-UP volume 5
-DOWN volume -5
-
-# 播放/暂停
-MBTN_LEFT cycle pause
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;插件&#34;&gt;插件&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;MPV&lt;/strong&gt; 之所以广受好评，一个很重要的原因就是它强大的插件系统。&lt;strong&gt;GNOME MPV&lt;/strong&gt; 基于 &lt;strong&gt;MPV&lt;/strong&gt;，自然是继承了大把的插件，这也让 &lt;strong&gt;GNOME MPV&lt;/strong&gt; 的可玩性提升了一个档次。&lt;/p&gt;
-
-&lt;h3 id=&#34;插件安装方法&#34;&gt;插件安装方法&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;MPV&lt;/strong&gt;: 将插件脚本粘贴到 &lt;code&gt;~/.config/mpv/scripts&lt;/code&gt; 文件夹中&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;GNOME MPV&lt;/strong&gt;: &lt;strong&gt;首选项&lt;/strong&gt; -&amp;gt; &lt;strong&gt;插件&lt;/strong&gt; -&amp;gt; 选择插件脚本的路径&lt;/p&gt;
-
-&lt;h3 id=&#34;推荐几个插件&#34;&gt;推荐几个插件&lt;/h3&gt;
-
-&lt;p&gt;这里推荐几个我比较常用的插件。&lt;/p&gt;
-
-&lt;p&gt;更多插件请参考：&lt;a href=&#34;https://github.com/mpv-player/mpv/wiki/User-Scripts&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;MPV&lt;/strong&gt; 插件脚本列表&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;autoload.lua&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;自动加载当前播放文件目录里的视频文件到播放列表，也就是自动连播。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub 地址&lt;/a&gt;&amp;emsp;&amp;emsp;&lt;a href=&#34;https://github.com/Mogeko/Blog/releases/download/029/autoload.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;下载地址 (不保证最新)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;save-sub-delay.lua&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;有时候外挂字幕时间轴不正确，调好之后，这个脚本会保存delay信息。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/zc62/mpv-scripts/blob/master/save-sub-delay.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub 地址&lt;/a&gt;&amp;emsp;&amp;emsp;&lt;a href=&#34;https://github.com/Mogeko/Blog/releases/download/029/save-sub-delay.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;下载地址 (不保证最新)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;find_subtitles.lua&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;自动使用 &lt;a href=&#34;https://github.com/Diaoul/subliminal&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;subliminal&lt;/strong&gt;&lt;/a&gt; 从字幕站匹配并下载字幕。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;find_subtitles.lua 默认下载的是英文字幕，下载中午字幕需要在脚本中将 38 行的 &lt;code&gt;en&lt;/code&gt; 替换换成 &lt;code&gt;zh&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;依赖：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;python2 &lt;span class=&#34;spoiler&#34; &gt;实际上是 &lt;strong&gt;subliminal&lt;/strong&gt; 依赖 python2&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;subliminal -&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2018/030&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;关于 subliminal (安装方法)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/directorscut82/find_subtitles/blob/master/find_subtitles.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub 地址&lt;/a&gt;&amp;emsp;&amp;emsp;&lt;a href=&#34;https://github.com/Mogeko/Blog/releases/download/029/find_subtitles.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;下载地址 (我调整过的版本)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 

@@ -9,9 +9,9 @@
   <meta name="description" content="Mogeko 的个人博客">
   <meta name="keywords" content="blog, KMS, Hugo, GNU/Linux, Linux, Ubuntu, Rusty Lake: Roots, Hollow Knight, 空洞骑士">
   
-  <link rel="prev" href="https://mogeko.github.io/2019/042/" />
-  <link rel="next" href="https://mogeko.github.io/2019/044/" />
-  <link rel="canonical" href="https://mogeko.github.io/2019/043/" />
+  <link rel="prev" href="https://mogeko.github.io/2019/043/" />
+  
+  <link rel="canonical" href="https://mogeko.github.io/2019/044/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           The Little Printf (Chapter 1) | Mogeko`s Blog
+           The Little Printf (Chapter 2) | Mogeko`s Blog
        
   </title>
-  <meta name="title" content="The Little Printf (Chapter 1) | Mogeko`s Blog">
+  <meta name="title" content="The Little Printf (Chapter 2) | Mogeko`s Blog">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,8 +44,8 @@
          "@id": "https://mogeko.github.io"
     },
     "articleSection" : "posts",
-    "name" : "The Little Printf (Chapter 1)",
-    "headline" : "The Little Printf (Chapter 1)",
+    "name" : "The Little Printf (Chapter 2)",
+    "headline" : "The Little Printf (Chapter 2)",
     "description" : "&emsp;&emsp; -- 原文地址 (英文): The Little Printf 本文是原作者 Fred Hebert 模仿《小王子》的笔法写的一篇演讲稿，同时也是一篇不错的小故事。主要探讨了一个既简单又复杂的问题：",
     "inLanguage" : "zh-cn",
     "author" : "Mogeko",
@@ -54,10 +54,10 @@
     "accountablePerson" : "Mogeko",
     "copyrightHolder" : "Mogeko",
     "copyrightYear" : "2019",
-    "datePublished": "2019-01-19 18:28:13 &#43;0800 &#43;0800",
-    "dateModified" : "2019-01-19 18:28:13 &#43;0800 &#43;0800",
-    "url" : "https://mogeko.github.io/2019/043/",
-    "wordCount" : "1039",
+    "datePublished": "2019-01-19 23:57:31 &#43;0800 &#43;0800",
+    "dateModified" : "2019-01-19 23:57:31 &#43;0800 &#43;0800",
+    "url" : "https://mogeko.github.io/2019/044/",
+    "wordCount" : "761",
     "keywords" : [ "翻译","编程之髓","The Little Printf", "Mogeko`s Blog"]
 }
 </script>
@@ -130,7 +130,7 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">The Little Printf (Chapter 1)</h1>
+        <h1 class="post-title" itemprop="name headline">The Little Printf (Chapter 2)</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://mogeko.github.io" rel="author">Mogeko</a> with ♥ 
                 <span class="post-time">
@@ -142,7 +142,7 @@
                         <a href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/"> 关于编程 </a>
                         
                 </span>
-                <span class="post-word-count">, 1039 words</span>
+                <span class="post-word-count">, 761 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -164,8 +164,8 @@
           
 
 <!-- 
-<img alt="" src="https://mogeko.github.io/images/043/" >
-<span class="spoiler" ></span>
+<img alt="" src="https://mogeko.github.io/images/044/" >
+<span class="spoil这一er" ></span>
 &emsp;&emsp;
  -->
 
@@ -177,44 +177,56 @@
 
 <p><img alt="Cover" src="https://mogeko.github.io/images/043/printf.png" ></p>
 
-<h1 id="第一章">第一章</h1>
+<h1 id="第二章">第二章</h1>
 
-<p>我很幸运能够出生在一个计算机和游戏还没有普及的年代。我很幸运能有机会与朋友和兄弟在户外玩耍，同时发明一些属于我们的游戏。</p>
+<p>我忙于到世界各地去演讲，告诉人们如何做那些“我从没做过的事情”。而每个人似乎都相信我是一个真正的程序员，因为我讲的事情大多与程序无关。</p>
 
-<p>我们都是自己的英雄，用一根树枝做成弓箭、枪、剑甚至是望远镜。树枝可以做成任何东西，除了回旋镖。因为你一旦把它扔出去，你需要自己捡回来。</p>
+<p>一天，从会议回家的路上，我因为飞机晚点被困在了候机室。我愤怒的敲击着键盘，一个温柔的声音问我：</p>
 
-<p>突然，我们长大了，上面的游戏变得很幼稚。当周围的人开始以成熟为荣时，你不能再把松果当成手榴弹扔出去，也不能假装自己会魔法。你最终会在压力中长大。不过总的来说是一个非常幸福的童年。</p>
+<p>“如果你愿意，可以请你给我设计一个系统吗？”</p>
 
-<p>一次偶然的机会，我接触到了计算机和电子游戏。这可能是你曾经想象中的某一个虚拟的世界。你花时间玩游戏，寻求着与现实生活不一样的体验。</p>
+<p>“什么？”</p>
 
-<p>但大多数游戏都有一个共同点：你不能创造，你只能花费时间玩已经设定好的程序。我在十多岁时参加过“即兴表演”。在那里我可以与人合作并发挥我的创造力。</p>
+<p>“给我设计一个系统！”</p>
 
-<p><img alt="improvisational" src="https://mogeko.github.io/images/043/improv.png" ></p>
+<p>我对这一请求感到惊讶。我抬起头，看到一个渴望成为程序猿的孩子。他自称 “printf”。我觉得这个名字很傻。他大概长这样：</p>
 
-<p>当然，魁北克的即兴表演舞台是不同的；这里是一个溜冰场。</p>
+<p><img alt="Printf" src="https://mogeko.github.io/images/044/printf-nocover.png" ></p>
 
-<p>我在大学学习的专业是“多媒体”，但最终我却从事了与编程相关的工作。编程真 TM 的 AMAZING！我可以发挥我的创造力，还能赚钱！之后我做了我的第一个游戏：</p>
+<p>“我还不是很了解电脑，但你看起来是这方面的专家。我想写一个 Blog 程序，让人们可以访问它。请你帮我设计一个系统！”</p>
 
-<p><img alt="game" src="https://mogeko.github.io/images/043/game.png" ></p>
+<p>这是个令人惊讶的请求，而且我已经二十多个小时没有合眼了，我不太确定有没有完全 get 到他的意思。我告诉他设计系统很难。我不知道他的需求是什么：需要供多少人使用？在哪里部署？我无法根据他提供的如此少的信息设计一个合适的系统。</p>
 
-<p>“这不是一个真正的视频游戏。”，我被告知。“那只是一个HTML表单。您使用数组作为文本和选项会更好。而且代码需要简化。”</p>
+<p>“没关系，给我设计一个系统吧。”</p>
 
-<p>这些评价让我有点沮丧；但这游戏确实只是 11 页文档而已。我意识到如果我想创造更多被人认可的东西，我必须要学习更多的知识。</p>
+<p>所以我画你一张架构图：</p>
 
-<p>我必须要学习“真正的编程”。我从 GUI 工具包中的 JavaScript 开始，慢慢学习更多的语言，比如 PHP。但这一切不是很顺利。其他人建议我尝试一下 Python，然后我学会了。</p>
+<p><img alt="Architecture" src="https://mogeko.github.io/images/044/arch1.png" ></p>
 
-<p>但 Python 中的一些比较高级的特性：<code>lambdas</code> 和 面向对象编程 等我都看得云里雾里。后来别人建议我去读一下《计算机程序的构造和解释》(SICP)，因为它是编程的基础入门圣经</p>
+<p>他看了后说：“不，它还不够好。请再给我设计一个别的。”</p>
 
-<p><img alt="SICP" src="https://mogeko.github.io/images/043/sicp.png" ></p>
+<p>于是我画了这个：</p>
 
-<p>就这样，我知道了 Scheme。后来我通过 K&amp;R 的书学习了 C 语言，因为真正的程序猿都会写 C 语言，我在当地的大学注册了兼职课程，因为真正的程序猿都知道数学和数据结构，虽然我只学到了一点皮毛。我开始阅读技术类文章和论文，因为真正的程序设计方面的知识更新得很快。</p>
+<p><img alt="Architecture" src="https://mogeko.github.io/images/044/arch2.png" ></p>
 
-<p>经过一段时间，我学会了 Erlang，并以此开始了我的职业生涯。分奇怪的是：我这个没有用 Erlang 做过任何生产级别的开发的人，却得到了一份教 Erlang 的工作。</p>
+<p>然后我给他讲了这个系统的工作原理。</p>
+
+<p>我的新朋友礼貌的笑了笑。“这不是我想要的系统，它太复杂了，有很多我不需要的东西。”</p>
+
+<p>我感到有点不爽，我的设计中考虑到了冗余、监控、备份、缓存、负载、故障转移、部署简单等等。我的工作都可以收取一笔可观的咨询费了！我已经失去耐心了，所以我画了这个：</p>
+
+<p><img alt="Blackbox" src="https://mogeko.github.io/images/044/blackbox.png" ></p>
+
+<p>我告诉他：“这是你要的系统，在这个黑盒子里面。”我希望这个敷衍的答案能够让他离开。但我很惊讶的听到：</p>
+
+<p>“这就是我想要的！”</p>
+
+<p>这就是我与小 Printf 的第一次相遇。</p>
 
 <h1 id="相关文章">相关文章</h1>
 
 <ul>
-<li><a href="https://mogeko.github.io/2019/044" rel="nofollow noreferrer" target="_blank">The The Little Printf 第二章</a></li>
+<li><a href="https://mogeko.github.io/2019/043" rel="nofollow noreferrer" target="_blank">The The Little Printf 第一章</a></li>
 </ul>
 
 <p><br></p>
@@ -234,7 +246,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://mogeko.github.io/2019/043/>https://mogeko.github.io/2019/043/</span>
+                    <a href=https://mogeko.github.io/2019/044/>https://mogeko.github.io/2019/044/</span>
             </p>
             
              
@@ -269,10 +281,8 @@
 
     <div class="post-nav">
         
-        <a href="https://mogeko.github.io/2019/042/" class="prev" rel="prev" title="Rust 中的所有权"><i class="iconfont icon-left"></i>&nbsp;Rust 中的所有权</a>
+        <a href="https://mogeko.github.io/2019/043/" class="prev" rel="prev" title="The Little Printf (Chapter 1)"><i class="iconfont icon-left"></i>&nbsp;The Little Printf (Chapter 1)</a>
          
-        
-        <a href="https://mogeko.github.io/2019/044/" class="next" rel="next" title="The Little Printf (Chapter 2)">The Little Printf (Chapter 2)&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
