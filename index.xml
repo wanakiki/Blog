@@ -6,8 +6,65 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 19 Jan 2019 23:57:31 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Jan 2019 01:23:31 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Little Printf (Chapter 3)</title>
+      <link>https://mogeko.github.io/2019/045/</link>
+      <pubDate>Sun, 20 Jan 2019 01:23:31 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2019/045/</guid>
+      <description>
+
+&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/044/&#34; &gt;
+&lt;span class=&#34;spoil这一er&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;p&gt;原文地址 (英文): &lt;a href=&#34;https://ferd.ca/the-little-printf.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Little Printf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本文是原作者 &lt;a href=&#34;http://twitter.com/mononcqc/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Fred Hebert&lt;/a&gt; 模仿《小王子》的笔法写的一篇演讲稿，同时也是一篇不错的小故事。主要探讨了一个既简单又复杂的问题：&lt;strong&gt;什么才是真正的程序员？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;慢慢看下去，定会受益良多！&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Cover&#34; src=&#34;https://mogeko.github.io/images/043/printf.png&#34; &gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;第三章&#34;&gt;第三章&lt;/h1&gt;
+
+&lt;p&gt;我很快了解到了这个小家伙的编程水平。在他的代码仓库里只有一些简单的小程序、网站的小 demo、简单的命令行工具。都是些简单的小把戏。&lt;/p&gt;
+
+&lt;p&gt;然后他开始去做一些使用多个模块的大型程序。这个程序需要处理 &lt;code&gt;socket&lt;/code&gt;、读写磁盘、用到数据库。当它第一次跑起来的时候，小 Printf 十分兴奋。但是，这个程序称之为好还为时尚早了点。&lt;/p&gt;
+
+&lt;p&gt;这个程序需要重构、更好的测试、文档、Linting (代码静态检测)、分析。这个程序跑了一段时间，最终还是崩了。&lt;/p&gt;
+
+&lt;p&gt;然后一次有一次的崩溃！&lt;/p&gt;
+
+&lt;p&gt;配置错误，日志不工作，磁盘读写不稳定，网络卡顿，有 bug，编码混乱，数据库里有脏数据，证书过期，没有异常处理等等原因导致问题找不到根源。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;spaghetti&#34; src=&#34;https://mogeko.github.io/images/044/spaghetti.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;简直像面条一样一团糟。&lt;/p&gt;
+
+&lt;p&gt;小 Printf 跟我说：“我简直是一无所知！我应该根据我的需求去判断。我写了一个花哨但难以伺候的系统，后来我花在修复 bug 上的时间和精力比它带给我的好处完全不成正比。不过，我确实学到了不少东西。”&lt;/p&gt;
+
+&lt;p&gt;一天早上，他决定离开这里。“再见”，他跟我做最后的道别。他想去看看外面的世界，看看别的程序猿写的程序。&lt;/p&gt;
+
+&lt;p&gt;小 Printf 写的程序，最后因为不断增加的日志，撑爆了硬盘，彻底崩溃了。&lt;/p&gt;
+
+&lt;h1 id=&#34;相关文章&#34;&gt;相关文章&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/043&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The The Little Printf 第一章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/044&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The The Little Printf 第二章&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>The Little Printf (Chapter 2)</title>
@@ -81,6 +138,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/043&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The The Little Printf 第一章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/045&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The The Little Printf 第三章&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
@@ -149,6 +207,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/044&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The The Little Printf 第二章&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/045&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The The Little Printf 第三章&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
@@ -3507,136 +3566,6 @@ patch:
 &lt;p&gt;然后，&lt;strong&gt;部署&lt;/strong&gt; -&amp;gt; &lt;strong&gt;同步&lt;/strong&gt;，你的&lt;strong&gt;用户配置&lt;/strong&gt;、&lt;strong&gt;用户词库&lt;/strong&gt; 等都会被放在你配置的同步文件地址里。&lt;/p&gt;
 
 &lt;p&gt;如果你换了新的电脑，只需要将同步文件拷贝过去，然后配置一下 &lt;code&gt;installation.yaml&lt;/code&gt; 文件，执行 &lt;strong&gt;部署&lt;/strong&gt; -&amp;gt; &lt;strong&gt;同步&lt;/strong&gt; -&amp;gt; &lt;strong&gt;部署&lt;/strong&gt; ，你的 &lt;strong&gt;用户配置&lt;/strong&gt;、&lt;strong&gt;用户词库&lt;/strong&gt; 都回来了。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>subliminal | 电影字幕下载神器</title>
-      <link>https://mogeko.github.io/2018/030/</link>
-      <pubDate>Wed, 21 Nov 2018 09:39:26 +0800</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/030/</guid>
-      <description>
-
-&lt;!-- 
-&lt;img alt=&#34;&#34; src=&#34;&#34; &gt;
-&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
-&lt;br&gt;
- --&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/Diaoul/subliminal&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;subliminal&lt;/strong&gt;&lt;/a&gt; 是一个基于 Python 的强大的命令行字幕搜索和下载工具。&lt;/p&gt;
-
-&lt;p&gt;最先知道 &lt;strong&gt;subliminal&lt;/strong&gt; 是因为 &lt;strong&gt;MPV&lt;/strong&gt; 播放器。配合插件 &lt;a href=&#34;https://github.com/directorscut82/find_subtitles/blob/master/find_subtitles.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;find_subtitles.lua&lt;/strong&gt;&lt;/a&gt; 使用，在载入视频的同时搜索并下载中文字幕，简直天衣无缝。不过有的视频的文件名不是那么标准的话，就不一定能匹配得到合适的字幕。解决方法除了改文件名以外，还可以用  &lt;strong&gt;subliminal&lt;/strong&gt; 手动搜索。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;subliminal&lt;/strong&gt; 使用多个字幕网站做为数据源，包括世界上最大的开放式字幕库 &lt;a href=&#34;http://opus.nlpl.eu/OpenSubtitles.php&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;opensubtitles&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&#34;spoiler&#34; &gt;不幸的是，有几个字幕站被墙了，比如 &lt;strong&gt;podnapisi&lt;/strong&gt;, &lt;strong&gt;legendastv&lt;/strong&gt;, &lt;strong&gt;shooter&lt;/strong&gt;…&lt;/span&gt;&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHub 地址：&lt;a href=&#34;https://github.com/Diaoul/subliminal&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/Diaoul/subliminal&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;subliminal&#34; src=&#34;https://mogeko.github.io/images/030/subliminal.png&#34; &gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;依赖&#34;&gt;依赖&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;python2&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
-
-&lt;p&gt;首先安装 &lt;code&gt;python2&lt;/code&gt; 和 &lt;code&gt;pip&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;然后在终端中输入：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;pip install subliminal
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;使用&#34;&gt;使用&lt;/h1&gt;
-
-&lt;p&gt;在终端中输入：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;subliminal download -l zh [电影名称]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;例如，如果要下载「低俗小说」的字幕：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;subliminal download -l zh Pulp.Fiction.1994.720p.BluRay.DTS.x264-ESiR
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img alt=&#34;return&#34; src=&#34;https://mogeko.github.io/images/030/return.png&#34; &gt;&lt;/p&gt;
-
-&lt;p&gt;部分字幕文件：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-txt&#34;&gt;2
-00:00:14,480 --&amp;gt; 00:00:18,850
-柔軟潮濕的物體
-
-3
-00:00:18,980 --&amp;gt; 00:00:24,610
-低級趣味、印刷簡陋的書刊
-
-4
-00:00:27,620 --&amp;gt; 00:00:31,590
-算了  太冒險了  我不幹
-
-5
-00:00:31,590 --&amp;gt; 00:00:34,080
-你每次都這樣說
-
-6
-00:00:34,460 --&amp;gt; 00:00:36,890
-太危險了…我不幹了…
-
-7
-00:00:37,060 --&amp;gt; 00:00:39,530
-我哪一次說錯?
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;居然是繁体，不过我一般遇到的都是简体中文的，而且繁体也不是不能看🤔&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;命令中的 &lt;code&gt;-l&lt;/code&gt; 指定下载的字幕语言，例如要下载英语字幕：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;subliminal download -l cn Pulp.Fiction.1994.720p.BluRay.DTS.x264-ESiR
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;脚本&#34;&gt;脚本&lt;/h1&gt;
-
-&lt;p&gt;除了手动输入命令行外，还可以使用脚本 Python 脚本。例如下面这个脚本就可以自动下载目录中视频文件对应的字幕：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from datetime import timedelta
- 
-from babelfish import Language
-from subliminal import download_best_subtitles, region, save_subtitles, scan_videos
- 
-# configure the cache
-region.configure(&#39;dogpile.cache.dbm&#39;, arguments={&#39;filename&#39;: &#39;cachefile.dbm&#39;})
- 
-# scan for videos newer than 2 weeks and their existing subtitles in a folder
-videos = scan_videos(&#39;/video/folder&#39;, age=timedelta(weeks=2))
- 
-# download best subtitles
-subtitles = download_best_subtitles(videos, {Language(&#39;eng&#39;), Language(&#39;fra&#39;)})
- 
-# save them to disk, next to the video
-for v in videos:
-    save_subtitles(v, subtitles[v])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;还有配合 &lt;strong&gt;MPV&lt;/strong&gt; / &lt;strong&gt;GNOME MPV&lt;/strong&gt; 播放器使用的脚本：&lt;a href=&#34;https://github.com/directorscut82/find_subtitles/blob/master/find_subtitles.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;find_subtitles.lua&lt;/strong&gt;&lt;/a&gt;&amp;emsp;&amp;emsp;&lt;a href=&#34;https://mogeko.github.io/images/029&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;关于 GNOME MPV 播放器&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;需要注意的是 &lt;strong&gt;find_subtitles.lua 默认下载的是英文字幕，下载中午字幕需要在脚本中将 38 行的 &lt;code&gt;en&lt;/code&gt; 替换换成 &lt;code&gt;zh&lt;/code&gt;&lt;/strong&gt;。如果你觉得麻烦的话，可以使用我&lt;a href=&#34;https://github.com/Mogeko/Blog/releases/download/029/find_subtitles.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;修改过的版本&lt;/a&gt;。&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 

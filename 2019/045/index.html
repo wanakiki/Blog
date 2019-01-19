@@ -9,9 +9,9 @@
   <meta name="description" content="Mogeko 的个人博客">
   <meta name="keywords" content="blog, KMS, Hugo, GNU/Linux, Linux, Ubuntu, Rusty Lake: Roots, Hollow Knight, 空洞骑士">
   
-  <link rel="prev" href="https://mogeko.github.io/2019/043/" />
-  <link rel="next" href="https://mogeko.github.io/2019/045/" />
-  <link rel="canonical" href="https://mogeko.github.io/2019/044/" />
+  <link rel="prev" href="https://mogeko.github.io/2019/044/" />
+  
+  <link rel="canonical" href="https://mogeko.github.io/2019/045/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           The Little Printf (Chapter 2) | Mogeko`s Blog
+           The Little Printf (Chapter 3) | Mogeko`s Blog
        
   </title>
-  <meta name="title" content="The Little Printf (Chapter 2) | Mogeko`s Blog">
+  <meta name="title" content="The Little Printf (Chapter 3) | Mogeko`s Blog">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,8 +44,8 @@
          "@id": "https://mogeko.github.io"
     },
     "articleSection" : "posts",
-    "name" : "The Little Printf (Chapter 2)",
-    "headline" : "The Little Printf (Chapter 2)",
+    "name" : "The Little Printf (Chapter 3)",
+    "headline" : "The Little Printf (Chapter 3)",
     "description" : "&emsp;&emsp; -- 原文地址 (英文): The Little Printf 本文是原作者 Fred Hebert 模仿《小王子》的笔法写的一篇演讲稿，同时也是一篇不错的小故事。主要探讨了一个既简单又复杂的问题：",
     "inLanguage" : "zh-cn",
     "author" : "Mogeko",
@@ -54,10 +54,10 @@
     "accountablePerson" : "Mogeko",
     "copyrightHolder" : "Mogeko",
     "copyrightYear" : "2019",
-    "datePublished": "2019-01-19 23:57:31 &#43;0800 &#43;0800",
-    "dateModified" : "2019-01-19 23:57:31 &#43;0800 &#43;0800",
-    "url" : "https://mogeko.github.io/2019/044/",
-    "wordCount" : "772",
+    "datePublished": "2019-01-20 01:23:31 &#43;0800 &#43;0800",
+    "dateModified" : "2019-01-20 01:23:31 &#43;0800 &#43;0800",
+    "url" : "https://mogeko.github.io/2019/045/",
+    "wordCount" : "587",
     "keywords" : [ "翻译","编程之髓","The Little Printf", "Mogeko`s Blog"]
 }
 </script>
@@ -130,11 +130,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">The Little Printf (Chapter 2)</h1>
+        <h1 class="post-title" itemprop="name headline">The Little Printf (Chapter 3)</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://mogeko.github.io" rel="author">Mogeko</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2019-01-19 itemprop="datePublished">January 19, 2019</time>
+                on <time datetime=2019-01-20 itemprop="datePublished">January 20, 2019</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
@@ -142,7 +142,7 @@
                         <a href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/"> 关于编程 </a>
                         
                 </span>
-                <span class="post-word-count">, 772 words</span>
+                <span class="post-word-count">, 587 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -177,57 +177,33 @@
 
 <p><img alt="Cover" src="https://mogeko.github.io/images/043/printf.png" ></p>
 
-<h1 id="第二章">第二章</h1>
+<h1 id="第三章">第三章</h1>
 
-<p>我忙于到世界各地去演讲，告诉人们如何做那些“我从没做过的事情”。而每个人似乎都相信我是一个真正的程序员，因为我讲的事情大多与程序无关。</p>
+<p>我很快了解到了这个小家伙的编程水平。在他的代码仓库里只有一些简单的小程序、网站的小 demo、简单的命令行工具。都是些简单的小把戏。</p>
 
-<p>一天，从会议回家的路上，我因为飞机晚点被困在了候机室。我愤怒的敲击着键盘，一个温柔的声音问我：</p>
+<p>然后他开始去做一些使用多个模块的大型程序。这个程序需要处理 <code>socket</code>、读写磁盘、用到数据库。当它第一次跑起来的时候，小 Printf 十分兴奋。但是，这个程序称之为好还为时尚早了点。</p>
 
-<p>“如果你愿意，可以请你给我设计一个系统吗？”</p>
+<p>这个程序需要重构、更好的测试、文档、Linting (代码静态检测)、分析。这个程序跑了一段时间，最终还是崩了。</p>
 
-<p>“什么？”</p>
+<p>然后一次有一次的崩溃！</p>
 
-<p>“给我设计一个系统！”</p>
+<p>配置错误，日志不工作，磁盘读写不稳定，网络卡顿，有 bug，编码混乱，数据库里有脏数据，证书过期，没有异常处理等等原因导致问题找不到根源。</p>
 
-<p>我对这一请求感到惊讶。我抬起头，看到一个渴望成为程序猿的孩子。他自称 “printf”。我觉得这个名字很傻。他大概长这样：</p>
+<p><img alt="spaghetti" src="https://mogeko.github.io/images/044/spaghetti.png" ></p>
 
-<p><img alt="Printf" src="https://mogeko.github.io/images/044/printf-nocover.png" ></p>
+<p>简直像面条一样一团糟。</p>
 
-<p>“我还不是很了解电脑，但你看起来像是这方面的专家。我想写一个 Blog 程序，让人们可以使用和访问它。请你帮我设计一个系统！”</p>
+<p>小 Printf 跟我说：“我简直是一无所知！我应该根据我的需求去判断。我写了一个花哨但难以伺候的系统，后来我花在修复 bug 上的时间和精力比它带给我的好处完全不成正比。不过，我确实学到了不少东西。”</p>
 
-<p>这是个令人惊讶的请求，而且我已经二十多个小时没有合眼了，我不太确定有没有完全 get 到他的意思。我告诉他设计系统很难。我不知道他的需求是什么：需要供多少人使用？在哪里部署？我无法根据他提供的如此少的信息设计一个合适的系统。</p>
+<p>一天早上，他决定离开这里。“再见”，他跟我做最后的道别。他想去看看外面的世界，看看别的程序猿写的程序。</p>
 
-<p>“没关系，给我设计一个系统吧。”</p>
-
-<p>所以我画了一张架构图：</p>
-
-<p><img alt="Architecture" src="https://mogeko.github.io/images/044/arch1.png" ></p>
-
-<p>他看了后说：“不，它还不够好。请再给我设计一个别的。”</p>
-
-<p>于是我画了这个：</p>
-
-<p><img alt="Architecture" src="https://mogeko.github.io/images/044/arch2.png" ></p>
-
-<p>然后我给他讲了这个系统的工作原理。</p>
-
-<p>我的新朋友礼貌的笑了笑。“这不是我想要的系统，它太复杂了，有很多我不需要的东西。”</p>
-
-<p>我感到有点不爽，我的设计中考虑到了冗余、监控、备份、缓存、负载、故障转移、部署简单等等。我的工作都可以收取一笔可观的咨询费了！我已经失去耐心了，所以我画了这个：</p>
-
-<p><img alt="Blackbox" src="https://mogeko.github.io/images/044/blackbox.png" ></p>
-
-<p>我告诉他：“这是你要的系统，在这个黑盒子里面。”我希望这个敷衍的答案能够让他离开。但我很惊讶的听到：</p>
-
-<p>“这就是我想要的！”</p>
-
-<p>这就是我与小 Printf 的第一次相遇。</p>
+<p>小 Printf 写的程序，最后因为不断增加的日志，撑爆了硬盘，彻底崩溃了。</p>
 
 <h1 id="相关文章">相关文章</h1>
 
 <ul>
 <li><a href="https://mogeko.github.io/2019/043" rel="nofollow noreferrer" target="_blank">The The Little Printf 第一章</a></li>
-<li><a href="https://mogeko.github.io/2019/045" rel="nofollow noreferrer" target="_blank">The The Little Printf 第三章</a></li>
+<li><a href="https://mogeko.github.io/2019/044" rel="nofollow noreferrer" target="_blank">The The Little Printf 第二章</a></li>
 </ul>
 
 <p><br></p>
@@ -247,7 +223,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://mogeko.github.io/2019/044/>https://mogeko.github.io/2019/044/</span>
+                    <a href=https://mogeko.github.io/2019/045/>https://mogeko.github.io/2019/045/</span>
             </p>
             
              
@@ -282,10 +258,8 @@
 
     <div class="post-nav">
         
-        <a href="https://mogeko.github.io/2019/043/" class="prev" rel="prev" title="The Little Printf (Chapter 1)"><i class="iconfont icon-left"></i>&nbsp;The Little Printf (Chapter 1)</a>
+        <a href="https://mogeko.github.io/2019/044/" class="prev" rel="prev" title="The Little Printf (Chapter 2)"><i class="iconfont icon-left"></i>&nbsp;The Little Printf (Chapter 2)</a>
          
-        
-        <a href="https://mogeko.github.io/2019/045/" class="next" rel="next" title="The Little Printf (Chapter 3)">The Little Printf (Chapter 3)&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

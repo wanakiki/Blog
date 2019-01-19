@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 19 Jan 2019 23:57:31 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Jan 2019 01:23:31 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Little Printf (Chapter 3)</title>
+      <link>https://mogeko.github.io/2019/045/</link>
+      <pubDate>Sun, 20 Jan 2019 01:23:31 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2019/045/</guid>
+      <description>&amp;emsp;&amp;emsp; -- 原文地址 (英文): The Little Printf 本文是原作者 Fred Hebert 模仿《小王子》的笔法写的一篇演讲稿，同时也是一篇不错的小故事。主要探讨了一个既简单又复杂的问题：</description>
+    </item>
     
     <item>
       <title>The Little Printf (Chapter 2)</title>
