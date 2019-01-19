@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>翻译 on Mogeko`s Blog</title>
-    <link>https://mogeko.github.io/tags/%E7%BF%BB%E8%AF%91/</link>
-    <description>Recent content in 翻译 on Mogeko`s Blog</description>
+    <title>The Little Printf on Mogeko`s Blog</title>
+    <link>https://mogeko.github.io/tags/the-little-printf/</link>
+    <description>Recent content in The Little Printf on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 19 Jan 2019 18:28:13 +0800</lastBuildDate>
     
-	<atom:link href="https://mogeko.github.io/tags/%E7%BF%BB%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mogeko.github.io/tags/the-little-printf/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://mogeko.github.io/2019/043/</guid>
       <description>&amp;emsp;&amp;emsp; -- 原文地址 (英文): The Little Printf 本文是原作者 Fred Hebert 模仿《小王子》的笔法写的一篇演讲稿，同时也是一篇不错的小故事。主要探讨了一个既简单又复杂的问题：</description>
-    </item>
-    
-    <item>
-      <title>学会将代码写简单</title>
-      <link>https://mogeko.github.io/2018/034/</link>
-      <pubDate>Thu, 22 Nov 2018 19:46:55 +0800</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/034/</guid>
-      <description>&amp;emsp;&amp;emsp; -- 为开源项目作出贡献的最佳方式是使它的代码得以精简。我们应当努力编写即使没有注释也能使新手程序员轻松理解的代码，让维护者无需花费太多精力也</description>
     </item>
     
   </channel>

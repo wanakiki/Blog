@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Mogeko">
+  <meta name="description" content="Mogeko 的个人博客">
+  <meta name="keywords" content="blog, KMS, Hugo, GNU/Linux, Linux, Ubuntu, Rusty Lake: Roots, Hollow Knight, 空洞骑士">
+  
+  <link rel="prev" href="https://mogeko.github.io/2019/042/" />
+  
+  <link rel="canonical" href="https://mogeko.github.io/2019/043/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           The Little Printf (Chapter 1) | Mogeko`s Blog
+       
+  </title>
+  <meta name="title" content="The Little Printf (Chapter 1) | Mogeko`s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://mogeko.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "The Little Printf (Chapter 1)",
+    "headline" : "The Little Printf (Chapter 1)",
+    "description" : "&emsp;&emsp; -- 原文地址 (英文): The Little Printf 本文是原作者 Fred Hebert 模仿《小王子》的笔法写的一篇演讲稿，同时也是一篇不错的小故事。主要探讨了一个既简单又复杂的问题：",
+    "inLanguage" : "zh-cn",
+    "author" : "Mogeko",
+    "creator" : "Mogeko",
+    "publisher": "Mogeko",
+    "accountablePerson" : "Mogeko",
+    "copyrightHolder" : "Mogeko",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-01-19 18:28:13 &#43;0800 &#43;0800",
+    "dateModified" : "2019-01-19 18:28:13 &#43;0800 &#43;0800",
+    "url" : "https://mogeko.github.io/2019/043/",
+    "wordCount" : "1090",
+    "keywords" : [ "翻译","编程之髓","The Little Printf", "Mogeko`s Blog"]
+}
+</script>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104502658-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-104502658-2');
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.github.io">Mogeko`s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.github.io">Mogeko`s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">The Little Printf (Chapter 1)</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://mogeko.github.io" rel="author">Mogeko</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-01-19 itemprop="datePublished">January 19, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/"> 关于编程 </a>
+                        
+                </span>
+                <span class="post-word-count">, 1090 words</span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<!-- 
+<img alt="" src="https://mogeko.github.io/images/043/" >
+<span class="spoiler" ></span>
+&emsp;&emsp;
+ -->
+
+<p>原文地址 (英文): <a href="https://ferd.ca/the-little-printf.html" rel="nofollow noreferrer" target="_blank">The Little Printf</a></p>
+
+<p>本文是原作者 <a href="http://twitter.com/mononcqc/" rel="nofollow noreferrer" target="_blank">Fred Hebert</a> 模仿《小王子》的笔法写的一篇演讲稿，同时也是一篇不错的小故事。主要探讨了一个既简单又复杂的问题：<strong>什么才是真正的程序员？</strong></p>
+
+<p>慢慢看下去，定会受益良多！</p>
+
+<p><img alt="Cover" src="https://mogeko.github.io/images/043/printf.png" ></p>
+
+<h1 id="第一章">第一章</h1>
+
+<p>我很幸运能够出生在一个计算机和游戏还没有普及的年代。我很幸运能有机会与朋友和兄弟在户外玩耍，同时发明一些属于我们的游戏。</p>
+
+<p>我们都是自己的英雄，用一根树枝做成弓箭、枪、剑甚至是望远镜。树枝可以做成任何东西，除了回旋镖。因为你一旦把它扔出去，你需要自己捡回来。</p>
+
+<p>突然，我们长大了，上面的游戏变得很幼稚。当周围的人开始以成熟为荣时，你不能再把松果当成手榴弹扔出去，也不能假装自己会魔法。你最终会在压力中长大。不过总的来说是一个非常幸福的童年。</p>
+
+<p>一次偶然的机会，我接触到了计算机和电子游戏。这可能是你曾经想象中的某一个虚拟的世界。你花时间玩游戏，寻求着与现实生活不一样的体验。</p>
+
+<p>但大多数游戏都有一个共同点：你不能创造，你只能花费时间玩已经设定好的程序。我在十多岁时参加过“即兴表演”。在那里我可以与人合作并发挥我的创造力。</p>
+
+<p><img alt="improvisational" src="https://mogeko.github.io/images/043/improv.png" ></p>
+
+<p>当然，魁北克的即兴表演舞台是不同的；这里是一个溜冰场。</p>
+
+<p>我在大学学习的专业是“多媒体”，但最终我却从事了与编程相关的工作。编程真 TM 的 AMAZING！我可以发挥我的创造力，还能赚钱！之后我做了我的第一个游戏：</p>
+
+<p><img alt="game" src="https://mogeko.github.io/images/043/game.png" ></p>
+
+<p>“这不是一个真正的视频游戏。”，我被告知。“那只是一个HTML表单。您使用数组作为文本和选项会更好。而且代码需要简化。”</p>
+
+<p>这些评价让我有点沮丧；但这游戏确实只是 11 页文档而已。我意识到如果我想创造更多被人认可的东西，我必须要学习更多的知识。</p>
+
+<p>我必须要学习“真正的编程”。我从 GUI 工具包中的 JavaScript 开始，慢慢学习更多的语言，比如 PHP。但这一切不是很顺利。其他人建议我尝试一下 Python，然后我学会了。</p>
+
+<p>但 Python 中的一些比较高级的特性：<code>lambdas</code> 和 面向对象编程 等我都看得云里雾里。后来别人建议我去读一下《计算机程序的构造和解释》(SICP)，因为它是编程的基础入门圣经</p>
+
+<p><img alt="SICP" src="https://mogeko.github.io/images/043/SICP.png" ></p>
+
+<p>就这样，我知道了 Scheme。后来我通过 K&amp;R 的书学习了 C 语言，因为真正的程序猿都会写 C 语言，我在当地的大学注册了兼职课程，因为真正的程序猿都知道数学和数据结构，虽然我只学到了一点皮毛。我开始阅读技术类文章和论文，因为真正的程序设计方面的知识更新得很快。</p>
+
+<p>经过一段时间，我学会了 Erlang，并以此开始了我的职业生涯。分奇怪的是：我这个没有用 Erlang 做过任何生产级别的开发的人，却得到了一份教 Erlang 的工作。</p>
+
+<p><br></p>
+
+<hr />
+
+<p><br></p>
+
+<p>译者：<a href="https://mogeko.github.io/about/" rel="nofollow noreferrer" target="_blank">Mogeko</a></p>
+
+<p>原文作者：<a href="http://twitter.com/mononcqc/" rel="nofollow noreferrer" target="_blank">Fred Hebert</a></p>
+
+<p>原文地址：<a href="https://ferd.ca/the-little-printf.html" rel="nofollow noreferrer" target="_blank">https://ferd.ca/the-little-printf.html</a></p>
+
+<p><br></p>
+
+<p><center>  ·End·  </center></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Mogeko </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://mogeko.github.io/2019/043/>https://mogeko.github.io/2019/043/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://mogeko.github.io/tags/%E7%BF%BB%E8%AF%91/">
+                    #翻译</a></span>
+            
+            <span class="tag"><a href="https://mogeko.github.io/tags/%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%AB%93/">
+                    #编程之髓</a></span>
+            
+            <span class="tag"><a href="https://mogeko.github.io/tags/the-little-printf/">
+                    #The Little Printf</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://mogeko.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://mogeko.github.io/2019/042/" class="prev" rel="prev" title="Rust 中的所有权"><i class="iconfont icon-left"></i>&nbsp;Rust 中的所有权</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '936cecdd2ab935870ca5',
+        clientSecret: '39cfc7a3cb9a974b6609f3fdaa637e2917e3e40a',
+        repo: 'Blog',
+        owner: 'Mogeko',
+        admin: ['Mogeko'],
+        id: location.pathname, 
+        distractionFreeMode: false 
+    });
+    (function () {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+            return;
+        }
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2017 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://mogeko.github.io">Mogeko</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

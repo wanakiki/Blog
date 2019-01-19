@@ -6,8 +6,82 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 16 Jan 2019 18:57:36 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 19 Jan 2019 18:28:13 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Little Printf (Chapter 1)</title>
+      <link>https://mogeko.github.io/2019/043/</link>
+      <pubDate>Sat, 19 Jan 2019 18:28:13 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2019/043/</guid>
+      <description>
+
+&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/043/&#34; &gt;
+&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;p&gt;原文地址 (英文): &lt;a href=&#34;https://ferd.ca/the-little-printf.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Little Printf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本文是原作者 &lt;a href=&#34;http://twitter.com/mononcqc/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Fred Hebert&lt;/a&gt; 模仿《小王子》的笔法写的一篇演讲稿，同时也是一篇不错的小故事。主要探讨了一个既简单又复杂的问题：&lt;strong&gt;什么才是真正的程序员？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;慢慢看下去，定会受益良多！&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Cover&#34; src=&#34;https://mogeko.github.io/images/043/printf.png&#34; &gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;第一章&#34;&gt;第一章&lt;/h1&gt;
+
+&lt;p&gt;我很幸运能够出生在一个计算机和游戏还没有普及的年代。我很幸运能有机会与朋友和兄弟在户外玩耍，同时发明一些属于我们的游戏。&lt;/p&gt;
+
+&lt;p&gt;我们都是自己的英雄，用一根树枝做成弓箭、枪、剑甚至是望远镜。树枝可以做成任何东西，除了回旋镖。因为你一旦把它扔出去，你需要自己捡回来。&lt;/p&gt;
+
+&lt;p&gt;突然，我们长大了，上面的游戏变得很幼稚。当周围的人开始以成熟为荣时，你不能再把松果当成手榴弹扔出去，也不能假装自己会魔法。你最终会在压力中长大。不过总的来说是一个非常幸福的童年。&lt;/p&gt;
+
+&lt;p&gt;一次偶然的机会，我接触到了计算机和电子游戏。这可能是你曾经想象中的某一个虚拟的世界。你花时间玩游戏，寻求着与现实生活不一样的体验。&lt;/p&gt;
+
+&lt;p&gt;但大多数游戏都有一个共同点：你不能创造，你只能花费时间玩已经设定好的程序。我在十多岁时参加过“即兴表演”。在那里我可以与人合作并发挥我的创造力。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;improvisational&#34; src=&#34;https://mogeko.github.io/images/043/improv.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;当然，魁北克的即兴表演舞台是不同的；这里是一个溜冰场。&lt;/p&gt;
+
+&lt;p&gt;我在大学学习的专业是“多媒体”，但最终我却从事了与编程相关的工作。编程真 TM 的 AMAZING！我可以发挥我的创造力，还能赚钱！之后我做了我的第一个游戏：&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;game&#34; src=&#34;https://mogeko.github.io/images/043/game.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;“这不是一个真正的视频游戏。”，我被告知。“那只是一个HTML表单。您使用数组作为文本和选项会更好。而且代码需要简化。”&lt;/p&gt;
+
+&lt;p&gt;这些评价让我有点沮丧；但这游戏确实只是 11 页文档而已。我意识到如果我想创造更多被人认可的东西，我必须要学习更多的知识。&lt;/p&gt;
+
+&lt;p&gt;我必须要学习“真正的编程”。我从 GUI 工具包中的 JavaScript 开始，慢慢学习更多的语言，比如 PHP。但这一切不是很顺利。其他人建议我尝试一下 Python，然后我学会了。&lt;/p&gt;
+
+&lt;p&gt;但 Python 中的一些比较高级的特性：&lt;code&gt;lambdas&lt;/code&gt; 和 面向对象编程 等我都看得云里雾里。后来别人建议我去读一下《计算机程序的构造和解释》(SICP)，因为它是编程的基础入门圣经&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;SICP&#34; src=&#34;https://mogeko.github.io/images/043/SICP.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;就这样，我知道了 Scheme。后来我通过 K&amp;amp;R 的书学习了 C 语言，因为真正的程序猿都会写 C 语言，我在当地的大学注册了兼职课程，因为真正的程序猿都知道数学和数据结构，虽然我只学到了一点皮毛。我开始阅读技术类文章和论文，因为真正的程序设计方面的知识更新得很快。&lt;/p&gt;
+
+&lt;p&gt;经过一段时间，我学会了 Erlang，并以此开始了我的职业生涯。分奇怪的是：我这个没有用 Erlang 做过任何生产级别的开发的人，却得到了一份教 Erlang 的工作。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;译者：&lt;a href=&#34;https://mogeko.github.io/about/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Mogeko&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;原文作者：&lt;a href=&#34;http://twitter.com/mononcqc/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Fred Hebert&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;原文地址：&lt;a href=&#34;https://ferd.ca/the-little-printf.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://ferd.ca/the-little-printf.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Rust 中的所有权</title>
@@ -3673,172 +3747,6 @@ MBTN_LEFT cycle pause
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/directorscut82/find_subtitles/blob/master/find_subtitles.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub 地址&lt;/a&gt;&amp;emsp;&amp;emsp;&lt;a href=&#34;https://github.com/Mogeko/Blog/releases/download/029/find_subtitles.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;下载地址 (我调整过的版本)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>使用 Travis CI 自动部署 Hugo 博客</title>
-      <link>https://mogeko.github.io/2018/028/</link>
-      <pubDate>Mon, 19 Nov 2018 11:28:18 +0800</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/028/</guid>
-      <description>
-
-&lt;p&gt;通过 Travis CI 来部署 Hugo 或者 Hexo 博客可能在配置的时候会麻烦一点，但配置好后确实是方便了不少。特别是对于 Hugo 这种没有部署插件的静态网站生成器，只能手动部署到 GitHub。&lt;/p&gt;
-
-&lt;p&gt;网上有很多关于用 Travis 自动部署 Hexo 的文章，却没看到几篇关于 Hugo，虽然原理都差不多，但细节上还是有很多容易让小白头疼的地方，所以今天我就来教教如何用 Travis 来自动部署 Hugo。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;h1 id=&#34;正文&#34;&gt;正文&lt;/h1&gt;
-
-&lt;p&gt;废话不多说，我们开始吧！&lt;/p&gt;
-
-&lt;h2 id=&#34;设置代码仓库&#34;&gt;设置代码仓库&lt;/h2&gt;
-
-&lt;p&gt;首先确保你的 GitHub 上有这两个仓库：&lt;strong&gt;用来部署博客的 &lt;code&gt;[用户名].github.io&lt;/code&gt;&lt;/strong&gt; 和 &lt;strong&gt;用来存放“源码”的 &lt;code&gt;Blog&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;这里与别的&lt;strong&gt;「使用 Travis 自动部署博客」&lt;/strong&gt;教程稍微有点不同，别人家大多上将博客的&lt;strong&gt;「源码」&lt;/strong&gt;放在 &lt;strong&gt;&lt;code&gt;[用户名].github.io&lt;/code&gt;&lt;/strong&gt; 的分支上，而不是向我一样开两个仓库&lt;/p&gt;
-
-&lt;p&gt;开两个仓库的好处有：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;结构更清晰。与博客相关的内容都在 &lt;strong&gt;&lt;code&gt;Blog&lt;/code&gt;&lt;/strong&gt;仓库里， &lt;strong&gt;&lt;code&gt;[用户名].github.io&lt;/code&gt;&lt;/strong&gt; 只用来提供一个 GitHub Pages 的服务&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;「源码」&lt;/strong&gt; 存放在 &lt;strong&gt;&lt;code&gt;master&lt;/code&gt;&lt;/strong&gt; 分支下，&lt;code&gt;clone&lt;/code&gt; 更快 &lt;span class=&#34;spoiler&#34; &gt;我不知道上我的原因还是 GitHub 或是 Git 的原因，我从 GitHub &lt;strong&gt;clone&lt;/strong&gt; 除 &lt;strong&gt;master&lt;/strong&gt; 分支以外的分支时，下载速度贼慢，只有几百 kb 每秒，&lt;strong&gt;clone&lt;/strong&gt; 一个 &lt;strong&gt;「源码」&lt;/strong&gt; 都至少要半个多小时&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;申请-token&#34;&gt;申请 Token&lt;/h2&gt;
-
-&lt;p&gt;然后要去 GitHub 上申请一个新的 &lt;a href=&#34;https://github.com/settings/tokens/new&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;personal access token&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Token description&lt;/strong&gt; 也就是 Token 的名字，可以随便填。然后&lt;strong&gt;一定要勾选上 &lt;code&gt;repo&lt;/code&gt; 上的所以项目，然后别的项目一个都不要选&lt;/strong&gt;。点 &lt;code&gt;Generate token&lt;/code&gt; 生成 Token。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/028/get_token.png&#34; alt=&#34;Get Token&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;然后记下 Token 的值，也就是我打码的那一部分 (一定要记下来，因为离开这个页面之后就没有机会再次查看了)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/028/get_token_api.png&#34; alt=&#34;Get Token&#34;&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;设置-travis-ci&#34;&gt;设置 Travis CI&lt;/h2&gt;
-
-&lt;p&gt;接着来到 &lt;a href=&#34;https://travis-ci.org/account/repositories&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Travis CI&lt;/a&gt;，使用 GitHub 帐号登录；然后为 &lt;strong&gt;&lt;code&gt;Blog&lt;/code&gt;&lt;/strong&gt; 仓库打上 ☑，然后点 &lt;code&gt;setting&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/028/set_travis_1.png&#34; alt=&#34;设置 Travis CI&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;然后填写 &lt;strong&gt;Environment Variables&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;Name&lt;/code&gt;&lt;/strong&gt; 填写： &lt;code&gt;GITHUB_TOKEN&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;Value&lt;/code&gt;&lt;/strong&gt; 填写：刚刚在 GitHub 申请到的 Token 的值&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/028/set_travis_2.png&#34; alt=&#34;设置 Travis CI&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;点击 &lt;code&gt;Add&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;编写-travis-yml&#34;&gt;编写 .travis.yml&lt;/h2&gt;
-
-&lt;p&gt;在 &lt;strong&gt;Blog&lt;/strong&gt; 的目录下创建并编辑一个 &lt;code&gt;.travis.yml&lt;/code&gt; 文件。这个文件的作用是告诉 &lt;strong&gt;Travis CI&lt;/strong&gt; 如何部署你的博客的&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;language: go
-
-go:
-  - &amp;quot;1.8&amp;quot;  # 指定Golang 1.8
-
-# Specify which branches to build using a safelist
-# 分支白名单限制：只有 master 分支的提交才会触发构建
-# branches:
-#   only:
-#     - master
-
-install:
-  # 安装最新的hugo
-  - wget https://github.com/gohugoio/hugo/releases/download/v0.51/hugo_0.51_Linux-64bit.deb
-  - sudo dpkg -i hugo*.deb
-  # 安装主题
-  - git clone [你使用的主题的 Git 地址]
-
-script:
-  # 运行hugo命令
-  - hugo
-
-after_script:
-  # 部署
-  - cd ./public
-  - git init
-  - git config user.name &amp;quot;[你的名字]&amp;quot;
-  - git config user.email &amp;quot;[你的邮箱]&amp;quot;
-  - git add .
-  - git commit -m &amp;quot;Update Blog By TravisCI With Build $TRAVIS_BUILD_NUMBER&amp;quot;
-  # Github Pages
-  - git push --force --quiet &amp;quot;https://$GITHUB_TOKEN@${GH_REF}&amp;quot; master:master
-  # Github Pages
-  - git push --quiet &amp;quot;https://$GITHUB_TOKEN@${GH_REF}&amp;quot; master:master --tags
-
-env:
- global:
-   # Github Pages
-   - GH_REF: [用来部署博客的 Git 地址]
-
-deploy:
-  provider: pages # 重要，指定这是一份github pages的部署配置
-  skip-cleanup: true # 重要，不能省略
-  local-dir: public # 静态站点文件所在目录
-  # target-branch: master # 要将静态站点文件发布到哪个分支
-  github-token: $GITHUB_TOKEN # 重要，$GITHUB_TOKEN是变量，需要在GitHub上申请、再到配置到Travis
-  # fqdn:  # 如果是自定义域名，此处要填
-  keep-history: true # 是否保持target-branch分支的提交记录
-  on:
-    branch: master # 博客源码的分支
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;将上面的配置文件按照你的实际情况更改。&lt;/p&gt;
-
-&lt;p&gt;然后将代码提交到 &lt;strong&gt;Blog 仓库&lt;/strong&gt; 里。等个一两分钟，就可以在 &lt;a href=&#34;https://travis-ci.org/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Travis CI&lt;/a&gt; 上查看部署情况了&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&#34;color:#00FF00&#34;&gt;绿色&lt;/span&gt; 代表部署成功&amp;emsp;&amp;emsp;&lt;span style=&#34;color:#FFFF00&#34;&gt;黄色&lt;/span&gt; 代表正在部署&amp;emsp;&amp;emsp;&lt;span style=&#34;color:#FF0000&#34;&gt;红色&lt;/span&gt; 代表部署失败&amp;emsp;&amp;emsp;&lt;span style=&#34;color:#C0C0C0&#34;&gt;灰色&lt;/span&gt; 代表部署被取消&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/028/run_travis.png&#34; alt=&#34;Travis CI 部署&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;然后再去你的博客，如果没有出什么偏差的话就说明部署成功了 | ・ω・’）&lt;/p&gt;
-
-&lt;p&gt;以后的话就只需要把写好的文章推送到 &lt;strong&gt;Blog 仓库&lt;/strong&gt; 下就可以了，就不需要再自己编译然后手动推送了 &lt;span class=&#34;spoiler&#34; &gt;甚至连 Hugo 都可以不要装  | ・ω・’）&lt;/span&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;附录-以及一些坑-з&#34;&gt;附录 以及一些坑 _(:з)∠)_&lt;/h1&gt;
-
-&lt;h2 id=&#34;添加-gitignore-文件&#34;&gt;添加 .gitignore 文件&lt;/h2&gt;
-
-&lt;p&gt;在 Hugo 本地编译时会产生 &lt;code&gt;public&lt;/code&gt; 文件夹，但是这个文件夹中的内容对于 &lt;strong&gt;Blog 仓库&lt;/strong&gt; 来说是不需要的 (包括用来存放主题的 &lt;code&gt;themes&lt;/code&gt; 文件夹和主题产生的 &lt;code&gt;resources&lt;/code&gt; 文件夹也是不需要的)&lt;/p&gt;
-
-&lt;p&gt;我们可以用一个&lt;code&gt;.gitignore&lt;/code&gt; 文件来排除这些内容&lt;/p&gt;
-
-&lt;p&gt;在 Blog 目录下创建并修改 &lt;code&gt;.gitignore&lt;/code&gt;，然后提交到 GitHub&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;public/*
-themes/*
-resources/*
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;travis-ci-的分支白名单&#34;&gt;Travis CI 的分支白名单&lt;/h2&gt;
-
-&lt;p&gt;我给你的 &lt;code&gt;.travis.yml&lt;/code&gt; 文件中有怎么一段&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Specify which branches to build using a safelist
-# 分支白名单限制：只有 master 分支的提交才会触发构建
-branches:
-  only:
-    - master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这一段的作用是限制触发构建的分支。这在正常开发中是很重要的配置，特别是在团队 (多人) 开发的场景中。&lt;/p&gt;
-
-&lt;p&gt;不过这里不存在这个场景，并且如果配置错了会出很大的问题，很容易坑到小白， &lt;span class=&#34;spoiler&#34; &gt;比如说我 _(:з)∠)_ &lt;/span&gt;所以默认就给注释掉了。&lt;/p&gt;
-
-&lt;p&gt;如果你晓得这是干啥的，并且觉得有必要的话，可以考虑开启&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
