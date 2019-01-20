@@ -223,7 +223,7 @@
 
 &lt;p&gt;”但是这样做又什么好处呢？“&lt;/p&gt;
 
-&lt;p&gt;”我想让他们知道他们很垃圾，但又不明确指出来他们哪里做的不对。这就显得我比较厉害。然而他们毫无头绪，不知道自己做错了什么。哇咔咔咔~~~“&lt;/p&gt;
+&lt;p&gt;”我想让他们知道他们很垃圾，但又不明确指出来他们哪里做的不对。这就显得我比较厉害。然而他们毫无头绪，不知道自己做错了什么。哇咔咔咔～～“&lt;/p&gt;
 
 &lt;p&gt;”那如果别人请教你问题，你又正好不知道呢？“&lt;/p&gt;
 
@@ -284,6 +284,50 @@
 &lt;p&gt;”是你自己把这一起搞砸的。这世界上有数百万个久经考验的程序，多年来它们一直在运行，它们也有 bug，也崩溃过。但人们还是在改进它们，使用它们。据我所知，很多程序本身是没有问题的。真正的问题出在计算机和椅子之间——糟糕的环境配置、错误的操作。你不认为这才是问题所在吗？“&lt;/p&gt;
 
 &lt;p&gt;那人听完哑口无言。&lt;/p&gt;
+
+&lt;h1 id=&#34;第七章&#34;&gt;第七章&lt;/h1&gt;
+
+&lt;p&gt;&lt;img alt=&#34;frameworks&#34; src=&#34;https://mogeko.github.io/images/043/frameworks.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;小 Printf 拜访的第四个工作区有一个男人，他的电脑被很多标签纸所覆盖，以至于看不出来电脑的品牌。&lt;/p&gt;
+
+&lt;p&gt;”motor-mvc, quadrangular JS, GoQuery, cometeor, some japanese soundy thing, &amp;hellip;“&lt;/p&gt;
+
+&lt;p&gt;”Hi“，小 Printf 打断了他的自言自语。”你在做什么？“&lt;/p&gt;
+
+&lt;p&gt;”alchemist, bongodb, mochascript, walktime.js, portasql, &amp;hellip;“，男人并没有理会 Printf 继续自顾自的念着什么。&lt;/p&gt;
+
+&lt;p&gt;”你在干什么？“小 Printf 提高音量又问了一次。&lt;/p&gt;
+
+&lt;p&gt;”哦，我正在尝试新的框架、工具、数据库还有编程语言。“&lt;/p&gt;
+
+&lt;p&gt;”哇！你接触的这样东西都好新鲜啊！有的我听都没听说过。“&lt;/p&gt;
+
+&lt;p&gt;”是的，这个行业的技术更新的速度非常快！“他看了眼手机，然后说到”看，&lt;em&gt;cardboard.io&lt;/em&gt; 框架又推出了3.5版本，它宣布不兼容3.4了。于此同时社区中已经有4个衍生版本了。我必须尝试所以的版本才能知道哪一个是最合适的！“&lt;/p&gt;
+
+&lt;p&gt;”但是你为什么要学会所有的版本呢？“&lt;/p&gt;
+
+&lt;p&gt;”我是最早的尝鲜者，如果你不保持更新技能树，还是用老掉牙的 COBOL 或者 MUMPS。你还想抓住成功的契机，抢占先机，占领下一个风口？“&lt;/p&gt;
+
+&lt;p&gt;”你成功预测过热门技术吗？“&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;是的！我发现 Rails 的时候它还很小，我学会 Node.js 的时候它还没有流行。我是 Redis、MongoDB 和 Riak 的内测用户。我是第一批试用 Vagrant 的用户，然后我转去使用 Docker，但是现在我全身心的关注 Unikernels…&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;“哇哦～你从这些前沿技术中学到了些什么？”&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;额，并没有。当 Rails 壮大的时候，我就去关注另外的新鲜东西了。同样的，其他的几门技术我也是这样的。我现在把希望寄托在 Unikernels 上。&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;“那么…”，小 Printf 沉默了一会儿。”你用这些框架解决了哪些问题？“&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;我每次都确保不使用不成熟的东西，不能用公司做赌注。这一点十分重要，因为如果你使用最新的技术，你就可能招不到人，而不关注新的技术，有可能脱离时代的步伐。所以我们鼓励学习新的技术。&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;”Interesting 🤔“ 小 Printf 说到。&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;在这个飞速发展的世界中，如果你想参加这场游戏，你需要有先进的技术。否则你就会被时代淘汰，没有人想被时代淘汰。&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;小 Printf 打断到：”不，我不是这个意思，“然后他补充说”我的意思是说好的工具是用来解决问题的。但对你来说工具却成了问题。“&lt;/p&gt;
+
+&lt;p&gt;听完这些话，哪个人呆住了，小 Printf 跳跃着离开了房间。&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
