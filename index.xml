@@ -790,7 +790,7 @@ fn calculate_length(s: &amp;amp;String) -&amp;gt; usize { // s 是对 String 的
 
 &lt;p&gt;上课时候摸鱼画的 |・ω・｀)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/040/INDIA.png&#34; alt=&#34;描边城市插画&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/040/INDIA.svg&#34; alt=&#34;描边城市插画&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;虽然画得很丑但还是恬不知耻的想把原图贴出来 (*/ω＼*)：&lt;a href=&#34;https://mogeko.github.io/images/040/INDIA.ai&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;INDIA.ai&lt;/a&gt;&lt;/p&gt;
 
