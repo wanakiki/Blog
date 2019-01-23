@@ -535,18 +535,6 @@
     </url>
   
     <url>
-      <loc>https://mogeko.github.io/tags/datebase/</loc>
-      
-      <lastmod>2018-12-22T23:30:01+08:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
       <loc>https://mogeko.github.io/tags/gnu-linux/</loc>
       
       <lastmod>2018-11-28T15:25:58+08:00</lastmod>
@@ -646,6 +634,18 @@
       <loc>https://mogeko.github.io/tags/rust/</loc>
       
       <lastmod>2019-01-23T12:50:59+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://mogeko.github.io/tags/sql/</loc>
+      
+      <lastmod>2018-12-22T23:30:01+08:00</lastmod>
       
       
       
