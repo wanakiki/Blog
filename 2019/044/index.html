@@ -57,7 +57,7 @@
     "datePublished": "2019-01-23 12:50:59 &#43;0800 &#43;0800",
     "dateModified" : "2019-01-23 12:50:59 &#43;0800 &#43;0800",
     "url" : "https://mogeko.github.io/2019/044/",
-    "wordCount" : "2308",
+    "wordCount" : "2313",
     "keywords" : [ "Rust", "Mogeko`s Blog"]
 }
 </script>
@@ -142,7 +142,7 @@
                         <a href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/"> 关于编程 </a>
                         
                 </span>
-                <span class="post-word-count">, 2308 words</span>
+                <span class="post-word-count">, 2313 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -280,7 +280,7 @@ fn main() {
 
 <p>代码中，我们使用 <code>File::open</code> 来读打开一个名为 <code>hello.txt</code> 的文件。函数 <code>File::open</code> 将会返回一个 <code>io::Result</code>。Rust 标准库中有很多叫做 <code>Result</code> 的类型，<code>io::Result</code> 是其中之一，并且 <code>io::Result</code> 的实例拥有 <code>unwrap</code> 方法和 <code>expect</code> 方法。 如果程序执行成功 <code>unwrap</code> 或 <code>expect</code> 方法会将正确的值取出来，如果出错就直接让程序挂掉。其中 <code>unwrap</code> 方法在挂掉时会打印出标准库内置的错误信息，而 <code>exprct</code> 则让我们可以自己定义一个字符串在程序挂掉时显示。</p>
 
-<p><code>expect</code> 并不是一个好的错误处理方式。 <strong><code>expect</code> 只会捕捉错误，然后终止程序，并没有真正的处理错误。</strong>所以 <code>expect</code> 一般只是用于原型设计。</p>
+<p><code>unwrap</code> /<code>expect</code> 并不是一个好的错误处理方式。 <strong><code>unwrap</code> 和 <code>expect</code> 只会捕捉错误，然后终止程序，并没有真正的处理错误。</strong>所以 <code>unwrap</code> 和 <code>expect</code> 一般只是用于原型设计。</p>
 
 <h3 id="match">match</h3>
 

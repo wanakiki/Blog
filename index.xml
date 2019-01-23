@@ -134,7 +134,7 @@ fn main() {
 
 &lt;p&gt;代码中，我们使用 &lt;code&gt;File::open&lt;/code&gt; 来读打开一个名为 &lt;code&gt;hello.txt&lt;/code&gt; 的文件。函数 &lt;code&gt;File::open&lt;/code&gt; 将会返回一个 &lt;code&gt;io::Result&lt;/code&gt;。Rust 标准库中有很多叫做 &lt;code&gt;Result&lt;/code&gt; 的类型，&lt;code&gt;io::Result&lt;/code&gt; 是其中之一，并且 &lt;code&gt;io::Result&lt;/code&gt; 的实例拥有 &lt;code&gt;unwrap&lt;/code&gt; 方法和 &lt;code&gt;expect&lt;/code&gt; 方法。 如果程序执行成功 &lt;code&gt;unwrap&lt;/code&gt; 或 &lt;code&gt;expect&lt;/code&gt; 方法会将正确的值取出来，如果出错就直接让程序挂掉。其中 &lt;code&gt;unwrap&lt;/code&gt; 方法在挂掉时会打印出标准库内置的错误信息，而 &lt;code&gt;exprct&lt;/code&gt; 则让我们可以自己定义一个字符串在程序挂掉时显示。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;expect&lt;/code&gt; 并不是一个好的错误处理方式。 &lt;strong&gt;&lt;code&gt;expect&lt;/code&gt; 只会捕捉错误，然后终止程序，并没有真正的处理错误。&lt;/strong&gt;所以 &lt;code&gt;expect&lt;/code&gt; 一般只是用于原型设计。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;unwrap&lt;/code&gt; /&lt;code&gt;expect&lt;/code&gt; 并不是一个好的错误处理方式。 &lt;strong&gt;&lt;code&gt;unwrap&lt;/code&gt; 和 &lt;code&gt;expect&lt;/code&gt; 只会捕捉错误，然后终止程序，并没有真正的处理错误。&lt;/strong&gt;所以 &lt;code&gt;unwrap&lt;/code&gt; 和 &lt;code&gt;expect&lt;/code&gt; 一般只是用于原型设计。&lt;/p&gt;
 
 &lt;h3 id=&#34;match&#34;&gt;match&lt;/h3&gt;
 
