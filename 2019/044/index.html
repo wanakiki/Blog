@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Mogeko">
+  <meta name="description" content="Mogeko 的个人博客">
+  <meta name="keywords" content="blog, KMS, Hugo, GNU/Linux, Linux, Ubuntu, Rusty Lake: Roots, Hollow Knight, 空洞骑士">
+  
+  <link rel="prev" href="https://mogeko.github.io/2019/043/" />
+  
+  <link rel="canonical" href="https://mogeko.github.io/2019/044/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Rust 中的错误处理 | Mogeko`s Blog
+       
+  </title>
+  <meta name="title" content="Rust 中的错误处理 | Mogeko`s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://mogeko.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Rust 中的错误处理",
+    "headline" : "Rust 中的错误处理",
+    "description" : "&emsp;&emsp; -- 异常/错误处理 1 被称作是“第四流程控制语句”，在现代程序设计中发挥着越来越重要的作用。一般的语言喜欢使用 try...catch... 语句捕捉异常，这样做看似很符合",
+    "inLanguage" : "zh-cn",
+    "author" : "Mogeko",
+    "creator" : "Mogeko",
+    "publisher": "Mogeko",
+    "accountablePerson" : "Mogeko",
+    "copyrightHolder" : "Mogeko",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-01-23 12:50:59 &#43;0800 &#43;0800",
+    "dateModified" : "2019-01-23 12:50:59 &#43;0800 &#43;0800",
+    "url" : "https://mogeko.github.io/2019/044/",
+    "wordCount" : "2308",
+    "keywords" : [ "Rust", "Mogeko`s Blog"]
+}
+</script>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104502658-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-104502658-2');
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.github.io">Mogeko`s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.github.io">Mogeko`s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Rust 中的错误处理</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://mogeko.github.io" rel="author">Mogeko</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-01-23 itemprop="datePublished">January 23, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/"> 关于编程 </a>
+                        
+                </span>
+                <span class="post-word-count">, 2308 words</span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<!-- 
+<img alt="" src="https://mogeko.github.io/images/044/" >
+<span class="spoiler" ></span>
+&emsp;&emsp;
+ -->
+
+<p>异常/错误处理 <a href="#sup1"><sup>1</sup></a> 被称作是<strong>“第四流程控制语句”</strong>，在现代程序设计中发挥着越来越重要的作用。一般的语言喜欢使用 <code>try...catch...</code> 语句捕捉异常，这样做看似很符合逻辑，却很难将代码写得优雅：如果在异常抛出处处理，容易破坏业务逻辑的完整性，不优雅；如果将所有的异常放在一起统一处理，又容易出现忘记处理的情况。所以如何处理异常，何时处理异常是一件非常考验程序员经验的事情。但 Rust 就不同了。</p>
+
+<p>Rust 中的错误处理方式是我见过最优雅的。Rust 中并没有异常，而主要是使用一种名为 <code>Result</code> (实际上是一种枚举) 的概念处理错误。它的好处就在于不会影响业务逻辑，因为它本身就是业务逻辑的一部分！</p>
+
+<p>Rust 中，有两种错误：</p>
+
+<ul>
+<li><strong>可恢复错误</strong> (<em>recoverable</em>)</li>
+<li><strong>不可恢复错误</strong> (<em>unrecoverable</em>)</li>
+</ul>
+
+<p>大部分语言不区分这两类错误，并使用相似的逻辑处理他们。Rust 使用 <code>Result</code> 和 <code>panic!</code> 处理可恢复错误，在遇到不可恢复错误时停止程序执行。先来解释一下 <code>panic!</code>。</p>
+
+<p><i id="sup1" style="color: #989898"><sup>1</sup> <strong>异常</strong>和<strong>错误</strong>是有区别的，这里只比较他们的相似性，不多做区分。</i></p>
+
+<h1 id="panic">panic!</h1>
+
+<p><code>panic!</code> 处理错误时会采用<strong>展开</strong> (unwinding) 和<strong>终止</strong> (abort) 两种策略处理栈上的数据。</p>
+
+<p><img alt="Rust 中的错误类型" src="https://mogeko.github.io/images/044/type_0f_wrong.png" ></p>
+
+<p>展开的意思就是说 Rust 会回溯栈并一层一层的清理它遇到的每一个函数的数据，就像这样：</p>
+
+<pre><code class="language-shell">    Finished dev [unoptimized + debuginfo] target(s) in 0.0 secs
+     Running `target/debug/panic`
+thread 'main' panicked at 'index out of bounds: the len is 3 but the index is 99', /checkout/src/liballoc/vec.rs:1555:10
+stack backtrace:
+   0: std::sys:👿:backtrace::tracing:👿:unwind_backtrace
+             at /checkout/src/libstd/sys/unix/backtrace/tracing/gcc_s.rs:49
+   1: std::sys_common::backtrace::_print
+             at /checkout/src/libstd/sys_common/backtrace.rs:71
+   2: std::panicking::default_hook::{{closure}}
+             at /checkout/src/libstd/sys_common/backtrace.rs:60
+             at /checkout/src/libstd/panicking.rs:381
+   3: std::panicking::default_hook
+             at /checkout/src/libstd/panicking.rs:397
+   4: std::panicking::rust_panic_with_hook
+             at /checkout/src/libstd/panicking.rs:611
+   5: std::panicking::begin_panic
+             at /checkout/src/libstd/panicking.rs:572
+   6: std::panicking::begin_panic_fmt
+             at /checkout/src/libstd/panicking.rs:522
+   7: rust_begin_unwind
+             at /checkout/src/libstd/panicking.rs:498
+   8: core::panicking::panic_fmt
+             at /checkout/src/libcore/panicking.rs:71
+   9: core::panicking::panic_bounds_check
+             at /checkout/src/libcore/panicking.rs:58
+  10: &lt;alloc::vec::Vec&lt;T&gt; as core::ops::index::Index&lt;usize&gt;&gt;::index
+             at /checkout/src/liballoc/vec.rs:1555
+  11: panic::main
+             at src/main.rs:4
+  12: __rust_maybe_catch_panic
+             at /checkout/src/libpanic_unwind/lib.rs:99
+  13: std::rt::lang_start
+             at /checkout/src/libstd/panicking.rs:459
+             at /checkout/src/libstd/panic.rs:361
+             at /checkout/src/libstd/rt.rs:61
+  14: main
+  15: __libc_start_main
+  16: &lt;unknown&gt;
+</code></pre>
+
+<p>是不是很像异常？Rust 默认使用展开的策略清理内存，不过展开堆栈需要额外记录堆栈信息，这会对二进制程序的大小以及执行效率 (微乎其微) 产生影响。</p>
+
+<p>另一种选择是直接终止，这会不清理数据就直接退出。剩下的一堆烂摊子扔给操作系统来处理。</p>
+
+<p>展开堆栈时可以用 <code>std::panic::catch_unwind</code> 捕获 <code>panic</code> 抛出的堆栈，但是<strong>极不</strong>推荐用这种方法来处理错误。<code>catch_unwind</code> 一般是用来在多线程程序里面在将挂掉的线程 catch 住，防止一个线程挂掉导致整个进程崩掉，或者是通过外部函数接口 (FFI) 与 C 交互时将堆栈信息兜住防止 C 程序看到堆栈不知道如何处理。另外并不是所有程序都能用 <code>catch_unwind</code> 捕捉，有的嵌入式平台上的程序受限于二进制文件大小的限制，<code>panic</code> 没有使用展开，而是使用终止的方式退出程序，这就没法兜得住了。</p>
+
+<h1 id="result">Result</h1>
+
+<p>就下来介绍一种更常用也是我最喜欢的一种错误处理方式：<code>Result</code> 类型。</p>
+
+<p><code>Result</code> 的本质是一个枚举类型。首先我们需要了解一下什么是枚举。</p>
+
+<h2 id="result-与枚举">Result 与枚举</h2>
+
+<p>枚举是 Rust 特有的一种类型，与 F#、OCaml 和 Haskell 这样的函数式编程语言中的<strong>代数数据类型</strong> (<em>algebraic data types</em>) 最为相似。</p>
+
+<p><code>Result</code> 是 Rust 自带的一个已经定义好了的枚举。<code>Result</code> 中定义了两个成员：</p>
+
+<pre><code class="language-rust">enum Result&lt;T, E&gt; {
+    Ok(T),
+    Err(E),
+}
+</code></pre>
+
+<p><code>OK</code> 表示成功的情况，<code>Err</code> 表示出错的情况 (<code>T</code> 和 <code>E</code> 分别表示 <code>OK</code> 或 <code>Err</code> 中数据的类型)。如果你调用了一个可能会出错的函数，那么函数将会返回一个 <code>Result</code> 枚举。一个枚举实例表示枚举类型定义的成员中的<strong>任意</strong>一项，反映到 <code>Result</code> 上就是 <code>OK</code> 或 <code>Err</code>。也就是说函数返回的 <code>Result</code> 既可能是一个包含 <code>OK</code> 的 <code>Result</code>，也可能是一个包含 <code>Err</code> 的 <code>Result</code>，这有点类似于“薛定谔的猫”——处于生与死的叠加态——可以说 <code>Result</code> 处于 <code>OK</code> 与 <code>Err</code> 的“叠加态”。</p>
+
+<p>那么这又有什么好处呢？</p>
+
+<p><code>Result</code> 的优越性就在于：无论程序出错与否，<strong>函数返回的值的类型始相同的！</strong>函数的调用者可以采用相同的方式行云流水般的处理 <code>Result</code>。也就是说，无论成功与否，函数的调用者都要处理 <code>Result</code>，错误处理成为了业务逻辑的一部分。</p>
+
+<h2 id="处理错误">处理错误</h2>
+
+<p>我们已经成功的获得了从调用的函数手里返回的 <code>Result</code>，我们并不知道执行到底有没有成功。这时我们就应该开始处理错误了。</p>
+
+<h3 id="unwrap-与-expect">unwrap 与 expect</h3>
+
+<p>我们先看这么一个例子：</p>
+
+<pre><code class="language-rust">use std::fs::File;
+
+fn main() {
+    let f1 = File::open(&quot;hello.txt&quot;).unwrap();
+    let f2 = File::open(&quot;hello.txt&quot;).expect(&quot;Failed to open hello.txt&quot;);
+}
+</code></pre>
+
+<p>代码中，我们使用 <code>File::open</code> 来读打开一个名为 <code>hello.txt</code> 的文件。函数 <code>File::open</code> 将会返回一个 <code>io::Result</code>。Rust 标准库中有很多叫做 <code>Result</code> 的类型，<code>io::Result</code> 是其中之一，并且 <code>io::Result</code> 的实例拥有 <code>unwrap</code> 方法和 <code>expect</code> 方法。 如果程序执行成功 <code>unwrap</code> 或 <code>expect</code> 方法会将正确的值取出来，如果出错就直接让程序挂掉。其中 <code>unwrap</code> 方法在挂掉时会打印出标准库内置的错误信息，而 <code>exprct</code> 则让我们可以自己定义一个字符串在程序挂掉时显示。</p>
+
+<p><code>expect</code> 并不是一个好的错误处理方式。 <strong><code>expect</code> 只会捕捉错误，然后终止程序，并没有真正的处理错误。</strong>所以 <code>expect</code> 一般只是用于原型设计。</p>
+
+<h3 id="match">match</h3>
+
+<p>使用 <code>match</code> 来处理错误是最常用，也是最推崇的做法。还是刚刚的那个例子，如果用 <code>match</code> 来写的话：</p>
+
+<pre><code class="language-rust">use std::fs::File;
+
+fn main() {
+    let f = File::open(&quot;hello.txt&quot;);
+
+    let f = match f {
+        Ok(file) =&gt; file,
+        Err(error) =&gt; {
+            panic!(&quot;There was a problem opening the file: {:?}&quot;, error)
+        },
+    };
+}
+</code></pre>
+
+<p>可以把 <code>match</code> 表达式想象成某种硬币分类器：硬币滑入有着不同大小孔洞的轨道，每一个硬币都会掉入符合它大小的孔洞。同样地，值也会通过 <code>match</code> 的每一个模式，并且在遇到第一个 “符合” 的模式时，值会进入相关联的代码块并在执行中被使用。</p>
+
+<p>在本例中，<code>f</code> 就是那个硬币，<code>OK</code> 和 <code>Err</code> 就是那个孔；<code>match</code> 会把 <code>f</code> (<code>io::Result</code>) 实例中值的类型与 <code>OK</code> 、<code>Err</code> 做匹配，如果匹配到了合适的类型就执行 <code>=&gt;</code> 后的表达式。当结果是 <code>Ok</code> 时，返回 <code>Ok</code> 成员中的 <code>file</code> 值，然后将这个文件句柄赋值给变量 <code>f</code>。当结果是 <code>Err</code> 时，我们选择调用 <code>panic!</code>宏。</p>
+
+<h2 id="匹配不同的错误">匹配不同的错误</h2>
+
+<p>上文的代码不管 <code>File::open</code> 是因为什么原因失败都会 <code>panic!</code>。我们真正希望的是对不同的错误原因采取不同的行为：如果 <code>File::open</code>因为文件不存在而失败，我们希望创建这个文件并返回新文件的句柄。如果 <code>File::open</code> 因为任何其他原因失败，例如没有打开文件的权限，我们仍然希望 <code>panic!</code>。</p>
+
+<p>只需要增加一个 <code>match</code> 就可以了：</p>
+
+<pre><code class="language-rust">use std::fs::File;
+use std::io::ErrorKind;
+
+fn main() {
+    let f = File::open(&quot;hello.txt&quot;);
+
+    let f = match f {
+        Ok(file) =&gt; file,
+        Err(error) =&gt; match error.kind() {
+            ErrorKind::NotFound =&gt; match File::create(&quot;hello.txt&quot;) {
+                Ok(fc) =&gt; fc,
+                Err(e) =&gt; panic!(&quot;Tried to create file but there was a problem: {:?}&quot;, e),
+            },
+            other_error =&gt; panic!(&quot;There was a problem opening the file: {:?}&quot;, other_error),
+        },
+    };
+}
+</code></pre>
+
+<p>如果觉得太麻烦了，还可以使用闭包：</p>
+
+<pre><code class="language-rust">use std::fs::File;
+use std::io::ErrorKind;
+
+fn main() {
+    let f = File::open(&quot;hello.txt&quot;).map_err(|error| {
+        if error.kind() == ErrorKind::NotFound {
+            File::create(&quot;hello.txt&quot;).unwrap_or_else(|error| {
+                panic!(&quot;Tried to create file but there was a problem: {:?}&quot;, error);
+            })
+        } else {
+            panic!(&quot;There was a problem opening the file: {:?}&quot;, error);
+        }
+    });
+}
+</code></pre>
+
+<p><br></p>
+
+<p><center>  ·End·  </center></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Mogeko </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://mogeko.github.io/2019/044/>https://mogeko.github.io/2019/044/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://mogeko.github.io/tags/rust/">
+                    #Rust</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://mogeko.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://mogeko.github.io/2019/043/" class="prev" rel="prev" title="The Little Printf"><i class="iconfont icon-left"></i>&nbsp;The Little Printf</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '936cecdd2ab935870ca5',
+        clientSecret: '39cfc7a3cb9a974b6609f3fdaa637e2917e3e40a',
+        repo: 'Blog',
+        owner: 'Mogeko',
+        admin: ['Mogeko'],
+        id: location.pathname, 
+        distractionFreeMode: false 
+    });
+    (function () {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+            return;
+        }
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2017 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://mogeko.github.io">Mogeko</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

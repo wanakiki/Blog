@@ -6,8 +6,206 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 19 Jan 2019 18:28:13 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Jan 2019 12:50:59 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rust 中的错误处理</title>
+      <link>https://mogeko.github.io/2019/044/</link>
+      <pubDate>Wed, 23 Jan 2019 12:50:59 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2019/044/</guid>
+      <description>
+
+&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/044/&#34; &gt;
+&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;p&gt;异常/错误处理 &lt;a href=&#34;#sup1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; 被称作是&lt;strong&gt;“第四流程控制语句”&lt;/strong&gt;，在现代程序设计中发挥着越来越重要的作用。一般的语言喜欢使用 &lt;code&gt;try...catch...&lt;/code&gt; 语句捕捉异常，这样做看似很符合逻辑，却很难将代码写得优雅：如果在异常抛出处处理，容易破坏业务逻辑的完整性，不优雅；如果将所有的异常放在一起统一处理，又容易出现忘记处理的情况。所以如何处理异常，何时处理异常是一件非常考验程序员经验的事情。但 Rust 就不同了。&lt;/p&gt;
+
+&lt;p&gt;Rust 中的错误处理方式是我见过最优雅的。Rust 中并没有异常，而主要是使用一种名为 &lt;code&gt;Result&lt;/code&gt; (实际上是一种枚举) 的概念处理错误。它的好处就在于不会影响业务逻辑，因为它本身就是业务逻辑的一部分！&lt;/p&gt;
+
+&lt;p&gt;Rust 中，有两种错误：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;可恢复错误&lt;/strong&gt; (&lt;em&gt;recoverable&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不可恢复错误&lt;/strong&gt; (&lt;em&gt;unrecoverable&lt;/em&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;大部分语言不区分这两类错误，并使用相似的逻辑处理他们。Rust 使用 &lt;code&gt;Result&lt;/code&gt; 和 &lt;code&gt;panic!&lt;/code&gt; 处理可恢复错误，在遇到不可恢复错误时停止程序执行。先来解释一下 &lt;code&gt;panic!&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;i id=&#34;sup1&#34; style=&#34;color: #989898&#34;&gt;&lt;sup&gt;1&lt;/sup&gt; &lt;strong&gt;异常&lt;/strong&gt;和&lt;strong&gt;错误&lt;/strong&gt;是有区别的，这里只比较他们的相似性，不多做区分。&lt;/i&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;panic&#34;&gt;panic!&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;panic!&lt;/code&gt; 处理错误时会采用&lt;strong&gt;展开&lt;/strong&gt; (unwinding) 和&lt;strong&gt;终止&lt;/strong&gt; (abort) 两种策略处理栈上的数据。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Rust 中的错误类型&#34; src=&#34;https://mogeko.github.io/images/044/type_0f_wrong.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;展开的意思就是说 Rust 会回溯栈并一层一层的清理它遇到的每一个函数的数据，就像这样：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;    Finished dev [unoptimized + debuginfo] target(s) in 0.0 secs
+     Running `target/debug/panic`
+thread &#39;main&#39; panicked at &#39;index out of bounds: the len is 3 but the index is 99&#39;, /checkout/src/liballoc/vec.rs:1555:10
+stack backtrace:
+   0: std::sys:👿:backtrace::tracing:👿:unwind_backtrace
+             at /checkout/src/libstd/sys/unix/backtrace/tracing/gcc_s.rs:49
+   1: std::sys_common::backtrace::_print
+             at /checkout/src/libstd/sys_common/backtrace.rs:71
+   2: std::panicking::default_hook::{{closure}}
+             at /checkout/src/libstd/sys_common/backtrace.rs:60
+             at /checkout/src/libstd/panicking.rs:381
+   3: std::panicking::default_hook
+             at /checkout/src/libstd/panicking.rs:397
+   4: std::panicking::rust_panic_with_hook
+             at /checkout/src/libstd/panicking.rs:611
+   5: std::panicking::begin_panic
+             at /checkout/src/libstd/panicking.rs:572
+   6: std::panicking::begin_panic_fmt
+             at /checkout/src/libstd/panicking.rs:522
+   7: rust_begin_unwind
+             at /checkout/src/libstd/panicking.rs:498
+   8: core::panicking::panic_fmt
+             at /checkout/src/libcore/panicking.rs:71
+   9: core::panicking::panic_bounds_check
+             at /checkout/src/libcore/panicking.rs:58
+  10: &amp;lt;alloc::vec::Vec&amp;lt;T&amp;gt; as core::ops::index::Index&amp;lt;usize&amp;gt;&amp;gt;::index
+             at /checkout/src/liballoc/vec.rs:1555
+  11: panic::main
+             at src/main.rs:4
+  12: __rust_maybe_catch_panic
+             at /checkout/src/libpanic_unwind/lib.rs:99
+  13: std::rt::lang_start
+             at /checkout/src/libstd/panicking.rs:459
+             at /checkout/src/libstd/panic.rs:361
+             at /checkout/src/libstd/rt.rs:61
+  14: main
+  15: __libc_start_main
+  16: &amp;lt;unknown&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;是不是很像异常？Rust 默认使用展开的策略清理内存，不过展开堆栈需要额外记录堆栈信息，这会对二进制程序的大小以及执行效率 (微乎其微) 产生影响。&lt;/p&gt;
+
+&lt;p&gt;另一种选择是直接终止，这会不清理数据就直接退出。剩下的一堆烂摊子扔给操作系统来处理。&lt;/p&gt;
+
+&lt;p&gt;展开堆栈时可以用 &lt;code&gt;std::panic::catch_unwind&lt;/code&gt; 捕获 &lt;code&gt;panic&lt;/code&gt; 抛出的堆栈，但是&lt;strong&gt;极不&lt;/strong&gt;推荐用这种方法来处理错误。&lt;code&gt;catch_unwind&lt;/code&gt; 一般是用来在多线程程序里面在将挂掉的线程 catch 住，防止一个线程挂掉导致整个进程崩掉，或者是通过外部函数接口 (FFI) 与 C 交互时将堆栈信息兜住防止 C 程序看到堆栈不知道如何处理。另外并不是所有程序都能用 &lt;code&gt;catch_unwind&lt;/code&gt; 捕捉，有的嵌入式平台上的程序受限于二进制文件大小的限制，&lt;code&gt;panic&lt;/code&gt; 没有使用展开，而是使用终止的方式退出程序，这就没法兜得住了。&lt;/p&gt;
+
+&lt;h1 id=&#34;result&#34;&gt;Result&lt;/h1&gt;
+
+&lt;p&gt;就下来介绍一种更常用也是我最喜欢的一种错误处理方式：&lt;code&gt;Result&lt;/code&gt; 类型。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Result&lt;/code&gt; 的本质是一个枚举类型。首先我们需要了解一下什么是枚举。&lt;/p&gt;
+
+&lt;h2 id=&#34;result-与枚举&#34;&gt;Result 与枚举&lt;/h2&gt;
+
+&lt;p&gt;枚举是 Rust 特有的一种类型，与 F#、OCaml 和 Haskell 这样的函数式编程语言中的&lt;strong&gt;代数数据类型&lt;/strong&gt; (&lt;em&gt;algebraic data types&lt;/em&gt;) 最为相似。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Result&lt;/code&gt; 是 Rust 自带的一个已经定义好了的枚举。&lt;code&gt;Result&lt;/code&gt; 中定义了两个成员：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;enum Result&amp;lt;T, E&amp;gt; {
+    Ok(T),
+    Err(E),
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;OK&lt;/code&gt; 表示成功的情况，&lt;code&gt;Err&lt;/code&gt; 表示出错的情况 (&lt;code&gt;T&lt;/code&gt; 和 &lt;code&gt;E&lt;/code&gt; 分别表示 &lt;code&gt;OK&lt;/code&gt; 或 &lt;code&gt;Err&lt;/code&gt; 中数据的类型)。如果你调用了一个可能会出错的函数，那么函数将会返回一个 &lt;code&gt;Result&lt;/code&gt; 枚举。一个枚举实例表示枚举类型定义的成员中的&lt;strong&gt;任意&lt;/strong&gt;一项，反映到 &lt;code&gt;Result&lt;/code&gt; 上就是 &lt;code&gt;OK&lt;/code&gt; 或 &lt;code&gt;Err&lt;/code&gt;。也就是说函数返回的 &lt;code&gt;Result&lt;/code&gt; 既可能是一个包含 &lt;code&gt;OK&lt;/code&gt; 的 &lt;code&gt;Result&lt;/code&gt;，也可能是一个包含 &lt;code&gt;Err&lt;/code&gt; 的 &lt;code&gt;Result&lt;/code&gt;，这有点类似于“薛定谔的猫”——处于生与死的叠加态——可以说 &lt;code&gt;Result&lt;/code&gt; 处于 &lt;code&gt;OK&lt;/code&gt; 与 &lt;code&gt;Err&lt;/code&gt; 的“叠加态”。&lt;/p&gt;
+
+&lt;p&gt;那么这又有什么好处呢？&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Result&lt;/code&gt; 的优越性就在于：无论程序出错与否，&lt;strong&gt;函数返回的值的类型始相同的！&lt;/strong&gt;函数的调用者可以采用相同的方式行云流水般的处理 &lt;code&gt;Result&lt;/code&gt;。也就是说，无论成功与否，函数的调用者都要处理 &lt;code&gt;Result&lt;/code&gt;，错误处理成为了业务逻辑的一部分。&lt;/p&gt;
+
+&lt;h2 id=&#34;处理错误&#34;&gt;处理错误&lt;/h2&gt;
+
+&lt;p&gt;我们已经成功的获得了从调用的函数手里返回的 &lt;code&gt;Result&lt;/code&gt;，我们并不知道执行到底有没有成功。这时我们就应该开始处理错误了。&lt;/p&gt;
+
+&lt;h3 id=&#34;unwrap-与-expect&#34;&gt;unwrap 与 expect&lt;/h3&gt;
+
+&lt;p&gt;我们先看这么一个例子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;use std::fs::File;
+
+fn main() {
+    let f1 = File::open(&amp;quot;hello.txt&amp;quot;).unwrap();
+    let f2 = File::open(&amp;quot;hello.txt&amp;quot;).expect(&amp;quot;Failed to open hello.txt&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;代码中，我们使用 &lt;code&gt;File::open&lt;/code&gt; 来读打开一个名为 &lt;code&gt;hello.txt&lt;/code&gt; 的文件。函数 &lt;code&gt;File::open&lt;/code&gt; 将会返回一个 &lt;code&gt;io::Result&lt;/code&gt;。Rust 标准库中有很多叫做 &lt;code&gt;Result&lt;/code&gt; 的类型，&lt;code&gt;io::Result&lt;/code&gt; 是其中之一，并且 &lt;code&gt;io::Result&lt;/code&gt; 的实例拥有 &lt;code&gt;unwrap&lt;/code&gt; 方法和 &lt;code&gt;expect&lt;/code&gt; 方法。 如果程序执行成功 &lt;code&gt;unwrap&lt;/code&gt; 或 &lt;code&gt;expect&lt;/code&gt; 方法会将正确的值取出来，如果出错就直接让程序挂掉。其中 &lt;code&gt;unwrap&lt;/code&gt; 方法在挂掉时会打印出标准库内置的错误信息，而 &lt;code&gt;exprct&lt;/code&gt; 则让我们可以自己定义一个字符串在程序挂掉时显示。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;expect&lt;/code&gt; 并不是一个好的错误处理方式。 &lt;strong&gt;&lt;code&gt;expect&lt;/code&gt; 只会捕捉错误，然后终止程序，并没有真正的处理错误。&lt;/strong&gt;所以 &lt;code&gt;expect&lt;/code&gt; 一般只是用于原型设计。&lt;/p&gt;
+
+&lt;h3 id=&#34;match&#34;&gt;match&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;code&gt;match&lt;/code&gt; 来处理错误是最常用，也是最推崇的做法。还是刚刚的那个例子，如果用 &lt;code&gt;match&lt;/code&gt; 来写的话：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;use std::fs::File;
+
+fn main() {
+    let f = File::open(&amp;quot;hello.txt&amp;quot;);
+
+    let f = match f {
+        Ok(file) =&amp;gt; file,
+        Err(error) =&amp;gt; {
+            panic!(&amp;quot;There was a problem opening the file: {:?}&amp;quot;, error)
+        },
+    };
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以把 &lt;code&gt;match&lt;/code&gt; 表达式想象成某种硬币分类器：硬币滑入有着不同大小孔洞的轨道，每一个硬币都会掉入符合它大小的孔洞。同样地，值也会通过 &lt;code&gt;match&lt;/code&gt; 的每一个模式，并且在遇到第一个 “符合” 的模式时，值会进入相关联的代码块并在执行中被使用。&lt;/p&gt;
+
+&lt;p&gt;在本例中，&lt;code&gt;f&lt;/code&gt; 就是那个硬币，&lt;code&gt;OK&lt;/code&gt; 和 &lt;code&gt;Err&lt;/code&gt; 就是那个孔；&lt;code&gt;match&lt;/code&gt; 会把 &lt;code&gt;f&lt;/code&gt; (&lt;code&gt;io::Result&lt;/code&gt;) 实例中值的类型与 &lt;code&gt;OK&lt;/code&gt; 、&lt;code&gt;Err&lt;/code&gt; 做匹配，如果匹配到了合适的类型就执行 &lt;code&gt;=&amp;gt;&lt;/code&gt; 后的表达式。当结果是 &lt;code&gt;Ok&lt;/code&gt; 时，返回 &lt;code&gt;Ok&lt;/code&gt; 成员中的 &lt;code&gt;file&lt;/code&gt; 值，然后将这个文件句柄赋值给变量 &lt;code&gt;f&lt;/code&gt;。当结果是 &lt;code&gt;Err&lt;/code&gt; 时，我们选择调用 &lt;code&gt;panic!&lt;/code&gt;宏。&lt;/p&gt;
+
+&lt;h2 id=&#34;匹配不同的错误&#34;&gt;匹配不同的错误&lt;/h2&gt;
+
+&lt;p&gt;上文的代码不管 &lt;code&gt;File::open&lt;/code&gt; 是因为什么原因失败都会 &lt;code&gt;panic!&lt;/code&gt;。我们真正希望的是对不同的错误原因采取不同的行为：如果 &lt;code&gt;File::open&lt;/code&gt;因为文件不存在而失败，我们希望创建这个文件并返回新文件的句柄。如果 &lt;code&gt;File::open&lt;/code&gt; 因为任何其他原因失败，例如没有打开文件的权限，我们仍然希望 &lt;code&gt;panic!&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;只需要增加一个 &lt;code&gt;match&lt;/code&gt; 就可以了：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;use std::fs::File;
+use std::io::ErrorKind;
+
+fn main() {
+    let f = File::open(&amp;quot;hello.txt&amp;quot;);
+
+    let f = match f {
+        Ok(file) =&amp;gt; file,
+        Err(error) =&amp;gt; match error.kind() {
+            ErrorKind::NotFound =&amp;gt; match File::create(&amp;quot;hello.txt&amp;quot;) {
+                Ok(fc) =&amp;gt; fc,
+                Err(e) =&amp;gt; panic!(&amp;quot;Tried to create file but there was a problem: {:?}&amp;quot;, e),
+            },
+            other_error =&amp;gt; panic!(&amp;quot;There was a problem opening the file: {:?}&amp;quot;, other_error),
+        },
+    };
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果觉得太麻烦了，还可以使用闭包：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;use std::fs::File;
+use std::io::ErrorKind;
+
+fn main() {
+    let f = File::open(&amp;quot;hello.txt&amp;quot;).map_err(|error| {
+        if error.kind() == ErrorKind::NotFound {
+            File::create(&amp;quot;hello.txt&amp;quot;).unwrap_or_else(|error| {
+                panic!(&amp;quot;Tried to create file but there was a problem: {:?}&amp;quot;, error);
+            })
+        } else {
+            panic!(&amp;quot;There was a problem opening the file: {:?}&amp;quot;, error);
+        }
+    });
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>The Little Printf</title>
@@ -3941,190 +4139,6 @@ for v in videos:
 &lt;p&gt;还有配合 &lt;strong&gt;MPV&lt;/strong&gt; / &lt;strong&gt;GNOME MPV&lt;/strong&gt; 播放器使用的脚本：&lt;a href=&#34;https://github.com/directorscut82/find_subtitles/blob/master/find_subtitles.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;find_subtitles.lua&lt;/strong&gt;&lt;/a&gt;&amp;emsp;&amp;emsp;&lt;a href=&#34;https://mogeko.github.io/images/029&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;关于 GNOME MPV 播放器&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;需要注意的是 &lt;strong&gt;find_subtitles.lua 默认下载的是英文字幕，下载中午字幕需要在脚本中将 38 行的 &lt;code&gt;en&lt;/code&gt; 替换换成 &lt;code&gt;zh&lt;/code&gt;&lt;/strong&gt;。如果你觉得麻烦的话，可以使用我&lt;a href=&#34;https://github.com/Mogeko/Blog/releases/download/029/find_subtitles.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;修改过的版本&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>GNOME MPV | GNU/Linux 下一个不错的流媒体播放器</title>
-      <link>https://mogeko.github.io/2018/029/</link>
-      <pubDate>Tue, 20 Nov 2018 16:52:42 +0800</pubDate>
-      
-      <guid>https://mogeko.github.io/2018/029/</guid>
-      <description>
-
-&lt;!-- 
-&lt;img src=&#34;&#34; alt=&#34;&#34; &gt;
-&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
- --&gt;
-
-&lt;p&gt;在 GNU/Linux 下看视频向来是一件麻烦事。&lt;a href=&#34;https://www.videolan.org/index.zh.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;VLC&lt;/strong&gt;&lt;/a&gt; 太过臃肿，&lt;a href=&#34;https://mpv.io/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;MPV&lt;/strong&gt;&lt;/a&gt; 又太过简 (chǒu) 陋了。&lt;/p&gt;
-
-&lt;p&gt;那么，有没有一款播放器能兼顾美观与内在，随便还拥有较好的易用性和较强的定制能力呢？&lt;/p&gt;
-
-&lt;p&gt;当然是有了！&lt;strong&gt;GNOME MPV&lt;/strong&gt; 就是这么一款播放器，它基于 &lt;strong&gt;MPV&lt;/strong&gt;，继承了 &lt;strong&gt;MPV&lt;/strong&gt; 强大的编解码器，以及其恐怖的定制能力 &lt;span class=&#34;spoiler&#34; &gt;脚本才是 &lt;strong&gt;MPV&lt;/strong&gt; 的灵魂 | ・ω・’）&lt;/span&gt;。同时又拥有较为美观方便的 GUI，简直是居家旅行必备的万能播放器啊！！😂😂😂&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;官网：&lt;a href=&#34;https://gnome-mpv.github.io&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://gnome-mpv.github.io&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHub 地址：&lt;a href=&#34;https://github.com/gnome-mpv/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://github.com/gnome-mpv/gnome-mpv&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mogeko.github.io/images/029/gnome_mpv.png&#34; alt=&#34;GNOME MPV&#34; &gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;依赖&#34;&gt;依赖&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;autotools (只在构建时依赖)&lt;/li&gt;
-&lt;li&gt;autoconf-archive (只在构建时依赖)&lt;/li&gt;
-&lt;li&gt;pkg-config (只在构建时依赖)&lt;/li&gt;
-&lt;li&gt;gcc (只在构建时依赖)&lt;/li&gt;
-&lt;li&gt;intltool (只在构建时依赖)&lt;/li&gt;
-&lt;li&gt;python2 (只在构建时依赖)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;glib2&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;gtk3&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;libmpv&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;youtube-dl (可选)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
-
-&lt;h2 id=&#34;gnu-linux-packages&#34;&gt;GNU/Linux packages&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Arch Linux &lt;a href=&#34;https://www.archlinux.org/packages/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://www.archlinux.org/packages/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Arch Linux (Git): &lt;a href=&#34;https://aur.archlinux.org/packages/gnome-mpv-git&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://aur.archlinux.org/packages/gnome-mpv-git&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Debian testing: &lt;a href=&#34;https://packages.debian.org/testing/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://packages.debian.org/testing/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Debian unstable: &lt;a href=&#34;https://packages.debian.org/sid/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://packages.debian.org/sid/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Fedora (rpmfusion): &lt;a href=&#34;https://admin.rpmfusion.org/pkgdb/package/free/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://admin.rpmfusion.org/pkgdb/package/free/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Frugalware: &lt;a href=&#34;http://www4.frugalware.org/pub/linux/distributions/frugalware/frugalware-current/source/xapps-extra/gnome-mpv/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www4.frugalware.org/pub/linux/distributions/frugalware/frugalware-current/source/xapps-extra/gnome-mpv/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;OpenSUSE: &lt;a href=&#34;https://software.opensuse.org/package/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://software.opensuse.org/package/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Gentoo: &lt;a href=&#34;https://packages.gentoo.org/packages/media-video/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://packages.gentoo.org/packages/media-video/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Guix: &lt;a href=&#34;https://www.gnu.org/software/guix/packages/g.html#gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://www.gnu.org/software/guix/packages/g.html#gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Solus: &lt;a href=&#34;https://packages.solus-project.com/shannon/g/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://packages.solus-project.com/shannon/g/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Ubuntu: &lt;a href=&#34;https://launchpad.net/~xuzhen666/+archive/ubuntu/gnome-mpv&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://launchpad.net/~xuzhen666/+archive/ubuntu/gnome-mpv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;source-code&#34;&gt;Source code&lt;/h2&gt;
-
-&lt;p&gt;在终端中运行以下命令以构建并安装&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;./autogen.sh &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;使用&#34;&gt;使用&lt;/h1&gt;
-
-&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
-
-&lt;p&gt;推荐使用 &lt;strong&gt;MPV&lt;/strong&gt; 的配置文件来对 &lt;strong&gt;GNOME MPV&lt;/strong&gt; (及 &lt;code&gt;mpv.conf&lt;/code&gt; 和 &lt;code&gt;input.conf&lt;/code&gt; ) 进行配置，这样一方面可以使配置兼容 &lt;strong&gt;MPV&lt;/strong&gt;，另一方面可定制性更高。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;首选项&lt;/strong&gt;  -&amp;gt; 勾选 &lt;strong&gt;加载 MPV 配置文件&lt;/strong&gt; 和 &lt;strong&gt;加载 MPV 输入配置文件&lt;/strong&gt; -&amp;gt; 定位到  &lt;code&gt;mpv.conf&lt;/code&gt; 和 &lt;code&gt;input.conf&lt;/code&gt; 的位置 (Linux 下一般是 &lt;code&gt;~/.config/mpv/&lt;/code&gt;)&lt;/p&gt;
-
-&lt;p&gt;以下是我目前使用的配置文件；因为只是轻度使用，所以比较简单&lt;/p&gt;
-
-&lt;p&gt;更多配置请参考：&lt;a href=&#34;https://github.com/mpv-player/mpv/blob/master/etc/mpv.conf&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;MPV 配置文件示例&lt;/a&gt;&amp;emsp;&amp;emsp;&lt;a href=&#34;https://github.com/mpv-player/mpv/blob/master/etc/input.conf&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;MPV 输入配置文件&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;mpv.conf:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;# 没有边框
-#no-border
-
-# 记住断点
-seve-position-on-quit
-
-# 音/字幕轨选择
-## 指定优先使用音轨（DVD使用ISO 639-1两位语言代码，MKV、MPEG-TS使用ISO 639-2 三位语言代码）
-alang=zh,chi
-## 指定优先使用字幕轨（DVD使用ISO 639-1两位语言代码，MKV、MPEG-TS使用ISO 639-2 三位语言代码）
-slang=zh,chi
-
-# 音/字幕轨加载方式
-## 加载视频文件的外部音频文件方式。（fuzzy 加载含有视频文件名的全部音频文件）
-audio-file-auto=fuzzy
-## 加载视频文件的外部字幕文件方式。（fuzzy 加载含有视频文件名的全部字幕文件）
-sub-auto=fuzzy
-## 字幕编码
-sub-codepage=utf-8:gb18030
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;input.conf:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-conf&#34;&gt;# 退出方式
-q quit-watch-later
-Q quit-watch-later
-ESC quit-watch-later
-CLOSE_WIN quit-watch-later
-
-# 音量调整
-WHEEL_UP volume 5
-WHEEL_DOWN volume -5
-UP volume 5
-DOWN volume -5
-
-# 播放/暂停
-MBTN_LEFT cycle pause
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;插件&#34;&gt;插件&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;MPV&lt;/strong&gt; 之所以广受好评，一个很重要的原因就是它强大的插件系统。&lt;strong&gt;GNOME MPV&lt;/strong&gt; 基于 &lt;strong&gt;MPV&lt;/strong&gt;，自然是继承了大把的插件，这也让 &lt;strong&gt;GNOME MPV&lt;/strong&gt; 的可玩性提升了一个档次。&lt;/p&gt;
-
-&lt;h3 id=&#34;插件安装方法&#34;&gt;插件安装方法&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;MPV&lt;/strong&gt;: 将插件脚本粘贴到 &lt;code&gt;~/.config/mpv/scripts&lt;/code&gt; 文件夹中&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;GNOME MPV&lt;/strong&gt;: &lt;strong&gt;首选项&lt;/strong&gt; -&amp;gt; &lt;strong&gt;插件&lt;/strong&gt; -&amp;gt; 选择插件脚本的路径&lt;/p&gt;
-
-&lt;h3 id=&#34;推荐几个插件&#34;&gt;推荐几个插件&lt;/h3&gt;
-
-&lt;p&gt;这里推荐几个我比较常用的插件。&lt;/p&gt;
-
-&lt;p&gt;更多插件请参考：&lt;a href=&#34;https://github.com/mpv-player/mpv/wiki/User-Scripts&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;MPV&lt;/strong&gt; 插件脚本列表&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;autoload.lua&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;自动加载当前播放文件目录里的视频文件到播放列表，也就是自动连播。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub 地址&lt;/a&gt;&amp;emsp;&amp;emsp;&lt;a href=&#34;https://github.com/Mogeko/Blog/releases/download/029/autoload.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;下载地址 (不保证最新)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;save-sub-delay.lua&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;有时候外挂字幕时间轴不正确，调好之后，这个脚本会保存delay信息。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/zc62/mpv-scripts/blob/master/save-sub-delay.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub 地址&lt;/a&gt;&amp;emsp;&amp;emsp;&lt;a href=&#34;https://github.com/Mogeko/Blog/releases/download/029/save-sub-delay.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;下载地址 (不保证最新)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;find_subtitles.lua&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;自动使用 &lt;a href=&#34;https://github.com/Diaoul/subliminal&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;subliminal&lt;/strong&gt;&lt;/a&gt; 从字幕站匹配并下载字幕。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;find_subtitles.lua 默认下载的是英文字幕，下载中午字幕需要在脚本中将 38 行的 &lt;code&gt;en&lt;/code&gt; 替换换成 &lt;code&gt;zh&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;依赖：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;python2 &lt;span class=&#34;spoiler&#34; &gt;实际上是 &lt;strong&gt;subliminal&lt;/strong&gt; 依赖 python2&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;subliminal -&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2018/030&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;关于 subliminal (安装方法)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/directorscut82/find_subtitles/blob/master/find_subtitles.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub 地址&lt;/a&gt;&amp;emsp;&amp;emsp;&lt;a href=&#34;https://github.com/Mogeko/Blog/releases/download/029/find_subtitles.lua&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;下载地址 (我调整过的版本)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 

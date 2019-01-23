@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 19 Jan 2019 18:28:13 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Jan 2019 12:50:59 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rust 中的错误处理</title>
+      <link>https://mogeko.github.io/2019/044/</link>
+      <pubDate>Wed, 23 Jan 2019 12:50:59 +0800</pubDate>
+      
+      <guid>https://mogeko.github.io/2019/044/</guid>
+      <description>&amp;emsp;&amp;emsp; -- 异常/错误处理 1 被称作是“第四流程控制语句”，在现代程序设计中发挥着越来越重要的作用。一般的语言喜欢使用 try...catch... 语句捕捉异常，这样做看似很符合</description>
+    </item>
     
     <item>
       <title>The Little Printf</title>
