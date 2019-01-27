@@ -122,15 +122,17 @@
 &lt;li&gt;&lt;strong&gt;不可恢复错误&lt;/strong&gt; (&lt;em&gt;unrecoverable&lt;/em&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;大部分语言不区分这两类错误，并使用相似的逻辑处理他们。Rust 使用 &lt;code&gt;Result&lt;/code&gt; 和 &lt;code&gt;panic!&lt;/code&gt; 处理可恢复错误，在遇到不可恢复错误时停止程序执行。先来解释一下 &lt;code&gt;panic!&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;大部分语言不区分这两类错误，并使用相似的逻辑处理他们。Rust 使用 &lt;code&gt;Result&lt;/code&gt; 和 &lt;code&gt;panic!&lt;/code&gt; 处理可恢复错误，在遇到不可恢复错误时直接使用 &lt;code&gt;panic!&lt;/code&gt; 停止程序执行。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Rust 中的错误类型&#34; src=&#34;https://mogeko.github.io/images/044/type_0f_wrong.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;先来解释一下 &lt;code&gt;panic!&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;&lt;i id=&#34;sup1&#34; style=&#34;color: #989898&#34;&gt;&lt;sup&gt;1&lt;/sup&gt; &lt;strong&gt;异常&lt;/strong&gt;和&lt;strong&gt;错误&lt;/strong&gt;是有区别的，这里只比较他们的相似性，不多做区分。&lt;/i&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;panic&#34;&gt;panic!&lt;/h1&gt;
 
 &lt;p&gt;&lt;code&gt;panic!&lt;/code&gt; 处理错误时会采用&lt;strong&gt;展开&lt;/strong&gt; (unwinding) 和&lt;strong&gt;终止&lt;/strong&gt; (abort) 两种策略处理栈上的数据。&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Rust 中的错误类型&#34; src=&#34;https://mogeko.github.io/images/044/type_0f_wrong.png&#34; &gt;&lt;/p&gt;
 
 &lt;p&gt;展开的意思就是说 Rust 会回溯栈并一层一层的清理它遇到的每一个函数的数据，就像这样：&lt;/p&gt;
 

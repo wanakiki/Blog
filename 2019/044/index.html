@@ -57,7 +57,7 @@
     "datePublished": "2019-01-23 12:50:59 &#43;0800 &#43;0800",
     "dateModified" : "2019-01-23 12:50:59 &#43;0800 &#43;0800",
     "url" : "https://mogeko.github.io/2019/044/",
-    "wordCount" : "2313",
+    "wordCount" : "2318",
     "keywords" : [ "Rust", "Mogeko`s Blog"]
 }
 </script>
@@ -142,7 +142,7 @@
                         <a href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/"> 关于编程 </a>
                         
                 </span>
-                <span class="post-word-count">, 2313 words</span>
+                <span class="post-word-count">, 2318 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -180,15 +180,17 @@
 <li><strong>不可恢复错误</strong> (<em>unrecoverable</em>)</li>
 </ul>
 
-<p>大部分语言不区分这两类错误，并使用相似的逻辑处理他们。Rust 使用 <code>Result</code> 和 <code>panic!</code> 处理可恢复错误，在遇到不可恢复错误时停止程序执行。先来解释一下 <code>panic!</code>。</p>
+<p>大部分语言不区分这两类错误，并使用相似的逻辑处理他们。Rust 使用 <code>Result</code> 和 <code>panic!</code> 处理可恢复错误，在遇到不可恢复错误时直接使用 <code>panic!</code> 停止程序执行。</p>
+
+<p><img alt="Rust 中的错误类型" src="https://mogeko.github.io/images/044/type_0f_wrong.png" ></p>
+
+<p>先来解释一下 <code>panic!</code>。</p>
 
 <p><i id="sup1" style="color: #989898"><sup>1</sup> <strong>异常</strong>和<strong>错误</strong>是有区别的，这里只比较他们的相似性，不多做区分。</i></p>
 
 <h1 id="panic">panic!</h1>
 
 <p><code>panic!</code> 处理错误时会采用<strong>展开</strong> (unwinding) 和<strong>终止</strong> (abort) 两种策略处理栈上的数据。</p>
-
-<p><img alt="Rust 中的错误类型" src="https://mogeko.github.io/images/044/type_0f_wrong.png" ></p>
 
 <p>展开的意思就是说 Rust 会回溯栈并一层一层的清理它遇到的每一个函数的数据，就像这样：</p>
 
