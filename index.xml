@@ -974,6 +974,19 @@ fn calculate_length(s: &amp;amp;String) -&amp;gt; usize { // s 是对 String 的
 
 &lt;p&gt;详情：&lt;a href=&#34;https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Rust Programming Language::References and Borrowing&lt;/a&gt;&lt;/p&gt;
 
+&lt;h1 id=&#34;结束了-不-仅仅是开始&#34;&gt;结束了？不！仅仅是开始…&lt;/h1&gt;
+
+&lt;p&gt;Rust 中关于所有权还有很多重要的概念，比如生命周期 (&lt;em&gt;lifetime&lt;/em&gt;) 等…&lt;/p&gt;
+
+&lt;p&gt;所以我才说 Rust 中的所有权既是重点，也是难点。&lt;/p&gt;
+
+&lt;p&gt;受限于篇幅，就不一一介绍了，更多细节可以参考：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Rust Programming Language::Validating References with Lifetimes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://doc.rust-lang.org/book/ch19-02-advanced-lifetimes.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Rust Programming Language::Advanced Lifetimes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
