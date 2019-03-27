@@ -2,435 +2,435 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Mogeko`s Blog</title>
-    <link>https://mogeko.github.io/posts/</link>
+    <link>https://mogeko.me/posts/</link>
     <description>Recent content in Posts on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 23 Mar 2019 17:47:42 +0800</lastBuildDate>
     
-	<atom:link href="https://mogeko.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mogeko.me/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用 Homebrew 维护自己的软件仓库</title>
-      <link>https://mogeko.github.io/2019/046/</link>
+      <link>https://mogeko.me/2019/046/</link>
       <pubDate>Sat, 23 Mar 2019 17:47:42 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2019/046/</guid>
+      <guid>https://mogeko.me/2019/046/</guid>
       <description>&amp;emsp;&amp;emsp; -- Homebrew 是最初是 Max Howell 自己写来管理 MacOS 软件的一个小工具，没想到后来直接火了。不仅成为了 Github 上拥有贡献者最多的一个项目，还是 MacOS 系统中事实上的包管理器。</description>
     </item>
     
     <item>
       <title>扁平宝箱插画</title>
-      <link>https://mogeko.github.io/2019/045/</link>
+      <link>https://mogeko.me/2019/045/</link>
       <pubDate>Wed, 23 Jan 2019 20:05:01 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2019/045/</guid>
+      <guid>https://mogeko.me/2019/045/</guid>
       <description>&amp;emsp;&amp;emsp; -- 原图：Treasure.ai 以下是使用到的颜色 据说黑暗模式下体验更佳哦 |・ω・｀) 宝箱： ▉ #FFB024 ▉ #EB9558 ▉ #FFC444 ▉ #ED6011 ▉ #7C2752 ▉ #542246 ▉ #CC365D ▉ #7E2A55 ▉ #FFE59C ▉ #FC5454 宝石： ▉</description>
     </item>
     
     <item>
       <title>Rust 中的错误处理</title>
-      <link>https://mogeko.github.io/2019/044/</link>
+      <link>https://mogeko.me/2019/044/</link>
       <pubDate>Wed, 23 Jan 2019 12:50:59 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2019/044/</guid>
+      <guid>https://mogeko.me/2019/044/</guid>
       <description>&amp;emsp;&amp;emsp; -- 异常/错误处理 1 被称作是“第四流程控制语句”，在现代程序设计中发挥着越来越重要的作用。一般的语言喜欢使用 try...catch... 语句捕捉异常，这样做看似很符合</description>
     </item>
     
     <item>
       <title>The Little Printf</title>
-      <link>https://mogeko.github.io/2019/043/</link>
+      <link>https://mogeko.me/2019/043/</link>
       <pubDate>Sat, 19 Jan 2019 18:28:13 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2019/043/</guid>
+      <guid>https://mogeko.me/2019/043/</guid>
       <description>&amp;emsp;&amp;emsp; -- 原文地址 (英文): The Little Printf 本文是原作者 Fred Hebert 模仿《小王子》的笔法写的一篇演讲稿，同时也是一篇不错的小故事。主要探讨了一个既简单又复杂的问题：</description>
     </item>
     
     <item>
       <title>Rust 中的所有权</title>
-      <link>https://mogeko.github.io/2019/042/</link>
+      <link>https://mogeko.me/2019/042/</link>
       <pubDate>Wed, 16 Jan 2019 18:57:36 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2019/042/</guid>
+      <guid>https://mogeko.me/2019/042/</guid>
       <description>&amp;emsp;&amp;emsp; -- 所有权是 Rust 中最重要的概念之一，也是 Rust 与 C++、Java 等“别的语言”最大的区别之一。 规定所有权规则是为了解决一个困扰了学界多年的难题：如</description>
     </item>
     
     <item>
       <title>描边灯塔插画</title>
-      <link>https://mogeko.github.io/2018/041/</link>
+      <link>https://mogeko.me/2018/041/</link>
       <pubDate>Fri, 28 Dec 2018 02:58:34 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/041/</guid>
+      <guid>https://mogeko.me/2018/041/</guid>
       <description>&amp;emsp;&amp;emsp; -- 原图：Lighthouse.ai 以下是使用到的颜色 据说黑暗模式下体验更佳哦 |・ω・｀) 边线： ▉ #313C85 结果关灯后又看不清 #313C85 了 _(:з」∠)_ 底</description>
     </item>
     
     <item>
       <title>描边城市插画</title>
-      <link>https://mogeko.github.io/2018/040/</link>
+      <link>https://mogeko.me/2018/040/</link>
       <pubDate>Thu, 27 Dec 2018 17:26:33 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/040/</guid>
+      <guid>https://mogeko.me/2018/040/</guid>
       <description>&amp;emsp;&amp;emsp; -- 上课时候摸鱼画的 |・ω・｀) 虽然画得很丑但还是恬不知耻的想把原图贴出来 (*/ω＼*)：INDIA.ai 以下是使用到的颜色 据说黑暗模式下体</description>
     </item>
     
     <item>
       <title>Student dormitory management</title>
-      <link>https://mogeko.github.io/2018/039/</link>
+      <link>https://mogeko.me/2018/039/</link>
       <pubDate>Sat, 22 Dec 2018 23:30:01 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/039/</guid>
+      <guid>https://mogeko.me/2018/039/</guid>
       <description>&amp;emsp;&amp;emsp; -- Demand analysis The system is designed to facilitate the management of student residences. Provide registration for students and teachers, check the student dormitory number, adjust the dormitory and other functions. At the same time, considering the need for maintenance and refurbishment of the dormitory, the system provides the function of submitting and accepting maintenance applications. After the student submits the repair application, the dormitory management will dispatch maintenance</description>
     </item>
     
     <item>
       <title>对，这他妈就是生活！</title>
-      <link>https://mogeko.github.io/2018/038/</link>
+      <link>https://mogeko.me/2018/038/</link>
       <pubDate>Tue, 04 Dec 2018 18:58:01 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/038/</guid>
+      <guid>https://mogeko.me/2018/038/</guid>
       <description>&amp;emsp;&amp;emsp; -- 写一篇《大象席地而坐》的影评。 说是影评，其实就是对剧中主要人物的一些评价。 太主观了？主观就他娘的对了！这他妈是老子的博客，老子想他娘的咋</description>
     </item>
     
     <item>
       <title>Bash 命令提示符定制指南</title>
-      <link>https://mogeko.github.io/2018/037/</link>
+      <link>https://mogeko.me/2018/037/</link>
       <pubDate>Wed, 28 Nov 2018 15:25:58 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/037/</guid>
+      <guid>https://mogeko.me/2018/037/</guid>
       <description>&amp;emsp;&amp;emsp; -- 众所周知，Bash 是大多数 GNU/Linux 的默认 shell。作为每个 Linuxer 每天都要接触到的东西，一个漂亮的 Bash 自然是会让人更加的心情舒畅。今天就来教教大家如</description>
     </item>
     
     <item>
       <title>如何使用 ASF 挂卡</title>
-      <link>https://mogeko.github.io/2018/036/</link>
+      <link>https://mogeko.me/2018/036/</link>
       <pubDate>Mon, 26 Nov 2018 14:48:29 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/036/</guid>
+      <guid>https://mogeko.me/2018/036/</guid>
       <description>&amp;emsp;&amp;emsp; -- 如果你有一台服主机 (VPS、树莓派、一台被淘汰的 PC…) 你会用它做什么？ 玩法有很多，可以用来挖矿赚点零花钱 虽然可能连电费都赚不回来，也可</description>
     </item>
     
     <item>
       <title>使用反向代理给 PPA 加速</title>
-      <link>https://mogeko.github.io/2018/035/</link>
+      <link>https://mogeko.me/2018/035/</link>
       <pubDate>Mon, 26 Nov 2018 13:35:11 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/035/</guid>
+      <guid>https://mogeko.me/2018/035/</guid>
       <description>&amp;emsp;&amp;emsp; -- PPA 的英文全称叫 Personal Package Archives，既「个人软件包仓库」。是 Ubuntu 为了方便用户发表、下载那些 Ubuntu 官方软件仓库中没有收录的或者版本较新的软件而建</description>
     </item>
     
     <item>
       <title>学会将代码写简单</title>
-      <link>https://mogeko.github.io/2018/034/</link>
+      <link>https://mogeko.me/2018/034/</link>
       <pubDate>Thu, 22 Nov 2018 19:46:55 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/034/</guid>
+      <guid>https://mogeko.me/2018/034/</guid>
       <description>&amp;emsp;&amp;emsp; -- 为开源项目作出贡献的最佳方式是使它的代码得以精简。我们应当努力编写即使没有注释也能使新手程序员轻松理解的代码，让维护者无需花费太多精力也</description>
     </item>
     
     <item>
       <title>为 Hugo 博客添加字数统计</title>
-      <link>https://mogeko.github.io/2018/033/</link>
+      <link>https://mogeko.me/2018/033/</link>
       <pubDate>Thu, 22 Nov 2018 16:51:03 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/033/</guid>
+      <guid>https://mogeko.me/2018/033/</guid>
       <description>&amp;emsp;&amp;emsp; -- 作为一个孤芳自赏的 Bloger，每一篇文章都像是自己的孩子一样，孩子的“体重”如何是每一个父母都关注的问题。 今天就简单的教教大家如何给自</description>
     </item>
     
     <item>
       <title>GNU/Linux 技巧：如何快速的找到一个文件</title>
-      <link>https://mogeko.github.io/2018/032/</link>
+      <link>https://mogeko.me/2018/032/</link>
       <pubDate>Wed, 21 Nov 2018 19:30:25 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/032/</guid>
+      <guid>https://mogeko.me/2018/032/</guid>
       <description>&amp;emsp;&amp;emsp; -- 在使用计算机的过程中，我们都有着这么一个需求：找文件！！ “卧槽，我的 XXX 文件放哪儿去了？”Σ(っ °Д °;)っ “XXX 文件不应该就在 XXX 文件夹</description>
     </item>
     
     <item>
       <title>GNU/Linux 输入法折腾笔记 (RIME)</title>
-      <link>https://mogeko.github.io/2018/031/</link>
+      <link>https://mogeko.me/2018/031/</link>
       <pubDate>Wed, 21 Nov 2018 12:38:05 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/031/</guid>
+      <guid>https://mogeko.me/2018/031/</guid>
       <description>-- 终于，我在也忍受不了 Ubuntu 18.04 自带的 ibus-libpinyin 了。决定好好配置以下输入法，本来以为最多半个小时就能搞定的事情，结果整整花了半天 _(:з」∠)_ 网上一搜发</description>
     </item>
     
     <item>
       <title>subliminal | 电影字幕下载神器</title>
-      <link>https://mogeko.github.io/2018/030/</link>
+      <link>https://mogeko.me/2018/030/</link>
       <pubDate>Wed, 21 Nov 2018 09:39:26 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/030/</guid>
+      <guid>https://mogeko.me/2018/030/</guid>
       <description>-- subliminal 是一个基于 Python 的强大的命令行字幕搜索和下载工具。 最先知道 subliminal 是因为 MPV 播放器。配合插件 find_subtitles.lua 使用，在载入视频的同时搜索并下载中文字幕，简直天衣无缝</description>
     </item>
     
     <item>
       <title>GNOME MPV | GNU/Linux 下一个不错的流媒体播放器</title>
-      <link>https://mogeko.github.io/2018/029/</link>
+      <link>https://mogeko.me/2018/029/</link>
       <pubDate>Tue, 20 Nov 2018 16:52:42 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/029/</guid>
+      <guid>https://mogeko.me/2018/029/</guid>
       <description>-- 在 GNU/Linux 下看视频向来是一件麻烦事。VLC 太过臃肿，MPV 又太过简 (chǒu) 陋了。 那么，有没有一款播放器能兼顾美观与内在，随便还拥有较好的易用</description>
     </item>
     
     <item>
       <title>使用 Travis CI 自动部署 Hugo 博客</title>
-      <link>https://mogeko.github.io/2018/028/</link>
+      <link>https://mogeko.me/2018/028/</link>
       <pubDate>Mon, 19 Nov 2018 11:28:18 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/028/</guid>
+      <guid>https://mogeko.me/2018/028/</guid>
       <description>通过 Travis CI 来部署 Hugo 或者 Hexo 博客可能在配置的时候会麻烦一点，但配置好后确实是方便了不少。特别是对于 Hugo 这种没有部署插件的静态网站生成器，只能手动部署</description>
     </item>
     
     <item>
       <title>Bottom-up  to development a Loan Calculator</title>
-      <link>https://mogeko.github.io/2018/027/</link>
+      <link>https://mogeko.me/2018/027/</link>
       <pubDate>Sun, 18 Nov 2018 18:30:52 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/027/</guid>
+      <guid>https://mogeko.me/2018/027/</guid>
       <description>About the bottom-up development Bottom-up development is a style of developing programs. With the bottom-up development, we develop in the reverse inside-out fashion; that is, we develop the service classes first. To test the service classes, we write a temporary dummy main class. After the service classes are done, we complete the top-level class that uses these service classes. The bottom-up development for this program implements the Loanclass first fully</description>
     </item>
     
     <item>
       <title>Windows / Office 激活脚本 (使用 KMS)</title>
-      <link>https://mogeko.github.io/2018/026/</link>
+      <link>https://mogeko.me/2018/026/</link>
       <pubDate>Sun, 18 Nov 2018 00:54:27 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/026/</guid>
+      <guid>https://mogeko.me/2018/026/</guid>
       <description>很早以前的一个仓库了，博主已经入了 Office 365，早就用不到了。 不过最近帮小学妹装机，所以突然诈尸更新了一波。给需要的人 (○&amp;rsquo;◡&amp;rs</description>
     </item>
     
     <item>
       <title>Leavelt 主题优化</title>
-      <link>https://mogeko.github.io/2018/025/</link>
+      <link>https://mogeko.me/2018/025/</link>
       <pubDate>Fri, 16 Nov 2018 19:57:09 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/025/</guid>
+      <guid>https://mogeko.me/2018/025/</guid>
       <description>目前本博客使用的 Hugo 主题是：Leavelt 正如你说看到的那样，是一款简约大气的的主题。但再使用的过程中我也发现了一些可以改进的地方 添加谈笑风生</description>
     </item>
     
     <item>
       <title>为 Hugo 添加谈笑风生区 (Gitalk)</title>
-      <link>https://mogeko.github.io/2018/024/</link>
+      <link>https://mogeko.me/2018/024/</link>
       <pubDate>Fri, 16 Nov 2018 12:57:09 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/024/</guid>
+      <guid>https://mogeko.me/2018/024/</guid>
       <description>Hugo 是一个强大的静态网页生成器，使用 go 开发。速度贼快，还有 “时时预览” 等特性。不过 Hugo 还比较年轻，没有像 NexT 那样功能强大，成熟稳定的主题。所以很多</description>
     </item>
     
     <item>
       <title>Rusty Lake: Roots 通关攻略 施工中...</title>
-      <link>https://mogeko.github.io/2018/023/</link>
+      <link>https://mogeko.me/2018/023/</link>
       <pubDate>Wed, 10 Oct 2018 19:52:24 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/023/</guid>
+      <guid>https://mogeko.me/2018/023/</guid>
       <description>本指南涉及严重剧透！！！ Rusty Lake: Roots 是一款画风超棒的解密游戏。因为是解密游戏，所以不建议一开始就看这篇指南。 我写这篇指南的目的主要是为了记录一下游</description>
     </item>
     
     <item>
       <title>空洞骑士：格林剧团 DLC 全成就指南</title>
-      <link>https://mogeko.github.io/2018/022/</link>
+      <link>https://mogeko.me/2018/022/</link>
       <pubDate>Sun, 30 Sep 2018 21:06:00 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/022/</guid>
+      <guid>https://mogeko.me/2018/022/</guid>
       <description>补一篇格林剧团 DLC 的全成就指南 「格林剧团」的难度相较于「寻神者」和 主线剧情 要简单得多，属于比较容易完成的 DLC。但「格林剧团」采用的是双结局，</description>
     </item>
     
     <item>
       <title>空洞骑士：存档备份方法</title>
-      <link>https://mogeko.github.io/2018/021/</link>
+      <link>https://mogeko.me/2018/021/</link>
       <pubDate>Sun, 30 Sep 2018 19:17:00 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/021/</guid>
+      <guid>https://mogeko.me/2018/021/</guid>
       <description>-- 一个简单的方法备份「空洞骑士」的存档文件。 备份存档文件有个以下好处： 因为众所周知的原因，Steam 云有时会不稳定，定期手动备份存档可以减少</description>
     </item>
     
     <item>
       <title>空洞骑士：寻神者 DLC 全成就指南</title>
-      <link>https://mogeko.github.io/2018/020/</link>
+      <link>https://mogeko.me/2018/020/</link>
       <pubDate>Sun, 30 Sep 2018 08:59:00 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/020/</guid>
+      <guid>https://mogeko.me/2018/020/</guid>
       <description>爆肝 20 多个小时终于打完了 QAQ 写篇指南压压惊 _(:з」∠)_ 寻神者 DLC 是真的难，推荐大家在完成主线剧情，做好心理准备，写好遗书后，再开启 我操你大爷</description>
     </item>
     
     <item>
       <title>尘埃 4：新手入坑指北</title>
-      <link>https://mogeko.github.io/2018/019/</link>
+      <link>https://mogeko.me/2018/019/</link>
       <pubDate>Fri, 28 Sep 2018 10:09:14 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/019/</guid>
+      <guid>https://mogeko.me/2018/019/</guid>
       <description>「尘埃 4」是经典越野赛车系列「尘埃」的正统续作，是一款非常优秀的赛车游戏，不过因为不支持中文、复杂的操作等原因劝退了不少萌新。 其实我也是萌新</description>
     </item>
     
     <item>
       <title>使用 Hugo &#43; GitHub Pages 搭建个人博客</title>
-      <link>https://mogeko.github.io/2018/018/</link>
+      <link>https://mogeko.me/2018/018/</link>
       <pubDate>Sun, 05 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/018/</guid>
+      <guid>https://mogeko.me/2018/018/</guid>
       <description>正如你所看到的，本博客换了一个主题。但你们看不到的是，本博客将静态页面生成引擎换成了 Hugo Hugo 和 Hexo 一样，是一种通用的网站框架。严格来说，这类应用应</description>
     </item>
     
     <item>
       <title>本地搭建 KMS 激活服务</title>
-      <link>https://mogeko.github.io/2018/017/</link>
+      <link>https://mogeko.me/2018/017/</link>
       <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/017/</guid>
+      <guid>https://mogeko.me/2018/017/</guid>
       <description>前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。 这个方法很好，但是也存在问题。KMS 服务激活一次可以正常使用 180 天，过期后自动给你续</description>
     </item>
     
     <item>
       <title>WSL 的安装与使用</title>
-      <link>https://mogeko.github.io/2018/016/</link>
+      <link>https://mogeko.me/2018/016/</link>
       <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/016/</guid>
+      <guid>https://mogeko.me/2018/016/</guid>
       <description>16 年 12 月份的时候，微软发布了 Windows Subsystem for Linux (WSL)，通过子系统的方式运行了一个完整的 Linux 系统。使得在 Windows 中使用 Linux 中的工具链成为可能。(Windows</description>
     </item>
     
     <item>
       <title>使用 Android 手机搭建 KMS 激活服务器</title>
-      <link>https://mogeko.github.io/2018/015/</link>
+      <link>https://mogeko.me/2018/015/</link>
       <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/015/</guid>
+      <guid>https://mogeko.me/2018/015/</guid>
       <description>经测试，以前的方法已经失效了。 今天就教大家一个新的方法在 Android 手机上安装 KMS 激活服务。而且新方法不需要 Magisk 框架，相比于原来的方法更简单安全。 需要 Magisk 框</description>
     </item>
     
     <item>
       <title>使用 KMS 激活 Windows / Office</title>
-      <link>https://mogeko.github.io/2018/014/</link>
+      <link>https://mogeko.me/2018/014/</link>
       <pubDate>Fri, 02 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/014/</guid>
+      <guid>https://mogeko.me/2018/014/</guid>
       <description>事实上，我一向不鼓励使用盗版系统 / 软件的。但对于穷人 (学生党) 来说，需要使用相关软件却买不起正版，使用盗版也是没办法的事情。 对于想使用 Windows / Office</description>
     </item>
     
     <item>
       <title>BaiduPCS-Go | 百度网盘命令行工具 (基于 Go)</title>
-      <link>https://mogeko.github.io/2018/013/</link>
+      <link>https://mogeko.me/2018/013/</link>
       <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/013/</guid>
+      <guid>https://mogeko.me/2018/013/</guid>
       <description>提到百度网盘，想必大家都很熟悉吧。 百度网盘自 2012 年上线运行以来，迅速积累了大量用户。但是狗改不了吃屎，作为百度的产品，百度网盘现在是越来越恶心</description>
     </item>
     
     <item>
       <title>如何给 Steam 换皮肤</title>
-      <link>https://mogeko.github.io/2017/012/</link>
+      <link>https://mogeko.me/2017/012/</link>
       <pubDate>Wed, 06 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/012/</guid>
+      <guid>https://mogeko.me/2017/012/</guid>
       <description>Steam 大法吼啊！！！ 刚刚过去的黑五，大家有没有愉快的剁手啊？😏😏 虽然我们嘴上骂着 G胖，但身体还是很诚实的嘛，不然也不会这么心甘情愿的给 G胖 贡献销</description>
     </item>
     
     <item>
       <title>Android 使用 Chrome 的五个理由</title>
-      <link>https://mogeko.github.io/2017/011/</link>
+      <link>https://mogeko.me/2017/011/</link>
       <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/011/</guid>
+      <guid>https://mogeko.me/2017/011/</guid>
       <description>PC 上的 Chrome 毫无疑问是最好的浏览器之一。那市场份额，都快逼近 IE 了。不仅把曾经的老大哥 IE 远远的甩在后面，还把被微软委以大任的 Microsoft Edge 按在地上摩擦，弄得</description>
     </item>
     
     <item>
       <title>神奇的 Magisk</title>
-      <link>https://mogeko.github.io/2017/010/</link>
+      <link>https://mogeko.me/2017/010/</link>
       <pubDate>Sat, 02 Dec 2017 18:00:00 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2017/010/</guid>
+      <guid>https://mogeko.me/2017/010/</guid>
       <description>今天为大家介绍一款神奇的 Android 第三方接口 —— Magisk Root —— 玩家与厂商间的博弈 Android 从诞生之日起就高举着开源的大旗，这也是它成功的原因之一。而它的开放性也成</description>
     </item>
     
     <item>
       <title>如何将 Ubuntu 升级到 17.10</title>
-      <link>https://mogeko.github.io/2017/009/</link>
+      <link>https://mogeko.me/2017/009/</link>
       <pubDate>Sat, 02 Dec 2017 11:57:09 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2017/009/</guid>
+      <guid>https://mogeko.me/2017/009/</guid>
       <description>Ubuntu 17.10 已经发布了一段时间了，作为 18.04 的预览（热）版。带来了一大波新特性。 其中最重要也是最令我揪心的是 Ubuntu 将放弃 Unity 回归 Gnome。对于我们这些习惯了</description>
     </item>
     
     <item>
       <title>Reabble | Kindle 下的 RRS 神器</title>
-      <link>https://mogeko.github.io/2017/008/</link>
+      <link>https://mogeko.me/2017/008/</link>
       <pubDate>Sat, 30 Sep 2017 17:40:09 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2017/008/</guid>
+      <guid>https://mogeko.me/2017/008/</guid>
       <description>Amazon 官方系统的 Kindle 中内置了一个 体验版浏览器，用起来真的很鸡肋。一开始根本不知道 Amazon 到底在想什么，做怎么个又慢，又不稳定的浏览器，浪费老子硬盘。直到</description>
     </item>
     
     <item>
       <title>Kindle 使用技巧</title>
-      <link>https://mogeko.github.io/2017/007/</link>
+      <link>https://mogeko.me/2017/007/</link>
       <pubDate>Sat, 30 Sep 2017 12:57:09 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2017/007/</guid>
+      <guid>https://mogeko.me/2017/007/</guid>
       <description>入手 Kindle 快一年半了，当时家里人都觉得我只是一时兴起，买回来迟早要吃灰的。但没想到我断断续续的用 Kindle 看了 100 本书了！！！感觉好有成就感。 今天就结合我</description>
     </item>
     
     <item>
       <title>Fira Code | 为写程序而生的字体</title>
-      <link>https://mogeko.github.io/2017/006/</link>
+      <link>https://mogeko.me/2017/006/</link>
       <pubDate>Sat, 16 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/006/</guid>
+      <guid>https://mogeko.me/2017/006/</guid>
       <description>程序员福利！！！ 今天为大家带来一个专为程序员写程序设计的字体 —— Fira Code Fira 是 Mozilla 公司（火狐浏览器她爹）主推的字体系列。Fira Code 是其中的一员，专为</description>
     </item>
     
     <item>
       <title>在你的文章中添加 B站的视频</title>
-      <link>https://mogeko.github.io/2017/005/</link>
+      <link>https://mogeko.me/2017/005/</link>
       <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/005/</guid>
+      <guid>https://mogeko.me/2017/005/</guid>
       <description>参考 https://github.com/Z4Tech/hexo-tag-bilibili 准备工作 Node.js 这是一个 Hexo插件，所以通过 npm 安装。 正文 安装 hexo-tag-bilibili 这就是那个神奇的插件，名叫 hexo-tag-bilibili。 我们通过 npm 进行</description>
     </item>
     
     <item>
       <title>使用 Hexo Hey 管理你的博客</title>
-      <link>https://mogeko.github.io/2017/004/</link>
+      <link>https://mogeko.me/2017/004/</link>
       <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/004/</guid>
+      <guid>https://mogeko.me/2017/004/</guid>
       <description>在使用 Hexo Hey 之前，我一直在使用 VSCode（配合 vscode-hexo 插件）来管理博客。虽然可以很快捷 的新建,部署, 测试,发布 博客 ，但还是很麻烦，离我理想中的博客</description>
     </item>
     
     <item>
       <title>Hexo 美化</title>
-      <link>https://mogeko.github.io/2017/003/</link>
+      <link>https://mogeko.me/2017/003/</link>
       <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/003/</guid>
+      <guid>https://mogeko.me/2017/003/</guid>
       <description>虽然 NexT 的主题很漂亮，但问题是太受欢迎了，都快烂大街了。 好在它是一个开源项目，我们可以通过修改它的代码来个性话你的博客。 这篇教程要涉及到一些前</description>
     </item>
     
     <item>
       <title>使用 Hexo &#43; GitHub Pages 建立自己的博客</title>
-      <link>https://mogeko.github.io/2017/002/</link>
+      <link>https://mogeko.me/2017/002/</link>
       <pubDate>Sun, 20 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/002/</guid>
+      <guid>https://mogeko.me/2017/002/</guid>
       <description>自从我开了这个博客后，就有很多小伙伴问我怎么弄的？（好吧，其实就一个(*/ω＼*)） 为了教她，也为了给各位看官一点参考。我写了这篇文章。 因为</description>
     </item>
     
     <item>
       <title>UAC 白名单</title>
-      <link>https://mogeko.github.io/2017/001/</link>
+      <link>https://mogeko.me/2017/001/</link>
       <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/001/</guid>
+      <guid>https://mogeko.me/2017/001/</guid>
       <description>好像废话有点多_(:з)∠)_ -&amp;gt;-&amp;gt; 直接开始的传送门 一直觉得微软为 Windows 引入 UAC 是个明智的选择，它能在一定程度上减少 Windows 平台过于开放，流氓软件肆意横行的</description>
     </item>
     
     <item>
       <title>安装 Ubuntu 双系统</title>
-      <link>https://mogeko.github.io/2017/000/</link>
+      <link>https://mogeko.me/2017/000/</link>
       <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/000/</guid>
+      <guid>https://mogeko.me/2017/000/</guid>
       <description>在很久以前就想试一试Linux了，一直没有实践。一是觉得太麻烦，二是怕把电脑弄坏。后来实践了一次后发现，其实并没有想象中那么难，这是一个完全</description>
     </item>
     

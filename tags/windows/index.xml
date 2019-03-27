@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on Mogeko`s Blog</title>
-    <link>https://mogeko.github.io/tags/windows/</link>
+    <link>https://mogeko.me/tags/windows/</link>
     <description>Recent content in Windows on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 18 Nov 2018 00:54:27 +0800</lastBuildDate>
     
-	<atom:link href="https://mogeko.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mogeko.me/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Windows / Office 激活脚本 (使用 KMS)</title>
-      <link>https://mogeko.github.io/2018/026/</link>
+      <link>https://mogeko.me/2018/026/</link>
       <pubDate>Sun, 18 Nov 2018 00:54:27 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/026/</guid>
+      <guid>https://mogeko.me/2018/026/</guid>
       <description>很早以前的一个仓库了，博主已经入了 Office 365，早就用不到了。 不过最近帮小学妹装机，所以突然诈尸更新了一波。给需要的人 (○&amp;rsquo;◡&amp;rs</description>
     </item>
     
     <item>
       <title>本地搭建 KMS 激活服务</title>
-      <link>https://mogeko.github.io/2018/017/</link>
+      <link>https://mogeko.me/2018/017/</link>
       <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/017/</guid>
+      <guid>https://mogeko.me/2018/017/</guid>
       <description>前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。 这个方法很好，但是也存在问题。KMS 服务激活一次可以正常使用 180 天，过期后自动给你续</description>
     </item>
     
     <item>
       <title>WSL 的安装与使用</title>
-      <link>https://mogeko.github.io/2018/016/</link>
+      <link>https://mogeko.me/2018/016/</link>
       <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/016/</guid>
+      <guid>https://mogeko.me/2018/016/</guid>
       <description>16 年 12 月份的时候，微软发布了 Windows Subsystem for Linux (WSL)，通过子系统的方式运行了一个完整的 Linux 系统。使得在 Windows 中使用 Linux 中的工具链成为可能。(Windows</description>
     </item>
     
     <item>
       <title>使用 Android 手机搭建 KMS 激活服务器</title>
-      <link>https://mogeko.github.io/2018/015/</link>
+      <link>https://mogeko.me/2018/015/</link>
       <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/015/</guid>
+      <guid>https://mogeko.me/2018/015/</guid>
       <description>经测试，以前的方法已经失效了。 今天就教大家一个新的方法在 Android 手机上安装 KMS 激活服务。而且新方法不需要 Magisk 框架，相比于原来的方法更简单安全。 需要 Magisk 框</description>
     </item>
     
     <item>
       <title>使用 KMS 激活 Windows / Office</title>
-      <link>https://mogeko.github.io/2018/014/</link>
+      <link>https://mogeko.me/2018/014/</link>
       <pubDate>Fri, 02 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2018/014/</guid>
+      <guid>https://mogeko.me/2018/014/</guid>
       <description>事实上，我一向不鼓励使用盗版系统 / 软件的。但对于穷人 (学生党) 来说，需要使用相关软件却买不起正版，使用盗版也是没办法的事情。 对于想使用 Windows / Office</description>
     </item>
     
     <item>
       <title>UAC 白名单</title>
-      <link>https://mogeko.github.io/2017/001/</link>
+      <link>https://mogeko.me/2017/001/</link>
       <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/001/</guid>
+      <guid>https://mogeko.me/2017/001/</guid>
       <description>好像废话有点多_(:з)∠)_ -&amp;gt;-&amp;gt; 直接开始的传送门 一直觉得微软为 Windows 引入 UAC 是个明智的选择，它能在一定程度上减少 Windows 平台过于开放，流氓软件肆意横行的</description>
     </item>
     
     <item>
       <title>安装 Ubuntu 双系统</title>
-      <link>https://mogeko.github.io/2017/000/</link>
+      <link>https://mogeko.me/2017/000/</link>
       <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mogeko.github.io/2017/000/</guid>
+      <guid>https://mogeko.me/2017/000/</guid>
       <description>在很久以前就想试一试Linux了，一直没有实践。一是觉得太麻烦，二是怕把电脑弄坏。后来实践了一次后发现，其实并没有想象中那么难，这是一个完全</description>
     </item>
     

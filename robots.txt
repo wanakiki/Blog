@@ -66,4 +66,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://mogeko.github.io/sitemap.xml
+Sitemap: https://mogeko.me/sitemap.xml

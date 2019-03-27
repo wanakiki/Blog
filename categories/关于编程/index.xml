@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>关于编程 on Mogeko`s Blog</title>
-    <link>https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/</link>
+    <link>https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/</link>
     <description>Recent content in 关于编程 on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 23 Jan 2019 12:50:59 +0800</lastBuildDate>
     
-	<atom:link href="https://mogeko.github.io/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rust 中的错误处理</title>
-      <link>https://mogeko.github.io/2019/044/</link>
+      <link>https://mogeko.me/2019/044/</link>
       <pubDate>Wed, 23 Jan 2019 12:50:59 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2019/044/</guid>
+      <guid>https://mogeko.me/2019/044/</guid>
       <description>&amp;emsp;&amp;emsp; -- 异常/错误处理 1 被称作是“第四流程控制语句”，在现代程序设计中发挥着越来越重要的作用。一般的语言喜欢使用 try...catch... 语句捕捉异常，这样做看似很符合</description>
     </item>
     
     <item>
       <title>The Little Printf</title>
-      <link>https://mogeko.github.io/2019/043/</link>
+      <link>https://mogeko.me/2019/043/</link>
       <pubDate>Sat, 19 Jan 2019 18:28:13 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2019/043/</guid>
+      <guid>https://mogeko.me/2019/043/</guid>
       <description>&amp;emsp;&amp;emsp; -- 原文地址 (英文): The Little Printf 本文是原作者 Fred Hebert 模仿《小王子》的笔法写的一篇演讲稿，同时也是一篇不错的小故事。主要探讨了一个既简单又复杂的问题：</description>
     </item>
     
     <item>
       <title>Rust 中的所有权</title>
-      <link>https://mogeko.github.io/2019/042/</link>
+      <link>https://mogeko.me/2019/042/</link>
       <pubDate>Wed, 16 Jan 2019 18:57:36 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2019/042/</guid>
+      <guid>https://mogeko.me/2019/042/</guid>
       <description>&amp;emsp;&amp;emsp; -- 所有权是 Rust 中最重要的概念之一，也是 Rust 与 C++、Java 等“别的语言”最大的区别之一。 规定所有权规则是为了解决一个困扰了学界多年的难题：如</description>
     </item>
     
     <item>
       <title>Student dormitory management</title>
-      <link>https://mogeko.github.io/2018/039/</link>
+      <link>https://mogeko.me/2018/039/</link>
       <pubDate>Sat, 22 Dec 2018 23:30:01 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/039/</guid>
+      <guid>https://mogeko.me/2018/039/</guid>
       <description>&amp;emsp;&amp;emsp; -- Demand analysis The system is designed to facilitate the management of student residences. Provide registration for students and teachers, check the student dormitory number, adjust the dormitory and other functions. At the same time, considering the need for maintenance and refurbishment of the dormitory, the system provides the function of submitting and accepting maintenance applications. After the student submits the repair application, the dormitory management will dispatch maintenance</description>
     </item>
     
     <item>
       <title>学会将代码写简单</title>
-      <link>https://mogeko.github.io/2018/034/</link>
+      <link>https://mogeko.me/2018/034/</link>
       <pubDate>Thu, 22 Nov 2018 19:46:55 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/034/</guid>
+      <guid>https://mogeko.me/2018/034/</guid>
       <description>&amp;emsp;&amp;emsp; -- 为开源项目作出贡献的最佳方式是使它的代码得以精简。我们应当努力编写即使没有注释也能使新手程序员轻松理解的代码，让维护者无需花费太多精力也</description>
     </item>
     
     <item>
       <title>Bottom-up  to development a Loan Calculator</title>
-      <link>https://mogeko.github.io/2018/027/</link>
+      <link>https://mogeko.me/2018/027/</link>
       <pubDate>Sun, 18 Nov 2018 18:30:52 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2018/027/</guid>
+      <guid>https://mogeko.me/2018/027/</guid>
       <description>About the bottom-up development Bottom-up development is a style of developing programs. With the bottom-up development, we develop in the reverse inside-out fashion; that is, we develop the service classes first. To test the service classes, we write a temporary dummy main class. After the service classes are done, we complete the top-level class that uses these service classes. The bottom-up development for this program implements the Loanclass first fully</description>
     </item>
     

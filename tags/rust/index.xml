@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rust on Mogeko`s Blog</title>
-    <link>https://mogeko.github.io/tags/rust/</link>
+    <link>https://mogeko.me/tags/rust/</link>
     <description>Recent content in Rust on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 23 Jan 2019 12:50:59 +0800</lastBuildDate>
     
-	<atom:link href="https://mogeko.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mogeko.me/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rust 中的错误处理</title>
-      <link>https://mogeko.github.io/2019/044/</link>
+      <link>https://mogeko.me/2019/044/</link>
       <pubDate>Wed, 23 Jan 2019 12:50:59 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2019/044/</guid>
+      <guid>https://mogeko.me/2019/044/</guid>
       <description>&amp;emsp;&amp;emsp; -- 异常/错误处理 1 被称作是“第四流程控制语句”，在现代程序设计中发挥着越来越重要的作用。一般的语言喜欢使用 try...catch... 语句捕捉异常，这样做看似很符合</description>
     </item>
     
     <item>
       <title>Rust 中的所有权</title>
-      <link>https://mogeko.github.io/2019/042/</link>
+      <link>https://mogeko.me/2019/042/</link>
       <pubDate>Wed, 16 Jan 2019 18:57:36 +0800</pubDate>
       
-      <guid>https://mogeko.github.io/2019/042/</guid>
+      <guid>https://mogeko.me/2019/042/</guid>
       <description>&amp;emsp;&amp;emsp; -- 所有权是 Rust 中最重要的概念之一，也是 Rust 与 C++、Java 等“别的语言”最大的区别之一。 规定所有权规则是为了解决一个困扰了学界多年的难题：如</description>
     </item>
     
