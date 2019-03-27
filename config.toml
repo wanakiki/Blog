@@ -21,8 +21,8 @@ preserveTaxonomyNames = true
 
 [menu]
   [[menu.main]]
-    name = "临时邮箱"
-    url = "http://mail.mogeko.me/"
+    name = "Tools"
+    url = "/tools/"
     weight = 1
 
   [[menu.main]]
@@ -39,6 +39,8 @@ preserveTaxonomyNames = true
     name = "Tags"
     url = "/tags/"
     weight = 4
+  
+  
 
   [[menu.main]]
     name = "About"
