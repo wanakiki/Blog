@@ -21,9 +21,6 @@ before_install:
   # 安装主题
   - git clone https://github.com/Mogeko/LeaveIt.git themes/LeaveIt
 
-# befor_script:
-#   - git clone https://github.com/Mogeko/LeaveIt.git themes/LeaveIt
-
 install:
 # 运行hugo命令
   - hugo
