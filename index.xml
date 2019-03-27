@@ -6,8 +6,64 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 23 Mar 2019 17:47:42 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 27 Mar 2019 11:51:10 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>本站上线临时邮箱服务了！！</title>
+      <link>https://mogeko.me/2019/047/</link>
+      <pubDate>Wed, 27 Mar 2019 11:51:10 +0800</pubDate>
+      
+      <guid>https://mogeko.me/2019/047/</guid>
+      <description>
+
+&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/047/&#34; &gt;
+&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;p&gt;&lt;strong&gt;本站的临时邮箱暂时不支持申请免费的 Office 356 教育版的 5T OneDrive 网络硬盘&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;今天！本站的临时邮箱服务上线了！！(￣y▽,￣)╭  地址：&lt;a href=&#34;http://mail.mogeko.me&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;mail.mogeko.me&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;什么是临时邮箱呢？就是一个临时分配的一次性邮箱地址，你只能用它来&lt;strong&gt;收&lt;/strong&gt;邮件，但关闭网页它就没有了。&lt;/p&gt;
+
+&lt;p&gt;所以这又有什么用了？&lt;/p&gt;
+
+&lt;p&gt;大家来试想一下这个场景：你在 XX论坛 看件有大佬的资源分享贴，然后你又正好需要这个这个资源。当你兴奋的点下 &lt;code&gt;下载附件&lt;/code&gt; 按钮是，弹出一个窗口&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;readmail&#34; src=&#34;https://mogeko.github.io/images/047/readmail_0.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;我只是想下个附件啊！（╯‵□′）╯︵┴─┴&lt;/p&gt;
+
+&lt;p&gt;用真实邮箱注册吧，不仅注册麻烦，而且&lt;strong&gt;还有被垃圾邮件轰炸的风险&lt;/strong&gt;。这时，如果有临时邮箱就不同了——&lt;strong&gt;你可以使用临时邮箱申请注册，注册成功后就扔掉不管了&lt;/strong&gt;，你今后仍可使用注册的邮箱登录，&lt;del&gt;不过这种垃圾论坛一般不会经常使用的吧。&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;在成功下到资源的同时避免了身份泄露被垃圾邮件轰炸，深藏功与名๑乛◡乛๑&lt;/p&gt;
+
+&lt;h1 id=&#34;如何使用&#34;&gt;如何使用&lt;/h1&gt;
+
+&lt;p&gt;首先，打开 &lt;a href=&#34;http://mail.mogeko.me&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;临时邮箱&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;readmail&#34; src=&#34;https://mogeko.github.io/images/047/readmail_1.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;右上角就是分配给你的临时邮箱地址了，如果不满意的话你也可以刷新，或者自定义邮箱地址 (如果可用的话)&lt;/p&gt;
+
+&lt;p&gt;然后，&lt;strong&gt;千万不要关闭临时邮箱的页面&lt;/strong&gt;，直接去需要注册的论坛，填上分配给你的邮箱地址，以及随便取的用户名、密码等。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;readmail&#34; src=&#34;https://mogeko.github.io/images/047/readmail_2.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;然后就可以收到验证码等注册所需要的信息了&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;readmail&#34; src=&#34;https://mogeko.github.io/images/047/readmail_3.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>使用 Homebrew 维护自己的软件仓库</title>
@@ -3773,289 +3829,6 @@ server {
 &lt;p&gt;正常了&lt;/p&gt;
 
 &lt;p&gt;&lt;img alt=&#34;fix_bug&#34; src=&#34;https://mogeko.github.io/images/033/fix_bug.png&#34; &gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>GNU/Linux 技巧：如何快速的找到一个文件</title>
-      <link>https://mogeko.me/2018/032/</link>
-      <pubDate>Wed, 21 Nov 2018 19:30:25 +0800</pubDate>
-      
-      <guid>https://mogeko.me/2018/032/</guid>
-      <description>
-
-&lt;!-- 
-&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/032/&#34; &gt;
-&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
-&amp;emsp;&amp;emsp;
- --&gt;
-
-&lt;p&gt;在使用计算机的过程中，我们都有着这么一个需求：&lt;strong&gt;找文件！！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;“卧槽，我的 XXX 文件放哪儿去了？”Σ(っ °Д °;)っ&lt;/p&gt;
-
-&lt;p&gt;“XXX 文件不应该就在 XXX 文件夹里吗？！咋个找球不到啊？”‧º·(˚ ˃̣̣̥᷄⌓˂̣̣̥᷅ )‧º·˚&lt;/p&gt;
-
-&lt;p&gt;“MMP！1000 多个文件！我找你麻痹！！”（╯‵□′）╯︵┴─┴&lt;/p&gt;
-
-&lt;p&gt;在一些没有 GUI 的 GNU/Linux 中，遇到这种情况更是雪上加霜。好在 GNU/Linux 的终端中有着不少优秀的命令行工具，可以帮助我们解决上述问题。&lt;/p&gt;
-
-&lt;p&gt;下面就介绍三个最常用的在 GNU/Linux 中快速找文件的命令行工具：&lt;strong&gt;ls&lt;/strong&gt;、&lt;strong&gt;tree&lt;/strong&gt; 和 &lt;strong&gt;find&lt;/strong&gt;&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;h1 id=&#34;ls&#34;&gt;ls&lt;/h1&gt;
-
-&lt;p&gt;&lt;code&gt;ls&lt;/code&gt; 可能是所有 Linuxer 学习到的第一个命令了 &lt;span class=&#34;spoiler&#34; &gt;cd: 喵喵喵？&lt;/span&gt; 它既简单又实用，如果给 GNU/Linux 中所有的命令使用频率排个名的话，&lt;code&gt;ls&lt;/code&gt; 绝对在前 5。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;ls&lt;/code&gt; 的作用就是列出指定目录下 (默认当前目录) 的所有可见的文件与文件夹，就像这样：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ ls
-Desktop  Documents  Downloads  Dropbox  Music  Pictures  Public  Steam  Templates  Videos
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;添加 &lt;code&gt;-l&lt;/code&gt; 选项则可以查看文件的更多信息。同时再加上 &lt;code&gt;-h&lt;/code&gt; 则可查看到文件文件的大小：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ ls -lh
-drwxr-xr-x 2 mogeko mogeko 4.0K 11月 21 21:24 Desktop
-drwxr-xr-x 3 mogeko mogeko 4.0K 11月 21 12:39 Documents
-drwxr-xr-x 4 mogeko mogeko 4.0K 11月 21 20:37 Downloads
-drwxrwx--- 5 mogeko mogeko 4.0K 11月 21 15:46 Dropbox
-drwxr-xr-x 2 mogeko mogeko  20K 10月 27 19:06 Music
-drwxr-xr-x 3 mogeko mogeko 4.0K 11月  9 11:58 Pictures
-drwxr-xr-x 2 mogeko mogeko 4.0K 10月 27 10:30 Public
-drwxrwxr-x 3 mogeko mogeko 4.0K 10月 26 19:45 Steam
-drwxr-xr-x 2 mogeko mogeko 4.0K 10月 27 10:30 Templates
-drwxr-xr-x 2 mogeko mogeko 4.0K 11月 20 21:29 Videos
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;ls&lt;/code&gt; 也可以查看指定目录下的文件：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ ls /etc/apt
-apt.conf.d     sources.list      sources.list.d     trusted.gpg
-preferences.d  trusted.gpg.d
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;或者使用&lt;strong&gt;通配符&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ ls *.yaml
-cangjie5.schema.yaml            luna_pinyin.extended.dict.yaml
-default.custom.yaml             luna_pinyin.extra_hanzi.dict.yaml
-default.yaml                    luna_pinyin_fluency.schema.yaml
-installation.yaml               luna_pinyin.kaomoji.dict.yaml
-luna_pinyin.cn_en.dict.yaml     luna_pinyin.schema.yaml
-luna_pinyin.computer.dict.yaml  luna_pinyin_simp.schema.yaml
-luna_pinyin.custom.yaml         luna_pinyin_tw.schema.yaml
-luna_pinyin.email.dict.yaml     symbols.yaml
-luna_pinyin.emoji.dict.yaml     user.yaml
-luna_pinyin.english.dict.yaml
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;想要查看隐藏文件？加个 &lt;code&gt;-a&lt;/code&gt; 就可以了：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;ls -a
-.   archetypes   content  .gitignore  public     resources  themes
-..  config.toml  .git     LICENSE.md  README.md  static     .travis.yml
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;ls&lt;/code&gt; 还可以用来在无聊时打发时间😂😂&lt;/p&gt;
-
-&lt;p&gt;在终端中执行以下命令，然后看着屏幕滚就可以了；在一下比较大型的系统中，可以滚一两个小时呢！！&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ ls -R /
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;看腻了可以用 &lt;code&gt;Ctrl + C&lt;/code&gt; 强制中断执行 | ・ω・’）&lt;/p&gt;
-
-&lt;p&gt;更多与 &lt;code&gt;ls&lt;/code&gt; 相关的选项，可以查看 &lt;code&gt;ls&lt;/code&gt; 的文档，通过以下命令查看&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ man ls
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;tree&#34;&gt;tree&lt;/h1&gt;
-
-&lt;p&gt;如果你想以更加直观的方式查看目录结构，&lt;code&gt;tree&lt;/code&gt; 是个不错的选择。&lt;/p&gt;
-
-&lt;p&gt;一般的 GNU/Linux 发行版上默认是没有安装 &lt;code&gt;tree&lt;/code&gt; 的，我们先使用&lt;strong&gt;包管理器&lt;/strong&gt;安装 &lt;code&gt;tree&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;archlinux&#34;&gt;Archlinux&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ pacman -S tree
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;ubuntu-debian&#34;&gt;Ubuntu / Debian&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ sudo apt-get install tree
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;fedora-centos&#34;&gt;Fedora / CentOS&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ sudo yum install tree
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果不带任何参数的运行 &lt;code&gt;tree&lt;/code&gt;，将会从当前目录开始，遍历当前目录下的所有子目录，形成一个树状图。想这样：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ tree
-.
-├── input.conf
-├── mpv.conf
-├── mpv_sub-delay.json
-├── scripts
-│   ├── autoload.lua
-│   ├── find_subtitles.lua
-│   └── save-sub-delay.lua
-└── watch_later
-    ├── 0E8222A71582842B0AE77E97F92C8ADF
-    ├── 3711F58064794A225929BB4E40406BB0
-    ├── 64DE4D53E1D5133254D3566CB3DFE548
-    ├── BB76733FFBAC24FA381FA1C04452948E
-    ├── D1EB1EE7CC315044D40B56E68B717219
-    └── E45A1D2ED916D7DFD4109ADFD1E4A829
-
-2 directories, 12 file
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这个命令非常有用，特别是对于我们这些 Bloger 来说；比如以下场景：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;简单讲解一下各个文件的作用&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;.
-├── Atom # 供单独使用的脚本
-│   ├── Office_2016
-│   │   ├── Office_Project_Pro.cmd # 将零售版的 Office Project Plus 转换为批量授权版, 然后激活
-│   │   ├── Office_Project_Std.cmd # 将零售版的 Office Project 转换为批量授权版, 然后激活
-│   │   ├── Office_Retail2VOL+Activate.cmd # 将零售版的 Office 转换为批量授权版, 然后激活
-│   │   ├── Office_Retail2VOL_Only.cmd # 仅仅将零售版的 Office 转换为批量授权版, 不激活
-│   │   ├── Office_Visio_Pro.cmd # 将零售版的 Office Visio Plus 转换为批量授权版, 然后激活
-│   │   ├── Office_Visio_Std.cmd # 将零售版的 Office Visio 转换为批量授权版, 然后激活
-│   │   ├── Office_VOL_Activate.cmd # 激活批量授权版的 Office
-│   │   └── 查看 Office 状态.cmd
-│   ├── Office_2013
-│   │   ├── 与 Office_2016 同理, 就不单独介绍了
-│   ├── Office_2010
-│   │   ├── 与 Office_2016 同理
-│   └── Windows_Activate.cmd # 激活批量授权版的 Windows
-├── KMS 服务可用性测试.url # 检测 KMS 服务器是否挂了
-├── README.md
-└── Run.cmd# 激活脚本
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;对于那些需要介绍每个文件的功能的场景，&lt;code&gt;tree&lt;/code&gt; 简直是神器好不好！！&lt;/p&gt;
-
-&lt;p&gt;扯远了 | ・ω・’）&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;如果不想列地太多，可以使用 &lt;code&gt;-L [数字]&lt;/code&gt; 选项来指定查找的层数，例如：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ tree -L 1
-.
-├── input.conf
-├── mpv.conf
-├── mpv_sub-delay.json
-├── scripts
-└── watch_later
-
-2 directories, 3 files
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;你也可以显示指定目录的树状图：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ tree ~/.config/mpv
-.
-├── input.conf
-├── mpv.conf
-├── mpv_sub-delay.json
-├── scripts
-│   ├── autoload.lua
-│   ├── find_subtitles.lua
-│   └── save-sub-delay.lua
-└── watch_later
-    ├── 0E8222A71582842B0AE77E97F92C8ADF
-    ├── 3711F58064794A225929BB4E40406BB0
-    ├── 64DE4D53E1D5133254D3566CB3DFE548
-    ├── BB76733FFBAC24FA381FA1C04452948E
-    ├── D1EB1EE7CC315044D40B56E68B717219
-    └── E45A1D2ED916D7DFD4109ADFD1E4A829
-
-2 directories, 12 file
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果需要列出的是一个很大的树状图，可以配合 &lt;code&gt;less&lt;/code&gt; 使用：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;tree | less
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;同样的，要查看更多关于 &lt;code&gt;tree&lt;/code&gt; 的信息：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;man tree
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;find&#34;&gt;find&lt;/h1&gt;
-
-&lt;p&gt;如果不知道文件在哪里怎么办呢？总不能从 &lt;code&gt;/&lt;/code&gt; 目录开始遍历吧！这时你需要 &lt;code&gt;find&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;如果不加任何参数的运行 &lt;code&gt;find&lt;/code&gt;，它将会递归列出改目录下的所有文件和目录：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ find
-.
-./mpv_sub-delay.json
-./scripts
-./scripts/find_subtitles.lua
-./scripts/autoload.lua
-./scripts/save-sub-delay.lua
-./mpv.conf
-./watch_later
-./watch_later/E45A1D2ED916D7DFD4109ADFD1E4A829
-./watch_later/3711F58064794A225929BB4E40406BB0
-./watch_later/0E8222A71582842B0AE77E97F92C8ADF
-./watch_later/64DE4D53E1D5133254D3566CB3DFE548
-./watch_later/BB76733FFBAC24FA381FA1C04452948E
-./watch_later/D1EB1EE7CC315044D40B56E68B717219
-./input.conf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;但是 &lt;code&gt;find&lt;/code&gt; 真正强大的地方在于你可以使用文件名进行搜索：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ find -name autoload.lua
-./scripts/autoload.lua
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;或是使用&lt;strong&gt;通配符&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ find -name *.lua
-./scripts/find_subtitles.lua
-./scripts/autoload.lua
-./scripts/save-sub-delay.lua
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;你也可以根据文件大小进行搜索 (对于硬盘空间不足的时候特别有用)&lt;/p&gt;
-
-&lt;p&gt;列出所有大于 1 G 的文件：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ find -size +1G
-./Downloads/Asura.2012.BluRay.1080p.x264-MySiLU [PublicHD]/Asura.2012.BluRay.1080p.x264.AC3-MySilu.mkv
-./Downloads/Starship.Troopers.Traitor.of.Mars.2017.720p.WEB-DL.DD5.1.H264-FGT/Starship.Troopers.Traitor.of.Mars.2017.720p.WEB-DL.DD5.1.H264-FGT.mkv
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;也可以搜索具体的文件目录，例如我们想在 &lt;code&gt;.config/mpv&lt;/code&gt; 目录中查找所有后缀为 &lt;code&gt;.lua&lt;/code&gt; 的文件：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ find .config/mpv -name *.lua
-.config/mpv/scripts/find_subtitles.lua
-.config/mpv/scripts/autoload.lua
-.config/mpv/scripts/save-sub-delay.lua
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;更多的信息可以查看 &lt;strong&gt;man 手册&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;man find
-&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
