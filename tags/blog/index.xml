@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Mogeko`s Blog</title>
+    <link>https://mogeko.me/tags/blog/</link>
+    <description>Recent content in blog on Mogeko`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 28 Mar 2019 14:39:37 +0800</lastBuildDate>
+    
+	<atom:link href="https://mogeko.me/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>为博客添加独立域名</title>
+      <link>https://mogeko.me/2019/048/</link>
+      <pubDate>Thu, 28 Mar 2019 14:39:37 +0800</pubDate>
+      
+      <guid>https://mogeko.me/2019/048/</guid>
+      <description>&amp;emsp;&amp;emsp; -- 关于如何给部署在 GitHub Pages 上的博客添加独立域名，上网有很多教程。但是他们要么方法已经过时了，要么就没有说清楚原理，弄得我走了很多弯路。我今天就</description>
+    </item>
+    
+  </channel>
+</rss>

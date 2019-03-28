@@ -6,10 +6,19 @@
     <description>Recent content in 关于博客 on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 27 Mar 2019 11:51:10 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 28 Mar 2019 14:39:37 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>为博客添加独立域名</title>
+      <link>https://mogeko.me/2019/048/</link>
+      <pubDate>Thu, 28 Mar 2019 14:39:37 +0800</pubDate>
+      
+      <guid>https://mogeko.me/2019/048/</guid>
+      <description>&amp;emsp;&amp;emsp; -- 关于如何给部署在 GitHub Pages 上的博客添加独立域名，上网有很多教程。但是他们要么方法已经过时了，要么就没有说清楚原理，弄得我走了很多弯路。我今天就</description>
+    </item>
     
     <item>
       <title>本站上线临时邮箱服务了！！</title>

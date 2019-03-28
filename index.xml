@@ -6,8 +6,116 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 27 Mar 2019 11:51:10 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 28 Mar 2019 14:39:37 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>为博客添加独立域名</title>
+      <link>https://mogeko.me/2019/048/</link>
+      <pubDate>Thu, 28 Mar 2019 14:39:37 +0800</pubDate>
+      
+      <guid>https://mogeko.me/2019/048/</guid>
+      <description>
+
+&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/048/&#34; &gt;
+&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;p&gt;关于如何给部署在 GitHub Pages 上的博客添加独立域名，上网有很多教程。但是他们要么方法已经过时了，要么就没有说清楚原理，弄得我走了很多弯路。我今天就来写一篇面向小白的教程，尽我所能讲清楚怎么做？为什么？&lt;/p&gt;
+
+&lt;h1 id=&#34;选购域名&#34;&gt;选购域名&lt;/h1&gt;
+
+&lt;p&gt;可能很多人已经买好了域名了，你可以&lt;a href=&#34;#GitHub 上的设置&#34;&gt;跳过这部分&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;要想给博客绑定独立域名，首先你得拥有一个域名。首先你得去域名注册网站购买域名，如果想在国内的域名商手里购买的话我比较推荐&lt;a href=&#34;https://wanwang.aliyun.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;万网&lt;/a&gt;，国外的话比较推荐 &lt;a href=&#34;https://www.godaddy.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GoDaddy&lt;/a&gt;，因为他们分别是中国最大和世界最大的域名注册服务商。&lt;strong&gt;千万不要为了贪便宜，去那些不正规的小域名商那里注册，水很深的。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;我的与域名是在 GoDaddy 买的，因为国内买不到 &lt;code&gt;.me&lt;/code&gt; 的域名，而我又恰恰有点喜欢这个域名 (简短好记，还是一个英文单词，最关键的是这个单词还特别适合博客！！)。价格的话只要不是 &lt;code&gt;.com&lt;/code&gt; 这样“高级货”，一般的域名都是 120 左右一年，平均下来每个月 10 块钱左右 (就当充个会员了)，另外第一年一般都有很高的折扣，比如我这个 &lt;code&gt;.me&lt;/code&gt; 的域名第一年就只要了我 24 (不过 WHOIS 目录中的个人信息加密需要另外收费)&lt;/p&gt;
+
+&lt;p&gt;具体选购过程大致就是：&lt;strong&gt;搜索域名 -&amp;gt; 将喜欢的域名加入购物车 -&amp;gt; 付款 -&amp;gt; 购买成功&lt;/strong&gt;，跟去某宝买东西差不多，这里就不再赘述了。&lt;/p&gt;
+
+&lt;h1 id=&#34;github-上的设置&#34;&gt;GitHub 上的设置&lt;/h1&gt;
+
+&lt;p&gt;购买好域名后，首先到 Github 上，你部署博客的那个 Git 仓库的设置里，在 &lt;code&gt;Custom domain&lt;/code&gt; 这里填上你购买的域名&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Settings on GitHub&#34; src=&#34;https://mogeko.github.io/images/048/gh_setting_CNAME.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;或者在创建一个名为 &lt;code&gt;CNAME&lt;/code&gt; 的文件放在根目录，其中的内容&lt;strong&gt;只&lt;/strong&gt;写上你的域名，像这样&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-CNAME&#34;&gt;example.me
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果使用了 Travis CI 这类持续集成服务来部署博客的话推荐使用第二种方式进行设置。&lt;/p&gt;
+
+&lt;p&gt;如果 &lt;code&gt;Custom domain&lt;/code&gt; 下方有 &lt;code&gt;Enforce HTTPS&lt;/code&gt; 这个选项的话一并勾选上&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Settings on GitHub&#34; src=&#34;https://mogeko.github.io/images/048/gh_setting_HTTPS.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;Github 跟 Let&amp;rsquo;s Encrypt 有合作，如果勾选了这个选项，Let&amp;rsquo;s Encrypt 就会给你的博客签发一张 SSL 证书，免费的。&lt;/p&gt;
+
+&lt;h1 id=&#34;dns-上的设置&#34;&gt;DNS 上的设置&lt;/h1&gt;
+
+&lt;p&gt;终于到了最关键的一步了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;现在要做的是让域名指向正确的 IP 地址，GitHub 为此提供了 4 条 IP，使用 &lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F#%E8%AE%B0%E5%BD%95%E7%B1%BB%E5%9E%8B&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;A 记录&lt;/a&gt; 指向这 4 条 IP 地址就可以了&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这 4 条 IP 分别是 (来自&lt;a href=&#34;https://help.github.com/en/articles/setting-up-an-apex-domain&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt; GitHub 的官方文档&lt;/a&gt;)：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;185.199.108.153&amp;emsp;&amp;emsp;185.199.109.153&amp;emsp;&amp;emsp;185.199.110.153&amp;emsp;&amp;emsp;185.199.111.153&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;到你购买域名的域名商的域名管理页面进行设置，虽然不同的域名商域名管理页面不同，不过原理都是相同的。&lt;/p&gt;
+
+&lt;p&gt;这里以 GoDaddy 为例，进入&lt;strong&gt;域名管理器 (Domain Manager) -&amp;gt; DNS 管理 (Manage DNS)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Setting on DNS&#34; src=&#34;https://mogeko.github.io/images/048/DNS_setting_1.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;在**记录 (Record) **项目中点击 **添加 (ADD) **&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Setting on DNS&#34; src=&#34;https://mogeko.github.io/images/048/DNS_setting_2.png&#34; &gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;类型：A&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;主机：@&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;指向：185.199.108.153&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;TTL：保持默认&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;以相同的方式配置剩下的 3 条 IP 地址&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote&gt;
+    &lt;p&gt;
+        &lt;strong&gt;类型：A&lt;/strong&gt;&lt;br&gt;
+        &lt;strong&gt;主机：@&lt;/strong&gt;&lt;br&gt;
+        &lt;strong&gt;指向：185.199.109.153&lt;/strong&gt;&lt;br&gt;
+        &lt;strong&gt;TTL：保持默认&lt;/strong&gt;&lt;br&gt;
+    &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+    &lt;p&gt;
+        &lt;strong&gt;类型：A&lt;/strong&gt;&lt;br&gt;
+        &lt;strong&gt;主机：@&lt;/strong&gt;&lt;br&gt;
+        &lt;strong&gt;指向：185.199.110.153&lt;/strong&gt;&lt;br&gt;
+        &lt;strong&gt;TTL：保持默认&lt;/strong&gt;&lt;br&gt;
+    &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+    &lt;p&gt;
+        &lt;strong&gt;类型：A&lt;/strong&gt;&lt;br&gt;
+        &lt;strong&gt;主机：@&lt;/strong&gt;&lt;br&gt;
+        &lt;strong&gt;指向：185.199.111.153&lt;/strong&gt;&lt;br&gt;
+        &lt;strong&gt;TTL：保持默认&lt;/strong&gt;&lt;br&gt;
+    &lt;/p&gt;
+&lt;/blockquote&gt;
+等几分钟 (刷新 DNS 缓存)，然后在浏览器中输入你的域名看看结果。&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>本站上线临时邮箱服务了！！</title>
@@ -3751,84 +3859,6 @@ server {
 &lt;p&gt;原文作者：&lt;a href=&#34;http://matthewrocklin.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Matthew Rocklin&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;原文地址：&lt;a href=&#34;http://matthewrocklin.com/blog/work/2018/01/27/write-dumb-code&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://matthewrocklin.com/blog/work/2018/01/27/write-dumb-code&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>为 Hugo 博客添加字数统计</title>
-      <link>https://mogeko.me/2018/033/</link>
-      <pubDate>Thu, 22 Nov 2018 16:51:03 +0800</pubDate>
-      
-      <guid>https://mogeko.me/2018/033/</guid>
-      <description>
-
-&lt;!-- 
-&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/033/&#34; &gt;
-&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
-&amp;emsp;&amp;emsp;
- --&gt;
-
-&lt;p&gt;作为一个孤芳自赏的 Bloger，每一篇文章都像是自己的孩子一样，孩子的“体重”如何是每一个父母都关注的问题。&lt;/p&gt;
-
-&lt;p&gt;今天就简单的教教大家如何给自己的孩子称“体重”。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;h1 id=&#34;相关模板变量&#34;&gt;相关模板变量&lt;/h1&gt;
-
-&lt;p&gt;作为一个静态网页生成器，Hugo 为使用者提供了很多与网页相关的&lt;strong&gt;模板变量&lt;/strong&gt;，而与文章字数相关的&lt;strong&gt;模板变量&lt;/strong&gt;有两个：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;.FuzzyWordCount&lt;/code&gt;&lt;/strong&gt;: 文章内容的大致单词数 (字数)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;.WordCount&lt;/code&gt;&lt;/strong&gt;: 文章内容的单词数 (字数)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;我们可以看到 &lt;strong&gt;&lt;code&gt;.FuzzyWordCount&lt;/code&gt;&lt;/strong&gt; 提供的是一个大概的值 (整 100)，比如 1 个字算 100 字，2 个字还算 100 字，201 个字算 200 字。这样统计出来的字数可能会比实际情况更多一点，虽然更有牌面但全都是整数未免也太假了。所以我还是决定使用 &lt;strong&gt;&lt;code&gt;.WordCount&lt;/code&gt;&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;更多与&lt;strong&gt;模板变量&lt;/strong&gt;相关信息请参考：&lt;a href=&#34;https://gohugo.io/variables/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Variables and Params&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;为主题添加-字数统计-模板&#34;&gt;为主题添加「字数统计」模板&lt;/h1&gt;
-
-&lt;p&gt;首先启动一个本地的 Hugo 服务器。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后打开 &lt;strong&gt;Chrome&lt;/strong&gt;，利用 &lt;strong&gt;DevTools&lt;/strong&gt; 定位放&lt;strong&gt;字数统计&lt;/strong&gt;的位置&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Chrome DevTools&#34; src=&#34;https://mogeko.github.io/images/033/devtools.png&#34; &gt;&lt;/p&gt;
-
-&lt;p&gt;然后记录下与预订位置邻近的 &lt;strong&gt;DOM&lt;/strong&gt; 的 &lt;code&gt;class&lt;/code&gt; 的值。&lt;/p&gt;
-
-&lt;p&gt;打开 &lt;strong&gt;VSCode&lt;/strong&gt;，利用「搜索」定位刚刚查找到到 &lt;code&gt;class&lt;/code&gt; 值的位置。&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;VSCode&#34; src=&#34;https://mogeko.github.io/images/033/vscode.png&#34; &gt;&lt;/p&gt;
-
-&lt;p&gt;再在合适的位置中插入以下代码：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;span class=&amp;quot;post-word-count&amp;quot;&amp;gt;, {{ .WordCount }} words&amp;lt;/span&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后再在 &lt;strong&gt;Chrome&lt;/strong&gt; 中查看效果。&lt;/p&gt;
-
-&lt;h1 id=&#34;统计字数不正确&#34;&gt;统计字数不正确&lt;/h1&gt;
-
-&lt;p&gt;一打开 &lt;strong&gt;Chrome&lt;/strong&gt; 懵逼了。我辛辛苦苦码了这么久才 69 个字？？？&lt;span class=&#34;spoiler&#34; &gt;你豁鬼哦！！（╯‵□′）╯︵┴─┴&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;bug&#34; src=&#34;https://mogeko.github.io/images/033/bug.png&#34; &gt;&lt;/p&gt;
-
-&lt;p&gt;Google 了一下才知道，原来 Hugo 默认不会统计中文 (&lt;a href=&#34;https://github.com/nodejh/hugo-theme-cactus-plus/issues/18&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;详情&lt;/a&gt;)，需要在&lt;code&gt;config.toml&lt;/code&gt; 中添加这么一句配置才可以开启对中文的统计&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;hasCJKLanguage = true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;正常了&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;fix_bug&#34; src=&#34;https://mogeko.github.io/images/033/fix_bug.png&#34; &gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
