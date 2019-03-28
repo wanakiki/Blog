@@ -193,13 +193,13 @@
 
 <p><code>ls</code> 的作用就是列出指定目录下 (默认当前目录) 的所有可见的文件与文件夹，就像这样：</p>
 
-<pre><code class="language-shell">$ ls
+<pre><code class="language-bash">$ ls
 Desktop  Documents  Downloads  Dropbox  Music  Pictures  Public  Steam  Templates  Videos
 </code></pre>
 
 <p>添加 <code>-l</code> 选项则可以查看文件的更多信息。同时再加上 <code>-h</code> 则可查看到文件文件的大小：</p>
 
-<pre><code class="language-shell">$ ls -lh
+<pre><code class="language-bash">$ ls -lh
 drwxr-xr-x 2 mogeko mogeko 4.0K 11月 21 21:24 Desktop
 drwxr-xr-x 3 mogeko mogeko 4.0K 11月 21 12:39 Documents
 drwxr-xr-x 4 mogeko mogeko 4.0K 11月 21 20:37 Downloads
@@ -214,14 +214,14 @@ drwxr-xr-x 2 mogeko mogeko 4.0K 11月 20 21:29 Videos
 
 <p><code>ls</code> 也可以查看指定目录下的文件：</p>
 
-<pre><code class="language-shell">$ ls /etc/apt
+<pre><code class="language-bash">$ ls /etc/apt
 apt.conf.d     sources.list      sources.list.d     trusted.gpg
 preferences.d  trusted.gpg.d
 </code></pre>
 
 <p>或者使用<strong>通配符</strong>：</p>
 
-<pre><code class="language-shell">$ ls *.yaml
+<pre><code class="language-bash">$ ls *.yaml
 cangjie5.schema.yaml            luna_pinyin.extended.dict.yaml
 default.custom.yaml             luna_pinyin.extra_hanzi.dict.yaml
 default.yaml                    luna_pinyin_fluency.schema.yaml
@@ -236,7 +236,7 @@ luna_pinyin.english.dict.yaml
 
 <p>想要查看隐藏文件？加个 <code>-a</code> 就可以了：</p>
 
-<pre><code class="language-shell">ls -a
+<pre><code class="language-bash">ls -a
 .   archetypes   content  .gitignore  public     resources  themes
 ..  config.toml  .git     LICENSE.md  README.md  static     .travis.yml
 </code></pre>
@@ -245,14 +245,14 @@ luna_pinyin.english.dict.yaml
 
 <p>在终端中执行以下命令，然后看着屏幕滚就可以了；在一下比较大型的系统中，可以滚一两个小时呢！！</p>
 
-<pre><code class="language-shell">$ ls -R /
+<pre><code class="language-bash">$ ls -R /
 </code></pre>
 
 <p>看腻了可以用 <code>Ctrl + C</code> 强制中断执行 | ・ω・’）</p>
 
 <p>更多与 <code>ls</code> 相关的选项，可以查看 <code>ls</code> 的文档，通过以下命令查看</p>
 
-<pre><code class="language-shell">$ man ls
+<pre><code class="language-bash">$ man ls
 </code></pre>
 
 <h1 id="tree">tree</h1>
@@ -263,22 +263,22 @@ luna_pinyin.english.dict.yaml
 
 <h2 id="archlinux">Archlinux</h2>
 
-<pre><code class="language-shell">$ pacman -S tree
+<pre><code class="language-bash">$ pacman -S tree
 </code></pre>
 
 <h2 id="ubuntu-debian">Ubuntu / Debian</h2>
 
-<pre><code class="language-shell">$ sudo apt-get install tree
+<pre><code class="language-bash">$ sudo apt-get install tree
 </code></pre>
 
 <h2 id="fedora-centos">Fedora / CentOS</h2>
 
-<pre><code class="language-shell">$ sudo yum install tree
+<pre><code class="language-bash">$ sudo yum install tree
 </code></pre>
 
 <p>如果不带任何参数的运行 <code>tree</code>，将会从当前目录开始，遍历当前目录下的所有子目录，形成一个树状图。想这样：</p>
 
-<pre><code class="language-shell">$ tree
+<pre><code class="language-bash">$ tree
 .
 ├── input.conf
 ├── mpv.conf
@@ -303,7 +303,7 @@ luna_pinyin.english.dict.yaml
 <blockquote>
 <p>简单讲解一下各个文件的作用</p>
 
-<pre><code class="language-shell">.
+<pre><code class="language-bash">.
 ├── Atom # 供单独使用的脚本
 │   ├── Office_2016
 │   │   ├── Office_Project_Pro.cmd # 将零售版的 Office Project Plus 转换为批量授权版, 然后激活
@@ -333,7 +333,7 @@ luna_pinyin.english.dict.yaml
 
 <p>如果不想列地太多，可以使用 <code>-L [数字]</code> 选项来指定查找的层数，例如：</p>
 
-<pre><code class="language-shell">$ tree -L 1
+<pre><code class="language-bash">$ tree -L 1
 .
 ├── input.conf
 ├── mpv.conf
@@ -346,7 +346,7 @@ luna_pinyin.english.dict.yaml
 
 <p>你也可以显示指定目录的树状图：</p>
 
-<pre><code class="language-shell">$ tree ~/.config/mpv
+<pre><code class="language-bash">$ tree ~/.config/mpv
 .
 ├── input.conf
 ├── mpv.conf
@@ -368,12 +368,12 @@ luna_pinyin.english.dict.yaml
 
 <p>如果需要列出的是一个很大的树状图，可以配合 <code>less</code> 使用：</p>
 
-<pre><code class="language-shell">tree | less
+<pre><code class="language-bash">tree | less
 </code></pre>
 
 <p>同样的，要查看更多关于 <code>tree</code> 的信息：</p>
 
-<pre><code class="language-shell">man tree
+<pre><code class="language-bash">man tree
 </code></pre>
 
 <h1 id="find">find</h1>
@@ -382,7 +382,7 @@ luna_pinyin.english.dict.yaml
 
 <p>如果不加任何参数的运行 <code>find</code>，它将会递归列出改目录下的所有文件和目录：</p>
 
-<pre><code class="language-shell">$ find
+<pre><code class="language-bash">$ find
 .
 ./mpv_sub-delay.json
 ./scripts
@@ -402,13 +402,13 @@ luna_pinyin.english.dict.yaml
 
 <p>但是 <code>find</code> 真正强大的地方在于你可以使用文件名进行搜索：</p>
 
-<pre><code class="language-shell">$ find -name autoload.lua
+<pre><code class="language-bash">$ find -name autoload.lua
 ./scripts/autoload.lua
 </code></pre>
 
 <p>或是使用<strong>通配符</strong>：</p>
 
-<pre><code class="language-shell">$ find -name *.lua
+<pre><code class="language-bash">$ find -name *.lua
 ./scripts/find_subtitles.lua
 ./scripts/autoload.lua
 ./scripts/save-sub-delay.lua
@@ -418,14 +418,14 @@ luna_pinyin.english.dict.yaml
 
 <p>列出所有大于 1 G 的文件：</p>
 
-<pre><code class="language-shell">$ find -size +1G
+<pre><code class="language-bash">$ find -size +1G
 ./Downloads/Asura.2012.BluRay.1080p.x264-MySiLU [PublicHD]/Asura.2012.BluRay.1080p.x264.AC3-MySilu.mkv
 ./Downloads/Starship.Troopers.Traitor.of.Mars.2017.720p.WEB-DL.DD5.1.H264-FGT/Starship.Troopers.Traitor.of.Mars.2017.720p.WEB-DL.DD5.1.H264-FGT.mkv
 </code></pre>
 
 <p>也可以搜索具体的文件目录，例如我们想在 <code>.config/mpv</code> 目录中查找所有后缀为 <code>.lua</code> 的文件：</p>
 
-<pre><code class="language-shell">$ find .config/mpv -name *.lua
+<pre><code class="language-bash">$ find .config/mpv -name *.lua
 .config/mpv/scripts/find_subtitles.lua
 .config/mpv/scripts/autoload.lua
 .config/mpv/scripts/save-sub-delay.lua
@@ -433,7 +433,7 @@ luna_pinyin.english.dict.yaml
 
 <p>更多的信息可以查看 <strong>man 手册</strong>：</p>
 
-<pre><code class="language-shell">man find
+<pre><code class="language-bash">man find
 </code></pre>
 
 <p><br></p>

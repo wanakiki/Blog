@@ -179,7 +179,7 @@
 
 <!-- more -->
 
-<h1 id="正文">正文</h1>
+<h2 id="正文">正文</h2>
 
 <p>Ubuntu 官方推荐的升级策略是“依次升级”。<strong>较低</strong>的版本想要升级到<strong>最高</strong>的版本，需要想升级到<strong>较高</strong>的版本，再从<strong>较高</strong>的版本升级到<strong>最高</strong>的版本。也就是说 16.10 想要升级到 17.10 需要先升级到 17.04。</p>
 
@@ -191,7 +191,7 @@
 
 <p><strong>强烈建议升级前先备份！！！</strong> -&gt; <a href="http://www.jianshu.com/p/b73e8011b828" rel="nofollow noreferrer" target="_blank">如何备份 Ubuntu</a></p>
 
-<h2 id="小白最爱的升级方法-无脑下一步">小白最爱的升级方法（无脑下一步）</h2>
+<h3 id="小白最爱的升级方法-无脑下一步">小白最爱的升级方法（无脑下一步）</h3>
 
 <p>在 Dash 中搜索并启动 Update Manager</p>
 
@@ -209,7 +209,7 @@
 <li>如果不想等，可以在命令行中输入命令：</li>
 </ul>
 
-<pre><code class="language-shell">  sudo do-release-upgrade -d
+<pre><code class="language-bash">  sudo do-release-upgrade -d
 </code></pre>
 
 <p>这个命令可以强制搜索新的版本</p>
@@ -222,45 +222,45 @@
 
 <p><img alt="Upgrade" src="https://mogeko.github.io/images/009/Upgrade_5.png"></p>
 
-<h2 id="使用命令行升级-ubuntu">使用命令行升级 Ubuntu</h2>
+<h3 id="使用命令行升级-ubuntu">使用命令行升级 Ubuntu</h3>
 
 <p>首先，打开终端窗口并运行以下命令升级现有软件。</p>
 
-<pre><code class="language-shell">sudo apt update &amp;&amp; sudo apt dist-upgrade
+<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt dist-upgrade
 </code></pre>
 
 <p>然后确保您安装了 update-manager-core 软件包。</p>
 
-<pre><code class="language-shell">sudo apt install update-manager-core
+<pre><code class="language-bash">sudo apt install update-manager-core
 </code></pre>
 
 <p>接下来，使用 nano 或您首选的命令行文本编辑器编辑配置文件。</p>
 
-<pre><code class="language-shell">sudo nano /etc/update-manager/release-upgrades
+<pre><code class="language-bash">sudo nano /etc/update-manager/release-upgrades
 </code></pre>
 
 <p>在此文件的底部，将提示值从<code>lts</code> 更改为 <code>normal</code>。</p>
 
-<pre><code class="language-shell">Prompt=normal
+<pre><code class="language-bash">Prompt=normal
 </code></pre>
 
 <p>保存并关闭文件。 之后，运行以下命令开始升级过程。</p>
 
-<pre><code class="language-shell">do-release-upgrade
+<pre><code class="language-bash">do-release-upgrade
 </code></pre>
 
 <p>同样的，升级完成后会自动重启。</p>
 
-<h2 id="查看-ubuntu-版本-验证是否升级成功">查看 Ubuntu 版本（验证是否升级成功）</h2>
+<h3 id="查看-ubuntu-版本-验证是否升级成功">查看 Ubuntu 版本（验证是否升级成功）</h3>
 
 <p>验证是否升级成功，只需要在命令行中运行：</p>
 
-<pre><code class="language-shell">lsb_release -a
+<pre><code class="language-bash">lsb_release -a
 </code></pre>
 
 <p>输出：</p>
 
-<pre><code class="language-shell">No LSB modules are available.
+<pre><code class="language-bash">No LSB modules are available.
 Distributor ID:	Ubuntu
 Description:	Ubuntu 17.10
 Release:	17.10

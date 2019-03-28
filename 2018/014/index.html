@@ -187,16 +187,16 @@
 
 <!-- more -->
 
-<h1 id="正文">正文</h1>
+<h2 id="正文">正文</h2>
 
-<h2 id="激活-windows">激活 Windows</h2>
+<h3 id="激活-windows">激活 Windows</h3>
 
 <p>KMS 激活服务只能激活批量授权版 Windows (VOL 版)，无法激活零售版 Windows (Retail 版)。</p>
 
 <p>以 Windows 10 Pro 为例
 想要激活 VOL 版 Windows 10 pro，只需要用<strong>管理员权限</strong>打开一个 cmd，然后依次执行以下命令便可。</p>
 
-<pre><code class="language-shell">slmgr -upk
+<pre><code class="language-bash">slmgr -upk
 slmgr -ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
 slmgr -skms kms.03k.org
 slmgr -ato
@@ -206,7 +206,7 @@ slmgr -dlv
 <p>方法同样适用于激活 Windows 8、Windows 7，只是要把上面的 KEY (就是形如 <code>W269N-WFGWX-YVC9B-4J6C9-T83GX</code> 这样的东西) 替换一下。
 <a href="https://mogeko.github.io/2018/014/#KEY" rel="nofollow noreferrer" target="_blank">可供使用的 KEY</a></p>
 
-<h2 id="激活-office">激活 Office</h2>
+<h3 id="激活-office">激活 Office</h3>
 
 <p>同样的，KMS 激活服务只能激活 VOL 版的 Office，不过零售版的 Office 可以通过脚本转换为 VOL 版。
 如果不知道自己安装的是什么版本的 Office，可以使用这个方法查看 -&gt; <a href="https://mogeko.github.io/2018/014/#%E5%88%A4%E6%96%AD%E4%BD%A0%E5%AE%89%E8%A3%85%E7%9A%84-Office-%E6%98%AF%E5%93%AA%E4%B8%AA%E7%89%88%E6%9C%AC" rel="nofollow noreferrer" target="_blank">判断你安装的 Office 是哪个版本</a></p>
@@ -215,12 +215,12 @@ slmgr -dlv
 以 Office 2016 为例，Office 2016 的安装目录是：<code>&quot;C:\Program Files\Microsoft Office\Office16</code>。
 以<strong>管理员权限</strong>打开一个 cmd，然后执行以下命令</p>
 
-<pre><code class="language-shell">cd &quot;C:\Program Files\Microsoft Office\Office16&quot;
+<pre><code class="language-bash">cd &quot;C:\Program Files\Microsoft Office\Office16&quot;
 </code></pre>
 
 <p>如果你系统是 64 位的但 Office 安装的是 32 位的，执行以下命令</p>
 
-<pre><code class="language-shell">cd &quot;C:\Program Files (x86)\Microsoft Office\Office16&quot;
+<pre><code class="language-bash">cd &quot;C:\Program Files (x86)\Microsoft Office\Office16&quot;
 </code></pre>
 
 <p>如果你安装的是 Office 2015，就将 <code>Office16</code> 替换为 <code>Office13</code>；如果是 Office 2014 就替换为  <code>Office10</code>；以此类推。</p>
@@ -229,32 +229,32 @@ slmgr -dlv
 
 <p>进入 Office 的安装目录后，依次执行以下命令</p>
 
-<pre><code class="language-shell">cscript ospp.vbs /sethst:kms.03k.org
+<pre><code class="language-bash">cscript ospp.vbs /sethst:kms.03k.org
 cscript ospp.vbs /act
 </code></pre>
 
-<h1 id="附录">附录</h1>
+<h2 id="附录">附录</h2>
 
-<h2 id="判断你安装的-office-是哪个版本">判断你安装的 Office 是哪个版本</h2>
+<h3 id="判断你安装的-office-是哪个版本">判断你安装的 Office 是哪个版本</h3>
 
 <p>以<strong>管理员权限</strong>打开一个 cmd，来到Office的安装目录，输入命令：<code>cscript ospp.vbs /dstatus</code>
 如果输出的信息中包含下面这句话说明你安装的是零售版</p>
 
-<pre><code class="language-shell">LICENSE DESCRIPTION: Office 15, RETAIL(Grace) channel
+<pre><code class="language-bash">LICENSE DESCRIPTION: Office 15, RETAIL(Grace) channel
 </code></pre>
 
 <p>如果输出的信息中包含下面这句话说明你安装的是批量授权版</p>
 
-<pre><code class="language-shell">LICENSE DESCRIPTION: Office 15, VOLUME_KMSCLIENT channel
+<pre><code class="language-bash">LICENSE DESCRIPTION: Office 15, VOLUME_KMSCLIENT channel
 </code></pre>
 
-<h2 id="key">KEY</h2>
+<h3 id="key">KEY</h3>
 
 <p>以下是部分可供使用的 KEY</p>
 
-<h3 id="windows">Windows</h3>
+<h4 id="windows">Windows</h4>
 
-<h4 id="windows-10-版本-1803">Windows 10 版本 1803</h4>
+<h5 id="windows-10-版本-1803">Windows 10 版本 1803</h5>
 
 <table>
 <thead>
@@ -327,7 +327,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-10-版本-1709">Windows 10 版本 1709</h4>
+<h5 id="windows-10-版本-1709">Windows 10 版本 1709</h5>
 
 <table>
 <thead>
@@ -350,7 +350,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-10">Windows 10</h4>
+<h5 id="windows-10">Windows 10</h5>
 
 <table>
 <thead>
@@ -413,7 +413,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-版本-1803">Windows Server 版本 1803</h4>
+<h5 id="windows-server-版本-1803">Windows Server 版本 1803</h5>
 
 <table>
 <thead>
@@ -436,7 +436,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-版本-1709">Windows Server 版本 1709</h4>
+<h5 id="windows-server-版本-1709">Windows Server 版本 1709</h5>
 
 <table>
 <thead>
@@ -459,7 +459,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-2016">Windows Server 2016</h4>
+<h5 id="windows-server-2016">Windows Server 2016</h5>
 
 <table>
 <thead>
@@ -487,7 +487,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-2012-r2-和-windows-8-1">Windows Server 2012 R2 和 Windows 8.1</h4>
+<h5 id="windows-server-2012-r2-和-windows-8-1">Windows Server 2012 R2 和 Windows 8.1</h5>
 
 <table>
 <thead>
@@ -535,7 +535,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-2012-和-windows-8">Windows Server 2012 和 Windows 8</h4>
+<h5 id="windows-server-2012-和-windows-8">Windows Server 2012 和 Windows 8</h5>
 
 <table>
 <thead>
@@ -608,7 +608,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-7-和-windows-server-2008-r2">Windows 7 和 Windows Server 2008 R2</h4>
+<h5 id="windows-7-和-windows-server-2008-r2">Windows 7 和 Windows Server 2008 R2</h5>
 
 <table>
 <thead>
@@ -681,7 +681,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-vista-和-windows-server-2008">Windows Vista 和 Windows Server 2008</h4>
+<h5 id="windows-vista-和-windows-server-2008">Windows Vista 和 Windows Server 2008</h5>
 
 <table>
 <thead>
@@ -759,9 +759,9 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h3 id="office">Office</h3>
+<h4 id="office">Office</h4>
 
-<h4 id="office-2016">Office 2016</h4>
+<h5 id="office-2016">Office 2016</h5>
 
 <table>
 <thead>
@@ -844,7 +844,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="office-2013">Office 2013</h4>
+<h5 id="office-2013">Office 2013</h5>
 
 <table>
 <thead>
@@ -932,7 +932,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="office-2010">Office 2010</h4>
+<h5 id="office-2010">Office 2010</h5>
 
 <p><strong>Office 套件：</strong></p>
 

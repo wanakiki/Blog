@@ -199,7 +199,7 @@
 
 <!-- more -->
 
-<h1 id="关于输入法与输入法框架">关于输入法与输入法框架</h1>
+<h2 id="关于输入法与输入法框架">关于输入法与输入法框架</h2>
 
 <p>与 Windows 不同的是，GNU/Linux 下的中文输入法都是需要依赖于输入法框架的，这里的框架有 <strong>ibus</strong>、<strong>fcitx</strong> 等。<strong>输入法框架</strong> 可以通过 <strong>im-config</strong> 来进行配置。然后在 <strong>输入法框架</strong> 的配置中选择 <strong>输入法</strong>。</p>
 
@@ -211,30 +211,30 @@
 
 <p><strong>提到 ibus 框架我就多说两句，我在使用基于 ibus 框架的输入法时 (ibus-libpinyin 和 ibus-rime)，偶尔会遇到打不出字的情况；调查后发现是因为 ibus 框架对于使用 Qt 编写的应用程序兼容性不好。没用过 fcitx，不知道兼容性这一方面会不会好一点</strong></p>
 
-<h1 id="安装-rime">安装 RIME</h1>
+<h2 id="安装-rime">安装 RIME</h2>
 
 <p>安装 <strong>RIME</strong> 很简单，大多数软件仓库都是收录了 <strong>RIME</strong> 的，所以只需要使用各自系统的包管理器安装即可</p>
 
-<h2 id="archlinux">Archlinux</h2>
+<h3 id="archlinux">Archlinux</h3>
 
-<pre><code class="language-shell">pacman -S ibus-rime
+<pre><code class="language-bash">pacman -S ibus-rime
 </code></pre>
 
-<h2 id="ubuntu-debian">Ubuntu / Debian</h2>
+<h3 id="ubuntu-debian">Ubuntu / Debian</h3>
 
-<pre><code class="language-shell">sudo apt-get install ibus-rime
+<pre><code class="language-bash">sudo apt-get install ibus-rime
 </code></pre>
 
 <p><strong>Ubuntu PPA:</strong></p>
 
-<pre><code class="language-shell">sudo add-apt-repository ppa:lotem/rime
+<pre><code class="language-bash">sudo add-apt-repository ppa:lotem/rime
 sudo apt-get update
 sudo apt-get install ibus-rime
 </code></pre>
 
-<h2 id="fedora-centos">Fedora / CentOS</h2>
+<h3 id="fedora-centos">Fedora / CentOS</h3>
 
-<pre><code class="language-shell">sudo yum install ibus-rime
+<pre><code class="language-bash">sudo yum install ibus-rime
 </code></pre>
 
 <p>更多发行版请参考：<a href="https://github.com/rime/home/wiki/RimeWithIBus" rel="nofollow noreferrer" target="_blank"><strong>ibus-rime</strong> 各发行版安装说明</a></p>
@@ -243,7 +243,7 @@ sudo apt-get install ibus-rime
 
 <p><strong>fcitx 框架</strong> 版本请参考：<a href="https://github.com/fcitx/fcitx-rime" rel="nofollow noreferrer" target="_blank"><strong>fcitx-rime</strong></a></p>
 
-<h1 id="配置-rime">配置 RIME</h1>
+<h2 id="配置-rime">配置 RIME</h2>
 
 <p>最让人头疼的配置环节来了，我在这里就因为没好好看<a href="https://github.com/rime/home/wiki/CustomizationGuide" rel="nofollow noreferrer" target="_blank">说明书 (Rime 定制指南)</a> <span class="spoiler" >繁体中文看得我眼睛痛 °(°ˊДˋ°) °</span> 走了很多弯路。</p>
 
@@ -271,7 +271,7 @@ sudo apt-get install ibus-rime
 
 <p>需要注意的是 <strong><code>*.custom.yaml</code> 使用的语法与 <code>*.yaml</code> 不同，一定要按照规定的语法来写，不然会出错</strong> <span class="spoiler" >我就被坑了  _(:з」∠)_</span></p>
 
-<h3 id="custom-yaml-的写法">*.custom.yaml 的写法</h3>
+<h4 id="custom-yaml-的写法">*.custom.yaml 的写法</h4>
 
 <p>例如想修改无论中文模式或者英文模式，按键 <code>/</code> 输入 <code>/</code> (中文模式中默认是让你自己选择)</p>
 
@@ -327,7 +327,7 @@ sudo apt-get install ibus-rime
 	&quot;ascii_composer/switch_key/Shift_L&quot;: commit_code
 </code></pre>
 
-<h2 id="我的配置文件">我的配置文件</h2>
+<h3 id="我的配置文件">我的配置文件</h3>
 
 <p><strong>default.custom.yaml:</strong></p>
 
@@ -371,7 +371,7 @@ sync_dir: &quot;/home/mogeko/Dropbox/sync/Rime&quot; # 存放同步文件的地�
 
 <p>因为配置了 <strong>模糊音</strong> 和 <strong>扩充词库</strong>，<code>luna_pinyin.custom.yaml</code> 里面的配置过于复杂，我就不贴出来了，后面会给大家讲解 <a href="#模糊拼音"><strong>如何配置模糊音</strong></a> 以及<a href="#扩展词库"> <strong>如何配置扩充词库</strong></a> 的。</p>
 
-<h2 id="模糊拼音">模糊拼音</h2>
+<h3 id="模糊拼音">模糊拼音</h3>
 
 <p>配置模糊拼音需要配置各 (某) 输入方案的配置文件</p>
 
@@ -477,7 +477,7 @@ patch:
 
 <p>将模板剪贴进 <code>~/.config/ibus/rime/luna_pinyin.custom.yaml</code> 文件中，然后需要哪组就去掉那一行前面的 <code>#</code> 即可</p>
 
-<h2 id="扩展词库">扩展词库</h2>
+<h3 id="扩展词库">扩展词库</h3>
 
 <p><strong>RIME</strong> 的默认词库并没有多大，因为作者希望用户在与 <strong>RIME</strong> 磨合的过程中自己积累用户词库，确实自己养起来的词库更顺手，但养词库的过程多少还是有点痛苦的，好在 <strong>RIME</strong> 支持 <strong>扩展词库</strong></p>
 
@@ -485,7 +485,7 @@ patch:
 
 <p><a href="https://github.com/xiaoTaoist/rime-dict" rel="nofollow noreferrer" target="_blank">GitHub 地址</a>&emsp;&emsp;<a href="https://github.com/Mogeko/Blog/releases/download/031/rime-dict.zip" rel="nofollow noreferrer" target="_blank">下载地址</a></p>
 
-<h3 id="使用方法">使用方法</h3>
+<h4 id="使用方法">使用方法</h4>
 
 <p>将解压出来的所以文件复制到 <code>~/.config/ibus/rime</code> 文件夹下即可</p>
 
@@ -495,7 +495,7 @@ patch:
 
 <p>不用担心。这个扩展词库的 <code>luna_pinyin.custom.yaml</code> 中也包含了<strong>模糊拼音</strong>的功能，按相同方法开启即可</p>
 
-<h1 id="同步">同步</h1>
+<h2 id="同步">同步</h2>
 
 <p>众所周知，<strong>RIME</strong> 是一个跨平台的输入法，那么每个平台都这么配置一遍岂不是很麻烦？</p>
 

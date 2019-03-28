@@ -57,7 +57,7 @@
     "datePublished": "2017-08-20 00:00:00 &#43;0000 UTC",
     "dateModified" : "2017-08-20 00:00:00 &#43;0000 UTC",
     "url" : "https://mogeko.me/2017/002/",
-    "wordCount" : "2525",
+    "wordCount" : "2564",
     "keywords" : [ "Hexo", "Mogeko`s Blog"]
 }
 </script>
@@ -146,7 +146,7 @@
                         <a href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2/"> 关于博客 </a>
                         
                 </span>
-                <span class="post-word-count">, 2525 words</span>
+                <span class="post-word-count">, 2564 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -177,7 +177,7 @@
 
 <!-- more -->
 
-<h1 id="准备工作">准备工作</h1>
+<h2 id="准备工作">准备工作</h2>
 
 <ol>
 <li>一个 Github 账号。 &lt;-我们要使用它提供的 Github Pages 服务来搭建博客 <a href="https://github.com/" rel="nofollow noreferrer" target="_blank">https://github.com/</a></li>
@@ -187,11 +187,11 @@
 <li>[非必需]Chocolatey &lt;- 用来安装 Node.js 和 Git <a href="https://chocolatey.org/" rel="nofollow noreferrer" target="_blank">https://chocolatey.org/</a></li>
 </ol>
 
-<h1 id="正文">正文</h1>
+<h2 id="正文">正文</h2>
 
-<h2 id="安装-node-js-git">安装 Node.js &amp; Git</h2>
+<h3 id="安装-node-js-git">安装 Node.js &amp; Git</h3>
 
-<h3 id="使用-安装包-安装-小白看这里">使用 安装包 安装（小白看这里）</h3>
+<h4 id="使用-安装包-安装-小白看这里">使用 安装包 安装（小白看这里）</h4>
 
 <p>首先去官网下载各自的安装包。（地址在上面）
 其中 Node.js 一般会有两个版本；都可以用。
@@ -202,19 +202,19 @@ Git 的官网是英文的，点 [Downloads for Windows] 下载。</p>
 <p>安装好后打开按 Win键 + R，输入 cmd，回车。
 在弹出的黑框框中分别输入</p>
 
-<pre><code class="language-shell">$ node -v
+<pre><code class="language-bash">$ node -v
 </code></pre>
 
-<pre><code class="language-shell">$ npm -v
+<pre><code class="language-bash">$ npm -v
 </code></pre>
 
-<pre><code class="language-shell">$ git version
+<pre><code class="language-bash">$ git version
 </code></pre>
 
 <p>如果显示的是各种的版本号，说明安装成功
 <img alt="查看版本号" src="https://mogeko.github.io/images/002/check.png"></p>
 
-<h3 id="使用-chocolatey-安装">使用 Chocolatey 安装</h3>
+<h4 id="使用-chocolatey-安装">使用 Chocolatey 安装</h4>
 
 <p>我比较喜欢用 Chocolatey 来安装；比较方便。
 虽然赶 apt 还有一段距离，但确实是 Windows 下最好的包管理程序。
@@ -223,13 +223,13 @@ Git 的官网是英文的，点 [Downloads for Windows] 下载。</p>
 <p>首先安装 Chocolatey
 用管理员身份打开 CMD，输入一下命令，回车</p>
 
-<pre><code class="language-shell">$ @&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;
+<pre><code class="language-bash">$ @&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;
 </code></pre>
 
 <p>然后安装 Node.js
 在 CMD 中键入：（同样是以管理员身份运行）</p>
 
-<pre><code class="language-shell">$ choco install nodejs
+<pre><code class="language-bash">$ choco install nodejs
 </code></pre>
 
 <p>出现一下文字说明它安装完成了
@@ -237,7 +237,7 @@ Git 的官网是英文的，点 [Downloads for Windows] 下载。</p>
 
 <p>然后安装 Git</p>
 
-<pre><code class="language-shell">$ choco install git
+<pre><code class="language-bash">$ choco install git
 </code></pre>
 
 <p><img alt="安装 Git" src="https://mogeko.github.io/images/002/git_install.png"></p>
@@ -245,26 +245,26 @@ Git 的官网是英文的，点 [Downloads for Windows] 下载。</p>
 <p>同样的，验证一下是否安装成功
 关闭 CMD 然后重新打开它（刷新 %PATH% ）键入</p>
 
-<pre><code class="language-shell">$ node -v
+<pre><code class="language-bash">$ node -v
 </code></pre>
 
-<pre><code class="language-shell">$ npm -v
+<pre><code class="language-bash">$ npm -v
 </code></pre>
 
-<pre><code class="language-shell">$ git version
+<pre><code class="language-bash">$ git version
 </code></pre>
 
 <p>如果显示的是各种的版本号，说明安装成功
 <img alt="查看版本号" src="https://mogeko.github.io/images/002/check.png"></p>
 
-<h2 id="注册-github-账号">注册 Github 账号</h2>
+<h3 id="注册-github-账号">注册 Github 账号</h3>
 
 <p><strong>如果你已经拥有，请跳过</strong>
 打开 <a href="https://github.com/" rel="nofollow noreferrer" target="_blank">https://github.com/</a> 分别填上 <code>名字</code>，<code>邮箱</code>，<code>密码</code> 点 <code>Sign up to GitHub</code>
 <img alt="注册 Github 账号" src="https://mogeko.github.io/images/002/github_1.png">
 然后前往自己刚才填写的邮箱，点开 Github 发送给你的注册确认信，确认注册</p>
 
-<h2 id="创建代码库">创建代码库</h2>
+<h3 id="创建代码库">创建代码库</h3>
 
 <p>登陆之后，点击页面右上角的加号，选择 <code>New repository</code>
 <img alt="创建代码库" src="https://mogeko.github.io/images/002/github_2.png"></p>
@@ -278,7 +278,7 @@ Git 的官网是英文的，点 [Downloads for Windows] 下载。</p>
 <img alt="创建代码库" src="https://mogeko.github.io/images/002/github_5.png">
 点击 <code>Automatic page generator</code>，Github 将会自动替你创建出一个 gh-pages 的页面。 如果你的配置没有问题，那么大约 15 分钟之后，<code>[你的名字].github.io</code> 这个网址就可以正常访问了</p>
 
-<h2 id="安装-hexo">安装 Hexo</h2>
+<h3 id="安装-hexo">安装 Hexo</h3>
 
 <p>按照官网的说法，Hexo是一个 <code>快速、简洁且高效的博客框架</code>
 我们要用它来将 Markdown 渲染成网页，然后发布到 Github 上。</p>
@@ -286,7 +286,7 @@ Git 的官网是英文的，点 [Downloads for Windows] 下载。</p>
 <p>Hexo 通过 Node.js 来安装
 在 CMD 中输入：</p>
 
-<pre><code class="language-shell">$ npm install hexo-cli -g
+<pre><code class="language-bash">$ npm install hexo-cli -g
 </code></pre>
 
 <p>你会看到
@@ -294,7 +294,7 @@ Git 的官网是英文的，点 [Downloads for Windows] 下载。</p>
 
 <p>然后输入</p>
 
-<pre><code class="language-shell">$ npm install hexo -g
+<pre><code class="language-bash">$ npm install hexo -g
 </code></pre>
 
 <p><img alt="安装 Hexo" src="https://mogeko.github.io/images/002/hexo_install_2.png"></p>
@@ -302,7 +302,7 @@ Git 的官网是英文的，点 [Downloads for Windows] 下载。</p>
 <p>等它安装好了，我们验证一下是否安装成功
 输入</p>
 
-<pre><code class="language-shell">$ hexo -v
+<pre><code class="language-bash">$ hexo -v
 </code></pre>
 
 <p><img alt="安装 Hexo" src="https://mogeko.github.io/images/002/hexo_install_3.png"></p>
@@ -311,7 +311,7 @@ Git 的官网是英文的，点 [Downloads for Windows] 下载。</p>
 找一个地方新建一个文件夹，这个文件夹将是用来存放你博客的地方
 切换的刚刚新建的文件夹下，初始化 Hexo：（将[你新建的文件夹的路径]改为你刚刚新建文件夹的路径）</p>
 
-<pre><code class="language-shell">$ cd [你新建的文件夹的路径]
+<pre><code class="language-bash">$ cd [你新建的文件夹的路径]
 $ hexo init
 </code></pre>
 
@@ -320,7 +320,7 @@ $ hexo init
 <p>因为我们要用 Git 来发布博客，所以还需要安装一个名为 <code>hexo-deployer-git</code> 的插件
 在 CMD 中输入</p>
 
-<pre><code class="language-shell">$ npm install hexo-deployer-git --save
+<pre><code class="language-bash">$ npm install hexo-deployer-git --save
 </code></pre>
 
 <p><img alt="安装 hexo-deployer-git" src="https://mogeko.github.io/images/002/hexo-deployer-git.png"></p>
@@ -341,15 +341,15 @@ $ hexo init
 └── package.json</p>
 </blockquote>
 
-<h2 id="配置-deployment">配置 Deployment</h2>
+<h3 id="配置-deployment">配置 Deployment</h3>
 
 <p>首先，你需要为自己配置身份信息，打开命令行，然后输入：</p>
 
-<pre><code class="language-shell">$ git config --global user.name &quot;[yourname]&quot;
+<pre><code class="language-bash">$ git config --global user.name &quot;[yourname]&quot;
 $ git config --global user.email &quot;[youremail]&quot;
 </code></pre>
 
-<h2 id="修改-config-yml">修改 _config.yml</h2>
+<h3 id="修改-config-yml">修改 _config.yml</h3>
 
 <p>按照一下注释按需修改</p>
 
@@ -437,7 +437,7 @@ deploy:
 * 配置文件的冒号 &ldquo;:&rdquo; 后面有一个空格
 * repo: 按照 <code>git@github.com:[你的名字]/[你的名字].github.io.git</code> 的格式填写。</p>
 
-<h2 id="安装-next-主题">安装 NexT 主题</h2>
+<h3 id="安装-next-主题">安装 NexT 主题</h3>
 
 <p>使用 Hexo 的最大好处就是非常的自由，你可以完全掌握你的博客，想把它弄成什么样都可以。
 因此，我们可以安装跟好看的主题来替换 Hexo 自带的 landscape 主题。
@@ -446,28 +446,28 @@ deploy:
 
 <p>使用一下命令安装 NexT</p>
 
-<pre><code class="language-shell">$ git clone https://github.com/iissnan/hexo-theme-next.git themes/next
+<pre><code class="language-bash">$ git clone https://github.com/iissnan/hexo-theme-next.git themes/next
 </code></pre>
 
 <p>不嫌弃的话也可以安装我修改过的版本(*/ω＼*) -&gt; <a href="https://github.com/Mogeko/hexo-theme-next" rel="nofollow noreferrer" target="_blank">NexT</a></p>
 
-<pre><code class="language-shell">$ git clone https://github.com/Mogeko/hexo-theme-next.git themes/next
+<pre><code class="language-bash">$ git clone https://github.com/Mogeko/hexo-theme-next.git themes/next
 </code></pre>
 
 <p>安装好后打开 Hexo 文件夹中的 <code>_config.yml</code>，找到 <code>theme: landscape</code>,将其改为<code>theme: next</code>。</p>
 
-<pre><code class="language-shell">theme: landscape -&gt; theme: next
+<pre><code class="language-bash">theme: landscape -&gt; theme: next
 </code></pre>
 
 <p>重新部署一遍 Hexo，开启 Hexo 的本地服务器</p>
 
-<pre><code class="language-shell">$ hexo g
+<pre><code class="language-bash">$ hexo g
 $ hexo s
 </code></pre>
 
 <p>现在访问 <code>http://localhost:4000/</code> 看看效果。(๑•̀ㅂ•́)و✧</p>
 
-<h2 id="编写文章">编写文章</h2>
+<h3 id="编写文章">编写文章</h3>
 
 <p>引用一段来自官方的文档
 &gt; 你可以执行下列命令来创建一篇新文章。<br />
@@ -487,9 +487,9 @@ toc: true  //在此处设定是否开启目录，需要主题支持。
 
 <p>在之后空白的地方用 Markdown 编写文章。</p>
 
-<h2 id="更多操作">更多操作</h2>
+<h3 id="更多操作">更多操作</h3>
 
-<pre><code class="language-shell">$ hexo generate  # 将 Markdown 编译成静态网页
+<pre><code class="language-bash">$ hexo generate  # 将 Markdown 编译成静态网页
 $ hexo deploy  # 部署 Hexo 到服务器，也就是到 Github
 $ hexo server  # 启动一个本地服务器，默认地址是 `http://localhost:4000`
 
@@ -501,6 +501,15 @@ $ hexo s  # 等同于 hexo server
 $ hexo d -g # 等同于 hexo deploy + hexo generate
 
 </code></pre>
+
+<h2 id="相关文章">相关文章</h2>
+
+<ul>
+<li><a href="https://mogeko.me/2017/003/" rel="nofollow noreferrer" target="_blank"><strong>Hexo 美化</strong></a></li>
+<li><a href="https://mogeko.me/2017/004/" rel="nofollow noreferrer" target="_blank"><strong>使用 Hexo Hey 管理你的博客</strong></a></li>
+<li><a href="https://mogeko.me/2017/005/" rel="nofollow noreferrer" target="_blank"><strong>在你的文章中添加 B站的视频</strong></a></li>
+<li><a href="https://mogeko.me/2019/048/" rel="nofollow noreferrer" target="_blank"><strong>为博客添加独立域名</strong></a></li>
+</ul>
 
 <p><br></p>
 

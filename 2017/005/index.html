@@ -57,7 +57,7 @@
     "datePublished": "2017-09-09 00:00:00 &#43;0000 UTC",
     "dateModified" : "2017-09-09 00:00:00 &#43;0000 UTC",
     "url" : "https://mogeko.me/2017/005/",
-    "wordCount" : "292",
+    "wordCount" : "331",
     "keywords" : [ "Hexo", "Mogeko`s Blog"]
 }
 </script>
@@ -146,7 +146,7 @@
                         <a href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2/"> 关于博客 </a>
                         
                 </span>
-                <span class="post-word-count">, 292 words</span>
+                <span class="post-word-count">, 331 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -175,63 +175,72 @@
 
 <!-- more -->
 
-<h1 id="准备工作">准备工作</h1>
+<h2 id="准备工作">准备工作</h2>
 
 <ol>
 <li>Node.js 这是一个 Hexo插件，所以通过 npm 安装。</li>
 </ol>
 
-<h1 id="正文">正文</h1>
+<h2 id="正文">正文</h2>
 
-<h2 id="安装-hexo-tag-bilibili">安装 hexo-tag-bilibili</h2>
+<h3 id="安装-hexo-tag-bilibili">安装 hexo-tag-bilibili</h3>
 
 <p>这就是那个神奇的插件，名叫 hexo-tag-bilibili。
 我们通过 npm 进行安装。
 切换到 Hexo 的目录，执行一下命令</p>
 
-<pre><code class="language-shell">$ cd [你的 Hexo目录]
+<pre><code class="language-bash">$ cd [你的 Hexo目录]
 $ npm install --save hexo-tag-bilibili
 </code></pre>
 
 <p><img alt="安装 hexo-tag-bilibili" src="https://mogeko.github.io/images/005/install_hexo-tag-bilibili.png"></p>
 
-<h2 id="使用">使用</h2>
+<h3 id="使用">使用</h3>
 
 <p>在文章中用一下方式使用此插件
 [av_id] 填写视频的 av号。</p>
 
-<pre><code class="language-shell">{% bilibili [av_id] %}
+<pre><code class="language-bash">{% bilibili [av_id] %}
 </code></pre>
 
 <p>如果有多 p，使用一下格式。[page] 为 P号。</p>
 
-<pre><code class="language-shell">{% bilibili [av_id] [page] %}
+<pre><code class="language-bash">{% bilibili [av_id] [page] %}
 </code></pre>
 
 <p>例如：</p>
 
-<pre><code class="language-shell">{% bilibili av2271112 %}
+<pre><code class="language-bash">{% bilibili av2271112 %}
 </code></pre>
 
 <p><embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=2271112&amp;p=1"></p>
 
-<h2 id="高级">高级</h2>
+<h3 id="高级">高级</h3>
 
-<h3 id="配置">配置</h3>
+<h4 id="配置">配置</h4>
 
 <p>你可以配置你的播放器
 在 Hexo 的文件夹中，打开 <code>_config.yml</code>文件进行配置。
 你可以配置 是否<code>自动播放</code>，播放器的<code>大小</code> 等。
 例如</p>
 
-<pre><code class="language-shell">bilibili:
+<pre><code class="language-bash">bilibili:
   width: 452
   height: 544
 </code></pre>
 
-<h3 id="style">Style</h3>
+<h4 id="style">Style</h4>
 
 <p>播放器由一个带有 <code>bili_video</code> 类的 <code>&lt;div&gt;</code>标签包装。你可以通过自定义的 css文件修改它的样式。</p>
+
+<h2 id="相关文章">相关文章</h2>
+
+<ul>
+<li><a href="https://mogeko.me/2017/002/" rel="nofollow noreferrer" target="_blank"><strong>使用 Hexo + GitHub Pages 建立自己的博客</strong></a></li>
+<li><a href="https://mogeko.me/2017/003/" rel="nofollow noreferrer" target="_blank"><strong>Hexo 美化</strong></a></li>
+<li><a href="https://mogeko.me/2017/004/" rel="nofollow noreferrer" target="_blank"><strong>使用 Hexo Hey 管理你的博客</strong></a></li>
+<li><a href="https://mogeko.me/2019/048/" rel="nofollow noreferrer" target="_blank"><strong>为博客添加独立域名</strong></a></li>
+</ul>
 
 <p><br></p>
 

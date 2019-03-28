@@ -180,28 +180,28 @@
 
 <!-- more -->
 
-<h1 id="准备工作">准备工作</h1>
+<h2 id="准备工作">准备工作</h2>
 
 <ul>
 <li>vlmcsd -&gt; <a href="https://github.com/Wind4/vlmcsd" rel="nofollow noreferrer" target="_blank">GitHub 仓库</a></li>
 <li>‎VOL 版的 Windows 或 Office (零售版的 Office 可以通过<a href="https://github.com/Mogeko/Blog/releases/download/015/Office_Retail2VOL.cmd" rel="nofollow noreferrer" target="_blank">简单的脚本</a>转换为 VOL 版的 Office)</li>
 </ul>
 
-<h1 id="正文">正文</h1>
+<h2 id="正文">正文</h2>
 
 <p><code>vlmcsd</code> 本身是跨平台的，<code>vlmcsd</code> 可以在 Linux，FreeBSD，Windows XP，Windows 7，Windows 8， Windows 8.1 ，Windosw 10 &hellip; 上运行。不过不知道什么原因我的电脑上跑起来。按照网上的说法，该软件对 Windows 10 的兼容不怎么好，不过我们可以曲线救国：使用 Windows Subsystem for Linux (WSL) 来跑这个服务器，从而实现本地激活。(32 位 Windows 10 用户哭晕在厕所_(:з」∠)_)</p>
 
-<h2 id="在-windows-10-64-bit-上搭建服务">在 Windows 10 (64 bit) 上搭建服务</h2>
+<h3 id="在-windows-10-64-bit-上搭建服务">在 Windows 10 (64 bit) 上搭建服务</h3>
 
-<h3 id="安装-wsl">安装 WSL</h3>
+<h4 id="安装-wsl">安装 WSL</h4>
 
 <p>可以参考[这篇文章]()</p>
 
-<h3 id="下载-运行-vlmcsd">下载 &amp; 运行 vlmcsd</h3>
+<h4 id="下载-运行-vlmcsd">下载 &amp; 运行 vlmcsd</h4>
 
 <p>打开 WSL，执行命令 <code>cd /usr/local</code> 切换到 <code>/usr/local</code> 目录。然后输入以下命令</p>
 
-<pre><code class="language-shell">curl -LJO https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz
+<pre><code class="language-bash">curl -LJO https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz
 </code></pre>
 
 <p>执行这条命令需要安装一个名为 <code>curl</code> 的工具，WSL 上自带的有。</p>
@@ -210,19 +210,19 @@
 
 <p>输入以下命令解压这个压缩文件</p>
 
-<pre><code class="language-shell">tar zxvf binaries.tar.gz
+<pre><code class="language-bash">tar zxvf binaries.tar.gz
 rm binaries.tar.gz     # 删除 `binaries.tar.gz` 的源文件 (可选)
 mv binaries kms    # 重命名 binaries 文件夹为 kms (可选)
 </code></pre>
 
 <p>然后执行 (没看到 <code>AMD</code> 的目录，也没在 AMD 平台上测试过，不知道能不能跑起来)</p>
 
-<pre><code class="language-shell">cd binaries/Linux/intel/static
+<pre><code class="language-bash">cd binaries/Linux/intel/static
 </code></pre>
 
 <p>如果重命名了 binaries 文件夹为 kms 的话执行</p>
 
-<pre><code class="language-shell">cd kms/Linux/intel/static
+<pre><code class="language-bash">cd kms/Linux/intel/static
 </code></pre>
 
 <p>此时目录下有这些文件</p>
@@ -241,38 +241,38 @@ mv binaries kms    # 重命名 binaries 文件夹为 kms (可选)
 
 <p>然后选择合适的版本运行 (能跑 WSL，我就默认大家都是 x64 架构的了)</p>
 
-<pre><code class="language-shell">./vlmcsd-x64-musl-static
+<pre><code class="language-bash">./vlmcsd-x64-musl-static
 </code></pre>
 
 <p><code>vlmcsd</code> <code>vlmcsdmulti</code> 两个版本差别不大，随意选择，只要能跑起来就对了。</p>
 
-<h3 id="测试服务器是否成功运行">测试服务器是否成功运行</h3>
+<h4 id="测试服务器是否成功运行">测试服务器是否成功运行</h4>
 
 <p>在相同目录下 (<code>/usr/local/binaries/Linux/intel/static</code> 或 <code>/usr/local/kms/Linux/intel/static</code>) 还有一个工具 <code>vlmcs</code>，<a href="https://github.com/Wind4/vlmcsd/blob/master/man/vlmcs.1.pdf" rel="nofollow noreferrer" target="_blank">官方文档</a>上说它是一个客户端模拟器，用来检查服务器的运行状态。
 我们执行</p>
 
-<pre><code class="language-shell">./vlmcs-x64-musl-static 127.0.0.1:1688
+<pre><code class="language-bash">./vlmcs-x64-musl-static 127.0.0.1:1688
 </code></pre>
 
 <p>看到以下文字，就说明服务器已经成功跑起来了</p>
 
-<pre><code class="language-shell">Connecting to 127.0.0.1:1688 … successful
+<pre><code class="language-bash">Connecting to 127.0.0.1:1688 … successful
 Sending activation request (KMS V4) 1 of 1 -&gt;
 06401-00206-296-206344-03-5179-9600.0000-3432013
 </code></pre>
 
-<h2 id="在非-windows-10-的-windows-系统上搭建服务的不负责教程">在非 Windows 10 的 Windows 系统上搭建服务的不负责教程</h2>
+<h3 id="在非-windows-10-的-windows-系统上搭建服务的不负责教程">在非 Windows 10 的 Windows 系统上搭建服务的不负责教程</h3>
 
 <p>因为没有测试过，所以我也不知道是否跑得起来，有哪些需要注意的地方。后果自负。_(:з」∠)_
 首先下载 vlmcsd -&gt; <a href="https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz" rel="nofollow noreferrer" target="_blank">下载链接</a>，然后解压到任意你喜欢的目录下。
 用<strong>管理员权限</strong>打开一个 cmd，进入刚刚你解压的目录下</p>
 
-<pre><code class="language-shell">cd [刚刚你解压的目录地址]
+<pre><code class="language-bash">cd [刚刚你解压的目录地址]
 </code></pre>
 
 <p>然后执行</p>
 
-<pre><code class="language-shell">cd binaries/Windows/intel/static
+<pre><code class="language-bash">cd binaries/Windows/intel/static
 </code></pre>
 
 <p>此时的目录</p>
@@ -321,28 +321,28 @@ Sending activation request (KMS V4) 1 of 1 -&gt;
 
 <p>然后选择合适的版本运行</p>
 
-<pre><code class="language-shell">./vlmcsd-x64-musl-static
+<pre><code class="language-bash">./vlmcsd-x64-musl-static
 </code></pre>
 
 <p><code>vlmcsd</code>、<code>vlmcsdmulti</code> 两个版本差别不大，随意选择，只要能跑起来就对了。</p>
 
-<h3 id="测试服务器是否成功运行-1">测试服务器是否成功运行</h3>
+<h4 id="测试服务器是否成功运行-1">测试服务器是否成功运行</h4>
 
 <p>测试服务器是否成功运行的方法和前面的类似，都是通过运行 <code>vlmcs</code> 来检查</p>
 
-<pre><code class="language-shell">./vlmcs-Windows-x64 127.0.0.1:1688
+<pre><code class="language-bash">./vlmcs-Windows-x64 127.0.0.1:1688
 </code></pre>
 
-<h1 id="激活">激活</h1>
+<h2 id="激活">激活</h2>
 
-<h2 id="激活-windows">激活 Windows</h2>
+<h3 id="激活-windows">激活 Windows</h3>
 
 <p>KMS 激活服务只能激活批量授权版 Windows (VOL 版)，无法激活零售版 Windows (Retail 版)。</p>
 
 <p>以 Windows 10 Pro 为例
 想要激活 VOL 版 Windows 10 pro，只需要用<strong>管理员权限</strong>打开一个 cmd，然后依次执行以下命令便可。</p>
 
-<pre><code class="language-shell">slmgr -upk
+<pre><code class="language-bash">slmgr -upk
 slmgr -ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
 slmgr -skms 127.0.0.1:1688
 slmgr -ato
@@ -352,7 +352,7 @@ slmgr -dlv
 <p>方法同样适用于激活 Windows 8、Windows 7，只是要把上面的 KEY (就是形如 <code>W269N-WFGWX-YVC9B-4J6C9-T83GX</code> 这样的东西) 替换一下。
 <a href="https://mogeko.github.io/2018/017/#KEY" rel="nofollow noreferrer" target="_blank">可供使用的 KEY</a></p>
 
-<h2 id="激活-office">激活 Office</h2>
+<h3 id="激活-office">激活 Office</h3>
 
 <p>同样的，KMS 激活服务只能激活 VOL 版的 Office，不过零售版的 Office 可以通过脚本转换为 VOL 版。
 如果不知道自己安装的是什么版本的 Office，可以使用这个方法查看 -&gt; <a href="https://mogeko.github.io/2018/017/#%E5%88%A4%E6%96%AD%E4%BD%A0%E5%AE%89%E8%A3%85%E7%9A%84-Office-%E6%98%AF%E5%93%AA%E4%B8%AA%E7%89%88%E6%9C%AC" rel="nofollow noreferrer" target="_blank">判断你安装的 Office 是哪个版本</a></p>
@@ -361,12 +361,12 @@ slmgr -dlv
 以 Office 2016 为例，Office 2016 的安装目录是：<code>&quot;C:\Program Files\Microsoft Office\Office16</code>。
 以<strong>管理员权限</strong>打开一个 cmd，然后执行以下命令</p>
 
-<pre><code class="language-shell">cd &quot;C:\Program Files\Microsoft Office\Office16&quot;
+<pre><code class="language-bash">cd &quot;C:\Program Files\Microsoft Office\Office16&quot;
 </code></pre>
 
 <p>如果你系统是 64 位的但 Office 安装的是 32 位的，执行以下命令</p>
 
-<pre><code class="language-shell">cd &quot;C:\Program Files (x86)\Microsoft Office\Office16&quot;
+<pre><code class="language-bash">cd &quot;C:\Program Files (x86)\Microsoft Office\Office16&quot;
 </code></pre>
 
 <p>如果你安装的是 Office 2015，就将 <code>Office16</code> 替换为 <code>Office13</code>；如果是 Office 2014 就替换为  <code>Office10</code>；以此类推。</p>
@@ -375,32 +375,32 @@ slmgr -dlv
 
 <p>进入 Office 的安装目录后，依次执行以下命令</p>
 
-<pre><code class="language-shell">cscript ospp.vbs /sethst:127.0.0.1:1688
+<pre><code class="language-bash">cscript ospp.vbs /sethst:127.0.0.1:1688
 cscript ospp.vbs /act
 </code></pre>
 
-<h2 id="附录">附录</h2>
+<h3 id="附录">附录</h3>
 
-<h3 id="判断你安装的-office-是哪个版本">判断你安装的 Office 是哪个版本</h3>
+<h4 id="判断你安装的-office-是哪个版本">判断你安装的 Office 是哪个版本</h4>
 
 <p>以<strong>管理员权限</strong>打开一个 cmd，来到Office的安装目录，输入命令：<code>cscript ospp.vbs /dstatus</code>
 如果输出的信息中包含下面这句话说明你安装的是零售版</p>
 
-<pre><code class="language-shell">LICENSE DESCRIPTION: Office 15, RETAIL(Grace) channel
+<pre><code class="language-bash">LICENSE DESCRIPTION: Office 15, RETAIL(Grace) channel
 </code></pre>
 
 <p>如果输出的信息中包含下面这句话说明你安装的是批量授权版</p>
 
-<pre><code class="language-shell">LICENSE DESCRIPTION: Office 15, VOLUME_KMSCLIENT channel
+<pre><code class="language-bash">LICENSE DESCRIPTION: Office 15, VOLUME_KMSCLIENT channel
 </code></pre>
 
-<h2 id="key">KEY</h2>
+<h3 id="key">KEY</h3>
 
 <p>以下是部分可供使用的 KEY</p>
 
-<h3 id="windows">Windows</h3>
+<h4 id="windows">Windows</h4>
 
-<h4 id="windows-10-版本-1803">Windows 10 版本 1803</h4>
+<h5 id="windows-10-版本-1803">Windows 10 版本 1803</h5>
 
 <table>
 <thead>
@@ -473,7 +473,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-10-版本-1709">Windows 10 版本 1709</h4>
+<h5 id="windows-10-版本-1709">Windows 10 版本 1709</h5>
 
 <table>
 <thead>
@@ -496,7 +496,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-10">Windows 10</h4>
+<h5 id="windows-10">Windows 10</h5>
 
 <table>
 <thead>
@@ -559,7 +559,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-版本-1803">Windows Server 版本 1803</h4>
+<h5 id="windows-server-版本-1803">Windows Server 版本 1803</h5>
 
 <table>
 <thead>
@@ -582,7 +582,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-版本-1709">Windows Server 版本 1709</h4>
+<h5 id="windows-server-版本-1709">Windows Server 版本 1709</h5>
 
 <table>
 <thead>
@@ -605,7 +605,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-2016">Windows Server 2016</h4>
+<h5 id="windows-server-2016">Windows Server 2016</h5>
 
 <table>
 <thead>
@@ -633,7 +633,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-2012-r2-和-windows-8-1">Windows Server 2012 R2 和 Windows 8.1</h4>
+<h5 id="windows-server-2012-r2-和-windows-8-1">Windows Server 2012 R2 和 Windows 8.1</h5>
 
 <table>
 <thead>
@@ -681,7 +681,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-2012-和-windows-8">Windows Server 2012 和 Windows 8</h4>
+<h5 id="windows-server-2012-和-windows-8">Windows Server 2012 和 Windows 8</h5>
 
 <table>
 <thead>
@@ -754,7 +754,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-7-和-windows-server-2008-r2">Windows 7 和 Windows Server 2008 R2</h4>
+<h5 id="windows-7-和-windows-server-2008-r2">Windows 7 和 Windows Server 2008 R2</h5>
 
 <table>
 <thead>
@@ -827,7 +827,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-vista-和-windows-server-2008">Windows Vista 和 Windows Server 2008</h4>
+<h5 id="windows-vista-和-windows-server-2008">Windows Vista 和 Windows Server 2008</h5>
 
 <table>
 <thead>
@@ -905,9 +905,9 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h3 id="office">Office</h3>
+<h4 id="office">Office</h4>
 
-<h4 id="office-2016">Office 2016</h4>
+<h5 id="office-2016">Office 2016</h5>
 
 <table>
 <thead>
@@ -990,7 +990,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="office-2013">Office 2013</h4>
+<h5 id="office-2013">Office 2013</h5>
 
 <table>
 <thead>
@@ -1078,7 +1078,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="office-2010">Office 2010</h4>
+<h5 id="office-2010">Office 2010</h5>
 
 <p><strong>Office 套件：</strong></p>
 

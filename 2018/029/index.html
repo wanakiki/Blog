@@ -192,7 +192,7 @@
 
 <p><img src="https://mogeko.github.io/images/029/gnome_mpv.png" alt="GNOME MPV" ></p>
 
-<h1 id="依赖">依赖</h1>
+<h2 id="依赖">依赖</h2>
 
 <ul>
 <li>autotools (只在构建时依赖)</li>
@@ -207,9 +207,9 @@
 <li>youtube-dl (可选)</li>
 </ul>
 
-<h1 id="安装">安装</h1>
+<h2 id="安装">安装</h2>
 
-<h2 id="gnu-linux-packages">GNU/Linux packages</h2>
+<h3 id="gnu-linux-packages">GNU/Linux packages</h3>
 
 <ul>
 <li><p>Arch Linux <a href="https://www.archlinux.org/packages/gnome-mpv" rel="nofollow noreferrer" target="_blank">https://www.archlinux.org/packages/gnome-mpv</a></p></li>
@@ -235,16 +235,16 @@
 <li><p>Ubuntu: <a href="https://launchpad.net/~xuzhen666/+archive/ubuntu/gnome-mpv" rel="nofollow noreferrer" target="_blank">https://launchpad.net/~xuzhen666/+archive/ubuntu/gnome-mpv</a></p></li>
 </ul>
 
-<h2 id="source-code">Source code</h2>
+<h3 id="source-code">Source code</h3>
 
 <p>在终端中运行以下命令以构建并安装</p>
 
-<pre><code class="language-shell">./autogen.sh &amp;&amp; make &amp;&amp; sudo make install
+<pre><code class="language-bash">./autogen.sh &amp;&amp; make &amp;&amp; sudo make install
 </code></pre>
 
-<h1 id="使用">使用</h1>
+<h2 id="使用">使用</h2>
 
-<h2 id="配置">配置</h2>
+<h3 id="配置">配置</h3>
 
 <p>推荐使用 <strong>MPV</strong> 的配置文件来对 <strong>GNOME MPV</strong> (及 <code>mpv.conf</code> 和 <code>input.conf</code> ) 进行配置，这样一方面可以使配置兼容 <strong>MPV</strong>，另一方面可定制性更高。</p>
 
@@ -257,7 +257,7 @@
 <p><strong>mpv.conf:</strong></p>
 
 <pre><code class="language-conf"># 没有边框
-#no-border
+##no-border
 
 # 记住断点
 seve-position-on-quit
@@ -295,17 +295,17 @@ DOWN volume -5
 MBTN_LEFT cycle pause
 </code></pre>
 
-<h2 id="插件">插件</h2>
+<h3 id="插件">插件</h3>
 
 <p><strong>MPV</strong> 之所以广受好评，一个很重要的原因就是它强大的插件系统。<strong>GNOME MPV</strong> 基于 <strong>MPV</strong>，自然是继承了大把的插件，这也让 <strong>GNOME MPV</strong> 的可玩性提升了一个档次。</p>
 
-<h3 id="插件安装方法">插件安装方法</h3>
+<h4 id="插件安装方法">插件安装方法</h4>
 
 <p><strong>MPV</strong>: 将插件脚本粘贴到 <code>~/.config/mpv/scripts</code> 文件夹中</p>
 
 <p><strong>GNOME MPV</strong>: <strong>首选项</strong> -&gt; <strong>插件</strong> -&gt; 选择插件脚本的路径</p>
 
-<h3 id="推荐几个插件">推荐几个插件</h3>
+<h4 id="推荐几个插件">推荐几个插件</h4>
 
 <p>这里推荐几个我比较常用的插件。</p>
 

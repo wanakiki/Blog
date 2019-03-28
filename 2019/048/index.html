@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "为博客添加独立域名",
     "headline" : "为博客添加独立域名",
-    "description" : "&emsp;&emsp; -- 关于如何给部署在 GitHub Pages 上的博客添加独立域名，上网有很多教程。但是他们要么方法已经过时了，要么就没有说清楚原理，弄得我走了很多弯路。我今天就",
+    "description" : "&emsp;&emsp; -- 关于如何给部署在 GitHub Pages 上的博客添加独立域名，上网有很多教程。但是他们要么方法已经过时了，要么就没有说清楚原理，弄得我走了很多弯路。 今天我就",
     "inLanguage" : "zh-cn",
     "author" : "Mogeko",
     "creator" : "Mogeko",
@@ -57,7 +57,7 @@
     "datePublished": "2019-03-28 14:39:37 &#43;0800 &#43;0800",
     "dateModified" : "2019-03-28 14:39:37 &#43;0800 &#43;0800",
     "url" : "https://mogeko.me/2019/048/",
-    "wordCount" : "1048",
+    "wordCount" : "1367",
     "keywords" : [ "blog", "Mogeko`s Blog"]
 }
 </script>
@@ -146,7 +146,7 @@
                         <a href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2/"> 关于博客 </a>
                         
                 </span>
-                <span class="post-word-count">, 1048 words</span>
+                <span class="post-word-count">, 1367 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -173,9 +173,11 @@
 &emsp;&emsp;
  -->
 
-<p>关于如何给部署在 GitHub Pages 上的博客添加独立域名，上网有很多教程。但是他们要么方法已经过时了，要么就没有说清楚原理，弄得我走了很多弯路。我今天就来写一篇面向小白的教程，尽我所能讲清楚怎么做？为什么？</p>
+<p>关于如何给部署在 GitHub Pages 上的博客添加独立域名，上网有很多教程。但是他们要么方法已经过时了，要么就没有说清楚原理，弄得我走了很多弯路。</p>
 
-<h1 id="选购域名">选购域名</h1>
+<p>今天我就来写一篇面向小白的教程，尽我所能讲清楚怎么做？为什么？</p>
+
+<h2 id="选购域名">选购域名</h2>
 
 <p>可能很多人已经买好了域名了，你可以<a href="#GitHub 上的设置">跳过这部分</a></p>
 
@@ -185,7 +187,7 @@
 
 <p>具体选购过程大致就是：<strong>搜索域名 -&gt; 将喜欢的域名加入购物车 -&gt; 付款 -&gt; 购买成功</strong>，跟去某宝买东西差不多，这里就不再赘述了。</p>
 
-<h1 id="github-上的设置">GitHub 上的设置</h1>
+<h2 id="github-上的设置">GitHub 上的设置</h2>
 
 <p>购买好域名后，首先到 Github 上，你部署博客的那个 Git 仓库的设置里，在 <code>Custom domain</code> 这里填上你购买的域名</p>
 
@@ -193,7 +195,7 @@
 
 <p>或者在创建一个名为 <code>CNAME</code> 的文件放在根目录，其中的内容<strong>只</strong>写上你的域名，像这样</p>
 
-<pre><code class="language-CNAME">example.me
+<pre><code class="language-CNAME">example.com
 </code></pre>
 
 <p>如果使用了 Travis CI 这类持续集成服务来部署博客的话推荐使用第二种方式进行设置。</p>
@@ -204,62 +206,102 @@
 
 <p>Github 跟 Let&rsquo;s Encrypt 有合作，如果勾选了这个选项，Let&rsquo;s Encrypt 就会给你的博客签发一张 SSL 证书，免费的。</p>
 
-<h1 id="dns-上的设置">DNS 上的设置</h1>
+<h2 id="dns-上的设置">DNS 上的设置</h2>
 
 <p>终于到了最关键的一步了。</p>
 
-<p><strong>现在要做的是让域名指向正确的 IP 地址，GitHub 为此提供了 4 条 IP，使用 <a href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F#%E8%AE%B0%E5%BD%95%E7%B1%BB%E5%9E%8B" rel="nofollow noreferrer" target="_blank">A 记录</a> 指向这 4 条 IP 地址就可以了</strong></p>
+<p><strong>现在要做的是让域名指向正确的 IP 地址，GitHub 为此提供了四条 IP，使用 <a href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F#%E8%AE%B0%E5%BD%95%E7%B1%BB%E5%9E%8B" rel="nofollow noreferrer" target="_blank">A 记录</a> 指向这四条 IP 地址就可以了</strong></p>
 
-<p>这 4 条 IP 分别是 (来自<a href="https://help.github.com/en/articles/setting-up-an-apex-domain" rel="nofollow noreferrer" target="_blank"> GitHub 的官方文档</a>)：</p>
+<p>这四条 IP 分别是 (来自<a href="https://help.github.com/en/articles/setting-up-an-apex-domain" rel="nofollow noreferrer" target="_blank"> GitHub 的官方文档</a>)：</p>
 
 <blockquote>
 <p><strong>185.199.108.153&emsp;&emsp;185.199.109.153&emsp;&emsp;185.199.110.153&emsp;&emsp;185.199.111.153</strong></p>
 </blockquote>
 
-<p>到你购买域名的域名商的域名管理页面进行设置，虽然不同的域名商域名管理页面不同，不过原理都是相同的。</p>
+<p>你需要到你购买域名的域名商的域名管理页面进行设置，虽然不同的域名商域名管理页面不同，不过原理都是相同的。</p>
 
 <p>这里以 GoDaddy 为例，进入<strong>域名管理器 (Domain Manager) -&gt; DNS 管理 (Manage DNS)</strong></p>
 
 <p><img alt="Setting on DNS" src="https://mogeko.github.io/images/048/DNS_setting_1.png" ></p>
 
-<p>在**记录 (Record) **项目中点击 **添加 (ADD) **</p>
+<p>在<strong>记录 (Record)</strong> 项目中点击 <strong>添加 (ADD)</strong></p>
 
 <p><img alt="Setting on DNS" src="https://mogeko.github.io/images/048/DNS_setting_2.png" ></p>
 
 <blockquote>
-<p><strong>类型：A</strong><br>
-<strong>主机：@</strong><br>
-<strong>指向：185.199.108.153</strong><br>
-<strong>TTL：保持默认</strong><br></p>
+<p><strong>类型 (Type)：A</strong><br>
+<strong>主机 (Host)：@</strong><br>
+<strong>指向 (Points to)：185.199.108.153</strong><br>
+<strong>TTL：保持默认</strong><span style="color: #6a737d;font-style:italic;font-size: 0.9em;float: right;margin-top: 15px;">@ 表示顶级域名，也就是你注册的域名本身</span>
+<br></p>
 </blockquote>
 
-<p>以相同的方式配置剩下的 3 条 IP 地址</p>
+<p>以相同的方式配置剩下的三条 IP 地址</p>
+
+<blockquote>
+    <p>
+        <strong>类型 (Type)：A</strong><br>
+        <strong>主机 (Host)：@</strong><br>
+        <strong>指向 (Points to)：185.199.109.153</strong><br>
+        <strong>TTL：保持默认</strong><br>
+    </p>
+</blockquote>
+<blockquote>
+    <p>
+        <strong>类型 (Type)：A</strong><br>
+        <strong>主机 (Host)：@</strong><br>
+        <strong>指向 (Points to)：185.199.110.153</strong><br>
+        <strong>TTL：保持默认</strong><br>
+    </p>
+</blockquote>
+<blockquote>
+    <p>
+        <strong>类型 (Type)：A</strong><br>
+        <strong>主机 (Host)：@</strong><br>
+        <strong>指向 (Points to)：185.199.111.153</strong><br>
+        <strong>TTL：保持默认</strong><br>
+    </p>
+</blockquote>
+
+<p>等几分钟 (刷新 DNS 缓存)，然后在浏览器中输入你的域名，回车；不出意外的话你应该可以看到你的博客了。</p>
+
+<h3 id="设置二级域名">设置二级域名</h3>
+
+<p>除了通过顶级域名进行访问外你还可以设置二级域名，例如 <code>www.mogeko.me</code> 和 <code>blog.mogeko.me</code></p>
+
+<p>仍然在<strong>记录 (Record)</strong> 中<strong>添加 (ADD)</strong></p>
+
+<p><img alt="Setting on DNS" src="https://mogeko.github.io/images/048/DNS_setting_3.png" ></p>
+
+<p>不过这次添加的类型 (Type) 不是 <strong>A 记录</strong>而是 <strong>CNAME</strong></p>
 
 <p><blockquote>
     <p>
-        <strong>类型：A</strong><br>
-        <strong>主机：@</strong><br>
-        <strong>指向：185.199.109.153</strong><br>
+        <strong>类型 (Type)：CNAME</strong><br>
+        <strong>主机 (Host)：www</strong><br>
+        <strong>指向 (Points to)：@</strong><br>
         <strong>TTL：保持默认</strong><br>
     </p>
 </blockquote>
 <blockquote>
     <p>
-        <strong>类型：A</strong><br>
-        <strong>主机：@</strong><br>
-        <strong>指向：185.199.110.153</strong><br>
+        <strong>类型 (Type)：CNAME</strong><br>
+        <strong>主机 (Host)：blog</strong><br>
+        <strong>指向 (Points to)：@</strong><br>
         <strong>TTL：保持默认</strong><br>
     </p>
 </blockquote>
-<blockquote>
-    <p>
-        <strong>类型：A</strong><br>
-        <strong>主机：@</strong><br>
-        <strong>指向：185.199.111.153</strong><br>
-        <strong>TTL：保持默认</strong><br>
-    </p>
-</blockquote>
-等几分钟 (刷新 DNS 缓存)，然后在浏览器中输入你的域名看看结果。</p>
+此时，你不仅可以通过 <code>example.com</code> 访问你的博客，还可以通过 <code>www.example.com</code> 或 <code>blog.example.com</code> 访问到你的博客。</p>
+
+<h2 id="相关文章">相关文章</h2>
+
+<ul>
+<li><p><a href="http://localhost:1313/2018/018/" rel="nofollow noreferrer" target="_blank"><strong>使用 Hugo + GitHub Pages 搭建个人博客</strong></a></p></li>
+
+<li><p><a href="https://mogeko.me/2017/002/" rel="nofollow noreferrer" target="_blank"><strong>使用 Hexo + GitHub Pages 建立自己的博客</strong></a></p></li>
+
+<li><p><a href="https://mogeko.github.io/2018/028/" rel="nofollow noreferrer" target="_blank"><strong>使用 Travis CI 自动部署 Hugo 博客</strong></a></p></li>
+</ul>
 
 <p><br></p>
 

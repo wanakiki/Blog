@@ -181,11 +181,11 @@
 
 <!-- more -->
 
-<h1 id="安装">安装</h1>
+<h2 id="安装">安装</h2>
 
 <p>用<strong>管理员权限</strong>打开 PowerShell 并运行下面的命令</p>
 
-<pre><code class="language-shell">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+<pre><code class="language-bash">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 </code></pre>
 
 <p><strong>或者：</strong>控制面板 -&gt; 程序和功能-&gt; 启用或关闭 Windows 功能 -&gt; 勾选 <code>适用于 Linux 的 Windows 子系统</code>
@@ -203,9 +203,9 @@
 <img alt="初始化" src="https://mogeko.github.io/images/016/init_2.png">
 然后就可以使用了！</p>
 
-<h1 id="使用-wsl">使用 WSL</h1>
+<h2 id="使用-wsl">使用 WSL</h2>
 
-<h2 id="启动">启动</h2>
+<h3 id="启动">启动</h3>
 
 <p>你可以通过以下方式<strong>启动 WSL</strong></p>
 
@@ -218,25 +218,25 @@
 
 <p>其中，前两种方式会运行默认的 Linux 系统，当你安装多个 Linux 系统之后可以使用 <code>wslconfig</code> 来指定默认的 Linux 系统。</p>
 
-<h2 id="换源">换源</h2>
+<h3 id="换源">换源</h3>
 
-<h3 id="更换-apt-源">更换 apt 源</h3>
+<h4 id="更换-apt-源">更换 apt 源</h4>
 
 <p>因为 Ubuntu 的官方源架在国外的服务器上的，国内使用官方源下软件就会很慢。我们可以通过将软件源换成国内的镜像源来解决这个问题。
 首先备份</p>
 
-<pre><code class="language-shell">cp /etc/apt/sources.list /etc/apt/sources.list.bak
+<pre><code class="language-bash">cp /etc/apt/sources.list /etc/apt/sources.list.bak
 </code></pre>
 
 <p>然后换源，这里我推荐使用清华大学的镜像源
 首先使用 vim 打开文件 <code>sources.list</code> (需要 root 权限) -&gt; <a href="http://www.runoob.com/linux/linux-vim.html" rel="nofollow noreferrer" target="_blank">vim 教程</a></p>
 
-<pre><code class="language-shell">vim /etc/apt/sources.list
+<pre><code class="language-bash">vim /etc/apt/sources.list
 </code></pre>
 
 <p>删除掉所有内容，然后将以下文本粘贴上去</p>
 
-<pre><code class="language-shell"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+<pre><code class="language-bash"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
@@ -253,33 +253,33 @@ deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted
 
 <p>执行 <code>:wq</code> 保存并退出 vim，然后执行以下命令更新一下软件包列表。</p>
 
-<pre><code class="language-shell">sudo apt update
+<pre><code class="language-bash">sudo apt update
 </code></pre>
 
 <p>一般情况下，会有软件需要更新，使用以下命令更新软件包 (可选)</p>
 
-<pre><code class="language-shell">sudo apt upgrage
+<pre><code class="language-bash">sudo apt upgrage
 </code></pre>
 
-<h3 id="更换-pip-源">更换 pip 源</h3>
+<h4 id="更换-pip-源">更换 pip 源</h4>
 
 <p>创建pip配置文件</p>
 
-<pre><code class="language-shell">mkdir ~/.pip &amp;&amp; touch ~/.pip/pip.conf
+<pre><code class="language-bash">mkdir ~/.pip &amp;&amp; touch ~/.pip/pip.conf
 </code></pre>
 
 <p>首先使用 vim 打开文件 <code>pip.conf</code></p>
 
-<pre><code class="language-shell">vim ~/.pip/pip.conf
+<pre><code class="language-bash">vim ~/.pip/pip.conf
 </code></pre>
 
 <p>以下文本粘贴上去，并保存</p>
 
-<pre><code class="language-shell">[global]
+<pre><code class="language-bash">[global]
 index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 </code></pre>
 
-<h2 id="安装-zsh">安装 zsh</h2>
+<h3 id="安装-zsh">安装 zsh</h3>
 
 <p>zsh 是 Linux 下最强大的shell。虽然大多数 Linux 发行版都默认使用<code>bash shell</code>, 但是丝毫不影响极客们对zsh的热衷。很多 Linux 发行版都包含有 zsh，就算没有，也可以很简单的通过 <code>apt</code> 、urpmi<code>或</code>yum` 等包管理器进行安装。</p>
 
@@ -301,77 +301,77 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 
 <p>在 Ubuntu 中，我们使用 <code>apt</code> 来安装 zsh (需要 root 权限)</p>
 
-<pre><code class="language-shell">sudo apt install
+<pre><code class="language-bash">sudo apt install
 </code></pre>
 
-<h3 id="安装-oh-my-zsh">安装 oh-my-zsh</h3>
+<h4 id="安装-oh-my-zsh">安装 oh-my-zsh</h4>
 
 <p><code>oh-my-zsh</code> 是 zsh 中最流行的配色方案，十分养眼。</p>
 
 <p>安装也十分简单，可以直接使用如下命令进行安装</p>
 
-<pre><code class="language-shell">sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
+<pre><code class="language-bash">sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
 </code></pre>
 
-<h3 id="将-zsh-设置成-linux-系统的默认-shell">将 zsh 设置成 Linux 系统的默认 Shell</h3>
+<h4 id="将-zsh-设置成-linux-系统的默认-shell">将 zsh 设置成 Linux 系统的默认 Shell</h4>
 
 <p>依然先备份</p>
 
-<pre><code class="language-shell">cp ~/.bashrc ~/.bashrc.bak
+<pre><code class="language-bash">cp ~/.bashrc ~/.bashrc.bak
 </code></pre>
 
 <p>然后使用 vim 打开文件 <code>.bashrc</code></p>
 
-<pre><code class="language-shell">vim ~/.bashrc
+<pre><code class="language-bash">vim ~/.bashrc
 </code></pre>
 
 <p>删除掉所有内容，然后将以下文本粘贴上去，并保存</p>
 
-<pre><code class="language-shell">if [ -t 1 ]; then
+<pre><code class="language-bash">if [ -t 1 ]; then
 exec zsh
 fi
 </code></pre>
 
 <p>更新 .bashrc</p>
 
-<pre><code class="language-shell">source ~/.bashrc
+<pre><code class="language-bash">source ~/.bashrc
 </code></pre>
 
 <p>重启 WSL，就可以看到漂亮的 zsh 了！！</p>
 
-<h1 id="配置">配置</h1>
+<h2 id="配置">配置</h2>
 
-<h2 id="wslconfig-相关设置">wslconfig 相关设置</h2>
+<h3 id="wslconfig-相关设置">wslconfig 相关设置</h3>
 
 <p>在 <code>bash</code>、<code>cmd</code>、<code>PowerShell</code> 中使用以下命令对 WSL 进行配置。
 设置默认的 Linux 系统</p>
 
-<pre><code class="language-shell">wslconfig /setdefault [DistributionName]
+<pre><code class="language-bash">wslconfig /setdefault [DistributionName]
 </code></pre>
 
 <p>卸载 Linux 系统</p>
 
-<pre><code class="language-shell">wslconfig /unregister [DistributionName]
+<pre><code class="language-bash">wslconfig /unregister [DistributionName]
 </code></pre>
 
 <p>查看已安装的linux系统</p>
 
-<pre><code class="language-shell">wslconfig /list
+<pre><code class="language-bash">wslconfig /list
 </code></pre>
 
-<h2 id="ubuntu-相关设置">Ubuntu 相关设置</h2>
+<h3 id="ubuntu-相关设置">Ubuntu 相关设置</h3>
 
 <p>设置默认登陆用户 (默认为第一次运行时输入的用户名)</p>
 
-<pre><code class="language-shell">ubuntu config --default-user root
+<pre><code class="language-bash">ubuntu config --default-user root
 </code></pre>
 
-<h2 id="vim-相关配置">vim 相关配置</h2>
+<h3 id="vim-相关配置">vim 相关配置</h3>
 
 <p>vim 使用配置文件 <code>~/.vimrc</code> 进行配置。这里是我个人使用的 <a href="https://gist.github.com/291effaf70cce916ce8b1c2a964fcc0d" rel="nofollow noreferrer" target="_blank">vim 配置</a>，欢迎 <code>clone</code>
 我也写了个配置脚本，执行以下命令可以自动完成大部分配置</p>
 
-<pre><code class="language-shell">wget https://gist.githubusercontent.com/Mogeko/291effaf70cce916ce8b1c2a964fcc0d/raw/2dd5167e0af890c3a3f636a960befe53e7ab8f57/Install.sh &amp;&amp; chmod +x Install.sh &amp;&amp;./Install.sh &amp;&amp; rm Install.sh
+<pre><code class="language-bash">wget https://gist.githubusercontent.com/Mogeko/291effaf70cce916ce8b1c2a964fcc0d/raw/2dd5167e0af890c3a3f636a960befe53e7ab8f57/Install.sh &amp;&amp; chmod +x Install.sh &amp;&amp;./Install.sh &amp;&amp; rm Install.sh
 </code></pre>
 
 <p>执行完后输入 <code>vim</code> 打开 vim，然后输入命令 <code>:PlugInstall</code> 安装插件。</p>

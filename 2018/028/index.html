@@ -57,7 +57,7 @@
     "datePublished": "2018-11-19 11:28:18 &#43;0800 &#43;0800",
     "dateModified" : "2018-11-19 11:28:18 &#43;0800 &#43;0800",
     "url" : "https://mogeko.me/2018/028/",
-    "wordCount" : "1639",
+    "wordCount" : "1689",
     "keywords" : [ "Hugo", "Mogeko`s Blog"]
 }
 </script>
@@ -146,7 +146,7 @@
                         <a href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2/"> 关于博客 </a>
                         
                 </span>
-                <span class="post-word-count">, 1639 words</span>
+                <span class="post-word-count">, 1689 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -175,11 +175,11 @@
 
 <!-- more -->
 
-<h1 id="正文">正文</h1>
+<h2 id="正文">正文</h2>
 
 <p>废话不多说，我们开始吧！</p>
 
-<h2 id="设置代码仓库">设置代码仓库</h2>
+<h3 id="设置代码仓库">设置代码仓库</h3>
 
 <p>首先确保你的 GitHub 上有这两个仓库：<strong>用来部署博客的 <code>[用户名].github.io</code></strong> 和 <strong>用来存放“源码”的 <code>Blog</code></strong></p>
 
@@ -192,7 +192,7 @@
 <li><strong>「源码」</strong> 存放在 <strong><code>master</code></strong> 分支下，<code>clone</code> 更快 <span class="spoiler" >我不知道上我的原因还是 GitHub 或是 Git 的原因，我从 GitHub <strong>clone</strong> 除 <strong>master</strong> 分支以外的分支时，下载速度贼慢，只有几百 kb 每秒，<strong>clone</strong> 一个 <strong>「源码」</strong> 都至少要半个多小时</span></li>
 </ul>
 
-<h2 id="申请-token">申请 Token</h2>
+<h3 id="申请-token">申请 Token</h3>
 
 <p>然后要去 GitHub 上申请一个新的 <a href="https://github.com/settings/tokens/new" rel="nofollow noreferrer" target="_blank">personal access token</a>。</p>
 
@@ -204,7 +204,7 @@
 
 <p><img src="https://mogeko.github.io/images/028/get_token_api.png" alt="Get Token"></p>
 
-<h2 id="设置-travis-ci">设置 Travis CI</h2>
+<h3 id="设置-travis-ci">设置 Travis CI</h3>
 
 <p>接着来到 <a href="https://travis-ci.org/account/repositories" rel="nofollow noreferrer" target="_blank">Travis CI</a>，使用 GitHub 帐号登录；然后为 <strong><code>Blog</code></strong> 仓库打上 ☑，然后点 <code>setting</code>。</p>
 
@@ -221,7 +221,7 @@
 
 <p>点击 <code>Add</code></p>
 
-<h2 id="编写-travis-yml">编写 .travis.yml</h2>
+<h3 id="编写-travis-yml">编写 .travis.yml</h3>
 
 <p>在 <strong>Blog</strong> 的目录下创建并编辑一个 <code>.travis.yml</code> 文件。这个文件的作用是告诉 <strong>Travis CI</strong> 如何部署你的博客的</p>
 
@@ -289,9 +289,9 @@ deploy:
 
 <p>以后的话就只需要把写好的文章推送到 <strong>Blog 仓库</strong> 下就可以了，就不需要再自己编译然后手动推送了 <span class="spoiler" >甚至连 Hugo 都可以不要装  | ・ω・’）</span></p>
 
-<h1 id="附录-以及一些坑-з">附录 以及一些坑 _(:з)∠)_</h1>
+<h2 id="附录-以及一些坑-з">附录 以及一些坑 _(:з)∠)_</h2>
 
-<h2 id="添加-gitignore-文件">添加 .gitignore 文件</h2>
+<h3 id="添加-gitignore-文件">添加 .gitignore 文件</h3>
 
 <p>在 Hugo 本地编译时会产生 <code>public</code> 文件夹，但是这个文件夹中的内容对于 <strong>Blog 仓库</strong> 来说是不需要的 (包括用来存放主题的 <code>themes</code> 文件夹和主题产生的 <code>resources</code> 文件夹也是不需要的)</p>
 
@@ -299,12 +299,12 @@ deploy:
 
 <p>在 Blog 目录下创建并修改 <code>.gitignore</code>，然后提交到 GitHub</p>
 
-<pre><code class="language-shell">public/*
+<pre><code class="language-bash">public/*
 themes/*
 resources/*
 </code></pre>
 
-<h2 id="travis-ci-的分支白名单">Travis CI 的分支白名单</h2>
+<h3 id="travis-ci-的分支白名单">Travis CI 的分支白名单</h3>
 
 <p>我给你的 <code>.travis.yml</code> 文件中有怎么一段</p>
 
@@ -320,6 +320,16 @@ branches:
 <p>不过这里不存在这个场景，并且如果配置错了会出很大的问题，很容易坑到小白， <span class="spoiler" >比如说我 _(:з)∠)_ </span>所以默认就给注释掉了。</p>
 
 <p>如果你晓得这是干啥的，并且觉得有必要的话，可以考虑开启</p>
+
+<h2 id="相关文章">相关文章</h2>
+
+<ul>
+<li><a href="http://localhost:1313/2018/018/" rel="nofollow noreferrer" target="_blank"><strong>使用 Hugo + GitHub Pages 搭建个人博客</strong></a></li>
+<li><a href="https://mogeko.github.io/2018/024/" rel="nofollow noreferrer" target="_blank"><strong>为 Hugo 添加谈笑风生区 (Gitalk)</strong></a></li>
+<li><a href="https://mogeko.github.io/2018/033/" rel="nofollow noreferrer" target="_blank"><strong>为 Hugo 博客添加字数统计</strong></a></li>
+<li><a href="https://mogeko.github.io/2018/025/" rel="nofollow noreferrer" target="_blank"><strong>Leavelt 主题优化</strong></a></li>
+<li><a href="https://mogeko.me/2019/048/" rel="nofollow noreferrer" target="_blank"><strong>为博客添加独立域名</strong></a></li>
+</ul>
 
 <p><br></p>
 

@@ -57,7 +57,7 @@
     "datePublished": "2018-11-16 12:57:09 &#43;0800 &#43;0800",
     "dateModified" : "2018-11-16 12:57:09 &#43;0800 &#43;0800",
     "url" : "https://mogeko.me/2018/024/",
-    "wordCount" : "1013",
+    "wordCount" : "1064",
     "keywords" : [ "Hugo", "Mogeko`s Blog"]
 }
 </script>
@@ -146,7 +146,7 @@
                         <a href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2/"> 关于博客 </a>
                         
                 </span>
-                <span class="post-word-count">, 1013 words</span>
+                <span class="post-word-count">, 1064 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -175,7 +175,7 @@
 
 <!-- more -->
 
-<h1 id="关于-gitalk">关于 Gitalk</h1>
+<h2 id="关于-gitalk">关于 Gitalk</h2>
 
 <p><img src="https://mogeko.github.io/images/024/gitalk.png"  alt="Gitalk"></p>
 
@@ -186,19 +186,19 @@
 
 <p>Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说，只要 Github 不倒闭，你的评论系统就不会被关闭。</p>
 
-<h1 id="添加谈笑风生区">添加谈笑风生区</h1>
+<h2 id="添加谈笑风生区">添加谈笑风生区</h2>
 
 <p>本博客使用的主题是：<a href="https://github.com/liuzc/LeaveIt" rel="nofollow noreferrer" target="_blank">Leavelt</a></p>
 
 <p>不同主题可能有所区别，但原理都是类似的</p>
 
-<h2 id="原理">原理</h2>
+<h3 id="原理">原理</h3>
 
 <p>众所周知，Hugo 会将 <strong>Markdown 文档</strong> 按照 <strong>主题 (包括 HTML 模板、CSS、JavaScript 等)</strong> 编译成静态网页</p>
 
 <p>那么我们只需要将 Gitalk 作为一个 <code>&lt;div&gt;</code> 插入到 HTML 模板中，然后在 <code>config.toml</code> 中添加相关配置，就可以实现“谈笑风生区”了</p>
 
-<h2 id="创建-github-application">创建 Github Application</h2>
+<h3 id="创建-github-application">创建 Github Application</h3>
 
 <p>首先要去 GitHub 上创建一个 <a href="https://github.com/settings/applications/new" rel="nofollow noreferrer" target="_blank">Github Application</a></p>
 
@@ -210,7 +210,7 @@
 
 <p><img alt="Client ID & Client Secret" src="https://mogeko.github.io/images/024/get_id&secret.png"></p>
 
-<h2 id="添加-gitalk-html-模板">添加 gitalk.html 模板</h2>
+<h3 id="添加-gitalk-html-模板">添加 gitalk.html 模板</h3>
 
 <p>接下来为主题添加 <code>gitalk.html</code> 模板。</p>
 
@@ -241,7 +241,7 @@
 {{ end }}
 </code></pre>
 
-<h2 id="定位放-gitalk-的位置">定位放 Gitalk 的位置</h2>
+<h3 id="定位放-gitalk-的位置">定位放 Gitalk 的位置</h3>
 
 <p>然后使用 Chrome 自带的 DevTools 分析一下网页结构，找到放 Gitalk 的位置</p>
 
@@ -255,7 +255,7 @@
 
 <p>在模板中插入<code>{{ partial &quot;gitalk.html&quot; . }}</code></p>
 
-<h2 id="配置-config-toml">配置 config.toml</h2>
+<h3 id="配置-config-toml">配置 config.toml</h3>
 
 <p>在 <code>config.toml</code> 中添加以下配置</p>
 
@@ -291,6 +291,16 @@
 <p><img alt="Gitalk" src="https://mogeko.github.io/images/024/done.png"></p>
 
 <p><strong>添加谈笑风生区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要</strong></p>
+
+<h2 id="相关文章">相关文章</h2>
+
+<ul>
+<li><a href="http://localhost:1313/2018/018/" rel="nofollow noreferrer" target="_blank"><strong>使用 Hugo + GitHub Pages 搭建个人博客</strong></a></li>
+<li><a href="https://mogeko.github.io/2018/028/" rel="nofollow noreferrer" target="_blank"><strong>使用 Travis CI 自动部署 Hugo 博客</strong></a></li>
+<li><a href="https://mogeko.github.io/2018/033/" rel="nofollow noreferrer" target="_blank"><strong>为 Hugo 博客添加字数统计</strong></a></li>
+<li><a href="https://mogeko.github.io/2018/025/" rel="nofollow noreferrer" target="_blank"><strong>Leavelt 主题优化</strong></a></li>
+<li><a href="https://mogeko.me/2019/048/" rel="nofollow noreferrer" target="_blank"><strong>为博客添加独立域名</strong></a></li>
+</ul>
 
 <p><br></p>
 

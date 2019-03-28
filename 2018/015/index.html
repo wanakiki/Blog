@@ -186,7 +186,7 @@
 
 <!-- more -->
 
-<h1 id="准备工作">准备工作</h1>
+<h2 id="准备工作">准备工作</h2>
 
 <ul>
 <li><del>Magisk 框架 -&gt; <a href="https://mogeko.github.io/2017/12/02/%E7%A5%9E%E5%A5%87%E7%9A%84-Magisk/" rel="nofollow noreferrer" target="_blank">Magisk 介绍与简易安装教程</a><del/></li>
@@ -196,11 +196,11 @@
 <li>vlmcsd -&gt; <a href="https://github.com/Wind4/vlmcsd" rel="nofollow noreferrer" target="_blank">GitHub 仓库</a></li>
 </ul>
 
-<h1 id="正文">正文</h1>
+<h2 id="正文">正文</h2>
 
-<h2 id="termux-vlmcsd-搭建-kms-激活服务器-新方法">Termux + vlmcsd 搭建 KMS 激活服务器 (新方法)</h2>
+<h3 id="termux-vlmcsd-搭建-kms-激活服务器-新方法">Termux + vlmcsd 搭建 KMS 激活服务器 (新方法)</h3>
 
-<h3 id="安装-termux">安装 Termux</h3>
+<h4 id="安装-termux">安装 Termux</h4>
 
 <p>这个方法虽然不依赖 Magisk，但我们需要安装一个名为 Termux 的应用。</p>
 
@@ -210,13 +210,13 @@
 
 <p><img alt="install_termux" src="https://mogeko.github.io/images/015/install_termux.png"></p>
 
-<h3 id="安装-vlmcsd">安装 vlmcsd</h3>
+<h4 id="安装-vlmcsd">安装 vlmcsd</h4>
 
 <p>如果说 Termux 提供了运行环境的话，vlmcsd 才是我们激活 Windows / Office 的真正核心——KMS 激活服务器</p>
 
 <p>进入 Termux，执行以下命令</p>
 
-<pre><code class="language-shell">curl -LJO https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz
+<pre><code class="language-bash">curl -LJO https://github.com/Wind4/vlmcsd/releases/download/svn1111/binaries.tar.gz
 </code></pre>
 
 <p>执行这条命令需要安装一个名为 <code>curl</code> 的工具。如果提示 <code>The program 'curl' is not installed.</code>说明没有安装 <code>curl</code>。此时执行 <code>apt install curl</code> 安装 <code>curl</code>，然后再执行上面的命令</p>
@@ -227,12 +227,12 @@
 
 <p>输入以下命令解压这个压缩文件</p>
 
-<pre><code class="language-shell">tar zxvf binaries.tar.gz
+<pre><code class="language-bash">tar zxvf binaries.tar.gz
 </code></pre>
 
 <p>然后执行</p>
 
-<pre><code class="language-shell">cd binaries/Android/arm/static
+<pre><code class="language-bash">cd binaries/Android/arm/static
 </code></pre>
 
 <p>此时目录下应该有这些文件</p>
@@ -254,27 +254,27 @@
 
 <p>然后选择合适的版本运行 (主要是看指令集，也就是形如 <code>armv5</code>、<code>armv7</code>、<code>arm64v8</code> 的这一类东西)。我手机的指令集是 <code>arm64v8</code>，所以我应该执行</p>
 
-<pre><code class="language-shell">./vlmcsd-android50-arm64v8-static
+<pre><code class="language-bash">./vlmcsd-android50-arm64v8-static
 </code></pre>
 
 <p><code>vlmcsd</code> <code>vlmcsdmulti</code> 两个版本差别不大，随意选择，只要能跑起来就对了。</p>
 
-<h4 id="测试服务器是否成功运行">测试服务器是否成功运行</h4>
+<h5 id="测试服务器是否成功运行">测试服务器是否成功运行</h5>
 
 <p>在相同目录下还有一个工具 <code>vlmcs</code>，<a href="https://github.com/Wind4/vlmcsd/blob/master/man/vlmcs.1.pdf" rel="nofollow noreferrer" target="_blank">官方文档</a>上说它是一个客户端模拟器，用来检查服务器的运行状态。
 我们执行</p>
 
-<pre><code class="language-shell">./vlmcs-android50-arm64v8-static 127.0.0.1:1688
+<pre><code class="language-bash">./vlmcs-android50-arm64v8-static 127.0.0.1:1688
 </code></pre>
 
 <p>看到以下文字，就说明服务器已经成功跑起来了</p>
 
-<pre><code class="language-shell">Connecting to 127.0.0.1:1688 … successful
+<pre><code class="language-bash">Connecting to 127.0.0.1:1688 … successful
 Sending activation request (KMS V4) 1 of 1 -&gt;
 06401-00206-296-206344-03-5179-9600.0000-3432013
 </code></pre>
 
-<h2 id="安装-kms-server-已失效">安装 kms-server (已失效)</h2>
+<h3 id="安装-kms-server-已失效">安装 kms-server (已失效)</h3>
 
 <p>首先要<strong>安装 Magisk 框架</strong> -&gt; <a href="https://mogeko.github.io/2018/010/" rel="nofollow noreferrer" target="_blank">Magisk 介绍与简易安装教程</a>
 然后根据你手机的处理器下载 kms-server 模块安装包。
@@ -282,35 +282,35 @@ Sending activation request (KMS V4) 1 of 1 -&gt;
 
 <p><img alt="Install" src="https://mogeko.github.io/images/015/install_kms-server.png"></p>
 
-<h2 id="激活">激活</h2>
+<h3 id="激活">激活</h3>
 
 <p>要确保手机和电脑处于同一路由器中。
 然后设法知道手机的内网 IP 地址（不同手机方法可能不同；下面介绍两种方法，不一定对你的手机有效）</p>
 
-<h3 id="查看手机的内网-ip">查看手机的内网 IP</h3>
+<h4 id="查看手机的内网-ip">查看手机的内网 IP</h4>
 
-<h4 id="方法一">方法一</h4>
+<h5 id="方法一">方法一</h5>
 
 <p>打开设置 -&gt; WLAN -&gt; 选择你连接的 WiFi -&gt; 找到 <code>IP 地址</code> 这个项目</p>
 
 <p><img alt="查看手机的内网 IP" src="https://mogeko.github.io/images/015/get_ip_1.png"></p>
 
-<h4 id="方法二">方法二</h4>
+<h5 id="方法二">方法二</h5>
 
 <p>打开设置 -&gt; 关于手机 -&gt; 状态信息 -&gt; 找到 <code>IP 地址</code> 这个项目（XXX.XXX.XXX.XXX 格式的那个）</p>
 
 <p><img alt="查看手机的内网 IP" src="https://mogeko.github.io/images/015/get_ip_2.png"></p>
 
-<h1 id="激活-1">激活</h1>
+<h2 id="激活-1">激活</h2>
 
-<h2 id="激活-windows">激活 Windows</h2>
+<h3 id="激活-windows">激活 Windows</h3>
 
 <p>KMS 激活服务只能激活批量授权版 Windows (VOL 版)，无法激活零售版 Windows (Retail 版)。</p>
 
 <p>以 Windows 10 Pro 为例
 想要激活 VOL 版 Windows 10 pro，只需要用<strong>管理员权限</strong>打开一个 cmd，然后依次执行以下命令便可。（记得将 [IP 地址] 替换为刚刚查到的 IP 地址）</p>
 
-<pre><code class="language-shell">slmgr -upk
+<pre><code class="language-bash">slmgr -upk
 slmgr -ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
 slmgr -skms [IP 地址]:1688
 slmgr -ato
@@ -320,7 +320,7 @@ slmgr -dlv
 <p>方法同样适用于激活 Windows 8、Windows 7，只是要把上面的 KEY (就是形如 <code>W269N-WFGWX-YVC9B-4J6C9-T83GX</code> 这样的东西) 替换一下。
 <a href="https://mogeko.github.io/2018/015/#KEY" rel="nofollow noreferrer" target="_blank">可供使用的 KEY</a></p>
 
-<h2 id="激活-office">激活 Office</h2>
+<h3 id="激活-office">激活 Office</h3>
 
 <p>同样的，KMS 激活服务只能激活 VOL 版的 Office，不过零售版的 Office 可以通过脚本转换为 VOL 版。
 如果不知道自己安装的是什么版本的 Office，可以使用这个方法查看 -&gt; <a href="https://mogeko.github.io/2018/015/#%E5%88%A4%E6%96%AD%E4%BD%A0%E5%AE%89%E8%A3%85%E7%9A%84-Office-%E6%98%AF%E5%93%AA%E4%B8%AA%E7%89%88%E6%9C%AC" rel="nofollow noreferrer" target="_blank">判断你安装的 Office 是哪个版本</a></p>
@@ -329,12 +329,12 @@ slmgr -dlv
 以 Office 2016 为例，Office 2016 的安装目录是：<code>&quot;C:\Program Files\Microsoft Office\Office16</code>。
 以<strong>管理员权限</strong>打开一个 cmd，然后执行以下命令</p>
 
-<pre><code class="language-shell">cd &quot;C:\Program Files\Microsoft Office\Office16&quot;
+<pre><code class="language-bash">cd &quot;C:\Program Files\Microsoft Office\Office16&quot;
 </code></pre>
 
 <p>如果你系统是 64 位的但 Office 安装的是 32 位的，执行以下命令</p>
 
-<pre><code class="language-shell">cd &quot;C:\Program Files (x86)\Microsoft Office\Office16&quot;
+<pre><code class="language-bash">cd &quot;C:\Program Files (x86)\Microsoft Office\Office16&quot;
 </code></pre>
 
 <p>如果你安装的是 Office 2015，就将 <code>Office16</code> 替换为 <code>Office13</code>；如果是 Office 2014 就替换为  <code>Office10</code>；以此类推。</p>
@@ -343,32 +343,32 @@ slmgr -dlv
 
 <p>进入 Office 的安装目录后，依次执行以下命令 (同样需要将 [IP 地址] 替换为刚刚查到的 IP 地址)</p>
 
-<pre><code class="language-shell">cscript ospp.vbs /sethst:[IP 地址]:1688
+<pre><code class="language-bash">cscript ospp.vbs /sethst:[IP 地址]:1688
 cscript ospp.vbs /act
 </code></pre>
 
-<h2 id="附录">附录</h2>
+<h3 id="附录">附录</h3>
 
-<h3 id="判断你安装的-office-是哪个版本">判断你安装的 Office 是哪个版本</h3>
+<h4 id="判断你安装的-office-是哪个版本">判断你安装的 Office 是哪个版本</h4>
 
 <p>以<strong>管理员权限</strong>打开一个 cmd，来到Office的安装目录，输入命令：<code>cscript ospp.vbs /dstatus</code>
 如果输出的信息中包含下面这句话说明你安装的是零售版</p>
 
-<pre><code class="language-shell">LICENSE DESCRIPTION: Office 15, RETAIL(Grace) channel
+<pre><code class="language-bash">LICENSE DESCRIPTION: Office 15, RETAIL(Grace) channel
 </code></pre>
 
 <p>如果输出的信息中包含下面这句话说明你安装的是批量授权版</p>
 
-<pre><code class="language-shell">LICENSE DESCRIPTION: Office 15, VOLUME_KMSCLIENT channel
+<pre><code class="language-bash">LICENSE DESCRIPTION: Office 15, VOLUME_KMSCLIENT channel
 </code></pre>
 
-<h2 id="key">KEY</h2>
+<h3 id="key">KEY</h3>
 
 <p>以下是部分可供使用的 KEY</p>
 
-<h3 id="windows">Windows</h3>
+<h4 id="windows">Windows</h4>
 
-<h4 id="windows-10-版本-1803">Windows 10 版本 1803</h4>
+<h5 id="windows-10-版本-1803">Windows 10 版本 1803</h5>
 
 <table>
 <thead>
@@ -441,7 +441,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-10-版本-1709">Windows 10 版本 1709</h4>
+<h5 id="windows-10-版本-1709">Windows 10 版本 1709</h5>
 
 <table>
 <thead>
@@ -464,7 +464,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-10">Windows 10</h4>
+<h5 id="windows-10">Windows 10</h5>
 
 <table>
 <thead>
@@ -527,7 +527,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-版本-1803">Windows Server 版本 1803</h4>
+<h5 id="windows-server-版本-1803">Windows Server 版本 1803</h5>
 
 <table>
 <thead>
@@ -550,7 +550,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-版本-1709">Windows Server 版本 1709</h4>
+<h5 id="windows-server-版本-1709">Windows Server 版本 1709</h5>
 
 <table>
 <thead>
@@ -573,7 +573,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-2016">Windows Server 2016</h4>
+<h5 id="windows-server-2016">Windows Server 2016</h5>
 
 <table>
 <thead>
@@ -601,7 +601,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-2012-r2-和-windows-8-1">Windows Server 2012 R2 和 Windows 8.1</h4>
+<h5 id="windows-server-2012-r2-和-windows-8-1">Windows Server 2012 R2 和 Windows 8.1</h5>
 
 <table>
 <thead>
@@ -649,7 +649,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-server-2012-和-windows-8">Windows Server 2012 和 Windows 8</h4>
+<h5 id="windows-server-2012-和-windows-8">Windows Server 2012 和 Windows 8</h5>
 
 <table>
 <thead>
@@ -722,7 +722,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-7-和-windows-server-2008-r2">Windows 7 和 Windows Server 2008 R2</h4>
+<h5 id="windows-7-和-windows-server-2008-r2">Windows 7 和 Windows Server 2008 R2</h5>
 
 <table>
 <thead>
@@ -795,7 +795,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="windows-vista-和-windows-server-2008">Windows Vista 和 Windows Server 2008</h4>
+<h5 id="windows-vista-和-windows-server-2008">Windows Vista 和 Windows Server 2008</h5>
 
 <table>
 <thead>
@@ -873,9 +873,9 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h3 id="office">Office</h3>
+<h4 id="office">Office</h4>
 
-<h4 id="office-2016">Office 2016</h4>
+<h5 id="office-2016">Office 2016</h5>
 
 <table>
 <thead>
@@ -958,7 +958,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="office-2013">Office 2013</h4>
+<h5 id="office-2013">Office 2013</h5>
 
 <table>
 <thead>
@@ -1046,7 +1046,7 @@ cscript ospp.vbs /act
 </tbody>
 </table>
 
-<h4 id="office-2010">Office 2010</h4>
+<h5 id="office-2010">Office 2010</h5>
 
 <p><strong>Office 套件：</strong></p>
 

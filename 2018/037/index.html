@@ -179,14 +179,14 @@
 
 <p>bash 默认的<strong>命令提示符</strong>长这个模样：</p>
 
-<pre><code class="language-shell">mogeko@ubuntu:~$
+<pre><code class="language-bash">mogeko@ubuntu:~$
 </code></pre>
 
 <p>其中的 <code>mogeko</code>：是我的用户名，<code>ubuntu</code>：是我的主机名，<code>~</code>：是当前目录。</p>
 
 <p>非常的不美观，并且浪费空间 (用户名和主机名并不是我所关注的东西却占了很大的空间)。好在我们可以通过设置 <code>SP1</code>：来定制我们的<strong>命令提示符</strong>。</p>
 
-<h1 id="关于-sp1-和-sp2">关于 SP1 和 SP2</h1>
+<h2 id="关于-sp1-和-sp2">关于 SP1 和 SP2</h2>
 
 <p>简单来说：</p>
 
@@ -200,15 +200,15 @@
 
 <p>可以在终端中使用 echo 命令查看系统默认参数：</p>
 
-<pre><code class="language-shell">mogeko@ubuntu:~$ echo $PS1
+<pre><code class="language-bash">mogeko@ubuntu:~$ echo $PS1
 \u@\h:\W$
 mogeko@ubuntu:~$ echo $PS2
 &gt;
 </code></pre>
 
-<h1 id="定制命令提示符">定制命令提示符</h1>
+<h2 id="定制命令提示符">定制命令提示符</h2>
 
-<h2 id="举个栗子">举个栗子</h2>
+<h3 id="举个栗子">举个栗子</h3>
 
 <p>所谓定制命令提示符，实际上就是在 <code>~/.bashrc</code>：文件中改变变量 <code>PS1</code>：的值。</p>
 
@@ -218,14 +218,14 @@ mogeko@ubuntu:~$ echo $PS2
 
 <p>例如，我们不想关心<strong>主机名</strong>，只要一个<strong>用户名</strong>就够了；只需要在 <code>~/.bashrc</code>：文件的末尾加上以下命令：</p>
 
-<pre><code class="language-shell">export PS1=&quot;\u:\W$&quot;
+<pre><code class="language-bash">export PS1=&quot;\u:\W$&quot;
 </code></pre>
 
 <p>使用命令 <code>:wq</code>：退出并保存</p>
 
 <p>然后执行以下命令使刚才的修改生效：</p>
 
-<pre><code class="language-shell">source ~/.bashrc
+<pre><code class="language-bash">source ~/.bashrc
 </code></pre>
 
 <p><img alt="\u:\W$" src="https://mogeko.github.io/images/037/ex1.png" ></p>
@@ -234,7 +234,7 @@ mogeko@ubuntu:~$ echo $PS2
 
 <p>我们想定制<strong>命令提示符</strong>，只需要将各参数按顺序排列组合就可以了。</p>
 
-<h2 id="sp1-参数">SP1 参数</h2>
+<h3 id="sp1-参数">SP1 参数</h3>
 
 <p>如果想知道设置 <code>SP1</code> 可以使用哪些参数只需要执行一下 <code>man bash</code>，然后找到 <strong>PROMPTING</strong> 部分的说明就可以了：</p>
 
@@ -304,7 +304,7 @@ mogeko@ubuntu:~$ echo $PS2
 <li><code>\]</code>：结束一系列非打印字符</li>
 </ul>
 
-<h1 id="为命令提示符着色">为命令提示符着色</h1>
+<h2 id="为命令提示符着色">为命令提示符着色</h2>
 
 <p>上面的参数可以改变命令提示符的内容。其实，命令提示符的颜色也是可以被修改的。</p>
 
@@ -318,7 +318,7 @@ mogeko@ubuntu:~$ echo $PS2
 
 <p>为字符设置颜色，只需要用两个标记将字符框起来就可以了：</p>
 
-<pre><code class="language-shell">\e[F;Bm需要设置颜色的部分\e[0m
+<pre><code class="language-bash">\e[F;Bm需要设置颜色的部分\e[0m
 </code></pre>
 
 <p>其中 <code>F</code> 为字体颜色，编号 30~37；<code>B</code> 为背景色，编号 40~47。</p>
@@ -394,20 +394,20 @@ mogeko@ubuntu:~$ echo $PS2
 
 <p>例如 ：</p>
 
-<pre><code class="language-shell">export PS1=&quot;\[\e[32m\]\u\[\e[m\]\[\e[33m\]\\$\[\e[m\] &quot;
+<pre><code class="language-bash">export PS1=&quot;\[\e[32m\]\u\[\e[m\]\[\e[33m\]\\$\[\e[m\] &quot;
 </code></pre>
 
 <p>效果：</p>
 
 <pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-shell"><span class="str" style="color:#00FF00">mogeko</span><span class="str" style="color:#FFFF00">$ </span></code></li></ol></pre>
 
-<h1 id="返回错误值">返回错误值</h1>
+<h2 id="返回错误值">返回错误值</h2>
 
 <p>你也可以使用命令提示符来查看上一条命令执行的结果。</p>
 
 <p>只需要在 <code>~/.bashrc</code> 中创建一个函数：</p>
 
-<pre><code class="language-shell">function nonzero_return() {
+<pre><code class="language-bash">function nonzero_return() {
 	RETVAL=$?
 	[ $RETVAL -ne 0 ] &amp;&amp; echo &quot;$RETVAL&quot;
 }
@@ -415,16 +415,16 @@ mogeko@ubuntu:~$ echo $PS2
 
 <p>然后在调用 <code>SP1</code> 的时候中执行这个函数：</p>
 
-<pre><code class="language-shell">export PS1=&quot;\`nonzero_return\` &quot;
+<pre><code class="language-bash">export PS1=&quot;\`nonzero_return\` &quot;
 </code></pre>
 
-<h1 id="git-分支信息">Git 分支信息</h1>
+<h2 id="git-分支信息">Git 分支信息</h2>
 
 <p>你甚至可以在命令提示符中查看 Git 的分支信息 (如果当前目录下有 Git 仓库的话)。</p>
 
 <p>在 <code>~/.bashrc</code> 中创建函数：</p>
 
-<pre><code class="language-shell"># get current branch in git repo
+<pre><code class="language-bash">## get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2&gt; /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 	if [ ! &quot;${BRANCH}&quot; == &quot;&quot; ]
@@ -436,7 +436,7 @@ function parse_git_branch() {
 	fi
 }
 
-# get current status of git repo
+## get current status of git repo
 function parse_git_dirty {
 	status=`git status 2&gt;&amp;1 | tee`
 	dirty=`echo -n &quot;${status}&quot; 2&gt; /dev/null | grep &quot;modified:&quot; &amp;&gt; /dev/null; echo &quot;$?&quot;`
@@ -474,15 +474,15 @@ function parse_git_dirty {
 
 <p>在调用 <code>SP1</code> 的时候中执行这个函数：</p>
 
-<pre><code class="language-shell">export PS1=&quot;\`parse_git_branch\` &quot;
+<pre><code class="language-bash">export PS1=&quot;\`parse_git_branch\` &quot;
 </code></pre>
 
-<h1 id="我的命令提示符配置">我的命令提示符配置</h1>
+<h2 id="我的命令提示符配置">我的命令提示符配置</h2>
 
 <p>分享一下我个人使用的命令提示符配置 (复制粘贴到 <code>~/.bashrc</code> 的末尾)：</p>
 
-<pre><code class="language-shell"># PS1&amp;PS2
-# get current branch in git repo
+<pre><code class="language-bash">## PS1&amp;PS2
+## get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2&gt; /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 	if [ ! &quot;${BRANCH}&quot; == &quot;&quot; ]
@@ -494,7 +494,7 @@ function parse_git_branch() {
 	fi
 }
 
-# get current status of git repo
+## get current status of git repo
 function parse_git_dirty {
 	status=`git status 2&gt;&amp;1 | tee`
 	dirty=`echo -n &quot;${status}&quot; 2&gt; /dev/null | grep &quot;modified:&quot; &amp;&gt; /dev/null; echo &quot;$?&quot;`
@@ -529,7 +529,7 @@ function parse_git_dirty {
 	fi
 }
 
-# return
+## return
 function get_return() {
     RETVAL=$?
     # Normal

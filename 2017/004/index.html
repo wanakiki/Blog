@@ -57,7 +57,7 @@
     "datePublished": "2017-09-04 00:00:00 &#43;0000 UTC",
     "dateModified" : "2017-09-04 00:00:00 &#43;0000 UTC",
     "url" : "https://mogeko.me/2017/004/",
-    "wordCount" : "980",
+    "wordCount" : "1022",
     "keywords" : [ "Hexo", "Mogeko`s Blog"]
 }
 </script>
@@ -146,7 +146,7 @@
                         <a href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2/"> 关于博客 </a>
                         
                 </span>
-                <span class="post-word-count">, 980 words</span>
+                <span class="post-word-count">, 1022 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -177,25 +177,25 @@
 
 <!-- more -->
 
-<h1 id="准备工作">准备工作</h1>
+<h2 id="准备工作">准备工作</h2>
 
 <ol>
 <li>Node.js &lt;- 就是安 Hexo 时用到的拿货，应该已经有了，就不贴安装地址了。</li>
 <li>Hexo Hey &lt;- 通过 npm 安装。</li>
 </ol>
 
-<h1 id="正文">正文</h1>
+<h2 id="正文">正文</h2>
 
-<h2 id="安装-hexo-hey">安装 Hexo Hey</h2>
+<h3 id="安装-hexo-hey">安装 Hexo Hey</h3>
 
 <p>首先进入已配置好的那个 Hexo 目录：</p>
 
-<pre><code class="language-shell">$ cd [你的 Hexo 目录]
+<pre><code class="language-bash">$ cd [你的 Hexo 目录]
 </code></pre>
 
 <p>输入一下命令安装 Hexo Hey：</p>
 
-<pre><code class="language-shell">$ npm install hexo-hey --save
+<pre><code class="language-bash">$ npm install hexo-hey --save
 </code></pre>
 
 <p><img alt="安装 Hexo Hey" src="https://mogeko.github.io/images/004/install_hexo_hey.png"></p>
@@ -214,14 +214,14 @@ admin:
 
 <p>重新部署一遍 Hexo，开启 Hexo 的本地服务器</p>
 
-<pre><code class="language-shell">$ hexo g
+<pre><code class="language-bash">$ hexo g
 $ hexo s
 </code></pre>
 
 <p>现在访问 <code>http://localhost:4000/admin</code> 看看效果。(๑•̀ㅂ•́)و✧
 <img alt="Hexo Hey" src="https://mogeko.github.io/images/004/hexo_hey.png"></p>
 
-<h1 id="一些问题">一些问题</h1>
+<h2 id="一些问题">一些问题</h2>
 
 <ol>
 <li>不能自动保存（隔壁 Hexo Admin 就没这毛病），也不能用 <code>ctrl + S</code> 的快捷键保存文章。</li>
@@ -235,9 +235,9 @@ $ hexo s
 <li>目前就发现了这么多…</li>
 </ol>
 
-<h1 id="高级">高级</h1>
+<h2 id="高级">高级</h2>
 
-<h2 id="开机启动-hexo-server-后台">开机启动 Hexo Server（后台）</h2>
+<h3 id="开机启动-hexo-server-后台">开机启动 Hexo Server（后台）</h3>
 
 <p>开机后，在后台自动启动 Hexo 本地服务器可以在一定程度上解决<a href="https://mogeko.github.io/2017/004/#bug_6" rel="nofollow noreferrer" target="_blank">问题6</a>。
 首先要创建两个脚本文件 <code>hexo-server.vbs</code> 和<code>hexo-server.bat</code>。
@@ -252,7 +252,7 @@ ws.Run &quot;[你的 Hexo 文件夹]\\hexo-server.bat /start&quot;,0
 
 <p><strong>hexo-server.bat:</strong></p>
 
-<pre><code class="language-shell">cd [你的 Hexo 文件夹]
+<pre><code class="language-bash">cd [你的 Hexo 文件夹]
 hexo s -d
 </code></pre>
 
@@ -260,6 +260,15 @@ hexo s -d
 将 <code>hexo-server.vbs</code> 放入 <code>C:\Users\[你的用户名]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code> 中。
 *不确定自己用户名什么，可以到 <code>C:\Users\</code> 中确认一下。
 *实在是找不到这个文件夹请 Google <code>Windows 开机启动的文件夹</code>。</p>
+
+<h2 id="相关文章">相关文章</h2>
+
+<ul>
+<li><a href="https://mogeko.me/2017/002/" rel="nofollow noreferrer" target="_blank"><strong>使用 Hexo + GitHub Pages 建立自己的博客</strong></a></li>
+<li><a href="https://mogeko.me/2017/003/" rel="nofollow noreferrer" target="_blank"><strong>Hexo 美化</strong></a></li>
+<li><a href="https://mogeko.me/2017/005/" rel="nofollow noreferrer" target="_blank"><strong>在你的文章中添加 B站的视频</strong></a></li>
+<li><a href="https://mogeko.me/2019/048/" rel="nofollow noreferrer" target="_blank"><strong>为博客添加独立域名</strong></a></li>
+</ul>
 
 <p><br></p>
 

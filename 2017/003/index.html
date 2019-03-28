@@ -57,7 +57,7 @@
     "datePublished": "2017-08-28 00:00:00 &#43;0000 UTC",
     "dateModified" : "2017-08-28 00:00:00 &#43;0000 UTC",
     "url" : "https://mogeko.me/2017/003/",
-    "wordCount" : "1327",
+    "wordCount" : "1376",
     "keywords" : [ "Hexo", "Mogeko`s Blog"]
 }
 </script>
@@ -146,7 +146,7 @@
                         <a href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2/"> 关于博客 </a>
                         
                 </span>
-                <span class="post-word-count">, 1327 words</span>
+                <span class="post-word-count">, 1376 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -180,31 +180,31 @@
 
 <!-- more -->
 
-<h1 id="准备工作">准备工作</h1>
+<h2 id="准备工作">准备工作</h2>
 
 <ol>
 <li>一颗能折腾的心。</li>
 <li>一定的前端知识。</li>
 </ol>
 
-<h1 id="正文">正文</h1>
+<h2 id="正文">正文</h2>
 
-<h2 id="最简单的方法">最简单的方法</h2>
+<h3 id="最简单的方法">最简单的方法</h3>
 
 <p>美化你的 Hexo 的最简单方法 -&gt; <a href="https://github.com/Mogeko/hexo-theme-next" rel="nofollow noreferrer" target="_blank">安装我修改过的 NexT</a>
 在 Hexo 目录中使用命令</p>
 
-<pre><code class="language-shell">$ git clone https://github.com/Mogeko/hexo-theme-next.git themes/next
+<pre><code class="language-bash">$ git clone https://github.com/Mogeko/hexo-theme-next.git themes/next
 </code></pre>
 
 <p>*记得删掉原来安装过的 NexT。</p>
 
-<h2 id="手动美化-hexo">手动美化 Hexo</h2>
+<h3 id="手动美化-hexo">手动美化 Hexo</h3>
 
 <p>如果有能力，推荐跟我一起手动改代码。
 最好能明白我给你的代码都是做什么的，将来万一出了问题，也有个找到问题的方向。</p>
 
-<h3 id="圆形头像-头像旋转">圆形头像（头像旋转）</h3>
+<h4 id="圆形头像-头像旋转">圆形头像（头像旋转）</h4>
 
 <p>NexT 默认的头像是方的。也不是说不好看，就是觉得不习惯，这个要看个人喜好。
 在 <code>/source/css/_custom/custom.styl</code> 中添加一下代码就可以吧头像弄成圆的</p>
@@ -229,12 +229,12 @@
 }
 </code></pre>
 
-<h3 id="点击头像跳转到-关于我-页面">点击头像跳转到 <code>关于我</code> 页面</h3>
+<h4 id="点击头像跳转到-关于我-页面">点击头像跳转到 <code>关于我</code> 页面</h4>
 
 <p>第一次用 Next，习惯性点了一下头像，本以为会跳转到什么页面，结果什么都没有发生，才发现那根本不是超链接。加上 <code>关于我</code> 页面正好没地方放，（觉得官方把 <code>关于我</code> 页面放进 menu 里很蠢）所以决定为头像增加一个超链接，跳转到 <code>关于我</code> 页面。
 首先需要新建一个 <code>about</code> 页面，在 Hexo 文件夹中使用一下命令</p>
 
-<pre><code class="language-shell">$ hexo new page &quot;about&quot;
+<pre><code class="language-bash">$ hexo new page &quot;about&quot;
 </code></pre>
 
 <p>在 <code>[Hexo 文件夹]/source/about/index.md</code> 中编辑介绍自己的内容。</p>
@@ -255,7 +255,7 @@
 <p><img alt="跳转到'关于我'页面" src="https://mogeko.github.io/images/003/line_about.png">
 <strong>注意：href= 一定要填 <code>&quot;/about/&quot;</code></strong></p>
 
-<h3 id="修改侧边滚动条的样式">修改侧边滚动条的样式</h3>
+<h4 id="修改侧边滚动条的样式">修改侧边滚动条的样式</h4>
 
 <p>同样的，看个人喜好。你可以将侧边滚动条的样式修改得和我一样，（只对 webkit 内核的浏览器有效）只需要在 <code>/source/css/_custom/custom.styl</code> 中添加</p>
 
@@ -313,7 +313,7 @@
 }
 </code></pre>
 
-<h3 id="顶部阅读进度条">顶部阅读进度条</h3>
+<h4 id="顶部阅读进度条">顶部阅读进度条</h4>
 
 <p>这个要稍微复杂点，需要改动 4 个文件。
 完成后就可以拥有向我一样的顶部阅读进度条。</p>
@@ -358,6 +358,15 @@
 <p>在这个位置</p>
 
 <p><img alt="顶部阅读进度条" src="https://mogeko.github.io/images/003/top_scroll_bar_2.png"></p>
+
+<h2 id="相关文章">相关文章</h2>
+
+<ul>
+<li><a href="https://mogeko.me/2017/002/" rel="nofollow noreferrer" target="_blank"><strong>使用 Hexo + GitHub Pages 建立自己的博客</strong></a></li>
+<li><a href="https://mogeko.me/2017/004/" rel="nofollow noreferrer" target="_blank"><strong>使用 Hexo Hey 管理你的博客</strong></a></li>
+<li><a href="https://mogeko.me/2017/005/" rel="nofollow noreferrer" target="_blank"><strong>在你的文章中添加 B站的视频</strong></a></li>
+<li><a href="https://mogeko.me/2019/048/" rel="nofollow noreferrer" target="_blank"><strong>为博客添加独立域名</strong></a></li>
+</ul>
 
 <p><br></p>
 

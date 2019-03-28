@@ -57,7 +57,7 @@
     "datePublished": "2018-11-16 19:57:09 &#43;0800 &#43;0800",
     "dateModified" : "2018-11-16 19:57:09 &#43;0800 &#43;0800",
     "url" : "https://mogeko.me/2018/025/",
-    "wordCount" : "1853",
+    "wordCount" : "1909",
     "keywords" : [ "Hugo", "Mogeko`s Blog"]
 }
 </script>
@@ -146,7 +146,7 @@
                         <a href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2/"> 关于博客 </a>
                         
                 </span>
-                <span class="post-word-count">, 1853 words</span>
+                <span class="post-word-count">, 1909 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -175,11 +175,11 @@
 
 <!-- more -->
 
-<h1 id="添加谈笑风生区">添加谈笑风生区</h1>
+<h2 id="添加谈笑风生区">添加谈笑风生区</h2>
 
 <p>Leavelt 默认没有评论系统，我们可以做一点简单的修改添加 Gitalk 评论系统</p>
 
-<h2 id="关于-gitalk">关于 Gitalk</h2>
+<h3 id="关于-gitalk">关于 Gitalk</h3>
 
 <p><img src="https://mogeko.github.io/images/024/gitalk.png"  alt="Gitalk"></p>
 
@@ -190,7 +190,7 @@
 
 <p>Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。它支持多种语言 (包括 en、zh-CN、zh-TW、es-ES、fr)，并自动判断当前语言。最重要的是 Gitalk 使用的是 GitHub Issue 的 api，不依赖任何第三方平台。也就是说，只要 Github 不倒闭，你的评论系统就不会被关闭。</p>
 
-<h2 id="创建-github-application">创建 Github Application</h2>
+<h3 id="创建-github-application">创建 Github Application</h3>
 
 <p>首先要去 GitHub 上创建一个 <a href="https://github.com/settings/applications/new" rel="nofollow noreferrer" target="_blank">Github Application</a></p>
 
@@ -202,7 +202,7 @@
 
 <p><img alt="Client ID & Client Secret" src="https://mogeko.github.io/images/024/get_id&secret.png"></p>
 
-<h2 id="添加-gitalk-html-模板">添加 gitalk.html 模板</h2>
+<h3 id="添加-gitalk-html-模板">添加 gitalk.html 模板</h3>
 
 <p>接下来为主题添加 <code>gitalk.html</code> 模板。</p>
 
@@ -237,7 +237,7 @@
 
 <p><img alt="插入 Gitalk 模板" src="https://mogeko.github.io/images/024/set_div.png" style="border:0" ></p>
 
-<h2 id="配置-config-toml">配置 config.toml</h2>
+<h3 id="配置-config-toml">配置 config.toml</h3>
 
 <p>在 <code>config.toml</code> 中添加以下配置</p>
 
@@ -305,7 +305,7 @@
 
 <p><strong>添加谈笑风生区后还不能立即使用，需要用你的 GitHub 账号登陆并初始化。每篇博客都要</strong></p>
 
-<h1 id="添加-隐藏文字-spoiler">添加“隐藏文字”(spoiler)</h1>
+<h2 id="添加-隐藏文字-spoiler">添加“隐藏文字”(spoiler)</h2>
 
 <p>Steam 和其他一些支持 BBCode 的论坛都有一种名为“隐藏文字”(spoiler) 的标签，使用这种标签后，标签中的文字默认会隐藏起来，当你将鼠标移动到文字上时，文字才会显示出来。</p>
 
@@ -315,7 +315,7 @@
 
 <p>虽然 Markdown 并不支持“隐藏文字”，但我们可以通过在 Markdown 中内嵌 HTML 实现这一功能</p>
 
-<h2 id="安装-ruby-sass">安装 ruby-sass</h2>
+<h3 id="安装-ruby-sass">安装 ruby-sass</h3>
 
 <p><strong>由于 Leavelt 使用了 scss。所以如果想要添加自定义样式的话需要先安装 Sass (基于 Rudy)</strong></p>
 
@@ -327,7 +327,7 @@
 
 <p>具体可以参考 -&gt; <a href="https://www.sass.hk/install/" rel="nofollow noreferrer" target="_blank">安装 Sass | Sass 中文网</a></p>
 
-<h2 id="添加自定义样式">添加自定义样式</h2>
+<h3 id="添加自定义样式">添加自定义样式</h3>
 
 <p>在 <code>assets/css/_custom.scss</code> 文件中添加</p>
 
@@ -342,7 +342,7 @@
 
 <p>然后在终端中执行</p>
 
-<pre><code class="language-shell">sass --style compressed [Leacelt 目录]/css/main.scss:[Leacelt 目录]/resources/_gen/assets/scss/css/main.scss_b95b077eb505d5c0aff8055eaced30ad.content
+<pre><code class="language-bash">sass --style compressed [Leacelt 目录]/css/main.scss:[Leacelt 目录]/resources/_gen/assets/scss/css/main.scss_b95b077eb505d5c0aff8055eaced30ad.content
 </code></pre>
 
 <p>注意替换 <code>[Leacelt 目录]</code></p>
@@ -354,7 +354,7 @@
 
 <p><span class="spoiler" >隐藏文字</span></p>
 
-<h1 id="放大图片">放大图片</h1>
+<h2 id="放大图片">放大图片</h2>
 
 <p>默认的图片大小有点小，作者的目的应该是想让大家多使用一下 <strong>lightGallery 图片相册</strong>；不过图片小了，有时候文字看不清楚</p>
 
@@ -369,7 +369,7 @@
 
 <p>然后与上面一样的编译，运行</p>
 
-<pre><code class="language-shell">sass --style compressed [Leacelt 目录]/css/main.scss:[Leacelt 目录]/resources/_gen/assets/scss/css/main.scss_b95b077eb505d5c0aff8055eaced30ad.content
+<pre><code class="language-bash">sass --style compressed [Leacelt 目录]/css/main.scss:[Leacelt 目录]/resources/_gen/assets/scss/css/main.scss_b95b077eb505d5c0aff8055eaced30ad.content
 </code></pre>
 
 <p><br>
@@ -379,7 +379,7 @@
 
 <p>不过这样就没法使用 <strong>lightGallery 图片相册</strong> 了</p>
 
-<h1 id="添加字数统计">添加字数统计</h1>
+<h2 id="添加字数统计">添加字数统计</h2>
 
 <p>打开文件 <code>layouts/_default/single.html</code>，在 <code>22</code> 行后插入一行，添加以下 <strong>DOM</strong>：</p>
 
@@ -393,6 +393,16 @@
 <p><img alt="字数统计" src="https://mogeko.github.io/images/033/fix_bug.png" ></p>
 
 <p>关于添加「字数统计」的详情：<a href="https://mogeko.github.io/2018/033/" rel="nofollow noreferrer" target="_blank">为 Hugo 博客添加字数统计</a></p>
+
+<h2 id="相关文章">相关文章</h2>
+
+<ul>
+<li><a href="http://localhost:1313/2018/018/" rel="nofollow noreferrer" target="_blank"><strong>使用 Hugo + GitHub Pages 搭建个人博客</strong></a></li>
+<li><a href="https://mogeko.github.io/2018/024/" rel="nofollow noreferrer" target="_blank"><strong>为 Hugo 添加谈笑风生区 (Gitalk)</strong></a></li>
+<li><a href="https://mogeko.github.io/2018/028/" rel="nofollow noreferrer" target="_blank"><strong>使用 Travis CI 自动部署 Hugo 博客</strong></a></li>
+<li><a href="https://mogeko.github.io/2018/033/" rel="nofollow noreferrer" target="_blank"><strong>为 Hugo 博客添加字数统计</strong></a></li>
+<li><a href="https://mogeko.me/2019/048/" rel="nofollow noreferrer" target="_blank"><strong>为博客添加独立域名</strong></a></li>
+</ul>
 
 <p><br></p>
 
