@@ -812,6 +812,12 @@ $ brew bottle --json frp
 
 &lt;p&gt;可以用 Travis CI 等持续集成平台来制作与发布 Bottle，我没试过，有兴趣的同学可以自己研究一下。&lt;/p&gt;
 
+&lt;h2 id=&#34;相关文章&#34;&gt;相关文章&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.me/2019/049/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;使用 Travis CI 自动维护软件仓库 (Homebrew)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
