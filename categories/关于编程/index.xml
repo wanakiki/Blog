@@ -6,19 +6,10 @@
     <description>Recent content in 关于编程 on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 29 Mar 2019 12:48:08 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Jan 2019 12:50:59 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>使用 Travis CI 自动维护软件仓库 (Homebrew)</title>
-      <link>https://mogeko.me/2019/049/</link>
-      <pubDate>Fri, 29 Mar 2019 12:48:08 +0800</pubDate>
-      
-      <guid>https://mogeko.me/2019/049/</guid>
-      <description>&amp;emsp;&amp;emsp; -- 前段时间的一篇文章介绍了如何使用 Homebrew 建立自己的软件仓库，目的是让大家能轻松的发布软件。但同时如何让仓库里的软件保持最新又成为了新的问题。 我</description>
-    </item>
     
     <item>
       <title>Rust 中的错误处理</title>
