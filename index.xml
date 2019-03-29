@@ -147,7 +147,14 @@
 
 &lt;p&gt;除了将域名绑定给博客外博客，还可以用域名干一些别的事。&lt;/p&gt;
 
-&lt;p&gt;比如，&lt;strong&gt;使用 A 记录将 &lt;code&gt;mail.mogeko.me&lt;/code&gt; 这个二级域名指向 &lt;code&gt;207.46.149.80&lt;/code&gt; 就可以“搭建”一个 &lt;a href=&#34;https://mogeko.me/2019/047/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;临时邮箱服务&lt;/a&gt;&lt;/strong&gt; (感谢 &lt;a href=&#34;https://moeclub.org&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;萌咖 | MoeClub.org&lt;/a&gt; 提供的服务器)&lt;/p&gt;
+&lt;p&gt;比如，&lt;strong&gt;使用 A 记录将 &lt;code&gt;mail.mogeko.me&lt;/code&gt; 这个二级域名指向 &lt;code&gt;207.46.149.80&lt;/code&gt; 就可以“搭建”一个 &lt;a href=&#34;http://mail.mogeko.me&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;临时邮箱&lt;/a&gt;服务&lt;/strong&gt;
+&lt;span style=&#34;float: right;&#34;&gt;(感谢 &lt;a href=&#34;https://moeclub.org&#34;&gt;萌咖 | MoeClub.org&lt;/a&gt; 提供的服务器)&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;如果你还有一台拥有&lt;strong&gt;公网 IP&lt;/strong&gt; 的服务器，可玩性就更高了！&lt;/p&gt;
+
+&lt;p&gt;如果有能力，你甚至可以拥有自己的&lt;a href=&#34;https://nutch.apache.org&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;搜索引擎&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;相关文章&#34;&gt;相关文章&lt;/h2&gt;
 
