@@ -6,8 +6,337 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 28 Mar 2019 14:39:37 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 29 Mar 2019 12:48:08 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>使用 Travis CI 自动维护软件仓库 (Homebrew)</title>
+      <link>https://mogeko.me/2019/049/</link>
+      <pubDate>Fri, 29 Mar 2019 12:48:08 +0800</pubDate>
+      
+      <guid>https://mogeko.me/2019/049/</guid>
+      <description>
+
+&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/049/&#34; &gt;
+&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;p&gt;前段时间的一篇文章介绍了&lt;a href=&#34;https://mogeko.me/2019/046/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;如何使用 Homebrew 建立自己的软件仓库&lt;/a&gt;，目的是让大家能轻松的发布软件。但同时如何让仓库里的软件保持最新又成为了新的问题。&lt;/p&gt;
+
+&lt;p&gt;我一直没有找到合适的答案，直到看到了这个 &lt;a href=&#34;https://github.com/v2ray/homebrew-v2ray/issues/1&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Issues&lt;/a&gt;。受此启发，我编写了一个利用 Travis CI 自动更新 Formula 的 shell 脚本。它的基本原理就是利用 Travis CI 的 &lt;code&gt;Cron Jobs&lt;/code&gt; 功能，每天定期运行更新脚本，如果有更新，就根据修改 Formula 脚本，并推送到 Tap (GitHub) 仓库。&lt;/p&gt;
+
+&lt;p&gt;不同的仓库需要修改脚本以适配不同的项目，但我会在后文中详细介绍脚本是如何工作的，保证你读完后也能编写出自动维护 Formula 的脚本。&lt;/p&gt;
+
+&lt;p&gt;完整的更新脚本参考和 &lt;code&gt;.travis.yml&lt;/code&gt; 在&lt;a href=&#34;https://mogeko.me/2019/049/#%E9%99%84%E5%BD%95&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;附录&lt;/a&gt;里。&lt;/p&gt;
+
+&lt;h2 id=&#34;手动更新&#34;&gt;手动更新&lt;/h2&gt;
+
+&lt;p&gt;首先我们要了解一下如何手动更新 Formula。还是以 &lt;a href=&#34;https://github.com/fatedier/frp&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;frp&lt;/strong&gt;&lt;/a&gt; 为例。&lt;/p&gt;
+
+&lt;p&gt;假如 &lt;strong&gt;frp&lt;/strong&gt; 发布了新的更新，我们首先要去 &lt;strong&gt;frp&lt;/strong&gt; 的 GitHub Releases 页面获取最新版本的源码。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Get_Source&#34; src=&#34;https://mogeko.github.io/images/049/get_source.png&#34; &gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ wget https://github.com/fatedier/frp/archive/v0.25.3.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后利用 &lt;code&gt;sha256sum&lt;/code&gt; 计算源码的 sha256 校验值。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sha256sum v0.25.3.tar.gz
+68281965d04567d55f143b4a4c4d4369c1962937d80484b6b48e96a5dcf0b2e4  v0.25.3.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;再将计算好的校验码和下载链接替换到 &lt;code&gt;frp.rb&lt;/code&gt; 中。&lt;/p&gt;
+
+&lt;p&gt;总结一下就是：&lt;strong&gt;下载最新的源码 -&amp;gt; 计算校验码 -&amp;gt; 替换下载地址和校验码&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;而我们要做的就是用脚本来执行上面这一过程，让计算机来做重复又无味的工作。&lt;/p&gt;
+
+&lt;h2 id=&#34;自动更新&#34;&gt;自动更新&lt;/h2&gt;
+
+&lt;p&gt;在 Tap 的根目录新建一文件，命名为 &lt;code&gt;auto-update.sh&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;定义变量-常量&#34;&gt;定义变量 (常量)&lt;/h3&gt;
+
+&lt;p&gt;首先我们定义一些变量 (常量) 来储存必要的信息。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;typeset -l FILE_NAME # 将 $FILE_NAME 设为全部小写
+
+AUTHUR_NAME=&amp;quot;fatedier&amp;quot; # 软件拥有者的 GitHub 用户名
+FORMULA_NAME=&amp;quot;frp&amp;quot; # 软件仓库名
+FILE_NAME=$FORMULA_NAME # Formula 的文件名 (等于全小写的 $FORMULA_NAME)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;为什么要将 &lt;code&gt;$FORMULA_NAME&lt;/code&gt; 和 &lt;code&gt;$FILE_NAME&lt;/code&gt; 分开呢？因为软件仓库是允许大写的，但 Formula 的文件名不允许&lt;/p&gt;
+
+&lt;h3 id=&#34;克隆-git-仓库&#34;&gt;克隆 Git 仓库&lt;/h3&gt;
+
+&lt;p&gt;虽然我们有一个存放 Formula 的 Git 仓库了，但总觉得在一个镜像仓库中操作文件更放心一点&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone https://${GH_REF}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;获取最新的版本号&#34;&gt;获取最新的版本号&lt;/h3&gt;
+
+&lt;p&gt;我们需要获取最新版本的版本号，可以通过 &lt;a href=&#34;https://developer.github.com/v3/repos/releases&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub API&lt;/a&gt; 来获取，我们先在终端中试验一下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ curl -s https://api.github.com/repos/fatedier/frp/releases/latest
+{
+  &amp;quot;url&amp;quot;: &amp;quot;https://api.github.com/repos/fatedier/frp/releases/16350972&amp;quot;,
+  &amp;quot;assets_url&amp;quot;: &amp;quot;https://api.github.com/repos/fatedier/frp/releases/16350972/assets&amp;quot;,
+  &amp;quot;upload_url&amp;quot;: &amp;quot;https://uploads.github.com/repos/fatedier/frp/releases/16350972/assets{?name,label}&amp;quot;,
+  &amp;quot;html_url&amp;quot;: &amp;quot;https://github.com/fatedier/frp/releases/tag/v0.25.3&amp;quot;,
+  &amp;quot;id&amp;quot;: 16350972,
+  &amp;quot;node_id&amp;quot;: &amp;quot;MDc6UmVsZWFzZTE2MzUwOTcy&amp;quot;,
+  &amp;quot;tag_name&amp;quot;: &amp;quot;v0.25.3&amp;quot;,
+  &amp;quot;target_commitish&amp;quot;: &amp;quot;master&amp;quot;,
+  &amp;quot;name&amp;quot;: &amp;quot;v0.25.3&amp;quot;,
+  &amp;quot;draft&amp;quot;: false,
+  &amp;quot;author&amp;quot;: {
+    &amp;quot;login&amp;quot;: &amp;quot;fatedier&amp;quot;,
+    &amp;quot;id&amp;quot;: 7346661,
+    &amp;quot;node_id&amp;quot;: &amp;quot;MDQ6VXNlcjczNDY2NjE=&amp;quot;,
+    &amp;quot;avatar_url&amp;quot;: &amp;quot;https://avatars3.githubusercontent.com/u/7346661?v=4&amp;quot;,
+    &amp;quot;gravatar_id&amp;quot;: &amp;quot;&amp;quot;,
+    &amp;quot;url&amp;quot;: &amp;quot;https://api.github.com/users/fatedier&amp;quot;,
+    &amp;quot;html_url&amp;quot;: &amp;quot;https://github.com/fatedier&amp;quot;,
+    &amp;quot;followers_url&amp;quot;: &amp;quot;https://api.github.com/users/fatedier/followers&amp;quot;,
+    &amp;quot;following_url&amp;quot;: &amp;quot;https://api.github.com/users/fatedier/following{/other_user}&amp;quot;,
+    &amp;quot;gists_url&amp;quot;: &amp;quot;https://api.github.com/users/fatedier/gists{/gist_id}&amp;quot;,
+    &amp;quot;starred_url&amp;quot;: &amp;quot;https://api.github.com/users/fatedier/starred{/owner}{/repo}&amp;quot;,
+    &amp;quot;subscriptions_url&amp;quot;: &amp;quot;https://api.github.com/users/fatedier/subscriptions&amp;quot;,
+    &amp;quot;organizations_url&amp;quot;: &amp;quot;https://api.github.com/users/fatedier/orgs&amp;quot;,
+    &amp;quot;repos_url&amp;quot;: &amp;quot;https://api.github.com/users/fatedier/repos&amp;quot;,
+    &amp;quot;events_url&amp;quot;: &amp;quot;https://api.github.com/users/fatedier/events{/privacy}&amp;quot;,
+    &amp;quot;received_events_url&amp;quot;: &amp;quot;https://api.github.com/users/fatedier/received_events&amp;quot;,
+    &amp;quot;type&amp;quot;: &amp;quot;User&amp;quot;,
+    &amp;quot;site_admin&amp;quot;: false
+  },
+  ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;返回的结果中就包含了我们需要的版本号。我在用 &lt;code&gt;grep&lt;/code&gt; 过滤一下，让大家看清楚一点&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ curl -s https://api.github.com/repos/fatedier/frp/releases/latest
+  &amp;quot;tag_name&amp;quot;: &amp;quot;v0.25.3&amp;quot;,
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后用 &lt;code&gt;cut&lt;/code&gt; 处理一下字符串，并加上一个 &lt;code&gt;loop&lt;/code&gt; 循环 (排除网络环境的影响) 就可以用了。反映到脚本上是这样的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;loop_parser(){
+    while true
+    do
+       result=$(curl -s https://api.github.com/repos/&amp;quot;$AUTHUR_NAME&amp;quot;/&amp;quot;$FORMULA_NAME&amp;quot;/releases/latest | grep &amp;quot;$1&amp;quot; | cut -d &#39;&amp;quot;&#39; -f 4)
+       if [ ! -z &amp;quot;$result&amp;quot; ]; then
+        echo $result
+        break
+       fi
+    done
+}
+
+V_VERSION=$( loop_parser &amp;quot;tag_name&amp;quot; )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;下载源文件&#34;&gt;下载源文件&lt;/h3&gt;
+
+&lt;p&gt;然后我们将&lt;code&gt;$V_VERSION&lt;/code&gt; (版本号) 与 &lt;code&gt;$AUTHUR_NAME&lt;/code&gt;、&lt;code&gt;$FORMULA_NAME&lt;/code&gt; 等信息组合一下就可以获得源文件的下载链接&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;DOWNLOAD_URL=&amp;quot;https://github.com/$AUTHUR_NAME/$FORMULA_NAME/archive/&amp;quot;$V_VERSION&amp;quot;.tar.gz&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;用 &lt;code&gt;curl&lt;/code&gt; 下载源文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -L  $DOWNLOAD_URL &amp;gt; $FORMULA_NAME.$V_VERSION.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;计算校验码&#34;&gt;计算校验码&lt;/h3&gt;
+
+&lt;p&gt;然后就可以计算  sha256 校验码了，还是用 &lt;code&gt;sha256sum&lt;/code&gt; 计算，用 &lt;code&gt;cut&lt;/code&gt; 处理字符串&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;V_HASH256=$(sha256sum $FORMULA_NAME.$V_VERSION.tar.gz |cut  -d &#39; &#39; -f 1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;替换下载链接和校验码&#34;&gt;替换下载链接和校验码&lt;/h3&gt;
+
+&lt;p&gt;用 &lt;code&gt;sed&lt;/code&gt; 替换 Formula 中需要更新的信息，如果不需要更新，那么替换后还是原来的 Formula。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 如果 Formula 中有 version 这一变量的话取消下面的注释
+# sed -i &amp;quot;s#^\s*version.*#  version \&amp;quot;$V_VERSION\&amp;quot;#g&amp;quot; homebrew-taps/Formula/$FILE_NAME.rb
+sed -i &amp;quot;s#^\s*url.*#  version \&amp;quot;$DOWNLOAD_URL\&amp;quot;#g&amp;quot; homebrew-taps/Formula/$FILE_NAME.rb
+sed -i &amp;quot;s#^\s*sha256.*#  sha256 \&amp;quot;$V_HASH256\&amp;quot;#g&amp;quot; homebrew-taps/Formula/$FILE_NAME.rb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;推送&#34;&gt;推送&lt;/h3&gt;
+
+&lt;p&gt;将更新好的 Formula 文件推送到 GitHub 上 (&lt;code&gt;${GH_TOKEN}&lt;/code&gt; 和 &lt;code&gt;${GH_REF}&lt;/code&gt; 这两个变量需要在 Travis CI 中添加)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git commit -am &amp;quot;travis automated update&amp;quot; || exit 0
+git push  --quiet &amp;quot;https://${GH_TOKEN}@${GH_REF}&amp;quot; master:master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;配置-travis-ci&#34;&gt;配置 Travis CI&lt;/h2&gt;
+
+&lt;h3 id=&#34;travis-yml&#34;&gt;.travis.yml&lt;/h3&gt;
+
+&lt;p&gt;这次的 &lt;code&gt;.travis.yml&lt;/code&gt; 很简单，只需要做两件事：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;设置 &lt;code&gt;git config&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;执行放在根目录的 &lt;code&gt;auto-update.sh&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-.travis.yml&#34;&gt;before_install:
+  - git config --global user.name &amp;quot;$USERNAME&amp;quot; 
+  - git config --global user.email &amp;quot;$EMAIL&amp;quot;
+
+script:
+  - auto-update.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;完整的 &lt;code&gt;.travis.yml&lt;/code&gt; 文件在&lt;a href=&#34;https://mogeko.me/2019/049/#%E9%99%84%E5%BD%95&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;附录&lt;/a&gt;里。&lt;/p&gt;
+
+&lt;h3 id=&#34;设置环境变量&#34;&gt;设置环境变量&lt;/h3&gt;
+
+&lt;p&gt;需要设置以下环境变量&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$USERNAME&lt;/code&gt;：你想记录在 git log 中的名字&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;$EMAIL&lt;/code&gt;：你的邮箱&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;${GH_TOKEN}&lt;/code&gt;：GitHub TOKEN，点满 &lt;code&gt;repo&lt;/code&gt; 的所有权限&amp;emsp;&lt;a href=&#34;https://mogeko.me/2018/028/#%E7%94%B3%E8%AF%B7-token&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub TOKEN 申请方法&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;${GH_REF}&lt;/code&gt;：你存放 Formula 的 GitHub 仓库的地址，例如：&lt;code&gt;github.com/:owner/:repo&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Set ENV&#34; src=&#34;https://mogeko.github.io/images/049/set_env.png&#34; &gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;设置-cron-jobs&#34;&gt;设置 Cron Jobs&lt;/h3&gt;
+
+&lt;p&gt;设置 Cron Jobs，让 Travis CI 定期运行脚本&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Set Cron Jobs&#34; src=&#34;https://mogeko.github.io/images/049/set_cron.png&#34; &gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Branch:&lt;/strong&gt; master&amp;emsp;&amp;emsp;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Interval:&lt;/strong&gt; daily&amp;emsp;&amp;emsp;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Options:&lt;/strong&gt; Always run&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;附录&#34;&gt;附录&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;.travis.yml&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-.travis.yml&#34;&gt;language: generic
+
+sudo: required
+
+before_install:
+  - git config --global user.name &amp;quot;$USERNAME&amp;quot; 
+  - git config --global user.email &amp;quot;$EMAIL&amp;quot;
+
+before_script:
+  - chmod +x tools/auto-update.sh
+
+script:
+  - tools/auto-update.sh
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;auto-update.sh&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+
+typeset -l FILE_NAME # 将 $FILE_NAME 设为全部小写
+
+AUTHUR_NAME=&amp;quot;&amp;quot; # 软件拥有者的 GitHub 用户名
+FORMULA_NAME=&amp;quot;&amp;quot; # 软件仓库名
+FILE_NAME=$FORMULA_NAME # Formula 的文件名 (等于全小写的 $FORMULA_NAME)
+
+log(){
+    echo &#39;&#39;
+    echo &#39;-------------------------------------&#39;
+    echo &amp;quot;$*&amp;quot;
+    echo &#39;-------------------------------------&#39;
+    echo &#39;&#39;
+}
+
+loop_parser(){
+    while true
+    do
+       result=$(curl -s https://api.github.com/repos/&amp;quot;$AUTHUR_NAME&amp;quot;/&amp;quot;$FORMULA_NAME&amp;quot;/releases/latest | grep &amp;quot;$1&amp;quot; | cut -d &#39;&amp;quot;&#39; -f 4)
+       if [ ! -z &amp;quot;$result&amp;quot; ]; then
+        echo $result
+        break
+       fi
+    done
+}
+
+git clone https://github.com/Mogeko/homebrew-taps.git
+
+log &amp;quot;parser $FORMULA_NAME download url&amp;quot;
+
+V_VERSION=$( loop_parser &amp;quot;tag_name&amp;quot; )
+
+if [ -z &amp;quot;$V_VERSION&amp;quot; ]; then
+
+    log &#39;parser file version error, skip update.&#39;
+    exit 0
+
+fi
+
+DOWNLOAD_URL=&amp;quot;https://github.com/$AUTHUR_NAME/$FORMULA_NAME/archive/&amp;quot;$V_VERSION&amp;quot;.tar.gz&amp;quot;
+
+if [ -z &amp;quot;$DOWNLOAD_URL&amp;quot; ]; then
+
+    log &#39;parser download url error.&#39;
+    exit 0
+
+fi
+
+log &amp;quot;download url: $DOWNLOAD_URL  start downloading...&amp;quot;
+
+# wget -c $DOWNLOAD_URL -O $FORMULA_NAME.$V_VERSION.tar.gz
+curl -L  $DOWNLOAD_URL &amp;gt; $FORMULA_NAME.$V_VERSION.tar.gz
+
+
+if [ ! -e $FORMULA_NAME.$V_VERSION.tar.gz ]; then
+    log &amp;quot;file download failed!&amp;quot;
+    exit 1
+fi
+
+V_HASH256=$(sha256sum $FORMULA_NAME.$V_VERSION.tar.gz |cut  -d &#39; &#39; -f 1)
+
+log &amp;quot;file hash: $V_HASH256 parser $FORMULA_NAME version...&amp;quot;
+
+log &amp;quot;file version: $V_VERSION start clone...&amp;quot;
+
+log &amp;quot;update config....&amp;quot;
+
+sed -i &amp;quot;s#^\s*version.*#  version \&amp;quot;$V_VERSION\&amp;quot;#g&amp;quot; homebrew-taps/Formula/$FILE_NAME.rb
+sed -i &amp;quot;s#^\s*sha256.*#  sha256 \&amp;quot;$V_HASH256\&amp;quot;#g&amp;quot; homebrew-taps/Formula/$FILE_NAME.rb
+
+git commit -am &amp;quot;travis automated update&amp;quot; || exit 0
+git push  --quiet &amp;quot;https://${GITHUB_TOKEN}@${GH_REF}&amp;quot; master:master
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;相关文章&#34;&gt;相关文章&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.me/2019/046/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;使用 Homebrew 维护自己的软件仓库&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>为博客添加独立域名</title>
@@ -295,9 +624,13 @@
 
 &lt;p&gt;然后创建 Formula，我们这里以 &lt;strong&gt;frp&lt;/strong&gt; 为例。&lt;a href=&#34;https://github.com/fatedier/frp&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;frp&lt;/strong&gt;&lt;/a&gt; 是一款用来做内网穿透的代理程序，选它当例子主要是因为它比较好编译。&lt;/p&gt;
 
-&lt;p&gt;首先去 &lt;a href=&#34;https://github.com/fatedier/frp/releases&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;frp 的 releases 页面&lt;/a&gt;，找到最新版的 &lt;strong&gt;frp&lt;/strong&gt;，右键 &lt;code&gt;Source code&lt;/code&gt; -&amp;gt; 复制链接地址。然后打开终端，输入：&lt;/p&gt;
+&lt;p&gt;首先去 &lt;a href=&#34;https://github.com/fatedier/frp/releases&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;frp 的 releases 页面&lt;/a&gt;，找到最新版的 &lt;strong&gt;frp&lt;/strong&gt;，右键 &lt;code&gt;Source code.tar.gz&lt;/code&gt; -&amp;gt; 复制链接地址。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ brew create [刚刚复制的 url]
+&lt;p&gt;&lt;img alt=&#34;Get_Source&#34; src=&#34;https://mogeko.github.io/images/046/get_source.png&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;然后打开终端，输入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ brew create https://github.com/fatedier/frp/archive/v0.25.1.tar.gz
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Homebrew 会在 &lt;code&gt;/usr/local/Library/Formula/&lt;/code&gt; 下创建一个名为 &lt;code&gt;frp.rb&lt;/code&gt; 的文件，将这个文件放入 Tap 的 &lt;code&gt;Formula&lt;/code&gt; 文件夹中，然后打开它。&lt;/p&gt;
@@ -3834,90 +4167,6 @@ server {
 }
 ```
  --&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>学会将代码写简单</title>
-      <link>https://mogeko.me/2018/034/</link>
-      <pubDate>Thu, 22 Nov 2018 19:46:55 +0800</pubDate>
-      
-      <guid>https://mogeko.me/2018/034/</guid>
-      <description>
-
-&lt;!-- 
-&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/034/&#34; &gt;
-&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
-&amp;emsp;&amp;emsp;
- --&gt;
-
-&lt;p&gt;&lt;em&gt;为开源项目作出贡献的最佳方式是使它的代码得以精简。我们应当努力编写即使没有注释也能使新手程序员轻松理解的代码，让维护者无需花费太多精力也能轻松维护。&lt;/em&gt;&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;在学生时代，我们乐于使用更加复杂的技巧去解决新的难题。首先，我们学会了循环，再是函数，接着是类… 当我们得到提高，能够用更高级的技术写更长的代码时，我们得到的是称赞。我们发现有经验的程序员使用 &lt;code&gt;monad&lt;/code&gt;，而新手使用 &lt;code&gt;for&lt;/code&gt; 循环。&lt;/p&gt;
-
-&lt;p&gt;当我们出生社会，在工作中或者在开源项目中与他人合作时。我们使用在学校学到的各种玄酷技能自豪地给出解决方案的代码实现。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;“啊哈！我可以扩展这个项目，并实现 X 功能！我这里用到了继承！我真TM牛逼！！”&lt;/em&gt; ε٩(๑&amp;gt; ₃ &amp;lt;)۶ з&lt;/p&gt;
-
-&lt;p&gt;我们实现了某个小功能，很有成就感，并有充分的理由相信自己很牛逼。但在实际工程中的编程却不仅仅是实现某某功能这么简单。以我个人的经验而言，写代码使我感到开心与自豪，并且我十分乐意向世界展示我所知道的一切。有例为证，这里是用另一种元编程语言构建的&lt;a href=&#34;https://github.com/mrocklin/matrix-algebra&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;线性代数语言&lt;/a&gt;。(注意，这玩意已经很多年没人碰过了)&lt;/p&gt;
-
-&lt;p&gt;在自己维护过代码后，我的观点发生了变化。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;我们不应该去刻意的追求如何构建软件。软件是我们用来解决问题的手段，而解决问题才是我们的真正目标。我们应当围绕着需要解决的问题构建出尽可能小的软件。&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;我们应当尽可能使用更简单的技术，以便于人们以更少的学习成本去使用或者扩展它。当然，在我们不知道如何使用更简单的技术去实现它时，也可以使用更高级的技术。&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;这不是什么新鲜的观点。我身边的每个人都或多或少的赞同这些观点，但不知道为什么，当我们为一个新的项目贡献代码时又会忘记这些原则。总是本能的想用复杂的技术去实现功能。&lt;/p&gt;
-
-&lt;h2 id=&#34;软件是一种付出&#34;&gt;软件是一种付出&lt;/h2&gt;
-
-&lt;p&gt;你写的每一行代码都需要耗费时间。当然，也许你很乐意花费你的时间。但是，你的代码在被审阅时也是需要花时间的，审阅者需要花费时间来阅读并理解它们。未来的维护者也需要花费时间维护和修改你的代码。他们本可以利用这些时间来晒晒太阳陪陪家人的。&lt;/p&gt;
-
-&lt;p&gt;所以，当你向某个项目提交代码时，请务必心怀谦恭。多为他人着想同时也会得到他人的理解和尊重。将代码写少是很难的，但你的付出会减轻别人的负担。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;这段有一个吃饭的例子，我不知道怎么翻译，就稍微改写了一下。原文如下：&lt;/p&gt;
-
-&lt;p&gt;It should feel as though you are eating with your family and there isn&amp;rsquo;t enough food on the table. You should take only what you need and no more. The people with you will respect you for your efforts to restrict yourself.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;越复杂的技术越难以维护&#34;&gt;越复杂的技术越难以维护&lt;/h2&gt;
-
-&lt;p&gt;作为学生，我们通过使用复杂的技术来证明自己的能力。这体现在我们有能力在开源项目中使用函数、类、高阶函数、&lt;code&gt;monads&lt;/code&gt; 等。我们在向同行展示自己的解决方案时，并常常因为自己所用的技术高低而感到自豪或卑微。&lt;/p&gt;
-
-&lt;p&gt;然而，在现实的团队合作项目中，情况却正好相反。现在，我们尽可能使用简单的方法去解决问题。简单的方法能够使得即使是新手程序员也能轻松地扩展我们的代码以解决其他问题。简单的代码能够让人快速上手并让我们脱颖而出。我们通过使用简单的技术解决问题来体现我们的价值。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;“看！我用 &lt;code&gt;for&lt;/code&gt; 循环代替了原来的递归函数并且达到了我们的需求。我知道这样不够优雅，但我注意到我们新来的实习生在这里似乎会遇到麻烦，我觉得这样改应该会有所帮助吧！ ”&lt;/em&gt;(๑•̀ㅂ•́)و✧&lt;/p&gt;
-
-&lt;p&gt;真正牛逼的人是不需要证明自己有多牛逼的。你可以通过以简单的方式来解决问题来体现你的价值，这样你的团队中的每个人都会在未来受益于此。&lt;/p&gt;
-
-&lt;h2 id=&#34;当然-有所节制&#34;&gt;当然，有所节制&lt;/h2&gt;
-
-&lt;p&gt;话虽这么说，但是过度坚持“使用简单的代码解决问题”的教条可能会适得其反。通常，使用递归的解决方法要比使用 &lt;code&gt;for&lt;/code&gt; 循环的解决方法更简洁，用类或 &lt;code&gt;monad&lt;/code&gt; 也是正确的方法。还有两种情况另当别论，为满足自己需求而写的系统 (软件)，或是软件使用者没有任何编程经验的情况 (不存在 2 次开发的可能)&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;学生党一枚，翻译上有任何问题还请多多指教 _(:з)∠)_&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;译者：&lt;a href=&#34;https://mogeko.github.io/about/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Mogeko&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;原文作者：&lt;a href=&#34;http://matthewrocklin.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Matthew Rocklin&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;原文地址：&lt;a href=&#34;http://matthewrocklin.com/blog/work/2018/01/27/write-dumb-code&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://matthewrocklin.com/blog/work/2018/01/27/write-dumb-code&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Mogeko">
+  <meta name="description" content="Mogeko 的个人博客">
+  <meta name="keywords" content="blog, KMS, Hugo, GNU/Linux, Linux, Ubuntu, Rusty Lake: Roots, Hollow Knight, 空洞骑士">
+  
+  <link rel="prev" href="https://mogeko.me/2019/048/" />
+  
+  <link rel="canonical" href="https://mogeko.me/2019/049/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           使用 Travis CI 自动维护软件仓库 (Homebrew) | Mogeko`s Blog
+       
+  </title>
+  <meta name="title" content="使用 Travis CI 自动维护软件仓库 (Homebrew) | Mogeko`s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://mogeko.me"
+    },
+    "articleSection" : "posts",
+    "name" : "使用 Travis CI 自动维护软件仓库 (Homebrew)",
+    "headline" : "使用 Travis CI 自动维护软件仓库 (Homebrew)",
+    "description" : "&emsp;&emsp; -- 前段时间的一篇文章介绍了如何使用 Homebrew 建立自己的软件仓库，目的是让大家能轻松的发布软件。但同时如何让仓库里的软件保持最新又成为了新的问题。 我",
+    "inLanguage" : "zh-cn",
+    "author" : "Mogeko",
+    "creator" : "Mogeko",
+    "publisher": "Mogeko",
+    "accountablePerson" : "Mogeko",
+    "copyrightHolder" : "Mogeko",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-03-29 12:48:08 &#43;0800 &#43;0800",
+    "dateModified" : "2019-03-29 12:48:08 &#43;0800 &#43;0800",
+    "url" : "https://mogeko.me/2019/049/",
+    "wordCount" : "1590",
+    "keywords" : [ "MacOS","Homebrew", "Mogeko`s Blog"]
+}
+</script>
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104502658-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-104502658-2');
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.me">Mogeko`s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/tools/" title="">Tools</a>
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://mogeko.me">Mogeko`s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/tools/" title="">Tools</a>
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="Mogeko">Mogeko</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">使用 Travis CI 自动维护软件仓库 (Homebrew)</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://mogeko.me" rel="author">Mogeko</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-03-29 itemprop="datePublished">March 29, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/"> 关于编程 </a>
+                        
+                </span>
+                <span class="post-word-count">, 1590 words</span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<!-- 
+<img alt="" src="https://mogeko.github.io/images/049/" >
+<span class="spoiler" ></span>
+&emsp;&emsp;
+ -->
+
+<p>前段时间的一篇文章介绍了<a href="https://mogeko.me/2019/046/" rel="nofollow noreferrer" target="_blank">如何使用 Homebrew 建立自己的软件仓库</a>，目的是让大家能轻松的发布软件。但同时如何让仓库里的软件保持最新又成为了新的问题。</p>
+
+<p>我一直没有找到合适的答案，直到看到了这个 <a href="https://github.com/v2ray/homebrew-v2ray/issues/1" rel="nofollow noreferrer" target="_blank">Issues</a>。受此启发，我编写了一个利用 Travis CI 自动更新 Formula 的 shell 脚本。它的基本原理就是利用 Travis CI 的 <code>Cron Jobs</code> 功能，每天定期运行更新脚本，如果有更新，就根据修改 Formula 脚本，并推送到 Tap (GitHub) 仓库。</p>
+
+<p>不同的仓库需要修改脚本以适配不同的项目，但我会在后文中详细介绍脚本是如何工作的，保证你读完后也能编写出自动维护 Formula 的脚本。</p>
+
+<p>完整的更新脚本参考和 <code>.travis.yml</code> 在<a href="https://mogeko.me/2019/049/#%E9%99%84%E5%BD%95" rel="nofollow noreferrer" target="_blank">附录</a>里。</p>
+
+<h2 id="手动更新">手动更新</h2>
+
+<p>首先我们要了解一下如何手动更新 Formula。还是以 <a href="https://github.com/fatedier/frp" rel="nofollow noreferrer" target="_blank"><strong>frp</strong></a> 为例。</p>
+
+<p>假如 <strong>frp</strong> 发布了新的更新，我们首先要去 <strong>frp</strong> 的 GitHub Releases 页面获取最新版本的源码。</p>
+
+<p><img alt="Get_Source" src="https://mogeko.github.io/images/049/get_source.png" ></p>
+
+<pre><code class="language-bash">$ wget https://github.com/fatedier/frp/archive/v0.25.3.tar.gz
+</code></pre>
+
+<p>然后利用 <code>sha256sum</code> 计算源码的 sha256 校验值。</p>
+
+<pre><code class="language-bash">$ sha256sum v0.25.3.tar.gz
+68281965d04567d55f143b4a4c4d4369c1962937d80484b6b48e96a5dcf0b2e4  v0.25.3.tar.gz
+</code></pre>
+
+<p>再将计算好的校验码和下载链接替换到 <code>frp.rb</code> 中。</p>
+
+<p>总结一下就是：<strong>下载最新的源码 -&gt; 计算校验码 -&gt; 替换下载地址和校验码</strong></p>
+
+<p>而我们要做的就是用脚本来执行上面这一过程，让计算机来做重复又无味的工作。</p>
+
+<h2 id="自动更新">自动更新</h2>
+
+<p>在 Tap 的根目录新建一文件，命名为 <code>auto-update.sh</code></p>
+
+<h3 id="定义变量-常量">定义变量 (常量)</h3>
+
+<p>首先我们定义一些变量 (常量) 来储存必要的信息。</p>
+
+<pre><code class="language-bash">typeset -l FILE_NAME # 将 $FILE_NAME 设为全部小写
+
+AUTHUR_NAME=&quot;fatedier&quot; # 软件拥有者的 GitHub 用户名
+FORMULA_NAME=&quot;frp&quot; # 软件仓库名
+FILE_NAME=$FORMULA_NAME # Formula 的文件名 (等于全小写的 $FORMULA_NAME)
+</code></pre>
+
+<p>为什么要将 <code>$FORMULA_NAME</code> 和 <code>$FILE_NAME</code> 分开呢？因为软件仓库是允许大写的，但 Formula 的文件名不允许</p>
+
+<h3 id="克隆-git-仓库">克隆 Git 仓库</h3>
+
+<p>虽然我们有一个存放 Formula 的 Git 仓库了，但总觉得在一个镜像仓库中操作文件更放心一点</p>
+
+<pre><code class="language-bash">git clone https://${GH_REF}
+</code></pre>
+
+<h3 id="获取最新的版本号">获取最新的版本号</h3>
+
+<p>我们需要获取最新版本的版本号，可以通过 <a href="https://developer.github.com/v3/repos/releases" rel="nofollow noreferrer" target="_blank">GitHub API</a> 来获取，我们先在终端中试验一下</p>
+
+<pre><code class="language-bash">$ curl -s https://api.github.com/repos/fatedier/frp/releases/latest
+{
+  &quot;url&quot;: &quot;https://api.github.com/repos/fatedier/frp/releases/16350972&quot;,
+  &quot;assets_url&quot;: &quot;https://api.github.com/repos/fatedier/frp/releases/16350972/assets&quot;,
+  &quot;upload_url&quot;: &quot;https://uploads.github.com/repos/fatedier/frp/releases/16350972/assets{?name,label}&quot;,
+  &quot;html_url&quot;: &quot;https://github.com/fatedier/frp/releases/tag/v0.25.3&quot;,
+  &quot;id&quot;: 16350972,
+  &quot;node_id&quot;: &quot;MDc6UmVsZWFzZTE2MzUwOTcy&quot;,
+  &quot;tag_name&quot;: &quot;v0.25.3&quot;,
+  &quot;target_commitish&quot;: &quot;master&quot;,
+  &quot;name&quot;: &quot;v0.25.3&quot;,
+  &quot;draft&quot;: false,
+  &quot;author&quot;: {
+    &quot;login&quot;: &quot;fatedier&quot;,
+    &quot;id&quot;: 7346661,
+    &quot;node_id&quot;: &quot;MDQ6VXNlcjczNDY2NjE=&quot;,
+    &quot;avatar_url&quot;: &quot;https://avatars3.githubusercontent.com/u/7346661?v=4&quot;,
+    &quot;gravatar_id&quot;: &quot;&quot;,
+    &quot;url&quot;: &quot;https://api.github.com/users/fatedier&quot;,
+    &quot;html_url&quot;: &quot;https://github.com/fatedier&quot;,
+    &quot;followers_url&quot;: &quot;https://api.github.com/users/fatedier/followers&quot;,
+    &quot;following_url&quot;: &quot;https://api.github.com/users/fatedier/following{/other_user}&quot;,
+    &quot;gists_url&quot;: &quot;https://api.github.com/users/fatedier/gists{/gist_id}&quot;,
+    &quot;starred_url&quot;: &quot;https://api.github.com/users/fatedier/starred{/owner}{/repo}&quot;,
+    &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/fatedier/subscriptions&quot;,
+    &quot;organizations_url&quot;: &quot;https://api.github.com/users/fatedier/orgs&quot;,
+    &quot;repos_url&quot;: &quot;https://api.github.com/users/fatedier/repos&quot;,
+    &quot;events_url&quot;: &quot;https://api.github.com/users/fatedier/events{/privacy}&quot;,
+    &quot;received_events_url&quot;: &quot;https://api.github.com/users/fatedier/received_events&quot;,
+    &quot;type&quot;: &quot;User&quot;,
+    &quot;site_admin&quot;: false
+  },
+  ...
+</code></pre>
+
+<p>返回的结果中就包含了我们需要的版本号。我在用 <code>grep</code> 过滤一下，让大家看清楚一点</p>
+
+<pre><code class="language-bash">$ curl -s https://api.github.com/repos/fatedier/frp/releases/latest
+  &quot;tag_name&quot;: &quot;v0.25.3&quot;,
+</code></pre>
+
+<p>然后用 <code>cut</code> 处理一下字符串，并加上一个 <code>loop</code> 循环 (排除网络环境的影响) 就可以用了。反映到脚本上是这样的</p>
+
+<pre><code class="language-bash">loop_parser(){
+    while true
+    do
+       result=$(curl -s https://api.github.com/repos/&quot;$AUTHUR_NAME&quot;/&quot;$FORMULA_NAME&quot;/releases/latest | grep &quot;$1&quot; | cut -d '&quot;' -f 4)
+       if [ ! -z &quot;$result&quot; ]; then
+        echo $result
+        break
+       fi
+    done
+}
+
+V_VERSION=$( loop_parser &quot;tag_name&quot; )
+</code></pre>
+
+<h3 id="下载源文件">下载源文件</h3>
+
+<p>然后我们将<code>$V_VERSION</code> (版本号) 与 <code>$AUTHUR_NAME</code>、<code>$FORMULA_NAME</code> 等信息组合一下就可以获得源文件的下载链接</p>
+
+<pre><code class="language-bash">DOWNLOAD_URL=&quot;https://github.com/$AUTHUR_NAME/$FORMULA_NAME/archive/&quot;$V_VERSION&quot;.tar.gz&quot;
+</code></pre>
+
+<p>用 <code>curl</code> 下载源文件</p>
+
+<pre><code class="language-bash">curl -L  $DOWNLOAD_URL &gt; $FORMULA_NAME.$V_VERSION.tar.gz
+</code></pre>
+
+<h3 id="计算校验码">计算校验码</h3>
+
+<p>然后就可以计算  sha256 校验码了，还是用 <code>sha256sum</code> 计算，用 <code>cut</code> 处理字符串</p>
+
+<pre><code class="language-bash">V_HASH256=$(sha256sum $FORMULA_NAME.$V_VERSION.tar.gz |cut  -d ' ' -f 1)
+</code></pre>
+
+<h3 id="替换下载链接和校验码">替换下载链接和校验码</h3>
+
+<p>用 <code>sed</code> 替换 Formula 中需要更新的信息，如果不需要更新，那么替换后还是原来的 Formula。</p>
+
+<pre><code class="language-bash"># 如果 Formula 中有 version 这一变量的话取消下面的注释
+# sed -i &quot;s#^\s*version.*#  version \&quot;$V_VERSION\&quot;#g&quot; homebrew-taps/Formula/$FILE_NAME.rb
+sed -i &quot;s#^\s*url.*#  version \&quot;$DOWNLOAD_URL\&quot;#g&quot; homebrew-taps/Formula/$FILE_NAME.rb
+sed -i &quot;s#^\s*sha256.*#  sha256 \&quot;$V_HASH256\&quot;#g&quot; homebrew-taps/Formula/$FILE_NAME.rb
+</code></pre>
+
+<h3 id="推送">推送</h3>
+
+<p>将更新好的 Formula 文件推送到 GitHub 上 (<code>${GH_TOKEN}</code> 和 <code>${GH_REF}</code> 这两个变量需要在 Travis CI 中添加)</p>
+
+<pre><code class="language-bash">git commit -am &quot;travis automated update&quot; || exit 0
+git push  --quiet &quot;https://${GH_TOKEN}@${GH_REF}&quot; master:master
+</code></pre>
+
+<h2 id="配置-travis-ci">配置 Travis CI</h2>
+
+<h3 id="travis-yml">.travis.yml</h3>
+
+<p>这次的 <code>.travis.yml</code> 很简单，只需要做两件事：</p>
+
+<ol>
+<li><p>设置 <code>git config</code></p></li>
+
+<li><p>执行放在根目录的 <code>auto-update.sh</code></p></li>
+</ol>
+
+<pre><code class="language-.travis.yml">before_install:
+  - git config --global user.name &quot;$USERNAME&quot; 
+  - git config --global user.email &quot;$EMAIL&quot;
+
+script:
+  - auto-update.sh
+</code></pre>
+
+<p>完整的 <code>.travis.yml</code> 文件在<a href="https://mogeko.me/2019/049/#%E9%99%84%E5%BD%95" rel="nofollow noreferrer" target="_blank">附录</a>里。</p>
+
+<h3 id="设置环境变量">设置环境变量</h3>
+
+<p>需要设置以下环境变量</p>
+
+<ul>
+<li><code>$USERNAME</code>：你想记录在 git log 中的名字</li>
+
+<li><p><code>$EMAIL</code>：你的邮箱</p></li>
+
+<li><p><code>${GH_TOKEN}</code>：GitHub TOKEN，点满 <code>repo</code> 的所有权限&emsp;<a href="https://mogeko.me/2018/028/#%E7%94%B3%E8%AF%B7-token" rel="nofollow noreferrer" target="_blank">GitHub TOKEN 申请方法</a></p></li>
+
+<li><p><code>${GH_REF}</code>：你存放 Formula 的 GitHub 仓库的地址，例如：<code>github.com/:owner/:repo</code></p></li>
+</ul>
+
+<p><img alt="Set ENV" src="https://mogeko.github.io/images/049/set_env.png" ></p>
+
+<h3 id="设置-cron-jobs">设置 Cron Jobs</h3>
+
+<p>设置 Cron Jobs，让 Travis CI 定期运行脚本</p>
+
+<p><img alt="Set Cron Jobs" src="https://mogeko.github.io/images/049/set_cron.png" ></p>
+
+<blockquote>
+<p><strong>Branch:</strong> master&emsp;&emsp;</p>
+
+<p><strong>Interval:</strong> daily&emsp;&emsp;</p>
+
+<p><strong>Options:</strong> Always run</p>
+</blockquote>
+
+<h2 id="附录">附录</h2>
+
+<p><strong>.travis.yml</strong></p>
+
+<pre><code class="language-.travis.yml">language: generic
+
+sudo: required
+
+before_install:
+  - git config --global user.name &quot;$USERNAME&quot; 
+  - git config --global user.email &quot;$EMAIL&quot;
+
+before_script:
+  - chmod +x tools/auto-update.sh
+
+script:
+  - tools/auto-update.sh
+
+</code></pre>
+
+<p><strong>auto-update.sh</strong></p>
+
+<pre><code class="language-bash">#!/bin/bash
+
+typeset -l FILE_NAME # 将 $FILE_NAME 设为全部小写
+
+AUTHUR_NAME=&quot;&quot; # 软件拥有者的 GitHub 用户名
+FORMULA_NAME=&quot;&quot; # 软件仓库名
+FILE_NAME=$FORMULA_NAME # Formula 的文件名 (等于全小写的 $FORMULA_NAME)
+
+log(){
+    echo ''
+    echo '-------------------------------------'
+    echo &quot;$*&quot;
+    echo '-------------------------------------'
+    echo ''
+}
+
+loop_parser(){
+    while true
+    do
+       result=$(curl -s https://api.github.com/repos/&quot;$AUTHUR_NAME&quot;/&quot;$FORMULA_NAME&quot;/releases/latest | grep &quot;$1&quot; | cut -d '&quot;' -f 4)
+       if [ ! -z &quot;$result&quot; ]; then
+        echo $result
+        break
+       fi
+    done
+}
+
+git clone https://github.com/Mogeko/homebrew-taps.git
+
+log &quot;parser $FORMULA_NAME download url&quot;
+
+V_VERSION=$( loop_parser &quot;tag_name&quot; )
+
+if [ -z &quot;$V_VERSION&quot; ]; then
+
+    log 'parser file version error, skip update.'
+    exit 0
+
+fi
+
+DOWNLOAD_URL=&quot;https://github.com/$AUTHUR_NAME/$FORMULA_NAME/archive/&quot;$V_VERSION&quot;.tar.gz&quot;
+
+if [ -z &quot;$DOWNLOAD_URL&quot; ]; then
+
+    log 'parser download url error.'
+    exit 0
+
+fi
+
+log &quot;download url: $DOWNLOAD_URL  start downloading...&quot;
+
+# wget -c $DOWNLOAD_URL -O $FORMULA_NAME.$V_VERSION.tar.gz
+curl -L  $DOWNLOAD_URL &gt; $FORMULA_NAME.$V_VERSION.tar.gz
+
+
+if [ ! -e $FORMULA_NAME.$V_VERSION.tar.gz ]; then
+    log &quot;file download failed!&quot;
+    exit 1
+fi
+
+V_HASH256=$(sha256sum $FORMULA_NAME.$V_VERSION.tar.gz |cut  -d ' ' -f 1)
+
+log &quot;file hash: $V_HASH256 parser $FORMULA_NAME version...&quot;
+
+log &quot;file version: $V_VERSION start clone...&quot;
+
+log &quot;update config....&quot;
+
+sed -i &quot;s#^\s*version.*#  version \&quot;$V_VERSION\&quot;#g&quot; homebrew-taps/Formula/$FILE_NAME.rb
+sed -i &quot;s#^\s*sha256.*#  sha256 \&quot;$V_HASH256\&quot;#g&quot; homebrew-taps/Formula/$FILE_NAME.rb
+
+git commit -am &quot;travis automated update&quot; || exit 0
+git push  --quiet &quot;https://${GITHUB_TOKEN}@${GH_REF}&quot; master:master
+
+</code></pre>
+
+<h2 id="相关文章">相关文章</h2>
+
+<ul>
+<li><a href="https://mogeko.me/2019/046/" rel="nofollow noreferrer" target="_blank"><strong>使用 Homebrew 维护自己的软件仓库</strong></a></li>
+</ul>
+
+<p><br></p>
+
+<p><center>  ·End·  </center></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Mogeko </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://mogeko.me/2019/049/>https://mogeko.me/2019/049/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://mogeko.me/tags/macos/">
+                    #MacOS</a></span>
+            
+            <span class="tag"><a href="https://mogeko.me/tags/homebrew/">
+                    #Homebrew</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://mogeko.me">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://mogeko.me/2019/048/" class="prev" rel="prev" title="为博客添加独立域名"><i class="iconfont icon-left"></i>&nbsp;为博客添加独立域名</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '936cecdd2ab935870ca5',
+        clientSecret: '39cfc7a3cb9a974b6609f3fdaa637e2917e3e40a',
+        repo: 'Blog',
+        owner: 'Mogeko',
+        admin: ['Mogeko'],
+        id: location.pathname, 
+        distractionFreeMode: false 
+    });
+    (function () {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
+            return;
+        }
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2017 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://mogeko.me">Mogeko</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

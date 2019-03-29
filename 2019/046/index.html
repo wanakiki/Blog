@@ -57,8 +57,8 @@
     "datePublished": "2019-03-23 17:47:42 &#43;0800 &#43;0800",
     "dateModified" : "2019-03-23 17:47:42 &#43;0800 &#43;0800",
     "url" : "https://mogeko.me/2019/046/",
-    "wordCount" : "2913",
-    "keywords" : [ "Mac","Homebrew", "Mogeko`s Blog"]
+    "wordCount" : "2907",
+    "keywords" : [ "MacOS","Homebrew", "Mogeko`s Blog"]
 }
 </script>
 
@@ -146,7 +146,7 @@
                         <a href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E8%BD%AF%E4%BB%B6/"> 关于软件 </a>
                         
                 </span>
-                <span class="post-word-count">, 2913 words</span>
+                <span class="post-word-count">, 2907 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -222,9 +222,13 @@
 
 <p>然后创建 Formula，我们这里以 <strong>frp</strong> 为例。<a href="https://github.com/fatedier/frp" rel="nofollow noreferrer" target="_blank"><strong>frp</strong></a> 是一款用来做内网穿透的代理程序，选它当例子主要是因为它比较好编译。</p>
 
-<p>首先去 <a href="https://github.com/fatedier/frp/releases" rel="nofollow noreferrer" target="_blank">frp 的 releases 页面</a>，找到最新版的 <strong>frp</strong>，右键 <code>Source code</code> -&gt; 复制链接地址。然后打开终端，输入：</p>
+<p>首先去 <a href="https://github.com/fatedier/frp/releases" rel="nofollow noreferrer" target="_blank">frp 的 releases 页面</a>，找到最新版的 <strong>frp</strong>，右键 <code>Source code.tar.gz</code> -&gt; 复制链接地址。</p>
 
-<pre><code class="language-bash">$ brew create [刚刚复制的 url]
+<p><img alt="Get_Source" src="https://mogeko.github.io/images/046/get_source.png" ></p>
+
+<p>然后打开终端，输入：</p>
+
+<pre><code class="language-bash">$ brew create https://github.com/fatedier/frp/archive/v0.25.1.tar.gz
 </code></pre>
 
 <p>Homebrew 会在 <code>/usr/local/Library/Formula/</code> 下创建一个名为 <code>frp.rb</code> 的文件，将这个文件放入 Tap 的 <code>Formula</code> 文件夹中，然后打开它。</p>
@@ -439,8 +443,8 @@ $ brew bottle --json frp
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://mogeko.me/tags/mac/">
-                    #Mac</a></span>
+            <span class="tag"><a href="https://mogeko.me/tags/macos/">
+                    #MacOS</a></span>
             
             <span class="tag"><a href="https://mogeko.me/tags/homebrew/">
                     #Homebrew</a></span>
