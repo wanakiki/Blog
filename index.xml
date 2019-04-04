@@ -125,7 +125,8 @@ fn main() {
 &lt;h2 id=&#34;相关文章&#34;&gt;相关文章&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/042/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Rust 中的生命周期&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/042/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Rust 中的所有权&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/050/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Rust 中的生命周期&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
@@ -140,28 +141,150 @@ fn main() {
       <pubDate>Mon, 01 Apr 2019 19:27:29 +0800</pubDate>
       
       <guid>https://mogeko.me/2019/050/</guid>
-      <description>&lt;!-- 
+      <description>
+
+&lt;!-- 
 &lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/050/&#34; &gt;
 &lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
 &amp;emsp;&amp;emsp;
  --&gt;
 
-&lt;p&gt;Rust 中有一个非常重要的概念：生命周期&lt;/p&gt;
+&lt;p&gt;我们在讨论 Rust 的所有权时提到了一个非常重要的概念：&lt;strong&gt;生命周期&lt;/strong&gt; (&lt;em&gt;lifetime&lt;/em&gt;)，也就是引用保持有效的作用域。&lt;/p&gt;
 
-&lt;p&gt;但是由于文章还有部分细节需要完善，所以先挖个坑占着 _(:з」∠)_&lt;/p&gt;
+&lt;p&gt;这个概念与所有权结合的相当紧密，同时又与借用和引用关系很大，是属于又难啃又不得不啃的硬骨头。不过在理解后就会真真切切的体会到 Rust 中所有权、生命周期系统等一系列设计的精密。&lt;/p&gt;
 
-&lt;p&gt;好学的同学可以先参考一下这几篇文章：&lt;/p&gt;
+&lt;p&gt;在真正开始前，我们需要先了解一下 Rust 中的引用和借用。&lt;/p&gt;
+
+&lt;h2 id=&#34;引用和借用&#34;&gt;引用和借用&lt;/h2&gt;
+
+&lt;p&gt;引用和借用并不是 Rust 所发明的新概念。它在别的语言中也有：在 Java 中它也被称为引用 (有一点区别)、在 C++ 中它被称为&lt;strong&gt;指针&lt;/strong&gt;，不过 Rust 的引用更安全。&lt;/p&gt;
+
+&lt;p&gt;我们先来看一个例子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;fn main() {
+    let s1 = String::from(&amp;quot;hello&amp;quot;);
+
+    let len = calculate_length(&amp;amp;s1);
+
+    println!(&amp;quot;The length of &#39;{}&#39; is {}.&amp;quot;, s1, len);
+}
+
+fn calculate_length(s: &amp;amp;String) -&amp;gt; usize {
+    s.len()
+} // 这里，s 离开了作用域。但因为它并不拥有引用值的所有权，
+  // 所以什么也不会发生
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我们传递 &lt;code&gt;&amp;amp;s1&lt;/code&gt; 给 &lt;code&gt;calculate_length&lt;/code&gt;，同时在函数定义中，我们获取 &lt;code&gt;&amp;amp;String&lt;/code&gt; 而不是 &lt;code&gt;String&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;这些 &amp;amp; 符号就是 &lt;strong&gt;引用&lt;/strong&gt;，它们允许你使用值但不获取其所有权。&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;References&#34; src=&#34;https://mogeko.github.io/images/050/trpl04-05.svg&#34; &gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;与使用 &lt;code&gt;&amp;amp;&lt;/code&gt; 引用相反的操作是 &lt;strong&gt;解引用&lt;/strong&gt; (&lt;em&gt;dereferencing&lt;/em&gt;)，它使用解引用运算符，&lt;code&gt;*&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我们将获取引用作为函数参数称为 &lt;strong&gt;借用&lt;/strong&gt; (&lt;em&gt;borrowing&lt;/em&gt;)。正如现实生活中，如果一个人拥有某样东西，你可以从他那里借来。当你使用完毕，必须还回去。&lt;/p&gt;
+
+&lt;h3 id=&#34;悬垂引用-dangling-references&#34;&gt;悬垂引用 (Dangling References)&lt;/h3&gt;
+
+&lt;p&gt;在具有指针的语言中，很容易通过释放内存时保留指向它的指针而错误地生成一个 &lt;strong&gt;悬垂指针&lt;/strong&gt; (&lt;em&gt;dangling pointer&lt;/em&gt;)，所谓悬垂指针是其指向的内存可能已经被分配给其它持有者。相比之下，在 Rust 中编译器确保引用永远也不会变成悬垂状态：当你拥有一些数据的引用，编译器确保数据不会在其引用之前离开作用域。&lt;/p&gt;
+
+&lt;p&gt;让我们尝试创建一个悬垂引用：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;fn main() {
+    let r;
+    {
+        let a = 1;
+        r = &amp;amp;a;
+    }
+    println!(&amp;quot;{}&amp;quot;, r);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这是无法通过编译的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;error[E0597]: `a` does not live long enough                                     
+ --&amp;gt; src/main.rs:5:9                                                            
+  |                                                                             
+5 |         r = &amp;amp;a;                                                             
+  |         ^^^^^^ borrowed value does not live long enough                     
+6 |     }                                                                       
+  |     - `a` dropped here while still borrowed                                 
+7 |     println!(&amp;quot;{}&amp;quot;, r);                                                      
+  |                    - borrow later used here
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面代码中，当 &lt;code&gt;a&lt;/code&gt; 离开作用域的时候会被释放，但此时 &lt;code&gt;r&lt;/code&gt; 还持有一个 &lt;code&gt;a&lt;/code&gt; 的借用，编译器中的借用检查器就会告诉你：&lt;code&gt;`a` does not live long enough&lt;/code&gt;。翻译过来就是：&lt;code&gt;a&lt;/code&gt; 活的不够久。这代表着 &lt;code&gt;a&lt;/code&gt; 的生命周期太短，而无法借用给 &lt;code&gt;r&lt;/code&gt; ，否则 &lt;code&gt;&amp;amp;a&lt;/code&gt; 就指向了一个曾经存在但现在已不再存在的对象，这就是悬垂指针，也有人将其称为野指针。&lt;/p&gt;
+
+&lt;h2 id=&#34;生命周期&#34;&gt;生命周期&lt;/h2&gt;
+
+&lt;p&gt;部分时候生命周期是隐含并可以推断的，正如大部分时候类型也是可以推断的一样。类似于当因为有多种可能类型的时候必须注明类型，也会出现引用的生命周期以一些不同方式相关联的情况，所以 Rust 需要我们使用泛型生命周期参数来注明他们的关系，这样就能确保运行时实际使用的引用绝对是有效的。如果你不指定生命周期，那么编译器会“强制”你这么做：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;struct Foo {
+    x: &amp;amp;i32,
+}
+
+fn main() {
+    let y = &amp;amp;5; 
+    let f = Foo { x: y };
+
+    println!(&amp;quot;{}&amp;quot;, f.x);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;error[E0106]: missing lifetime specifier                                        
+ --&amp;gt; src/main.rs:2:8                                                            
+  |                                                                             
+2 |     x: &amp;amp;i32,                                                                
+  |        ^ expected lifetime parameter                                        
+                                                                                
+error: aborting due to previous error
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面这段代码，编译器会提示你：&lt;code&gt;missing lifetime specifier&lt;/code&gt;。这是因为，&lt;code&gt;y&lt;/code&gt; 这个借用被传递到了 &lt;code&gt;let f = Foo { x: y }&lt;/code&gt; 所在作用域中。所以需要确保借用 &lt;code&gt;y&lt;/code&gt; 活得比 &lt;code&gt;Foo&lt;/code&gt; 结构体实例长才行，否则，如果借用 &lt;code&gt;y&lt;/code&gt; 被提前释放，&lt;code&gt;Foo&lt;/code&gt; 结构体实例就会造成悬垂指针了。所以我们需要为其增加生命周期标记：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;struct Foo&amp;lt;&#39;a&amp;gt; {
+    x: &amp;amp;&#39;a i32,
+}
+
+fn main() {
+    let y = &amp;amp;5; 
+    let f = Foo { x: y };
+
+    println!(&amp;quot;{}&amp;quot;, f.x);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;加上生命周期标记以后，编译器中的借用检查器就会帮助我们自动比对参数变量的作用域长度，从而确保内存安全。&lt;/p&gt;
+
+&lt;p&gt;再比如这个例子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;fn longest&amp;lt;&#39;a&amp;gt;(x: &amp;amp;&#39;a str, y: &amp;amp;&#39;a str) -&amp;gt; &amp;amp;&#39;a str {
+    if x.len() &amp;gt; y.len() {
+        x
+    } else {
+        y
+    }
+}
+
+fn main() {
+    let string1 = String::from(&amp;quot;abcd&amp;quot;);
+    let string2 = &amp;quot;xyz&amp;quot;;
+
+    let result = longest(string1.as_str(), string2);
+    println!(&amp;quot;The longest string is {}&amp;quot;, result);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;因为 &lt;code&gt;longest&lt;/code&gt; 的实例返回的是一个指针， 并且这个指针与 &lt;code&gt;x&lt;/code&gt; 和 &lt;code&gt;y&lt;/code&gt; 都有关系。所以必须确保&lt;code&gt;x&lt;/code&gt; 和 &lt;code&gt;y&lt;/code&gt; 活得比 &lt;code&gt;result&lt;/code&gt; 长 (或者一样长)，这便是显式生命周期注释的作用。&lt;/p&gt;
+
+&lt;h2 id=&#34;相关文章&#34;&gt;相关文章&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Rust Programming Language::References &amp;amp; Borrowing&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Rust Programming Language::Validating References with Lifetimes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;这是对以上两篇文章的中文翻译：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://kaisery.github.io/trpl-zh-cn/ch04-02-references-and-borrowing.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Rust 程序设计语言::引用与借用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://kaisery.github.io/trpl-zh-cn/ch10-03-lifetime-syntax.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Rust 程序设计语言::生命周期与引用有效性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/042/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Rust 中的所有权&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/051/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Rust 生命周期中的一些坑&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
@@ -1966,7 +2089,8 @@ fn calculate_length(s: &amp;amp;String) -&amp;gt; usize { // s 是对 String 的
 &lt;h2 id=&#34;相关文章&#34;&gt;相关文章&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/041/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Rust 生命周期中的一些坑&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/050/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Rust 中的生命周期&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/051/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Rust 生命周期中的一些坑&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;

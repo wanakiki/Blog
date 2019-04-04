@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "Rust 中的生命周期",
     "headline" : "Rust 中的生命周期",
-    "description" : "&emsp;&emsp; -- Rust 中有一个非常重要的概念：生命周期 但是由于文章还有部分细节需要完善，所以先挖个坑占着 _(:з」∠)_ 好学的同学可以先参考一下这几篇文章：",
+    "description" : "&emsp;&emsp; -- 我们在讨论 Rust 的所有权时提到了一个非常重要的概念：生命周期 (lifetime)，也就是引用保持有效的作用域。 这个概念与所有权结合的相当紧密",
     "inLanguage" : "zh-cn",
     "author" : "Mogeko",
     "creator" : "Mogeko",
@@ -57,7 +57,7 @@
     "datePublished": "2019-04-01 19:27:29 &#43;0800 &#43;0800",
     "dateModified" : "2019-04-01 19:27:29 &#43;0800 &#43;0800",
     "url" : "https://mogeko.me/2019/050/",
-    "wordCount" : "136",
+    "wordCount" : "1438",
     "keywords" : [ "Rust", "Mogeko`s Blog"]
 }
 </script>
@@ -146,7 +146,7 @@
                         <a href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/"> 关于编程 </a>
                         
                 </span>
-                <span class="post-word-count">, 136 words</span>
+                <span class="post-word-count">, 1438 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -165,28 +165,150 @@
           
           
 
-          <!-- 
+          
+
+<!-- 
 <img alt="" src="https://mogeko.github.io/images/050/" >
 <span class="spoiler" ></span>
 &emsp;&emsp;
  -->
 
-<p>Rust 中有一个非常重要的概念：生命周期</p>
+<p>我们在讨论 Rust 的所有权时提到了一个非常重要的概念：<strong>生命周期</strong> (<em>lifetime</em>)，也就是引用保持有效的作用域。</p>
 
-<p>但是由于文章还有部分细节需要完善，所以先挖个坑占着 _(:з」∠)_</p>
+<p>这个概念与所有权结合的相当紧密，同时又与借用和引用关系很大，是属于又难啃又不得不啃的硬骨头。不过在理解后就会真真切切的体会到 Rust 中所有权、生命周期系统等一系列设计的精密。</p>
 
-<p>好学的同学可以先参考一下这几篇文章：</p>
+<p>在真正开始前，我们需要先了解一下 Rust 中的引用和借用。</p>
+
+<h2 id="引用和借用">引用和借用</h2>
+
+<p>引用和借用并不是 Rust 所发明的新概念。它在别的语言中也有：在 Java 中它也被称为引用 (有一点区别)、在 C++ 中它被称为<strong>指针</strong>，不过 Rust 的引用更安全。</p>
+
+<p>我们先来看一个例子：</p>
+
+<pre><code class="language-rust">fn main() {
+    let s1 = String::from(&quot;hello&quot;);
+
+    let len = calculate_length(&amp;s1);
+
+    println!(&quot;The length of '{}' is {}.&quot;, s1, len);
+}
+
+fn calculate_length(s: &amp;String) -&gt; usize {
+    s.len()
+} // 这里，s 离开了作用域。但因为它并不拥有引用值的所有权，
+  // 所以什么也不会发生
+</code></pre>
+
+<p>我们传递 <code>&amp;s1</code> 给 <code>calculate_length</code>，同时在函数定义中，我们获取 <code>&amp;String</code> 而不是 <code>String</code>。</p>
+
+<p>这些 &amp; 符号就是 <strong>引用</strong>，它们允许你使用值但不获取其所有权。</p>
+
+<p><img alt="References" src="https://mogeko.github.io/images/050/trpl04-05.svg" ></p>
+
+<blockquote>
+<p>与使用 <code>&amp;</code> 引用相反的操作是 <strong>解引用</strong> (<em>dereferencing</em>)，它使用解引用运算符，<code>*</code>。</p>
+</blockquote>
+
+<p>我们将获取引用作为函数参数称为 <strong>借用</strong> (<em>borrowing</em>)。正如现实生活中，如果一个人拥有某样东西，你可以从他那里借来。当你使用完毕，必须还回去。</p>
+
+<h3 id="悬垂引用-dangling-references">悬垂引用 (Dangling References)</h3>
+
+<p>在具有指针的语言中，很容易通过释放内存时保留指向它的指针而错误地生成一个 <strong>悬垂指针</strong> (<em>dangling pointer</em>)，所谓悬垂指针是其指向的内存可能已经被分配给其它持有者。相比之下，在 Rust 中编译器确保引用永远也不会变成悬垂状态：当你拥有一些数据的引用，编译器确保数据不会在其引用之前离开作用域。</p>
+
+<p>让我们尝试创建一个悬垂引用：</p>
+
+<pre><code class="language-rust">fn main() {
+    let r;
+    {
+        let a = 1;
+        r = &amp;a;
+    }
+    println!(&quot;{}&quot;, r);
+}
+</code></pre>
+
+<p>这是无法通过编译的：</p>
+
+<pre><code class="language-bash">error[E0597]: `a` does not live long enough                                     
+ --&gt; src/main.rs:5:9                                                            
+  |                                                                             
+5 |         r = &amp;a;                                                             
+  |         ^^^^^^ borrowed value does not live long enough                     
+6 |     }                                                                       
+  |     - `a` dropped here while still borrowed                                 
+7 |     println!(&quot;{}&quot;, r);                                                      
+  |                    - borrow later used here
+</code></pre>
+
+<p>上面代码中，当 <code>a</code> 离开作用域的时候会被释放，但此时 <code>r</code> 还持有一个 <code>a</code> 的借用，编译器中的借用检查器就会告诉你：<code>`a` does not live long enough</code>。翻译过来就是：<code>a</code> 活的不够久。这代表着 <code>a</code> 的生命周期太短，而无法借用给 <code>r</code> ，否则 <code>&amp;a</code> 就指向了一个曾经存在但现在已不再存在的对象，这就是悬垂指针，也有人将其称为野指针。</p>
+
+<h2 id="生命周期">生命周期</h2>
+
+<p>部分时候生命周期是隐含并可以推断的，正如大部分时候类型也是可以推断的一样。类似于当因为有多种可能类型的时候必须注明类型，也会出现引用的生命周期以一些不同方式相关联的情况，所以 Rust 需要我们使用泛型生命周期参数来注明他们的关系，这样就能确保运行时实际使用的引用绝对是有效的。如果你不指定生命周期，那么编译器会“强制”你这么做：</p>
+
+<pre><code class="language-rust">struct Foo {
+    x: &amp;i32,
+}
+
+fn main() {
+    let y = &amp;5; 
+    let f = Foo { x: y };
+
+    println!(&quot;{}&quot;, f.x);
+}
+</code></pre>
+
+<pre><code class="language-bash">error[E0106]: missing lifetime specifier                                        
+ --&gt; src/main.rs:2:8                                                            
+  |                                                                             
+2 |     x: &amp;i32,                                                                
+  |        ^ expected lifetime parameter                                        
+                                                                                
+error: aborting due to previous error
+</code></pre>
+
+<p>上面这段代码，编译器会提示你：<code>missing lifetime specifier</code>。这是因为，<code>y</code> 这个借用被传递到了 <code>let f = Foo { x: y }</code> 所在作用域中。所以需要确保借用 <code>y</code> 活得比 <code>Foo</code> 结构体实例长才行，否则，如果借用 <code>y</code> 被提前释放，<code>Foo</code> 结构体实例就会造成悬垂指针了。所以我们需要为其增加生命周期标记：</p>
+
+<pre><code class="language-rust">struct Foo&lt;'a&gt; {
+    x: &amp;'a i32,
+}
+
+fn main() {
+    let y = &amp;5; 
+    let f = Foo { x: y };
+
+    println!(&quot;{}&quot;, f.x);
+}
+</code></pre>
+
+<p>加上生命周期标记以后，编译器中的借用检查器就会帮助我们自动比对参数变量的作用域长度，从而确保内存安全。</p>
+
+<p>再比如这个例子：</p>
+
+<pre><code class="language-rust">fn longest&lt;'a&gt;(x: &amp;'a str, y: &amp;'a str) -&gt; &amp;'a str {
+    if x.len() &gt; y.len() {
+        x
+    } else {
+        y
+    }
+}
+
+fn main() {
+    let string1 = String::from(&quot;abcd&quot;);
+    let string2 = &quot;xyz&quot;;
+
+    let result = longest(string1.as_str(), string2);
+    println!(&quot;The longest string is {}&quot;, result);
+}
+</code></pre>
+
+<p>因为 <code>longest</code> 的实例返回的是一个指针， 并且这个指针与 <code>x</code> 和 <code>y</code> 都有关系。所以必须确保<code>x</code> 和 <code>y</code> 活得比 <code>result</code> 长 (或者一样长)，这便是显式生命周期注释的作用。</p>
+
+<h2 id="相关文章">相关文章</h2>
 
 <ul>
-<li><a href="https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html" rel="nofollow noreferrer" target="_blank">The Rust Programming Language::References &amp; Borrowing</a></li>
-<li><a href="https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html" rel="nofollow noreferrer" target="_blank">The Rust Programming Language::Validating References with Lifetimes</a></li>
-</ul>
-
-<p>这是对以上两篇文章的中文翻译：</p>
-
-<ul>
-<li><a href="https://kaisery.github.io/trpl-zh-cn/ch04-02-references-and-borrowing.html" rel="nofollow noreferrer" target="_blank">Rust 程序设计语言::引用与借用</a></li>
-<li><a href="https://kaisery.github.io/trpl-zh-cn/ch10-03-lifetime-syntax.html" rel="nofollow noreferrer" target="_blank">Rust 程序设计语言::生命周期与引用有效性</a></li>
+<li><a href="https://mogeko.github.io/2019/042/" rel="nofollow noreferrer" target="_blank"><strong>Rust 中的所有权</strong></a></li>
+<li><a href="https://mogeko.github.io/2019/051/" rel="nofollow noreferrer" target="_blank"><strong>Rust 生命周期中的一些坑</strong></a></li>
 </ul>
 
 <p><br></p>

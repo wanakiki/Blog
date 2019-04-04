@@ -26,7 +26,7 @@
       <pubDate>Mon, 01 Apr 2019 19:27:29 +0800</pubDate>
       
       <guid>https://mogeko.me/2019/050/</guid>
-      <description>&amp;emsp;&amp;emsp; -- Rust 中有一个非常重要的概念：生命周期 但是由于文章还有部分细节需要完善，所以先挖个坑占着 _(:з」∠)_ 好学的同学可以先参考一下这几篇文章：</description>
+      <description>&amp;emsp;&amp;emsp; -- 我们在讨论 Rust 的所有权时提到了一个非常重要的概念：生命周期 (lifetime)，也就是引用保持有效的作用域。 这个概念与所有权结合的相当紧密</description>
     </item>
     
     <item>
