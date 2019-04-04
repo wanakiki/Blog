@@ -6,10 +6,28 @@
     <description>Recent content in Rust on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 23 Jan 2019 12:50:59 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 04 Apr 2019 21:17:33 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.me/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rust 生命周期中的一些坑</title>
+      <link>https://mogeko.me/2019/051/</link>
+      <pubDate>Thu, 04 Apr 2019 21:17:33 +0800</pubDate>
+      
+      <guid>https://mogeko.me/2019/051/</guid>
+      <description>&amp;emsp;&amp;emsp; -- 前面有一篇文章介绍了什么是 Rust 的生命周期？(未填) 这里补充一些关于 Rust 的生命周期不容易被注意到的细节。 因为我水平有限，有的概念可能不是很全面</description>
+    </item>
+    
+    <item>
+      <title>Rust 中的生命周期</title>
+      <link>https://mogeko.me/2019/050/</link>
+      <pubDate>Mon, 01 Apr 2019 19:27:29 +0800</pubDate>
+      
+      <guid>https://mogeko.me/2019/050/</guid>
+      <description>&amp;emsp;&amp;emsp; -- Rust 中有一个非常重要的概念：生命周期 但是由于文章还有部分细节需要完善，所以先挖个坑占着 _(:з」∠)_ 好学的同学可以先参考一下这几篇文章：</description>
+    </item>
     
     <item>
       <title>Rust 中的错误处理</title>

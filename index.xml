@@ -6,8 +6,169 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 29 Mar 2019 12:48:08 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 04 Apr 2019 21:17:33 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rust 生命周期中的一些坑</title>
+      <link>https://mogeko.me/2019/051/</link>
+      <pubDate>Thu, 04 Apr 2019 21:17:33 +0800</pubDate>
+      
+      <guid>https://mogeko.me/2019/051/</guid>
+      <description>
+
+&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/051/&#34; &gt;
+&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;p&gt;前面有一篇文章介绍了什么是 Rust 的生命周期？(未填) 这里补充一些关于 Rust 的生命周期不容易被注意到的细节。&lt;/p&gt;
+
+&lt;p&gt;因为我水平有限，有的概念可能不是很全面，甚至可能有偏差，还请多多指点。&lt;/p&gt;
+
+&lt;h2 id=&#34;生命周期是完全静态的&#34;&gt;生命周期是完全静态的&lt;/h2&gt;
+
+&lt;p&gt;Rust 的看家本领就是静态检测，所有实例的生命周期都是在编译时就被确定好的。&lt;/p&gt;
+
+&lt;p&gt;所以不要问：“为什么生命周期不能根据实际情况自动确定？”因为真的做不到！&lt;/p&gt;
+
+&lt;h2 id=&#34;let-可以绑定所有权&#34;&gt;&lt;code&gt;let&lt;/code&gt; 可以绑定所有权&lt;/h2&gt;
+
+&lt;p&gt;除了绑定所有者和数据外，&lt;code&gt;let&lt;/code&gt; 还可以绑定所有者和数据之间的所有权。绑定了所有权，也就绑定了生命周期。&lt;/p&gt;
+
+&lt;p&gt;这是理所当然的事实，但是经常被人忽略。&lt;/p&gt;
+
+&lt;h2 id=&#34;形参与实参的生命周期是相互绑定的&#34;&gt;形参与实参的生命周期是相互绑定的&lt;/h2&gt;
+
+&lt;p&gt;与 &lt;code&gt;let&lt;/code&gt; 相似，函数中的形式参数与实际参数的生命周期是相互绑定的。同样的，函数返回值和函数实体的拥有者的生命周期也是相互绑定的，因为返回值的生命周期与函数实体相互绑定，而函数实体与拥有者相互绑定。&lt;/p&gt;
+
+&lt;p&gt;举个例子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;fn sum(x: u32, y: u32) -&amp;gt; u32 {
+      x + y
+ }
+
+ fn main(){
+     let a = 1;
+     let b = 2;
+     let c = sum(a, b);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;x&lt;/code&gt; 与&lt;code&gt;a&lt;/code&gt; 相互绑定，&lt;code&gt;c&lt;/code&gt; 与 &lt;code&gt;sum()&lt;/code&gt; 与 &lt;code&gt;a + b&lt;/code&gt; 相互绑定。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;a -&amp;gt; x
+x + y -&amp;gt; sum() -&amp;gt; c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;结构体中也是类似的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;struct Foo {
+    x: i32,
+}
+
+fn main() {
+    let y = 5; 
+    let f = Foo { x: y };
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;x&lt;/code&gt; 与 &lt;code&gt;y&lt;/code&gt; 相互绑定，结构体 &lt;code&gt;Foo&lt;/code&gt; 与 &lt;code&gt;f&lt;/code&gt; 相互绑定。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;x -&amp;gt; a
+Foo -&amp;gt; f
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这同样也是理所当然但容易被人忽视的事实，这里提出来也是为了给下一条做铺垫。&lt;/p&gt;
+
+&lt;h2 id=&#34;生命周期标记的影响不仅仅是函数-结构体-内部&#34;&gt;生命周期标记的影响不仅仅是函数 (结构体) 内部&lt;/h2&gt;
+
+&lt;p&gt;准确的说应该是生命周期标记可以通过影响函数 (结构体) 内部来对函数实体的拥有者和传入的实际参数产生影响。具体原因就是上面提到的形式参数与实际参数的生命周期相互绑定，函数返回值和函数实体的拥有者的生命周期相互绑定。&lt;/p&gt;
+
+&lt;p&gt;举个例子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;fn foo&amp;lt;&#39;a&amp;gt;(x: &amp;amp;&#39;a str, y: &amp;amp;str) -&amp;gt; Vec&amp;lt;&amp;amp;&#39;a str&amp;gt; {
+    let mut results = Vec::new();
+
+    if x.contains(y) {
+        results.push(x);
+    }
+
+    results
+}
+
+fn main() {
+    let a = &amp;quot;I&#39;m foo&amp;quot;;
+    let b = &amp;quot;foo&amp;quot;;
+    let c = foo(a, b);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;生命周期参数将 &lt;code&gt;x&lt;/code&gt; 的生命周期与 &lt;code&gt;results&lt;/code&gt; 相互绑定，而 &lt;code&gt;x&lt;/code&gt; 与 &lt;code&gt;a&lt;/code&gt; 相互绑定，&lt;code&gt;results&lt;/code&gt; 与 &lt;code&gt;c&lt;/code&gt; 相互绑定，所以 &lt;code&gt;c&lt;/code&gt; 的生命周期与 &lt;code&gt;a&lt;/code&gt; 是相互绑定的！！&lt;span class=&#34;spoiler&#34; &gt;就像三国杀中的“铁索连环”一样&lt;/span&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;a -&amp;gt; [x =&amp;gt; results -&amp;gt; foo] -&amp;gt; c 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;根据关系我们可以很容易发现，&lt;code&gt;a&lt;/code&gt; 必须活得比 &lt;code&gt;c&lt;/code&gt; 长，不然就会报错。&lt;/p&gt;
+
+&lt;p&gt;从整体来考虑生命周期，显然更容易理解什么时候应该使用生命周期标注，什么时候不应该使用。&lt;/p&gt;
+
+&lt;h2 id=&#34;生命周期标注的作用不是-续命&#34;&gt;生命周期标注的作用不是“续命”&lt;/h2&gt;
+
+&lt;p&gt;生命周期标注只是注释出：“谁应该比谁活得更长 (或者相等)”，如果实际情况与标注不相符，编译器会报错。&lt;/p&gt;
+
+&lt;h2 id=&#34;长生命周期是短生命周期的子类型&#34;&gt;长生命周期是短生命周期的子类型&lt;/h2&gt;
+
+&lt;p&gt;与直觉有所不同。显式生命周期标注是泛型参数一种，但是有&lt;strong&gt;协变&lt;/strong&gt;的概念。&lt;/p&gt;
+
+&lt;h2 id=&#34;相关文章&#34;&gt;相关文章&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/042/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Rust 中的生命周期&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust 中的生命周期</title>
+      <link>https://mogeko.me/2019/050/</link>
+      <pubDate>Mon, 01 Apr 2019 19:27:29 +0800</pubDate>
+      
+      <guid>https://mogeko.me/2019/050/</guid>
+      <description>&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/050/&#34; &gt;
+&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;p&gt;Rust 中有一个非常重要的概念：生命周期&lt;/p&gt;
+
+&lt;p&gt;但是由于文章还有部分细节需要完善，所以先挖个坑占着 _(:з」∠)_&lt;/p&gt;
+
+&lt;p&gt;好学的同学可以先参考一下这几篇文章：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Rust Programming Language::References &amp;amp; Borrowing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Rust Programming Language::Validating References with Lifetimes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这是对以上两篇文章的中文翻译：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kaisery.github.io/trpl-zh-cn/ch04-02-references-and-borrowing.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Rust 程序设计语言::引用与借用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kaisery.github.io/trpl-zh-cn/ch10-03-lifetime-syntax.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Rust 程序设计语言::生命周期与引用有效性&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>使用 Travis CI 自动维护软件仓库 (Homebrew)</title>
@@ -1800,6 +1961,12 @@ fn calculate_length(s: &amp;amp;String) -&amp;gt; usize { // s 是对 String 的
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Rust Programming Language::Validating References with Lifetimes&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://doc.rust-lang.org/book/ch19-02-advanced-lifetimes.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;The Rust Programming Language::Advanced Lifetimes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;相关文章&#34;&gt;相关文章&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mogeko.github.io/2019/041/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Rust 生命周期中的一些坑&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
@@ -3643,536 +3810,6 @@ export PS2=&amp;quot;\[\e[32m\]&amp;gt;\[\e[m\] &amp;quot;
 &lt;p&gt;效果：&lt;/p&gt;
 
 &lt;pre class=&#34;prettyprint linenums prettyprinted&#34; style=&#34;overflow: auto;&#34;&gt;&lt;ol class=&#34;linenums&#34;&gt;&lt;li class=&#34;L0&#34;&gt;&lt;code class=&#34;language-shell&#34;&gt;&lt;span class=&#34;pun&#34;  style=&#34;color:#00FF00&#34;&gt;▶&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; &lt;/span&gt;&lt;span class=&#34;pun&#34;  style=&#34;color:#00FFFF&#34;&gt;[~]&lt;/span&gt;&lt;span class=&#34;pln&#34;  style=&#34;color:#00FFFF&#34;&gt;&lt;span class=&#34;pun&#34;  style=&#34;color:#FFFF00&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; cd &lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;~/Project/blog&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;&lt;li class=&#34;L1&#34;&gt;&lt;code class=&#34;language-shell&#34;&gt;&lt;span class=&#34;pun&#34;  style=&#34;color:#00FF00&#34;&gt;▶&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; &lt;/span&gt;&lt;span class=&#34;pun&#34;  style=&#34;color:#00FFFF&#34;&gt;[blog]&lt;/span&gt;&lt;span class=&#34;pun&#34;  style=&#34;color: #FF00FF&#34;&gt;[master]&lt;/span&gt;&lt;span class=&#34;pln&#34;  style=&#34;color:#00FFFF&#34;&gt;&lt;span class=&#34;pun&#34;  style=&#34;color:#FFFF00&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; gi&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;&lt;li class=&#34;L2&#34;&gt;&lt;code class=&#34;language-shell&#34;&gt;&lt;span class=&#34;pln&#34;&gt;gi&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;：未找到命令&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;&lt;li class=&#34;L3&#34;&gt;&lt;code class=&#34;language-shell&#34;&gt;&lt;span class=&#34;pun&#34; style=&#34;color:#FF0000&#34;&gt;✗&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; &lt;/span&gt;&lt;span class=&#34;pun&#34;  style=&#34;color:#00FFFF&#34;&gt;[blog]&lt;/span&gt;&lt;span class=&#34;pun&#34;  style=&#34;color: #FF00FF&#34;&gt;[master]&lt;/span&gt;&lt;span class=&#34;pln&#34;  style=&#34;color:#00FFFF&#34;&gt;&lt;span class=&#34;pun&#34;  style=&#34;color:#FFFF00&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; \&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;&lt;li class=&#34;L4&#34;&gt;&lt;code class=&#34;language-shell&#34;&gt;&lt;span class=&#34;pun&#34; style=&#34;color:#00FF00&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; \&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;&lt;li class=&#34;L5&#34;&gt;&lt;code class=&#34;language-shell&#34;&gt;&lt;span class=&#34;pun&#34; style=&#34;color:#00FF00&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; touch temp&lt;/span&gt;&lt;span class=&#34;pun&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt;txt&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;&lt;li class=&#34;L6&#34;&gt;&lt;code class=&#34;language-shell&#34;&gt;&lt;span class=&#34;pun&#34;  style=&#34;color:#00FF00&#34;&gt;▶&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; &lt;/span&gt;&lt;span class=&#34;pun&#34;  style=&#34;color:#00FFFF&#34;&gt;[blog]&lt;/span&gt;&lt;span class=&#34;pun&#34;  style=&#34;color: #FF00FF&#34;&gt;[master]&lt;/span&gt;&lt;span class=&#34;pln&#34;  style=&#34;color:#00FFFF&#34;&gt;&lt;span class=&#34;pun&#34;  style=&#34;color:#FFFF00&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;pln&#34;&gt; &lt;/span&gt;&lt;/code&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>如何使用 ASF 挂卡</title>
-      <link>https://mogeko.me/2018/036/</link>
-      <pubDate>Mon, 26 Nov 2018 14:48:29 +0800</pubDate>
-      
-      <guid>https://mogeko.me/2018/036/</guid>
-      <description>
-
-&lt;!-- 
-&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/036/&#34; &gt;
-&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
-&amp;emsp;&amp;emsp;
- --&gt;
-
-&lt;p&gt;如果你有一台服主机 (&lt;strong&gt;VPS&lt;/strong&gt;、&lt;strong&gt;树莓派&lt;/strong&gt;、&lt;strong&gt;一台被淘汰的 PC&lt;/strong&gt;…) 你会用它做什么？&lt;/p&gt;
-
-&lt;p&gt;玩法有很多，可以用来挖矿赚点零花钱 &lt;span class=&#34;spoiler&#34; &gt;虽然可能连电费都赚不回来&lt;/span&gt;，也可以养只爬虫没事爬爬网页，或者加入 &lt;a href=&#34;https://zh.wikipedia.org/zh-cn/BOINC&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;BOINC&lt;/a&gt; 为世界科研贡献力量… 如果你和我一样，恰好是个 &lt;strong&gt;Steam&lt;/strong&gt; 玩家玩家的话，用闲置的主机来挂 &lt;strong&gt;Steam 集换式卡牌&lt;/strong&gt;似乎是个不错的选择。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://partner.steamgames.com/doc/marketing/tradingcards?l=schinese&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;关于 &lt;strong&gt;Steam&lt;/strong&gt; 集换式卡牌&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;关于-asf-挂卡&#34;&gt;关于 ASF 挂卡&lt;/h2&gt;
-
-&lt;p&gt;众所周知，要在 &lt;strong&gt;Steam&lt;/strong&gt; 上玩游戏，Steam 才会给你相应的&lt;strong&gt;集换式卡牌&lt;/strong&gt;。而在闲置的主机上挂真正的游戏却不怎么现实 (性能不够)。所以，我们要使用 &lt;a href=&#34;https://github.com/JustArchiNET/ArchiSteamFarm&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;ASF 挂卡器&lt;/a&gt;来挂卡。&lt;/p&gt;
-
-&lt;p&gt;**关于 &lt;strong&gt;ASF&lt;/strong&gt; (ArchiSteamFarm)：**&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;ASF 是由 C# 編寫，能同時掛載多個 Steam 賬號的掛卡工具。其不像 Idle Master 那樣：同一時間只能為一個賬號掛卡，需要後台運行 Steam 客戶端，需啟動額外進程模擬『正在遊戲』狀態。ASF 不需要後台運行任何Steam 客戶端，不需要啟動額外進程，而且能為不限數目的 Steam 賬號同時掛卡。不僅如此，該軟件還能在服務器和其他非桌面電腦上運行，並擁有完整支持 Mono 的特性，這能讓其在 Windows、Linux 以及 OS X 等任何支持 Mono 的操作系統上運行。ASF 存在的基礎要歸功於 &lt;a href=&#34;https://github.com/SteamRE/SteamKit&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;SteamKit2&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;[注] &lt;strong&gt;ArchiSteamFarm V3.0&lt;/strong&gt; 以后的版本已经将 &lt;strong&gt;Mono&lt;/strong&gt; 换成了 &lt;strong&gt;.Net Core&lt;/strong&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;简单来说 &lt;strong&gt;ASF&lt;/strong&gt; 就是一个假的 &lt;strong&gt;Steam 客户端&lt;/strong&gt;，它通过“假装玩游戏”，让 &lt;strong&gt;Steam&lt;/strong&gt; 以为你真的在玩某款游戏，从而获得 &lt;strong&gt;Steam 集换式卡牌&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;那么“假装玩游戏”有风险吗？会被 &lt;strong&gt;Steam&lt;/strong&gt; 发现吗？理论上是有被 &lt;strong&gt;Steam&lt;/strong&gt; 发现的可能性的，但到目前为止，还没有听说过谁因为挂卡被封号或者其他处罚的情况，V 社官方也没有明确表态过禁止挂卡 &lt;span class=&#34;spoiler&#34; &gt;挂卡从某种意义上来说是可以增加用户粘性的&lt;/span&gt;，所以基本上可以认为挂卡是安全的。(出了事别找我就对了 | ・ω・’）)&lt;/p&gt;
-
-&lt;p&gt;不过为了保险起见，最好还是将带有 &lt;strong&gt;&lt;a href=&#34;https://zh.wikipedia.org/zh-cn/%E7%B6%AD%E7%88%BE%E7%A6%8F%E5%8F%8D%E4%BD%9C%E5%BC%8A%E7%B3%BB%E7%B5%B1&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;VAC&lt;/a&gt;&lt;/strong&gt; 的游戏排除在外。&lt;/p&gt;
-
-&lt;h2 id=&#34;asf-的安装与使用&#34;&gt;ASF 的安装与使用&lt;/h2&gt;
-
-&lt;h3 id=&#34;windows-安装&#34;&gt;Windows 安装&lt;/h3&gt;
-
-&lt;p&gt;到&lt;a href=&#34;https://github.com/JustArchiNET/ArchiSteamFarm/releases&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;这个页面&lt;/a&gt;去下载最新版的 &lt;strong&gt;ASF&lt;/strong&gt;，然后解压。&lt;/p&gt;
-
-&lt;p&gt;双击 &lt;code&gt;ArchiSteamFarm.exe&lt;/code&gt; 便可运行。&lt;/p&gt;
-
-&lt;h3 id=&#34;gnu-linux-安装&#34;&gt;GNU/Linux 安装&lt;/h3&gt;
-
-&lt;p&gt;首先去&lt;a href=&#34;https://github.com/JustArchiNET/ArchiSteamFarm/releases&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;这个页面&lt;/a&gt;获取适合你系统的最新版 &lt;strong&gt;ASF&lt;/strong&gt; 的下载地址。这里以 64 位 x86 架构的 &lt;strong&gt;ArchiSteamFarm V3.4.0.7&lt;/strong&gt; 为例。&lt;/p&gt;
-
-&lt;p&gt;在终端中运行：(如果没有 &lt;code&gt;unzip&lt;/code&gt; 的话先安装 &lt;code&gt;unzip&lt;/code&gt;)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir asf
-cd asf
-wget https://github.com/JustArchiNET/ArchiSteamFarm/releases/download/3.4.0.7/ASF-linux-x64.zip
-unzip ASF-linux-x64.zip
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在 &lt;code&gt;asf&lt;/code&gt; 目录中使用命令 &lt;code&gt;./ArchiSteamFarm&lt;/code&gt; 便可运行。&lt;/p&gt;
-
-&lt;h3 id=&#34;使用-docker-部署&#34;&gt;使用 Docker 部署&lt;/h3&gt;
-
-&lt;p&gt;相对于直接运行，我更喜欢用 &lt;strong&gt;Docker&lt;/strong&gt; 来部署 &lt;strong&gt;ASF&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;同样以 64 位 x86 架构的 &lt;strong&gt;ArchiSteamFarm V3.4.0.7&lt;/strong&gt; 为例。&lt;/p&gt;
-
-&lt;p&gt;在终端中运行：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir asf
-cd asf
-wget https://github.com/JustArchiNET/ArchiSteamFarm/releases/download/3.4.0.7/ASF-generic.zip
-unzip ASF-generic.zip
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后在 &lt;code&gt;asf&lt;/code&gt; 目录中新建并编写 &lt;code&gt;Dockerfile&lt;/code&gt; 文件：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-dockerfile&#34;&gt;FROM microsoft/dotnet
-
-WORKDIR /home/asf
-COPY . /home/asf
-
-EXPOSE 5000
-ENV ASPNETCORE_URLS http://*:5000
-RUN rm -rf /home/asf/config
-
-ENTRYPOINT [ &amp;quot;dotnet&amp;quot;,&amp;quot;/home/asf/ArchiSteamFarm.dll&amp;quot; ]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后运行以下命令来制作 &lt;strong&gt;Docker 镜像&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker build --tag=asf:v1.0.0 .
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;使用以下命令启动容器：(默认你的 &lt;code&gt;asf/config&lt;/code&gt; 目录为 &lt;code&gt;~/asf/config&lt;/code&gt;)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker run -it \
--v ~/asf/config:/home/asf/config \
--p 5000:5000 asf:v1.0.0 --name asf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;asf-配置&#34;&gt;ASF 配置&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;ASF&lt;/strong&gt; 的配置文件在 &lt;code&gt;config&lt;/code&gt; 目录中。&lt;/p&gt;
-
-&lt;p&gt;在 &lt;code&gt;config&lt;/code&gt; 目录中新建 / 编辑两个文件：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;ASF.json&lt;/strong&gt;：全局配置文件&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Bot.json&lt;/strong&gt;：每个帐号的配置文件&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Bot.json&lt;/strong&gt; 可以有多个，每个文件对应一个 &lt;strong&gt;Steam&lt;/strong&gt; 帐号，文件名可以换成你喜欢的任意名称&lt;/p&gt;
-
-&lt;h3 id=&#34;asf-json&#34;&gt;ASF.json&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
-	&amp;quot;AutoRestart&amp;quot;: true,
-	&amp;quot;CommandPrefix&amp;quot;: &amp;quot;!&amp;quot;,
-	&amp;quot;ConfirmationsLimiterDelay&amp;quot;: 10,
-	&amp;quot;ConnectionTimeout&amp;quot;: 60,
-	&amp;quot;CurrentCulture&amp;quot;: &amp;quot;zh-CN&amp;quot;,
-	&amp;quot;Debug&amp;quot;: false,
-	&amp;quot;FarmingDelay&amp;quot;: 15,
-	&amp;quot;GiftsLimiterDelay&amp;quot;: 1,
-	&amp;quot;Headless&amp;quot;: false,
-	&amp;quot;IdleFarmingPeriod&amp;quot;: 8,
-	&amp;quot;InventoryLimiterDelay&amp;quot;: 3,
-	&amp;quot;IPC&amp;quot;: false,
-	&amp;quot;IPCPassword&amp;quot;: null,
-	&amp;quot;IPCPrefixes&amp;quot;: [
-		&amp;quot;http://127.0.0.1:1242/&amp;quot;
-	],
-	&amp;quot;LoginLimiterDelay&amp;quot;: 10,
-	&amp;quot;MaxFarmingTime&amp;quot;: 10,
-	&amp;quot;MaxTradeHoldDuration&amp;quot;: 15,
-	&amp;quot;OptimizationMode&amp;quot;: 0,
-	&amp;quot;Statistics&amp;quot;: true,
-	&amp;quot;SteamMessagePrefix&amp;quot;: &amp;quot;/me &amp;quot;,
-	&amp;quot;SteamOwnerID&amp;quot;: 0,
-	&amp;quot;SteamProtocols&amp;quot;: 7,
-	&amp;quot;UpdateChannel&amp;quot;: 1,
-	&amp;quot;UpdatePeriod&amp;quot;: 24,
-	&amp;quot;WebLimiterDelay&amp;quot;: 200,
-	&amp;quot;WebProxy&amp;quot;: null,
-	&amp;quot;WebProxyPassword&amp;quot;: null,
-	&amp;quot;WebProxyUsername&amp;quot;: null,
-	&amp;quot;Blacklist&amp;quot;: [
-		730,
-		440,
-		221100,
-		10,
-		240,
-		50,
-		70,
-		500,
-		550,
-		20,
-		30,
-		300,
-		320,
-		40,
-		60,
-		80,
-		360,
-		58610,
-		222880,
-		4000,
-		252490,
-		2100,
-		61700,
-		21970,
-		1250,
-		204300,
-		219640,
-		10180,
-		115300,
-		42700,
-		2400,
-		216250,
-		255220,
-		65800,
-		4920,
-		35450,
-		44350,
-		221040,
-		70000,
-		282800,
-		227100,
-		215470,
-		222480,
-		208090,
-		243800,
-		17710,
-		1200,
-		63000,
-		63500,
-		61730,
-		45500,
-		63200,
-		39000,
-		224260,
-		223710,
-		104900,
-		55110,
-		247730,
-		55100,
-		6510,
-		214360,
-		214630,
-		63970,
-		42160,
-		204080,
-		212410,
-		209610,
-		201070,
-		244630,
-		91310
-	]
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;简单介绍几个重要的配置：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&amp;ldquo;Blacklist&amp;rdquo;&lt;/strong&gt;：不挂卡的游戏 (这里排除了所以带 &lt;strong&gt;VAC&lt;/strong&gt; 的游戏)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;&amp;ldquo;SteamOwnerID&amp;rdquo;&lt;/strong&gt;：&lt;strong&gt;ASF&lt;/strong&gt; 所有者的 &lt;code&gt;SteamID&lt;/code&gt;；&lt;strong&gt;ASF&lt;/strong&gt; 所有者可以使用全局指令 (例如：&lt;code&gt;!exit&lt;/code&gt;、&lt;code&gt;!restart&lt;/code&gt;、&lt;code&gt;!update&lt;/code&gt; 等 )
-获取 &lt;code&gt;SteamID&lt;/code&gt; 的方法：&lt;a href=&#34;https://zhuanlan.zhihu.com/p/28256575&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;怎么获取 SteamID？&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;详细的配置说明请参考：&lt;a href=&#34;#asf-json-详细配置说明&#34;&gt;ASF.json 详细配置说明&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;bot-json&#34;&gt;Bot.json&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
-	&amp;quot;AcceptGifts&amp;quot;: false,
-	&amp;quot;AutoSteamSaleEvent&amp;quot;: false,
-	&amp;quot;BotBehaviour&amp;quot;: 0,
-	&amp;quot;CustomGamePlayedWhileFarming&amp;quot;: null,
-	&amp;quot;CustomGamePlayedWhileIdle&amp;quot;: null,
-	&amp;quot;Enabled&amp;quot;: true,
-	&amp;quot;FarmingOrders&amp;quot;: [],
-	&amp;quot;GamesPlayedWhileIdle&amp;quot;: [],
-	&amp;quot;HoursUntilCardDrops&amp;quot;: 3,
-	&amp;quot;IdlePriorityQueueOnly&amp;quot;: false,
-	&amp;quot;IdleRefundableGames&amp;quot;: true,
-	&amp;quot;LootableTypes&amp;quot;: [
-		1,
-		3,
-		5
-		
-	],
-	&amp;quot;MatchableTypes&amp;quot;: [
-		5
-	],
-	&amp;quot;OnlineStatus&amp;quot;: 1,
-	&amp;quot;PasswordFormat&amp;quot;: 0,
-	&amp;quot;Paused&amp;quot;: false,
-	&amp;quot;RedeemingPreferences&amp;quot;: 0,
-	&amp;quot;SendOnFarmingFinished&amp;quot;: false,
-	&amp;quot;SendTradePeriod&amp;quot;: 0,
-	&amp;quot;ShutdownOnFarmingFinished&amp;quot;: false,
-	&amp;quot;SteamLogin&amp;quot;: null,
-    &amp;quot;SteamMasterID&amp;quot;: 0,
-	&amp;quot;SteamMasterClanID&amp;quot;: 0,
-	&amp;quot;SteamParentalPIN&amp;quot;: &amp;quot;0&amp;quot;,
-	&amp;quot;SteamPassword&amp;quot;: null,
-	&amp;quot;SteamTradeToken&amp;quot;: null,
-	&amp;quot;SteamUserPermissions&amp;quot;: {},
-	&amp;quot;TradingPreferences&amp;quot;: 0,
-	&amp;quot;UseLoginKeys&amp;quot;: true
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;简单介绍几个重要的配置：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&amp;ldquo;Enabled&amp;rdquo;&lt;/strong&gt;：是否启用本 &lt;strong&gt;Bot&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&amp;ldquo;SteamLogin&amp;rdquo;&lt;/strong&gt;：用来登陆 &lt;strong&gt;Steam&lt;/strong&gt; 的用户名；为空着表示在启动时输入&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&amp;ldquo;SteamPassword&amp;rdquo;&lt;/strong&gt;：用来登陆 &lt;strong&gt;Steam&lt;/strong&gt; 的登录密码；为空着表示在启动时输入&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt;：管理员的 &lt;code&gt;SteamID&lt;/code&gt;；管理员可以使用与 &lt;strong&gt;Bot&lt;/strong&gt; 相关的控制命令。
-如果不添加&lt;strong&gt;「小号」&lt;/strong&gt;的话保持默认 (为 0) 即可。
-获取 &lt;code&gt;SteamID&lt;/code&gt; 的方法：&lt;a href=&#34;#如何获取-steamid&#34;&gt;如何获取 SteamID&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&amp;ldquo;SteamMasterClanID&amp;rdquo;&lt;/strong&gt;：&lt;strong&gt;Steam&lt;/strong&gt; 群组的 &lt;strong&gt;ID&lt;/strong&gt;；如果有很多 &lt;strong&gt;Bot&lt;/strong&gt; 需要控制，可以创建一个 &lt;strong&gt;Steam&lt;/strong&gt; 群组，然后&lt;strong&gt;群主&lt;/strong&gt;和&lt;strong&gt;管理员&lt;/strong&gt;可在群组聊天中使用与 &lt;strong&gt;Bot&lt;/strong&gt; 相关的控制命令进行控制
-如果不添加&lt;strong&gt;「小号」&lt;/strong&gt;的话保持默认 (为 0) 即可。
-获取 &lt;strong&gt;Steam&lt;/strong&gt; 群组 &lt;strong&gt;ID&lt;/strong&gt; 的方法：&lt;a href=&#34;#如何获取-steam-群组-id&#34;&gt;如何获取 Steam 群组 ID&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;详细的配置说明请参考：&lt;a href=&#34;#bot-json-详细配置说明&#34;&gt;Bot.json 详细配置说明&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;asf-命令&#34;&gt;&lt;strong&gt;ASF&lt;/strong&gt; 命令&lt;/h2&gt;
-
-&lt;p&gt;所谓 &lt;strong&gt;ASF 命令&lt;/strong&gt;实际上就是用「主号」给「小号」发送 &lt;strong&gt;Steam&lt;/strong&gt; 消息，来控制指挥 &lt;strong&gt;ASF&lt;/strong&gt; 控制「小号」和  &lt;strong&gt;ASF&lt;/strong&gt; 。&lt;/p&gt;
-
-&lt;p&gt;因为比较常用，所以特地做了一个图片格式的速查表 (右键，保存即可下载) -&amp;gt; &lt;a href=&#34;https://mogeko.github.io/images/036/ASF 命令速查表.png&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;查看原图&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;figure style=&#34;margin: 0px&#34;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th  style=&#34;width: 250px&#34;&gt;命令&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!redeem [Bots] [key1, key2,...]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;指定 &lt;strong&gt;Bot&lt;/strong&gt; 激活给予的全部密钥，同 &lt;code&gt;!r&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!redeem^ [Bots] [key1, key2,...]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;指定 &lt;strong&gt;Bot&lt;/strong&gt; 激活给予的全部密钥，不转发，同 &lt;code&gt;!r^&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!redeem^ [Bots] [Modes] [Keys]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;使指定 &lt;strong&gt;Bot&lt;/strong&gt; 以指定模式激活 key&lt;br /&gt;Modes：&lt;code&gt;FD&lt;/code&gt; = 分发，&lt;code&gt;FF&lt;/code&gt; = 转发，&lt;code&gt;FKMG&lt;/code&gt; = 补缺，&lt;code&gt;SD&lt;/code&gt; = 不分发，&lt;code&gt;SF&lt;/code&gt; = 不转发，&lt;code&gt;SI&lt;/code&gt; = 舍己，&lt;code&gt;SKMG&lt;/code&gt; = 不补缺，&lt;code&gt;V&lt;/code&gt; = 验正跳废&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!addlicense [Bots] [appID1, appID2 ...]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;使指定 &lt;strong&gt;Bot&lt;/strong&gt; 激活指定 ID 的游戏（&lt;strong&gt;仅限于免费游戏&lt;/strong&gt;）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!owns [Bots] [appID,gameName...]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;检查当前 &lt;strong&gt;Bot&lt;/strong&gt; 是否已经拥有游戏，同 &lt;code&gt;!oa&lt;/code&gt; (指定 ID, 游戏名, 部分游戏名)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!ownsall [appID,gameName...]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;检查所有 &lt;strong&gt;Bot&lt;/strong&gt; 是否已经拥有指定 ID 的游戏&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!exit&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;退出 &lt;strong&gt;ASF&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!restart&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;重启 &lt;strong&gt;ASF&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!start [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;启动指定的 &lt;strong&gt;Bot&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!startall&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;启动所有 &lt;strong&gt;Bot&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!resume [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;恢复指定 &lt;strong&gt;Bot&lt;/strong&gt; 的 &lt;code&gt;!pause&lt;/code&gt; 暂停和 &lt;code&gt;!play&lt;/code&gt; 手动挂卡&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!pause [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;永久暂停指定 &lt;strong&gt;Bot&lt;/strong&gt;，直至重启或手动恢复，使用 &lt;code&gt;!resume&lt;/code&gt; 恢复&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!pause~ [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;暂时暂停指定 &lt;strong&gt;Bot&lt;/strong&gt;，自动恢复&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!farm&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;重启当前 &lt;strong&gt;Bot&lt;/strong&gt; 的挂卡模块&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!farm [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;重启指定 &lt;strong&gt;Bot&lt;/strong&gt; 的挂卡模块&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!play [Bots] [appID1, appID2,...]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;切换至手动挂卡，让指定 &lt;strong&gt;Bot&lt;/strong&gt; 启动指定 ID 的游戏。使用 &lt;code&gt;!resume&lt;/code&gt; 恢复自动挂卡模式&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!stop [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;停止指定 &lt;strong&gt;Bot&lt;/strong&gt;，注销登录&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!leave&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;让 &lt;strong&gt;Bot&lt;/strong&gt; 离开当前的群组聊天。该指令只在群组聊天中生效。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!rejoinchat [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;强制指定 &lt;strong&gt;Bot&lt;/strong&gt; 重新加入群聊&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!status [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;输出指定 &lt;strong&gt;Bot&lt;/strong&gt; 的状态，同 &lt;code&gt;!sa&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!statusall&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;输出所有 &lt;strong&gt;Bot&lt;/strong&gt; 以及 &lt;strong&gt;ASF&lt;/strong&gt; 本身的状态&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!loot [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;将指定 &lt;strong&gt;Bot&lt;/strong&gt; 所有 &lt;strong&gt;Steam&lt;/strong&gt; 物品交易给 &lt;strong&gt;SteamMasterID&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!lootall&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;将已启动 &lt;strong&gt;Bot&lt;/strong&gt; 所有 &lt;strong&gt;Steam&lt;/strong&gt; 物品交易给 &lt;strong&gt;SteamMasterID&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!transfer [Bots] [Modes] [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;使指定 &lt;strong&gt;Bot&lt;/strong&gt; 发送某类交易至指定 &lt;strong&gt;Bot&lt;/strong&gt; &lt;br /&gt;Modes：&lt;code&gt;A&lt;/code&gt; = 全部，&lt;code&gt;BG&lt;/code&gt; = 背景，&lt;code&gt;BO&lt;/code&gt; = 卡包，&lt;code&gt;C&lt;/code&gt; = 卡，&lt;code&gt;E&lt;/code&gt; = 表情，&lt;code&gt;F&lt;/code&gt; = 闪卡，&lt;code&gt;G&lt;/code&gt; = 宝珠，&lt;code&gt;U&lt;/code&gt; = 其他&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!unpack [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;将所有补充包存储在指定Bot的库存&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!bl [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;列出指定 &lt;strong&gt;Bot&lt;/strong&gt; 交易模块中的黑名单用户&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!bladd [Bots] [SteamIDs64]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;为指定 &lt;strong&gt;Bot&lt;/strong&gt; 的黑名单增加用户&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!blrm [Bots] [SteamIDs64]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;为指定 &lt;strong&gt;Bot&lt;/strong&gt; 的黑名单删除用户&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!ib [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;列出指定 &lt;strong&gt;Bot&lt;/strong&gt; 黑名单中的 apps&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!ibadd [Bots] [AppIDs]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;为指定 &lt;strong&gt;Bot&lt;/strong&gt; 的黑名单中增加 apps&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!ibrm [Bots] [AppIDs]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;为指定 &lt;strong&gt;Bot&lt;/strong&gt; 的黑名单删除 apps&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!2fa [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;为指定 &lt;strong&gt;Bot&lt;/strong&gt; 生成 &lt;strong&gt;2FA 验证&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!2fano [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;否决指定 &lt;strong&gt;Bot&lt;/strong&gt; 所有的验证请求&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!2faoff [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;关闭指定 &lt;strong&gt;Bot&lt;/strong&gt; 的 &lt;strong&gt;2FA 验证&lt;/strong&gt;功能&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!2faok [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;接受指定 &lt;strong&gt;Bot&lt;/strong&gt; 所有的验证请求&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!password [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;显示指定 &lt;strong&gt;Bot&lt;/strong&gt; 加密后的密码 (在使用 PasswordFormat 时)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!iq [Bots]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;列出指定 &lt;strong&gt;Bot&lt;/strong&gt; 的优先队列&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!iqadd [Bots] [AppIDs]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;为指定 &lt;strong&gt;Bot&lt;/strong&gt; 的优先队列增加 apps&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!iqrm [Bots] [AppIDs]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;为指定 &lt;strong&gt;Bot&lt;/strong&gt; 的优先队列删除 apps&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!nickname  [Bots] [Nickname]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;改变指定 &lt;strong&gt;Bot&lt;/strong&gt; 的昵称&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!input [Bots] [Type] [Value]&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;给予指定 &lt;strong&gt;Bot&lt;/strong&gt; 输入类型，Headless 模式下工作&lt;br /&gt;Type：DeviceID, Login, Password, SteamGuard, SteamParentalPIN, TwoFactorAuthentication&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!help&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;弹出帮助信息 (链接到 Wiki 指令页面)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!update&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;检查在 GitHub 的更新 (默认每 24 小时进行一次)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&#34;text-align: left;&#34;&gt;!version&lt;/td&gt;&lt;td style=&#34;text-align: left;&#34;&gt;显示当前版本信息&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&#34;附录&#34;&gt;附录&lt;/h2&gt;
-
-&lt;h3 id=&#34;如何获取-steam-群组-id&#34;&gt;如何获取 Steam 群组 ID&lt;/h3&gt;
-
-&lt;p&gt;在你所创建的 &lt;strong&gt;Steam&lt;/strong&gt; 群组的页面的地址末尾添加 &lt;code&gt;/memberslistxml/?xml=1&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;例如：&lt;a href=&#34;https://steamcommunity.com/groups/mogeasf/memberslistxml/?xml=1&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://steamcommunity.com/groups/mogeasf/memberslistxml/?xml=1&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;然后在 &lt;code&gt;&amp;lt;groupID64&amp;gt;&lt;/code&gt; 标签中就可以找到类似于 &lt;strong&gt;103582791462949118&lt;/strong&gt; 的数字，这就是 &lt;strong&gt;Steam&lt;/strong&gt; 群组 &lt;strong&gt;ID&lt;/strong&gt; 了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Steam 群组 ID&#34; src=&#34;https://mogeko.github.io/images/036/SteamGroupID.png&#34; &gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;如何获取-steamid&#34;&gt;如何获取 SteamID&lt;/h3&gt;
-
-&lt;p&gt;首先打开你的 Steam 个人主页 ([用户名] -&amp;gt; 个人资料)，复制网页地址&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Steam 群组 ID&#34; src=&#34;https://mogeko.github.io/images/036/SteamID_1.png&#34; &gt;&lt;/p&gt;
-
-&lt;p&gt;打开网页：&lt;a href=&#34;http://steamrep.com&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://steamrep.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;在搜索框中粘贴上刚刚复制的网页地址，搜索&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Steam 群组 ID&#34; src=&#34;https://mogeko.github.io/images/036/SteamID_2.png&#34; &gt;&lt;/p&gt;
-
-&lt;p&gt;然后搜索框中的一串数字就是 &lt;code&gt;SteamID&lt;/code&gt; 了&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;Steam 群组 ID&#34; src=&#34;https://mogeko.github.io/images/036/SteamID_3.png&#34; &gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;如何注册-steam-网页-api-密匙&#34;&gt;如何注册 Steam 网页 API 密匙&lt;/h3&gt;
-
-&lt;p&gt;点击这个链接 (需要科学上网)：&lt;a href=&#34;https://steamcommunity.com/dev/apikey&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://steamcommunity.com/dev/apikey&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;登录，就可以获取生成的网页 API 了&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/036/get_steam_api_1.png&#34; &gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/036/get_steam_api_2.png&#34; &gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;域名名称&lt;/strong&gt;随便什么是都可以，不影响使用的。&lt;/p&gt;
-
-&lt;h3 id=&#34;asf-详细配置说明&#34;&gt;ASF 详细配置说明&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;ASF&lt;/strong&gt; 使用 &lt;code&gt;C#&lt;/code&gt; 开发，所以配置文件中的配置语句也是带有类型的。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ASF&lt;/strong&gt; 支持如下类型：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;bool&lt;/strong&gt;：布尔型；只接收 &lt;code&gt;true&lt;/code&gt; 与 &lt;code&gt;false&lt;/code&gt; 数值。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;byte&lt;/strong&gt;：字节型；接受 0 至 255 的数字。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ushort&lt;/strong&gt;：无符号短整形；接受 0 至 65535 的数字。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;uint&lt;/strong&gt;：无符号整型；接受 0 至 4294967295 的数字。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ulong&lt;/strong&gt;：无符号长整型；接受 0 至 18446744073709551615 的数字。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;string&lt;/strong&gt;：字符串；接受英文字母，需要用双引号 (&amp;ldquo;&amp;rdquo;) 包裹起来。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;HashSet&lt;/strong&gt;：无符号数组；接受一个数组。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;asf-json-详细配置说明&#34;&gt;ASF.json 详细配置说明&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;Debug&amp;rdquo;&lt;/strong&gt; (默认：false)：该程序是否以调试模式运作。调试模式中，ASF 将在可执行文件所在位置创建一个特殊的 debug 文件夹，当中能够包含 &lt;strong&gt;ASF&lt;/strong&gt; 与 &lt;strong&gt;Steam&lt;/strong&gt; 服务器之间的完整通讯内容。调试信息能帮助查找关于网络的问题。除非是开发者需要，用户不要用调试模式运行 ASF。ASF 在调试模式下性能会降低，如非开发者要求记录调试日志，不要将其开启。注意：调试日志包含诸如 &lt;strong&gt;Steam&lt;/strong&gt; 登陆密码等敏感信息。所以不要将你的调试日志在任何场所公开。ASF 开发者只会要求将其发送至他的电子邮箱。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;Headless&amp;rdquo;&lt;/strong&gt; (默认：false)：该配置定义程序是否以无标头模式运行。当处在无标头模式中，ASF会假定其在服务器上运行，因此不会尝试读取诸如2FA码、Steam令牌码、密码以及任何需要ASF操作的宝贵数据。该模式对用服务器运行ASF的用户有用，比如在要求2FA码时，ASF将静默终止操作并停用账号。除非用户在服务器上使用ASF，并确认其能够在非无标头模式下运作，否则请将该配置禁用。无标头模式下将拒绝任何用户的干预，你的账户在需要你的协助的情况下不会启动。这在服务器状态下有用，能够中止任何要求凭证的操作，而非一直等待玩家提供相应信息。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;AutoUpdates&amp;rdquo;&lt;/strong&gt; (默认：true)：是否开启自动更新。如果使用 Docker 部署可以考虑关闭，因为 Docker 不允许容器自动重启。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;AutoRestart&amp;rdquo;&lt;/strong&gt; (默认：true)：是否在更新后自动重启。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[byte] &amp;ldquo;UpdateChannel&amp;rdquo;&lt;/strong&gt; (默认：1)：该配置定义自动更新的通道，目前 &lt;strong&gt;ASF&lt;/strong&gt; 支持两种通道 &lt;code&gt;1&lt;/code&gt; 为稳定版，&lt;code&gt;2&lt;/code&gt; 为实验版。稳定版通道是默认的发布通道，适合大多数用户。实验版通道不单提供稳定版，还包含为高阶用户及其他开发者用来测试新特性、验证bug修复或是给予未来计划特性反馈的预发布版。实验版通常包含未被修复的 bug，尚处在开发中的特性或是重写的实现。如果你不认为自己是高阶用户，请保持默认的 &lt;code&gt;1&lt;/code&gt;（稳定版）更新通道。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[byte] &amp;ldquo;SteamProtocol&amp;rdquo;&lt;/strong&gt; (默认：6)：该配置定义 &lt;strong&gt;ASF&lt;/strong&gt; 内置 &lt;strong&gt;Steam&lt;/strong&gt; 客户端所用的网络协议。目前仅支持2种数值 - 6代表特定的TCP协议，17代表特定的UDP协议。使用其他数值结果都是采用默认数值6。在你尝试应对特定防火墙，或是尝试设置代理时，从TCP切换到UDP可能会有效。UDP Steam协议目前尚为试验性功能，使用请自担风险。除非你有充足的理由修改该配置，请将其保持默认。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[byte] &amp;ldquo;SteamOwnerID&amp;rdquo;&lt;/strong&gt; (默认：0)：&lt;strong&gt;ASF&lt;/strong&gt; 所有者的 &lt;code&gt;SteamID&lt;/code&gt;；&lt;strong&gt;ASF&lt;/strong&gt; 所有者可以使用全局指令 (例如：&lt;code&gt;!exit&lt;/code&gt;、&lt;code&gt;!restart&lt;/code&gt;、&lt;code&gt;!update&lt;/code&gt; 等 )&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[byte] &amp;ldquo;MaxFarmingTime&amp;rdquo;&lt;/strong&gt; (默认：10)：最大挂卡时间。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[byte] &amp;ldquo;IdleFarmingPeriod&amp;rdquo;&lt;/strong&gt; (默认：3)：当ASF没有任何游戏可挂卡时，它会以 &lt;strong&gt;&amp;ldquo;IdleFarmingPeriod&amp;rdquo;&lt;/strong&gt; 配置中设定小时周期，周期性检查是否有新游戏需要挂卡。数值设定为 &lt;code&gt;0&lt;/code&gt; 可禁用该特性。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[byte] &amp;ldquo;FarmingDelay&amp;rdquo;&lt;/strong&gt; (默认：3)：挂卡延迟。ASF为了正常运作，会以 &lt;strong&gt;&amp;ldquo;FarmingDelay&amp;rdquo;&lt;/strong&gt; 设定的分钟内定期检查目前挂卡的游戏，判断该游戏是否挂卡完毕。将该数值设置过低会导致发送过多的 &lt;strong&gt;Steam&lt;/strong&gt; 请求，设置过高会让 &lt;strong&gt;ASF&lt;/strong&gt; 在游戏挂卡完毕后依然继续为其挂卡。默认值应该适用于多数用户，不过若是你有许多 &lt;strong&gt;Bot&lt;/strong&gt; 运行，可能需要将其延长至 30 分钟以限制过多的 &lt;strong&gt;Steam&lt;/strong&gt; 请求。由于 &lt;strong&gt;ASF&lt;/strong&gt; 采用基于事件的机制，其会在账户有新物品时检查徽章页面，所以通常我们就不需要按照固定周期进行检查，但对于 &lt;strong&gt;Steam&lt;/strong&gt; 网络传达的信息也不能完全信赖 - 这也就意味着还是需要周期性检查（在 &lt;strong&gt;Steam&lt;/strong&gt; 网络不知会物品掉落信息等情况下）。除非你有足够的理由编辑该选项，请将其保持默认。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[byte] &amp;ldquo;LoginLimiterDelay&amp;rdquo;&lt;/strong&gt; (默认：7)：登陆间隔延迟。如上述提到的那样，Steam 拥有登录请求的数目限制。同时也包含短时间内的过多登录。ASF 通过 &lt;strong&gt;&amp;ldquo;LoginLimiterDelay&amp;rdquo;&lt;/strong&gt; 设定的秒数来限定两次连续登录的时间间隔。默认值 &lt;code&gt;7&lt;/code&gt; 的设定基于同时连接 100 个 &lt;strong&gt;Bot&lt;/strong&gt; 的情况考量，也应该满足大多数用户的需求。用户可能会因为拥有少量 &lt;strong&gt;Bot&lt;/strong&gt; 的情况下降低数值，甚至将其更改为 &lt;code&gt;0&lt;/code&gt;，这时候 &lt;strong&gt;ASF&lt;/strong&gt; 将无视延迟并很快连接 Steam。这里需要警示一下，设定太低可能会导致 &lt;strong&gt;Steam&lt;/strong&gt; 暂时封禁你的 IP，让所有的登陆都会出现 「InvalidPassword（无效密码）」报错。除非你有充足的理由修改该配置，请将其保持默认。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[byte] &amp;ldquo;InventoryLimiterDelay&amp;rdquo;&lt;/strong&gt; (默认：3)：物品请求延长。与上述配置类似，获取 &lt;strong&gt;Steam&lt;/strong&gt; 物品栏信息同样拥有频数限制，需要在物品请求中加入一定间隙。ASF 将确保每次物品请求至少留有 &lt;strong&gt;&amp;ldquo;InvetoryLimiterDelay&amp;rdquo;&lt;/strong&gt; 设置的秒数间隙。默认值 &lt;code&gt;3&lt;/code&gt; 是基于同时连接 100 个 &lt;strong&gt;Bot&lt;/strong&gt; 的情况考量，也应该满足大多数用户的需求。用户可能会因为拥有少量Bot的情况下降低数值，甚至将其更改为 &lt;code&gt;0&lt;/code&gt;。这是 &lt;strong&gt;ASF&lt;/strong&gt; 将无视延迟并更快地获取steam物品信息。需要警示的是，将该数值设置过低会导致Steam暂时封禁你的IP，结果就是所有物品请求失败。除非你有充足的理由修改该配置，请将其保持默认。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;ForceHttp&amp;rdquo;&lt;/strong&gt; (默认：false)：默认情况下 &lt;strong&gt;ASF&lt;/strong&gt; 会优先使用 https 协议。然而，极少数情况下，你可能想要从 https 切换回 http 这种兼容性更好的方式。这时候可以将 &lt;strong&gt;&amp;ldquo;ForceHttp&amp;rdquo;&lt;/strong&gt; 数值设为 &lt;code&gt;true&lt;/code&gt;。使用该设置并不确保 &lt;strong&gt;ASF&lt;/strong&gt; 所有请求都以 htt p发送，一些服务（比如 GitHub api）仅支持 https。这种情况下，没有办法通过 http 使用这些服务，ASF 会直接拒绝发送 https 请求，其结果就是部分请求失败。如果你并不在调试网络，强烈推荐继续使用安全且加密的 https。除非你有充足的理由修改该配置，请将其保持默认。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[byte] &amp;ldquo;HttpTimeout&amp;rdquo;&lt;/strong&gt; (默认：60)：该配置定义 &lt;strong&gt;ASF&lt;/strong&gt; 发送 HTTP(S) 请求的间隙，单位为秒。默认数值 &lt;code&gt;60&lt;/code&gt; 应该适合大多数用户，然而，如果你的网络传输过慢，可能会想提升该数值（比如 &lt;code&gt;90&lt;/code&gt;）。要记住更大的数值并非修复与 &lt;strong&gt;Steam&lt;/strong&gt; 服务器连接缓慢或是中止的神药，有时候也不得不接受 &lt;strong&gt;Steam&lt;/strong&gt; 服务器无响应并之后尝试连接的事实。将该数值设置过高会无故等待，并降低全局性能。除非你有充足的理由修改该配置，请将其保持默认。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[string] &amp;ldquo;WCFHostname&amp;rdquo;&lt;/strong&gt; (默认：&lt;code&gt;localhost&lt;/code&gt;)：主机名，也是“全局地址”，由 WCF 使用。该配置仅在 WCF 启动时生效。ASF 默认仅仅监听来自&lt;code&gt;localhost&lt;/code&gt; 地址以确保没有其他机器能够访问。这是一道安全措施，进入 WCF 界面可能会让攻击者掌管你的 &lt;strong&gt;ASF&lt;/strong&gt; 进程，并带来极大影响。然而，当你清楚自己要做什么，比如限制 WCF 的链接，使用类似 iptables 的功能，可能会将该配置（自担风险）限制设为较为宽松，比如设置 &amp;ldquo;0.0.0.0&amp;rdquo; 让任意网络地址启动 WCF。需记住该配置需要在服务器与客户端上（如果两者不在一台机器上）正确设置。除此以外，用户还可使用数值 &lt;code&gt;null&lt;/code&gt;。这将导致 &lt;strong&gt;ASF&lt;/strong&gt; 每次启动都会询问该配置（如果你不想暴露服务器的 IP，这可能是有效的安全手段）。除非你有充足的理由修改该配置，请将其保持默认。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[ushort] &amp;ldquo;WCFPort&amp;rdquo;&lt;/strong&gt; (默认：1242)：WCF 运行的端口。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;LogToFile&amp;rdquo;&lt;/strong&gt; (默认：true)：该配置定义 &lt;strong&gt;ASF&lt;/strong&gt; 是否应该保留最近运行的 log.txt 文件。之前已经说明，日志文件用于分析 &lt;strong&gt;ASF&lt;/strong&gt; 行为时十分有用，也是汇报 bug 时的关键。不过另一方面，如果用户有许多 &lt;strong&gt;Bot&lt;/strong&gt;，日志文件体积可能会快速增长，为了不让 &lt;strong&gt;ASF&lt;/strong&gt; 将所有内容记录在日志中，你可能想要重定向标准输出（stdout）至别处。比如说，使用 &lt;code&gt;grep&lt;/code&gt; 进行过滤。这种情况下，你并不对日志文件感兴趣，而且有自己的方式记录日志，便可以将日志记录禁用。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;Statistics&amp;rdquo;&lt;/strong&gt; (默认：true)：该配置定义 &lt;strong&gt;ASF&lt;/strong&gt; 是否启用统计。统计帮助 &lt;strong&gt;ASF&lt;/strong&gt; 开发者提供开发周期的重要信息。如果你想要看到新版本出炉，bug 被修复，以及实现的新特性，请将其保持在默认数值 &lt;code&gt;true&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[HashSet] Blacklist&lt;/strong&gt;：不挂卡的游戏&lt;/p&gt;
-
-&lt;h4 id=&#34;bot-json-详细配置说明&#34;&gt;Bot.json 详细配置说明&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;Enabled&amp;rdquo;&lt;/strong&gt; (默认：false)：该 &lt;strong&gt;Bot&lt;/strong&gt; 是否启&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool]  &amp;ldquo;StartOnLaunch&amp;rdquo;&lt;/strong&gt; (默认：true)：该 &lt;strong&gt;Bot&lt;/strong&gt; 是否在 &lt;strong&gt;ASF&lt;/strong&gt; 启动后自动启用。如果为 &lt;code&gt;false&lt;/code&gt; 则需要使用 &lt;code&gt;!start&lt;/code&gt; 命令手动启动&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[string] &amp;ldquo;SteamLogin&amp;rdquo;&lt;/strong&gt; (默认：null)：用来登陆 &lt;strong&gt;Steam&lt;/strong&gt; 的用户名；为空着表示在启动时输入&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[string] &amp;ldquo;SteamPassword&amp;rdquo;&lt;/strong&gt; (默认：null)：用来登陆 &lt;strong&gt;Steam&lt;/strong&gt; 的登录密码；为空着表示在启动时输入&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[string] &amp;ldquo;SteamParentalPIN&amp;rdquo;&lt;/strong&gt; (默认：&amp;rdquo;0&amp;rdquo;)：家长控制 PIN&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[string]  &amp;ldquo;SteamApiKey&amp;rdquo;&lt;/strong&gt; (默认：null)：你的 &lt;strong&gt;Steam 网页 API 密钥&lt;/strong&gt;；&lt;a href=&#34;https://steamcommunity.com/dev/apikey&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;点击这里&lt;/a&gt;生成。可用于与 &lt;strong&gt;&amp;ldquo;SteamTradeMatcher&amp;rdquo;&lt;/strong&gt; 配合自动接收交易请求。API 密钥仅对生成该密钥的账户有用，不能将同一密钥用于多个 &lt;strong&gt;Bot&lt;/strong&gt;，每个 &lt;strong&gt;Bot&lt;/strong&gt; 都拥有自己独有的 API 密钥。另外该配置并不强制要求填写，ASF 会在默认值 null 的情况下正常运作，但这样会削减部分需要密钥的功能，比如自动接收交易请求。&lt;a href=&#34;#如何注册-steam-网页-api-密匙&#34;&gt;如何注册 Steam 网页 API 密匙&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[ulong]  &amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt; (默认：0)：管理员的 &lt;code&gt;SteamID&lt;/code&gt;；管理员可以使用与 &lt;strong&gt;Bot&lt;/strong&gt; 相关的控制命令。如果不添加&lt;strong&gt;「小号」&lt;/strong&gt;的话保持默认即可。&lt;a href=&#34;#如何获取-steamid&#34;&gt;如何获取 SteamID&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[ulong]  &amp;ldquo;SteamMasterClanID&amp;rdquo;&lt;/strong&gt; (默认：0)：&lt;strong&gt;Steam&lt;/strong&gt; 群组的 &lt;strong&gt;ID&lt;/strong&gt;；如果有很多 &lt;strong&gt;Bot&lt;/strong&gt; 需要控制，可以创建一个 &lt;strong&gt;Steam&lt;/strong&gt; 群组，然后&lt;strong&gt;群主&lt;/strong&gt;和&lt;strong&gt;管理员&lt;/strong&gt;可在群组聊天中使用与 &lt;strong&gt;Bot&lt;/strong&gt; 相关的控制命令进行控制。如果不添加&lt;strong&gt;「小号」&lt;/strong&gt;的话保持默认即可。&lt;a href=&#34;#如何获取-steam-群组-id&#34;&gt;如何获取 Steam 群组 ID&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool]  &amp;ldquo;CardDropsRestricted&amp;rdquo;&lt;/strong&gt; (默认：false)：该帐号是否有&lt;strong&gt;卡牌掉落&lt;/strong&gt; (游玩 2 小时以上才会掉卡)。新规则中，好像所有的帐号都有这个限制了，最好开启&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool]  &amp;ldquo;DismissInventoryNotification&amp;rdquo;&lt;/strong&gt; (默认：true)：关闭每张掉落的卡牌都会触发物品通知。设置为 &lt;code&gt;false&lt;/code&gt; 的情况下，每张掉落的卡牌都会触发物品通知，Steam 通知系统会告诉你收到了新物品。这可能会相当扰人，而且也没太大意义，因此 &lt;strong&gt;ASF&lt;/strong&gt; 默认将其关闭。如果你仍然想接收这些信息，可将该选项切换为 &lt;code&gt;false&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool]  &amp;ldquo;FarmOffline&amp;rdquo;&lt;/strong&gt; (默认：false)：是否开启「离线挂卡」。挂卡会让你的 &lt;strong&gt;Steam&lt;/strong&gt; 状态显示“当前正在游戏”，这可能会误导你的朋友，让他们以为你真的在玩这款游戏。离线挂卡就能解决这个问题，在你用 &lt;strong&gt;ASF&lt;/strong&gt; 挂卡时，账号不会显示正在玩某款游戏。离线挂卡依然会增加被挂游戏的游戏时长，并会在个人资料的“最新动态”中显示出来。&lt;/p&gt;
-
-&lt;p&gt;**[bool]  &amp;ldquo;HandleOfflineMessages&amp;rdquo; **(默认：false)：是否接收离线消息；配合 &lt;strong&gt;&amp;ldquo;FarmOffline&amp;rdquo;&lt;/strong&gt; 使用&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool]  &amp;ldquo;AcceptGifts&amp;rdquo;&lt;/strong&gt; (默认：false)：自动接收所有礼物&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool]  &amp;ldquo;SteamTradeMatcher&amp;rdquo;&lt;/strong&gt; (默认：false)：自动接收交易请求；需要配合 &lt;strong&gt;&amp;ldquo;SteamApiKey&amp;rdquo;&lt;/strong&gt; 使用&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool]  &amp;ldquo;IsBotAccount&amp;rdquo;&lt;/strong&gt; (默认：false)：是否为「小号」&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool]  &amp;ldquo;ForwardKeysToOtherBots&amp;rdquo;&lt;/strong&gt; (默认：false)：是否转发密匙 (激活码)。转发密匙在拥有 2 个以上帐号的情况下有用。如果为 &lt;code&gt;true&lt;/code&gt;，Bot 将会在激活失败 (已拥有) 的情况下将密匙发送给其他 &lt;strong&gt;Bot&lt;/strong&gt; 激活。这样很容易触发：「 (短期内) 激活失败次数过多」，慎用&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool]  &amp;ldquo;DistributeKeys&amp;rdquo;&lt;/strong&gt; (默认：false)：分发密匙 (激活码)。如果为 &lt;code&gt;true&lt;/code&gt;，Bot 接收密匙并尝试激活接收到的第一个密匙，无论成功失败，将剩下的密匙转发给其他 &lt;strong&gt;Bot&lt;/strong&gt; 激活，以此类推。可以在一定程度上减少触发：「 (短期内) 激活失败次数过多」的可能。但是 &lt;strong&gt;&amp;ldquo;ForwardKeysToOtherBots&amp;rdquo;&lt;/strong&gt; 会影响这个操作，多数情况你可能只想启用两种配置之一，如果这两个配置被同时启用，那么已经激活该游戏的 &lt;strong&gt;Bot&lt;/strong&gt; 在收到密钥后还会将其转发给另一个 &lt;strong&gt;Bot&lt;/strong&gt;，那么就要注意发送的密钥必须小于 &lt;strong&gt;Bot&lt;/strong&gt; 数量才行。如果你不确定是否该启用这项特性，请将其保持默认值 &lt;code&gt;false&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;UseAsfAsMobileAuthenticator&amp;rdquo;&lt;/strong&gt; (默认：false)：是否将ASF用作手机认证器，既是否为账号启用「ASF 2FA」机制。该特性相当复杂，你可以&lt;a href=&#34;https://github.com/JustArchi/ArchiSteamFarm/wiki/Escrow&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;点击这里&lt;/a&gt;获知更多信息。该特性可能会锁死你的账号，因此不要在未充分理解「ASF 2FA」的情况下使用。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;ShutdownOnFarmingFinished&amp;rdquo;&lt;/strong&gt; (默认：false)：是否挂卡结束后关闭。ASF 在启动后会一直“占据”账号。当指定账号挂卡结束后，ASF 还会进行周期性检查（&lt;strong&gt;&amp;ldquo;IdleFarmingPeriod&amp;rdquo;&lt;/strong&gt; 设定的小时数），如果该账号添加了新游戏，那么将会继续进行挂卡，这过程不用重启进程。这对多数用户来说很有用，毕竟ASF能够自动继续挂卡。然而，你可能会想在账号挂卡结束后停止该进程，那可以将该配置设置为 &lt;code&gt;true&lt;/code&gt; 来实现。启用之后，ASF 在挂卡完毕后会注销账号，不会再周期性检查或是启用账号。当全部 &lt;strong&gt;Bot&lt;/strong&gt; 挂卡完毕后，ASF 进程也将完全退出。如果你不确定是否该启用这项特性，请将其保持默认值 &lt;code&gt;false&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[bool] &amp;ldquo;SendOnFarmingFinished&amp;rdquo;&lt;/strong&gt; (默认：false)：挂卡结束后发送交易。当某个账号挂卡完毕后，其会自动向 &lt;strong&gt;&amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt; 发起全部挂卡所得的交易请求，这项功能十分便利。该选项的作用与 &lt;code&gt;!loot&lt;/code&gt; 指令一样，因此需要设置 &lt;strong&gt;&amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt;，同时还需要设置下方介绍的 &lt;strong&gt;&amp;ldquo;SteamTradeToken&amp;rdquo;&lt;/strong&gt;。此外账号需要满足交易条件，除非你使用「ASF 2FA」进行自动化操作，不然需要手动通过电子邮件来确认交易。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[string] &amp;ldquo;SteamTradeToken&amp;rdquo;&lt;/strong&gt; (默认：null)：如果 &lt;strong&gt;&amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt; 在其他 &lt;strong&gt;Bot&lt;/strong&gt; 的好友列表里，Bot 可立即发起交易请求，不用操心交易凭证。因此可将该配置维持默认值 &lt;code&gt;null&lt;/code&gt;。然而如果你的好友列表不打算列入其他Bot账号，就需要生成并输入 &lt;strong&gt;&amp;ldquo;SteamMasterID&amp;rdquo;&lt;/strong&gt; 的交易凭证。于官网登陆 &lt;strong&gt;Steam&lt;/strong&gt; 账号，&lt;a href=&#34;http://steamcommunity.com/id/me/tradeoffers/privacy&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;点击这里&lt;/a&gt;便能查看交易URL。凭证就是URL当中&lt;code&gt;&amp;amp;token=&lt;/code&gt;之后的8位字母。你需要将其复制粘贴到 &lt;strong&gt;&amp;ldquo;SteamTradeToken&amp;rdquo;&lt;/strong&gt; 之中。请记住不要复制整个URL，只需要凭证代码。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[byte] &amp;ldquo;SendTradePeriod&amp;rdquo;&lt;/strong&gt; (默认：0)：该配置与上述的 &lt;strong&gt;&amp;ldquo;SendOnFarmingFinished&amp;rdquo;&lt;/strong&gt;作用类似，但有一点不同，该配置并非在挂卡结束后才发起交易，而是以 &lt;strong&gt;&amp;ldquo;SendTradePeriod&amp;rdquo;&lt;/strong&gt; 当中设置的小时数为周期发起。这对想要时常 &lt;code&gt;!loot&lt;/code&gt; 其他 &lt;strong&gt;Bot&lt;/strong&gt; 的用户来说很有帮助。默认值 &lt;code&gt;0&lt;/code&gt; 禁用了该项特性，如果你想要每隔一天进行收获，就设置该配置数值为 &lt;code&gt;24&lt;/code&gt;。如果你不确定是否该启用这项特性，请将其保持默认值 &lt;code&gt;0&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[byte] &amp;ldquo;AcceptConfirmationPeriod&amp;rdquo;&lt;/strong&gt; (默认：0)：该配置只有为账号启用「ASF 2FA」情况下生效。最近 Valve 加入了额外的限制，所有发到市场的请求都需要额外的「ASF 2FA」验证。该选项与 &lt;code&gt;!2faok&lt;/code&gt; 指令功能相同，ASF 会以 &lt;strong&gt;&amp;ldquo;AcceptConfirmationPeriod&amp;rdquo;&lt;/strong&gt; 设置的分钟数为间隔，自动接收所有发起的验证。默认值 &lt;code&gt;0&lt;/code&gt; 禁用了该特性，通常来说并不推荐启用该选项。如若启用，请将间隔设置较长时间，比如 &lt;code&gt;30&lt;/code&gt; 分钟。如果你不确定是否该启用这项特性，请将其保持默认值 &lt;code&gt;0&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[string] &amp;ldquo;CustomGamePlayedWhileIdl&amp;rdquo;&lt;/strong&gt; (默认：null)：&lt;strong&gt;ASF&lt;/strong&gt; 空置时意味着无事可做（比如账号挂卡结束），其依然能显示“非Steam游戏中：CustomGamePlayerdWhileIdle”。默认值null禁用该特性。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;[HashSet] &amp;ldquo;GamesPlayedWhileIdle&amp;rdquo;&lt;/strong&gt; (默认：0)：与上面较为类似，如果ASF不在挂卡状态时其能继续挂载你所指定的游戏。被指定的游戏时长会增长。默认值0禁用该特性。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/JustArchi/ArchiSteamFarm&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;JustArchi/ArchiSteamFarm&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Commands&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Commands&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://steamcn.com/t187703-1-1&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;ASF 官方 Wiki 中文版&amp;emsp;全方位熟练使用 &lt;strong&gt;ASF&lt;/strong&gt; 挂卡工具（8.6施工中，全面更新)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://steamcn.com/t343050-1-1&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;ASF 简易命令列表&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>使用反向代理给 PPA 加速</title>
-      <link>https://mogeko.me/2018/035/</link>
-      <pubDate>Mon, 26 Nov 2018 13:35:11 +0800</pubDate>
-      
-      <guid>https://mogeko.me/2018/035/</guid>
-      <description>
-
-&lt;!-- 
-&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/035/&#34; &gt;
-&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
-&amp;emsp;&amp;emsp;
- --&gt;
-
-&lt;p&gt;&lt;strong&gt;PPA&lt;/strong&gt; 的英文全称叫 &lt;strong&gt;Personal Package Archives&lt;/strong&gt;，既&lt;strong&gt;「个人软件包仓库」&lt;/strong&gt;。是 Ubuntu 为了方便用户发表、下载那些 Ubuntu 官方软件仓库中没有收录的或者版本较新的软件而建立的 (有点类似于 &lt;strong&gt;ArchLinux&lt;/strong&gt; 的 &lt;strong&gt;AUR&lt;/strong&gt;)。&lt;/p&gt;
-
-&lt;p&gt;大多数的 &lt;strong&gt;PPA&lt;/strong&gt; 仓库都放在 &lt;a href=&#34;https://launchpad.net&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;launchpad&lt;/a&gt; 上。由于种种原因，国内从 &lt;strong&gt;PPA&lt;/strong&gt; 中下软件都特别慢，而且 &lt;strong&gt;PPA&lt;/strong&gt; 中的软件比较庞杂且分散，不适合建立镜像仓库。好在我们可以通过中科大提供的反向代理来加速我们的下载。&lt;/p&gt;
-
-&lt;h2 id=&#34;使用&#34;&gt;使用&lt;/h2&gt;
-
-&lt;p&gt;中科大提供的反向代理地址是：&lt;a href=&#34;http://launchpad.proxy.ustclug.org&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://launchpad.proxy.ustclug.org&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;我们只需要修改 &lt;code&gt;/etc/apt/sources.list.d&lt;/code&gt; 下面需要代理的仓库地址，将 &lt;code&gt;ppa.launchpad.net&lt;/code&gt; 换成 &lt;code&gt;launchpad.proxy.ustclug.org&lt;/code&gt; ，然后在执行 &lt;code&gt;sudo apt update&lt;/code&gt; 更新一下软件源列表就可以了。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;/etc/apt/sources.list.d&lt;/code&gt; 中的地址太多，一个一个换也太麻烦了吧？！可以使用下面这个命令替换全部：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo find /etc/apt/sources.list.d/ -type f -name &amp;quot;*.list&amp;quot; -exec  sed  -i.bak -r  &#39;s#deb(-src)?\s*http(s)?://ppa.launchpad.net#deb\1 http\2://launchpad.proxy.ustclug.org#ig&#39; {} \;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;尽快大多数软件都可以使用中科大提供的这个反向代理地址进行加速，不过仍然有些 &lt;strong&gt;PPA&lt;/strong&gt; 仓库没有放在 &lt;a href=&#34;https://launchpad.net&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;launchpad&lt;/a&gt; 上 (例如 Google Chrome 浏览器)，就不能使用这种方法进行加速了。&lt;/p&gt;
-
-&lt;!-- 
-# 搭建反向代理服务
-
-你也可以使用自己的 **VPS**，或者任何**可以翻墙的服务器**来搭建自己的反向代理服务。
-
-**NGINX 配置：**
-
-```conf
-#/etc/nginx/sites-available/ppa.launchpad.net 
-server {
-	listen 80;
-	server_name [服务器地址];
-
-	location / {
-		proxy_pass http://ppa.launchpad.net; 
-		proxy_redirect     off;
-		proxy_set_header   Host             $host;
-		proxy_set_header   X-Real-IP        $remote_addr;
-		proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
-	}
-}
-```
- --&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
