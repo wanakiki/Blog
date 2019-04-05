@@ -17,7 +17,7 @@
       <pubDate>Thu, 04 Apr 2019 21:17:33 +0800</pubDate>
       
       <guid>https://mogeko.me/2019/051/</guid>
-      <description>&amp;emsp;&amp;emsp; -- 前面有一篇文章介绍了什么是 Rust 的生命周期？(未填) 这里补充一些关于 Rust 的生命周期不容易被注意到的细节。 因为我水平有限，有的概念可能不是很全面</description>
+      <description>&amp;emsp;&amp;emsp; -- 前面有一篇文章介绍了什么是 Rust 的生命周期？这里补充一些关于 Rust 的生命周期不容易被注意到的细节。 因为我水平有限，有的概念可能不是很全面，甚至可</description>
     </item>
     
     <item>

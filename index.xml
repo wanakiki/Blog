@@ -23,7 +23,7 @@
 &amp;emsp;&amp;emsp;
  --&gt;
 
-&lt;p&gt;前面有一篇文章介绍了什么是 Rust 的生命周期？(未填) 这里补充一些关于 Rust 的生命周期不容易被注意到的细节。&lt;/p&gt;
+&lt;p&gt;前面有一篇文章介绍了&lt;a href=&#34;https://mogeko.github.io/2019/050/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;什么是 Rust 的生命周期？&lt;/a&gt;这里补充一些关于 Rust 的生命周期不容易被注意到的细节。&lt;/p&gt;
 
 &lt;p&gt;因为我水平有限，有的概念可能不是很全面，甚至可能有偏差，还请多多指点。&lt;/p&gt;
 
