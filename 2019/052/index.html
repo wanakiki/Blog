@@ -9,9 +9,9 @@
   <meta name="description" content="Mogeko 的个人博客">
   <meta name="keywords" content="blog, KMS, Hugo, GNU/Linux, Linux, Ubuntu, Rusty Lake: Roots, Hollow Knight, 空洞骑士">
   
-  <link rel="prev" href="https://mogeko.me/2019/050/" />
-  <link rel="next" href="https://mogeko.me/2019/052/" />
-  <link rel="canonical" href="https://mogeko.me/2019/051/" />
+  <link rel="prev" href="https://mogeko.me/2019/051/" />
+  
+  <link rel="canonical" href="https://mogeko.me/2019/052/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Rust 生命周期中的一些坑 | Mogeko`s Blog
+           纪念一位英雄的落幕 | Mogeko`s Blog
        
   </title>
-  <meta name="title" content="Rust 生命周期中的一些坑 | Mogeko`s Blog">
+  <meta name="title" content="纪念一位英雄的落幕 | Mogeko`s Blog">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https://mogeko.me"
     },
     "articleSection" : "posts",
-    "name" : "Rust 生命周期中的一些坑",
-    "headline" : "Rust 生命周期中的一些坑",
-    "description" : "&emsp;&emsp; -- 前面有一篇文章介绍了什么是 Rust 的生命周期？这里补充一些关于 Rust 的生命周期不容易被注意到的细节。 因为我水平有限，有的概念可能不是很全面，甚至可",
+    "name" : "纪念一位英雄的落幕",
+    "headline" : "纪念一位英雄的落幕",
+    "description" : "&emsp;&emsp; -- 一个澳大利亚人莫名其妙的触犯了瑞典的法律，在美国的威胁下，最终因为厄瓜多尔的背叛在英国被捕。 一位揭露了世界真相的英雄最终难逃牢狱之灾，而",
     "inLanguage" : "zh-cn",
     "author" : "Mogeko",
     "creator" : "Mogeko",
@@ -54,11 +54,11 @@
     "accountablePerson" : "Mogeko",
     "copyrightHolder" : "Mogeko",
     "copyrightYear" : "2019",
-    "datePublished": "2019-04-04 21:17:33 &#43;0800 &#43;0800",
-    "dateModified" : "2019-04-04 21:17:33 &#43;0800 &#43;0800",
-    "url" : "https://mogeko.me/2019/051/",
-    "wordCount" : "973",
-    "keywords" : [ "Rust", "Mogeko`s Blog"]
+    "datePublished": "2019-04-12 00:01:00 &#43;0800 &#43;0800",
+    "dateModified" : "2019-04-12 00:01:00 &#43;0800 &#43;0800",
+    "url" : "https://mogeko.me/2019/052/",
+    "wordCount" : "160",
+    "keywords" : [ "吐槽", "Mogeko`s Blog"]
 }
 </script>
 
@@ -134,19 +134,19 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Rust 生命周期中的一些坑</h1>
+        <h1 class="post-title" itemprop="name headline">纪念一位英雄的落幕</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://mogeko.me" rel="author">Mogeko</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2019-04-04 itemprop="datePublished">April 4, 2019</time>
+                on <time datetime=2019-04-12 itemprop="datePublished">April 12, 2019</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/"> 关于编程 </a>
+                        <a href="https://mogeko.me/categories/%E9%9A%8F%E7%AC%94/"> 随笔 </a>
                         
                 </span>
-                <span class="post-word-count">, 973 words</span>
+                <span class="post-word-count">, 160 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -165,119 +165,21 @@
           
           
 
-          
-
-<!-- 
-<img alt="" src="https://mogeko.github.io/images/051/" >
+          <!-- 
+<img alt="" src="https://mogeko.github.io/images/052/" >
 <span class="spoiler" ></span>
 &emsp;&emsp;
  -->
 
-<p>前面有一篇文章介绍了<a href="https://mogeko.github.io/2019/050/" rel="nofollow noreferrer" target="_blank">什么是 Rust 的生命周期？</a>这里补充一些关于 Rust 的生命周期不容易被注意到的细节。</p>
+<p>一个澳大利亚人莫名其妙的触犯了瑞典的法律，在美国的威胁下，最终因为厄瓜多尔的背叛在英国被捕。</p>
 
-<p>因为我水平有限，有的概念可能不是很全面，甚至可能有偏差，还请多多指点。</p>
+<p>一位揭露了世界真相的英雄最终难逃牢狱之灾，而真正犯下战争罪行的人却可以堂而皇之地在安理会上喊着自己是 “The force of freedom and democracy”。</p>
 
-<h2 id="生命周期是完全静态的">生命周期是完全静态的</h2>
+<p>这个世界运转的规则就是不欢迎说敢真话的人。</p>
 
-<p>Rust 的看家本领就是静态检测，所有实例的生命周期都是在编译时就被确定好的。</p>
+<p>希望阿桑奇能活下来&hellip;</p>
 
-<p>所以不要问：“为什么生命周期不能根据实际情况自动确定？”因为真的做不到！</p>
-
-<h2 id="let-可以绑定所有权"><code>let</code> 可以绑定所有权</h2>
-
-<p>除了绑定所有者和数据外，<code>let</code> 还可以绑定所有者和数据之间的所有权。绑定了所有权，也就绑定了生命周期。</p>
-
-<p>这是理所当然的事实，但是经常被人忽略。</p>
-
-<h2 id="形参与实参的生命周期是相互绑定的">形参与实参的生命周期是相互绑定的</h2>
-
-<p>与 <code>let</code> 相似，函数中的形式参数与实际参数的生命周期是相互绑定的。同样的，函数返回值和函数实体的拥有者的生命周期也是相互绑定的，因为返回值的生命周期与函数实体相互绑定，而函数实体与拥有者相互绑定。</p>
-
-<p>举个例子：</p>
-
-<pre><code class="language-rust">fn sum(x: u32, y: u32) -&gt; u32 {
-      x + y
- }
-
- fn main(){
-     let a = 1;
-     let b = 2;
-     let c = sum(a, b);
- }
-</code></pre>
-
-<p><code>x</code> 与<code>a</code> 相互绑定，<code>c</code> 与 <code>sum()</code> 与 <code>a + b</code> 相互绑定。</p>
-
-<pre><code class="language-bash">a -&gt; x
-x + y -&gt; sum() -&gt; c
-</code></pre>
-
-<p>结构体中也是类似的：</p>
-
-<pre><code class="language-rust">struct Foo {
-    x: i32,
-}
-
-fn main() {
-    let y = 5; 
-    let f = Foo { x: y };
-}
-</code></pre>
-
-<p><code>x</code> 与 <code>y</code> 相互绑定，结构体 <code>Foo</code> 与 <code>f</code> 相互绑定。</p>
-
-<pre><code class="language-bash">x -&gt; a
-Foo -&gt; f
-</code></pre>
-
-<p>这同样也是理所当然但容易被人忽视的事实，这里提出来也是为了给下一条做铺垫。</p>
-
-<h2 id="生命周期标记的影响不仅仅是函数-结构体-内部">生命周期标记的影响不仅仅是函数 (结构体) 内部</h2>
-
-<p>准确的说应该是生命周期标记可以通过影响函数 (结构体) 内部来对函数实体的拥有者和传入的实际参数产生影响。具体原因就是上面提到的形式参数与实际参数的生命周期相互绑定，函数返回值和函数实体的拥有者的生命周期相互绑定。</p>
-
-<p>举个例子：</p>
-
-<pre><code class="language-rust">fn foo&lt;'a&gt;(x: &amp;'a str, y: &amp;str) -&gt; Vec&lt;&amp;'a str&gt; {
-    let mut results = Vec::new();
-
-    if x.contains(y) {
-        results.push(x);
-    }
-
-    results
-}
-
-fn main() {
-    let a = &quot;I'm foo&quot;;
-    let b = &quot;foo&quot;;
-    let c = foo(a, b);
-}
-</code></pre>
-
-<p>生命周期参数将 <code>x</code> 的生命周期与 <code>results</code> 相互绑定，而 <code>x</code> 与 <code>a</code> 相互绑定，<code>results</code> 与 <code>c</code> 相互绑定，所以 <code>c</code> 的生命周期与 <code>a</code> 是相互绑定的！！<span class="spoiler" >就像三国杀中的“铁索连环”一样</span></p>
-
-<pre><code class="language-bash">a -&gt; [x =&gt; results -&gt; foo] -&gt; c 
-</code></pre>
-
-<p>根据关系我们可以很容易发现，<code>a</code> 必须活得比 <code>c</code> 长，不然就会报错。</p>
-
-<p>从整体来考虑生命周期，显然更容易理解什么时候应该使用生命周期标注，什么时候不应该使用。</p>
-
-<h2 id="生命周期标注的作用不是-续命">生命周期标注的作用不是“续命”</h2>
-
-<p>生命周期标注只是注释出：“谁应该比谁活得更长 (或者相等)”，如果实际情况与标注不相符，编译器会报错。</p>
-
-<h2 id="长生命周期是短生命周期的子类型">长生命周期是短生命周期的子类型</h2>
-
-<p>与直觉有所不同。显式生命周期标注是泛型参数一种，但是有<strong>协变</strong>的概念。</p>
-
-<h2 id="相关文章">相关文章</h2>
-
-<ul>
-<li><a href="https://mogeko.github.io/2019/042/" rel="nofollow noreferrer" target="_blank"><strong>Rust 中的所有权</strong></a></li>
-<li><a href="https://mogeko.github.io/2019/050/" rel="nofollow noreferrer" target="_blank"><strong>Rust 中的生命周期</strong></a></li>
-</ul>
+<p><img alt="Julian Paul Assange" src="https://mogeko.github.io/images/052/Julian.Assange.jpg" ></p>
 
 <p><br></p>
 
@@ -296,7 +198,7 @@ fn main() {
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://mogeko.me/2019/051/>https://mogeko.me/2019/051/</span>
+                    <a href=https://mogeko.me/2019/052/>https://mogeko.me/2019/052/</span>
             </p>
             
              
@@ -312,8 +214,8 @@ fn main() {
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://mogeko.me/tags/rust/">
-                    #Rust</a></span>
+            <span class="tag"><a href="https://mogeko.me/tags/%E5%90%90%E6%A7%BD/">
+                    #吐槽</a></span>
             
             </section>
         
@@ -325,10 +227,8 @@ fn main() {
 
     <div class="post-nav">
         
-        <a href="https://mogeko.me/2019/050/" class="prev" rel="prev" title="Rust 中的生命周期"><i class="iconfont icon-left"></i>&nbsp;Rust 中的生命周期</a>
+        <a href="https://mogeko.me/2019/051/" class="prev" rel="prev" title="Rust 生命周期中的一些坑"><i class="iconfont icon-left"></i>&nbsp;Rust 生命周期中的一些坑</a>
          
-        
-        <a href="https://mogeko.me/2019/052/" class="next" rel="next" title="纪念一位英雄的落幕">纪念一位英雄的落幕&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
