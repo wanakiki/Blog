@@ -57,7 +57,7 @@
     "datePublished": "2019-04-18 15:08:49 &#43;0800 &#43;0800",
     "dateModified" : "2019-04-18 15:08:49 &#43;0800 &#43;0800",
     "url" : "https://mogeko.me/2019/053/",
-    "wordCount" : "1405",
+    "wordCount" : "1398",
     "keywords" : [ "Rust","Android","GNU/Linux", "Mogeko`s Blog"]
 }
 </script>
@@ -146,7 +146,7 @@
                         <a href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E7%BC%96%E7%A8%8B/"> 关于编程 </a>
                         
                 </span>
-                <span class="post-word-count">, 1405 words</span>
+                <span class="post-word-count">, 1398 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -219,23 +219,22 @@ arm-unknown-linux-gnueabihf
 <blockquote>
 <p>用 Chrome 浏览器进行下载会报错，推荐在命令行中用 <code>wget</code> 或 <code>curl</code> 等工具下载</p>
 
-<pre><code class="language-bash">&gt; $ wget https://github.com/Mogeko/android-toolchain/releases/download/4.9/android-toolchain-arm64.tgz
-&gt; ```
-
-下载好后将其解压，然后将 `android-toolchain/&lt;arch&gt;/bin` 放入 `$PATH` 中。
-
-至此，前期的准备工作就完成了。
-
-## 实验交叉编译
-
-我们需要先确保我们安装的 rust 运行库和编译工具链能够正常工作，顺便也可以讲解以下使用 rust 交叉编译的具体流程。
-
-我们先用 `cargo`，新建一个最简单的项目
-
-```bash
-$ cargo new hello
+<pre><code class="language-bash">$ wget https://github.com/Mogeko/android-toolchain/releases/download/4.9/android-toolchain-arm64.tgz
 </code></pre>
 </blockquote>
+
+<p>下载好后将其解压，然后将 <code>android-toolchain/&lt;arch&gt;/bin</code> 放入 <code>$PATH</code> 中。</p>
+
+<p>至此，前期的准备工作就完成了。</p>
+
+<h2 id="实验交叉编译">实验交叉编译</h2>
+
+<p>我们需要先确保我们安装的 rust 运行库和编译工具链能够正常工作，顺便也可以讲解以下使用 rust 交叉编译的具体流程。</p>
+
+<p>我们先用 <code>cargo</code>，新建一个最简单的项目</p>
+
+<pre><code class="language-bash">$ cargo new hello
+</code></pre>
 
 <p>这个项目的作用就是输出 <code>Hello, World</code> (使用 <code>cargo</code> 新建二进制项目时的示例代码)</p>
 

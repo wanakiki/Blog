@@ -69,23 +69,22 @@ arm-unknown-linux-gnueabihf
 &lt;blockquote&gt;
 &lt;p&gt;用 Chrome 浏览器进行下载会报错，推荐在命令行中用 &lt;code&gt;wget&lt;/code&gt; 或 &lt;code&gt;curl&lt;/code&gt; 等工具下载&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; $ wget https://github.com/Mogeko/android-toolchain/releases/download/4.9/android-toolchain-arm64.tgz
-&amp;gt; ```
-
-下载好后将其解压，然后将 `android-toolchain/&amp;lt;arch&amp;gt;/bin` 放入 `$PATH` 中。
-
-至此，前期的准备工作就完成了。
-
-## 实验交叉编译
-
-我们需要先确保我们安装的 rust 运行库和编译工具链能够正常工作，顺便也可以讲解以下使用 rust 交叉编译的具体流程。
-
-我们先用 `cargo`，新建一个最简单的项目
-
-```bash
-$ cargo new hello
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ wget https://github.com/Mogeko/android-toolchain/releases/download/4.9/android-toolchain-arm64.tgz
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;下载好后将其解压，然后将 &lt;code&gt;android-toolchain/&amp;lt;arch&amp;gt;/bin&lt;/code&gt; 放入 &lt;code&gt;$PATH&lt;/code&gt; 中。&lt;/p&gt;
+
+&lt;p&gt;至此，前期的准备工作就完成了。&lt;/p&gt;
+
+&lt;h2 id=&#34;实验交叉编译&#34;&gt;实验交叉编译&lt;/h2&gt;
+
+&lt;p&gt;我们需要先确保我们安装的 rust 运行库和编译工具链能够正常工作，顺便也可以讲解以下使用 rust 交叉编译的具体流程。&lt;/p&gt;
+
+&lt;p&gt;我们先用 &lt;code&gt;cargo&lt;/code&gt;，新建一个最简单的项目&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cargo new hello
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;这个项目的作用就是输出 &lt;code&gt;Hello, World&lt;/code&gt; (使用 &lt;code&gt;cargo&lt;/code&gt; 新建二进制项目时的示例代码)&lt;/p&gt;
 
