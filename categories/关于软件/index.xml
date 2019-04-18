@@ -80,7 +80,7 @@
       <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mogeko.me/2018/017/</guid>
-      <description>前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。 这个方法很好，但是也存在问题。KMS 服务激活一次可以正常使用 180 天，过期后自动给你续</description>
+      <description>这篇文章有一点问题 (感谢@肖强) 如果你有 KMS 激活方面的需求的话可以试试我自己搭的 KMS 激活服务器 (试运行)：或者你可以参考以下文章： Windows / Office 激活脚本</description>
     </item>
     
     <item>

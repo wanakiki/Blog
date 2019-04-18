@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "本地搭建 KMS 激活服务",
     "headline" : "本地搭建 KMS 激活服务",
-    "description" : "前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。 这个方法很好，但是也存在问题。KMS 服务激活一次可以正常使用 180 天，过期后自动给你续",
+    "description" : "这篇文章有一点问题 (感谢@肖强) 如果你有 KMS 激活方面的需求的话可以试试我自己搭的 KMS 激活服务器 (试运行)：或者你可以参考以下文章： Windows / Office 激活脚本",
     "inLanguage" : "zh-cn",
     "author" : "Mogeko",
     "creator" : "Mogeko",
@@ -57,7 +57,7 @@
     "datePublished": "2018-08-02 00:00:00 &#43;0000 UTC",
     "dateModified" : "2018-08-02 00:00:00 &#43;0000 UTC",
     "url" : "https://mogeko.me/2018/017/",
-    "wordCount" : "2884",
+    "wordCount" : "2979",
     "keywords" : [ "Windows","KMS", "Mogeko`s Blog"]
 }
 </script>
@@ -146,7 +146,7 @@
                         <a href="https://mogeko.me/categories/%E5%85%B3%E4%BA%8E%E8%BD%AF%E4%BB%B6/"> 关于软件 </a>
                         
                 </span>
-                <span class="post-word-count">, 2884 words</span>
+                <span class="post-word-count">, 2979 words</span>
         </div>
     </header>
     <div class="post-content">
@@ -171,14 +171,32 @@
 
 <p><img src="https://mogeko.github.io/images/014/logo.jpg"  alt="Logo"  style="border:0" /></p>
 
+<p><strong>这篇文章有一点问题 (感谢<a href="https://github.com/shana321" rel="nofollow noreferrer" target="_blank">@肖强</a>)</strong></p>
+
+<p>如果你有 KMS 激活方面的需求的话可以试试我自己搭的 KMS 激活服务器 (试运行)：<input type="text" name="url" value="kms.mogeko.me"></p>
+
+<p>或者你可以参考以下文章：</p>
+
+<ul>
+<li><a href="https://mogeko.github.io/2018/026/" rel="nofollow noreferrer" target="_blank">Windows / Office 激活脚本 (使用 KMS)</a></li>
+<li><a href="https://mogeko.github.io/2018/015/" rel="nofollow noreferrer" target="_blank">使用 Android 手机搭建 KMS 激活服务器</a></li>
+<li><a href="https://mogeko.github.io/2018/014/" rel="nofollow noreferrer" target="_blank">使用 KMS 激活 Windows / Office</a></li>
+</ul>
+
+<p><br></p>
+
+<hr>
+
+<!-- more -->
+
+<p><br></p>
+
 <p>前面有一篇文章介绍了如何用 KMS 服务在线激活 Windows / Office。
 这个方法很好，但是也存在问题。KMS 服务激活一次可以正常使用 180 天，过期后自动给你续 180 天，如此重复。如果 KMS 激活服务器一直运行着还好，但如果服务器挂掉了呢？
 要解决这个问题，最直接的方法就是让 KMS 激活服务器保持稳定不宕机，这显然是不现实的。毕竟是私人搭的服务器，别免费给你用，不稳定也是情有可原的。所以我们不妨换个思路：<strong>既然别人的服务器不稳定，我们为何不在本地自己搭一个呢？</strong>
 今天，我就教大家如何在本地搭建 KMS 激活服务器。</p>
 
 <p>免费开源的 KMS 激活服务器有很多，我们今天使用的 <code>vlmcsd</code> 是比较流行的一种。</p>
-
-<!-- more -->
 
 <h2 id="准备工作">准备工作</h2>
 
