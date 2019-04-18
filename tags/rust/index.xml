@@ -6,10 +6,19 @@
     <description>Recent content in Rust on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 04 Apr 2019 21:17:33 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 18 Apr 2019 15:08:49 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.me/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rust 交叉编译</title>
+      <link>https://mogeko.me/2019/053/</link>
+      <pubDate>Thu, 18 Apr 2019 15:08:49 +0800</pubDate>
+      
+      <guid>https://mogeko.me/2019/053/</guid>
+      <description>&amp;emsp;&amp;emsp; -- 事情的起因要从一个叫 ffsend 的软件说起。ffsend 是一个用来操作 Firefox Send 的命令行工具，而 Firefox Send 是 Mozilla 推出的一款带有“阅后即焚”功能的文件分享工具；换</description>
+    </item>
     
     <item>
       <title>Rust 生命周期中的一些坑</title>
