@@ -64,12 +64,13 @@ arm-unknown-linux-gnueabihf
 
 &lt;p&gt;这是我从 Android NDK 中编译出来的一份用于交叉编译的工具链，目前只支持 Linux：&lt;a href=&#34;https://github.com/Mogeko/android-toolchain/releases/latest&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub Releases&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;我手机的架构是 aarch64 (arm64)，所以我应该下载的工具链是 &lt;code&gt;android-toolchain-arm64.tgz&lt;/code&gt;，&lt;del&gt;&lt;a href=&#34;https://github.com/Mogeko/android-toolchain/releases/download/4.9/android-toolchain-arm64.tgz&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;点击下载&lt;/a&gt;&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;我手机的架构是 aarch64 (arm64)，所以我应该下载的工具链是 &lt;code&gt;android-toolchain-linux-x86_64-arm64.tgz&lt;/code&gt;，&lt;del&gt;&lt;a href=&#34;https://github.com/Mogeko/android-toolchain/releases/download/4.9/android-toolchain-linux-x86_64-arm64.tgz&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;点击下载&lt;/a&gt;&lt;/del&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;用 Chrome 浏览器进行下载会报错，推荐在命令行中用 &lt;code&gt;wget&lt;/code&gt; 或 &lt;code&gt;curl&lt;/code&gt; 等工具下载&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ wget https://github.com/Mogeko/android-toolchain/releases/download/4.9/android-toolchain-arm64.tgz
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; $ wget https://github.com/Mogeko/android-toolchain/releases/download/4.9/android-toolchain-linux-x86_64-arm64.tgz
+&amp;gt; ```
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 
@@ -83,14 +84,16 @@ arm-unknown-linux-gnueabihf
 
 &lt;p&gt;我们先用 &lt;code&gt;cargo&lt;/code&gt;，新建一个最简单的项目&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cargo new hello
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;​```bash
+$ cargo new hello&lt;/p&gt;
 
-&lt;p&gt;这个项目的作用就是输出 &lt;code&gt;Hello, World&lt;/code&gt; (使用 &lt;code&gt;cargo&lt;/code&gt; 新建二进制项目时的示例代码)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+这个项目的作用就是输出 `Hello, World` (使用 `cargo` 新建二进制项目时的示例代码)
 
-&lt;p&gt;然后，进入目录 &lt;code&gt;hello/src&lt;/code&gt;，也就是项目源码的目录。使用 &lt;code&gt;rustc&lt;/code&gt; 进行编译&lt;/p&gt;
+然后，进入目录 `hello/src`，也就是项目源码的目录。使用 `rustc` 进行编译
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ rustc -C linker=&amp;quot;aarch64-linux-android-gcc&amp;quot; --target=&amp;quot;aarch64-linux-android&amp;quot; main.rs
+```bash
+$ rustc -C linker=&amp;quot;aarch64-linux-android-gcc&amp;quot; --target=&amp;quot;aarch64-linux-android&amp;quot; main.rs
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;我们可以看到一个被编译好的二进制文件 &lt;code&gt;main&lt;/code&gt;，将其拷贝到手机上，便可以用 Termux 运行了。&lt;/p&gt;
