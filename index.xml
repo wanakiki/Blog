@@ -66,8 +66,6 @@ arm-unknown-linux-gnueabihf
 
 &lt;p&gt;我手机的架构是 aarch64 (arm64)，所以我应该下载的工具链是 &lt;code&gt;android-toolchain-linux-x86_64-arm64.tgz&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;del&gt;&lt;a href=&#34;https://github.com/Mogeko/android-toolchain/releases/download/4.9/android-toolchain-linux-x86_64-arm64.tgz&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;点击下载&lt;/a&gt;&lt;/del&gt;&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;用 Chrome 浏览器进行下载会报错，推荐在命令行中用 &lt;code&gt;wget&lt;/code&gt; 或 &lt;code&gt;curl&lt;/code&gt; 等工具下载&lt;/p&gt;
 
