@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>随便写点什么 on Mogeko`s Blog</title>
+    <link>https://mogeko.me/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E7%82%B9%E4%BB%80%E4%B9%88/</link>
+    <description>Recent content in 随便写点什么 on Mogeko`s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 12 Apr 2019 00:01:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://mogeko.me/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E7%82%B9%E4%BB%80%E4%B9%88/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>纪念一位英雄的落幕</title>
+      <link>https://mogeko.me/2019/052/</link>
+      <pubDate>Fri, 12 Apr 2019 00:01:00 +0800</pubDate>
+      
+      <guid>https://mogeko.me/2019/052/</guid>
+      <description>&amp;emsp;&amp;emsp; -- 一个澳大利亚人莫名其妙的触犯了瑞典的法律，在美国的威胁下，最终因为厄瓜多尔的背叛在英国被捕。 这位揭露了世界上最大阴谋的英雄居然被这个世界</description>
+    </item>
+    
+    <item>
+      <title>对，这他妈就是生活！</title>
+      <link>https://mogeko.me/2018/038/</link>
+      <pubDate>Tue, 04 Dec 2018 18:58:01 +0800</pubDate>
+      
+      <guid>https://mogeko.me/2018/038/</guid>
+      <description>&amp;emsp;&amp;emsp; -- 写一篇《大象席地而坐》的影评。 说是影评，其实就是对剧中主要人物的一些评价。 太主观了？主观就他娘的对了！这他妈是老子的博客，老子想他娘的咋</description>
+    </item>
+    
+  </channel>
+</rss>
