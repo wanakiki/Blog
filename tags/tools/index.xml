@@ -30,30 +30,12 @@
     </item>
     
     <item>
-      <title>GNU/Linux 输入法折腾笔记 (RIME)</title>
-      <link>https://mogeko.me/2018/031/</link>
-      <pubDate>Wed, 21 Nov 2018 12:38:05 +0800</pubDate>
-      
-      <guid>https://mogeko.me/2018/031/</guid>
-      <description>-- 终于，我在也忍受不了 Ubuntu 18.04 自带的 ibus-libpinyin 了。决定好好配置以下输入法，本来以为最多半个小时就能搞定的事情，结果整整花了半天 _(:з」∠)_ 网上一搜发</description>
-    </item>
-    
-    <item>
       <title>subliminal | 电影字幕下载神器</title>
       <link>https://mogeko.me/2018/030/</link>
       <pubDate>Wed, 21 Nov 2018 09:39:26 +0800</pubDate>
       
       <guid>https://mogeko.me/2018/030/</guid>
       <description>-- subliminal 是一个基于 Python 的强大的命令行字幕搜索和下载工具。 最先知道 subliminal 是因为 MPV 播放器。配合插件 find_subtitles.lua 使用，在载入视频的同时搜索并下载中文字幕，简直天衣无缝</description>
-    </item>
-    
-    <item>
-      <title>GNOME MPV | GNU/Linux 下一个不错的流媒体播放器</title>
-      <link>https://mogeko.me/2018/029/</link>
-      <pubDate>Tue, 20 Nov 2018 16:52:42 +0800</pubDate>
-      
-      <guid>https://mogeko.me/2018/029/</guid>
-      <description>-- 在 GNU/Linux 下看视频向来是一件麻烦事。VLC 太过臃肿，MPV 又太过简 (chǒu) 陋了。 那么，有没有一款播放器能兼顾美观与内在，随便还拥有较好的易用</description>
     </item>
     
     <item>
