@@ -6,8 +6,991 @@
     <description>Recent content in Mogeko`s Blog on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 18 Apr 2019 15:08:49 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Apr 2019 09:05:32 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>本站的 KMS 激活服务正式 (划掉) 上线了！</title>
+      <link>https://mogeko.me/2019/054/</link>
+      <pubDate>Sat, 20 Apr 2019 09:05:32 +0800</pubDate>
+      
+      <guid>https://mogeko.me/2019/054/</guid>
+      <description>
+
+&lt;!-- 
+&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/054/&#34; &gt;
+&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
+&amp;emsp;&amp;emsp;
+ --&gt;
+
+&lt;p&gt;本站的 KMS 激活服务今天起&lt;s&gt;正式&lt;/s&gt;上线了！！&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&#34;spoiler&#34; &gt;KMS 服务已经稳定可用了，划掉“正式”是为了万一哪天突然挂掉留条后路 (一般不会)&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;使用此 KMS 激活服务可以激活任意版本的批量激活版 (VOL 版) Microsoft Windows 或 Microsoft Office&lt;/p&gt;
+
+&lt;p&gt;KMS 服务器地址: &lt;input type=&#34;text&#34; name=&#34;url&#34; value=&#34;kms.mogeko.me&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;使用方法&#34;&gt;使用方法&lt;/h2&gt;
+
+&lt;h3 id=&#34;激活-windows&#34;&gt;激活 Windows&lt;/h3&gt;
+
+&lt;p&gt;KMS 激活服务只能激活批量授权版 Windows (VOL 版)，无法激活零售版 Windows (Retail 版)。&lt;/p&gt;
+
+&lt;p&gt;以 Windows 10 Pro 为例
+想要激活 VOL 版 Windows 10 pro，只需要用&lt;strong&gt;管理员权限&lt;/strong&gt;打开一个 cmd，然后依次执行以下命令便可。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;slmgr -upk
+slmgr -ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
+slmgr -skms kms.mogeko.me
+slmgr -ato
+slmgr -dlv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;方法同样适用于激活 Windows 8、Windows 7，只是要把上面的 KEY (就是形如 &lt;code&gt;W269N-WFGWX-YVC9B-4J6C9-T83GX&lt;/code&gt; 这样的东西) 替换一下。
+&lt;a href=&#34;https://mogeko.github.io/2019/054/#key&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;可供使用的 KEY&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;激活-office&#34;&gt;激活 Office&lt;/h3&gt;
+
+&lt;p&gt;同样的，KMS 激活服务只能激活 VOL 版的 Office，不过零售版的 Office 可以通过&lt;a href=&#34;https://gist.github.com/Mogeko/1381bd129cdf47f596593d37240d0c6f&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;脚本&lt;/a&gt;转换为 VOL 版。
+如果不知道自己安装的是什么版本的 Office，可以使用这个方法查看 -&amp;gt; &lt;a href=&#34;https://mogeko.github.io/2019/054/#%E5%88%A4%E6%96%AD%E4%BD%A0%E5%AE%89%E8%A3%85%E7%9A%84-office-%E6%98%AF%E5%93%AA%E4%B8%AA%E7%89%88%E6%9C%AC&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;判断你安装的 Office 是哪个版本&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;激活 Office 的关键在于找到 &lt;code&gt;ospp.vbs&lt;/code&gt; 这个文件。&lt;code&gt;ospp.vbs&lt;/code&gt; 一般在 Office 的安装目录里。
+以 Office 2016 为例，Office 2016 的安装目录是：&lt;code&gt;&amp;quot;C:\Program Files\Microsoft Office\Office16&lt;/code&gt;。
+以&lt;strong&gt;管理员权限&lt;/strong&gt;打开一个 cmd，然后执行以下命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd &amp;quot;C:\Program Files\Microsoft Office\Office16&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果你系统是 64 位的但 Office 安装的是 32 位的，执行以下命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd &amp;quot;C:\Program Files (x86)\Microsoft Office\Office16&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果你安装的是 Office 2015，就将 &lt;code&gt;Office16&lt;/code&gt; 替换为 &lt;code&gt;Office13&lt;/code&gt;；如果是 Office 2014 就替换为  &lt;code&gt;Office10&lt;/code&gt;；以此类推。&lt;/p&gt;
+
+&lt;p&gt;如果实在是找不到 &lt;code&gt;ospp.vbs&lt;/code&gt;，可以用最笨的办法——在资源管理器中搜索：&lt;code&gt;ospp.vbs&lt;/code&gt; (贼慢)。&lt;/p&gt;
+
+&lt;p&gt;进入 Office 的安装目录后，依次执行以下命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cscript ospp.vbs /sethst:kms.mogeko.me
+cscript ospp.vbs /act
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;附录&#34;&gt;附录&lt;/h2&gt;
+
+&lt;h3 id=&#34;判断你安装的-office-是哪个版本&#34;&gt;判断你安装的 Office 是哪个版本&lt;/h3&gt;
+
+&lt;p&gt;以&lt;strong&gt;管理员权限&lt;/strong&gt;打开一个 cmd，来到Office的安装目录，输入命令：&lt;code&gt;cscript ospp.vbs /dstatus&lt;/code&gt;
+如果输出的信息中包含下面这句话说明你安装的是零售版&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;LICENSE DESCRIPTION: Office 15, RETAIL(Grace) channel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果输出的信息中包含下面这句话说明你安装的是批量授权版&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;LICENSE DESCRIPTION: Office 15, VOLUME_KMSCLIENT channel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;key&#34;&gt;KEY&lt;/h3&gt;
+
+&lt;p&gt;以下是部分可供使用的 KEY&lt;/p&gt;
+
+&lt;h4 id=&#34;windows&#34;&gt;Windows&lt;/h4&gt;
+
+&lt;h5 id=&#34;windows-10-版本-1803&#34;&gt;Windows 10 版本 1803&lt;/h5&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作系统版本&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows 10 教育版&lt;/td&gt;
+&lt;td&gt;NW6C2-QMPVW-D7KKK-3GKT6-VCFB2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 教育版 N&lt;/td&gt;
+&lt;td&gt;2WH4N-8QGBV-H22JP-CT43Q-MDWWJ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 企业版&lt;/td&gt;
+&lt;td&gt;NPPR9-FWDCX-D2C8J-H872K-2YT43&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 企业版 G&lt;/td&gt;
+&lt;td&gt;YYVX9-NTFWV-6MDM3-9PT4T-4M68B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 企业版 G N&lt;/td&gt;
+&lt;td&gt;44RPN-FTY23-9VTTB-MP9BX-T84FV&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 企业版 N&lt;/td&gt;
+&lt;td&gt;DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 专业版&lt;/td&gt;
+&lt;td&gt;W269N-WFGWX-YVC9B-4J6C9-T83GX&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 专业教育版&lt;/td&gt;
+&lt;td&gt;6TP4R-GNPTD-KYYHQ-7B7DP-J447Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 专业教育版 N&lt;/td&gt;
+&lt;td&gt;YVWGF-BXNMC-HTQYQ-CPQ99-66QFC&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 专业版 N&lt;/td&gt;
+&lt;td&gt;MH37W-N47XK-V7XM9-C7227-GCQG9&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 Professional Workstation&lt;/td&gt;
+&lt;td&gt;NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 Professional Workstation N&lt;/td&gt;
+&lt;td&gt;9FNHH-K3HBT-3W4TD-6383H-6XYWF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&#34;windows-10-版本-1709&#34;&gt;Windows 10 版本 1709&lt;/h5&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作系统版本&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows 10 Professional Workstation&lt;/td&gt;
+&lt;td&gt;NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 Professional Workstation N&lt;/td&gt;
+&lt;td&gt;9FNHH-K3HBT-3W4TD-6383H-6XYWF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&#34;windows-10&#34;&gt;Windows 10&lt;/h5&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作系统版本&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows 10 专业版&lt;/td&gt;
+&lt;td&gt;W269N-WFGWX-YVC9B-4J6C9-T83GX&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 专业版 N&lt;/td&gt;
+&lt;td&gt;MH37W-N47XK-V7XM9-C7227-GCQG9&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 企业版&lt;/td&gt;
+&lt;td&gt;NPPR9-FWDCX-D2C8J-H872K-2YT43&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 企业版 N&lt;/td&gt;
+&lt;td&gt;DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 教育版&lt;/td&gt;
+&lt;td&gt;NW6C2-QMPVW-D7KKK-3GKT6-VCFB2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 教育版 N&lt;/td&gt;
+&lt;td&gt;2WH4N-8QGBV-H22JP-CT43Q-MDWWJ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 企业版 2015 长期服务&lt;/td&gt;
+&lt;td&gt;WNMTR-4C88C-JK8YV-HQ7T2-76DF9&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 企业版 2015 长期服务 N&lt;/td&gt;
+&lt;td&gt;2F77B-TNFGY-69QQF-B8YKP-D69TJ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 企业版 2016 长期服务&lt;/td&gt;
+&lt;td&gt;DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 10 企业版 2016 长期服务 N&lt;/td&gt;
+&lt;td&gt;QFFDN-GRT3P-VKWWX-X7T3R-8B639&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&#34;windows-server-版本-1803&#34;&gt;Windows Server 版本 1803&lt;/h5&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作系统版本&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows Server Datacenter&lt;/td&gt;
+&lt;td&gt;TXN8-JFHJM-4WC78-MPCBR-9W4KR&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server Standard&lt;/td&gt;
+&lt;td&gt;2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&#34;windows-server-版本-1709&#34;&gt;Windows Server 版本 1709&lt;/h5&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作系统版本&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows Server Datacenter&lt;/td&gt;
+&lt;td&gt;6Y6KB-N82V8-D8CQV-23MJW-BWTG6&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server Standard&lt;/td&gt;
+&lt;td&gt;DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&#34;windows-server-2016&#34;&gt;Windows Server 2016&lt;/h5&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作系统版本&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2016 Datacenter&lt;/td&gt;
+&lt;td&gt;CB7KF-BWN84-R7R2Y-793K2-8XDDG&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2016 Standard&lt;/td&gt;
+&lt;td&gt;WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2016 Essentials&lt;/td&gt;
+&lt;td&gt;JCKRF-N37P4-C2D82-9YXRT-4M63B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&#34;windows-server-2012-r2-和-windows-8-1&#34;&gt;Windows Server 2012 R2 和 Windows 8.1&lt;/h5&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作系统版本&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows8.1 专业版&lt;/td&gt;
+&lt;td&gt;GCRJD-8NW9H-F2CDX-CCM8D-9D6T9&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 8.1 专业版 N&lt;/td&gt;
+&lt;td&gt;HMCNV-VVBFX-7HMBH-CTY9B-B4FXY&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 8.1 企业版&lt;/td&gt;
+&lt;td&gt;MHF9N-XY6XB-WVXMC-BTDCT-MKKG7&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 8.1 企业版 N&lt;/td&gt;
+&lt;td&gt;TT4HM-HN7YT-62K67-RGRQJ-JFFXW&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2012 R2 Server Standard&lt;/td&gt;
+&lt;td&gt;D2N9P-3P6X9-2R39C-7RTCD-MDVJX&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;WindowsServer 2012 R2 Datacenter&lt;/td&gt;
+&lt;td&gt;W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;WindowsServer 2012 R2 Essentials&lt;/td&gt;
+&lt;td&gt;KNC87-3J2TX-XB4WP-VCPJV-M4FWM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&#34;windows-server-2012-和-windows-8&#34;&gt;Windows Server 2012 和 Windows 8&lt;/h5&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作系统版本&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows 8 专业版&lt;/td&gt;
+&lt;td&gt;NG4HW-VH26C-733KW-K6F98-J8CK4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 8 专业版 N&lt;/td&gt;
+&lt;td&gt;XCVCF-2NXM9-723PB-MHCB7-2RYQQ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 8 企业版&lt;/td&gt;
+&lt;td&gt;32JNW-9KQ84-P47T8-D8GGY-CWCK7&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 8 企业版 N&lt;/td&gt;
+&lt;td&gt;JMNMF-RHW7P-DMY6X-RF3DR-X2BQT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2012&lt;/td&gt;
+&lt;td&gt;BN3D2-R7TKB-3YPBD-8DRP2-27GG4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2012 N&lt;/td&gt;
+&lt;td&gt;8N2M2-HWPGY-7PGT9-HGDD8-GVGGY&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2012 单语言版&lt;/td&gt;
+&lt;td&gt;2WN2H-YGCQR-KFX6K-CD6TF-84YXQ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2012 特定国家/地区版&lt;/td&gt;
+&lt;td&gt;4K36P-JN4VD-GDC6V-KDT89-DYFKP&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2012 Server Standard&lt;/td&gt;
+&lt;td&gt;XC9B7-NBPP2-83J2H-RHMBY-92BT4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2012 MultiPoint Standard&lt;/td&gt;
+&lt;td&gt;HM7DN-YVMH3-46JC3-XYTG7-CYQJJ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2012 MultiPoint Premium&lt;/td&gt;
+&lt;td&gt;XNH6W-2V9GX-RGJ4K-Y8X6F-QGJ2G&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2012 Datacenter&lt;/td&gt;
+&lt;td&gt;48HP8-DN98B-MYWDG-T2DCC-8W83P&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&#34;windows-7-和-windows-server-2008-r2&#34;&gt;Windows 7 和 Windows Server 2008 R2&lt;/h5&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作系统版本&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows 7 专业版&lt;/td&gt;
+&lt;td&gt;FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 7 专业版 N&lt;/td&gt;
+&lt;td&gt;MRPKT-YTG23-K7D7T-X2JMM-QY7MG&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 7 专业版 E&lt;/td&gt;
+&lt;td&gt;W82YF-2Q76Y-63HXB-FGJG9-GF7QX&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows7 企业版&lt;/td&gt;
+&lt;td&gt;33PXH-7Y6KF-2VJC9-XBBR8-HVTHH&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 7 企业版 N&lt;/td&gt;
+&lt;td&gt;YDRBP-3D83W-TY26F-D46B2-XCKRJ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows 7 企业版 E&lt;/td&gt;
+&lt;td&gt;C29WB-22CC8-VJ326-GHFJW-H9DH4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2008 R2 Web 版&lt;/td&gt;
+&lt;td&gt;6TPJF-RBVHG-WBW2R-86QPH-6RTM4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2008 R2 HPC 版&lt;/td&gt;
+&lt;td&gt;TT8MH-CG224-D3D7Q-498W2-9QCTX&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;WindowsServer 2008 R2 Standard&lt;/td&gt;
+&lt;td&gt;YC6KT-GKW9T-YTKYR-T4X34-R7VHC&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;WindowsServer 2008 R2 企业版&lt;/td&gt;
+&lt;td&gt;489J6-VHDMP-X63PK-3K798-CPX3Y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;WindowsServer 2008 R2 Datacenter&lt;/td&gt;
+&lt;td&gt;74YFP-3QFB3-KQT8W-PMXWJ-7M648&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;面向基于 Itanium 系统的 Windows Server 2008 R2&lt;/td&gt;
+&lt;td&gt;GT63C-RJFQ3-4GMB6-BRFB9-CB83V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&#34;windows-vista-和-windows-server-2008&#34;&gt;Windows Vista 和 Windows Server 2008&lt;/h5&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作系统版本&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows Vista 商用版&lt;/td&gt;
+&lt;td&gt;YFKBB-PQJJV-G996G-VWGXY-2V3X8&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Vista 商用版 N&lt;/td&gt;
+&lt;td&gt;HMBQG-8H2RH-C77VX-27R82-VMQBT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Vista 企业版&lt;/td&gt;
+&lt;td&gt;VKK3X-68KWM-X2YGT-QR4M6-4BWMV&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Vista 企业版 N&lt;/td&gt;
+&lt;td&gt;VTC42-BM838-43QHV-84HX6-XJXKV&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Web Server 2008&lt;/td&gt;
+&lt;td&gt;WYR28-R7TFJ-3X2YQ-YCY4H-M249D&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2008 Standard&lt;/td&gt;
+&lt;td&gt;TM24T-X9RMF-VWXK6-X8JC9-BFGM2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;不带 Hyper-V 的 Windows Server 2008 Standard&lt;/td&gt;
+&lt;td&gt;W7VD6-7JFBR-RX26B-YKQ3Y-6FFFJ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2008 企业版&lt;/td&gt;
+&lt;td&gt;YQGMW-MPWTJ-34KDK-48M3W-X4Q6V&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;不带 Hyper-V 的 Windows Server 2008 企业版&lt;/td&gt;
+&lt;td&gt;39BXF-X8Q23-P2WWT-38T2F-G3FPG&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2008 HPC&lt;/td&gt;
+&lt;td&gt;RCTX3-KWVHP-BR6TB-RB6DM-6X7HP&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Windows Server 2008 Datacenter&lt;/td&gt;
+&lt;td&gt;7M67G-PC374-GR742-YH8V4-TCBY3&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;不带 Hyper-V 的 Windows Server 2008 Datacenter&lt;/td&gt;
+&lt;td&gt;22XQ2-VRXRG-P8D42-K34TD-G3QQC&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;面向基于 Itanium 系统的 Windows Server 2008&lt;/td&gt;
+&lt;td&gt;4DWFP-JF3DJ-B7DTH-78FJB-PDRHK&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;office&#34;&gt;Office&lt;/h4&gt;
+
+&lt;h5 id=&#34;office-2019&#34;&gt;Office 2019&lt;/h5&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;产品&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Office Professional Plus 2019&lt;/td&gt;
+&lt;td&gt;NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Office Standard 2019&lt;/td&gt;
+&lt;td&gt;6NWWJ-YQWMR-QKGCB-6TMB3-9D9HK&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Project Professional 2019&lt;/td&gt;
+&lt;td&gt;B4NPR-3FKK7-T2MBV-FRQ4W-PKD2B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Project Standard 2019&lt;/td&gt;
+&lt;td&gt;C4F7P-NCP8C-6CQPT-MQHV9-JXD2M&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Visio Professional 2019&lt;/td&gt;
+&lt;td&gt;9BGNQ-K37YR-RQHF2-38RQ3-7VCBB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Visio Standard 2019&lt;/td&gt;
+&lt;td&gt;7TQNQ-K3YQQ-3PFH7-CCPPM-X4VQ2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Access 2019&lt;/td&gt;
+&lt;td&gt;9N9PT-27V4Y-VJ2PD-YXFMF-YTFQT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Excel 2019&lt;/td&gt;
+&lt;td&gt;TMJWT-YYNMB-3BKTF-644 FC-RVXBD&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Outlook 2019&lt;/td&gt;
+&lt;td&gt;7HD7K-N4PVK-BHBCQ-YWQRW-XW4VK&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;PowerPoint 2019&lt;/td&gt;
+&lt;td&gt;RRNCX-C64HY-W2MM7-MCH9G-TJHMQ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Publisher 2019&lt;/td&gt;
+&lt;td&gt;G2KWX-3NW6P-PY93R-JXK2T-C9Y9V&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Skype for Business 2019&lt;/td&gt;
+&lt;td&gt;NCJ33-JHBBY-HTK98-MYCV8-HMKHJ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Word 2019&lt;/td&gt;
+&lt;td&gt;PBX3G-NWMT6-Q7XBW-PYJGG-WXD33&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&#34;office-2016&#34;&gt;Office 2016&lt;/h5&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;产品&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Office Professional Plus 2016&lt;/td&gt;
+&lt;td&gt;XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Office Standard 2016&lt;/td&gt;
+&lt;td&gt;JNRGM-WHDWX-FJJG3-K47QV-DRTFM&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Project Professional 2016&lt;/td&gt;
+&lt;td&gt;YG9NW-3K39V-2T3HJ-93F3Q-G83KT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Project Standard 2016&lt;/td&gt;
+&lt;td&gt;GNFHQ-F6YQM-KQDGJ-327XX-KQBVC&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Visio Professional 2016&lt;/td&gt;
+&lt;td&gt;PD3PC-RHNGV-FXJ29-8JK7D-RJRJK&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Visio Standard 2016&lt;/td&gt;
+&lt;td&gt;7WHWN-4T7MP-G96JF-G33KR-W8GF4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Access 2016&lt;/td&gt;
+&lt;td&gt;GNH9Y-D2J4T-FJHGG-QRVH7-QPFDW&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Excel 2016&lt;/td&gt;
+&lt;td&gt;9C2PK-NWTVB-JMPW8-BFT28-7FTBF&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;OneNote 2016&lt;/td&gt;
+&lt;td&gt;DR92N-9HTF2-97XKM-XW2WJ-XW3J6&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Outlook 2016&lt;/td&gt;
+&lt;td&gt;R69KK-NTPKF-7M3Q4-QYBHW-6MT9B&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;PowerPoint 2016&lt;/td&gt;
+&lt;td&gt;J7MQP-HNJ4Y-WJ7YM-PFYGF-BY6C6&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Publisher 2016&lt;/td&gt;
+&lt;td&gt;F47MM-N3XJP-TQXJ9-BP99D-8 837 K&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Skype for Business 2016&lt;/td&gt;
+&lt;td&gt;869NQ-FJ69K-466HW-QYCP2-DDBV6&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Word 2016&lt;/td&gt;
+&lt;td&gt;WXY84-JN2Q9-RBCCQ-3Q3J3-3PFJ6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&#34;office-2013&#34;&gt;Office 2013&lt;/h5&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;产品&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Office 2013 Professional Plus&lt;/td&gt;
+&lt;td&gt;YC7DK-G2NP3-2QQC3-J6H88-GVGXT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Office 2013 Standard&lt;/td&gt;
+&lt;td&gt;KBKQT-2NMXY-JJWGP-M62JB-92CD4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Project 2013 Professional&lt;/td&gt;
+&lt;td&gt;FN8TT-7WMH6-2D4X9-M337T-2342K&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Project 2013 Standard&lt;/td&gt;
+&lt;td&gt;6NTH3-CW976-3G3Y2-JK3TX-8QHTT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Visio 2013 Professional&lt;/td&gt;
+&lt;td&gt;C2FG9-N6J68-H8BTJ-BW3QX-RM3B3&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Visio 2013 Standard&lt;/td&gt;
+&lt;td&gt;J484Y-4NKBF-W2HMG-DBMJC-PGWR7&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Access 2013&lt;/td&gt;
+&lt;td&gt;NG2JY-H4JBT-HQXYP-78QH9-4JM2D&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Excel 2013&lt;/td&gt;
+&lt;td&gt;VGPNG-Y7HQW-9RHP7-TKPV3-BG7GB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;InfoPath 2013&lt;/td&gt;
+&lt;td&gt;DKT8B-N7VXH-D963P-Q4PHY-F8894&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Lync 2013&lt;/td&gt;
+&lt;td&gt;2MG3G-3BNTT-3MFW9-KDQW3-TCK7R&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;OneNote 2013&lt;/td&gt;
+&lt;td&gt;TGN6P-8MMBC-37P2F-XHXXK-P34VW&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Outlook 2013&lt;/td&gt;
+&lt;td&gt;QPN8Q-BJBTJ-334K3-93TGY-2PMBT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;PowerPoint 2013&lt;/td&gt;
+&lt;td&gt;4NT99-8RJFH-Q2VDH-KYG2C-4RD4F&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Publisher 2013&lt;/td&gt;
+&lt;td&gt;PN2WF-29XG2-T9HJ7-JQPJR-FCXK4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Word 2013&lt;/td&gt;
+&lt;td&gt;6Q7VD-NX8JD-WJ2VH-88V73-4GBJ7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&#34;office-2010&#34;&gt;Office 2010&lt;/h5&gt;
+
+&lt;p&gt;&lt;strong&gt;Office 套件：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;产品&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Office Professional Plus 2010&lt;/td&gt;
+&lt;td&gt;VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Office Standard 2010&lt;/td&gt;
+&lt;td&gt;V7QKV-4XVVR-XYV4D-F7DFM-8R6BM&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Office Home and Business 2010&lt;/td&gt;
+&lt;td&gt;D6QFG-VBYP2-XQHM7-J97RH-VVRCK&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;独立产品：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;产品&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Access 2010&lt;/td&gt;
+&lt;td&gt;V7Y44-9T38C-R2VJK-666HK-T7DDX&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Excel 2010&lt;/td&gt;
+&lt;td&gt;H62QG-HXVKF-PP4HP-66KMR-CW9BM&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SharePoint Workspace 2010&lt;/td&gt;
+&lt;td&gt;QYYW6-QP4CB-MBV6G-HYMCJ-4T3J4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;InfoPath 2010&lt;/td&gt;
+&lt;td&gt;K96W8-67RPQ-62T9Y-J8FQJ-BT37T&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;OneNote 2010&lt;/td&gt;
+&lt;td&gt;Q4Y4M-RHWJM-PY37F-MTKWH-D3XHX&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Outlook 2010&lt;/td&gt;
+&lt;td&gt;7YDC2-CWM8M-RRTJC-8MDVC-X3DWQ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;PowerPoint 2010&lt;/td&gt;
+&lt;td&gt;RC8FX-88JRY-3PF7C-X8P67-P4VTT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Project Professional 2010&lt;/td&gt;
+&lt;td&gt;YGX6F-PGV49-PGW3J-9BTGG-VHKC6&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Project Standard 2010&lt;/td&gt;
+&lt;td&gt;4HP3K-88W3F-W2K3D-6677X-F9PGB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Publisher 2010&lt;/td&gt;
+&lt;td&gt;BFK7F-9MYHM-V68C7-DRQ66-83YTP&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Word 2010&lt;/td&gt;
+&lt;td&gt;HVHB3-C6FV7-KQX9W-YQG79-CRY7T&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Visio：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;产品&lt;/th&gt;
+&lt;th&gt;KMS 客户端安装密钥&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Visio Premium 2010&lt;/td&gt;
+&lt;td&gt;D9DWC-HPYVV-JGF4P-BTWQB-WX8BJ&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Visio Professional 2010&lt;/td&gt;
+&lt;td&gt;7MCW8-VRQVK-G677T-PDJCM-Q8TCP&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Visio Standard 2010&lt;/td&gt;
+&lt;td&gt;767HD-QGMWX-8QTDB-9G3R2-KHFGJ&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;关于盗版&#34;&gt;关于盗版&lt;/h2&gt;
+
+&lt;p&gt;使用本站提供的 KMS 激活服务激活，并没有向 Microsoft™ 购买相关许可的 Windows 或 Office 毫无疑问是盗版的！&lt;/p&gt;
+
+&lt;p&gt;本站提供的 KMS 激活服务仅能用于学习和技术交流，&lt;strong&gt;严禁商业使用&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Rust 交叉编译</title>
@@ -2664,890 +3647,6 @@ fn calculate_length(s: &amp;amp;String) -&amp;gt; usize { // s 是对 String 的
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;center&gt;  ·End·  &lt;/center&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Student dormitory management</title>
-      <link>https://mogeko.me/2018/039/</link>
-      <pubDate>Sat, 22 Dec 2018 23:30:01 +0800</pubDate>
-      
-      <guid>https://mogeko.me/2018/039/</guid>
-      <description>
-
-&lt;!-- 
-&lt;img alt=&#34;&#34; src=&#34;https://mogeko.github.io/images/038/&#34; &gt;
-&lt;span class=&#34;spoiler&#34; &gt;&lt;/span&gt;
-&amp;emsp;&amp;emsp;
- --&gt;
-
-&lt;h1 id=&#34;demand-analysis&#34;&gt;Demand analysis&lt;/h1&gt;
-
-&lt;p&gt;The system is designed to facilitate the management of student residences.&lt;/p&gt;
-
-&lt;p&gt;Provide registration for students and teachers, check the student dormitory number, adjust the dormitory and other functions.&lt;/p&gt;
-
-&lt;p&gt;At the same time, considering the need for maintenance and refurbishment of the dormitory, the system provides the function of submitting and accepting maintenance applications. After the student submits the repair application, the dormitory management will dispatch maintenance personnel to the maintenance.&lt;/p&gt;
-
-&lt;h2 id=&#34;user-classification&#34;&gt;User classification&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Student (Male/Female)&lt;/strong&gt;: Managed by a boarding teacher&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Dormitory manager&lt;/strong&gt;: Manage all rooms and students&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Maintenance personnel&lt;/strong&gt;: Including cleaning, maintenance personnel, etc&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;functions&#34;&gt;Functions&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Dormitory manager:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Check student accommodation&lt;/li&gt;
-&lt;li&gt;Reasonable allocation of rooms&lt;/li&gt;
-&lt;li&gt;Adjust student dormitory allocation&lt;/li&gt;
-&lt;li&gt;Delete students who are no longer staying&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Maintenance personnel:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Inquiry repair application form&lt;/li&gt;
-&lt;li&gt;Query working hours&lt;/li&gt;
-&lt;li&gt;Check the repair area (room id)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;database-design&#34;&gt;Database Design&lt;/h1&gt;
-
-&lt;p&gt;This database includes a total of 5 tables: &lt;strong&gt;student_db, administrator_db, dormitry_db, maintenance_personnel_db, maintenance_application_db&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;student_db&lt;/strong&gt;: &lt;code&gt;{ID, name, sex, room number (room id)}&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This table is used to record and manage different kinds of students.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;administrator_db&lt;/strong&gt;: &lt;code&gt;{ID, sex, managed room id}&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This table is used to record the student’s boarding teacher and the objects they need to manage.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;dormitry_db&lt;/strong&gt;: &lt;code&gt;{ID, types(male or female), sister teacher&#39;s id}&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This table is used to record information about the dorms that need to be managed.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;maintenance_personnel_db&lt;/strong&gt;: &lt;code&gt;{ID, name, sex, position (project responsible for maintenance), working time, off work time}&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This table is used to record information about maintenance personnel, including working hours, etc.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;maintenance_application_db&lt;/strong&gt;: &lt;code&gt;{room id, application for repair}&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This tavle is used to record the repair application submitted by the student and is also the work content of the maintenance staff.&lt;/p&gt;
-
-&lt;h3 id=&#34;contact&#34;&gt;Contact&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Student accommodation: &lt;code&gt;{student_db, dormitry_db}&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Dormitory management: &lt;code&gt;{administrator_db, dormitry_db}&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Repair application: &lt;code&gt;{student_db, maintenance_application_db}&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Dormitory maintenance: &lt;code&gt;{maintenance_personnel_db, maintenance_application_db}&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;e-r&#34;&gt;E - R&lt;/h2&gt;
-
-&lt;p&gt;&lt;img alt=&#34;E-R&#34; src=&#34;https://mogeko.github.io/images/039/E-R.png&#34; &gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;table-design&#34;&gt;Table design&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;student_db:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table style=&#34;width:100%&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;数据类型&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;u&gt;student_id&lt;/u&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;student_name&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;student_sex&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;room_id&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;administrator_db:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table style=&#34;width:100%&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;数据类型&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;u&gt;administrator_id&lt;/u&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;administrator_name&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;administrator_sex&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;dormitry_db:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table style=&#34;width:100%&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;数据类型&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;u&gt;room_id&lt;/u&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;dormitry_types&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;administrator_id&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;maintenance_personnel_db:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table style=&#34;width:100%&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;数据类型&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;u&gt;maintenance_personne_id&lt;/u&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;maintenance_personnel_name&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;maintenance_personnel_sex&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;working_time&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;datetime&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;True&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;off_work_time&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;datetime&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;True&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;maintenance_application_db:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table style=&#34;width:100%&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;列名&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;数据类型&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;允许 Null 值&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;u&gt;maintenance_application_id&lt;/u&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;int IDENTITY(1, 1)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;maintenance_application&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;varchar(50)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;room_id&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;maintenance_personnel_id&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;nchar(10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;True&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;work_status&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;bit DEFAULT(0)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;False&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;database-implementation&#34;&gt;Database implementation&lt;/h2&gt;
-
-&lt;h3 id=&#34;case-data&#34;&gt;Case data&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;student_db:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table style=&#34;width:100%&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;student_id&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;student_name&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;student_sex&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;room_id&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;0001&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Mogeko&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;0002&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Ezie&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;0003&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Washington&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;0004&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Licoln&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;M102&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;0005&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Daisy&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;0006&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Trump&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;0007&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Noah&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;M102&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;0008&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Lucy&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;0009&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Obama&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;0010&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Lucy&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;administrator_db:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div style=&#34;overflow:auto&#34;&gt;
-&lt;table style=&#34;width:100%&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;administrator_id&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;administrator_name&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;administrator_sex&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Herrington&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;002&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Van&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;003&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Rossett&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Jade&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;005&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Eva&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;006&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;May&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;dormitry_db:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table style=&#34;width:100%&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;room_id&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;dormitry_types&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;administrator_id&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;M101&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;M102&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;M103&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;M104&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;002&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;M105&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;002&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;F102&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;F103&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;F104&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;F105&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;maintenance_personnel_db:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table style=&#34;width:100%&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;maintenance_personnel_id&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;maintenance_personnel_name&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;maintenance_personnel_sex&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;working_time&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;off_work_time&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Roosevelt&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;2018-12-22T09:00:00&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;2018-12T22 22:00:00&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;002&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Kennedy&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Male&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;003&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Nannie&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;2018-12-22T09:00:00&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;2018-12-22T22:00:00&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;004&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Dawn&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Female&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;maintenance_application_db:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div  style=&#34;overflow:auto&#34;&gt;
-&lt;table style=&#34;width:100%&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;maintenance_application_id&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;maintenance_application&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;room_id&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;maintenance_personnel_id&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;work_status&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Door damage&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;M102&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;001&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;2&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Faucet damage&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;F101&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;import-case-data&#34;&gt;Import case data&lt;/h2&gt;
-
-&lt;p&gt;Create the tables&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;/*
- Create tables
-  - student_db
-  - administrator_db
-  - dormitry_db
-  - maintenance_personnel_db
-  - maintenance_application_db
- */
-CREATE TABLE student_db
-(
-student_id nchar(10) NOT NULL PRIMARY KEY,
-student_name nchar(10) NOT NULL,
-student_sex nchar(10) NOT NULL,
-room_id nchar(10) NOT NULL
-)
-CREATE TABLE administrator_db
-(
-administrator_id nchar(10) NOT NULL PRIMARY KEY,
-administrator_name nchar(10) NOT NULL,
-administrator_sex nchar(10) NOT NULL
-)
-CREATE TABLE dormitry_db
-(
-room_id nchar(10) NOT NULL PRIMARY KEY,
-dormitry_types nchar(10) NOT NULL,
-administrator_id nchar(10) NOT NULL
-)
-CREATE TABLE maintenance_personnel_db
-(
-maintenance_personnel_id nchar(10) NOT NULL PRIMARY KEY,
-maintenance_personnel_name nchar(10) NOT NULL,
-maintenance_personnel_sex nchar(10) NOT NULL,
-working_time datetime,
-off_work_time datetime
-)
-CREATE TABLE maintenance_application_db
-(
-maintenance_application_id int IDENTITY(1, 1) PRIMARY KEY,
-maintenance_application varchar(50) NOT NULL,
-room_id nchar(10) NOT NULL,
-maintenance_personnel_id nchar(10),
-work_status bit DEFAULT(0) NOT NULL,
-)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Set &lt;code&gt;FOREIHN KEY&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;/* Set the foreign key */
-
-ALTER TABLE STUDENT_DB.dbo.student_db
-ADD FOREIGN KEY (room_id)
-REFERENCES dormitry_db(room_id)
-
-ALTER TABLE STUDENT_DB.dbo.dormitry_db
-ADD FOREIGN KEY (administrator_id)
-REFERENCES administrator_db(administrator_id)
-
-ALTER TABLE STUDENT_DB.dbo.maintenance_application_db
-ADD FOREIGN KEY (room_id)
-REFERENCES dormitry_db(room_id)
-
-ALTER TABLE STUDENT_DB.dbo.maintenance_application_db
-ADD FOREIGN KEY (maintenance_personnel_id)
-REFERENCES maintenance_personnel_db(maintenance_personnel_id)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Insert data into the form &lt;code&gt;STUDENT_DB.dbo.administrator_db&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;/* Insert data into the form STUDENT_DB.dbo.administrator_db */
-INSERT INTO STUDENT_DB.dbo.administrator_db
-(administrator_id, administrator_name, administrator_sex)
-VALUES(&#39;001&#39;, &#39;Herrington&#39;, &#39;Male&#39;)
-INSERT INTO STUDENT_DB.dbo.administrator_db
-(administrator_id, administrator_name, administrator_sex)
-VALUES(&#39;002&#39;, &#39;Van&#39;, &#39;Male&#39;)
-INSERT INTO STUDENT_DB.dbo.administrator_db
-(administrator_id, administrator_name, administrator_sex)
-VALUES(&#39;003&#39;, &#39;Rossett&#39;, &#39;Male&#39;)
-INSERT INTO STUDENT_DB.dbo.administrator_db
-(administrator_id, administrator_name, administrator_sex)
-VALUES(&#39;004&#39;, &#39;Jade&#39;, &#39;Female&#39;)
-INSERT INTO STUDENT_DB.dbo.administrator_db
-(administrator_id, administrator_name, administrator_sex)
-VALUES(&#39;005&#39;, &#39;Eva&#39;, &#39;Female&#39;)
-INSERT INTO STUDENT_DB.dbo.administrator_db
-(administrator_id, administrator_name, administrator_sex)
-VALUES(&#39;006&#39;, &#39;May&#39;, &#39;Female&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Insert data into the form &lt;code&gt;STUDENT_DB.dbo.dormitry_db&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;/* Insert data into the form STUDENT_DB.dbo.dormitry_db */
-INSERT INTO STUDENT_DB.dbo.dormitry_db
-(room_id, dormitry_types, administrator_id)
-VALUES(&#39;M101&#39;, &#39;Male&#39;, &#39;001&#39;)
-INSERT INTO STUDENT_DB.dbo.dormitry_db
-(room_id, dormitry_types, administrator_id)
-VALUES(&#39;M102&#39;, &#39;Male&#39;, &#39;001&#39;)
-INSERT INTO STUDENT_DB.dbo.dormitry_db
-(room_id, dormitry_types, administrator_id)
-VALUES(&#39;M103&#39;, &#39;Male&#39;, &#39;001&#39;)
-INSERT INTO STUDENT_DB.dbo.dormitry_db
-(room_id, dormitry_types, administrator_id)
-VALUES(&#39;M104&#39;, &#39;Male&#39;, &#39;002&#39;)
-INSERT INTO STUDENT_DB.dbo.dormitry_db
-(room_id, dormitry_types, administrator_id)
-VALUES(&#39;M105&#39;, &#39;Male&#39;, &#39;002&#39;)
-INSERT INTO STUDENT_DB.dbo.dormitry_db
-(room_id, dormitry_types, administrator_id)
-VALUES(&#39;F101&#39;, &#39;Female&#39;, &#39;004&#39;)
-INSERT INTO STUDENT_DB.dbo.dormitry_db
-(room_id, dormitry_types, administrator_id)
-VALUES(&#39;F102&#39;, &#39;Female&#39;, &#39;004&#39;)
-INSERT INTO STUDENT_DB.dbo.dormitry_db
-(room_id, dormitry_types, administrator_id)
-VALUES(&#39;F103&#39;, &#39;Female&#39;, &#39;004&#39;)
-INSERT INTO STUDENT_DB.dbo.dormitry_db
-(room_id, dormitry_types, administrator_id)
-VALUES(&#39;F104&#39;, &#39;Female&#39;, &#39;004&#39;)
-INSERT INTO STUDENT_DB.dbo.dormitry_db
-(room_id, dormitry_types, administrator_id)
-VALUES(&#39;F105&#39;, &#39;Female&#39;, &#39;004&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Insert data into the form &lt;code&gt;STUDENT_DB.dbo.student_db&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;/* Insert data into the form STUDENT_DB.dbo.student_db */
-INSERT INTO STUDENT_DB.dbo.student_db
-(student_id, student_name, student_sex, room_id)
-VALUES(&#39;0001&#39;, &#39;Mogeko&#39;, &#39;Male&#39;, &#39;M101&#39;)
-INSERT INTO STUDENT_DB.dbo.student_db
-(student_id, student_name, student_sex, room_id)
-VALUES(&#39;0002&#39;, &#39;Ezie&#39;, &#39;Female&#39;, &#39;F101&#39;)
-INSERT INTO STUDENT_DB.dbo.student_db
-(student_id, student_name, student_sex, room_id)
-VALUES(&#39;0003&#39;, &#39;Washington&#39;, &#39;Male&#39;, &#39;M101&#39;)
-INSERT INTO STUDENT_DB.dbo.student_db
-(student_id, student_name, student_sex, room_id)
-VALUES(&#39;0004&#39;, &#39;Licoln&#39;, &#39;Male&#39;, &#39;M102&#39;)
-INSERT INTO STUDENT_DB.dbo.student_db
-(student_id, student_name, student_sex, room_id)
-VALUES(&#39;0005&#39;, &#39;Daisy&#39;, &#39;Female&#39;, &#39;F101&#39;)
-INSERT INTO STUDENT_DB.dbo.student_db
-(student_id, student_name, student_sex, room_id)
-VALUES(&#39;0006&#39;, &#39;Trump&#39;, &#39;Male&#39;, &#39;M101&#39;)
-INSERT INTO STUDENT_DB.dbo.student_db
-(student_id, student_name, student_sex, room_id)
-VALUES(&#39;0007&#39;, &#39;Noah&#39;, &#39;Male&#39;, &#39;M102&#39;)
-INSERT INTO STUDENT_DB.dbo.student_db
-(student_id, student_name, student_sex, room_id)
-VALUES(&#39;0008&#39;, &#39;Lucy&#39;, &#39;Female&#39;, &#39;F101&#39;)
-INSERT INTO STUDENT_DB.dbo.student_db
-(student_id, student_name, student_sex, room_id)
-VALUES(&#39;0009&#39;, &#39;Obama&#39;, &#39;Male&#39;, &#39;M101&#39;)
-INSERT INTO STUDENT_DB.dbo.student_db
-(student_id, student_name, student_sex, room_id)
-VALUES(&#39;0010&#39;, &#39;Lucy&#39;, &#39;Female&#39;, &#39;F101&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Insert data into the form &lt;code&gt;STUDENT_DB.dbo.maintenance_application_db&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;/* Insert data into the form STUDENT_DB.dbo.maintenance_application_db */
-INSERT INTO STUDENT_DB.dbo.maintenance_application_db
-(maintenance_application, room_id)
-VALUES (&#39;Door damage&#39;, &#39;M102&#39;)
-INSERT INTO STUDENT_DB.dbo.maintenance_application_db
-(maintenance_application, room_id)
-VALUES (&#39;Faucet damage&#39;, &#39;F102&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Insert data into the form &lt;code&gt;STUDENT_DB.dbo.maintenance_personnel_db&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;/* Insert data into the form STUDENT_DB.dbo.maintenance_personnel_db */
-INSERT INTO STUDENT_DB.dbo.maintenance_personnel_db
-(maintenance_personnel_id, maintenance_personnel_name, maintenance_personnel_sex, working_time, off_work_time)
-VALUES(&#39;001&#39;, &#39;Roosevelt&#39;, &#39;Male&#39;, &#39;2018-12-22T09:00:00&#39;, &#39;2018-12-22T22:00:00&#39;)
-INSERT INTO STUDENT_DB.dbo.maintenance_personnel_db
-(maintenance_personnel_id, maintenance_personnel_name, maintenance_personnel_sex)
-VALUES(&#39;002&#39;, &#39;Kennedy&#39;, &#39;Male&#39;)
-INSERT INTO STUDENT_DB.dbo.maintenance_personnel_db
-(maintenance_personnel_id, maintenance_personnel_name, maintenance_personnel_sex, working_time, off_work_time)
-VALUES(&#39;003&#39;, &#39;Nannie&#39;, &#39;Female&#39;, &#39;2018-12-22T09:00:00&#39;, &#39;2018-12-22T22:00:00&#39;)
-INSERT INTO STUDENT_DB.dbo.maintenance_personnel_db
-(maintenance_personnel_id, maintenance_personnel_name, maintenance_personnel_sex)
-VALUES(&#39;004&#39;, &#39;Dawn&#39;, &#39;Female&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;example-features&#34;&gt;(Example) Features&lt;/h2&gt;
-
-&lt;p&gt;Check student accommodation information.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;/*
-Check student accommodation information
-INPUT @stu_name -- The name of the student being queried
-*/
-
-DECLARE @stu_name nchar(10)
--- Check accommodation information in Mogeko
-SET @stu_name = &#39;Mogeko&#39;
-
-SELECT student_id, student_name, student_sex, room_id
-FROM STUDENT_DB.dbo.student_db
-WHERE student_name=@stu_name
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Newborn stay.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;/*
-Newborn stay
-INPUT @Stu_id -- The ID of nweborn
-INPUT @Stu_name -- The name of newborn
-INPUT @Stu_sex -- The gender of newborn
-INPUT @room_id -- The room number of newborn
-*/
-
-DECLARE @Stu_id nchar(10)
-DECLARE @Stu_name nchar(10)
-DECLARE @Stu_sex nchar(10)
-DECLARE @room_id nchar(10)
-
--- New student information
-SET @Stu_id = &#39;0011&#39;
-SET @Stu_name = &#39;Bob&#39;
-SET @Stu_sex = &#39;Male&#39;
-SET @room_id = &#39;M103&#39;
-
-INSERT INTO STUDENT_DB.dbo.student_db
-(student_id, student_name, student_sex, room_id)
-VALUES (@Stu_id, @Stu_name, @Stu_sex, @room_id)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Students move out of the bedroom.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;/*
-Students move out of the bedroom
-INPUT Stu_id -- The ID of the student
-*/
-
-DECLARE @Stu_id nchar(10)
--- Input the ID of the student
-SET @Stu_id = &#39;0011&#39;
-
-DELETE FROM STUDENT_DB.dbo.student_db
-WHERE student_id = @Stu_id
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Submit a repair request.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;/*
-Submit a repair request
-INPUT @request -- Repair application
-INPUT @room_id -- Repair location
-*/
-
-DECLARE @requst varchar(50)
-DECLARE @room_id nchar(10)
-
--- Repair application information
-SET @requst = &#39;The cabinet was damaged&#39;
-SET @room_id = &#39;M101&#39;
-
-INSERT INTO STUDENT_DB.dbo.maintenance_application_db
-(maintenance_application, room_id)
-VALUES (@requst, @room_id)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Check the repair application list.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;/*
-Check the repair application list
-INPUT @staff_name -- Name of the maintenance person
-*/
-
-DECLARE @staff_name nchar(10)
-
--- Input the name of the maintenance person
-SET @staff_name = &#39;Roosevelt&#39;
-
-SELECT maintenance_application_id, maintenance_application, room_id
-FROM STUDENT_DB.dbo.maintenance_application_db
-WHERE (maintenance_personnel_id is NULL) and room_id in (
-	SELECT room_id
-	FROM STUDENT_DB.dbo.dormitry_db
-	WHERE dormitry_types = (
-		SELECT maintenance_personnel_sex
-		FROM STUDENT_DB.dbo.maintenance_personnel_db
-		WHERE maintenance_personnel_name = @staff_name
-	)
-)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Accept repair request.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;/*
-Accept repair request
-INPUT @staff_id -- ID of the maintenance person
-INPUT @application_id -- ID of the maintenance application
-*/
-
-DECLARE @staff_id nchar(10)
-DECLARE @application_id int
-
--- Input the ID of the maintenance person
-SET @staff_id = &#39;001&#39;
--- Input the ID of the maintenance application
-SET @application_id = 3
-
-UPDATE STUDENT_DB.dbo.maintenance_application_db
-SET maintenance_personnel_id = @staff_id
-WHERE maintenance_application_id = @application_id
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Complete repair.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;/*
-Complete repair
-INPUT @application_id -- ID of the maintenance application
-*/
-
-DECLARE @application_id int
-
--- Input the ID of the maintenance application
-SET @application_id = 3
-
-UPDATE STUDENT_DB.dbo.maintenance_application_db
-SET work_status = 1
-WHERE maintenance_application_id = @application_id
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

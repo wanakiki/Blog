@@ -6,10 +6,19 @@
     <description>Recent content in KMS on Mogeko`s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 18 Nov 2018 00:54:27 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Apr 2019 09:05:32 +0800</lastBuildDate>
     
 	<atom:link href="https://mogeko.me/tags/kms/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>本站的 KMS 激活服务正式 (划掉) 上线了！</title>
+      <link>https://mogeko.me/2019/054/</link>
+      <pubDate>Sat, 20 Apr 2019 09:05:32 +0800</pubDate>
+      
+      <guid>https://mogeko.me/2019/054/</guid>
+      <description>&amp;emsp;&amp;emsp; -- 本站的 KMS 激活服务今天起正式上线了！！ KMS 服务已经稳定可用了，划掉“正式”是为了万一哪天突然挂掉留条后路 (一般不会) 使用此 KMS 激活服务可以激活</description>
+    </item>
     
     <item>
       <title>Windows / Office 激活脚本 (使用 KMS)</title>
